@@ -1,0 +1,2 @@
+materialx>=1.39
+requests

@@ -1,0 +1,4295 @@
+{
+    "count": 454,
+    "next": "https://api.matlib.gpuopen.com/api/materials/?limit=100&offset=300",
+    "previous": "https://api.matlib.gpuopen.com/api/materials/?limit=100&offset=100",
+    "results": [
+        {
+            "author": "AMD",
+            "category": "0461f706-ba42-4b45-a5b1-8c426afcf0d9",
+            "created_date": "2021-11-30T16:42:44.971452Z",
+            "description": "",
+            "favorite": false,
+            "id": "6cd4dfac-0a7b-44c2-81f6-e70ad71d1171",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Concrete_Planks.mtlx",
+            "mtlx_material_name": "Concrete_Planks",
+            "notification_status": "None",
+            "packages": [
+                "3d849314-b29b-4b19-ab89-fc74112ead55",
+                "964798e4-4dac-4321-b985-e653a38718b7",
+                "d92e6169-07c7-4dac-98e4-774c2e7c14e0",
+                "e4836dc7-be65-4e67-bd39-f971b7df535f",
+                "444d51fc-4152-44cc-815e-5f728ffdc238",
+                "f28ff446-4cf5-42f2-9527-178006ab9cb3"
+            ],
+            "published_date": "2021-09-15T15:11:25.823260Z",
+            "renders": [
+                "991b0144-35bf-4028-9fdd-d00ce3ee8fef",
+                "a9bcfca6-a788-416b-b252-ffcdca1408c5",
+                "7d40ca42-dbd1-46e6-9397-a0f3124b4b5c",
+                "18c55ba6-a7c5-4121-b8c7-58f13835445a"
+            ],
+            "renders_order": [
+                "18c55ba6-a7c5-4121-b8c7-58f13835445a",
+                "7d40ca42-dbd1-46e6-9397-a0f3124b4b5c",
+                "a9bcfca6-a788-416b-b252-ffcdca1408c5",
+                "991b0144-35bf-4028-9fdd-d00ce3ee8fef"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576"
+            ],
+            "title": "Concrete Planks",
+            "updated_date": "2023-08-07T07:29:22.899660Z",
+            "viewer_enabled": true,
+            "viewer_package": "e4836dc7-be65-4e67-bd39-f971b7df535f"
+        },
+        {
+            "author": "AMD",
+            "category": "0461f706-ba42-4b45-a5b1-8c426afcf0d9",
+            "created_date": "2021-11-30T16:42:23.189279Z",
+            "description": null,
+            "favorite": false,
+            "id": "ebfe7ed1-9aa3-4f9d-af2b-765faf848c60",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Concrete_Tiles.mtlx",
+            "mtlx_material_name": "Concrete_Tiles",
+            "notification_status": "None",
+            "packages": [
+                "04132724-0898-40e0-b273-8b9d2a38c6c8",
+                "f305eeee-b1ac-490c-8cf9-9c4f6bd80933",
+                "5aecfc8e-5b8d-4568-ab9f-e207bcc0bc19",
+                "21109fd0-06f9-4e98-9f15-d017121d0486",
+                "0cdf73d5-5cfb-47ee-b52e-461fa1c28bc1",
+                "08cd4d15-89af-471e-adaf-51599dd3f46e"
+            ],
+            "published_date": "2021-09-15T15:11:20.645322Z",
+            "renders": [
+                "27b5d9a3-11a8-4926-80b3-27cab81bb511",
+                "46123c7b-f6cd-4476-ae33-014a8907729a",
+                "f846e774-a4e4-4896-b737-712b01c8b513",
+                "be02a678-0cef-46b9-bb56-634d1c283675"
+            ],
+            "renders_order": [
+                "be02a678-0cef-46b9-bb56-634d1c283675",
+                "f846e774-a4e4-4896-b737-712b01c8b513",
+                "46123c7b-f6cd-4476-ae33-014a8907729a",
+                "27b5d9a3-11a8-4926-80b3-27cab81bb511"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576"
+            ],
+            "title": "Concrete Tiles",
+            "updated_date": "2023-08-07T07:29:22.903342Z",
+            "viewer_enabled": true,
+            "viewer_package": "21109fd0-06f9-4e98-9f15-d017121d0486"
+        },
+        {
+            "author": "AMD",
+            "category": "4f78f22d-0e34-42a4-ba85-829fe6af8c76",
+            "created_date": "2021-11-30T16:42:08.406597Z",
+            "description": null,
+            "favorite": false,
+            "id": "44740ae5-724c-4382-be5e-59a06298a81b",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Aluminum_Hexagon.mtlx",
+            "mtlx_material_name": "Aluminum_Hexagon",
+            "notification_status": "None",
+            "packages": [
+                "63900a0c-c5f7-41df-bdb4-99577eccd904",
+                "da32e5df-cb7e-4e19-b201-ca93252b0974",
+                "b41c3644-c39d-4e57-ab62-002292dc7e70",
+                "50c2a90c-c200-4529-ab68-076e5b4a5c7d",
+                "8252126a-b6f4-4a04-828b-170b54dadf5e",
+                "45255e28-6209-4b61-b221-c1e9fe758452"
+            ],
+            "published_date": "2021-09-15T15:23:41.222427Z",
+            "renders": [
+                "2eebc4e3-afc9-4fc3-8d41-7ba0c45c9455",
+                "8e1f5b24-05a2-4504-9e19-f1eaa703b4d9",
+                "5d686b15-a33d-41ee-a417-dc53bcc3ae5e"
+            ],
+            "renders_order": [
+                "5d686b15-a33d-41ee-a417-dc53bcc3ae5e",
+                "8e1f5b24-05a2-4504-9e19-f1eaa703b4d9",
+                "2eebc4e3-afc9-4fc3-8d41-7ba0c45c9455"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "c6d4a77a-3d73-436f-a03c-14c46a5d9cad",
+                "e6da284b-035d-40db-aacf-2e5bbb4bed89"
+            ],
+            "title": "Aluminum Hexagon",
+            "updated_date": "2023-08-07T07:29:22.906649Z",
+            "viewer_enabled": true,
+            "viewer_package": "b41c3644-c39d-4e57-ab62-002292dc7e70"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:41:53.296241Z",
+            "description": null,
+            "favorite": false,
+            "id": "c12edfda-a5bd-4469-8147-4a6540a0a213",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Aluminum_Brushed.mtlx",
+            "mtlx_material_name": "Aluminum_Brushed",
+            "notification_status": "None",
+            "packages": [
+                "8c72a069-d395-4e86-a838-b8e2401db29d",
+                "73f4fdd7-5f84-4f61-8b0a-5efbc648e0a5",
+                "5fd8a2ae-77bb-489c-b5d7-8598b2fdcbd0",
+                "29497763-95dd-459e-84a8-a8f1eefede99",
+                "af5cf545-00fb-4b93-8443-ad3fcdc39436",
+                "723c0171-c865-4448-bdc0-665e3b1f7452"
+            ],
+            "published_date": "2021-09-15T15:26:50.989014Z",
+            "renders": [
+                "2e27c16d-b23a-46e3-9b03-a048606740c0",
+                "4efcec29-25da-4fd3-a945-555e93675d1a",
+                "dcbc0e4d-81ba-4990-9249-6d4b1a058b94"
+            ],
+            "renders_order": [
+                "dcbc0e4d-81ba-4990-9249-6d4b1a058b94",
+                "4efcec29-25da-4fd3-a945-555e93675d1a",
+                "2e27c16d-b23a-46e3-9b03-a048606740c0"
+            ],
+            "status": "Published",
+            "tags": [
+                "b3ea4d19-7a59-405e-94f1-46f74beb0cae",
+                "4d6c4872-2a6f-4ace-a262-111765d908c6",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "3eef387d-644c-4a1d-9e51-6a1c07baeebe",
+                "3edeb120-f54a-41cd-923a-fe36889d8fb9"
+            ],
+            "title": "Aluminum Brushed",
+            "updated_date": "2023-08-07T07:29:22.910045Z",
+            "viewer_enabled": true,
+            "viewer_package": "5fd8a2ae-77bb-489c-b5d7-8598b2fdcbd0"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:41:45.405601Z",
+            "description": null,
+            "favorite": false,
+            "id": "25b88a68-251a-414a-a5b5-68381adfdc5f",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Aluminum_Corrugated.mtlx",
+            "mtlx_material_name": "Aluminum_Corrugated",
+            "notification_status": "None",
+            "packages": [
+                "7ecad58b-60c5-48cd-aa6d-317a07ec0553",
+                "12e4f6ee-e226-4ad4-8809-1db41258c0ae",
+                "5fbc9484-31bc-4c3f-9e36-87abeb5ca224",
+                "5ac4b6fc-d75a-455b-a6cf-3c788216fc91",
+                "170d5ce7-cdb2-43ba-99b3-f641e9893c0e",
+                "cc02649a-0aaf-48ed-a3e9-4394c23b078e"
+            ],
+            "published_date": "2021-09-15T15:27:13.185844Z",
+            "renders": [
+                "00fb593f-7748-4962-8e58-c2b5c378931b",
+                "7a47ecb8-11ac-4507-ac5f-f5779fc91722",
+                "052dc44c-498f-4060-8be0-1d5fdc45c6ed"
+            ],
+            "renders_order": [
+                "052dc44c-498f-4060-8be0-1d5fdc45c6ed",
+                "7a47ecb8-11ac-4507-ac5f-f5779fc91722",
+                "00fb593f-7748-4962-8e58-c2b5c378931b"
+            ],
+            "status": "Published",
+            "tags": [
+                "b3ea4d19-7a59-405e-94f1-46f74beb0cae",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "3edeb120-f54a-41cd-923a-fe36889d8fb9"
+            ],
+            "title": "Aluminum Corrugated",
+            "updated_date": "2023-08-07T07:29:22.913163Z",
+            "viewer_enabled": true,
+            "viewer_package": "12e4f6ee-e226-4ad4-8809-1db41258c0ae"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:41:31.358626Z",
+            "description": null,
+            "favorite": false,
+            "id": "5936d911-6aed-4197-9117-8eea7cf40d65",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Aluminum_Matte.mtlx",
+            "mtlx_material_name": "Aluminum_Matte",
+            "notification_status": "None",
+            "packages": [
+                "b156e1ec-a7ad-4dfd-a194-19e43befeaea",
+                "7e1dd4f4-7c9e-433d-81d0-29bd1d852f52",
+                "acc0936a-2575-426b-94d3-df544c18759b",
+                "f03005a3-901e-473a-a9d0-fa0fa9aeea41",
+                "9d6e41a5-3e7d-430e-be7a-9025e7e6f553",
+                "7c02b30a-19f9-4363-99c9-ab0f119e9887"
+            ],
+            "published_date": "2021-09-15T15:28:04.549624Z",
+            "renders": [
+                "2c7512f5-aa16-4952-ad11-12352da80860",
+                "28143ab7-cf8a-44c1-84a2-b28ab250ce12",
+                "b0914e19-7dc0-4cef-b332-fe6b5039d3a0"
+            ],
+            "renders_order": [
+                "b0914e19-7dc0-4cef-b332-fe6b5039d3a0",
+                "28143ab7-cf8a-44c1-84a2-b28ab250ce12",
+                "2c7512f5-aa16-4952-ad11-12352da80860"
+            ],
+            "status": "Published",
+            "tags": [
+                "b3ea4d19-7a59-405e-94f1-46f74beb0cae",
+                "5656d71c-210c-4b08-8de3-abb72ac868ce",
+                "3d7829b8-4f70-4ac3-811c-eea13c07851c",
+                "4d6c4872-2a6f-4ace-a262-111765d908c6",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "3edeb120-f54a-41cd-923a-fe36889d8fb9",
+                "0047cdaa-0f7d-4df6-a6b8-b9a3a9fe8015"
+            ],
+            "title": "Aluminum Matte",
+            "updated_date": "2023-08-07T07:29:22.916125Z",
+            "viewer_enabled": true,
+            "viewer_package": "7e1dd4f4-7c9e-433d-81d0-29bd1d852f52"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:41:17.403726Z",
+            "description": null,
+            "favorite": false,
+            "id": "78c066dd-defa-4d49-9489-f1a1a9a0390c",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Brass_Brushed.mtlx",
+            "mtlx_material_name": "Brass_Brushed",
+            "notification_status": "None",
+            "packages": [
+                "c1141ee1-a1b6-4113-a995-dd8f46b1576d",
+                "93544d7a-a9a4-489f-ae2f-1a1b68b7eef4",
+                "9c4817b0-5efc-42ff-8ab5-bc8c5ef33bbc",
+                "11c82c52-7c2c-41e6-8267-16efe9a4a348",
+                "64ef1765-8732-488a-9b5c-dbe2769ddb8d",
+                "11cb7760-7ca8-437d-bfb9-c870b72c2eff"
+            ],
+            "published_date": "2021-09-15T15:28:29.354203Z",
+            "renders": [
+                "60e06d9d-1d51-4cc5-852a-a38a087505d6",
+                "51a65db6-513e-410c-a84c-c43575b0b448",
+                "15bd7161-15d1-4bfd-9daf-04cc4671aebe"
+            ],
+            "renders_order": [
+                "15bd7161-15d1-4bfd-9daf-04cc4671aebe",
+                "51a65db6-513e-410c-a84c-c43575b0b448",
+                "60e06d9d-1d51-4cc5-852a-a38a087505d6"
+            ],
+            "status": "Published",
+            "tags": [
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "3eef387d-644c-4a1d-9e51-6a1c07baeebe"
+            ],
+            "title": "Brass Brushed",
+            "updated_date": "2023-08-07T07:29:22.919354Z",
+            "viewer_enabled": true,
+            "viewer_package": "9c4817b0-5efc-42ff-8ab5-bc8c5ef33bbc"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:41:05.684892Z",
+            "description": null,
+            "favorite": false,
+            "id": "a3ca4598-2be9-4f18-acec-6d21a323b218",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Brass_Satin.mtlx",
+            "mtlx_material_name": "Brass_Satin",
+            "notification_status": "None",
+            "packages": [
+                "a1004066-9db4-4de8-8174-882a714b350e",
+                "da6322dc-b561-4f54-9ac9-59e70eaf159f",
+                "a082ac37-80f1-4f6c-b4de-43d79e74466e",
+                "581bf06c-252e-4686-b818-88d7ba89b55c",
+                "556e206c-2426-40e9-a382-903868c3d95d",
+                "3567b8ce-ca75-4801-8ffc-188235c4160c"
+            ],
+            "published_date": "2021-09-15T17:37:21.237286Z",
+            "renders": [
+                "b811ed2a-3217-44fa-97e0-eff6a8138c36",
+                "806e8a08-e150-45e8-a3cd-29960172304b",
+                "4d33d27a-37dd-440a-8879-408990866942"
+            ],
+            "renders_order": [
+                "4d33d27a-37dd-440a-8879-408990866942",
+                "806e8a08-e150-45e8-a3cd-29960172304b",
+                "b811ed2a-3217-44fa-97e0-eff6a8138c36"
+            ],
+            "status": "Published",
+            "tags": [
+                "3d7829b8-4f70-4ac3-811c-eea13c07851c",
+                "ae244fbd-2ef5-4603-ac9d-186ef941a20a"
+            ],
+            "title": "Brass Satin",
+            "updated_date": "2023-08-07T07:29:22.922714Z",
+            "viewer_enabled": true,
+            "viewer_package": "556e206c-2426-40e9-a382-903868c3d95d"
+        },
+        {
+            "author": "AMD",
+            "category": "4f78f22d-0e34-42a4-ba85-829fe6af8c76",
+            "created_date": "2021-11-30T16:40:53.153549Z",
+            "description": null,
+            "favorite": false,
+            "id": "eaddbf2b-d9a7-446e-b30d-2750c8036298",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Chains.mtlx",
+            "mtlx_material_name": "Chains",
+            "notification_status": "None",
+            "packages": [
+                "99e6e0f9-1ffa-4fbf-b540-dc91932dfbf6",
+                "16682548-8303-4f66-a1d3-e35a29412559",
+                "fcc3ade9-84f3-49a2-be78-020d284b63e2",
+                "fcd89c48-e3bc-4905-b53d-bdf786006dbe",
+                "5754b71e-7db9-4fdd-828f-b9ec9de4b2de",
+                "cf355004-57d8-4d6a-b5c5-fc59deb973dd"
+            ],
+            "published_date": "2021-09-15T17:46:04.386776Z",
+            "renders": [
+                "ea7344fe-d52c-4376-a3e8-e07a1bbd2fbf",
+                "64a3b7f0-00b8-4bfb-b4fc-e102e6ad5ab3",
+                "b4df7bec-0bbe-4e00-b8b1-b02bab20c22e"
+            ],
+            "renders_order": [
+                "b4df7bec-0bbe-4e00-b8b1-b02bab20c22e",
+                "64a3b7f0-00b8-4bfb-b4fc-e102e6ad5ab3",
+                "ea7344fe-d52c-4376-a3e8-e07a1bbd2fbf"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "c6d4a77a-3d73-436f-a03c-14c46a5d9cad",
+                "e6da284b-035d-40db-aacf-2e5bbb4bed89",
+                "b13cab4a-74f1-4ec8-89c4-b8450e6f535e"
+            ],
+            "title": "Chains",
+            "updated_date": "2023-08-07T07:29:22.926305Z",
+            "viewer_enabled": true,
+            "viewer_package": "fcc3ade9-84f3-49a2-be78-020d284b63e2"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:40:41.153459Z",
+            "description": null,
+            "favorite": false,
+            "id": "71d68adb-79e8-4e49-a4cc-189cef542e11",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Chrome_Parametric.mtlx",
+            "mtlx_material_name": "Chrome_Parametric",
+            "notification_status": "None",
+            "packages": [
+                "26028e53-35b0-49b9-8814-ddaa3f837939",
+                "b52daeb3-ee94-42f6-a724-39bfb16c9229",
+                "d9ff27ae-3ae2-49ca-abb2-c69a21e9a04a",
+                "84541f39-307a-4a2c-9cdc-ffb5836ff5b0",
+                "750ef88b-d12a-4f6e-9c8f-b0c1b19f1c65",
+                "6b4da599-6299-41a9-9175-57d8a305d524"
+            ],
+            "published_date": "2021-09-15T17:46:40.620591Z",
+            "renders": [
+                "a8027649-cd78-47a7-9c2a-a71ecf966b43",
+                "4ab5b894-64e3-4abe-ae2c-e490c28b0f1d",
+                "1ab8f55c-4f4d-4776-825f-bc6e8985fe7c"
+            ],
+            "renders_order": [
+                "1ab8f55c-4f4d-4776-825f-bc6e8985fe7c",
+                "4ab5b894-64e3-4abe-ae2c-e490c28b0f1d",
+                "a8027649-cd78-47a7-9c2a-a71ecf966b43"
+            ],
+            "status": "Published",
+            "tags": [
+                "5656d71c-210c-4b08-8de3-abb72ac868ce",
+                "3d7829b8-4f70-4ac3-811c-eea13c07851c",
+                "ae244fbd-2ef5-4603-ac9d-186ef941a20a",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "1d24a708-6eb2-451a-8b40-15315b155591"
+            ],
+            "title": "Chrome Parametric",
+            "updated_date": "2023-08-07T07:29:22.929498Z",
+            "viewer_enabled": true,
+            "viewer_package": "d9ff27ae-3ae2-49ca-abb2-c69a21e9a04a"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:40:25.465845Z",
+            "description": null,
+            "favorite": false,
+            "id": "fff5176e-fdf5-4503-aab1-cb2de56b6fe0",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Copper_Brushed.mtlx",
+            "mtlx_material_name": "Copper_Brushed",
+            "notification_status": "None",
+            "packages": [
+                "9703da62-d74c-49b4-8697-cffbfdd3415b",
+                "fd86b3f2-55c0-44a0-8ca1-dfd429511b09",
+                "4a75a11b-90c9-48a8-8528-504f2f527df4",
+                "5602e22b-247f-4c42-9391-eb43c2bc8b62",
+                "5b049428-c446-4c6b-9983-34878b7b58e5",
+                "fed23637-b454-498b-aea6-942c64af2a59"
+            ],
+            "published_date": "2021-09-15T17:47:10.380026Z",
+            "renders": [
+                "97868a5a-bf6c-416a-8e7b-17d85270f4f4",
+                "1c2f83a0-6287-4ad7-9c2f-105a8ca9f52f",
+                "97dcd8db-2c65-4d95-b29f-b51e2d65cebd"
+            ],
+            "renders_order": [
+                "97dcd8db-2c65-4d95-b29f-b51e2d65cebd",
+                "1c2f83a0-6287-4ad7-9c2f-105a8ca9f52f",
+                "97868a5a-bf6c-416a-8e7b-17d85270f4f4"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "c6d4a77a-3d73-436f-a03c-14c46a5d9cad",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "3eef387d-644c-4a1d-9e51-6a1c07baeebe"
+            ],
+            "title": "Copper Brushed",
+            "updated_date": "2023-08-07T07:29:22.933171Z",
+            "viewer_enabled": true,
+            "viewer_package": "fd86b3f2-55c0-44a0-8ca1-dfd429511b09"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:40:03.574122Z",
+            "description": null,
+            "favorite": false,
+            "id": "5fc5975c-36c8-4b5a-8323-8f6b7aab4155",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Copper_Old.mtlx",
+            "mtlx_material_name": "Copper_Old",
+            "notification_status": "None",
+            "packages": [
+                "0da67147-157b-4e92-af84-7324abf7a187",
+                "11e060d5-5fbc-45f0-8dbc-4947c45a8858",
+                "6a58921c-5824-47e8-b3ce-0167b1c89585",
+                "64db27d9-73ea-4236-b436-5a3da9e4b823",
+                "90eba3d3-9e74-4e1a-b988-361061318ac5",
+                "a8111e54-5595-4a56-8c84-27dc81d418f5"
+            ],
+            "published_date": "2021-09-15T17:56:15.832376Z",
+            "renders": [
+                "cf8da959-a6a3-447e-9715-d61c51da3033",
+                "c4d67289-9707-46a0-b5ba-abc91c82651b",
+                "7fa12a4d-46f9-4ff6-8a4d-7349e017c230",
+                "abe4a5bf-c303-4bdd-9dd7-3d99c0101a5a"
+            ],
+            "renders_order": [
+                "abe4a5bf-c303-4bdd-9dd7-3d99c0101a5a",
+                "7fa12a4d-46f9-4ff6-8a4d-7349e017c230",
+                "c4d67289-9707-46a0-b5ba-abc91c82651b",
+                "cf8da959-a6a3-447e-9715-d61c51da3033"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "bf0fafeb-7aa3-4085-9fa1-85a6b82b14f7"
+            ],
+            "title": "Copper Old",
+            "updated_date": "2023-08-07T07:29:22.937097Z",
+            "viewer_enabled": true,
+            "viewer_package": "11e060d5-5fbc-45f0-8dbc-4947c45a8858"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:39:50.074047Z",
+            "description": null,
+            "favorite": false,
+            "id": "4d1d23ac-0b8a-4f82-8edc-eb334e11146b",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Galvanized_Metal.mtlx",
+            "mtlx_material_name": "Galvanized_Metal",
+            "notification_status": "None",
+            "packages": [
+                "11a945a0-1531-4a92-871f-de78ce55747f",
+                "5508bdec-311d-4e39-951c-51e1a10ed4bc",
+                "762be20e-e0e4-4ddc-b504-f0ee8eb8cc9e",
+                "d2ee4cff-dd88-467a-a9cb-fcfcc97d3d4b",
+                "a7885e3a-6d72-4199-9167-9516631aef31",
+                "19d98b1a-4989-4d81-864a-3358f8b59100"
+            ],
+            "published_date": "2021-09-15T17:57:02.941232Z",
+            "renders": [
+                "e6a7a3e5-8864-4c18-a109-e77489b7c8eb",
+                "31b3cfcd-237f-41b2-8fcb-54cd9380fff3",
+                "311f8273-9140-45fa-9e87-dd079c585d94"
+            ],
+            "renders_order": [
+                "311f8273-9140-45fa-9e87-dd079c585d94",
+                "31b3cfcd-237f-41b2-8fcb-54cd9380fff3",
+                "e6a7a3e5-8864-4c18-a109-e77489b7c8eb"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d6c4872-2a6f-4ace-a262-111765d908c6",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "3edeb120-f54a-41cd-923a-fe36889d8fb9",
+                "ef2a8613-798c-4505-a3e6-ffb66e89636d"
+            ],
+            "title": "Galvanized Metal",
+            "updated_date": "2023-08-07T07:29:22.940265Z",
+            "viewer_enabled": true,
+            "viewer_package": "5508bdec-311d-4e39-951c-51e1a10ed4bc"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:39:34.261348Z",
+            "description": null,
+            "favorite": false,
+            "id": "9deaf864-9f7f-4e4a-9e8f-ade76c3229d2",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Gun_Metal.mtlx",
+            "mtlx_material_name": "Gun_Metal",
+            "notification_status": "None",
+            "packages": [
+                "9c64888f-f62d-43ba-a180-baeedc1651bf",
+                "87623240-ed5c-4c34-9693-365af57330c4",
+                "ff5916ab-d683-4f5f-97c8-ed250d8827eb",
+                "ce5541dc-df8d-4be2-8cf4-3a79e70359ea",
+                "7b49c89e-283c-42ce-92ee-622205f684e0",
+                "5c26e4b9-594e-42ad-bb25-01bf3f2995a2"
+            ],
+            "published_date": "2021-09-15T17:57:41.903964Z",
+            "renders": [
+                "c2b310f1-a1b9-4f5e-b86f-461b9cb7abdc",
+                "d14a35ef-fffc-4fe1-a5a7-1b66b4dad0d3",
+                "3511c97b-7f93-4f0f-9f0a-9a76fa0e7037"
+            ],
+            "renders_order": [
+                "3511c97b-7f93-4f0f-9f0a-9a76fa0e7037",
+                "d14a35ef-fffc-4fe1-a5a7-1b66b4dad0d3",
+                "c2b310f1-a1b9-4f5e-b86f-461b9cb7abdc"
+            ],
+            "status": "Published",
+            "tags": [
+                "b8eb2211-14f3-448a-a38a-d02ee8d54186",
+                "ecdcb2e6-382a-4699-82af-b8aa4318cef9",
+                "0ba2fb44-ff92-4b25-b5f6-dcb6ae3279eb",
+                "6cc64158-dda3-415c-a44f-b7d02c0eb4e1",
+                "0047cdaa-0f7d-4df6-a6b8-b9a3a9fe8015",
+                "e2ff92af-0354-46a3-9674-ec998909d244"
+            ],
+            "title": "Gun Metal",
+            "updated_date": "2023-08-07T07:29:22.944143Z",
+            "viewer_enabled": true,
+            "viewer_package": "87623240-ed5c-4c34-9693-365af57330c4"
+        },
+        {
+            "author": "AMD",
+            "category": "0461f706-ba42-4b45-a5b1-8c426afcf0d9",
+            "created_date": "2021-11-30T16:39:06.525185Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/dirty_concrete",
+            "favorite": false,
+            "id": "d8b95264-35d7-47e2-b2c9-633fa4180de3",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Dirty_Concrete.mtlx",
+            "mtlx_material_name": "TH_Dirty_Concrete",
+            "notification_status": "None",
+            "packages": [
+                "08862bd4-3374-49ae-b41f-61d82a3ce6f2",
+                "68f886fe-f02a-49a4-83fe-3f4c76ca7957",
+                "2010305d-4b71-4438-95d0-f7e25e942180",
+                "5da7f582-71b6-4e98-88ca-aad509d1be32"
+            ],
+            "published_date": "2021-09-16T14:51:41.152141Z",
+            "renders": [
+                "24c5c5ec-436f-471c-b15e-1febfc224406",
+                "7cb87614-fa61-4c09-a842-7017ae0eadcf",
+                "b8bafe8f-8f69-46c3-a6f0-8be953d8e8aa"
+            ],
+            "renders_order": [
+                "b8bafe8f-8f69-46c3-a6f0-8be953d8e8aa",
+                "7cb87614-fa61-4c09-a842-7017ae0eadcf",
+                "24c5c5ec-436f-471c-b15e-1febfc224406"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576"
+            ],
+            "title": "TH Dirty Concrete",
+            "updated_date": "2023-08-07T07:29:22.947413Z",
+            "viewer_enabled": true,
+            "viewer_package": "2010305d-4b71-4438-95d0-f7e25e942180"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:38:33.009256Z",
+            "description": null,
+            "favorite": false,
+            "id": "c2099189-5d5d-4b38-b663-b20c22c63eac",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Cast_Iron_Damaged.mtlx",
+            "mtlx_material_name": "Cast_Iron_Damaged",
+            "notification_status": "None",
+            "packages": [
+                "9f1f5afd-bb5c-4228-aabc-aad61b75c9bb",
+                "915a85ab-4982-495f-85ab-af42c76068b1",
+                "b4016011-e5ae-4fb6-8c05-a2c5e669c286",
+                "d1e87478-456c-4f64-b2f8-5c1592c0015e",
+                "e4ccf581-cfe0-4a42-9ece-2a33a7f69f6c",
+                "a8c91d67-c227-431c-8f15-ad7044ab6c3f"
+            ],
+            "published_date": "2021-09-16T14:31:00.829909Z",
+            "renders": [
+                "2ba954a3-062a-4b23-a51f-55018d37ff0d",
+                "e3144a2f-f6e1-435b-9611-09e7f88b9ded",
+                "0ff4539a-641f-41c8-a1ac-546699c675eb"
+            ],
+            "renders_order": [
+                "0ff4539a-641f-41c8-a1ac-546699c675eb",
+                "e3144a2f-f6e1-435b-9611-09e7f88b9ded",
+                "2ba954a3-062a-4b23-a51f-55018d37ff0d"
+            ],
+            "status": "Published",
+            "tags": [
+                "b8eb2211-14f3-448a-a38a-d02ee8d54186",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "3edeb120-f54a-41cd-923a-fe36889d8fb9",
+                "a9b05ba0-08b9-462c-b9ed-19adde14e5ce",
+                "bf0fafeb-7aa3-4085-9fa1-85a6b82b14f7"
+            ],
+            "title": "Cast Iron Damaged",
+            "updated_date": "2023-08-07T07:29:22.950400Z",
+            "viewer_enabled": true,
+            "viewer_package": "b4016011-e5ae-4fb6-8c05-a2c5e669c286"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:38:13.038606Z",
+            "description": null,
+            "favorite": false,
+            "id": "1610803b-dad9-4c84-bc03-7a69c17d5074",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Bronze_Oxydized.mtlx",
+            "mtlx_material_name": "Bronze_Oxydized",
+            "notification_status": "None",
+            "packages": [
+                "dc197b79-7b11-4b48-9cae-86dbc6c0fa65",
+                "e1e907e9-3acd-4e76-85be-4cfa2505985f",
+                "c13d7529-7b6f-464e-8ea1-cf2dfbce1221",
+                "92ea87d0-5d5e-44db-9675-05ac8130e857",
+                "91ffcdad-f195-41b5-b4a8-f66b702ac817",
+                "0346fd5b-a2c4-4b9e-a507-9672e0ceaaf3"
+            ],
+            "published_date": "2021-09-16T14:32:24.561497Z",
+            "renders": [
+                "9ec31604-27d9-4f97-b770-6763cba03694",
+                "f1b4954e-5c6e-49eb-8de1-276779b7cc14",
+                "4fe165ee-8c65-48d8-af05-212f58bc6a83",
+                "f06cbd2c-e29f-457b-8085-67fc7739028c",
+                "14b52d89-41a7-415d-bd6a-d099f5ccb823"
+            ],
+            "renders_order": [
+                "f06cbd2c-e29f-457b-8085-67fc7739028c",
+                "14b52d89-41a7-415d-bd6a-d099f5ccb823",
+                "4fe165ee-8c65-48d8-af05-212f58bc6a83",
+                "f1b4954e-5c6e-49eb-8de1-276779b7cc14",
+                "9ec31604-27d9-4f97-b770-6763cba03694"
+            ],
+            "status": "Published",
+            "tags": [
+                "a7e50ef7-0587-4ca5-90e8-6caaa0980274",
+                "feaeffa2-baec-4dfc-827d-859f69fa2f27",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "973f0772-4fb6-4a66-912c-b5bee527436e",
+                "977feb60-7740-409c-8674-3f90b411d0ce"
+            ],
+            "title": "Bronze Oxydized",
+            "updated_date": "2023-08-07T07:29:22.953461Z",
+            "viewer_enabled": true,
+            "viewer_package": "c13d7529-7b6f-464e-8ea1-cf2dfbce1221"
+        },
+        {
+            "author": "AMD",
+            "category": "4f78f22d-0e34-42a4-ba85-829fe6af8c76",
+            "created_date": "2021-11-30T16:36:43.847670Z",
+            "description": null,
+            "favorite": false,
+            "id": "625d2246-755b-44cf-bd19-5c2f1c97a1af",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Perforated_Metal.mtlx",
+            "mtlx_material_name": "Perforated_Metal",
+            "notification_status": "None",
+            "packages": [
+                "071199a1-ec86-49d4-b44c-1383f7188337",
+                "fd2c9b85-ab3a-4bb3-a357-5839481a9d44",
+                "f3fd03af-c6ab-49f6-b508-bcbad6babcec",
+                "36c21980-1b66-4e22-b7df-75a75d8f8453",
+                "05a95a1f-3a82-4ebb-96c0-728c52e9272c",
+                "b7aaf798-e2fa-4967-9524-ed632cd056e6"
+            ],
+            "published_date": "2021-09-16T14:37:47.946636Z",
+            "renders": [
+                "7f622af9-3961-438a-b7ff-ff594afcbb27",
+                "9ccb5dbe-f979-444a-8541-40a730ea3ca7",
+                "6d8d35db-837a-4d4b-870c-9c5a8ff328cd"
+            ],
+            "renders_order": [
+                "6d8d35db-837a-4d4b-870c-9c5a8ff328cd",
+                "9ccb5dbe-f979-444a-8541-40a730ea3ca7",
+                "7f622af9-3961-438a-b7ff-ff594afcbb27"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "3d7829b8-4f70-4ac3-811c-eea13c07851c",
+                "b13cab4a-74f1-4ec8-89c4-b8450e6f535e"
+            ],
+            "title": "Perforated Metal",
+            "updated_date": "2023-08-07T07:29:22.956610Z",
+            "viewer_enabled": true,
+            "viewer_package": "f3fd03af-c6ab-49f6-b508-bcbad6babcec"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:36:22.331774Z",
+            "description": null,
+            "favorite": false,
+            "id": "01ca2bda-f072-4349-8ee0-353ed5f9f555",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Stainless_Steel_Brushed.mtlx",
+            "mtlx_material_name": "Stainless_Steel_Brushed",
+            "notification_status": "None",
+            "packages": [
+                "59b408ce-b2de-4dea-a52f-da3dd3e41912",
+                "6bf680ca-5b50-47c5-922d-b3de8f14de31",
+                "2c79dbbe-6d06-4819-9100-d500d1a7b1bf",
+                "eaeceac1-6f4b-4948-ae9b-afa078411743",
+                "f83761ba-718b-43c7-a9e0-44debf6941c4",
+                "12b6ffae-8d62-4162-bfb1-b956bbfaa25c"
+            ],
+            "published_date": "2021-09-16T14:38:15.425292Z",
+            "renders": [
+                "c742d6ca-dcca-4b8c-8215-e11292105edf",
+                "4da3de5c-e1b7-444f-916e-40b681dc1c95",
+                "eeb5b680-2525-4a68-a6d7-aa48d97a5ab3"
+            ],
+            "renders_order": [
+                "eeb5b680-2525-4a68-a6d7-aa48d97a5ab3",
+                "4da3de5c-e1b7-444f-916e-40b681dc1c95",
+                "c742d6ca-dcca-4b8c-8215-e11292105edf"
+            ],
+            "status": "Published",
+            "tags": [
+                "7ef2ed78-69c1-4d50-b3f8-e2092ce38128",
+                "4d6c4872-2a6f-4ace-a262-111765d908c6",
+                "3eef387d-644c-4a1d-9e51-6a1c07baeebe",
+                "3edeb120-f54a-41cd-923a-fe36889d8fb9",
+                "0047cdaa-0f7d-4df6-a6b8-b9a3a9fe8015",
+                "3afe2f10-a5c9-403b-bbc0-2a6afadabca8"
+            ],
+            "title": "Stainless Steel Brushed",
+            "updated_date": "2023-08-07T07:29:22.962327Z",
+            "viewer_enabled": true,
+            "viewer_package": "6bf680ca-5b50-47c5-922d-b3de8f14de31"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:36:07.423993Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/factory_wall",
+            "favorite": false,
+            "id": "f89fa8d8-02aa-4192-96b9-beb2e321448a",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Factory_Wall.mtlx",
+            "mtlx_material_name": "TH_Factory_Wall",
+            "notification_status": "None",
+            "packages": [
+                "04c8c9a8-b651-46c5-a3a3-28dafa9828fb",
+                "e88e428e-ba9e-494f-b7f9-1132d04fc63c",
+                "789b025a-8eee-40b3-a709-26f6d58a5402",
+                "e64022bb-ef88-41f5-8d70-c186ad79cf8d"
+            ],
+            "published_date": "2021-09-16T14:38:40.962485Z",
+            "renders": [
+                "fe6e7f8d-42f7-4cec-99b2-18eb89d50527",
+                "a688a5d0-0d86-4d40-8caf-708882a00e5c",
+                "1509997d-d8d1-4cf3-986f-b5ef08c7d1f5"
+            ],
+            "renders_order": [
+                "1509997d-d8d1-4cf3-986f-b5ef08c7d1f5",
+                "a688a5d0-0d86-4d40-8caf-708882a00e5c",
+                "fe6e7f8d-42f7-4cec-99b2-18eb89d50527"
+            ],
+            "status": "Published",
+            "tags": [
+                "a15d3521-b6c1-4776-8214-91a2ce416b3b",
+                "507407c1-3263-47fb-8671-abcfe81d2943",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "6cc64158-dda3-415c-a44f-b7d02c0eb4e1",
+                "e61d737f-92ed-4e74-bf8c-8750ed70a6b5"
+            ],
+            "title": "TH Factory Wall",
+            "updated_date": "2023-08-07T07:29:22.965592Z",
+            "viewer_enabled": true,
+            "viewer_package": "789b025a-8eee-40b3-a709-26f6d58a5402"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:35:50.314412Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/green_metal_rust",
+            "favorite": false,
+            "id": "ea90d193-c53c-45b9-b548-1e64f8d3b26f",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Green_Metal_Rust.mtlx",
+            "mtlx_material_name": "TH_Green_Metal_Rust",
+            "notification_status": "None",
+            "packages": [
+                "6ba7944d-4eae-44c0-b61f-cb566a85f979",
+                "4a88bd53-67e1-48bb-b775-3402e2f0c3f4",
+                "4e70e9d0-f5b1-45d9-a55e-e59e17e9854d",
+                "118e55c6-f9a3-4584-9285-23d3979a2e03"
+            ],
+            "published_date": "2021-09-16T14:39:15.718854Z",
+            "renders": [
+                "5cb029f4-cf0d-4c11-843a-6ba18274c77e",
+                "793c88ad-8122-439b-8378-f3387906e0d9",
+                "cbf42f92-fde6-4132-9ecf-23f9ea9977ae"
+            ],
+            "renders_order": [
+                "cbf42f92-fde6-4132-9ecf-23f9ea9977ae",
+                "793c88ad-8122-439b-8378-f3387906e0d9",
+                "5cb029f4-cf0d-4c11-843a-6ba18274c77e"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "6cc64158-dda3-415c-a44f-b7d02c0eb4e1",
+                "a9b05ba0-08b9-462c-b9ed-19adde14e5ce",
+                "e61d737f-92ed-4e74-bf8c-8750ed70a6b5"
+            ],
+            "title": "TH Green Metal Rust",
+            "updated_date": "2023-08-07T07:29:22.968701Z",
+            "viewer_enabled": true,
+            "viewer_package": "4e70e9d0-f5b1-45d9-a55e-e59e17e9854d"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:35:31.907937Z",
+            "description": "Texture Haven material, by Rob Tuytel. Original material: https://polyhaven.com/a/metal_plate",
+            "favorite": false,
+            "id": "15e21b09-6a9b-47e0-89cc-ae8503f94735",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Metal_Plate.mtlx",
+            "mtlx_material_name": "TH_Metal_Plate",
+            "notification_status": "None",
+            "packages": [
+                "0549e0a5-9490-4218-82d6-da377998f923",
+                "f10f19b4-0b2f-4443-add5-54f07bde82ea",
+                "a66b3eef-3134-4e84-ba3f-f4ac450d852a",
+                "ed49416f-13f8-4756-b194-0eea8167d7a6"
+            ],
+            "published_date": "2021-09-16T14:40:58.947050Z",
+            "renders": [
+                "e7b41926-0870-4298-9b09-4c999e8c0933",
+                "57d33646-848f-4569-ba29-0d047abaef12",
+                "786f7c64-4fb6-43c9-994f-2b81ed53c2ca"
+            ],
+            "renders_order": [
+                "786f7c64-4fb6-43c9-994f-2b81ed53c2ca",
+                "57d33646-848f-4569-ba29-0d047abaef12",
+                "e7b41926-0870-4298-9b09-4c999e8c0933"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "41565ad9-8377-4de3-a41f-c276b21e4029",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "6cc64158-dda3-415c-a44f-b7d02c0eb4e1",
+                "8b2f0b29-7b98-4f12-85b7-983a7a5c6619"
+            ],
+            "title": "TH Metal Plate",
+            "updated_date": "2023-08-07T07:29:22.971909Z",
+            "viewer_enabled": true,
+            "viewer_package": "a66b3eef-3134-4e84-ba3f-f4ac450d852a"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:35:15.188991Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/rusty_metal",
+            "favorite": false,
+            "id": "4cf13ec1-802e-4a17-8d7d-0a0655f343db",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Rusty_Metallic_Profile.mtlx",
+            "mtlx_material_name": "TH_Rusty_Metallic_Profile",
+            "notification_status": "None",
+            "packages": [
+                "4d547cf5-1cf9-4947-96aa-3b4914ea5e85",
+                "05fabc17-2d53-4e4a-b7eb-559555c81558",
+                "284d4790-627e-4ca7-87da-64ce6bcda4fd",
+                "102bf758-5a73-4216-9e52-516dc8421389"
+            ],
+            "published_date": "2021-09-16T14:43:14.939928Z",
+            "renders": [
+                "db45db34-1163-42bd-ba8b-2a266d053bbd",
+                "1fef9f2c-b4ea-4094-9837-9b9576aeec9d",
+                "92407f87-6963-4042-ae78-60866788b47a"
+            ],
+            "renders_order": [
+                "92407f87-6963-4042-ae78-60866788b47a",
+                "1fef9f2c-b4ea-4094-9837-9b9576aeec9d",
+                "db45db34-1163-42bd-ba8b-2a266d053bbd"
+            ],
+            "status": "Published",
+            "tags": [
+                "35cdcf27-7531-410f-96e4-758edb6982dc",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "8b2f0b29-7b98-4f12-85b7-983a7a5c6619",
+                "6c7742b1-e5d8-42d3-956d-52866de7e003",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH Rusty Metallic Profile",
+            "updated_date": "2023-08-07T07:29:22.975089Z",
+            "viewer_enabled": true,
+            "viewer_package": "284d4790-627e-4ca7-87da-64ce6bcda4fd"
+        },
+        {
+            "author": "AMD",
+            "category": "6e86c85a-a30b-4977-8518-d0ec84834356",
+            "created_date": "2021-11-30T16:34:45.608536Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/rusty_metal_02",
+            "favorite": false,
+            "id": "b68f2f17-3952-4d30-a6e4-f6c2dfd08ddf",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Rusty_Metal.mtlx",
+            "mtlx_material_name": "TH_Rusty_Metal",
+            "notification_status": "None",
+            "packages": [
+                "3beb843a-9e3d-454a-9641-49628af220a0",
+                "7a28e017-ab21-4098-bc62-8ef35d78d3cb",
+                "1f5a7565-c8de-4489-ae99-9f2304c162c3",
+                "e9fb9a1b-c717-462b-9067-386b4e15d855"
+            ],
+            "published_date": "2021-09-16T14:44:42.959652Z",
+            "renders": [
+                "df0f22e4-dc70-459e-aefc-fc97c5c315c1",
+                "4d6ef3f5-bd89-46da-ad3e-9fe513465d18",
+                "92733adf-d851-4ece-9363-604022f38cbd"
+            ],
+            "renders_order": [
+                "df0f22e4-dc70-459e-aefc-fc97c5c315c1",
+                "92733adf-d851-4ece-9363-604022f38cbd",
+                "4d6ef3f5-bd89-46da-ad3e-9fe513465d18"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d6c4872-2a6f-4ace-a262-111765d908c6",
+                "3edeb120-f54a-41cd-923a-fe36889d8fb9",
+                "8b2f0b29-7b98-4f12-85b7-983a7a5c6619"
+            ],
+            "title": "TH Rusty Metal",
+            "updated_date": "2023-08-07T07:29:22.978279Z",
+            "viewer_enabled": true,
+            "viewer_package": "7a28e017-ab21-4098-bc62-8ef35d78d3cb"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:34:19.467547Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/book_pattern",
+            "favorite": false,
+            "id": "b654fa6b-0acf-42a2-bf09-8efa6597ec98",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Book_Pattern.mtlx",
+            "mtlx_material_name": "TH_Book_Pattern",
+            "notification_status": "None",
+            "packages": [
+                "1e527585-1ccf-4a6c-afb7-61589d49abe7",
+                "07bcbeaf-1bbb-4051-b9d0-856349fdbf6b",
+                "cb274ec0-3bc9-425f-a4cf-f9c983635c09",
+                "51c0ccb0-5394-47c0-8deb-493c65ee4adf"
+            ],
+            "published_date": "2021-09-16T15:33:58.052839Z",
+            "renders": [
+                "a0378266-24ed-489f-8b2a-7a209e877b4e",
+                "e51fd6a0-815f-41bc-8224-0229d21bb016",
+                "967bdd7c-a61b-4b8f-b038-c154b400a7e5"
+            ],
+            "renders_order": [
+                "967bdd7c-a61b-4b8f-b038-c154b400a7e5",
+                "e51fd6a0-815f-41bc-8224-0229d21bb016",
+                "a0378266-24ed-489f-8b2a-7a209e877b4e"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "cc1aeb54-d34a-4ca4-8574-731eaab18e17",
+                "17a4962c-c2bc-4df8-acb2-58b311a7adf6",
+                "530acfea-67bd-4485-9145-9005c2ab288f",
+                "bc355885-2b0f-4dc8-8f69-9b3812cc6209"
+            ],
+            "title": "TH: Book Pattern",
+            "updated_date": "2023-08-07T07:29:22.981697Z",
+            "viewer_enabled": true,
+            "viewer_package": "cb274ec0-3bc9-425f-a4cf-f9c983635c09"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:33:53.840447Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/brown_leather",
+            "favorite": false,
+            "id": "2f568489-6b81-43ab-aa33-cc4f7e32fdce",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Brown_Leather.mtlx",
+            "mtlx_material_name": "TH_Brown_Leather",
+            "notification_status": "None",
+            "packages": [
+                "05b3399c-f3cd-4e76-bf86-865408fc1de8",
+                "e50691e9-a589-4425-a73f-b17531aa23fd",
+                "1adcb647-fb79-41d5-8f63-6cb7f9e2ebcc",
+                "d574d280-5440-4bf8-8f04-51592bd7d151"
+            ],
+            "published_date": "2021-09-16T15:33:59.866542Z",
+            "renders": [
+                "510e3170-b6a3-4628-9d0c-9f7c23a6a8be",
+                "e6bf58fa-6359-41ff-84f3-f9bce3c01617",
+                "373c5e70-4caa-4405-9430-26bd44cd128f"
+            ],
+            "renders_order": [
+                "373c5e70-4caa-4405-9430-26bd44cd128f",
+                "510e3170-b6a3-4628-9d0c-9f7c23a6a8be",
+                "e6bf58fa-6359-41ff-84f3-f9bce3c01617"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "1fca4107-7187-4b65-8b00-375624b5256a",
+                "994d177d-f7f1-4e44-a321-545b1c53a2d8"
+            ],
+            "title": "TH: Brown Leather",
+            "updated_date": "2023-08-07T07:29:22.984848Z",
+            "viewer_enabled": true,
+            "viewer_package": "1adcb647-fb79-41d5-8f63-6cb7f9e2ebcc"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:33:28.840079Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/denim_fabric",
+            "favorite": false,
+            "id": "09f0a77a-56c1-495f-a7b7-1b3c2e6e4f98",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Blue_Denim_Fabric.mtlx",
+            "mtlx_material_name": "TH_Blue_Denim_Fabric",
+            "notification_status": "None",
+            "packages": [
+                "72a0e26f-6068-49a3-aef6-e3fcf3dc8b5e",
+                "54d736ed-62fe-44e9-a4fa-4c7ed8cce038",
+                "6371c276-ba25-4b0f-ae1f-e60862a56a3d",
+                "f47f1ef2-4fd9-4b60-899f-7708567618ec"
+            ],
+            "published_date": "2021-09-16T15:34:10.843438Z",
+            "renders": [
+                "7e82f9cf-663a-421e-acbe-94df39f31c5b",
+                "188704d5-bd33-4af5-a1c5-ff4aa59726f6",
+                "f45340fe-200d-4f53-82a7-9a4a3e20b87e"
+            ],
+            "renders_order": [
+                "f45340fe-200d-4f53-82a7-9a4a3e20b87e",
+                "188704d5-bd33-4af5-a1c5-ff4aa59726f6",
+                "7e82f9cf-663a-421e-acbe-94df39f31c5b"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "9381fbf1-9205-4b5e-9d09-733a56a7dad8",
+                "a0395bd8-7b9f-4b24-9e42-1e329fcfb52d",
+                "bae8db9d-8169-4da0-95de-a7a64c2686e0"
+            ],
+            "title": "TH: Blue Denim Fabric",
+            "updated_date": "2023-08-07T07:29:22.988111Z",
+            "viewer_enabled": true,
+            "viewer_package": "6371c276-ba25-4b0f-ae1f-e60862a56a3d"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:33:07.463809Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/denmin_fabric_02",
+            "favorite": false,
+            "id": "177a9f78-e726-4e3b-929a-a9205af1bc7b",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Denim_Fabric.mtlx",
+            "mtlx_material_name": "TH_Denim_Fabric",
+            "notification_status": "None",
+            "packages": [
+                "b19ef1fb-1ef7-4843-8381-8f8220cc006a",
+                "25d1d7b4-0625-4772-8e0e-504727d7816c",
+                "e08746f1-5011-406f-9b86-77cdbcfe29cc",
+                "c2ec4309-b928-4987-b3c0-774b0b2d753a"
+            ],
+            "published_date": "2021-09-16T15:34:12.555317Z",
+            "renders": [
+                "6082f10e-d1b2-450e-9641-3f67e6472c69",
+                "ccd402cc-507c-4ad7-9c3d-0d7b4941155e",
+                "52c34c44-ba8e-4432-b58d-1135707309bd"
+            ],
+            "renders_order": [
+                "52c34c44-ba8e-4432-b58d-1135707309bd",
+                "ccd402cc-507c-4ad7-9c3d-0d7b4941155e",
+                "6082f10e-d1b2-450e-9641-3f67e6472c69"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "9381fbf1-9205-4b5e-9d09-733a56a7dad8",
+                "a0395bd8-7b9f-4b24-9e42-1e329fcfb52d",
+                "bae8db9d-8169-4da0-95de-a7a64c2686e0"
+            ],
+            "title": "TH: Denim Fabric",
+            "updated_date": "2023-08-07T07:29:22.991266Z",
+            "viewer_enabled": true,
+            "viewer_package": "25d1d7b4-0625-4772-8e0e-504727d7816c"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:32:46.181091Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/fabric_leather_01",
+            "favorite": false,
+            "id": "9bd64782-17d1-4bcf-9726-446cbb3f4bee",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Brown_Fabric_Leather.mtlx",
+            "mtlx_material_name": "TH_Brown_Fabric_Leather",
+            "notification_status": "None",
+            "packages": [
+                "6772eb97-2156-4d8a-a1d8-f902b1b4ee0d",
+                "6f2bfca0-f2e4-4c85-b512-05c4df6677f2",
+                "bbb0a5e5-5684-4ce8-bf4f-0bfa9bd71ea1",
+                "af3232e5-2aa3-4d9b-9065-f3a046b0a6b5"
+            ],
+            "published_date": "2021-09-16T15:34:01.409145Z",
+            "renders": [
+                "362b1bb2-d7ff-4a40-ab7b-f604b3677b96",
+                "ec4106d8-dede-4558-8672-2a60c21d4cd7",
+                "bb020ae2-012e-4992-bf96-e48ea46b7155"
+            ],
+            "renders_order": [
+                "bb020ae2-012e-4992-bf96-e48ea46b7155",
+                "ec4106d8-dede-4558-8672-2a60c21d4cd7",
+                "362b1bb2-d7ff-4a40-ab7b-f604b3677b96"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "994d177d-f7f1-4e44-a321-545b1c53a2d8",
+                "0d4e8971-27ca-4e24-89fa-56aa241012f3"
+            ],
+            "title": "TH: Brown Fabric Leather",
+            "updated_date": "2023-08-07T07:29:22.994205Z",
+            "viewer_enabled": true,
+            "viewer_package": "bbb0a5e5-5684-4ce8-bf4f-0bfa9bd71ea1"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:32:21.196301Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/fabric_leather_02",
+            "favorite": false,
+            "id": "efc17a30-c730-4923-85cf-b300a123ae4b",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Fabric_Leather.mtlx",
+            "mtlx_material_name": "TH_Fabric_Leather",
+            "notification_status": "None",
+            "packages": [
+                "3b928ba6-edcc-4ca5-8652-903223572a2a",
+                "b8cb3880-849d-4b91-accf-134edec22efb",
+                "aaeff658-ec73-499f-b137-08e8cd92532d",
+                "2341d048-031a-4526-8471-e61288d522ce"
+            ],
+            "published_date": "2021-09-16T15:34:03.548402Z",
+            "renders": [
+                "ab24be62-0d63-49dd-8819-b65524d50631",
+                "a060f7b3-874a-427d-80eb-0f1825c1f722",
+                "1b4a9564-3ac1-41a6-936a-d992d46731c3"
+            ],
+            "renders_order": [
+                "1b4a9564-3ac1-41a6-936a-d992d46731c3",
+                "ab24be62-0d63-49dd-8819-b65524d50631",
+                "a060f7b3-874a-427d-80eb-0f1825c1f722"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "1fca4107-7187-4b65-8b00-375624b5256a",
+                "994d177d-f7f1-4e44-a321-545b1c53a2d8",
+                "0d4e8971-27ca-4e24-89fa-56aa241012f3"
+            ],
+            "title": "TH: Fabric Leather",
+            "updated_date": "2023-08-07T07:29:22.997324Z",
+            "viewer_enabled": true,
+            "viewer_package": "aaeff658-ec73-499f-b137-08e8cd92532d"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:31:42.444471Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/fabric_pattern_05",
+            "favorite": false,
+            "id": "f0a90849-b4ad-4e64-95f8-d01766e9df14",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Tablecloth_Fabric_Pattern.mtlx",
+            "mtlx_material_name": "TH_Tablecloth_Fabric_Pattern",
+            "notification_status": "None",
+            "packages": [
+                "6026185e-83af-45ad-aac3-e45bab1a0b61",
+                "02d1a599-3824-4c51-be29-8f05f6d25dd4",
+                "d0d21416-11be-43e6-a475-3f27b1ba5321",
+                "c6a757fa-e83d-4873-87fd-310dd955064b"
+            ],
+            "published_date": "2021-09-16T15:33:56.095372Z",
+            "renders": [
+                "91eb1fe3-f2de-4030-aba3-ff2bf0c89715",
+                "c2651ebe-2a9f-4743-b3b1-ac05999b5e86",
+                "2394ea23-1943-436e-ac37-80c0f187f142"
+            ],
+            "renders_order": [
+                "2394ea23-1943-436e-ac37-80c0f187f142",
+                "91eb1fe3-f2de-4030-aba3-ff2bf0c89715",
+                "c2651ebe-2a9f-4743-b3b1-ac05999b5e86"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "9381fbf1-9205-4b5e-9d09-733a56a7dad8",
+                "bc355885-2b0f-4dc8-8f69-9b3812cc6209",
+                "f8a246bc-6323-4686-b953-2ffa99229b71"
+            ],
+            "title": "TH: Tablecloth Fabric Pattern",
+            "updated_date": "2023-08-07T07:29:23.000394Z",
+            "viewer_enabled": true,
+            "viewer_package": "d0d21416-11be-43e6-a475-3f27b1ba5321"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:31:16.334613Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/fabric_pattern_07",
+            "favorite": false,
+            "id": "d67ac55e-1d4e-481c-acb5-505e9ad55f77",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Red_Fabric_Pattern.mtlx",
+            "mtlx_material_name": "TH_Red_Fabric_Pattern",
+            "notification_status": "None",
+            "packages": [
+                "eb38d5e0-6bc8-4fdb-a645-1e15a035c72a",
+                "63df266d-4342-4212-845d-6acc3887f746",
+                "3389a940-cde5-4204-ad6d-dfc9955f9dc4",
+                "217adc6e-38bf-4c14-8250-d7b51b2aa7a8"
+            ],
+            "published_date": "2021-09-16T15:33:54.148497Z",
+            "renders": [
+                "432b49b4-3587-4c15-abbc-cf16ee4d98e5",
+                "6bad0c5c-f7e5-482a-b3bc-ea1ee7234d54",
+                "84a4fd75-cd52-4db9-b508-63af7b4b7b31"
+            ],
+            "renders_order": [
+                "84a4fd75-cd52-4db9-b508-63af7b4b7b31",
+                "6bad0c5c-f7e5-482a-b3bc-ea1ee7234d54",
+                "432b49b4-3587-4c15-abbc-cf16ee4d98e5"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "9381fbf1-9205-4b5e-9d09-733a56a7dad8",
+                "bc355885-2b0f-4dc8-8f69-9b3812cc6209",
+                "f8a246bc-6323-4686-b953-2ffa99229b71"
+            ],
+            "title": "TH: Red Fabric Pattern",
+            "updated_date": "2023-08-07T07:29:23.003714Z",
+            "viewer_enabled": true,
+            "viewer_package": "3389a940-cde5-4204-ad6d-dfc9955f9dc4"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:30:53.379670Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/leather_red_02",
+            "favorite": false,
+            "id": "95ad3f02-65e0-4e9b-a81f-9d85470850f1",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Red_Large_Leather.mtlx",
+            "mtlx_material_name": "TH_Red_Large_Leather",
+            "notification_status": "None",
+            "packages": [
+                "99735ab7-d972-4c8a-98f8-25957c276cd8",
+                "9df4d28a-4237-4cf7-a138-c5225428b054",
+                "0f7ea5aa-ffff-4a87-9f2b-a2ed562f72b9",
+                "52ffb6c5-916d-42d8-9462-e7576e05a17e"
+            ],
+            "published_date": "2021-09-16T15:34:05.217267Z",
+            "renders": [
+                "caf4dc69-6b9e-4be8-abfd-52cab6788017",
+                "7e7bac18-5dfd-46e9-914d-859506d9de18",
+                "0b9b121f-c6a9-4a6e-84e9-9500bc7e4966"
+            ],
+            "renders_order": [
+                "0b9b121f-c6a9-4a6e-84e9-9500bc7e4966",
+                "7e7bac18-5dfd-46e9-914d-859506d9de18",
+                "caf4dc69-6b9e-4be8-abfd-52cab6788017"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "c5371c97-fa42-4b4c-ad2c-2bc831f3ceba",
+                "994d177d-f7f1-4e44-a321-545b1c53a2d8",
+                "f782e0f0-89c7-4329-a711-0e41e9bc6017"
+            ],
+            "title": "TH: Red Large Leather",
+            "updated_date": "2023-08-07T07:29:23.006997Z",
+            "viewer_enabled": true,
+            "viewer_package": "0f7ea5aa-ffff-4a87-9f2b-a2ed562f72b9"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:30:32.316755Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/leather_red_03",
+            "favorite": false,
+            "id": "01758ae2-db32-4cb8-b9e5-39ef658ccdaf",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Red_Leather.mtlx",
+            "mtlx_material_name": "TH_Red_Leather",
+            "notification_status": "None",
+            "packages": [
+                "a0af0f35-a6c7-4a4c-b5ab-32670f4fd05c",
+                "e2f70535-2ba8-4c1e-aefe-ca65d671b5c5",
+                "bda74165-ebff-4e98-b628-9a8bd749c9a8",
+                "2dd5f3d7-f09b-49df-9169-ee9bc8c26e97"
+            ],
+            "published_date": "2021-09-16T15:34:06.880891Z",
+            "renders": [
+                "bf89209e-cd36-4f17-97e3-f3bd359765c5",
+                "124986a0-25e9-436e-9c23-257c2f707846",
+                "4748488e-954d-4577-b93b-43a7ded1d272"
+            ],
+            "renders_order": [
+                "4748488e-954d-4577-b93b-43a7ded1d272",
+                "124986a0-25e9-436e-9c23-257c2f707846",
+                "bf89209e-cd36-4f17-97e3-f3bd359765c5"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "c5371c97-fa42-4b4c-ad2c-2bc831f3ceba",
+                "994d177d-f7f1-4e44-a321-545b1c53a2d8",
+                "547d2a38-e5f2-425c-b91c-4eed4e95d487",
+                "f782e0f0-89c7-4329-a711-0e41e9bc6017"
+            ],
+            "title": "TH: Red Leather",
+            "updated_date": "2023-08-07T07:29:23.010071Z",
+            "viewer_enabled": true,
+            "viewer_package": "bda74165-ebff-4e98-b628-9a8bd749c9a8"
+        },
+        {
+            "author": "AMD",
+            "category": "7f13f8f7-3400-474b-9082-c5edf78ed319",
+            "created_date": "2021-11-30T16:30:07.675616Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/leather_white",
+            "favorite": false,
+            "id": "21575c84-150c-4e8f-a585-02d6c1745836",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Leather_White.mtlx",
+            "mtlx_material_name": "TH_Leather_White",
+            "notification_status": "None",
+            "packages": [
+                "ad4d6bbd-d6e8-4827-a5ef-670ae2102b5f",
+                "5aee45f0-3bfa-43bf-897a-40b6d4180071",
+                "e3763b97-1927-45b7-af83-dfc09516c25b",
+                "b31c8a79-0893-403d-b786-1ada9a78388a"
+            ],
+            "published_date": "2021-09-16T15:34:14.447831Z",
+            "renders": [
+                "4db212f7-796b-4f26-9097-158d1a07fb28",
+                "10469248-4510-47bf-868e-b78b46079d73",
+                "005ce221-0b1a-470e-9a55-7053fc4ef626"
+            ],
+            "renders_order": [
+                "005ce221-0b1a-470e-9a55-7053fc4ef626",
+                "10469248-4510-47bf-868e-b78b46079d73",
+                "4db212f7-796b-4f26-9097-158d1a07fb28"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "994d177d-f7f1-4e44-a321-545b1c53a2d8",
+                "f782e0f0-89c7-4329-a711-0e41e9bc6017",
+                "c626ed0f-c58b-4fe6-ad69-2f2981070954"
+            ],
+            "title": "TH: Leather White",
+            "updated_date": "2023-08-07T07:29:23.013116Z",
+            "viewer_enabled": true,
+            "viewer_package": "e3763b97-1927-45b7-af83-dfc09516c25b"
+        },
+        {
+            "author": "AMD",
+            "category": "a77f0f4a-61b3-4a5c-8240-bde22c1ab44c",
+            "created_date": "2021-11-30T16:29:50.142953Z",
+            "description": null,
+            "favorite": false,
+            "id": "988e11eb-79ee-4d85-b4d8-0067eb36bfba",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Bark_Base.mtlx",
+            "mtlx_material_name": "Bark_Base",
+            "notification_status": "None",
+            "packages": [
+                "d4cdb88e-29fe-493e-af3e-c6265b314b27",
+                "299c2f33-f02a-4d3b-837d-0a1645329adf",
+                "6361cecc-7961-419a-a728-3912621afab1",
+                "227d5edc-9fac-4055-b416-71a87b492204",
+                "34c96af9-3914-430a-9a10-cc1852dd61e1",
+                "62e2867d-a4f6-4e40-8bd4-bb6f4fbc036f"
+            ],
+            "published_date": "2021-09-16T15:48:18.814923Z",
+            "renders": [
+                "9a2e4ce2-6421-4306-9526-699d3be20aab",
+                "2ac655f6-0678-473f-9eca-ea0b68240f68",
+                "cf165b06-46a9-4975-860d-06dd692b16bf"
+            ],
+            "renders_order": [
+                "cf165b06-46a9-4975-860d-06dd692b16bf",
+                "2ac655f6-0678-473f-9eca-ea0b68240f68",
+                "9a2e4ce2-6421-4306-9526-699d3be20aab"
+            ],
+            "status": "Published",
+            "tags": [
+                "2e88fa4d-6411-4594-ab6a-14757d9d3ca3",
+                "36776180-da6b-4134-aa06-aa0940b49818",
+                "bcfdda67-f208-420d-8b08-349df809df79"
+            ],
+            "title": "Bark Base",
+            "updated_date": "2023-08-07T07:29:23.017537Z",
+            "viewer_enabled": true,
+            "viewer_package": "227d5edc-9fac-4055-b416-71a87b492204"
+        },
+        {
+            "author": "AMD",
+            "category": "a77f0f4a-61b3-4a5c-8240-bde22c1ab44c",
+            "created_date": "2021-11-30T16:29:33.033173Z",
+            "description": null,
+            "favorite": false,
+            "id": "d2197d2d-4316-43d4-9088-e9e504b8feb7",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Bark_Beech.mtlx",
+            "mtlx_material_name": "Bark_Beech",
+            "notification_status": "None",
+            "packages": [
+                "4a58dca0-ff70-4703-9e83-4bf4a7fa91ac",
+                "63735adb-7e72-4c93-a071-d89c4fac4bfe",
+                "e8d52e70-39d3-4811-8abc-b0a4c138f390",
+                "53d3c947-bddb-41bd-b1af-f1dd5af9f3fe",
+                "d8cc8799-3b0a-41af-9dce-d16cb28ab6b3",
+                "00cf82ef-e94a-4ce5-815a-1848c0a4c7d6"
+            ],
+            "published_date": "2021-09-16T15:48:21.308450Z",
+            "renders": [
+                "6fecfefb-56a6-4819-87d8-b649666b3afa",
+                "bc0d300a-e162-429b-8ab0-45d3bc8c3362",
+                "fbd04ea7-9cbd-4643-9056-6640ce5df2fd"
+            ],
+            "renders_order": [
+                "fbd04ea7-9cbd-4643-9056-6640ce5df2fd",
+                "bc0d300a-e162-429b-8ab0-45d3bc8c3362",
+                "6fecfefb-56a6-4819-87d8-b649666b3afa"
+            ],
+            "status": "Published",
+            "tags": [
+                "48dadfd1-1137-48a3-8c48-86a30034aeb6",
+                "2e88fa4d-6411-4594-ab6a-14757d9d3ca3",
+                "36776180-da6b-4134-aa06-aa0940b49818",
+                "bcfdda67-f208-420d-8b08-349df809df79"
+            ],
+            "title": "Bark Beech",
+            "updated_date": "2023-08-07T07:29:23.024834Z",
+            "viewer_enabled": true,
+            "viewer_package": "53d3c947-bddb-41bd-b1af-f1dd5af9f3fe"
+        },
+        {
+            "author": "AMD",
+            "category": "a77f0f4a-61b3-4a5c-8240-bde22c1ab44c",
+            "created_date": "2021-11-30T16:29:09.501385Z",
+            "description": null,
+            "favorite": false,
+            "id": "c0b85cb7-8406-4c2d-9933-3b5b8682d492",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Bark_Oak.mtlx",
+            "mtlx_material_name": "Bark_Oak",
+            "notification_status": "None",
+            "packages": [
+                "f7a249a3-cb43-464a-a064-69bafbea0bc1",
+                "2d7bd24a-0f8f-4d21-b3ee-705b28d158a4",
+                "19cfdae6-8bae-49e0-9241-4f7f7f0912eb",
+                "c5867f90-2052-4fed-b95b-43ac85fe2a76",
+                "f67a2dc7-d12d-4081-9717-43ce2f9443b5",
+                "522ae145-4c3f-47fb-94eb-f414d486b00f"
+            ],
+            "published_date": "2021-09-16T15:48:24.201067Z",
+            "renders": [
+                "6c131d88-3e50-40d9-b399-b3c09370c034",
+                "47970027-fa36-477f-a7ae-9d640b761eea",
+                "4309ed0d-052c-455f-aae9-e8f668c92726"
+            ],
+            "renders_order": [
+                "4309ed0d-052c-455f-aae9-e8f668c92726",
+                "47970027-fa36-477f-a7ae-9d640b761eea",
+                "6c131d88-3e50-40d9-b399-b3c09370c034"
+            ],
+            "status": "Published",
+            "tags": [
+                "2e88fa4d-6411-4594-ab6a-14757d9d3ca3",
+                "3eb2f53e-8038-4767-a220-437de4645e34",
+                "36776180-da6b-4134-aa06-aa0940b49818",
+                "bcfdda67-f208-420d-8b08-349df809df79"
+            ],
+            "title": "Bark Oak",
+            "updated_date": "2023-08-07T07:29:23.028637Z",
+            "viewer_enabled": true,
+            "viewer_package": "19cfdae6-8bae-49e0-9241-4f7f7f0912eb"
+        },
+        {
+            "author": "AMD",
+            "category": "a77f0f4a-61b3-4a5c-8240-bde22c1ab44c",
+            "created_date": "2021-11-30T16:28:49.186545Z",
+            "description": null,
+            "favorite": false,
+            "id": "6401c64f-5068-4302-a2d5-6e8193b03237",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Bark_Pine.mtlx",
+            "mtlx_material_name": "Bark_Pine",
+            "notification_status": "None",
+            "packages": [
+                "5f493ddf-adb3-41f7-a73a-1960b7e0a184",
+                "826318d0-ea02-4283-a9a9-faa88ec9d0d6",
+                "db64631f-cf53-4d17-9c8b-b2f00c01ca0e",
+                "ecaf0608-bc0b-4f0e-b1f4-501c69ba2a1d",
+                "6d1f4bd0-08d5-48df-98e7-fc70fb3c8763",
+                "dd2424d8-77e9-416f-ab92-d82baaa0dd35"
+            ],
+            "published_date": "2021-09-16T15:48:26.519093Z",
+            "renders": [
+                "37f7bd61-2c84-4401-b3eb-07b8e59ed785",
+                "de85b10d-9cf3-4737-8a72-a2fa48c447fc",
+                "86d31755-ff3e-464e-bfce-422ffdd68711",
+                "c4770f1f-d94d-423d-9386-8d299b6409f2"
+            ],
+            "renders_order": [
+                "c4770f1f-d94d-423d-9386-8d299b6409f2",
+                "86d31755-ff3e-464e-bfce-422ffdd68711",
+                "de85b10d-9cf3-4737-8a72-a2fa48c447fc",
+                "37f7bd61-2c84-4401-b3eb-07b8e59ed785"
+            ],
+            "status": "Published",
+            "tags": [
+                "2e88fa4d-6411-4594-ab6a-14757d9d3ca3",
+                "36776180-da6b-4134-aa06-aa0940b49818",
+                "965e9ff4-93e2-496d-9448-3d27b395a815",
+                "bcfdda67-f208-420d-8b08-349df809df79"
+            ],
+            "title": "Bark Pine",
+            "updated_date": "2023-08-07T07:29:23.032213Z",
+            "viewer_enabled": true,
+            "viewer_package": "ecaf0608-bc0b-4f0e-b1f4-501c69ba2a1d"
+        },
+        {
+            "author": "AMD",
+            "category": "a77f0f4a-61b3-4a5c-8240-bde22c1ab44c",
+            "created_date": "2021-11-30T16:28:33.748641Z",
+            "description": null,
+            "favorite": false,
+            "id": "0d1ec63b-67db-4993-8464-bd0f0fec1cb2",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Bark_Smooth.mtlx",
+            "mtlx_material_name": "Bark_Smooth",
+            "notification_status": "None",
+            "packages": [
+                "cf7b94cb-236e-4ff4-a13a-f3037293a4a2",
+                "9aca1076-7fe0-45a2-ae3d-62ee568dffdd",
+                "e7bf8d43-9674-4e28-8365-2d30c9fb0f29",
+                "8041443e-5a48-4d0e-9051-0aa7b0c3d518",
+                "c2f017f7-7502-4a5d-90dc-1529a9941be9",
+                "f605c708-e561-4db9-a688-b4a441d91a70"
+            ],
+            "published_date": "2021-09-16T15:48:36.262180Z",
+            "renders": [
+                "29e5e9a8-960f-4ea4-92a7-689ba4e21ed8",
+                "2001304a-9c4d-4c03-8fe1-4dc21bab5b32",
+                "d28efd45-3992-4dad-a3eb-aeb398f83ff6"
+            ],
+            "renders_order": [
+                "d28efd45-3992-4dad-a3eb-aeb398f83ff6",
+                "2001304a-9c4d-4c03-8fe1-4dc21bab5b32",
+                "29e5e9a8-960f-4ea4-92a7-689ba4e21ed8"
+            ],
+            "status": "Published",
+            "tags": [
+                "2e88fa4d-6411-4594-ab6a-14757d9d3ca3",
+                "36776180-da6b-4134-aa06-aa0940b49818",
+                "bcfdda67-f208-420d-8b08-349df809df79"
+            ],
+            "title": "Bark Smooth",
+            "updated_date": "2023-08-07T07:29:23.036255Z",
+            "viewer_enabled": true,
+            "viewer_package": "8041443e-5a48-4d0e-9051-0aa7b0c3d518"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:28:18.951399Z",
+            "description": null,
+            "favorite": false,
+            "id": "9d3f922d-16c5-4105-8650-6fc1deae098c",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Ground_Leaves_Cover.mtlx",
+            "mtlx_material_name": "Ground_Leaves_Cover",
+            "notification_status": "None",
+            "packages": [
+                "d9c28eca-a26c-4a3c-b88a-810b0385c532",
+                "784884e7-bdc3-46d1-aeba-6a92b5d5c762",
+                "deb1a85d-64d6-481d-84b5-99cd4bd951d8",
+                "e137092a-6fb8-4732-929a-e45d900c0735",
+                "6c214d9d-081c-44b0-b207-5446e5583281",
+                "f8280be0-6bc4-4b75-a1b5-f4417f335f90"
+            ],
+            "published_date": "2021-09-16T15:48:43.060113Z",
+            "renders": [
+                "e02d9c9e-1bd9-4c24-a25d-437138db2ab7",
+                "8f4bfd4f-3f31-4f2f-9715-5f0d338a5294",
+                "db403393-ef1f-4bcc-8e5b-a34d33d7d3f4"
+            ],
+            "renders_order": [
+                "db403393-ef1f-4bcc-8e5b-a34d33d7d3f4",
+                "8f4bfd4f-3f31-4f2f-9715-5f0d338a5294",
+                "e02d9c9e-1bd9-4c24-a25d-437138db2ab7"
+            ],
+            "status": "Published",
+            "tags": [
+                "08a65035-52eb-4bc4-825e-c42e9ea55002",
+                "36776180-da6b-4134-aa06-aa0940b49818"
+            ],
+            "title": "Ground Leaves Cover",
+            "updated_date": "2023-08-07T07:29:23.040148Z",
+            "viewer_enabled": true,
+            "viewer_package": "e137092a-6fb8-4732-929a-e45d900c0735"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:27:58.809212Z",
+            "description": null,
+            "favorite": false,
+            "id": "79c866a3-0ec8-4102-bd2b-c18f92079a22",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Moss_Ground.mtlx",
+            "mtlx_material_name": "Moss_Ground",
+            "notification_status": "None",
+            "packages": [
+                "403e0fa2-da61-4ba8-849f-bf7abf664b59",
+                "1aebade3-ea79-4905-b6eb-866f068ef74d",
+                "e62f7b1e-d15a-4681-9b4c-a700e8265dac",
+                "59a22bd6-51b4-46db-8a29-87bc9cd6e1ee",
+                "452a9b7b-2d75-41cf-ad05-d797522a87d9",
+                "40cc1509-19dc-400f-ad4f-62fd931ae716"
+            ],
+            "published_date": "2021-09-16T15:48:38.059820Z",
+            "renders": [
+                "1fac415b-ae59-4779-b5cf-4b57f98f7793",
+                "54fec2cf-9150-49d3-a338-2fc542a8e223",
+                "581e2557-88c3-40ab-bed3-157d766e891f"
+            ],
+            "renders_order": [
+                "581e2557-88c3-40ab-bed3-157d766e891f",
+                "54fec2cf-9150-49d3-a338-2fc542a8e223",
+                "1fac415b-ae59-4779-b5cf-4b57f98f7793"
+            ],
+            "status": "Published",
+            "tags": [
+                "2e88fa4d-6411-4594-ab6a-14757d9d3ca3",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "36776180-da6b-4134-aa06-aa0940b49818"
+            ],
+            "title": "Moss Ground",
+            "updated_date": "2023-08-07T07:29:23.043917Z",
+            "viewer_enabled": true,
+            "viewer_package": "e62f7b1e-d15a-4681-9b4c-a700e8265dac"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:27:38.714679Z",
+            "description": null,
+            "favorite": false,
+            "id": "8243028a-0274-4b30-91cf-b004dbc12e34",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Rocky_Ground.mtlx",
+            "mtlx_material_name": "Rocky_Ground",
+            "notification_status": "None",
+            "packages": [
+                "0e9d2e06-727c-46d4-946b-aa352e1b2043",
+                "0ea95ce5-e8ff-4179-b2ff-dda6fc57531d",
+                "f9d0e44b-5db2-4c12-8982-cac6a0a77713",
+                "5349e2e8-bb42-4c08-b71d-92b86d0b569b",
+                "0f527186-cb4c-4bce-8513-61cf625df5f8",
+                "372c0bca-7ee1-46ca-acde-2a162937ad2d"
+            ],
+            "published_date": "2021-09-24T09:04:18.081493Z",
+            "renders": [
+                "7ab76554-3423-4bd3-8300-4c42fad42d24",
+                "5f280c62-c470-41e9-b12d-21e564e39d18",
+                "56050213-38c2-426a-911d-a854c6fb2a03"
+            ],
+            "renders_order": [
+                "56050213-38c2-426a-911d-a854c6fb2a03",
+                "5f280c62-c470-41e9-b12d-21e564e39d18",
+                "7ab76554-3423-4bd3-8300-4c42fad42d24"
+            ],
+            "status": "Published",
+            "tags": [
+                "6bb0c514-76dc-4666-bc15-e89eda784673",
+                "baaefcff-571b-4972-8f2b-007c730bbeb8",
+                "9b310bb5-8f60-486f-bc0a-8254c85b7692",
+                "cbcb6e0d-4820-4c2e-a3e7-2403aa792ebb",
+                "546396ec-13e6-4213-b7dd-cc8c2ae730f5"
+            ],
+            "title": "Rocky Ground",
+            "updated_date": "2023-08-07T07:29:23.047237Z",
+            "viewer_enabled": true,
+            "viewer_package": "5349e2e8-bb42-4c08-b71d-92b86d0b569b"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:27:23.573646Z",
+            "description": null,
+            "favorite": false,
+            "id": "9dd31c94-7e0d-447c-b19a-9d1eecebfa5f",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Ground_River_Bottom.mtlx",
+            "mtlx_material_name": "Ground_River_Bottom",
+            "notification_status": "None",
+            "packages": [
+                "aa20b668-bf93-4a12-896f-783d33631e1a",
+                "65feb60b-ba7a-403c-a30b-fc65739228a9",
+                "ebf31039-e8c5-4fd2-84b7-38b20843bc5a",
+                "70b128a6-ee47-4c62-a1ac-d6af610ff442",
+                "3c78d889-787c-47c6-ba53-1e5a8caa4693",
+                "6a7e85d5-0961-46e7-b030-1c2e7fabd5b2"
+            ],
+            "published_date": "2021-09-16T15:48:39.885907Z",
+            "renders": [
+                "3b4c3bf6-be48-4779-a78e-5236335f228e",
+                "74fc2167-86d6-4c76-b5e6-19d05304522a",
+                "4ca1dc71-f5c2-486e-b2f6-a7a7dd367694"
+            ],
+            "renders_order": [
+                "4ca1dc71-f5c2-486e-b2f6-a7a7dd367694",
+                "74fc2167-86d6-4c76-b5e6-19d05304522a",
+                "3b4c3bf6-be48-4779-a78e-5236335f228e"
+            ],
+            "status": "Published",
+            "tags": [
+                "477b162f-ecc9-4125-aaab-a0f7f06d17ea",
+                "cbcb6e0d-4820-4c2e-a3e7-2403aa792ebb",
+                "3688ba58-ce8a-4546-8ec0-864318479e6d"
+            ],
+            "title": "Ground River Bottom",
+            "updated_date": "2023-08-07T07:29:23.050338Z",
+            "viewer_enabled": true,
+            "viewer_package": "70b128a6-ee47-4c62-a1ac-d6af610ff442"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:27:03.073074Z",
+            "description": null,
+            "favorite": false,
+            "id": "79284571-ad1c-492f-b1b0-cf01ac9c075c",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Ground_Soil.mtlx",
+            "mtlx_material_name": "Ground_Soil",
+            "notification_status": "None",
+            "packages": [
+                "6d2e2381-f42b-4044-bef1-4048732a687a",
+                "d9524fe3-34b4-409d-9249-89cca0b3a6ff",
+                "8f9a1921-ff2c-4ff0-8887-a0861aa60828",
+                "9fc249ab-a2ee-4e5f-bc40-88bf92f7b002",
+                "95349db5-36f4-4a52-bd71-b4da9ce1610a",
+                "d51496e7-079c-4e9d-b550-066200382b91"
+            ],
+            "published_date": "2021-09-16T15:48:33.469870Z",
+            "renders": [
+                "4ae646fd-8d45-4938-a50a-1fff1261a68f",
+                "cf690e97-0f0d-4ab5-9011-a962165ca08c",
+                "1fa3f6af-6636-40ed-8a76-ef11ece986a6"
+            ],
+            "renders_order": [
+                "1fa3f6af-6636-40ed-8a76-ef11ece986a6",
+                "cf690e97-0f0d-4ab5-9011-a962165ca08c",
+                "4ae646fd-8d45-4938-a50a-1fff1261a68f"
+            ],
+            "status": "Published",
+            "tags": [
+                "2e88fa4d-6411-4594-ab6a-14757d9d3ca3",
+                "74428a3b-bc40-498b-9ee1-acba8d22a932",
+                "baaefcff-571b-4972-8f2b-007c730bbeb8",
+                "9b310bb5-8f60-486f-bc0a-8254c85b7692",
+                "e32af0ac-0c5b-4b87-ac57-82a1d355a673"
+            ],
+            "title": "Ground Soil",
+            "updated_date": "2023-08-07T07:29:23.053408Z",
+            "viewer_enabled": true,
+            "viewer_package": "9fc249ab-a2ee-4e5f-bc40-88bf92f7b002"
+        },
+        {
+            "author": "AMD",
+            "category": "a77f0f4a-61b3-4a5c-8240-bde22c1ab44c",
+            "created_date": "2021-11-30T16:26:36.290082Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/bark_brown_01",
+            "favorite": false,
+            "id": "4edb0bc2-00e8-4888-9cb4-69f7265dc886",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Bark_Brown.mtlx",
+            "mtlx_material_name": "TH_Bark_Brown",
+            "notification_status": "None",
+            "packages": [
+                "a5263852-12d5-416a-bc58-cfdae5cba7af",
+                "0fc40cb9-7299-4d5b-8bda-c063ef64cf42",
+                "eff6e85f-c393-4470-a8eb-4129a4c2adc5",
+                "7dbe9c22-819a-4d4d-955c-776b25ca0957"
+            ],
+            "published_date": "2021-09-16T15:48:31.736111Z",
+            "renders": [
+                "eabd3588-668d-4785-bc05-7f9f2bc966ee",
+                "1057e21c-7ee3-4dc5-81b1-0dec4a0d52c0",
+                "561e08ae-5a40-4992-9f86-1a794058a4ff"
+            ],
+            "renders_order": [
+                "561e08ae-5a40-4992-9f86-1a794058a4ff",
+                "1057e21c-7ee3-4dc5-81b1-0dec4a0d52c0",
+                "eabd3588-668d-4785-bc05-7f9f2bc966ee"
+            ],
+            "status": "Published",
+            "tags": [
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "2cbb3ee8-fc4f-46f0-b33c-76b7f4e1dbc4",
+                "ea42a091-7ffd-477e-a620-7ba665549a73",
+                "919affa3-d813-4e97-a86b-02c181b57b6d"
+            ],
+            "title": "TH: Bark Brown",
+            "updated_date": "2023-08-07T07:29:23.056435Z",
+            "viewer_enabled": true,
+            "viewer_package": "eff6e85f-c393-4470-a8eb-4129a4c2adc5"
+        },
+        {
+            "author": "AMD",
+            "category": "a77f0f4a-61b3-4a5c-8240-bde22c1ab44c",
+            "created_date": "2021-11-30T16:26:11.446269Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/bark_brown_02",
+            "favorite": false,
+            "id": "4b6af2b2-1827-44da-9b6a-2ca140fe7c11",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Old_Bark_Brown.mtlx",
+            "mtlx_material_name": "TH_Old_Bark_Brown",
+            "notification_status": "None",
+            "packages": [
+                "f09ded51-f9e5-420f-8fa3-b78e982389b4",
+                "9a67ec4b-2366-47e2-ba72-f82aa382fef7",
+                "c2548836-5157-4b1d-8309-56b20d9268cd",
+                "e03396e2-670b-4a14-b226-f357032cad31"
+            ],
+            "published_date": "2021-09-16T15:48:30.064024Z",
+            "renders": [
+                "546c2801-948c-45eb-8293-672fedf75d9c",
+                "9ddf348f-7954-4323-a107-4588a77cab0a",
+                "196fcb5b-e656-4997-a7f4-a89b7974f202"
+            ],
+            "renders_order": [
+                "196fcb5b-e656-4997-a7f4-a89b7974f202",
+                "9ddf348f-7954-4323-a107-4588a77cab0a",
+                "546c2801-948c-45eb-8293-672fedf75d9c"
+            ],
+            "status": "Published",
+            "tags": [
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "2cbb3ee8-fc4f-46f0-b33c-76b7f4e1dbc4",
+                "ea42a091-7ffd-477e-a620-7ba665549a73",
+                "919affa3-d813-4e97-a86b-02c181b57b6d"
+            ],
+            "title": "TH: Old Bark Brown",
+            "updated_date": "2023-08-07T07:29:23.059735Z",
+            "viewer_enabled": true,
+            "viewer_package": "c2548836-5157-4b1d-8309-56b20d9268cd"
+        },
+        {
+            "author": "AMD",
+            "category": "a77f0f4a-61b3-4a5c-8240-bde22c1ab44c",
+            "created_date": "2021-11-30T16:25:39.725337Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/tree_bark_03",
+            "favorite": false,
+            "id": "3d6cd8b4-9fe7-4608-993e-722c4fa099af",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Tree_Bark.mtlx",
+            "mtlx_material_name": "TH_Tree_Bark",
+            "notification_status": "None",
+            "packages": [
+                "17ae95ea-516f-4b80-94b1-40f0dbab93b9",
+                "6578bead-f140-48e2-881c-c6ae295f3c1b",
+                "fd97b7f7-d9ad-4d4f-a45f-4f743b9edf26",
+                "1760d5c1-b230-4af1-a6b4-98821374bff3"
+            ],
+            "published_date": "2021-09-16T15:48:28.467777Z",
+            "renders": [
+                "f221b3ff-b6c3-49df-bf76-7720500c1dcf",
+                "32bf6e75-02a7-488a-9c32-f08abfa7422e",
+                "1c85b13b-8ff2-4b64-8a3a-9ef0b07586d2"
+            ],
+            "renders_order": [
+                "1c85b13b-8ff2-4b64-8a3a-9ef0b07586d2",
+                "32bf6e75-02a7-488a-9c32-f08abfa7422e",
+                "f221b3ff-b6c3-49df-bf76-7720500c1dcf"
+            ],
+            "status": "Published",
+            "tags": [
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "2cbb3ee8-fc4f-46f0-b33c-76b7f4e1dbc4",
+                "ea42a091-7ffd-477e-a620-7ba665549a73",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "0047cdaa-0f7d-4df6-a6b8-b9a3a9fe8015"
+            ],
+            "title": "TH: Tree Bark",
+            "updated_date": "2023-08-07T07:29:23.063047Z",
+            "viewer_enabled": true,
+            "viewer_package": "fd97b7f7-d9ad-4d4f-a45f-4f743b9edf26"
+        },
+        {
+            "author": "AMD",
+            "category": "eb88c270-9bbb-4465-8fef-1348c8d0b87b",
+            "created_date": "2021-11-30T16:25:26.162796Z",
+            "description": null,
+            "favorite": false,
+            "id": "6c7b1bfb-9e0a-42d6-8ac7-860362c1d68d",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Old_Paint.mtlx",
+            "mtlx_material_name": "Old_Paint",
+            "notification_status": "None",
+            "packages": [
+                "d1ea982c-a5fe-4b6d-9762-b11d320a714c",
+                "38a5161d-596c-4c1f-bd85-2583acd33aac",
+                "bbcd4944-df69-4326-ba3a-3c0b1379ebd6",
+                "9b0c7aa7-ea17-4ee9-a2b1-2625e4a20f32",
+                "7faae2ce-e171-4346-b3b7-4905c4224638",
+                "36a7f5f3-cab2-49bd-9727-3cb966c06325"
+            ],
+            "published_date": "2021-09-16T15:54:27.501561Z",
+            "renders": [
+                "ef6685f3-1a1f-44f9-ae53-819e02bea6df",
+                "9ea22a34-8d12-41bf-9e69-2e42bbdc0082",
+                "0e0f8f44-1c65-477d-a1b8-1eeedb732e96"
+            ],
+            "renders_order": [
+                "0e0f8f44-1c65-477d-a1b8-1eeedb732e96",
+                "9ea22a34-8d12-41bf-9e69-2e42bbdc0082",
+                "ef6685f3-1a1f-44f9-ae53-819e02bea6df"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "8406ea3f-1df6-48b9-8655-2e62950806e9",
+                "547d2a38-e5f2-425c-b91c-4eed4e95d487"
+            ],
+            "title": "Old Paint",
+            "updated_date": "2023-08-07T07:29:23.066038Z",
+            "viewer_enabled": true,
+            "viewer_package": "38a5161d-596c-4c1f-bd85-2583acd33aac"
+        },
+        {
+            "author": "AMD",
+            "category": "eb88c270-9bbb-4465-8fef-1348c8d0b87b",
+            "created_date": "2021-11-30T16:25:23.459665Z",
+            "description": "",
+            "favorite": false,
+            "id": "da6ec531-f5c1-4790-ac14-8a5c51d0314e",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Car_Paint.mtlx",
+            "mtlx_material_name": "Car_Paint",
+            "notification_status": "None",
+            "packages": [
+                "0277e2a4-4205-4967-a9d7-a5482e71e1ba",
+                "21d8ced0-428c-42d8-b87a-b8d94dea50d7",
+                "461166a5-04c4-467c-a47a-f7603a8bf1d3",
+                "80374c7a-5abe-4b8b-ba5e-a43baa47e349",
+                "8aa63ac6-1b0a-4ada-8975-3e06dadd8d08",
+                "1a0a5834-3509-4f96-aaa8-c48531f72197"
+            ],
+            "published_date": "2023-06-08T16:39:55Z",
+            "renders": [
+                "2d265681-5f72-43a7-9b68-50cbe291e677",
+                "e9a527bf-a9b0-4559-b4f2-375e6651b487",
+                "47389397-6782-490b-8492-497a1efeba00",
+                "b7269f6c-23c8-4c8f-a3be-217c4eaf5819",
+                "572a1fc9-a114-4d5b-8c7c-85aa5648c7b4"
+            ],
+            "renders_order": [
+                "572a1fc9-a114-4d5b-8c7c-85aa5648c7b4",
+                "b7269f6c-23c8-4c8f-a3be-217c4eaf5819",
+                "47389397-6782-490b-8492-497a1efeba00",
+                "e9a527bf-a9b0-4559-b4f2-375e6651b487",
+                "2d265681-5f72-43a7-9b68-50cbe291e677"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "5656d71c-210c-4b08-8de3-abb72ac868ce",
+                "1925aa9a-3d31-4579-8935-1b7fa1f744f3",
+                "64a5e3bb-47df-477a-b3ed-03ac407a62ec",
+                "77ffc241-5fbe-4835-965d-e64a6e02f74f"
+            ],
+            "title": "Car Paint",
+            "updated_date": "2023-08-07T07:30:26.360508Z",
+            "viewer_enabled": true,
+            "viewer_package": "21d8ced0-428c-42d8-b87a-b8d94dea50d7"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:24:55.896425Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/aerial_grass_rock",
+            "favorite": false,
+            "id": "5c856b5b-210a-48bc-8134-c5e7af24ada2",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Aerial_Moss_Rock.mtlx",
+            "mtlx_material_name": "TH_Aerial_Moss_Rock",
+            "notification_status": "None",
+            "packages": [
+                "98ebdb87-2043-45e1-a97f-cadc620775de",
+                "bcbfa0e9-2b39-447c-a469-23be8e513668",
+                "deb43a01-01f3-4422-b7c2-c80ce7684e61",
+                "a430693a-3668-437c-85f9-ea5f2a6fa97c"
+            ],
+            "published_date": "2021-09-16T16:22:27.836343Z",
+            "renders": [
+                "b74be755-81aa-43ab-95f8-bd098a930384",
+                "d08ee8eb-aa89-45e6-89d1-f017507c8de6",
+                "18bcf018-c5d0-4234-b714-68b1a1940959"
+            ],
+            "renders_order": [
+                "18bcf018-c5d0-4234-b714-68b1a1940959",
+                "d08ee8eb-aa89-45e6-89d1-f017507c8de6",
+                "b74be755-81aa-43ab-95f8-bd098a930384"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "a7918063-70f8-47c6-a0a6-e600ef633901",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Aerial Moss Rock",
+            "updated_date": "2023-08-07T07:29:23.072155Z",
+            "viewer_enabled": true,
+            "viewer_package": "deb43a01-01f3-4422-b7c2-c80ce7684e61"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:24:30.254308Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/aerial_rocks_01",
+            "favorite": false,
+            "id": "6d280435-f834-469f-ae97-56c999d5dcaa",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Moss_Mountain_Ground.mtlx",
+            "mtlx_material_name": "TH_Moss_Mountain_Ground",
+            "notification_status": "None",
+            "packages": [
+                "1b1949e3-d306-4501-983c-64686f710c27",
+                "940560a2-561f-4cd9-b6e5-eb1df8956829",
+                "7e0ff674-4717-44f2-9a10-93e272b3e601",
+                "14d56367-7139-4f74-b61d-b4363d97247c"
+            ],
+            "published_date": "2021-09-16T16:22:39.555078Z",
+            "renders": [
+                "1c704ad0-b11e-4099-87c8-846a89b43f22",
+                "46c8165f-df6c-4fee-9c23-6e97921e8e43",
+                "8360ff78-4725-4944-be62-a728df26f778"
+            ],
+            "renders_order": [
+                "8360ff78-4725-4944-be62-a728df26f778",
+                "46c8165f-df6c-4fee-9c23-6e97921e8e43",
+                "1c704ad0-b11e-4099-87c8-846a89b43f22"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Moss Mountain Ground",
+            "updated_date": "2023-08-07T07:29:23.077198Z",
+            "viewer_enabled": true,
+            "viewer_package": "7e0ff674-4717-44f2-9a10-93e272b3e601"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:23:55.019787Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/aerial_rocks_02",
+            "favorite": false,
+            "id": "ebdc1447-9061-4be6-8e3e-906dafb257cf",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Aerial_Mountain_Rocks.mtlx",
+            "mtlx_material_name": "TH_Aerial_Mountain_Rocks",
+            "notification_status": "None",
+            "packages": [
+                "0d19e6f7-57da-41c2-b3ba-51f5e195014d",
+                "258d976e-b0f3-4364-8d76-259aa4bd0b37",
+                "2dd1c431-3b22-4df3-9813-645688905103",
+                "988880e4-8e30-48b2-9093-05f8fe6a3f0f"
+            ],
+            "published_date": "2021-09-16T16:22:36.887575Z",
+            "renders": [
+                "87741dd1-b6dc-46c9-8b55-ce78ac99885b",
+                "d231780d-84a4-446f-b290-ee034ff254fb",
+                "a003507c-10d7-426c-827a-95aaa0cad2e1"
+            ],
+            "renders_order": [
+                "a003507c-10d7-426c-827a-95aaa0cad2e1",
+                "87741dd1-b6dc-46c9-8b55-ce78ac99885b",
+                "d231780d-84a4-446f-b290-ee034ff254fb"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Aerial Mountain Rocks",
+            "updated_date": "2023-08-07T07:29:23.080507Z",
+            "viewer_enabled": true,
+            "viewer_package": "988880e4-8e30-48b2-9093-05f8fe6a3f0f"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:23:36.674335Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/aerial_rocks_04",
+            "favorite": false,
+            "id": "c964c258-6cd7-4a3c-9f13-fc166c515bc6",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Aerial_Rocks.mtlx",
+            "mtlx_material_name": "TH_Aerial_Rocks",
+            "notification_status": "None",
+            "packages": [
+                "2ec7b47a-bcd4-448f-a7eb-a406c041d35e",
+                "3721866f-461e-4ccb-a78b-1011874ea46f",
+                "a4c3254a-fd6c-41d7-a298-4bb674568696",
+                "ef415b7a-e4c1-4118-839a-75c16243edb6"
+            ],
+            "published_date": "2021-09-16T16:22:34.688467Z",
+            "renders": [
+                "6cc0bec6-8e8c-4670-ac92-a4bc099457b2",
+                "86b0ec4b-ad4d-4ad6-892f-8f8fd3e83a95",
+                "128a9b3b-094c-4c69-8a56-ba6214747ac8"
+            ],
+            "renders_order": [
+                "128a9b3b-094c-4c69-8a56-ba6214747ac8",
+                "86b0ec4b-ad4d-4ad6-892f-8f8fd3e83a95",
+                "6cc0bec6-8e8c-4670-ac92-a4bc099457b2"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Aerial Rocks",
+            "updated_date": "2023-08-07T07:29:23.085232Z",
+            "viewer_enabled": true,
+            "viewer_package": "3721866f-461e-4ccb-a78b-1011874ea46f"
+        },
+        {
+            "author": "AMD",
+            "category": "c359e428-9973-42b0-ba06-3b47bf3a14b4",
+            "created_date": "2021-11-30T16:23:11.892993Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/broken_wall",
+            "favorite": false,
+            "id": "dd462e26-89bb-45e4-90fe-c79882c123a7",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Broken_Wall.mtlx",
+            "mtlx_material_name": "TH_Broken_Wall",
+            "notification_status": "None",
+            "packages": [
+                "c6c5c712-af81-417d-8fd1-660906108b9b",
+                "fd36dfd0-2825-4f5c-8db8-cf0a32420d06",
+                "688d25e8-ca28-42c8-a3e7-5929260beba5",
+                "e658e19d-513b-4715-b157-060fbb2210f7"
+            ],
+            "published_date": "2021-09-16T16:22:57.205551Z",
+            "renders": [
+                "f1dfce6a-38ed-4d0a-b84c-0461953d5c94",
+                "9abf695b-ed33-4f5c-8a55-20112487bfde",
+                "f77f7833-3aae-40f6-a1fe-0553ee5ff43d"
+            ],
+            "renders_order": [
+                "f77f7833-3aae-40f6-a1fe-0553ee5ff43d",
+                "f1dfce6a-38ed-4d0a-b84c-0461953d5c94",
+                "9abf695b-ed33-4f5c-8a55-20112487bfde"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "feaeffa2-baec-4dfc-827d-859f69fa2f27",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "a4f8ca77-8c55-4264-a552-730d0f255a5b"
+            ],
+            "title": "TH: Broken Wall",
+            "updated_date": "2023-08-07T07:29:23.088330Z",
+            "viewer_enabled": true,
+            "viewer_package": "688d25e8-ca28-42c8-a3e7-5929260beba5"
+        },
+        {
+            "author": "AMD",
+            "category": "c359e428-9973-42b0-ba06-3b47bf3a14b4",
+            "created_date": "2021-11-30T16:22:45.329161Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/castle_wall_slates",
+            "favorite": false,
+            "id": "391e4d02-be22-48a5-9a6c-d065527db9d3",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Castle_Wall_Slates.mtlx",
+            "mtlx_material_name": "TH_Castle_Wall_Slates",
+            "notification_status": "None",
+            "packages": [
+                "680432e4-59c5-4267-a330-9f89f562bef7",
+                "30c50609-3883-4565-bcd6-a57a1d7b1ba0",
+                "098a41f1-5e90-4643-8c79-410f301a570b",
+                "e77a5248-1cae-4a31-aa6a-d8295037a6b5"
+            ],
+            "published_date": "2021-09-16T16:22:58.917917Z",
+            "renders": [
+                "e406a1d8-4af9-4296-9c49-1b11580db9ca",
+                "259d67df-914c-4470-930f-534e24e6af40",
+                "5483ceb6-8af5-4a46-a5d3-ce35c72c6403"
+            ],
+            "renders_order": [
+                "5483ceb6-8af5-4a46-a5d3-ce35c72c6403",
+                "259d67df-914c-4470-930f-534e24e6af40",
+                "e406a1d8-4af9-4296-9c49-1b11580db9ca"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "a4f8ca77-8c55-4264-a552-730d0f255a5b"
+            ],
+            "title": "TH: Castle Wall Slates",
+            "updated_date": "2023-08-07T07:29:23.091349Z",
+            "viewer_enabled": true,
+            "viewer_package": "098a41f1-5e90-4643-8c79-410f301a570b"
+        },
+        {
+            "author": "AMD",
+            "category": "c359e428-9973-42b0-ba06-3b47bf3a14b4",
+            "created_date": "2021-11-30T16:22:15.172792Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/castle_wall_varriation",
+            "favorite": false,
+            "id": "88f183bd-68a4-49a4-a455-3ffcb001c3d3",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Castle_Wall_Variation.mtlx",
+            "mtlx_material_name": "TH_Castle_Wall_Variation",
+            "notification_status": "None",
+            "packages": [
+                "397d031c-25aa-45db-9950-ebf868af709f",
+                "72a91efa-231f-41e9-87dc-a0331cd8d4ac",
+                "55fa8b68-8a22-410c-b16e-d2006a711589",
+                "4d5b5db2-37b0-4bed-866e-9f4469b47db5"
+            ],
+            "published_date": "2021-09-16T16:23:00.950463Z",
+            "renders": [
+                "960dcc86-8ec4-4fb8-b2da-59214b3d2a54",
+                "20419ef5-ba82-4303-8911-2cfa1bf8099a",
+                "21672789-cc99-4abd-b07e-906eb80f7331"
+            ],
+            "renders_order": [
+                "21672789-cc99-4abd-b07e-906eb80f7331",
+                "20419ef5-ba82-4303-8911-2cfa1bf8099a",
+                "960dcc86-8ec4-4fb8-b2da-59214b3d2a54"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "feaeffa2-baec-4dfc-827d-859f69fa2f27",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "a4f8ca77-8c55-4264-a552-730d0f255a5b"
+            ],
+            "title": "TH: Castle Wall Variation",
+            "updated_date": "2023-08-07T07:29:23.094402Z",
+            "viewer_enabled": true,
+            "viewer_package": "397d031c-25aa-45db-9950-ebf868af709f"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:21:40.889347Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/coral_gravel",
+            "favorite": false,
+            "id": "ed482eff-74a8-4b54-9abc-e8375b647ad3",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Coral_Gravel.mtlx",
+            "mtlx_material_name": "TH_Coral_Gravel",
+            "notification_status": "None",
+            "packages": [
+                "dce87c85-6723-424e-a443-45fdcdeb1616",
+                "e655bf07-c819-433e-83b8-5994b8813140",
+                "3bdd09d6-e1f3-4329-8ea4-e0935ac3c217",
+                "89c018e3-358b-4dcc-a135-77921c4f088f"
+            ],
+            "published_date": "2021-09-16T16:23:03.098545Z",
+            "renders": [
+                "0f951755-ff3d-4ae6-9e5f-b44e9bd07669",
+                "b4ac2675-6bdd-49dd-80e2-d38e23979f09",
+                "1a9d7230-ed01-49f7-b022-a5cb3e018ad0"
+            ],
+            "renders_order": [
+                "1a9d7230-ed01-49f7-b022-a5cb3e018ad0",
+                "b4ac2675-6bdd-49dd-80e2-d38e23979f09",
+                "0f951755-ff3d-4ae6-9e5f-b44e9bd07669"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Coral Gravel",
+            "updated_date": "2023-08-07T07:29:23.097260Z",
+            "viewer_enabled": true,
+            "viewer_package": "3bdd09d6-e1f3-4329-8ea4-e0935ac3c217"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:21:12.639220Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/coral_ground_02",
+            "favorite": false,
+            "id": "c7c2abb2-3cc8-459a-851d-bb46d48c3c7f",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Coral_Rocky_Ground.mtlx",
+            "mtlx_material_name": "TH_Coral_Rocky_Ground",
+            "notification_status": "None",
+            "packages": [
+                "6b89d048-0b24-4b0b-9e4d-f30a06c8e90e",
+                "2eda21f1-fe54-46c3-acf1-5a740362935f",
+                "337a5d07-e72b-48aa-9bb7-2946608603ea",
+                "9b70aac5-a563-4529-9e64-e2cae62d406b"
+            ],
+            "published_date": "2021-09-16T16:23:05.134580Z",
+            "renders": [
+                "78869dc3-8081-4905-a276-5b3f911b1ca7",
+                "502dfbc1-e50c-45a3-8d51-6554d42e83bb",
+                "6629cb3d-3076-4a69-85bb-67ee25501603"
+            ],
+            "renders_order": [
+                "6629cb3d-3076-4a69-85bb-67ee25501603",
+                "502dfbc1-e50c-45a3-8d51-6554d42e83bb",
+                "78869dc3-8081-4905-a276-5b3f911b1ca7"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Coral Rocky Ground",
+            "updated_date": "2023-08-07T07:29:23.100371Z",
+            "viewer_enabled": true,
+            "viewer_package": "337a5d07-e72b-48aa-9bb7-2946608603ea"
+        },
+        {
+            "author": "AMD",
+            "category": "c359e428-9973-42b0-ba06-3b47bf3a14b4",
+            "created_date": "2021-11-30T16:20:44.606527Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/defense_wall_02",
+            "favorite": false,
+            "id": "6b8598e0-80d1-4438-ab98-8552c2bcd8c9",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Old_Defense_Wall.mtlx",
+            "mtlx_material_name": "TH_Old_Defense_Wall",
+            "notification_status": "None",
+            "packages": [
+                "e2a72835-8918-4190-8c26-07c2d8e3eda8",
+                "ed223425-8ebb-48ee-8a47-541563adf2b8",
+                "f38013d0-ddd8-420d-842f-141687cbb6f0",
+                "7c540c08-bfc0-45f6-a9af-9fb011adef83"
+            ],
+            "published_date": "2021-09-16T16:23:07.567685Z",
+            "renders": [
+                "25f0f13a-7ca9-481e-8862-9137b8edce0e",
+                "4778b0c4-8ec0-4357-80b3-9852c0cff9cb",
+                "40ec5f02-ab30-45f8-b455-cda2e17c5577"
+            ],
+            "renders_order": [
+                "40ec5f02-ab30-45f8-b455-cda2e17c5577",
+                "4778b0c4-8ec0-4357-80b3-9852c0cff9cb",
+                "25f0f13a-7ca9-481e-8862-9137b8edce0e"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "feaeffa2-baec-4dfc-827d-859f69fa2f27",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "a4f8ca77-8c55-4264-a552-730d0f255a5b"
+            ],
+            "title": "TH: Old Defense Wall",
+            "updated_date": "2023-08-07T07:29:23.103469Z",
+            "viewer_enabled": true,
+            "viewer_package": "ed223425-8ebb-48ee-8a47-541563adf2b8"
+        },
+        {
+            "author": "AMD",
+            "category": "c359e428-9973-42b0-ba06-3b47bf3a14b4",
+            "created_date": "2021-11-30T16:20:21.372042Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/defense_wall",
+            "favorite": false,
+            "id": "91a10590-12fe-4c40-a57e-ed901951849a",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Defense_Wall.mtlx",
+            "mtlx_material_name": "TH_Defense_Wall",
+            "notification_status": "None",
+            "packages": [
+                "d30bba7e-eed4-444a-80fc-58ba2aba4765",
+                "be34363d-b8d8-43cb-bb38-897cd441d9bc",
+                "eba6209f-6483-480c-b383-e7e5d18bd1c4",
+                "410cb5a0-3943-4ef3-84e5-566b971957dc"
+            ],
+            "published_date": "2021-09-16T16:23:09.591544Z",
+            "renders": [
+                "c6e3359c-fe65-437e-b572-0d31b5b496e1",
+                "e6708aea-89bc-46d8-b547-b1c00c1aa048",
+                "a66e994a-b4a8-4b3a-abd8-5809f3a93d97"
+            ],
+            "renders_order": [
+                "a66e994a-b4a8-4b3a-abd8-5809f3a93d97",
+                "e6708aea-89bc-46d8-b547-b1c00c1aa048",
+                "c6e3359c-fe65-437e-b572-0d31b5b496e1"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "feaeffa2-baec-4dfc-827d-859f69fa2f27",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "a4f8ca77-8c55-4264-a552-730d0f255a5b"
+            ],
+            "title": "TH: Defense Wall",
+            "updated_date": "2023-08-07T07:29:23.106253Z",
+            "viewer_enabled": true,
+            "viewer_package": "be34363d-b8d8-43cb-bb38-897cd441d9bc"
+        },
+        {
+            "author": "AMD",
+            "category": "c359e428-9973-42b0-ba06-3b47bf3a14b4",
+            "created_date": "2021-11-30T16:19:54.793783Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/medieval_blocks_02",
+            "favorite": false,
+            "id": "53a4768a-a544-4b89-96b7-1f1ed7b8b821",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Red_Medieval_Blocks.mtlx",
+            "mtlx_material_name": "TH_Red_Medieval_Blocks",
+            "notification_status": "None",
+            "packages": [
+                "608b51ea-0f1d-488e-ad58-04cb5bc25245",
+                "2de9e39a-04fd-45ab-8c52-c174b3dbce34",
+                "32ebba0a-27c6-45fb-be62-51b8da1ca10f",
+                "fb5dc82a-bde7-4edd-84db-67e751f0ad8b"
+            ],
+            "published_date": "2021-09-16T16:22:54.012394Z",
+            "renders": [
+                "3032ad6a-8751-4087-a4cb-0261c0835b7e",
+                "600e68a9-9633-4302-9421-49c4e97a40fe",
+                "2dd6ecc6-079b-4121-afb2-1b303cd5ad52"
+            ],
+            "renders_order": [
+                "2dd6ecc6-079b-4121-afb2-1b303cd5ad52",
+                "600e68a9-9633-4302-9421-49c4e97a40fe",
+                "3032ad6a-8751-4087-a4cb-0261c0835b7e"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "feaeffa2-baec-4dfc-827d-859f69fa2f27",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "a4f8ca77-8c55-4264-a552-730d0f255a5b"
+            ],
+            "title": "TH: Red Medieval Blocks",
+            "updated_date": "2023-08-07T07:29:23.109325Z",
+            "viewer_enabled": true,
+            "viewer_package": "32ebba0a-27c6-45fb-be62-51b8da1ca10f"
+        },
+        {
+            "author": "AMD",
+            "category": "c359e428-9973-42b0-ba06-3b47bf3a14b4",
+            "created_date": "2021-11-30T16:19:30.166666Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/medieval_blocks_05",
+            "favorite": false,
+            "id": "784057f5-d1b4-427d-bbaf-795f27a3714d",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Medieval_Blocks.mtlx",
+            "mtlx_material_name": "TH_Medieval_Blocks",
+            "notification_status": "None",
+            "packages": [
+                "5046aae7-fb71-4ab0-ba78-251dea7c9bdb",
+                "21078747-b909-4f87-8a1a-810dba212756",
+                "67cdc4af-a851-49d2-baad-f4a74330c509",
+                "8deec430-e15f-4445-8db4-407e62481853"
+            ],
+            "published_date": "2021-09-16T16:22:51.991840Z",
+            "renders": [
+                "a60c3f56-6dc4-4fb2-a409-36dc94d0faad",
+                "17f4e4d6-6907-4b3e-80df-86c6d923639e",
+                "b1c9411d-9cd0-431c-b1fd-64cd7e689ccb"
+            ],
+            "renders_order": [
+                "b1c9411d-9cd0-431c-b1fd-64cd7e689ccb",
+                "a60c3f56-6dc4-4fb2-a409-36dc94d0faad",
+                "17f4e4d6-6907-4b3e-80df-86c6d923639e"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "507407c1-3263-47fb-8671-abcfe81d2943",
+                "feaeffa2-baec-4dfc-827d-859f69fa2f27",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "a4f8ca77-8c55-4264-a552-730d0f255a5b"
+            ],
+            "title": "TH: Medieval Blocks",
+            "updated_date": "2023-08-07T07:29:23.112616Z",
+            "viewer_enabled": true,
+            "viewer_package": "67cdc4af-a851-49d2-baad-f4a74330c509"
+        },
+        {
+            "author": "AMD",
+            "category": "c359e428-9973-42b0-ba06-3b47bf3a14b4",
+            "created_date": "2021-11-30T16:19:02.869616Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/medieval_blocks_06",
+            "favorite": false,
+            "id": "0d86be26-4d48-4677-a446-cd182c0fafe9",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Crude_Medieval_Blocks.mtlx",
+            "mtlx_material_name": "TH_Crude_Medieval_Blocks",
+            "notification_status": "None",
+            "packages": [
+                "0ab3dbe4-cedb-477b-aec8-c09e0f5fa7cf",
+                "5117ef41-7297-4fb7-81b5-e60b38b9b20c",
+                "f5308b58-9b5a-480b-9dd1-307826214f8d",
+                "2fef7373-c4ad-409d-966d-7606dbd52c52"
+            ],
+            "published_date": "2021-09-16T16:22:49.829548Z",
+            "renders": [
+                "ebd48c5e-bd49-4cff-860d-3c9c447a1ce2",
+                "2e5d74a3-4124-4445-bcb8-c96c40874e74",
+                "bfda5d71-5295-426f-bb3b-c8ff6ff19eb0"
+            ],
+            "renders_order": [
+                "bfda5d71-5295-426f-bb3b-c8ff6ff19eb0",
+                "2e5d74a3-4124-4445-bcb8-c96c40874e74",
+                "ebd48c5e-bd49-4cff-860d-3c9c447a1ce2"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "a4f8ca77-8c55-4264-a552-730d0f255a5b"
+            ],
+            "title": "TH: Crude Medieval Blocks",
+            "updated_date": "2023-08-07T07:29:23.116419Z",
+            "viewer_enabled": true,
+            "viewer_package": "5117ef41-7297-4fb7-81b5-e60b38b9b20c"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:18:36.118436Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/mossy_rock",
+            "favorite": false,
+            "id": "54da6bab-6247-4043-a60b-2d419e96424a",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Mossy_Rock.mtlx",
+            "mtlx_material_name": "TH_Mossy_Rock",
+            "notification_status": "None",
+            "packages": [
+                "1e6d55c0-1aae-488f-a166-e157b53fed5f",
+                "c94747c7-94ff-42b5-9d2e-96a205a30a66",
+                "b59a4249-6926-4008-8d55-7407e0941bd2",
+                "4aa73fbf-089e-42de-8881-531e79ddb180"
+            ],
+            "published_date": "2021-09-16T16:23:11.577744Z",
+            "renders": [
+                "bb51abee-3a2e-4afe-b3e8-7800ba350603",
+                "e574dc79-2b7f-43ed-98a1-69a9b8c53973",
+                "a5895e2b-45e0-4b36-957a-dcdfe4402bcb"
+            ],
+            "renders_order": [
+                "a5895e2b-45e0-4b36-957a-dcdfe4402bcb",
+                "e574dc79-2b7f-43ed-98a1-69a9b8c53973",
+                "bb51abee-3a2e-4afe-b3e8-7800ba350603"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Mossy Rock",
+            "updated_date": "2023-08-07T07:29:23.119674Z",
+            "viewer_enabled": true,
+            "viewer_package": "b59a4249-6926-4008-8d55-7407e0941bd2"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:18:04.274501Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rock_01",
+            "favorite": false,
+            "id": "a83d8d43-bdac-46de-a30c-abc323310a38",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Smooth_Stone.mtlx",
+            "mtlx_material_name": "TH_Smooth_Stone",
+            "notification_status": "None",
+            "packages": [
+                "0a3af949-3bba-4a65-88f4-8aaf902bb8d6",
+                "a9017082-5b46-4b3b-b9fa-0cf71a3d3a80",
+                "2f50af20-6549-424e-9f71-3d3c3aa88729",
+                "0e052c6b-14a4-47e7-84b3-660d15aa8267"
+            ],
+            "published_date": "2021-09-16T16:29:42.603857Z",
+            "renders": [
+                "38558814-c076-46a9-8ec9-63b93ccc5d71",
+                "05884886-4811-494c-8e83-57e351b5b69c",
+                "fed85e25-2f59-46da-bb32-4efb5630c2b2"
+            ],
+            "renders_order": [
+                "fed85e25-2f59-46da-bb32-4efb5630c2b2",
+                "05884886-4811-494c-8e83-57e351b5b69c",
+                "38558814-c076-46a9-8ec9-63b93ccc5d71"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Smooth Stone",
+            "updated_date": "2023-08-07T07:29:23.122732Z",
+            "viewer_enabled": true,
+            "viewer_package": "a9017082-5b46-4b3b-b9fa-0cf71a3d3a80"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:17:39.445161Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rock_2",
+            "favorite": false,
+            "id": "f6be1158-dd4f-4029-a58c-df68189c36bb",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Ligth_Rock.mtlx",
+            "mtlx_material_name": "TH_Ligth_Rock",
+            "notification_status": "None",
+            "packages": [
+                "51fa5f3c-19d6-4bb9-8c09-a2113dca234f",
+                "fb152f57-6987-4ad1-88ca-5cd9da83a8c5",
+                "430e08b1-6884-4b6c-905e-38ca48a57a9e",
+                "c8c606fe-eb1a-4bcd-b6a7-c9950f9aa4c9"
+            ],
+            "published_date": "2021-09-16T16:29:40.929859Z",
+            "renders": [
+                "a898e2f1-0369-4005-a895-7ec4a87a22da",
+                "c8b0d0be-4cf4-4103-8a66-4123be778b4c",
+                "9032a7d6-fc38-4c6c-8366-893b2c434fe0"
+            ],
+            "renders_order": [
+                "9032a7d6-fc38-4c6c-8366-893b2c434fe0",
+                "c8b0d0be-4cf4-4103-8a66-4123be778b4c",
+                "a898e2f1-0369-4005-a895-7ec4a87a22da"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Ligth Rock",
+            "updated_date": "2023-08-07T07:29:23.125865Z",
+            "viewer_enabled": true,
+            "viewer_package": "430e08b1-6884-4b6c-905e-38ca48a57a9e"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:17:14.210618Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rock_3",
+            "favorite": false,
+            "id": "02a557a7-42b5-4923-87fb-771c70ee5aca",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Rock.mtlx",
+            "mtlx_material_name": "TH_Rock",
+            "notification_status": "None",
+            "packages": [
+                "54ae45f2-611c-453d-bc16-6f6d6919da82",
+                "7c9ec9c6-8d7c-4ebd-8457-834d43e421a8",
+                "4565847d-bf68-486d-bbdb-dce5b9d7d10e",
+                "282d0e42-90ad-48a2-8fca-fdfaa63c18c8"
+            ],
+            "published_date": "2021-09-16T16:29:39.282393Z",
+            "renders": [
+                "d4f3b51c-463a-4f52-94fa-6638725d1892",
+                "3065dd55-7804-4db8-b0ab-0233a2e33ebf",
+                "bcb9713a-2113-4cd3-bb91-c44ac3003080"
+            ],
+            "renders_order": [
+                "bcb9713a-2113-4cd3-bb91-c44ac3003080",
+                "3065dd55-7804-4db8-b0ab-0233a2e33ebf",
+                "d4f3b51c-463a-4f52-94fa-6638725d1892"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Rock",
+            "updated_date": "2023-08-07T07:29:23.128835Z",
+            "viewer_enabled": true,
+            "viewer_package": "4565847d-bf68-486d-bbdb-dce5b9d7d10e"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:16:47.725909Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rock_04",
+            "favorite": false,
+            "id": "8b365bb1-8b1f-4e8e-a4f1-36c13bb7e67e",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Light_Brown_Rock.mtlx",
+            "mtlx_material_name": "TH_Light_Brown_Rock",
+            "notification_status": "None",
+            "packages": [
+                "f76ec4cc-071c-4e1e-9b5a-e6cf9e49f8a4",
+                "2ff0e7d9-f5e8-4f0b-8891-f37f3cb84380",
+                "fa31fe6c-cbd5-4c55-9f12-f1cc13645660",
+                "6b4a5892-f806-4768-8e6b-5c596ec54fe4"
+            ],
+            "published_date": "2021-09-16T16:29:37.423477Z",
+            "renders": [
+                "8bfa1253-d60d-4006-a67f-7bbac37d35e5",
+                "9dae605b-72b7-47bc-a384-d38367fe3816",
+                "3aec5919-2e70-4116-a0b9-1ac8cae1ad6a"
+            ],
+            "renders_order": [
+                "3aec5919-2e70-4116-a0b9-1ac8cae1ad6a",
+                "9dae605b-72b7-47bc-a384-d38367fe3816",
+                "8bfa1253-d60d-4006-a67f-7bbac37d35e5"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Light Brown Rock",
+            "updated_date": "2023-08-07T07:29:23.131835Z",
+            "viewer_enabled": true,
+            "viewer_package": "2ff0e7d9-f5e8-4f0b-8891-f37f3cb84380"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:16:18.567500Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rock_05",
+            "favorite": false,
+            "id": "10fdab34-23bb-4187-bb3a-650fd6171e55",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Volcano_Rock.mtlx",
+            "mtlx_material_name": "TH_Volcano_Rock",
+            "notification_status": "None",
+            "packages": [
+                "30a85620-7042-47e1-a078-739658222417",
+                "c9d7748e-3337-42db-a74f-2c5b3e952ddd",
+                "f7bacfe8-342b-40c4-8438-68081dc3b316",
+                "34e86ad8-64c1-4d1a-b713-3cd4e096bd88"
+            ],
+            "published_date": "2021-09-16T16:29:35.632081Z",
+            "renders": [
+                "61e73ed4-7e89-46e0-a473-e11a1d2e814d",
+                "bd507b77-d14d-408e-919e-dbe12826275e",
+                "37f84b17-6247-49c5-97a1-18167d5c46ea"
+            ],
+            "renders_order": [
+                "37f84b17-6247-49c5-97a1-18167d5c46ea",
+                "bd507b77-d14d-408e-919e-dbe12826275e",
+                "61e73ed4-7e89-46e0-a473-e11a1d2e814d"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Volcano Rock",
+            "updated_date": "2023-08-07T07:29:23.134854Z",
+            "viewer_enabled": true,
+            "viewer_package": "f7bacfe8-342b-40c4-8438-68081dc3b316"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:15:53.457938Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rock_06",
+            "favorite": false,
+            "id": "701f5639-4c73-4b2b-bcd5-d69039108900",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Red_Rock.mtlx",
+            "mtlx_material_name": "TH_Red_Rock",
+            "notification_status": "None",
+            "packages": [
+                "b48f6038-093a-458a-84a5-1f1025619cd5",
+                "5bc0292b-c93e-4341-a1ce-17f14f563427",
+                "b67564e7-78ad-46b8-b07c-635e360025e7",
+                "6515ae68-6dbc-47ef-9ce3-386b0acc5fa0"
+            ],
+            "published_date": "2021-09-16T16:29:34.145842Z",
+            "renders": [
+                "c4a56a8c-1966-4901-acd4-a65120498db2",
+                "b9a40321-b17c-4d33-8397-a1579f50878b",
+                "68316641-d163-4320-bb4a-e92fba0c68fc"
+            ],
+            "renders_order": [
+                "68316641-d163-4320-bb4a-e92fba0c68fc",
+                "b9a40321-b17c-4d33-8397-a1579f50878b",
+                "c4a56a8c-1966-4901-acd4-a65120498db2"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Red Rock",
+            "updated_date": "2023-08-07T07:29:23.137852Z",
+            "viewer_enabled": true,
+            "viewer_package": "b67564e7-78ad-46b8-b07c-635e360025e7"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:15:30.096899Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rock_08",
+            "favorite": false,
+            "id": "60965879-ec74-4902-9269-4c9e57930762",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Gray_Rock.mtlx",
+            "mtlx_material_name": "TH_Gray_Rock",
+            "notification_status": "None",
+            "packages": [
+                "57e74dcf-8287-4144-86bc-00a9fe783011",
+                "be2779e0-2fd2-4509-ae51-955c3a0d587c",
+                "0e28a56c-2082-4fab-99db-3b6738f269eb",
+                "06be06e4-c9bd-4d0c-a11a-e817720a6462"
+            ],
+            "published_date": "2021-09-16T16:29:32.427246Z",
+            "renders": [
+                "948f665f-7a60-4d9f-a2fe-ac4e3aadee7c",
+                "2798e613-f908-459e-a637-555e1a25b1e9",
+                "837ae1ee-047d-495a-99aa-8f0e90dca851"
+            ],
+            "renders_order": [
+                "837ae1ee-047d-495a-99aa-8f0e90dca851",
+                "2798e613-f908-459e-a637-555e1a25b1e9",
+                "948f665f-7a60-4d9f-a2fe-ac4e3aadee7c"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Gray Rock",
+            "updated_date": "2023-08-07T07:29:23.140967Z",
+            "viewer_enabled": true,
+            "viewer_package": "0e28a56c-2082-4fab-99db-3b6738f269eb"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:14:35.594948Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rock_ground_02",
+            "favorite": false,
+            "id": "a4eac5e1-67fb-4056-bd98-07e7d600cd74",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Rocks_Dirt_Ground.mtlx",
+            "mtlx_material_name": "TH_Rocks_Dirt_Ground",
+            "notification_status": "None",
+            "packages": [
+                "90c94626-a7eb-4795-bcb2-f1a27629db30",
+                "e56fdc74-3d3f-42b8-b186-a1bb646182a3",
+                "3b7ff9f1-4ae7-4c7e-a100-54b462fa0e30",
+                "2650834c-76c6-4c51-b6e6-cf3bcc9228c4"
+            ],
+            "published_date": "2021-09-16T16:43:35.670045Z",
+            "renders": [
+                "ee10ee60-2e22-499e-92f9-4de1588d70f8",
+                "14d96537-55f9-4ec9-a9c5-ee6ddfa41052",
+                "74bcf125-51a3-4296-9a06-e7b9e857ddd9"
+            ],
+            "renders_order": [
+                "74bcf125-51a3-4296-9a06-e7b9e857ddd9",
+                "14d96537-55f9-4ec9-a9c5-ee6ddfa41052",
+                "ee10ee60-2e22-499e-92f9-4de1588d70f8"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Rocks Dirt Ground",
+            "updated_date": "2023-08-07T07:29:23.143886Z",
+            "viewer_enabled": true,
+            "viewer_package": "e56fdc74-3d3f-42b8-b186-a1bb646182a3"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:14:04.235299Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rocks_ground_03",
+            "favorite": false,
+            "id": "20890d07-1f64-4c8f-a2d9-29124f81076d",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Light_Rocks_Ground.mtlx",
+            "mtlx_material_name": "TH_Light_Rocks_Ground",
+            "notification_status": "None",
+            "packages": [
+                "df6a28d5-ed31-4580-9b16-9c14661057ee",
+                "eee911ec-01f6-4e6f-8def-54721459446c",
+                "1af8faf0-8bee-44ef-9c3f-195948fb65bd",
+                "e7eea0c0-91f5-4bba-8c89-e64d4eb0a89f"
+            ],
+            "published_date": "2021-09-16T16:43:34.196524Z",
+            "renders": [
+                "7a3d4310-c911-4518-ad93-fa0f537acca1",
+                "b7457e72-cf39-4bab-9bc7-a2b9f4927118",
+                "b96e1f40-2cdc-4d26-91d6-05c7580a2b67"
+            ],
+            "renders_order": [
+                "b96e1f40-2cdc-4d26-91d6-05c7580a2b67",
+                "b7457e72-cf39-4bab-9bc7-a2b9f4927118",
+                "7a3d4310-c911-4518-ad93-fa0f537acca1"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Light Rocks Ground",
+            "updated_date": "2023-08-07T07:29:23.147012Z",
+            "viewer_enabled": true,
+            "viewer_package": "1af8faf0-8bee-44ef-9c3f-195948fb65bd"
+        },
+        {
+            "author": "AMD",
+            "category": "99d9fadb-4f9f-4ac6-a514-235adcd9b1d7",
+            "created_date": "2021-11-30T16:13:39.375691Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rocks_ground_04",
+            "favorite": false,
+            "id": "1729f3e2-3063-43df-80cc-564a46777205",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Gray_Rocks.mtlx",
+            "mtlx_material_name": "TH_Gray_Rocks",
+            "notification_status": "None",
+            "packages": [
+                "1333eeb5-c3cb-48ae-8639-c497d356faed",
+                "c7b40a75-efeb-4cc4-8e7c-4930ac64c489",
+                "2dd64c00-1b1f-46f6-b8c6-6a1b59490555",
+                "7ffc8ea3-7d1e-4547-a565-884aae090fe1"
+            ],
+            "published_date": "2021-09-16T16:43:32.663978Z",
+            "renders": [
+                "8e13c161-c8d3-405a-830a-dee80b6a1513",
+                "f7ac7d21-69c6-445c-97e6-e76a3f4e0128",
+                "837a047d-2884-45a9-883c-da56b10a92e6"
+            ],
+            "renders_order": [
+                "837a047d-2884-45a9-883c-da56b10a92e6",
+                "f7ac7d21-69c6-445c-97e6-e76a3f4e0128",
+                "8e13c161-c8d3-405a-830a-dee80b6a1513"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Gray Rocks",
+            "updated_date": "2023-08-07T07:29:23.150160Z",
+            "viewer_enabled": true,
+            "viewer_package": "2dd64c00-1b1f-46f6-b8c6-6a1b59490555"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:13:13.341344Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rocks_ground_01",
+            "favorite": false,
+            "id": "6f1fc4e3-8cd0-4cf6-a836-6d3aa912d513",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Rocks_Ground.mtlx",
+            "mtlx_material_name": "TH_Rocks_Ground",
+            "notification_status": "None",
+            "packages": [
+                "f52caa88-546b-4b54-9e3a-7f990d983901",
+                "7a4dd57b-8403-49ef-a3e9-cd4719d9ae7f",
+                "1ab371d0-1c85-4a8a-80c7-6761d79adb92",
+                "de4d44e1-06c9-4f97-a95f-97e8ecb018ee"
+            ],
+            "published_date": "2021-09-16T16:43:37.162579Z",
+            "renders": [
+                "ab9b76b3-d2ae-493e-bdf2-f088fad6e054",
+                "70fc07d1-00c8-459e-89ba-2aec0477b46d",
+                "45426525-79e2-4b4c-9e1b-487deaefb1e5"
+            ],
+            "renders_order": [
+                "45426525-79e2-4b4c-9e1b-487deaefb1e5",
+                "70fc07d1-00c8-459e-89ba-2aec0477b46d",
+                "ab9b76b3-d2ae-493e-bdf2-f088fad6e054"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Rocks Ground",
+            "updated_date": "2023-08-07T07:29:23.153229Z",
+            "viewer_enabled": true,
+            "viewer_package": "7a4dd57b-8403-49ef-a3e9-cd4719d9ae7f"
+        },
+        {
+            "author": "AMD",
+            "category": "50f10515-cd1a-4813-9aa5-4ddc8a7a37e6",
+            "created_date": "2021-11-30T16:12:43.122277Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/rocks_ground_06",
+            "favorite": false,
+            "id": "23e5d7d5-9726-47b1-a91c-452ad2ddbfe1",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Mountain_Rocks_Ground.mtlx",
+            "mtlx_material_name": "TH_Mountain_Rocks_Ground",
+            "notification_status": "None",
+            "packages": [
+                "8ba4b5d7-f1f1-49c5-bb31-e437ac2d0caf",
+                "1b0f9527-7196-4c30-94d1-e88b25c1bd96",
+                "5a49dd64-9168-4db2-bde0-e4c051b018da",
+                "5eca0f03-e5e5-470b-99ca-b54623abab55"
+            ],
+            "published_date": "2021-09-16T16:43:29.312872Z",
+            "renders": [
+                "b208902f-8a6d-4347-9815-cc28afc71103",
+                "fd94acbd-c33d-42d8-9c52-085115813160",
+                "fbd1b52d-bbc5-4ce2-92a3-368ffe2bb9d2"
+            ],
+            "renders_order": [
+                "fbd1b52d-bbc5-4ce2-92a3-368ffe2bb9d2",
+                "fd94acbd-c33d-42d8-9c52-085115813160",
+                "b208902f-8a6d-4347-9815-cc28afc71103"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f24abee7-85b7-4634-99cb-ec1aa40d80f9",
+                "2160d519-f46d-4b0d-934f-d20c4249eb76",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Mountain Rocks Ground",
+            "updated_date": "2023-08-07T07:29:23.156274Z",
+            "viewer_enabled": true,
+            "viewer_package": "5a49dd64-9168-4db2-bde0-e4c051b018da"
+        },
+        {
+            "author": "AMD",
+            "category": "cc9ec849-c1f5-46c0-ae8e-3c0efe91fbd9",
+            "created_date": "2021-11-30T16:12:16.808059Z",
+            "description": null,
+            "favorite": false,
+            "id": "1bac28c2-ccf8-474c-b95d-3b70c0df6e56",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Patterned_Resin_Floor.mtlx",
+            "mtlx_material_name": "Patterned_Resin_Floor",
+            "notification_status": "None",
+            "packages": [
+                "51373eff-4a4f-4e64-9dea-47d65468290e",
+                "7312ae44-8b9e-42ab-9753-4ede823a6eee",
+                "de98d789-c09d-4676-83fb-7a7d820ff3ea",
+                "ffdcb1dc-2718-4af3-99e3-cd522412b393",
+                "7d931042-6025-467e-a934-0eb787b985db",
+                "c6f7b50c-e3a0-4510-ac0a-0d0392a26d1c"
+            ],
+            "published_date": "2021-09-16T16:45:41.637952Z",
+            "renders": [
+                "36ba45b6-980c-4f02-b307-ab32629da8bf",
+                "08751a19-c491-4716-a273-ee367a7dc211",
+                "07f0f66b-a7a9-4270-adcf-f677f3c99270",
+                "e3db5730-ac0e-44de-a066-505b5b991ff9",
+                "831b1583-fba2-4aff-be55-bb621f308b92"
+            ],
+            "renders_order": [
+                "831b1583-fba2-4aff-be55-bb621f308b92",
+                "e3db5730-ac0e-44de-a066-505b5b991ff9",
+                "07f0f66b-a7a9-4270-adcf-f677f3c99270",
+                "08751a19-c491-4716-a273-ee367a7dc211",
+                "36ba45b6-980c-4f02-b307-ab32629da8bf"
+            ],
+            "status": "Published",
+            "tags": [
+                "41565ad9-8377-4de3-a41f-c276b21e4029",
+                "64a94091-04f9-4100-89b3-a3ecb560fbe7",
+                "6cc64158-dda3-415c-a44f-b7d02c0eb4e1",
+                "3ef7c588-b063-4b06-a181-0477b49580e5"
+            ],
+            "title": "Patterned Resin Floor",
+            "updated_date": "2023-08-07T07:29:23.159228Z",
+            "viewer_enabled": true,
+            "viewer_package": "ffdcb1dc-2718-4af3-99e3-cd522412b393"
+        },
+        {
+            "author": "AMD",
+            "category": "4f78f22d-0e34-42a4-ba85-829fe6af8c76",
+            "created_date": "2021-11-30T16:12:04.495424Z",
+            "description": null,
+            "favorite": false,
+            "id": "7f837506-227b-4ada-b6be-b2bf567d4696",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "SciFi_Brick.mtlx",
+            "mtlx_material_name": "SciFi_Brick",
+            "notification_status": "None",
+            "packages": [
+                "eabc96e9-7f5e-4b57-b447-9f100deb87d4",
+                "678fc3b6-4399-4c93-ba8f-2738e1b1caa0",
+                "3d0d1cf7-6f1e-47eb-9887-f223c274883c",
+                "40d56c6c-4771-40ad-b8a6-9a85b623cf4a",
+                "0dc988d5-eb04-4e8a-b19a-fbf7bd2aa002",
+                "764849da-5cf6-47ed-8f62-62e4112b15f4"
+            ],
+            "published_date": "2021-09-16T16:47:18.210695Z",
+            "renders": [
+                "958e90b8-a1a9-47d4-a37e-69e25e0888f7",
+                "3754d20c-2614-4150-bb14-b5018f3478d5",
+                "609fb1f5-8e17-4be0-a615-90b6ae312de3"
+            ],
+            "renders_order": [
+                "609fb1f5-8e17-4be0-a615-90b6ae312de3",
+                "3754d20c-2614-4150-bb14-b5018f3478d5",
+                "958e90b8-a1a9-47d4-a37e-69e25e0888f7"
+            ],
+            "status": "Published",
+            "tags": [
+                "41565ad9-8377-4de3-a41f-c276b21e4029",
+                "4f77e16d-7de0-4c0a-a80c-188d7bb5810e",
+                "7d181d2b-fd13-4f0e-b451-fe72886e82e4",
+                "3edeb120-f54a-41cd-923a-fe36889d8fb9",
+                "e6da284b-035d-40db-aacf-2e5bbb4bed89",
+                "a7baed9d-788d-4cb5-a072-9de11ac1cf24",
+                "68672d3d-e7ca-4437-8ff2-fb073470c98c"
+            ],
+            "title": "SciFi Brick",
+            "updated_date": "2023-08-07T07:29:23.162368Z",
+            "viewer_enabled": true,
+            "viewer_package": "0dc988d5-eb04-4e8a-b19a-fbf7bd2aa002"
+        },
+        {
+            "author": "AMD",
+            "category": "952ed6c0-9a69-42b2-befe-ae339e82e20b",
+            "created_date": "2021-11-30T16:11:43.307499Z",
+            "description": null,
+            "favorite": false,
+            "id": "7d7bcda7-97be-4594-99de-b0b6cf753a03",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Cream_Onyx.mtlx",
+            "mtlx_material_name": "Cream_Onyx",
+            "notification_status": "None",
+            "packages": [
+                "22dd4d8b-928d-461d-9186-b006440536d7",
+                "d2c3a02b-69d6-4ec9-a23e-47dc96946a23",
+                "54e0a416-a124-4b50-ab87-7b7e395be23e",
+                "ed6b8ab8-36ab-45b9-a1b8-98dccc90c67c",
+                "9d87e53d-db70-4f64-a096-513cc62921ad",
+                "6cf55861-0252-483c-b9d5-6130ca7a5943"
+            ],
+            "published_date": "2021-09-16T16:48:19.968621Z",
+            "renders": [
+                "b72ec096-eca0-4700-9d5e-8bf8db433318",
+                "6b563f6a-89eb-4575-bb32-781234e74f43",
+                "101a7518-7568-466f-93df-ed5139cf3ac7",
+                "05fc0ed8-06a9-48d3-ae1a-2845283cb459"
+            ],
+            "renders_order": [
+                "05fc0ed8-06a9-48d3-ae1a-2845283cb459",
+                "101a7518-7568-466f-93df-ed5139cf3ac7",
+                "6b563f6a-89eb-4575-bb32-781234e74f43",
+                "b72ec096-eca0-4700-9d5e-8bf8db433318"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "c6d4a77a-3d73-436f-a03c-14c46a5d9cad",
+                "4b958522-6cc1-49b4-847b-17395a101be1",
+                "4cfb26cd-c260-45e7-9c0d-6022f04d5b92"
+            ],
+            "title": "Cream Onyx",
+            "updated_date": "2023-08-07T07:29:23.165366Z",
+            "viewer_enabled": true,
+            "viewer_package": "9d87e53d-db70-4f64-a096-513cc62921ad"
+        },
+        {
+            "author": "AMD",
+            "category": "952ed6c0-9a69-42b2-befe-ae339e82e20b",
+            "created_date": "2021-11-30T16:11:17.822038Z",
+            "description": null,
+            "favorite": false,
+            "id": "f7625e6d-45b7-46eb-a636-8349e8c9e885",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Granite.mtlx",
+            "mtlx_material_name": "Granite",
+            "notification_status": "None",
+            "packages": [
+                "f5ed5b43-b984-43e5-8cdd-7514a2669901",
+                "e6890676-4fcf-4d4e-997d-58f374b3e3a5",
+                "e15b69e0-ed1a-40e9-a165-b9d1eae1dcde",
+                "b3612935-8fb7-441f-a05b-5e120ed71b67",
+                "e61486a5-7114-4fb2-9ea9-3c9fb86ed232",
+                "0596d234-f292-4171-aa07-78929c3c0b21"
+            ],
+            "published_date": "2021-09-16T16:49:11.115720Z",
+            "renders": [
+                "3c5897b3-b42e-47a9-b8b4-0c6bb08615eb",
+                "14a5635e-0f50-4e4c-8e02-1a5e98366c88",
+                "68784e23-4cb4-4d31-8c7d-ecf78ee83018",
+                "4cddfd24-0aed-4383-9968-a50c7a5230c3",
+                "77963fab-b5f7-4184-9d98-2638c9ad61df"
+            ],
+            "renders_order": [
+                "77963fab-b5f7-4184-9d98-2638c9ad61df",
+                "4cddfd24-0aed-4383-9968-a50c7a5230c3",
+                "68784e23-4cb4-4d31-8c7d-ecf78ee83018",
+                "14a5635e-0f50-4e4c-8e02-1a5e98366c88",
+                "3c5897b3-b42e-47a9-b8b4-0c6bb08615eb"
+            ],
+            "status": "Published",
+            "tags": [
+                "e6b9a48c-1f5a-49a7-9303-df265b116305",
+                "4b958522-6cc1-49b4-847b-17395a101be1",
+                "34ed6c74-e433-4aed-a574-9aade345797a",
+                "d164453d-4cbd-4220-b8f6-14637f68630c"
+            ],
+            "title": "Granite",
+            "updated_date": "2023-08-07T07:29:23.168217Z",
+            "viewer_enabled": true,
+            "viewer_package": "b3612935-8fb7-441f-a05b-5e120ed71b67"
+        },
+        {
+            "author": "AMD",
+            "category": "952ed6c0-9a69-42b2-befe-ae339e82e20b",
+            "created_date": "2021-11-30T16:11:02.134342Z",
+            "description": null,
+            "favorite": false,
+            "id": "0869d7de-c08c-48b5-83b9-b386c24c699e",
+            "license": "MIT Public Domain",
+            "material_type": "Parametric",
+            "mtlx_filename": "Marble_Orange_Streaks.mtlx",
+            "mtlx_material_name": "Marble_Orange_Streaks",
+            "notification_status": "None",
+            "packages": [
+                "6578ca2f-6c90-41c2-ac14-9ae3d02db32f",
+                "a2028a90-3b95-4b98-9020-2619de99e854",
+                "1886351a-d5f8-4151-8477-085f8d5add33",
+                "ca7326f3-ce96-4873-bea6-785953167077",
+                "6a07447b-3c3c-48e1-88b1-f7491efa2d49",
+                "546a2b83-8dd2-4846-86c8-2a9d0291c67a"
+            ],
+            "published_date": "2021-09-16T16:52:44.696321Z",
+            "renders": [
+                "6db1a4a7-cc27-4939-8d64-295177837e60",
+                "6eae67db-384a-4b52-82b9-e4034665cac6",
+                "e6ffe0ed-eb6d-4265-b81d-e26cef7bfd1d",
+                "ec3fb770-4211-4c4c-b41b-74d6dfed54b5",
+                "851e2075-b173-40ab-93e2-297c36d523dd"
+            ],
+            "renders_order": [
+                "851e2075-b173-40ab-93e2-297c36d523dd",
+                "ec3fb770-4211-4c4c-b41b-74d6dfed54b5",
+                "e6ffe0ed-eb6d-4265-b81d-e26cef7bfd1d",
+                "6eae67db-384a-4b52-82b9-e4034665cac6",
+                "6db1a4a7-cc27-4939-8d64-295177837e60"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "b8eb2211-14f3-448a-a38a-d02ee8d54186",
+                "645d8166-9460-4856-b81e-7e231c25c430",
+                "d164453d-4cbd-4220-b8f6-14637f68630c"
+            ],
+            "title": "Marble Orange Streaks",
+            "updated_date": "2023-08-07T07:29:23.170999Z",
+            "viewer_enabled": true,
+            "viewer_package": "6a07447b-3c3c-48e1-88b1-f7491efa2d49"
+        },
+        {
+            "author": "AMD",
+            "category": "952ed6c0-9a69-42b2-befe-ae339e82e20b",
+            "created_date": "2021-11-30T16:10:50.493576Z",
+            "description": null,
+            "favorite": false,
+            "id": "14fb280e-03e9-4b0d-8115-0a02c4c49a7e",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Marble_Light_Red.mtlx",
+            "mtlx_material_name": "Marble_Light_Red",
+            "notification_status": "None",
+            "packages": [
+                "1761d82f-7f86-4e3c-a713-626036e4016c",
+                "e6f1c7f9-3fbb-42e1-9d3b-28886c687d31",
+                "b9fe6beb-5b91-4e3a-b237-acba83eb27e1",
+                "5d04c239-340b-465b-b095-b5c04b5b69c8",
+                "016deb29-9169-4bc7-ba5d-5aef860e9061",
+                "a0fd1afd-cd82-45ca-a522-e9edda0252ca"
+            ],
+            "published_date": "2021-09-16T16:53:39.908277Z",
+            "renders": [
+                "036bd936-b41d-43ff-9ae8-09b3f6b727d1",
+                "efdb96cb-799a-4ccb-90ec-672fa4717ff8",
+                "034bd371-269a-4f9e-83a2-ef4db7c1da42"
+            ],
+            "renders_order": [
+                "034bd371-269a-4f9e-83a2-ef4db7c1da42",
+                "efdb96cb-799a-4ccb-90ec-672fa4717ff8",
+                "036bd936-b41d-43ff-9ae8-09b3f6b727d1"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "41565ad9-8377-4de3-a41f-c276b21e4029",
+                "d164453d-4cbd-4220-b8f6-14637f68630c"
+            ],
+            "title": "Marble Light Red",
+            "updated_date": "2023-08-07T07:29:23.173737Z",
+            "viewer_enabled": true,
+            "viewer_package": "016deb29-9169-4bc7-ba5d-5aef860e9061"
+        },
+        {
+            "author": "AMD",
+            "category": "952ed6c0-9a69-42b2-befe-ae339e82e20b",
+            "created_date": "2021-11-30T16:10:38.415302Z",
+            "description": null,
+            "favorite": false,
+            "id": "c8be67f4-540f-4fd6-9860-b5779957d6a7",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Marble_Yellow.mtlx",
+            "mtlx_material_name": "Marble_Yellow",
+            "notification_status": "None",
+            "packages": [
+                "2b875374-adcb-43dd-8b05-8c0433791065",
+                "7646c014-d7dd-4565-8b5e-c4890e5985a5",
+                "849ef319-ebc0-4f36-a931-28e64c761665",
+                "f965a00a-2949-45a1-a21e-1af5c91b35a3",
+                "9d07e945-bf6f-452a-a1b9-5a36541d99ef",
+                "54c7f3b1-9143-4622-82f0-b3dd8a5c0d43"
+            ],
+            "published_date": "2021-09-16T16:54:32.936308Z",
+            "renders": [
+                "0471acd8-e7e9-42d8-9590-69a5da31fa1b",
+                "31752563-3a45-489c-845e-10ed1cd0f8c5",
+                "b99c407c-33d3-453a-a824-3ec957686071"
+            ],
+            "renders_order": [
+                "b99c407c-33d3-453a-a824-3ec957686071",
+                "31752563-3a45-489c-845e-10ed1cd0f8c5",
+                "0471acd8-e7e9-42d8-9590-69a5da31fa1b"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "41565ad9-8377-4de3-a41f-c276b21e4029",
+                "f9987968-7d4a-494a-9f29-ae5bc331d0b3",
+                "d164453d-4cbd-4220-b8f6-14637f68630c",
+                "62278d79-52fa-475d-b11f-05b3ec68b5b6"
+            ],
+            "title": "Marble Yellow",
+            "updated_date": "2023-08-07T07:29:23.176688Z",
+            "viewer_enabled": true,
+            "viewer_package": "f965a00a-2949-45a1-a21e-1af5c91b35a3"
+        },
+        {
+            "author": "AMD",
+            "category": "952ed6c0-9a69-42b2-befe-ae339e82e20b",
+            "created_date": "2021-11-30T16:10:26.819361Z",
+            "description": null,
+            "favorite": false,
+            "id": "153e77cf-f5f1-4baa-8bb0-392ab63bb2ec",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "Marble_Red.mtlx",
+            "mtlx_material_name": "Marble_Red",
+            "notification_status": "None",
+            "packages": [
+                "d0db6bd8-c685-4539-87e8-15a53558b583",
+                "723eb3aa-702d-450e-8112-83d284a65583",
+                "a16cb338-4404-44a0-8551-9e4899b1e508",
+                "02d90f4a-7abb-46e6-84dc-817258a79ae4",
+                "6d3fa994-ce0b-4eed-8ce3-8b53d55e45d3",
+                "29577321-9e0f-4ed6-a265-4dab5d159337"
+            ],
+            "published_date": "2021-09-16T16:55:27.747715Z",
+            "renders": [
+                "aeea797b-a802-43f0-b890-19061e9a32dc",
+                "34cc7ad6-95f9-49de-934d-75f7c6fd90dd",
+                "03e5955d-b393-4a67-8cd2-db6ea522bfec"
+            ],
+            "renders_order": [
+                "03e5955d-b393-4a67-8cd2-db6ea522bfec",
+                "34cc7ad6-95f9-49de-934d-75f7c6fd90dd",
+                "aeea797b-a802-43f0-b890-19061e9a32dc"
+            ],
+            "status": "Published",
+            "tags": [
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "41565ad9-8377-4de3-a41f-c276b21e4029",
+                "d164453d-4cbd-4220-b8f6-14637f68630c",
+                "a2c25b83-0209-415e-ad21-b803f302cd8c"
+            ],
+            "title": "Marble Red",
+            "updated_date": "2023-08-07T07:29:23.179453Z",
+            "viewer_enabled": true,
+            "viewer_package": "6d3fa994-ce0b-4eed-8ce3-8b53d55e45d3"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:10:04.037805Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/ceramic_roof_01",
+            "favorite": false,
+            "id": "c29129df-65a0-4c90-8a79-4ec85f3c4636",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Ceramic_Roof.mtlx",
+            "mtlx_material_name": "TH_Ceramic_Roof",
+            "notification_status": "None",
+            "packages": [
+                "caff2781-bebe-426c-a3f7-5d2cd2c16752",
+                "c5170623-a76c-491f-98b6-9b21db1eb34f",
+                "0a8f0b7a-fbe8-4821-9e50-851cc950dab1",
+                "46892aef-996e-4da0-8834-55668ebda574"
+            ],
+            "published_date": "2021-09-16T18:20:46.372199Z",
+            "renders": [
+                "87fdf7c9-1ccd-4d31-b76b-8f68224e36ea",
+                "6c4c87f2-56b5-4d05-85d6-4324ee6462e0",
+                "d725fdfc-0c3e-41a5-be91-d3e76c8df832"
+            ],
+            "renders_order": [
+                "d725fdfc-0c3e-41a5-be91-d3e76c8df832",
+                "6c4c87f2-56b5-4d05-85d6-4324ee6462e0",
+                "87fdf7c9-1ccd-4d31-b76b-8f68224e36ea"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "c9578826-0a63-446d-b5c1-ccb38215b381",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "d69f9fb9-701d-46ef-9c87-531373c2e972"
+            ],
+            "title": "TH: Ceramic Roof",
+            "updated_date": "2023-08-07T07:29:23.182355Z",
+            "viewer_enabled": true,
+            "viewer_package": "0a8f0b7a-fbe8-4821-9e50-851cc950dab1"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:09:42.584402Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/grey_roof_01",
+            "favorite": false,
+            "id": "5544e15a-52eb-428e-a5c6-5228ef206749",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Gray_Ceramic_Roof.mtlx",
+            "mtlx_material_name": "TH_Gray_Ceramic_Roof",
+            "notification_status": "None",
+            "packages": [
+                "1212d105-78c8-45ae-97ae-30111745a574",
+                "3dfc9135-984b-434d-9ec9-516f5c891fd2",
+                "e7c047ca-1aaf-4d60-bd5a-bbd14bec71f5",
+                "63f2ff84-5ed7-4690-9b06-25e3f7d48708"
+            ],
+            "published_date": "2021-09-16T18:20:49.848418Z",
+            "renders": [
+                "f26aefbf-fd17-4898-a166-e6a8b74f2717",
+                "8570ac6a-4446-4670-82a9-4ab803615c72",
+                "06e5301a-6b1f-441f-a81d-fbc8e85fc51d"
+            ],
+            "renders_order": [
+                "06e5301a-6b1f-441f-a81d-fbc8e85fc51d",
+                "8570ac6a-4446-4670-82a9-4ab803615c72",
+                "f26aefbf-fd17-4898-a166-e6a8b74f2717"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Gray Ceramic Roof",
+            "updated_date": "2023-08-07T07:29:23.185314Z",
+            "viewer_enabled": true,
+            "viewer_package": "e7c047ca-1aaf-4d60-bd5a-bbd14bec71f5"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:09:18.110338Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/grey_roof_tiles_02",
+            "favorite": false,
+            "id": "3a06086b-e674-41f8-8e0d-b04231dd7850",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Grey_Roof_Tiles.mtlx",
+            "mtlx_material_name": "TH_Grey_Roof_Tiles",
+            "notification_status": "None",
+            "packages": [
+                "2e82c6c9-6e21-4af8-a27d-22742cb08380",
+                "842208c8-2370-45fe-a2c6-ea6c4533adb2",
+                "90e54cca-5614-4d02-b5c9-a5494fc2fb73",
+                "dfa5472c-c12a-48d6-bafa-965df995cafb"
+            ],
+            "published_date": "2021-09-16T18:20:52.649265Z",
+            "renders": [
+                "95272aba-c94d-48e1-af4c-f58f1ddbd26b",
+                "d763752b-3f54-4d92-9e61-852ace3d7a96",
+                "2bf226a0-ac77-401f-ae21-7bb710027dfe"
+            ],
+            "renders_order": [
+                "2bf226a0-ac77-401f-ae21-7bb710027dfe",
+                "d763752b-3f54-4d92-9e61-852ace3d7a96",
+                "95272aba-c94d-48e1-af4c-f58f1ddbd26b"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Grey Roof Tiles",
+            "updated_date": "2023-08-07T07:29:23.188147Z",
+            "viewer_enabled": true,
+            "viewer_package": "90e54cca-5614-4d02-b5c9-a5494fc2fb73"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:08:55.891258Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/grey_roof_tiles",
+            "favorite": false,
+            "id": "8b521820-a5cc-43dc-afb8-916888237407",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Moss_Gray_Roof_Tiles.mtlx",
+            "mtlx_material_name": "TH_Moss_Gray_Roof_Tiles",
+            "notification_status": "None",
+            "packages": [
+                "71bf505e-0e3e-43db-b9f8-289959dc9115",
+                "d2d3b715-ad90-4ef0-86ed-07d34b75a3cc",
+                "9a5997e1-ae0e-4bd6-b0a3-93c27e36e7c4",
+                "193f24c3-a7e6-4213-aa33-166f0d9fff11"
+            ],
+            "published_date": "2021-09-16T18:20:55.717859Z",
+            "renders": [
+                "1d23aaab-9998-400a-aff5-4ae4a8ffbe6b",
+                "f24b8110-2286-4e7e-ac1a-457275ccbd5d",
+                "8dc3627f-9b24-422a-a2ae-a3f217c68894"
+            ],
+            "renders_order": [
+                "8dc3627f-9b24-422a-a2ae-a3f217c68894",
+                "f24b8110-2286-4e7e-ac1a-457275ccbd5d",
+                "1d23aaab-9998-400a-aff5-4ae4a8ffbe6b"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Moss Gray Roof Tiles",
+            "updated_date": "2023-08-07T07:29:23.190840Z",
+            "viewer_enabled": true,
+            "viewer_package": "9a5997e1-ae0e-4bd6-b0a3-93c27e36e7c4"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:08:27.889449Z",
+            "description": "Texture Haven material by Rob Tuytel. Original material: https://polyhaven.com/a/red_slate_roof_tiles_01",
+            "favorite": false,
+            "id": "75151c53-c9d9-4b67-85b6-3798441bc31c",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Slate_Roof_Tiles.mtlx",
+            "mtlx_material_name": "TH_Slate_Roof_Tiles",
+            "notification_status": "None",
+            "packages": [
+                "2b644e0b-23ad-43d5-96c0-e1eb54452862",
+                "18d1755b-7ff0-44e2-a525-0fe44601800c",
+                "ceb13163-0fed-4fff-a810-50eed005a81a",
+                "dfb06e8e-e63f-49e1-adc0-47a0179ef31e"
+            ],
+            "published_date": "2021-09-16T18:20:58.348828Z",
+            "renders": [
+                "7d9d4f3b-f669-4cf2-9d48-78d031a11088",
+                "c998e580-f063-445e-8a33-b0d39a971bb3",
+                "a5550867-3eea-4481-93b7-73f269531e80"
+            ],
+            "renders_order": [
+                "a5550867-3eea-4481-93b7-73f269531e80",
+                "c998e580-f063-445e-8a33-b0d39a971bb3",
+                "7d9d4f3b-f669-4cf2-9d48-78d031a11088"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Slate Roof Tiles",
+            "updated_date": "2023-08-07T07:29:23.193933Z",
+            "viewer_enabled": true,
+            "viewer_package": "ceb13163-0fed-4fff-a810-50eed005a81a"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:07:57.295217Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/reed_roof_04",
+            "favorite": false,
+            "id": "4c4ecac9-0564-4df5-aac2-5527c60206fe",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Reed_Roof.mtlx",
+            "mtlx_material_name": "TH_Reed_Roof",
+            "notification_status": "None",
+            "packages": [
+                "1c626606-6804-49f8-919e-c0a5d1e404c5",
+                "7cf0bbf1-2bf3-4218-9e32-af0dd89f151a",
+                "d4076028-3fea-4da4-ae3a-685a90c27019",
+                "8f4373c5-8e7d-44d7-9c1f-9108c3860e8e"
+            ],
+            "published_date": "2021-09-16T18:21:04.585841Z",
+            "renders": [
+                "2cd996c8-8830-4fa4-a779-aab504e3658b",
+                "55e5fbf3-584a-4b14-a240-649929d08e4d",
+                "0beaee29-41c3-4e52-bd75-e4fbb2b433ca"
+            ],
+            "renders_order": [
+                "0beaee29-41c3-4e52-bd75-e4fbb2b433ca",
+                "55e5fbf3-584a-4b14-a240-649929d08e4d",
+                "2cd996c8-8830-4fa4-a779-aab504e3658b"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "51bd9863-02b2-4277-8622-2c601805cc74",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Reed Roof",
+            "updated_date": "2023-08-07T07:29:23.196759Z",
+            "viewer_enabled": true,
+            "viewer_package": "d4076028-3fea-4da4-ae3a-685a90c27019"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:07:35.466721Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/riet_01",
+            "favorite": false,
+            "id": "c44ac9e2-7750-4eab-9d99-22cad026d582",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Riet_Roof.mtlx",
+            "mtlx_material_name": "TH_Riet_Roof",
+            "notification_status": "None",
+            "packages": [
+                "216b6e45-7411-4e78-8341-0be1906e692b",
+                "66598eae-4d4e-4d8b-9c7a-dbd9862f1711",
+                "d7a05dfa-0f5d-4311-8959-9f6de1aa12b7",
+                "6fba2350-3e87-414a-aa8d-34b181b11de0"
+            ],
+            "published_date": "2021-09-16T18:21:06.747258Z",
+            "renders": [
+                "fc8a12a8-8e5e-4ae3-9e28-ffe25b9b1d38",
+                "10bf7f00-c6d3-4b4e-80c0-b9bbaf4ae69f",
+                "256b1d1b-ef65-4a29-a01b-d2517cd448dd"
+            ],
+            "renders_order": [
+                "256b1d1b-ef65-4a29-a01b-d2517cd448dd",
+                "10bf7f00-c6d3-4b4e-80c0-b9bbaf4ae69f",
+                "fc8a12a8-8e5e-4ae3-9e28-ffe25b9b1d38"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "51bd9863-02b2-4277-8622-2c601805cc74",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Riet Roof",
+            "updated_date": "2023-08-07T07:29:23.199773Z",
+            "viewer_enabled": true,
+            "viewer_package": "d7a05dfa-0f5d-4311-8959-9f6de1aa12b7"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:07:16.229734Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/reed_roof_03",
+            "favorite": false,
+            "id": "7071062d-547a-4cdf-9aae-f058281cc9e5",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Roof_3.mtlx",
+            "mtlx_material_name": "TH_Roof_3",
+            "notification_status": "None",
+            "packages": [
+                "80b3d0ae-e675-4959-9064-cab255625b87",
+                "c1071ebc-657a-4ee4-a3b7-993823c38539",
+                "b49e48d9-b949-48ee-a22e-a87b8e96893e",
+                "a0af1041-065f-4473-868e-a66cfbb811cd"
+            ],
+            "published_date": "2021-09-16T18:21:08.957378Z",
+            "renders": [
+                "e036536a-df69-45b5-adb7-c8fe99dec04f",
+                "3d4ba6ae-2833-4fde-8a97-88a569716b72",
+                "c3b4470f-3486-41f0-b9c3-7f5ce34d1a40"
+            ],
+            "renders_order": [
+                "c3b4470f-3486-41f0-b9c3-7f5ce34d1a40",
+                "3d4ba6ae-2833-4fde-8a97-88a569716b72",
+                "e036536a-df69-45b5-adb7-c8fe99dec04f"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "c9578826-0a63-446d-b5c1-ccb38215b381",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Roof 3",
+            "updated_date": "2023-08-07T07:29:23.202780Z",
+            "viewer_enabled": true,
+            "viewer_package": "b49e48d9-b949-48ee-a22e-a87b8e96893e"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:06:52.729084Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/roof_07",
+            "favorite": false,
+            "id": "8ccf18f1-8724-4ecf-8cd3-c9f794b1eb90",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Old_Roof_Tiles.mtlx",
+            "mtlx_material_name": "TH_Old_Roof_Tiles",
+            "notification_status": "None",
+            "packages": [
+                "aefb5086-6db2-403d-883c-7669921207c7",
+                "7df70b47-6cdf-4308-9d5d-8ec34eb38cae",
+                "b98020c6-073b-425a-8dd9-9236bb21c241",
+                "e32e25c1-a322-4fd6-8fb2-1b087da364d4"
+            ],
+            "published_date": "2021-09-16T18:21:12.668214Z",
+            "renders": [
+                "f48e2bcc-eff0-4d6b-8188-e0e0c1c4d7bf",
+                "5ec5837b-bad0-47b0-9563-d43e8bff936c",
+                "a9273959-1bb2-4522-a4bf-909277154eef"
+            ],
+            "renders_order": [
+                "a9273959-1bb2-4522-a4bf-909277154eef",
+                "5ec5837b-bad0-47b0-9563-d43e8bff936c",
+                "f48e2bcc-eff0-4d6b-8188-e0e0c1c4d7bf"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "c9578826-0a63-446d-b5c1-ccb38215b381",
+                "507407c1-3263-47fb-8671-abcfe81d2943",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "bf0fafeb-7aa3-4085-9fa1-85a6b82b14f7"
+            ],
+            "title": "TH: Old Roof Tiles",
+            "updated_date": "2023-08-07T07:29:23.205581Z",
+            "viewer_enabled": true,
+            "viewer_package": "b98020c6-073b-425a-8dd9-9236bb21c241"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:06:25.836636Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/roof_slates_02",
+            "favorite": false,
+            "id": "f07307a0-7b3e-4af5-a4f4-aa718a42be2d",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Old_Wooden_Roof.mtlx",
+            "mtlx_material_name": "TH_Old_Wooden_Roof",
+            "notification_status": "None",
+            "packages": [
+                "0f80daf3-ef8e-4101-9c08-67e1f3662328",
+                "4f59ee1b-3cad-4dd2-9760-969e75bacfec",
+                "94c89285-b1ee-4490-a475-5ec7c4d85270",
+                "8ac5f253-a41b-496e-824e-78992378ba06"
+            ],
+            "published_date": "2021-09-16T18:21:16.767297Z",
+            "renders": [
+                "cc021c64-51d8-42e4-b451-689eace330a0",
+                "11f7f0db-fdcc-46e2-9851-015c1c9ef23e",
+                "29073114-863e-420f-a1ec-35347d83a3f5"
+            ],
+            "renders_order": [
+                "29073114-863e-420f-a1ec-35347d83a3f5",
+                "11f7f0db-fdcc-46e2-9851-015c1c9ef23e",
+                "cc021c64-51d8-42e4-b451-689eace330a0"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Old Wooden Roof",
+            "updated_date": "2023-08-07T07:29:23.208645Z",
+            "viewer_enabled": true,
+            "viewer_package": "94c89285-b1ee-4490-a475-5ec7c4d85270"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:06:03.476828Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/roof_slates_03",
+            "favorite": false,
+            "id": "cbf391b3-8b0b-4a96-b181-805a32f24b30",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Roof_Slates.mtlx",
+            "mtlx_material_name": "TH_Roof_Slates",
+            "notification_status": "None",
+            "packages": [
+                "cee4ada5-0846-408a-939b-454332198f7f",
+                "59ddb6f1-72fa-47dd-96a4-285b889f770d",
+                "a9efb7d4-43f3-40ad-8922-1a8a009bdc4b",
+                "db6d6d7d-d030-43dd-8563-911ebaa5416b"
+            ],
+            "published_date": "2021-09-16T18:21:19.263839Z",
+            "renders": [
+                "1df60810-3087-4626-9c18-08965741088b",
+                "b52faf8f-2471-47b4-91ae-79a9b4fef5b4",
+                "88925697-1826-4621-bb14-f7828088b695"
+            ],
+            "renders_order": [
+                "88925697-1826-4621-bb14-f7828088b695",
+                "b52faf8f-2471-47b4-91ae-79a9b4fef5b4",
+                "1df60810-3087-4626-9c18-08965741088b"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b",
+                "d69f9fb9-701d-46ef-9c87-531373c2e972"
+            ],
+            "title": "TH: Roof Slates",
+            "updated_date": "2023-08-07T07:29:23.212114Z",
+            "viewer_enabled": true,
+            "viewer_package": "a9efb7d4-43f3-40ad-8922-1a8a009bdc4b"
+        },
+        {
+            "author": "AMD",
+            "category": "d757a8ff-fc8b-45a8-b14b-db537b30f7bd",
+            "created_date": "2021-11-30T16:05:39.663840Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/roof_tiles_14",
+            "favorite": false,
+            "id": "f1fc4936-9155-41cd-9ff1-bb2004df9a48",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Ceramic_Roof_Tiles.mtlx",
+            "mtlx_material_name": "TH_Ceramic_Roof_Tiles",
+            "notification_status": "None",
+            "packages": [
+                "9e1eeea0-0531-421c-ad49-1405c726b358",
+                "0ef07e72-f7af-46f2-bf70-0a64fcd0f60f",
+                "4dea7d4a-fe4a-4bde-8a8d-03908c98b2ea",
+                "2a894d93-e790-46af-a904-7980c736fcc7"
+            ],
+            "published_date": "2021-09-16T18:21:21.241039Z",
+            "renders": [
+                "3dc3d5b3-1ce7-4271-a19c-f34f7388a143",
+                "bd26e4de-e6cb-4d6d-a44c-1b44c89b1572",
+                "d9a5aefd-c398-43fd-967f-a9a75983054f"
+            ],
+            "renders_order": [
+                "d9a5aefd-c398-43fd-967f-a9a75983054f",
+                "bd26e4de-e6cb-4d6d-a44c-1b44c89b1572",
+                "3dc3d5b3-1ce7-4271-a19c-f34f7388a143"
+            ],
+            "status": "Published",
+            "tags": [
+                "f2fdd230-233c-44eb-a4db-746d814e6576",
+                "4d8226f2-168c-4984-a649-4a194fc2d37b",
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "c9578826-0a63-446d-b5c1-ccb38215b381",
+                "507407c1-3263-47fb-8671-abcfe81d2943",
+                "f35f7c3b-a9cf-492e-97f4-c1e5ba67ffd9",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "72fe1d1c-fe0d-4e05-b57f-38bbb304d41b"
+            ],
+            "title": "TH: Ceramic Roof Tiles",
+            "updated_date": "2023-08-07T07:29:23.215081Z",
+            "viewer_enabled": true,
+            "viewer_package": "4dea7d4a-fe4a-4bde-8a8d-03908c98b2ea"
+        },
+        {
+            "author": "AMD",
+            "category": "d17fc317-b9c5-43b9-9d3c-f61cf2c6301b",
+            "created_date": "2021-11-30T16:05:06.925491Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/beam_wall_01",
+            "favorite": false,
+            "id": "63e4f289-c457-4d2f-b2e8-6db1f62883ce",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Beam_Wall.mtlx",
+            "mtlx_material_name": "TH_Beam_Wall",
+            "notification_status": "None",
+            "packages": [
+                "218aeb3f-5c70-4f3e-ad1a-aa884fd143b2",
+                "c9171c79-a89d-4173-be37-963a49f3c87d",
+                "70b42ef8-ba1a-47d7-9243-0e5538d6a531",
+                "261659fc-ec43-4d39-90c4-68409f31ee43"
+            ],
+            "published_date": "2021-09-16T18:25:44.646215Z",
+            "renders": [
+                "01bf497c-3409-45e6-b74d-b23d625c84a2",
+                "1b5d383b-063d-43d5-9aa8-73dd37483695",
+                "0d6b9769-51e0-463f-ba1a-7fa0210bd3b8"
+            ],
+            "renders_order": [
+                "0d6b9769-51e0-463f-ba1a-7fa0210bd3b8",
+                "1b5d383b-063d-43d5-9aa8-73dd37483695",
+                "01bf497c-3409-45e6-b74d-b23d625c84a2"
+            ],
+            "status": "Published",
+            "tags": [
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "bc60a717-ee89-44db-9b59-a33899d20275",
+                "ea42a091-7ffd-477e-a620-7ba665549a73",
+                "62588c79-61c2-41c3-9525-63a0849ed5e7",
+                "c419eeae-d823-4548-8e62-1db882f3547c",
+                "970ce4b6-7f5b-473e-b56a-169e823975cb"
+            ],
+            "title": "TH: Beam Wall",
+            "updated_date": "2023-08-07T07:29:23.221981Z",
+            "viewer_enabled": true,
+            "viewer_package": "70b42ef8-ba1a-47d7-9243-0e5538d6a531"
+        },
+        {
+            "author": "AMD",
+            "category": "d17fc317-b9c5-43b9-9d3c-f61cf2c6301b",
+            "created_date": "2021-11-30T16:04:39.815512Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/blue_painted_planks",
+            "favorite": false,
+            "id": "00b064e2-d18e-4db3-ada9-871dbbfc9a3d",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Blue_Painted_Planks.mtlx",
+            "mtlx_material_name": "TH_Blue_Painted_Planks",
+            "notification_status": "None",
+            "packages": [
+                "815b6e80-c151-4856-9379-b60625764406",
+                "6d5573e1-c727-41ea-971a-020001ce3c34",
+                "91cac02e-5a9f-4ea5-9f8f-85c64fddec90",
+                "7eeb8693-6adf-4ebe-af4d-c150854719a2"
+            ],
+            "published_date": "2021-09-16T18:26:29.346934Z",
+            "renders": [
+                "784dcc4e-5fef-4ff8-b168-34acae7e13cb",
+                "a5bbe579-7769-4b9b-8200-ee040a71b2f9",
+                "aa6bbe89-cf3a-4e56-bbaf-dcbe9880f289"
+            ],
+            "renders_order": [
+                "aa6bbe89-cf3a-4e56-bbaf-dcbe9880f289",
+                "a5bbe579-7769-4b9b-8200-ee040a71b2f9",
+                "784dcc4e-5fef-4ff8-b168-34acae7e13cb"
+            ],
+            "status": "Published",
+            "tags": [
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "62588c79-61c2-41c3-9525-63a0849ed5e7",
+                "6cc64158-dda3-415c-a44f-b7d02c0eb4e1",
+                "70a372b9-fd51-4111-a42a-924a59e0dc82",
+                "b86e4214-b638-4d23-bae8-4b0bf48c30b5",
+                "795aa531-7ba6-41a7-8169-5b0d3d0fadcd"
+            ],
+            "title": "TH: Blue Painted Planks",
+            "updated_date": "2023-08-07T07:29:23.226568Z",
+            "viewer_enabled": true,
+            "viewer_package": "91cac02e-5a9f-4ea5-9f8f-85c64fddec90"
+        },
+        {
+            "author": "AMD",
+            "category": "d17fc317-b9c5-43b9-9d3c-f61cf2c6301b",
+            "created_date": "2021-11-30T16:04:13.687799Z",
+            "description": "Texture Haven material by Rob Tuytel. Link to the original: https://polyhaven.com/a/brown_planks_03",
+            "favorite": false,
+            "id": "cb070b31-1543-4393-a35f-8d79f82f1002",
+            "license": "MIT Public Domain",
+            "material_type": "Static",
+            "mtlx_filename": "TH_Gray_Planks.mtlx",
+            "mtlx_material_name": "TH_Gray_Planks",
+            "notification_status": "None",
+            "packages": [
+                "d25a32e6-15d5-49bf-a433-1ae20923d4c2",
+                "8ffd2bc5-d561-4a83-949e-1d7c54d1c511",
+                "506f0fa3-e38d-4363-8682-506250c2ba1c",
+                "fac0a895-15ee-4311-9333-9bb594c2f779"
+            ],
+            "published_date": "2021-09-16T18:27:33.070296Z",
+            "renders": [
+                "332f20e3-3e5e-4cd0-a1c6-d70f676edec2",
+                "e459a544-2b2a-4425-a22b-a8772274feb9",
+                "5ab25cdf-45ef-4915-90f2-2e36cf1b7976"
+            ],
+            "renders_order": [
+                "5ab25cdf-45ef-4915-90f2-2e36cf1b7976",
+                "e459a544-2b2a-4425-a22b-a8772274feb9",
+                "332f20e3-3e5e-4cd0-a1c6-d70f676edec2"
+            ],
+            "status": "Published",
+            "tags": [
+                "df6ce31c-ea7e-4cd9-865a-d47aabb146cf",
+                "469f9f13-ea51-460a-8a32-67f0025d7909",
+                "b9dc4016-e27d-46e3-8eb9-f8222500bfe9",
+                "f3e5d126-0412-471a-96ad-1438d3787e5b",
+                "db01f7c0-8453-4b56-af57-3acacdb9a8cd",
+                "b86e4214-b638-4d23-bae8-4b0bf48c30b5",
+                "292a7662-af3b-43bf-9e3f-eb8becc553be"
+            ],
+            "title": "TH: Gray Planks",
+            "updated_date": "2023-08-07T07:29:23.230369Z",
+            "viewer_enabled": true,
+            "viewer_package": "506f0fa3-e38d-4363-8682-506250c2ba1c"
+        }
+    ]
+}

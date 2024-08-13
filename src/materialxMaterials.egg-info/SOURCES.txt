@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/materialxMaterials/GPUOpenLoader.py
+src/materialxMaterials/GPUOpenLoaderCmd.py
+src/materialxMaterials/physicallyBasedMaterialX.py
+src/materialxMaterials/physicallyBasedMaterialXCmd.py
+src/materialxMaterials.egg-info/PKG-INFO
+src/materialxMaterials.egg-info/SOURCES.txt
+src/materialxMaterials.egg-info/dependency_links.txt
+src/materialxMaterials.egg-info/requires.txt
+src/materialxMaterials.egg-info/top_level.txt
