@@ -41,7 +41,7 @@ This will pull down the dependent packages as needed.
 
 ### API Reference
 
-The API reference can be found <a href="https://kwokcb.github.io/materialXMaterialx/doc/html/index.html">here</a>
+The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/docs/html/index.html">here</a>
 
 ### Usage
 
