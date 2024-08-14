@@ -1,8 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[0,0,3],
-"":[0,0,4],
-"":[0,0,5],
 "_g_p_u_open_loader_8py_source.html":[2,0,0],
 "_g_p_u_open_loader_cmd_8py.html#a90703a334beeb15d8353d336d515db3f":[0,0,3,0],
 "_g_p_u_open_loader_cmd_8py_source.html":[2,0,1],
@@ -62,5 +59,8 @@ var NAVTREEINDEX0 =
 "physically_based_material_x_8py.html":[2,0,2],
 "physically_based_material_x_8py_source.html":[2,0,2],
 "physically_based_material_x_cmd_8py.html#ab72edcfa35483b5154135d68aefc69b3":[0,0,5,0],
-"physically_based_material_x_cmd_8py_source.html":[2,0,3]
+"physically_based_material_x_cmd_8py_source.html":[2,0,3],
+"":[0,0,3],
+"":[0,0,4],
+"":[0,0,5]
 };

@@ -61,7 +61,7 @@ The Python utilities require:
 
 ### Building
 
-The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://github.com/kwokcb/materialxMaterials/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a> can be cloned and the package built using:
+The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned and the package built using:
 
 ```
 pip install .
