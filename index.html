@@ -48,64 +48,88 @@
   <!-- Section Information -->
   <section class="py-0 px-0 g-0">
     <div class="container-fluid p-4">
-      <h2><img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=24px>MaterialX Materials</h2>
+      <h2 class="bg-gradient rounded-2 p-2"> <img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=32px>MaterialX Materials</h2>
 
 <h3 id="introduction">Introduction</h3>
 <p>Welcome to MaterialX Materials.</p>
 <p>This site hosts a set of libraries and command line utilities to
 query remote databases for MaterialX materials.</p>
-<p>The current utilities will work with the:</p>
+<blockquote>
+<p>Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a>
+</b></p>
+</blockquote>
+<p>
+
+The current utilities support:
+
 <div style="display: flex; align-items: center;">
 <img src="https://physicallybased.info/images/renders/cycles/600/aluminum.webp" width="64px" style="margin-right: 10px;">
 <a href="https://physicallybased.info/">PhysicallyBased database</a> Material descriptions can be downloaded with additional utilities to create materials using either: Autodesk Standard Surface, OpenPBR, or glTF PBR shading model shaders.
 </div>
-<p><br></p>
+<br>
 <div style="display: flex; align-items: center;">
 <img src="https://image.matlib.gpuopen.com/afff0c66-dba8-4d79-b96b-459fbd9cbef5.jpeg" width="64px" style="margin-right: 10px;">
 <a href="https://matlib.gpuopen.com/main/materials/all">AMD GPUOpen database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX
 documents can be extracted for any of the posted materials in the database.
 </div>
 
-<p>Each currently has Python implementations.</p>
-<p>A Javascript implementation for extracting <code>PhysicallyBased</code> materials is 
+Each currently has Python implementations.
+
+A Javascript implementation for extracting <code>PhysicallyBased</code> materials is 
  <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">available here.
 <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
-</a>.</p>
-<h3 id="examples">Examples</h3>
-<h4 id="command-line-utilities">Command Line Utilities</h4>
-<ol>
-<li>Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location.</li>
-</ol>
+</a>
+
+<p>
+
+<hr>
+<h3> Examples</h3>
+
+<h4>Command Line Utilities</h4>
+
+1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location.
+
 <div class="codehilite"><pre><span></span><code>python<span class="w"> </span>physicallyBasedMaterialX.py
 </code></pre></div>
 
-<ol>
-<li>Query all materials fom GPUOpen. Extract out a few material
-packages (zip). Save the material lists and unzipped packages (MaterialX and images) in the default output location.</li>
-</ol>
+
+
+2. Query all materials fom GPUOpen. Extract out a few material
+packages (zip). Save the material lists and unzipped packages (MaterialX and images) in the default output location.
+
 <div class="codehilite"><pre><span></span><code>python<span class="w"> </span>GPUOpenLoaderCmd.py.py
 </code></pre></div>
 
-<h3 id="api-examples">API Examples</h3>
-<ul>
-<li>Forth-coming...</li>
-</ul>
-<h3 id="dependencies">Dependencies</h3>
-<p>The Python utilities require:</p>
-<ol>
-<li>The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation</li>
-<li>The <code>requests</code> package.</li>
-</ol>
-<h3 id="building">Building</h3>
-<p>The repository can be cloned and the package built using:</p>
+
+
+<h3>API Examples</h3>
+- Forth-coming...
+
+<h3>Dependencies</h3>
+
+The Python utilities require:
+
+1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation
+2. The `requests` package.
+
+### Building
+
+The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://github.com/kwokcb/materialxMaterials/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a> can be cloned and the package built using:
+
+
 <div class="codehilite"><pre><span></span><code>pip install .
 </code></pre></div>
 
-<p>This will pull down the dependent packages as needed.</p>
-<h3 id="api-reference">API Reference</h3>
-<p>The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a></p>
-<h3 id="usage">Usage</h3>
-<p>Documentation forth-coming...</p>
+
+This will pull down the dependent packages as needed.
+
+<h3>API Reference</h3>
+
+The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a>
+
+<h3>Usage</h3>
+
+Forth-coming...
     </div>
   </section>
 
@@ -113,7 +137,27 @@ packages (zip). Save the material lists and unzipped packages (MaterialX and ima
     document.body.setAttribute('data-bs-theme', 'dark');
   </script>
 
-  
+    <footer class="bg-dark-subtle footer text-white py-2 pt-2" data-bs-theme="dark">
+    <div class="container">
+      <ul class="social-icons">
+        <button class="btn btn-outline" type="button">
+          <a href="https://github.com/kwokcb/materialxMaterials" target="_blank"><b class="fa-brands fa-github fa-2x"
+              style="color: #ffffff;"></b></a>
+        </button>
+        <button class="btn btn-outline " type="button">
+          <a href="https://www.linkedin.com/in/bernard-kwok/" target="_blank"><b class="fa-brands fa-linkedin-in fa-2x"
+              style="color: #0082ca;"></b></a>
+        </button>
+      </ul>
+      <p>
+        <a class="bg-dark p-2 right" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            <img alt="Creative Commons License" style="border-width:0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+                <a href="https://kwokcb.github.io/nanmuconsulting/" target="_blank">
+        &copy; 2022-2024 NanMu Consulting.</a>
+      </p>      
+    </div>
+  </footer>
 </body>
 
 </html>

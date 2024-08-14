@@ -1,4 +1,4 @@
-<h2><img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=24px>MaterialX Materials</h2>
+<h2 class="bg-gradient rounded-2 p-2"> <img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=32px>MaterialX Materials</h2>
 
 ### Introduction
 
@@ -7,7 +7,11 @@ Welcome to MaterialX Materials.
 This site hosts a set of libraries and command line utilities to
 query remote databases for MaterialX materials.
 
-The current utilities will work with the:
+> Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a>
+</b>
+<p>
+
+The current utilities support:
 
 <div style="display: flex; align-items: center;">
 <img src="https://physicallybased.info/images/renders/cycles/600/aluminum.webp" width="64px" style="margin-right: 10px;">
@@ -22,14 +26,17 @@ documents can be extracted for any of the posted materials in the database.
 
 Each currently has Python implementations.
 
-A Javascript implementation for extracting `PhysicallyBased` materials is 
+A Javascript implementation for extracting <code>PhysicallyBased</code> materials is 
  <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">available here.
 <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
-</a>.
+</a>
 
-### Examples
+<p>
 
-#### Command Line Utilities
+<hr>
+<h3> Examples</h3>
+
+<h4>Command Line Utilities</h4>
 
 1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location.
 ```sh
@@ -42,10 +49,10 @@ packages (zip). Save the material lists and unzipped packages (MaterialX and ima
 python GPUOpenLoaderCmd.py.py
 ```
 
-### API Examples
+<h3>API Examples</h3>
 - Forth-coming...
 
-### Dependencies
+<h3>Dependencies</h3>
 
 The Python utilities require:
 
@@ -54,19 +61,19 @@ The Python utilities require:
 
 ### Building
 
-The repository can be cloned and the package built using:
+The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://github.com/kwokcb/materialxMaterials/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a> can be cloned and the package built using:
 
 ```
 pip install .
 ```
 This will pull down the dependent packages as needed.
 
-### API Reference
+<h3>API Reference</h3>
 
 The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a>
 
-### Usage
+<h3>Usage</h3>
 
-Documentation forth-coming...
+Forth-coming...
 
 
