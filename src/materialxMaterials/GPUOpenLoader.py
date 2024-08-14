@@ -18,7 +18,7 @@ class GPUOpenMaterialLoader():
         self.package_url = self.root_url + '/packages'
         self.materials = None
 
-    def writePackageDataToFile(self, data, outputFolder, title, unzipFile=True):
+    def writePackageDataToFile(self, data, outputFolder, title, unzipFile=True) -> bool:
         '''
         Write a package data to a file.
         @param data: The data to write.
@@ -101,7 +101,7 @@ class GPUOpenMaterialLoader():
         title = jsonResult["title"]
         return [data, title]
 
-    def findMaterialsByName(self, materialName):
+    def findMaterialsByName(self, materialName) -> list:
         '''
         Find materials by name.
         @param materialName: Regular expression to match the material name.
@@ -123,7 +123,11 @@ class GPUOpenMaterialLoader():
 
         return materialsList
 
-    def updateMaterialNames(self):
+    def updateMaterialNames(self) -> int:
+        '''
+        Update the material names from the material lists.
+        @return: The number of materials.
+        '''
         if (self.materials == None):
             return 0
 
@@ -138,7 +142,13 @@ class GPUOpenMaterialLoader():
 
         return len(self.materialNames)
 
-    def getMaterials(self):
+    def getMaterials(self) -> list:
+        '''
+        Get the materials returned from the GPUOpen material database.
+        Will loop based on the linked-list of materials stored in the database.
+        Currently the batch size requested is 100 materials per batch.
+        @return: List of material lists
+        '''
 
         self.materials = []
         self.materialNames = []
@@ -205,9 +215,10 @@ class GPUOpenMaterialLoader():
 
         return self.materials    
 
-    def getMaterialsAsJsonString(self):
+    def getMaterialsAsJsonString(self) -> list:
         '''
         Get the JSON strings for the materials
+        @return: List of JSON strings for the materials. One string per material batch.
         '''
         results = []
 
@@ -217,7 +228,7 @@ class GPUOpenMaterialLoader():
             results.append(json.dumps(material, indent=4, sort_keys=True))
         return results
 
-    def readMaterialFiles(self, fileNames):
+    def readMaterialFiles(self, fileNames) -> list:
         '''
         Load the materials from a set of JSON files downloaded from
         the GPUOpen material database.
@@ -228,7 +239,7 @@ class GPUOpenMaterialLoader():
                 data = json.load(f)
                 self.materials.append(data)
 
-    def writeMaterialFiles(self, folder, rootFileName):
+    def writeMaterialFiles(self, folder, rootFileName) -> int:
         '''
         Write the materials to a set of MaterialX files.
         @param folder: The folder to write the files to.

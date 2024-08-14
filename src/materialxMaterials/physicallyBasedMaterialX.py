@@ -1,5 +1,4 @@
 '''
-@file physicallyBasedMaterialX.py
 @brief Class to load Physically Based Materials from the PhysicallyBased site.
 and convert the materials to MaterialX format for given target shading models.
 '''
