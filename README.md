@@ -1,4 +1,4 @@
-<h2><img src="https://kwokcb.github.io/documents/icons/logo_large_blue_teapot_no_text.png" width=24px>MaterialX Materials</h2>
+<h2><img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=24px>MaterialX Materials</h2>
 
 ### Introduction
 
