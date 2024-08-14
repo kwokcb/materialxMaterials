@@ -1,3 +1,7 @@
+'''
+@brief Utilities load materials from the GPUOpen material database. See: https://api.matlib.gpuopen.com/api/swagger/ for API information.
+'''
+
 import requests, json, os, io, re
 import zipfile
 from http import HTTPStatus

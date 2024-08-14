@@ -1,4 +1,4 @@
-# MaterialX Materials
+<h2><img src="https://kwokcb.github.io/documents/icons/logo_large_blue_teapot_no_text.png" width=24px>MaterialX Materials</h2>
 
 ### Introduction
 
@@ -9,19 +9,41 @@ query remote databases for MaterialX materials.
 
 The current utilities will work with the:
 
-1. PhysicallyBased material database: Material descriptions can be downloaded with additional utilities
-to create materials using either: Autodesk Standard Surface, OpenPBR, or glTF PBR shading model shaders. 
-
-2. The AMD GPUOpen material database: MaterialX packages can be downloaded (as zip files). Images and MaterialX
+<div style="display: flex; align-items: center;">
+<img src="https://physicallybased.info/images/renders/cycles/600/aluminum.webp" width="64px" style="margin-right: 10px;">
+<a href="https://physicallybased.info/">PhysicallyBased database</a> Material descriptions can be downloaded with additional utilities to create materials using either: Autodesk Standard Surface, OpenPBR, or glTF PBR shading model shaders.
+</div>
+<br>
+<div style="display: flex; align-items: center;">
+<img src="https://image.matlib.gpuopen.com/afff0c66-dba8-4d79-b96b-459fbd9cbef5.jpeg" width="64px" style="margin-right: 10px;">
+<a href="https://matlib.gpuopen.com/main/materials/all">AMD GPUOpen database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX
 documents can be extracted for any of the posted materials in the database.
+</div>
 
-Each currently has Python implementations. The PhysicallyBased database has a Javascript implementation
-which is used by a <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">
-interactive page</a>.
+Each currently has Python implementations.
+
+A Javascript implementation for extracting `PhysicallyBased` materials is 
+ <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">available here.
+<img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
+</a>.
 
 ### Examples
 
-Documentation forth-coming...
+#### Command Line Utilities
+
+1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location.
+```sh
+python physicallyBasedMaterialX.py
+```
+
+2. Query all materials fom GPUOpen. Extract out a few material
+packages (zip). Save the material lists and unzipped packages (MaterialX and images) in the default output location.
+```sh
+python GPUOpenLoaderCmd.py.py
+```
+
+### API Examples
+- Forth-coming...
 
 ### Dependencies
 
@@ -41,7 +63,7 @@ This will pull down the dependent packages as needed.
 
 ### API Reference
 
-The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/docs/html/index.html">here</a>
+The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a>
 
 ### Usage
 

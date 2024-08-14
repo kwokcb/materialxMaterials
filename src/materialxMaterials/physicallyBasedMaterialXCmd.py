@@ -30,8 +30,8 @@ def main():
     parser.add_argument('--shadingModel', type=str, default='', help='Shading models to use for conversion. '
                         ' If not specified then all will be used. '
                         ' Options: standard_surface, gltf_pbr, open_pbr_surface')
-    parser.add_argument('--outputDir', type=str, default='PhysicallyBasedMaterialX', 
-                        help='Output directory for MaterialX files')
+    parser.add_argument('--outputDir', type=str, default='', 
+                        help='Output directory for MaterialX files. Default location is PhysicallyBasedMaterialX')
     parser.add_argument('--writeJSON', type=bool, default=True, 
                         help='Write materials JSON file. Default is True')
     parser.add_argument('--separateFiles', type=bool, default=False, 
