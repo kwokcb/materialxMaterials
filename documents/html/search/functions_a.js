@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['setdebugging_54',['setDebugging',['../classphysically_based_material_x_1_1_physically_based_material_loader.html#a328b606fbcd312f4b5c2adb80e009240',1,'physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
-  ['skiplibraryelement_55',['skipLibraryElement',['../classphysically_based_material_x_1_1_physically_based_material_loader.html#a7504afa6191a6bd0cc944c03a1caa2f9',1,'physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
+  ['setdebugging_54',['setDebugging',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a55f6fd9b37754a25499353a360f7c85c',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
+  ['skiplibraryelement_55',['skipLibraryElement',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ad188128fa3e0493c5dcb6bf0a139329f',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
 ];

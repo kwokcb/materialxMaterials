@@ -34,77 +34,6 @@ A Javascript implementation for extracting <code>PhysicallyBased</code> material
 <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
 </a>
 
-<h3>Usage</h3>
-
-<h4>Commands</h4>
-
-1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
-
-    ```sh
-    python physicallyBasedMaterialXCmd.py
-    ```
-
-2. Query all materials fom GPUOpen. Extract out a few material
-packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
-
-    ```sh
-    python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
-    ```
-
-<h3>Library</h3>
-
-- Forth-coming...
-
-<h3>Results</h3>
-
-The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
-
-<table>
-<th>
-<tr >
-<td >
-Emerald Peaks Wallpaper
-<td >
-Indigo Palm Wallpaper
-<td >
-Oliana Blue Painted Wood
-</th>
-<tr >
-<td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=100%>
-</td>
-<td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png" width=100%>
-</td>
-<td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png" width=100%>
-</td>
-</tr>
-</table>
-
-<table>
-<th>
-<tr >
-<td >
-Ketchup
-<td >
-Cooking Oil
-<td >
-Brass
-</th>
-<tr >
-<td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=100%>
-</td>
-<td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=100%>
-</td>
-<td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%>
-</td>
-</table>
-
-
 <h3>Dependencies</h3>
 
 The Python utilities require:
@@ -121,6 +50,85 @@ pip install .
 ```
 
 This will pull down the dependent packages as needed.
+
+<h3>Usage</h3>
+
+<h4>Commands</h4>
+
+- Query all materials fom PhysicallyBased and convert them to all  support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
+
+  ```sh
+  python physicallyBasedMaterialXCmd.py
+  ```
+  or 
+
+  ```sh
+  python -m materialxMaterials physbased
+  ```
+
+- Query all materials fom GPUOpen. Extract out a few material
+packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
+
+  ```sh
+  python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
+  ```
+
+  or 
+
+  ```sh
+  python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
+  ```
+
+<h3>Library</h3>
+
+- Forth-coming...
+
+<h3>Results</h3>
+
+The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
+
+<table>
+<tr >
+<th >
+Emerald Peaks Wallpaper
+<th >
+Indigo Palm Wallpaper
+<th >
+Oliana Blue Painted Wood
+<tr >
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png" width=100%>
+</td>
+</tr>
+</table>
+
+<table>
+<tr >
+<th>
+Ketchup
+<th>
+Cooking Oil
+<th>
+Brass
+</th>
+<tr >
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%>
+</td>
+</table>
+
 
 <h3>API Reference</h3>
 

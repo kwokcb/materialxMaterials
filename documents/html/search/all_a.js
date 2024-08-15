@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setdebugging_23',['setDebugging',['../classphysically_based_material_x_1_1_physically_based_material_loader.html#a328b606fbcd312f4b5c2adb80e009240',1,'physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
-  ['skiplibraryelement_24',['skipLibraryElement',['../classphysically_based_material_x_1_1_physically_based_material_loader.html#a7504afa6191a6bd0cc944c03a1caa2f9',1,'physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
+  ['readmaterialfiles_22',['readMaterialFiles',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#aea6443970a62b7e354441e331e99d962',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]]
 ];

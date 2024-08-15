@@ -256,6 +256,23 @@ A Javascript implementation for extracting <code>PhysicallyBased</code> material
 <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
 </a>
 
+<h3>Dependencies</h3>
+
+The Python utilities require:
+
+1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation
+2. The `requests` package.
+
+<h3>Building</h3>
+
+The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned and the package built using:
+
+```
+pip install .
+```
+
+This will pull down the dependent packages as needed.
+
 <h3>Usage</h3>
 
 <h4>Commands</h4>
@@ -326,23 +343,6 @@ Brass
 </td>
 </table>
 
-
-<h3>Dependencies</h3>
-
-The Python utilities require:
-
-1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation
-2. The `requests` package.
-
-<h3>Building</h3>
-
-The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned and the package built using:
-
-```
-pip install .
-```
-
-This will pull down the dependent packages as needed.
 
 <h3>API Reference</h3>
 

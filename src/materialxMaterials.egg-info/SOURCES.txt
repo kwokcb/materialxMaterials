@@ -3,6 +3,8 @@ README.md
 pyproject.toml
 src/materialxMaterials/GPUOpenLoader.py
 src/materialxMaterials/GPUOpenLoaderCmd.py
+src/materialxMaterials/__init__.py
+src/materialxMaterials/__main__.py
 src/materialxMaterials/physicallyBasedMaterialX.py
 src/materialxMaterials/physicallyBasedMaterialXCmd.py
 src/materialxMaterials.egg-info/PKG-INFO

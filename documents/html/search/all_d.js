@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['writejsontofile_26',['writeJSONToFile',['../classphysically_based_material_x_1_1_physically_based_material_loader.html#af2bddab607a35706739dc8de8fcf6a36',1,'physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
-  ['writematerialfiles_27',['writeMaterialFiles',['../class_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a779faeb91d54826583138c3874f5d993',1,'GPUOpenLoader::GPUOpenMaterialLoader']]],
-  ['writematerialxtofile_28',['writeMaterialXToFile',['../classphysically_based_material_x_1_1_physically_based_material_loader.html#aad9d111f65320101847d0543d3bb0560',1,'physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
-  ['writepackagedatatofile_29',['writePackageDataToFile',['../class_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#ae94cab7800283b6dd877b38b5885d34a',1,'GPUOpenLoader::GPUOpenMaterialLoader']]]
+  ['writejsontofile_26',['writeJSONToFile',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aec5e05618ea141395f94a2ecc897ab96',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
+  ['writematerialfiles_27',['writeMaterialFiles',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a547938c19b0d7e814389a4f6e6da3b1d',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]],
+  ['writematerialnamestofile_28',['writeMaterialNamesToFile',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#ad058328e04f5400c5d33c93f4a116ea9',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]],
+  ['writematerialxtofile_29',['writeMaterialXToFile',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#adefb5c1b44257ae287109366909e914c',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
+  ['writepackagedatatofile_30',['writePackageDataToFile',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a6e21d13a797c2291f867883624ec1e26',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]]
 ];

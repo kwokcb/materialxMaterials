@@ -73,12 +73,26 @@ documents can be extracted for any of the posted materials in the database.
 <p>A Javascript implementation for extracting <code>PhysicallyBased</code> materials is <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">available here.</p>
 <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
 </a>
+<h3>Dependencies</h3>
+<p>The Python utilities require:</p>
+<ol>
+<li>The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation</li>
+<li>The <code>requests</code> package.</li>
+</ol>
+<h3>Building</h3>
+<p>The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned and the package built using:</p>
+<pre class="hljs"><code><div>pip install .
+</div></code></pre>
+<p>This will pull down the dependent packages as needed.</p>
 <h3>Usage</h3>
 <h4>Commands</h4>
-<ol>
+<ul>
 <li>
 <p>Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
 <pre class="hljs"><code><div>python physicallyBasedMaterialXCmd.py
+</div></code></pre>
+<p>or</p>
+<pre class="hljs"><code><div>python -m materialxMaterials physbased
 </div></code></pre>
 </li>
 <li>
@@ -86,8 +100,11 @@ documents can be extracted for any of the posted materials in the database.
 packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
 <pre class="hljs"><code><div>python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1
 </div></code></pre>
+<p>or</p>
+<pre class="hljs"><code><div>python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
+</div></code></pre>
 </li>
-</ol>
+</ul>
 <h3>Library</h3>
 <ul>
 <li>Forth-coming...</li>
@@ -95,15 +112,13 @@ packages (zip). Save the material lists, material names and unzipped packages (M
 <h3>Results</h3>
 <p>The following are some samples which have been rendered using the <code>MaterialXView</code> utility which is part of the MaterialX binary distribution.</p>
 <table>
-<th>
 <tr >
-<td >
+<th >
 Emerald Peaks Wallpaper
-<td >
+<th >
 Indigo Palm Wallpaper
-<td >
+<th >
 Oliana Blue Painted Wood
-</th>
 <tr >
 <td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=100%>
@@ -117,13 +132,12 @@ Oliana Blue Painted Wood
 </tr>
 </table>
 <table>
-<th>
 <tr >
-<td >
+<th>
 Ketchup
-<td >
+<th>
 Cooking Oil
-<td >
+<th>
 Brass
 </th>
 <tr >
@@ -137,17 +151,6 @@ Brass
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%>
 </td>
 </table>
-<h3>Dependencies</h3>
-<p>The Python utilities require:</p>
-<ol>
-<li>The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation</li>
-<li>The <code>requests</code> package.</li>
-</ol>
-<h3>Building</h3>
-<p>The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned and the package built using:</p>
-<pre class="hljs"><code><div>pip install .
-</div></code></pre>
-<p>This will pull down the dependent packages as needed.</p>
 <h3>API Reference</h3>
 <p>The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a></p>
 </div>

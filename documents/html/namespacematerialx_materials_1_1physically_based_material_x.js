@@ -1,0 +1,4 @@
+var namespacematerialx_materials_1_1physically_based_material_x =
+[
+    [ "PhysicallyBasedMaterialLoader", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader" ]
+];
