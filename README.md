@@ -34,9 +34,9 @@ A Javascript implementation for extracting <code>PhysicallyBased</code> material
 <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
 </a>
 
-<h3>Examples</h3>
+<h3>Usage</h3>
 
-<h4>Command Line Utilities</h4>
+<h4>Commands</h4>
 
 1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
 ```sh
@@ -50,9 +50,59 @@ The build will include this information Python package under the <code>data</cod
 python .GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
 ```
 
-<h3>API Examples</h3>
+<h3>Library</h3>
 
 - Forth-coming...
+
+<h3>Results</h3>
+
+The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
+
+<table class="container-flex">
+<th>
+<tr class="row">
+<td class="col">
+Emerald Peaks Wallpaper
+<td class="col">
+Indigo Palm Wallpaper
+<td class="col">
+Oliana Blue Painted Wood
+</th>
+<tr class="row">
+<td class="col">
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=100%>
+</td>
+<td class="col">
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png" width=100%>
+</td>
+<td class="col">
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png" width=100%>
+</td>
+</tr>
+</table>
+
+<table>
+<th>
+<tr class="row">
+<td class="col">
+Ketchup
+<td class="col">
+Cooking Oil
+<td class="col">
+Brass
+</th>
+<tr class="row">
+<td class="col">
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=100%>
+</td>
+<td class="col">
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=100%>
+</td>
+<td class="col">
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%>
+</td>
+</table>
+
 
 <h3>Dependencies</h3>
 

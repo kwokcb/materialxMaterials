@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<materialx version="1.39">
+<materialx version="1.38">
   <!--Physically Based Materials from https://api.physicallybased.info -->
   <!--  Processsed via API and converted to MaterialX -->
   <!--  Target Shading Model: gltf_pbr-->
