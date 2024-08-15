@@ -1,10 +1,13 @@
 '''
-@brief Utilities load materials from the GPUOpen material database. See: https://api.matlib.gpuopen.com/api/swagger/ for API information.
+@brief Utilities to extract materials from the GPUOpen material database. This is not a complete set of calls to extract out all material information but instead enough to find materials
+and extract out specific packages from the list of available materials. 
+
+See: https://api.matlib.gpuopen.com/api/swagger/ for information on available API calls.
 '''
 
-import requests, json, os, io, re
-import zipfile
+import requests, json, os, io, re, zipfile, logging
 from http import HTTPStatus
+# Note: MaterialX is not currently a dependency since no MaterialX processing is required.
 #import MaterialX as mx
 
 class GPUOpenMaterialLoader():
@@ -17,6 +20,9 @@ class GPUOpenMaterialLoader():
         self.url = self.root_url + '/materials'
         self.package_url = self.root_url + '/packages'
         self.materials = None
+
+        self.logger = logging.getLogger('GPUO')
+        logging.basicConfig(level=logging.INFO)
 
     def writePackageDataToFile(self, data, outputFolder, title, unzipFile=True) -> bool:
         '''
@@ -43,12 +49,12 @@ class GPUOpenMaterialLoader():
                 with zipfile.ZipFile(data_io, 'r') as zip_ref:
                     zip_ref.extractall(unzipFolder)
 
-            print(f'Unzipped to folder: "{unzipFolder}"')
+            self.logger.info(f'Unzipped to folder: "{unzipFolder}"')
 
         else:            
             outputFile = os.path.join(outputFolder, f"{title}.zip")
             with open(outputFile, "wb") as f:
-                print('Write package to file:', outputFile)
+                self.logger.info(f'Write package to file: "{outputFile}"')
                 f.write(data)
 
         return True
@@ -100,6 +106,20 @@ class GPUOpenMaterialLoader():
 
         title = jsonResult["title"]
         return [data, title]
+    
+    def downloadPackageByExpression(self, searchExpr, packageId=0):
+        downloadList = []
+
+        foundList = self.findMaterialsByName(searchExpr)
+        if len(foundList) > 0:
+            for found in foundList:
+                listNumber = found['listNumber']
+                materialNumber = found['materialNumber']
+                matName = found['title']
+                self.logger.info(f'> Download material: {matName} List: {listNumber}. Index: {materialNumber}')
+                result = [data, title] = self.downloadPackage(listNumber, materialNumber, packageId)
+                downloadList.append(result)        
+        return downloadList
 
     def findMaterialsByName(self, materialName) -> list:
         '''
@@ -123,24 +143,20 @@ class GPUOpenMaterialLoader():
 
         return materialsList
 
-    def updateMaterialNames(self) -> int:
+    def getMaterialNames(self) -> list:
         '''
         Update the material names from the material lists.
-        @return: The number of materials.
+        @return: List of material names. If no materials are loaded, then an empty list is returned.
         '''
+        self.materialNames = []        
         if (self.materials == None):
-            return 0
+            return []
 
-        self.materialNames = []
-        i = 0
         for materialList in self.materials:
             for material in materialList['results']:
                 self.materialNames.append(material['title'])
-                #print(f'Material [{i}] :', material['title'])
-                i += 1
-            #print(f'Number of materials: {i}')
 
-        return len(self.materialNames)
+        return self.materialNames
 
     def getMaterials(self) -> list:
         '''
@@ -176,7 +192,7 @@ class GPUOpenMaterialLoader():
         
                 # Split the response text assuming the JSON objects are concatenated
                 json_strings = raw_response.split('}{')    
-                #print('Number of JSON strings:', len(json_strings))
+                #self.logger.info('Number of JSON strings:', len(json_strings))
                 json_result_string = json_strings[0]
                 jsonObject = json.loads(json_result_string)
                 self.materials.append(jsonObject)
@@ -194,24 +210,13 @@ class GPUOpenMaterialLoader():
                     offsetParts = queryParts[1].split('=')
                     params['limit'] = int(limitParts[1])
                     params['offset'] = int(offsetParts[1])
-                    print('Fetch set of materials: limit:', params['limit'], 'offset:', params['offset'])
+                    self.logger.info(f'Fetch set of materials: limit: {params["limit"]} offset: {params["offset"]}')
                 else:
                     haveMoreMaterials = False
                     break
                 
-                dump = False
-                if dump:
-                    count = self.materials['count']
-                    print('--------- Materials count:', count)
-                    results = self.materials['results']
-                    for result in results:
-                        title = result['title']
-                        mtlx_filename = result['mtlx_filename']
-                        mtlx_material_name = result['mtlx_material_name']
-                        print('title:', title, 'mtlx_filename:', mtlx_filename, 'mtlx_material_name:', mtlx_material_name)
-
             else:
-                print(f'Error: {response.status_code}, {response.text}')
+                self.logger.info(f'Error: {response.status_code}, {response.text}')
 
         return self.materials    
 
@@ -256,10 +261,21 @@ class GPUOpenMaterialLoader():
                 # Write JSON to file
                 fileName = rootFileName + '_' + str(i) + '.json'
                 materialFileName = os.path.join(folder, fileName)
-                print('> Write material to file:', materialFileName)
+                self.logger.info(f'> Write material to file: "{materialFileName}"')
                 with open(materialFileName, 'w') as f:
                     json.dump(material, f, indent=4, sort_keys=True)
                 i += 1                    
 
         return i
 
+    def writeMaterialNamesToFile(self, fileName, sort=True):
+        '''
+        Write sorted list of the material names to a file in JSON format
+        @param fileName: The file name to write the material names to.
+        @param sort: If true, sort the material names.        
+        '''
+        if (self.materialNames == None):
+            return
+
+        with open(fileName, 'w') as f:
+            json.dump(self.materialNames, f, indent=2, sort_keys=sort)

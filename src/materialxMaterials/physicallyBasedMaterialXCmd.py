@@ -21,11 +21,11 @@ import os, sys, argparse, logging
 import MaterialX as mx
 import physicallyBasedMaterialX as pbmx
 
-def main():
-    logger = logging.getLogger('PBCMD')
+def physicallBasedMaterialXCmd():
+    logger = logging.getLogger('PB_CMD')
     logging.basicConfig(level=logging.INFO)
 
-    # Add arguments for shading model, and output directory using argparse
+    # TODO: Add arguments for shading model, and output directory using argparse
     parser = argparse.ArgumentParser(description='Convert Physically Based Materials to MaterialX')
     parser.add_argument('--shadingModel', type=str, default='', help='Shading models to use for conversion. '
                         ' If not specified then all will be used. '
@@ -109,4 +109,4 @@ def main():
         logger.info('Could not retrieve PhysicallyBased Materials')
 
 if __name__ == '__main__':
-    main()
+    physicallBasedMaterialXCmd()
