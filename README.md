@@ -40,14 +40,14 @@ A Javascript implementation for extracting <code>PhysicallyBased</code> material
 
 1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
 ```sh
-python physicallyBasedMaterialX.py
+python physicallyBasedMaterialXCmd.py
 ```
 
 2. Query all materials fom GPUOpen. Extract out a few material
 packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location.
 The build will include this information Python package under the <code>data</code> folder.
 ```sh
-python .GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
+python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
 ```
 
 <h3>Library</h3>
@@ -58,24 +58,24 @@ python .GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1
 
 The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
 
-<table class="container-flex">
+<table>
 <th>
-<tr class="row">
-<td class="col">
+<tr >
+<td >
 Emerald Peaks Wallpaper
-<td class="col">
+<td >
 Indigo Palm Wallpaper
-<td class="col">
+<td >
 Oliana Blue Painted Wood
 </th>
-<tr class="row">
-<td class="col">
+<tr >
+<td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=100%>
 </td>
-<td class="col">
+<td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png" width=100%>
 </td>
-<td class="col">
+<td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png" width=100%>
 </td>
 </tr>
@@ -83,22 +83,22 @@ Oliana Blue Painted Wood
 
 <table>
 <th>
-<tr class="row">
-<td class="col">
+<tr >
+<td >
 Ketchup
-<td class="col">
+<td >
 Cooking Oil
-<td class="col">
+<td >
 Brass
 </th>
-<tr class="row">
-<td class="col">
+<tr >
+<td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=100%>
 </td>
-<td class="col">
+<td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=100%>
 </td>
-<td class="col">
+<td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%>
 </td>
 </table>
