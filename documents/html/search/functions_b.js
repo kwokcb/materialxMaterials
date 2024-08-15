@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updatematerialnames_54',['updateMaterialNames',['../class_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#ade67cbebca25f30d061554aea9e08491',1,'GPUOpenLoader::GPUOpenMaterialLoader']]]
+  ['validatematerialxdocument_56',['validateMaterialXDocument',['../classphysically_based_material_x_1_1_physically_based_material_loader.html#aec3acc4073ea3039cba8449b8f3d4486',1,'physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
 ];

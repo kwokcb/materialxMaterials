@@ -111,11 +111,11 @@ $(document).ready(function(){initNavTree('physically_based_material_x_cmd_8py_so
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> MaterialX <span class="keyword">as</span> mx</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> physicallyBasedMaterialX <span class="keyword">as</span> pbmx</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">def </span>main():</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    logger = logging.getLogger(<span class="stringliteral">&#39;PBCMD&#39;</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">def </span>physicallBasedMaterialXCmd():</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    logger = logging.getLogger(<span class="stringliteral">&#39;PB_CMD&#39;</span>)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    logging.basicConfig(level=logging.INFO)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment"># Add arguments for shading model, and output directory using argparse</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment"># TODO: Add arguments for shading model, and output directory using argparse</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    parser = argparse.ArgumentParser(description=<span class="stringliteral">&#39;Convert Physically Based Materials to MaterialX&#39;</span>)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    parser.add_argument(<span class="stringliteral">&#39;--shadingModel&#39;</span>, type=str, default=<span class="stringliteral">&#39;&#39;</span>, help=<span class="stringliteral">&#39;Shading models to use for conversion. &#39;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        <span class="stringliteral">&#39; If not specified then all will be used. &#39;</span></div>
@@ -199,7 +199,7 @@ $(document).ready(function(){initNavTree('physically_based_material_x_cmd_8py_so
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        logger.info(<span class="stringliteral">&#39;Could not retrieve PhysicallyBased Materials&#39;</span>)</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    main()</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    physicallBasedMaterialXCmd()</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
