@@ -31,18 +31,26 @@ class PhysicallyBasedMaterialLoader:
         self.mx = mx_module
         self.stdlib = mx_stdlib
         self.MTLX_NODE_NAME_ATTRIBUTE = 'nodename'
-
-        self.initializeInputRemapping()
+        self.support_openpbr = False
 
         if not mx_module:
-            self.logger.critical(f'{self._getMethodName()}: MaterialX module not specified.')
+            self.logger.critical(f'> {self._getMethodName()}: MaterialX module not specified.')
             return
+        
+        # Check for OpenPBR support which is only available in 1.39 and above
+        version_major, version_minor, version_patch = self.mx.getVersionIntegers()
+        self.logger.debug(f'> MaterialX version: {version_major}.{version_minor}.{version_patch}')
+        if (version_major >=1 and version_minor >= 39) or version_major > 1:
+            self.logger.debug('> OpenPBR shading model supported')
+            self.support_openpbr = True
+
+        self.initializeInputRemapping()
 
         # Load the MaterialX standard library if not provided
         if not self.stdlib:
             self.stdlib = self.mx.createDocument()
             libFiles = self.mx.loadLibraries(mx.getDefaultDataLibraryFolders(), mx.getDefaultDataSearchPath(), self.stdlib)            
-            self.logger.debug(f'Loaded standard library: {libFiles}')
+            self.logger.debug(f'> Loaded standard library: {libFiles}')
 
     def setDebugging(self, debug=True):
         '''
@@ -64,7 +72,7 @@ class PhysicallyBasedMaterialLoader:
         if (shadingModel in self.remapMap):
             return self.remapMap[shadingModel]
 
-        self.logger.warn(f'No remapping keys found for shading model: {shadingModel}')
+        self.logger.warn(f'> No remapping keys found for shading model: {shadingModel}')
         return {}
 
     def initializeInputRemapping(self): 
@@ -114,7 +122,8 @@ class PhysicallyBasedMaterialLoader:
         self.remapMap = {}
         self.remapMap['standard_surface'] = standard_surface_remapKeys; 
         self.remapMap['gltf_pbr'] = gltf_remapKeys; 
-        self.remapMap['open_pbr_surface'] = openpbr_remapKeys; 
+        if self.support_openpbr:
+            self.remapMap['open_pbr_surface'] = openpbr_remapKeys; 
 
     def getJSON(self) -> dict:
         ''' Get the JSON object representing the Physically Based Materials '''
@@ -143,7 +152,7 @@ class PhysicallyBasedMaterialLoader:
         self.materials = None
         self.materialNames = []
         if not os.path.exists(fileName):
-            self.logger.error(f'File does not exist: {fileName}')
+            self.logger.error(f'> File does not exist: {fileName}')
             return None
 
         with open(fileName, 'r') as json_file:
@@ -188,7 +197,7 @@ class PhysicallyBasedMaterialLoader:
                 self.materialNames.append(mat['name'])
 
         else:
-            self.logger.error(f'Status: {response.status_code}, {response.text}')
+            self.logger.error(f'> Status: {response.status_code}, {response.text}')
 
         return self.materials
     
@@ -202,7 +211,7 @@ class PhysicallyBasedMaterialLoader:
             # Print out each key and value
             for key, value in mat.items():
                 if (key != 'name' and value):
-                    self.logger.info(f'  - {key}: {value}')
+                    self.logger.info(f'>  - {key}: {value}')
 
     def writeJSONToFile(self, filename):
         '''
@@ -241,8 +250,12 @@ class PhysicallyBasedMaterialLoader:
         @return A tuple of (valid, errors) where valid is True if the document is valid, and errors is a list of errors if the document is invalid.
         '''
         if not self.mx:
-            self.logger.critical(f'{self._getMethodName()}: MaterialX module is required')        
+            self.logger.critical(f'> {self._getMethodName()}: MaterialX module is required')        
             return False, '' 
+        
+        if not doc:
+            self.logger.warning(f'> {self._getMethodName()}: MaterialX document is required')
+            return False, ''
 
         valid, errors = doc.validate()
         return valid, errors
@@ -268,17 +281,21 @@ class PhysicallyBasedMaterialLoader:
         @return The MaterialX document
         '''
         if not self.mx:
-            self.logger.critical(f'{self._getMethodName()}: MaterialX module is required')
+            self.logger.critical(f'> {self._getMethodName()}: MaterialX module is required')
+            return None
+        
+        if not self.support_openpbr and shaderCategory == 'open_pbr_surface':
+            self.logger.warning(f'> OpenPBR shading model not supported in MaterialX version {self.mx.getVersionString()}')
             return None
 
         if not self.materials:
-            self.logger.info('No materials to convert')
+            self.logger.info('> No materials to convert')
             return None            
         
         if len(remapKeys) == 0:
             remapKeys = self.getInputRemapping(shaderCategory)
             if len(remapKeys) == 0:
-                self.logger.warning(f'No remapping keys found for shading model: {shaderCategory}')
+                self.logger.warning(f'> No remapping keys found for shading model: {shaderCategory}')
 
         # Create main document and import the library document
         self.doc = self.mx.createDocument()
@@ -351,7 +368,7 @@ class PhysicallyBasedMaterialLoader:
         @return None
         '''
         if not self.mx:
-            self.logger.critical(f'{self._getMethodName()}: MaterialX module is required')
+            self.logger.critical(f'> {self._getMethodName()}: MaterialX module is required')
             return
 
         writeOptions = self.mx.XmlWriteOptions()
@@ -365,7 +382,7 @@ class PhysicallyBasedMaterialLoader:
         @return The MaterialX document as a string
         '''
         if not self.mx:
-            self.logger.critical(f'{self._getMethodName()}: MaterialX module is required')
+            self.logger.critical(f'> {self._getMethodName()}: MaterialX module is required')
             return
 
         writeOptions = self.mx.XmlWriteOptions()

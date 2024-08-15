@@ -220,17 +220,20 @@ License-File: LICENSE
 Requires-Dist: materialx>=1.39
 Requires-Dist: requests
 
-<h2 class="bg-gradient rounded-2 p-2"> <img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=32px>MaterialX Materials</h2>
+<!--Start-->
 
-### Introduction
+<h2 class="bg-gradient rounded-2 p-0"> <img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=32px>MaterialX Materials</h2>
+
+<div class="container p-2 rounded-4 border border-secondary border-rounded">
+
+<h3>Introduction</h3>
 
 Welcome to MaterialX Materials.
 
 This site hosts a set of libraries and command line utilities to
 query remote databases for MaterialX materials.
 
-> Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a>
-</b>
+> Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
 <p></p>
 
 The current utilities support:
@@ -248,34 +251,81 @@ documents can be extracted for any of the posted materials in the database.
 
 Each currently has Python implementations.
 
-A Javascript implementation for extracting <code>PhysicallyBased</code> materials is 
- <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">available here.
+A Javascript implementation for extracting <code>PhysicallyBased</code> materials is <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">available here.
+
 <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
 </a>
 
-<p>
+<h3>Usage</h3>
 
-<hr>
-<h3> Examples</h3>
+<h4>Commands</h4>
 
-<h4>Command Line Utilities</h4>
+1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
-1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location.
-
-```sh
-python physicallyBasedMaterialX.py
-```
+    ```sh
+    python physicallyBasedMaterialXCmd.py
+    ```
 
 2. Query all materials fom GPUOpen. Extract out a few material
-packages (zip). Save the material lists and unzipped packages (MaterialX and images) in the default output location.
+packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
-```sh
-python GPUOpenLoaderCmd.py
-```
+    ```sh
+    python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
+    ```
 
-<h3>API Examples</h3>
+<h3>Library</h3>
 
 - Forth-coming...
+
+<h3>Results</h3>
+
+The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
+
+<table>
+<th>
+<tr >
+<td >
+Emerald Peaks Wallpaper
+<td >
+Indigo Palm Wallpaper
+<td >
+Oliana Blue Painted Wood
+</th>
+<tr >
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png" width=100%>
+</td>
+</tr>
+</table>
+
+<table>
+<th>
+<tr >
+<td >
+Ketchup
+<td >
+Cooking Oil
+<td >
+Brass
+</th>
+<tr >
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%>
+</td>
+</table>
+
 
 <h3>Dependencies</h3>
 
@@ -284,7 +334,7 @@ The Python utilities require:
 1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation
 2. The `requests` package.
 
-### Building
+<h3>Building</h3>
 
 The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned and the package built using:
 
@@ -298,8 +348,6 @@ This will pull down the dependent packages as needed.
 
 The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a>
 
-<h3>Usage</h3>
-
-Forth-coming...
-
+</div>
+<!--End-->
 

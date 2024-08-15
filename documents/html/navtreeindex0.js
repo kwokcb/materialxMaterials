@@ -28,7 +28,7 @@ var NAVTREEINDEX0 =
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#a04424ea5ae0301d277d744db06b842a0":[1,0,1,0,5],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#a0c6d46a4e714e07c8b1e89c8ac1c30e3":[1,0,1,0,23],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#a17cf9d55c600d3c0b40267b90d7c112f":[1,0,1,0,22],
-"classphysically_based_material_x_1_1_physically_based_material_loader.html#a188d274dd2a477a7579e60d17710d924":[1,0,1,0,25],
+"classphysically_based_material_x_1_1_physically_based_material_loader.html#a188d274dd2a477a7579e60d17710d924":[1,0,1,0,26],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#a2460d4854edd05dc673908fe758c1a5c":[1,0,1,0,8],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#a328b606fbcd312f4b5c2adb80e009240":[1,0,1,0,13],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#a4d28fc4e2ab2b0c6fee9198f87f18834":[1,0,1,0,20],
@@ -40,6 +40,7 @@ var NAVTREEINDEX0 =
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#a8461c4cf37b60c9ec43ab3cf5836b962":[1,0,1,0,11],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#aad9d111f65320101847d0543d3bb0560":[1,0,1,0,16],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#ab28a1f7c20a9ece6d4850a225075d1f3":[1,0,1,0,1],
+"classphysically_based_material_x_1_1_physically_based_material_loader.html#ac6fbaaad0b90d7aed5e573106aa4587c":[1,0,1,0,25],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#acf42faf5fef759d92dde1a283af6648e":[1,0,1,0,9],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#ad5abe12e95cf6c0fa5a9434ddc083665":[1,0,1,0,17],
 "classphysically_based_material_x_1_1_physically_based_material_loader.html#ae89c577f170966493e461a4997672859":[1,0,1,0,12],
@@ -61,6 +62,6 @@ var NAVTREEINDEX0 =
 "physically_based_material_x_8py_source.html":[2,0,2],
 "physically_based_material_x_cmd_8py.html#ad162b328ff68bf2af8f2fe865062cf31":[0,0,3,0],
 "physically_based_material_x_cmd_8py_source.html":[2,0,3],
-"":[0,0,3],
-"":[0,0,1]
+"":[0,0,1],
+"":[0,0,3]
 };

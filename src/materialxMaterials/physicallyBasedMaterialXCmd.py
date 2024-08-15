@@ -49,7 +49,7 @@ def physicallBasedMaterialXCmd():
 
     shadingModels = []
     if opts.shadingModel:
-        shadingModels = opts.shadingModel.split(',')
+        shadingModels = opts.shadingModel.split(',')        
     shadingModePrefixMap = { 'standard_surface': 'SS', 'gltf_pbr': 'GLTF', 'open_pbr_surface': 'OPBR' }
     shadingModelPrefixes = []
     if len(shadingModels) == 0:
@@ -99,11 +99,12 @@ def physicallBasedMaterialXCmd():
                 for mat in loader.getJSONMaterialNames():
                     materialFilter = [mat]
                     matdoc = loader.convertToMaterialX(materialFilter, shadingModel, {}, prefix)
-                    valid, errors = loader.validateMaterialXDocument(matdoc)
-                    if valid:
-                        fileName = os.path.join(outputDir, f'PB_{prefix}_{mat}.mtlx')
-                        loader.writeMaterialXToFile(fileName)
-                        logger.info(f'> Write: {fileName}')
+                    if matdoc is not None:
+                        valid, errors = loader.validateMaterialXDocument(matdoc)
+                        if valid:
+                            fileName = os.path.join(outputDir, f'PB_{prefix}_{mat}.mtlx')
+                            loader.writeMaterialXToFile(fileName)
+                            logger.info(f'> Write: {fileName}')
 
     else:
         logger.info('Could not retrieve PhysicallyBased Materials')

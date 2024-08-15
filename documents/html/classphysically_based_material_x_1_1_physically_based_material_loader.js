@@ -25,5 +25,6 @@ var classphysically_based_material_x_1_1_physically_based_material_loader =
     [ "mx", "classphysically_based_material_x_1_1_physically_based_material_loader.html#a17cf9d55c600d3c0b40267b90d7c112f", null ],
     [ "remapMap", "classphysically_based_material_x_1_1_physically_based_material_loader.html#a0c6d46a4e714e07c8b1e89c8ac1c30e3", null ],
     [ "stdlib", "classphysically_based_material_x_1_1_physically_based_material_loader.html#a6471e65cac248fc9db88279a93f4b2c8", null ],
+    [ "support_openpbr", "classphysically_based_material_x_1_1_physically_based_material_loader.html#ac6fbaaad0b90d7aed5e573106aa4587c", null ],
     [ "uri", "classphysically_based_material_x_1_1_physically_based_material_loader.html#a188d274dd2a477a7579e60d17710d924", null ]
 ];
