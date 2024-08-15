@@ -98,12 +98,15 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
  </p><div style="display: flex; align-items: center;"> <img src="https://image.matlib.gpuopen.com/afff0c66-dba8-4d79-b96b-459fbd9cbef5.jpeg" alt="" width="64px" style="margin-right: 10px;" class="inline"/> <a href="https://matlib.gpuopen.com/main/materials/all">AMD GPUOpen database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database. </div></div><div class="container p-2 rounded-4 border border-secondary border-rounded">Each currently has Python implementations.</div><div class="container p-2 rounded-4 border border-secondary border-rounded">A Javascript implementation for extracting <code>PhysicallyBased</code> materials is <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">available here. <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" alt="" width="100%" class="inline"/> </a></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Usage</h3>
 </div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h4>Commands</h4>
 </div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><ol type="1">
-<li>Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder. <div class="fragment"><div class="line">python physicallyBasedMaterialXCmd.py</div>
-</div><!-- fragment --></li>
-<li>Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder. <div class="fragment"><div class="line">python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 </div>
-</div><!-- fragment --></li>
+<li><p class="startli">Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
+<p class="startli">```sh python <a class="el" href="physically_based_material_x_cmd_8py_source.html">physicallyBasedMaterialXCmd.py</a> ```</p>
+</li>
+<li>Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder. <pre class="fragment">```sh
+python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
+```
+</pre> <h3>Library</h3>
+</li>
 </ol>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Library</h3>
 </div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><ul>
 <li>Forth-coming...</li>
 </ul>

@@ -39,16 +39,17 @@ A Javascript implementation for extracting <code>PhysicallyBased</code> material
 <h4>Commands</h4>
 
 1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
-```sh
-python physicallyBasedMaterialXCmd.py
-```
+
+    ```sh
+    python physicallyBasedMaterialXCmd.py
+    ```
 
 2. Query all materials fom GPUOpen. Extract out a few material
-packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location.
-The build will include this information Python package under the <code>data</code> folder.
-```sh
-python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
-```
+packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
+
+    ```sh
+    python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
+    ```
 
 <h3>Library</h3>
 
