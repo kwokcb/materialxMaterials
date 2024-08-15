@@ -13,5 +13,10 @@ var namespaces_dup =
         [ "physicallBasedMaterialXCmd", "physically_based_material_x_cmd_8py.html#a962926b309ce16afa06401e2549c4f77", null ]
       ] ],
       [ "__version__", "____init_____8py.html#a0a3e35178588ad1393c61d4b0b4952d3", null ]
+    ] ],
+    [ "myserver", null, [
+      [ "MyHTTPRequestHandler", "classmyserver_1_1_my_h_t_t_p_request_handler.html", "classmyserver_1_1_my_h_t_t_p_request_handler" ],
+      [ "signal_handler", "myserver_8py.html#a191864830612a53884eaf67ea50f9358", null ],
+      [ "PORT", "myserver_8py.html#ae64865fb0c0c5b2daccffaa0caf57b0b", null ]
     ] ]
 ];
