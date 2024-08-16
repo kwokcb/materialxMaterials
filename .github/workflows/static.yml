@@ -39,7 +39,7 @@ jobs:
           cp index.html distribution
           cp -R documents distribution
           cp -R examples distribution
-          cp -R src/materialxMaterials/data/ distribution
+          cp -R src distribution
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
