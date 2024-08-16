@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['materialx_20materials_57',['MaterialX Materials',['../index.html',1,'']]]
+  ['materialxmaterials_0',['MaterialXMaterials',['../index.html',1,'']]]
 ];
