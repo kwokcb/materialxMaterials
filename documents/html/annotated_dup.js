@@ -9,6 +9,6 @@ var annotated_dup =
       ] ]
     ] ],
     [ "myserver", null, [
-      [ "MyHTTPRequestHandler", "classmyserver_1_1_my_h_t_t_p_request_handler.html", null ]
+      [ "MyHTTPRequestHandler", "classmyserver_1_1_my_h_t_t_p_request_handler.html", "classmyserver_1_1_my_h_t_t_p_request_handler" ]
     ] ]
 ];

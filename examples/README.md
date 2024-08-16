@@ -774,16 +774,21 @@ The resulting MaterialX document using the glTF PBR shader is given below:
 
 The results have been converted to glTF format and shown below:
 
+<table class="container" id="phys_container">
+<tr class="row">
+<td class="col" id="phys_view_container" style="min-height: 320px">
 <model-viewer
     class="rounded-2"
-    style="background-color: rgba(21, 21, 21, 0); width: 30em; height: 30em" id="viewer1" ar
+    style="background-color: rgba(21, 21, 21, 0); width: 100%; height: 100%" id="viewer1" ar
     disable-pan disable-tap camera-controls touch-action="pan-y"
-    src="./PhysicallyBasedMaterialX_GLTF.mtlx.glb" shadow-intensity="0.5"
-    environment-image="rural_crossroads_1k.hdr" alt="glTF model viewer" poster="PhysicallyBasedMaterialX_GLTF.mtlx.glb.png"
+    src="./PhysicallyBasedMaterialX_GLTF.mtlx.glb"
+    environment-image="rural_crossroads_1k.hdr" alt="glTF model viewer" poster="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX_GLTF.mtlx.glb.png"
     exposure="1.0" shadow-softness="0.5" shadow-intensity="0.7"
     skybox-image="rural_crossroads_1k.hdr">
 </model-viewer>
-
+</td>
+</tr>
+</table>
 
 ### Sample GPUOpen Material
 
@@ -989,20 +994,21 @@ The extracted MaterialX file looks like this:
 The MaterialX file and resources can directly be loaded into any application / integration that can accept MaterialX file.
 The following image was produced by loading into the `MaterialXView` application.
 
-<table>
-<tr>
-<th>MaterialXView Image
-<th>glTF model-viewer
+<table class="container" id="table_container">
+<tr class="row">
+<th class="col">MaterialXView Image
+<th class="col">glTF model-viewer
 </tr>  
-<tr>
-<td>
+<tr class="row">
+<td class="col">
 <img src="Indigo_Palm_Wallpaper.png" width=100%>
-<td>
+<td class="col" id="viewer_container">
 <model-viewer
     class="rounded-2"
-    style="background-color: rgba(21, 21, 21, 0); width: 30em; height: 30em" id="viewer1" ar
+    style="background-color: rgba(21, 21, 21, 0); width: 100%; height: 100%" id="viewer2" ar
     disable-pan disable-tap camera-controls touch-action="pan-y"
     src="./Indigo_Palm_Wallpaper.mtlx.glb" shadow-intensity="0.5"
+    poster="https://kwokcb.github.io/materialxMaterials/examples/Indigo_Palm_Wallpaper_glb.png"
     environment-image="rural_crossroads_1k.hdr" alt="glTF model viewer" poster=""
     exposure="1.0" shadow-softness="0.5" shadow-intensity="0.7"
     skybox-image="">
@@ -1017,11 +1023,25 @@ python -m materialxgltf mtlx2gltf Indigo_Palm_Wallpaper.mtlx --translateShaders 
 ```
 
 This can be used in any gltF viewer. As a simple example, this is using the `Filament` viewer inside of Visual Studio Code.
-<img src="./Indigo_Palm_Wallpaper_VScode.png" width=100%>
+<img src="https://kwokcb.github.io/materialxMaterials/examples/Indigo_Palm_Wallpaper_VScode.png" width=100%>
 
 </div>
 
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">    
   </script>  
+
+<script>
+  // Monitor size changes in container id="viewer_container"
+  const observer = new ResizeObserver(entries => {
+    for (let entry of entries) {
+      const cr = entry.contentRect;
+      console.log(entry.target, 'cr.width', cr.width);
+      console.log(entry.target, 'cr.height', cr.height);
+    }
+  });
+  //observer.observe(document.getElementById("viewer_container"));
+  observer.observe(document.getElementById("phys_container"));
+
+</script>
 
   <!--End-->
