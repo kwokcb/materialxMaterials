@@ -87,7 +87,7 @@ packages (zip). Save the material lists, material names and unzipped packages (M
 
 The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
 
-Details about some examples can be found in the <a href="./examples/">Examples pages</a>
+Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a>
 
 <table>
 <tr >
