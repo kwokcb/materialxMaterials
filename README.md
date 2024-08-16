@@ -12,7 +12,17 @@ This site hosts a set of libraries and command line utilities to
 query remote databases for MaterialX materials.
 
 > Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
-<p></p>
+<p>
+Related utilities and libraries can be found at the:
+<button class="btn btn-outline-secondary">
+<a href="https://kwokcb.github.io/MaterialXLab" target="_blank">
+<img src="https://kwokcb.github.io/MaterialXLab/documents/icons/logo_large_flask_template.svg"
+width=32px>
+MaterialXLab</a>
+</a>
+</button>
+home page.
+</p>
 
 The current utilities support:
 
@@ -81,7 +91,7 @@ packages (zip). Save the material lists, material names and unzipped packages (M
 
 <h3>Library</h3>
 
-- Forth-coming...
+A `Jupyter` notebook demonstrates the direct usage of the Python library. The output of the notebook can be found <a href="https://kwokcb.github.io/materialxMaterials/examples/materialxMaterials_tutorial_out_iframe.html">here</a>. The notebook can found in the Github repository under the `examples` folder.
 
 <h3>Results</h3>
 

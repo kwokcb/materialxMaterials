@@ -10,6 +10,10 @@ from http import HTTPStatus
 # Note: MaterialX is not currently a dependency since no MaterialX processing is required.
 #import MaterialX as mx
 
+import io
+import zipfile
+from PIL import Image as pilImage
+
 class GPUOpenMaterialLoader():
     '''
     This class is used to load materials from the GPUOpen material database.
@@ -58,6 +62,39 @@ class GPUOpenMaterialLoader():
                 f.write(data)
 
         return True
+    
+    def extractPackageData(self, data, pilImage):
+        '''
+        Extract the package data from a zip file.
+        @param data: The data to extract.
+        @param pilImage: The PIL image module.
+        @return: A list of extracted data of the form:
+        [ { 'file_name': file_name, 'data': data, 'type': type } ]
+        '''
+        if not pilImage:
+            self.logger.debug('Pillow (PIL) image module provided. Image data will not be extracted.')
+
+        zip_object = io.BytesIO(data)
+
+        extracted_data_list = []
+        with zipfile.ZipFile(zip_object, 'r') as zip_file:
+            # Iterate through the files in the zip archive
+            for file_name in zip_file.namelist():
+                # Extract each file into memory
+                extracted_data = zip_file.read(file_name)
+                if file_name.endswith('.mtlx'):
+                    mtlx_string = extracted_data.decode('utf-8')
+                    extracted_data_list.append( {'file_name': file_name, 'data': mtlx_string, 'type': 'mtlx'} )
+
+                # If the data is a image, create a image in Python
+                elif file_name.endswith('.png'):
+                    if pilImage:
+                        image = pilImage.open(io.BytesIO(extracted_data))        
+                    else:
+                        image = None
+                    extracted_data_list.append( {'file_name': file_name, 'data': image, 'type': 'image'} )
+
+        return extracted_data_list
 
     def downloadPackage(self, listNumber, materialNumber, packageId=0):
         '''

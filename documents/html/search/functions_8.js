@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['printmaterials_54',['printMaterials',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a836f19e92aeee30884613e4d9e2c4698',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
+  ['loadmaterialsfromfile_54',['loadMaterialsFromFile',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a1695a75528ef0135abd02f6aab93d2c9',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
+  ['loadmaterialsfromstring_55',['loadMaterialsFromString',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a14c9374702631d0c03e305fb57b0c45c',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
 ];

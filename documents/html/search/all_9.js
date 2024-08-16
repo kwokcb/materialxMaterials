@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['physicallybasedmaterialloader_21',['PhysicallyBasedMaterialLoader',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html',1,'materialxMaterials::physicallyBasedMaterialX']]],
-  ['printmaterials_22',['printMaterials',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a836f19e92aeee30884613e4d9e2c4698',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
+  ['gpuopenloader_19',['GPUOpenLoader',['../namespacematerialx_materials_1_1_g_p_u_open_loader.html',1,'materialxMaterials']]],
+  ['myhttprequesthandler_20',['MyHTTPRequestHandler',['../classmyserver_1_1_my_h_t_t_p_request_handler.html',1,'myserver']]],
+  ['physicallybasedmaterialx_21',['physicallyBasedMaterialX',['../namespacematerialx_materials_1_1physically_based_material_x.html',1,'materialxMaterials']]]
 ];

@@ -164,9 +164,13 @@ def main():
         inputFileName = opts.inputFileName
         # Copy input file to the path in opts.outputPath
         if opts.iframe:
-            inputFileName = os.path.join(opts.outputPath, os.path.basename(opts.inputFileName))
-            print('- Copy %s to %s' % (opts.inputFileName, inputFileName))
-            shutil.copyfile(opts.inputFileName, inputFileName)
+            outputFile = os.path.join(opts.outputPath, opts.outputFileName)
+            print('- Copy %s to %s' % (inputFileName, outputFile))
+            shutil.copyfile(inputFileName, outputFile)
+
+            #inputFileName = os.path.join(opts.outputPath, os.path.basename(opts.inputFileName))
+            #print('- Copy %s to %s' % (opts.inputFileName, inputFileName))
+            #shutil.copyfile(opts.inputFileName, inputFileName)
             inputFileName = os.path.basename(inputFileName)
 
         if (len(opts.outputFileName) > 0):

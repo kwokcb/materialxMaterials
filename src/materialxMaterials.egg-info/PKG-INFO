@@ -234,7 +234,17 @@ This site hosts a set of libraries and command line utilities to
 query remote databases for MaterialX materials.
 
 > Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
-<p></p>
+<p>
+Related utilities and libraries can be found at the:
+<button class="btn btn-outline-secondary">
+<a href="https://kwokcb.github.io/MaterialXLab" target="_blank">
+<img src="https://kwokcb.github.io/MaterialXLab/documents/icons/logo_large_flask_template.svg"
+width=32px>
+MaterialXLab</a>
+</a>
+</button>
+home page.
+</p>
 
 The current utilities support:
 
@@ -277,18 +287,29 @@ This will pull down the dependent packages as needed.
 
 <h4>Commands</h4>
 
-1. Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
+- Query all materials fom PhysicallyBased and convert them to all  support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
-    ```sh
-    python physicallyBasedMaterialXCmd.py
-    ```
+  ```sh
+  python physicallyBasedMaterialXCmd.py
+  ```
+  or 
 
-2. Query all materials fom GPUOpen. Extract out a few material
+  ```sh
+  python -m materialxMaterials physbased
+  ```
+
+- Query all materials fom GPUOpen. Extract out a few material
 packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
-    ```sh
-    python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
-    ```
+  ```sh
+  python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
+  ```
+
+  or 
+
+  ```sh
+  python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
+  ```
 
 <h3>Library</h3>
 
@@ -298,16 +319,16 @@ packages (zip). Save the material lists, material names and unzipped packages (M
 
 The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
 
+Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a>
+
 <table>
-<th>
 <tr >
-<td >
+<th >
 Emerald Peaks Wallpaper
-<td >
+<th >
 Indigo Palm Wallpaper
-<td >
+<th >
 Oliana Blue Painted Wood
-</th>
 <tr >
 <td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=100%>
@@ -322,13 +343,12 @@ Oliana Blue Painted Wood
 </table>
 
 <table>
-<th>
 <tr >
-<td >
+<th>
 Ketchup
-<td >
+<th>
 Cooking Oil
-<td >
+<th>
 Brass
 </th>
 <tr >
