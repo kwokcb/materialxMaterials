@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['myhttprequesthandler_34',['MyHTTPRequestHandler',['../classmyserver_1_1_my_h_t_t_p_request_handler.html',1,'myserver']]]
+  ['jsphysicallybasedmaterialloader_49',['JsPhysicallyBasedMaterialLoader',['../class_js_physically_based_material_loader.html',1,'']]]
 ];

@@ -83,53 +83,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
   <div class="headertitle">
 <div class="title">MaterialXMaterials Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_D__Work_materialx_materialxMaterials_README"></a></p>
-<h2 class="bg-gradient rounded-2 p-0"><img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" alt="" width="32px" class="inline"/>MaterialX Materials</h2>
-<div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Introduction</h3>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded">Welcome to MaterialX Materials.</div><div class="container p-2 rounded-4 border border-secondary border-rounded">This site hosts a set of libraries and command line utilities to query remote databases for MaterialX materials.</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><blockquote class="doxtable">
-<p>Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b> </p>
-</blockquote>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"> Related utilities and libraries can be found at the: &lt;button class="btn btn-outline-secondary"&gt; <a href="https://kwokcb.github.io/MaterialXLab" target="_blank"><img src="https://kwokcb.github.io/MaterialXLab/documents/icons/teapot_logo.svg" alt="" style="pointer-events: none;" width="32px" class="inline"/> MaterialXLab</a>  &lt;/button&gt; home page. </div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded">The current utilities support:</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><div style="display: flex; align-items: center;"> <img src="https://physicallybased.info/images/renders/cycles/600/aluminum.webp" alt="" width="64px" style="margin-right: 10px;" class="inline"/> <a href="https://physicallybased.info/">PhysicallyBased database</a> Material descriptions can be downloaded with additional utilities to create materials using either: Autodesk Standard Surface, OpenPBR, or glTF PBR shading model shaders. </div><p> <br  />
- </p><div style="display: flex; align-items: center;"> <img src="https://image.matlib.gpuopen.com/afff0c66-dba8-4d79-b96b-459fbd9cbef5.jpeg" alt="" width="64px" style="margin-right: 10px;" class="inline"/> <a href="https://matlib.gpuopen.com/main/materials/all">AMD GPUOpen database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database. </div></div><div class="container p-2 rounded-4 border border-secondary border-rounded">Each currently has Python implementations.</div><div class="container p-2 rounded-4 border border-secondary border-rounded">A Javascript implementation for extracting <code>PhysicallyBased</code> materials is <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">available here. <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" alt="" width="100%" class="inline"/> </a></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Dependencies</h3>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded">The Python utilities require:</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><ol type="1">
-<li>The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation</li>
-<li>The <code>requests</code> package.</li>
-</ol>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Building</h3>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded">The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" alt="" style="pointer-events: none;" width="16px" class="inline"/> GitHub repository</a> can be cloned and the package built using:</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><div class="fragment"><div class="line">pip install .</div>
-</div><!-- fragment --></div><div class="container p-2 rounded-4 border border-secondary border-rounded">This will pull down the dependent packages as needed.</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Usage</h3>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h4>Commands</h4>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><ul>
-<li>Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.</li>
-</ul>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><div class="fragment"><div class="line">python physicallyBasedMaterialXCmd.py</div>
-</div><!-- fragment --> or</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><div class="fragment"><div class="line">python -m materialxMaterials physbased</div>
-</div><!-- fragment --></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><ul>
-<li>Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.</li>
-</ul>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><div class="fragment"><div class="line">python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 </div>
-</div><!-- fragment --></div><div class="container p-2 rounded-4 border border-secondary border-rounded"> or</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><div class="fragment"><div class="line">python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1</div>
-</div><!-- fragment --></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Library</h3>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded">A <code>Jupyter</code> notebook demonstrates the direct usage of the Python library. The output of the notebook can be found <a href="https://kwokcb.github.io/materialxMaterials/examples/materialxMaterials_tutorial_out_iframe.html">here</a>. The notebook can found in the Github repository under the <code>examples</code> folder.</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Results</h3>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded">The following are some samples which have been rendered using the <code>MaterialXView</code> utility which is part of the MaterialX binary distribution.</div><div class="container p-2 rounded-4 border border-secondary border-rounded">Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><table class="doxtable">
-<tr>
-<th>Emerald Peaks Wallpaper </th><th>Indigo Palm Wallpaper </th><th>Oliana Blue Painted Wood </th></tr>
-<tr>
-<td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" alt="" width="100%" class="inline"/>  </td><td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png" alt="" width="100%" class="inline"/>  </td><td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png" alt="" width="100%" class="inline"/>   </td></tr>
-</table>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><table class="doxtable">
-<tr>
-<th>Ketchup </th><th>Cooking Oil </th><th>Brass  </th></tr>
-<tr>
-<td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" alt="" width="100%" class="inline"/>  </td><td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" alt="" width="100%" class="inline"/>  </td><td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" alt="" width="100%" class="inline"/>  </td></tr>
-</table>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>API Reference</h3>
-</div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded">The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a></div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['writejsontofile_28',['writeJSONToFile',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aec5e05618ea141395f94a2ecc897ab96',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
-  ['writematerialfiles_29',['writeMaterialFiles',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a547938c19b0d7e814389a4f6e6da3b1d',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]],
-  ['writematerialnamestofile_30',['writeMaterialNamesToFile',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#ad058328e04f5400c5d33c93f4a116ea9',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]],
-  ['writematerialxtofile_31',['writeMaterialXToFile',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#adefb5c1b44257ae287109366909e914c',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
-  ['writepackagedatatofile_32',['writePackageDataToFile',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a6e21d13a797c2291f867883624ec1e26',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]]
+  ['setdebugging_37',['setDebugging',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a55f6fd9b37754a25499353a360f7c85c',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
+  ['skiplibraryelement_38',['skipLibraryElement',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ad188128fa3e0493c5dcb6bf0a139329f',1,'materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.skipLibraryElement()'],['../class_js_physically_based_material_loader.html#a0ff670b529d0d01fe96d6e7d656c8f2a',1,'JsPhysicallyBasedMaterialLoader::skipLibraryElement(element)']]],
+  ['stdlib_39',['stdlib',['../class_js_physically_based_material_loader.html#ac5ea5952dab870a8e936f1974b34a8a6',1,'JsPhysicallyBasedMaterialLoader']]]
 ];
