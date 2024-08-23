@@ -4,754 +4,754 @@
   <!--  Processsed via API and converted to MaterialX -->
   <!--  Target Shading Model: gltf_pbr-->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
-  <!-- Generated shader: SHD_PBM_GLTF_Aluminum -->
-  <gltf_pbr name="SHD_PBM_GLTF_Aluminum" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg">
+  <!-- Generated shader: Aluminum_GLTF_SHD_PBM -->
+  <gltf_pbr name="Aluminum_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg">
     <input name="base_color" type="color3" value="0.912,0.914,0.92" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.97,0.979,0.988" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Aluminum -->
-  <surfacematerial name="MAT_PBM_GLTF_Aluminum" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Aluminum" />
+  <!-- Generated material: Aluminum_GLTF_MAT_PBM -->
+  <surfacematerial name="Aluminum_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Aluminum_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Banana -->
-  <gltf_pbr name="SHD_PBM_GLTF_Banana" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/banana.jpeg">
+  <!-- Generated shader: Banana_GLTF_SHD_PBM -->
+  <gltf_pbr name="Banana_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/banana.jpeg">
     <input name="base_color" type="color3" value="0.634,0.532,0.111" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Banana -->
-  <surfacematerial name="MAT_PBM_GLTF_Banana" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Banana" />
+  <!-- Generated material: Banana_GLTF_MAT_PBM -->
+  <surfacematerial name="Banana_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Banana_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Blackboard -->
-  <gltf_pbr name="SHD_PBM_GLTF_Blackboard" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blackboard.jpeg">
+  <!-- Generated shader: Blackboard_GLTF_SHD_PBM -->
+  <gltf_pbr name="Blackboard_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blackboard.jpeg">
     <input name="base_color" type="color3" value="0.039,0.039,0.039" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Blackboard -->
-  <surfacematerial name="MAT_PBM_GLTF_Blackboard" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Blackboard" />
+  <!-- Generated material: Blackboard_GLTF_MAT_PBM -->
+  <surfacematerial name="Blackboard_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Blackboard_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Blood -->
-  <gltf_pbr name="SHD_PBM_GLTF_Blood" type="surfaceshader" doc="The color of blood depends on its oxygen level. When there is plenty of oxygen, the color is a brighter red. The reason is because of a protein called hemoglobin, which carries the oxygen in your blood. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.jpeg">
+  <!-- Generated shader: Blood_GLTF_SHD_PBM -->
+  <gltf_pbr name="Blood_GLTF_SHD_PBM" type="surfaceshader" doc="The color of blood depends on its oxygen level. When there is plenty of oxygen, the color is a brighter red. The reason is because of a protein called hemoglobin, which carries the oxygen in your blood. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.jpeg">
     <input name="base_color" type="color3" value="0.64448,0.003,0.005" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.301" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Blood -->
-  <surfacematerial name="MAT_PBM_GLTF_Blood" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Blood" />
+  <!-- Generated material: Blood_GLTF_MAT_PBM -->
+  <surfacematerial name="Blood_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Blood_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Bone -->
-  <gltf_pbr name="SHD_PBM_GLTF_Bone" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/bone.jpeg">
+  <!-- Generated shader: Bone_GLTF_SHD_PBM -->
+  <gltf_pbr name="Bone_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/bone.jpeg">
     <input name="base_color" type="color3" value="0.793,0.793,0.664" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Bone -->
-  <surfacematerial name="MAT_PBM_GLTF_Bone" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Bone" />
+  <!-- Generated material: Bone_GLTF_MAT_PBM -->
+  <surfacematerial name="Bone_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Bone_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Brass -->
-  <gltf_pbr name="SHD_PBM_GLTF_Brass" type="surfaceshader" doc="Brass is an alloy of copper and zinc, with a bright and gold-like appearance. It is similar to bronze, another alloy containing copper that uses tin instead of zinc. Historically, the distinction between the two alloys has been less consistent and clear, and modern practice in museums and archaeology increasingly avoids both terms for historical objects in favor of the more general &quot;copper alloy&quot;.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brass.jpeg">
+  <!-- Generated shader: Brass_GLTF_SHD_PBM -->
+  <gltf_pbr name="Brass_GLTF_SHD_PBM" type="surfaceshader" doc="Brass is an alloy of copper and zinc, with a bright and gold-like appearance. It is similar to bronze, another alloy containing copper that uses tin instead of zinc. Historically, the distinction between the two alloys has been less consistent and clear, and modern practice in museums and archaeology increasingly avoids both terms for historical objects in favor of the more general &quot;copper alloy&quot;.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brass.jpeg">
     <input name="base_color" type="color3" value="0.887,0.789,0.434" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.988,0.976,0.843" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Brass -->
-  <surfacematerial name="MAT_PBM_GLTF_Brass" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Brass" />
+  <!-- Generated material: Brass_GLTF_MAT_PBM -->
+  <surfacematerial name="Brass_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Brass_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Brick -->
-  <gltf_pbr name="SHD_PBM_GLTF_Brick" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brick.jpeg">
+  <!-- Generated shader: Brick_GLTF_SHD_PBM -->
+  <gltf_pbr name="Brick_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brick.jpeg">
     <input name="base_color" type="color3" value="0.262,0.095,0.061" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Brick -->
-  <surfacematerial name="MAT_PBM_GLTF_Brick" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Brick" />
+  <!-- Generated material: Brick_GLTF_MAT_PBM -->
+  <surfacematerial name="Brick_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Brick_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Carrot -->
-  <gltf_pbr name="SHD_PBM_GLTF_Carrot" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/carrot.jpeg">
+  <!-- Generated shader: Carrot_GLTF_SHD_PBM -->
+  <gltf_pbr name="Carrot_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/carrot.jpeg">
     <input name="base_color" type="color3" value="0.713,0.17,0.026" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Carrot -->
-  <surfacematerial name="MAT_PBM_GLTF_Carrot" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Carrot" />
+  <!-- Generated material: Carrot_GLTF_MAT_PBM -->
+  <surfacematerial name="Carrot_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Carrot_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Charcoal -->
-  <gltf_pbr name="SHD_PBM_GLTF_Charcoal" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/charcoal.jpeg">
+  <!-- Generated shader: Charcoal_GLTF_SHD_PBM -->
+  <gltf_pbr name="Charcoal_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/charcoal.jpeg">
     <input name="base_color" type="color3" value="0.02,0.02,0.02" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Charcoal -->
-  <surfacematerial name="MAT_PBM_GLTF_Charcoal" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Charcoal" />
+  <!-- Generated material: Charcoal_GLTF_MAT_PBM -->
+  <surfacematerial name="Charcoal_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Charcoal_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Chocolate -->
-  <gltf_pbr name="SHD_PBM_GLTF_Chocolate" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chocolate.jpeg">
+  <!-- Generated shader: Chocolate_GLTF_SHD_PBM -->
+  <gltf_pbr name="Chocolate_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chocolate.jpeg">
     <input name="base_color" type="color3" value="0.162,0.091,0.06" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Chocolate -->
-  <surfacematerial name="MAT_PBM_GLTF_Chocolate" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Chocolate" />
+  <!-- Generated material: Chocolate_GLTF_MAT_PBM -->
+  <surfacematerial name="Chocolate_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Chocolate_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Chromium -->
-  <gltf_pbr name="SHD_PBM_GLTF_Chromium" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chromium.jpeg">
+  <!-- Generated shader: Chromium_GLTF_SHD_PBM -->
+  <gltf_pbr name="Chromium_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chromium.jpeg">
     <input name="base_color" type="color3" value="0.638,0.651,0.663" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.632,0.718,0.809" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Chromium -->
-  <surfacematerial name="MAT_PBM_GLTF_Chromium" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Chromium" />
+  <!-- Generated material: Chromium_GLTF_MAT_PBM -->
+  <surfacematerial name="Chromium_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Chromium_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Cobalt -->
-  <gltf_pbr name="SHD_PBM_GLTF_Cobalt" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cobalt.jpeg">
+  <!-- Generated shader: Cobalt_GLTF_SHD_PBM -->
+  <gltf_pbr name="Cobalt_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cobalt.jpeg">
     <input name="base_color" type="color3" value="0.692,0.703,0.673" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.684,0.771,0.817" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Cobalt -->
-  <surfacematerial name="MAT_PBM_GLTF_Cobalt" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Cobalt" />
+  <!-- Generated material: Cobalt_GLTF_MAT_PBM -->
+  <surfacematerial name="Cobalt_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cobalt_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Coffee -->
-  <gltf_pbr name="SHD_PBM_GLTF_Coffee" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/coffee.jpeg">
+  <!-- Generated shader: Coffee_GLTF_SHD_PBM -->
+  <gltf_pbr name="Coffee_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/coffee.jpeg">
     <input name="base_color" type="color3" value="0.027,0.019,0.018" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.33" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Coffee -->
-  <surfacematerial name="MAT_PBM_GLTF_Coffee" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Coffee" />
+  <!-- Generated material: Coffee_GLTF_MAT_PBM -->
+  <surfacematerial name="Coffee_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Coffee_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Concrete -->
-  <gltf_pbr name="SHD_PBM_GLTF_Concrete" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/concrete.jpeg">
+  <!-- Generated shader: Concrete_GLTF_SHD_PBM -->
+  <gltf_pbr name="Concrete_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/concrete.jpeg">
     <input name="base_color" type="color3" value="0.51,0.51,0.51" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Concrete -->
-  <surfacematerial name="MAT_PBM_GLTF_Concrete" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Concrete" />
+  <!-- Generated material: Concrete_GLTF_MAT_PBM -->
+  <surfacematerial name="Concrete_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Concrete_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Cooking_Oil -->
-  <gltf_pbr name="SHD_PBM_GLTF_Cooking_Oil" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cooking-oil.jpeg">
+  <!-- Generated shader: Cooking_Oil_GLTF_SHD_PBM -->
+  <gltf_pbr name="Cooking_Oil_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cooking-oil.jpeg">
     <input name="base_color" type="color3" value="0.737911,0.687,0.091" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.47" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Cooking_Oil -->
-  <surfacematerial name="MAT_PBM_GLTF_Cooking_Oil" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Cooking_Oil" />
+  <!-- Generated material: Cooking_Oil_GLTF_MAT_PBM -->
+  <surfacematerial name="Cooking_Oil_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cooking_Oil_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Copper -->
-  <gltf_pbr name="SHD_PBM_GLTF_Copper" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/copper.jpeg">
+  <!-- Generated shader: Copper_GLTF_SHD_PBM -->
+  <gltf_pbr name="Copper_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/copper.jpeg">
     <input name="base_color" type="color3" value="0.926,0.721,0.504" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.996,0.957,0.823" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Copper -->
-  <surfacematerial name="MAT_PBM_GLTF_Copper" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Copper" />
+  <!-- Generated material: Copper_GLTF_MAT_PBM -->
+  <surfacematerial name="Copper_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Copper_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Diamond -->
-  <gltf_pbr name="SHD_PBM_GLTF_Diamond" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/diamond.jpeg">
+  <!-- Generated shader: Diamond_GLTF_SHD_PBM -->
+  <gltf_pbr name="Diamond_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/diamond.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="2.4168" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Diamond -->
-  <surfacematerial name="MAT_PBM_GLTF_Diamond" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Diamond" />
+  <!-- Generated material: Diamond_GLTF_MAT_PBM -->
+  <surfacematerial name="Diamond_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Diamond_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Egg_Shell -->
-  <gltf_pbr name="SHD_PBM_GLTF_Egg_Shell" type="surfaceshader" doc="White hen egg from grocery store.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell.jpeg">
+  <!-- Generated shader: Egg_Shell_GLTF_SHD_PBM -->
+  <gltf_pbr name="Egg_Shell_GLTF_SHD_PBM" type="surfaceshader" doc="White hen egg from grocery store.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell.jpeg">
     <input name="base_color" type="color3" value="0.61,0.624,0.631" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Egg_Shell -->
-  <surfacematerial name="MAT_PBM_GLTF_Egg_Shell" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Egg_Shell" />
+  <!-- Generated material: Egg_Shell_GLTF_MAT_PBM -->
+  <surfacematerial name="Egg_Shell_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Egg_Shell_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Eye__cornea_ -->
-  <gltf_pbr name="SHD_PBM_GLTF_Eye__cornea_" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-cornea.jpeg">
+  <!-- Generated shader: Eye__cornea__GLTF_SHD_PBM -->
+  <gltf_pbr name="Eye__cornea__GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-cornea.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.376" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Eye__cornea_ -->
-  <surfacematerial name="MAT_PBM_GLTF_Eye__cornea_" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Eye__cornea_" />
+  <!-- Generated material: Eye__cornea__GLTF_MAT_PBM -->
+  <surfacematerial name="Eye__cornea__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Eye__cornea__GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Eye__lens_ -->
-  <gltf_pbr name="SHD_PBM_GLTF_Eye__lens_" type="surfaceshader" doc="The refractive index of human lens varies from approximately 1.406 in the central layers down to 1.386 in less dense layers of the lens. This index gradient enhances the optical power of the lens.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-lens.jpeg">
+  <!-- Generated shader: Eye__lens__GLTF_SHD_PBM -->
+  <gltf_pbr name="Eye__lens__GLTF_SHD_PBM" type="surfaceshader" doc="The refractive index of human lens varies from approximately 1.406 in the central layers down to 1.386 in less dense layers of the lens. This index gradient enhances the optical power of the lens.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-lens.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.386" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Eye__lens_ -->
-  <surfacematerial name="MAT_PBM_GLTF_Eye__lens_" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Eye__lens_" />
+  <!-- Generated material: Eye__lens__GLTF_MAT_PBM -->
+  <surfacematerial name="Eye__lens__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Eye__lens__GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Eye__sclera_ -->
-  <gltf_pbr name="SHD_PBM_GLTF_Eye__sclera_" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-sclera.jpeg">
+  <!-- Generated shader: Eye__sclera__GLTF_SHD_PBM -->
+  <gltf_pbr name="Eye__sclera__GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-sclera.jpeg">
     <input name="base_color" type="color3" value="0.68,0.49,0.37" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Eye__sclera_ -->
-  <surfacematerial name="MAT_PBM_GLTF_Eye__sclera_" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Eye__sclera_" />
+  <!-- Generated material: Eye__sclera__GLTF_MAT_PBM -->
+  <surfacematerial name="Eye__sclera__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Eye__sclera__GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Gasoline -->
-  <gltf_pbr name="SHD_PBM_GLTF_Gasoline" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gasoline.jpeg">
+  <!-- Generated shader: Gasoline_GLTF_SHD_PBM -->
+  <gltf_pbr name="Gasoline_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gasoline.jpeg">
     <input name="base_color" type="color3" value="1,0.97,0.617" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.427" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Gasoline -->
-  <surfacematerial name="MAT_PBM_GLTF_Gasoline" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Gasoline" />
+  <!-- Generated material: Gasoline_GLTF_MAT_PBM -->
+  <surfacematerial name="Gasoline_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Gasoline_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Glass -->
-  <gltf_pbr name="SHD_PBM_GLTF_Glass" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass.jpeg">
+  <!-- Generated shader: Glass_GLTF_SHD_PBM -->
+  <gltf_pbr name="Glass_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.52" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Glass -->
-  <surfacematerial name="MAT_PBM_GLTF_Glass" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Glass" />
+  <!-- Generated material: Glass_GLTF_MAT_PBM -->
+  <surfacematerial name="Glass_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Glass_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Gold -->
-  <gltf_pbr name="SHD_PBM_GLTF_Gold" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gold.jpeg">
+  <!-- Generated shader: Gold_GLTF_SHD_PBM -->
+  <gltf_pbr name="Gold_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gold.jpeg">
     <input name="base_color" type="color3" value="0.944,0.776,0.373" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.998,0.981,0.751" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Gold -->
-  <surfacematerial name="MAT_PBM_GLTF_Gold" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Gold" />
+  <!-- Generated material: Gold_GLTF_MAT_PBM -->
+  <surfacematerial name="Gold_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Gold_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Gray_Card -->
-  <gltf_pbr name="SHD_PBM_GLTF_Gray_Card" type="surfaceshader" doc="18% gray has a perceptual lightness of 50%.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gray-card.jpeg">
+  <!-- Generated shader: Gray_Card_GLTF_SHD_PBM -->
+  <gltf_pbr name="Gray_Card_GLTF_SHD_PBM" type="surfaceshader" doc="18% gray has a perceptual lightness of 50%.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gray-card.jpeg">
     <input name="base_color" type="color3" value="0.18,0.18,0.18" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Gray_Card -->
-  <surfacematerial name="MAT_PBM_GLTF_Gray_Card" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Gray_Card" />
+  <!-- Generated material: Gray_Card_GLTF_MAT_PBM -->
+  <surfacematerial name="Gray_Card_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Gray_Card_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Honey -->
-  <gltf_pbr name="SHD_PBM_GLTF_Honey" type="surfaceshader" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey.jpeg">
+  <!-- Generated shader: Honey_GLTF_SHD_PBM -->
+  <gltf_pbr name="Honey_GLTF_SHD_PBM" type="surfaceshader" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey.jpeg">
     <input name="base_color" type="color3" value="0.83077,0.397,0.038" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.504" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Honey -->
-  <surfacematerial name="MAT_PBM_GLTF_Honey" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Honey" />
+  <!-- Generated material: Honey_GLTF_MAT_PBM -->
+  <surfacematerial name="Honey_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Honey_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Ice -->
-  <gltf_pbr name="SHD_PBM_GLTF_Ice" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ice.jpeg">
+  <!-- Generated shader: Ice_GLTF_SHD_PBM -->
+  <gltf_pbr name="Ice_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ice.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.3098" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Ice -->
-  <surfacematerial name="MAT_PBM_GLTF_Ice" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Ice" />
+  <!-- Generated material: Ice_GLTF_MAT_PBM -->
+  <surfacematerial name="Ice_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Ice_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Iron -->
-  <gltf_pbr name="SHD_PBM_GLTF_Iron" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/iron.jpeg">
+  <!-- Generated shader: Iron_GLTF_SHD_PBM -->
+  <gltf_pbr name="Iron_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/iron.jpeg">
     <input name="base_color" type="color3" value="0.531,0.512,0.496" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.571,0.54,0.586" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Iron -->
-  <surfacematerial name="MAT_PBM_GLTF_Iron" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Iron" />
+  <!-- Generated material: Iron_GLTF_MAT_PBM -->
+  <surfacematerial name="Iron_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Iron_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Ketchup -->
-  <gltf_pbr name="SHD_PBM_GLTF_Ketchup" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ketchup.jpeg">
+  <!-- Generated shader: Ketchup_GLTF_SHD_PBM -->
+  <gltf_pbr name="Ketchup_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ketchup.jpeg">
     <input name="base_color" type="color3" value="0.164,0.006,0.002" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.1" />
     <input name="ior" type="float" value="1.3" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Ketchup -->
-  <surfacematerial name="MAT_PBM_GLTF_Ketchup" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Ketchup" />
+  <!-- Generated material: Ketchup_GLTF_MAT_PBM -->
+  <surfacematerial name="Ketchup_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Ketchup_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Lead -->
-  <gltf_pbr name="SHD_PBM_GLTF_Lead" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lead.jpeg">
+  <!-- Generated shader: Lead_GLTF_SHD_PBM -->
+  <gltf_pbr name="Lead_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lead.jpeg">
     <input name="base_color" type="color3" value="0.632,0.626,0.641" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.803,0.808,0.862" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Lead -->
-  <surfacematerial name="MAT_PBM_GLTF_Lead" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Lead" />
+  <!-- Generated material: Lead_GLTF_MAT_PBM -->
+  <surfacematerial name="Lead_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Lead_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Lemon -->
-  <gltf_pbr name="SHD_PBM_GLTF_Lemon" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lemon.jpeg">
+  <!-- Generated shader: Lemon_GLTF_SHD_PBM -->
+  <gltf_pbr name="Lemon_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lemon.jpeg">
     <input name="base_color" type="color3" value="0.718,0.483,0" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Lemon -->
-  <surfacematerial name="MAT_PBM_GLTF_Lemon" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Lemon" />
+  <!-- Generated material: Lemon_GLTF_MAT_PBM -->
+  <surfacematerial name="Lemon_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Lemon_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Marble -->
-  <gltf_pbr name="SHD_PBM_GLTF_Marble" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/marble.jpeg">
+  <!-- Generated shader: Marble_GLTF_SHD_PBM -->
+  <gltf_pbr name="Marble_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/marble.jpeg">
     <input name="base_color" type="color3" value="0.83,0.791,0.753" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Marble -->
-  <surfacematerial name="MAT_PBM_GLTF_Marble" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Marble" />
+  <!-- Generated material: Marble_GLTF_MAT_PBM -->
+  <surfacematerial name="Marble_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Marble_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Mercury -->
-  <gltf_pbr name="SHD_PBM_GLTF_Mercury" type="surfaceshader" doc="Mercury is the only metallic element that is known to be liquid at standard conditions.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/mercury.jpeg">
+  <!-- Generated shader: Mercury_GLTF_SHD_PBM -->
+  <gltf_pbr name="Mercury_GLTF_SHD_PBM" type="surfaceshader" doc="Mercury is the only metallic element that is known to be liquid at standard conditions.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/mercury.jpeg">
     <input name="base_color" type="color3" value="0.781,0.779,0.779" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.879,0.91,0.941" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Mercury -->
-  <surfacematerial name="MAT_PBM_GLTF_Mercury" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Mercury" />
+  <!-- Generated material: Mercury_GLTF_MAT_PBM -->
+  <surfacematerial name="Mercury_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Mercury_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Milk -->
-  <gltf_pbr name="SHD_PBM_GLTF_Milk" type="surfaceshader" doc="Cow's milk. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/milk.jpeg">
+  <!-- Generated shader: Milk_GLTF_SHD_PBM -->
+  <gltf_pbr name="Milk_GLTF_SHD_PBM" type="surfaceshader" doc="Cow's milk. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/milk.jpeg">
     <input name="base_color" type="color3" value="0.815,0.813,0.682" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.348" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Milk -->
-  <surfacematerial name="MAT_PBM_GLTF_Milk" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Milk" />
+  <!-- Generated material: Milk_GLTF_MAT_PBM -->
+  <surfacematerial name="Milk_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Milk_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Nickel -->
-  <gltf_pbr name="SHD_PBM_GLTF_Nickel" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/nickel.jpeg">
+  <!-- Generated shader: Nickel_GLTF_SHD_PBM -->
+  <gltf_pbr name="Nickel_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/nickel.jpeg">
     <input name="base_color" type="color3" value="0.649,0.61,0.541" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.797,0.801,0.789" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Nickel -->
-  <surfacematerial name="MAT_PBM_GLTF_Nickel" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Nickel" />
+  <!-- Generated material: Nickel_GLTF_MAT_PBM -->
+  <surfacematerial name="Nickel_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Nickel_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Office_Paper -->
-  <gltf_pbr name="SHD_PBM_GLTF_Office_Paper" type="surfaceshader" doc="Office paper contains optical brightening additives that absorb light in the ultraviolet and violet region (usually 340-370 nm), and re-emit light in the blue region (typically 420-470 nm) by fluorescence.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/office-paper.jpeg">
+  <!-- Generated shader: Office_Paper_GLTF_SHD_PBM -->
+  <gltf_pbr name="Office_Paper_GLTF_SHD_PBM" type="surfaceshader" doc="Office paper contains optical brightening additives that absorb light in the ultraviolet and violet region (usually 340-370 nm), and re-emit light in the blue region (typically 420-470 nm) by fluorescence.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/office-paper.jpeg">
     <input name="base_color" type="color3" value="0.794,0.834,0.884" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Office_Paper -->
-  <surfacematerial name="MAT_PBM_GLTF_Office_Paper" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Office_Paper" />
+  <!-- Generated material: Office_Paper_GLTF_MAT_PBM -->
+  <surfacematerial name="Office_Paper_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Office_Paper_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Pearl -->
-  <gltf_pbr name="SHD_PBM_GLTF_Pearl" type="surfaceshader" doc="The akoya pearl is a saltwater cultured pearl from the akoya oyster. Akoya are considered to be the classic pearl used for necklaces and other pearl jewelry. Nacre is the material of which pearls are composed and consists of aragonite crystal layers separated by conchiolin, a protein secreted by mollusk shells. The thickness of these layers determines the color of reflection from the nacre. The transmission interference color is complementary to the reflection interference color.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/pearl.jpeg">
+  <!-- Generated shader: Pearl_GLTF_SHD_PBM -->
+  <gltf_pbr name="Pearl_GLTF_SHD_PBM" type="surfaceshader" doc="The akoya pearl is a saltwater cultured pearl from the akoya oyster. Akoya are considered to be the classic pearl used for necklaces and other pearl jewelry. Nacre is the material of which pearls are composed and consists of aragonite crystal layers separated by conchiolin, a protein secreted by mollusk shells. The thickness of these layers determines the color of reflection from the nacre. The transmission interference color is complementary to the reflection interference color.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/pearl.jpeg">
     <input name="base_color" type="color3" value="0.8,0.75,0.7" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.35" />
     <input name="ior" type="float" value="1.68" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Pearl -->
-  <surfacematerial name="MAT_PBM_GLTF_Pearl" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Pearl" />
+  <!-- Generated material: Pearl_GLTF_MAT_PBM -->
+  <surfacematerial name="Pearl_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Pearl_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Petroleum -->
-  <gltf_pbr name="SHD_PBM_GLTF_Petroleum" type="surfaceshader" doc="The viscosity of crude oil is sensitive to temperature.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/petroleum.jpeg">
+  <!-- Generated shader: Petroleum_GLTF_SHD_PBM -->
+  <gltf_pbr name="Petroleum_GLTF_SHD_PBM" type="surfaceshader" doc="The viscosity of crude oil is sensitive to temperature.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/petroleum.jpeg">
     <input name="base_color" type="color3" value="0.03,0.027,0.024" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Petroleum -->
-  <surfacematerial name="MAT_PBM_GLTF_Petroleum" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Petroleum" />
+  <!-- Generated material: Petroleum_GLTF_MAT_PBM -->
+  <surfacematerial name="Petroleum_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Petroleum_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Plastic__Acrylic_ -->
-  <gltf_pbr name="SHD_PBM_GLTF_Plastic__Acrylic_" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-acrylic.jpeg">
+  <!-- Generated shader: Plastic__Acrylic__GLTF_SHD_PBM -->
+  <gltf_pbr name="Plastic__Acrylic__GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-acrylic.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.476" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Plastic__Acrylic_ -->
-  <surfacematerial name="MAT_PBM_GLTF_Plastic__Acrylic_" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Plastic__Acrylic_" />
+  <!-- Generated material: Plastic__Acrylic__GLTF_MAT_PBM -->
+  <surfacematerial name="Plastic__Acrylic__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Plastic__Acrylic__GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Plastic__PC_ -->
-  <gltf_pbr name="SHD_PBM_GLTF_Plastic__PC_" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pc.jpeg">
+  <!-- Generated shader: Plastic__PC__GLTF_SHD_PBM -->
+  <gltf_pbr name="Plastic__PC__GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pc.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5848" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Plastic__PC_ -->
-  <surfacematerial name="MAT_PBM_GLTF_Plastic__PC_" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Plastic__PC_" />
+  <!-- Generated material: Plastic__PC__GLTF_MAT_PBM -->
+  <surfacematerial name="Plastic__PC__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Plastic__PC__GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Plastic__PET_ -->
-  <gltf_pbr name="SHD_PBM_GLTF_Plastic__PET_" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pet.jpeg">
+  <!-- Generated shader: Plastic__PET__GLTF_SHD_PBM -->
+  <gltf_pbr name="Plastic__PET__GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pet.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.575" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Plastic__PET_ -->
-  <surfacematerial name="MAT_PBM_GLTF_Plastic__PET_" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Plastic__PET_" />
+  <!-- Generated material: Plastic__PET__GLTF_MAT_PBM -->
+  <surfacematerial name="Plastic__PET__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Plastic__PET__GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Plastic__PP_ -->
-  <gltf_pbr name="SHD_PBM_GLTF_Plastic__PP_" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pp.jpeg">
+  <!-- Generated shader: Plastic__PP__GLTF_SHD_PBM -->
+  <gltf_pbr name="Plastic__PP__GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pp.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.492" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Plastic__PP_ -->
-  <surfacematerial name="MAT_PBM_GLTF_Plastic__PP_" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Plastic__PP_" />
+  <!-- Generated material: Plastic__PP__GLTF_MAT_PBM -->
+  <surfacematerial name="Plastic__PP__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Plastic__PP__GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Plastic__PVC_ -->
-  <gltf_pbr name="SHD_PBM_GLTF_Plastic__PVC_" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pvc.jpeg">
+  <!-- Generated shader: Plastic__PVC__GLTF_SHD_PBM -->
+  <gltf_pbr name="Plastic__PVC__GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pvc.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.531" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Plastic__PVC_ -->
-  <surfacematerial name="MAT_PBM_GLTF_Plastic__PVC_" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Plastic__PVC_" />
+  <!-- Generated material: Plastic__PVC__GLTF_MAT_PBM -->
+  <surfacematerial name="Plastic__PVC__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Plastic__PVC__GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Platinum -->
-  <gltf_pbr name="SHD_PBM_GLTF_Platinum" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/platinum.jpeg">
+  <!-- Generated shader: Platinum_GLTF_SHD_PBM -->
+  <gltf_pbr name="Platinum_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/platinum.jpeg">
     <input name="base_color" type="color3" value="0.679,0.642,0.588" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.785,0.789,0.784" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Platinum -->
-  <surfacematerial name="MAT_PBM_GLTF_Platinum" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Platinum" />
+  <!-- Generated material: Platinum_GLTF_MAT_PBM -->
+  <surfacematerial name="Platinum_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Platinum_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Polyurethane -->
-  <gltf_pbr name="SHD_PBM_GLTF_Polyurethane" type="surfaceshader" doc="Modern car paints are nearly always an acrylic polyurethane &quot;enamel&quot; with a pigmented basecoat and a clear topcoat. It may be described as &quot;acrylic&quot;, &quot;acrylic enamel&quot;, &quot;urethane&quot;, etc. and the clearcoat in particular may be described as a lacquer.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/polyurethane.jpeg">
+  <!-- Generated shader: Polyurethane_GLTF_SHD_PBM -->
+  <gltf_pbr name="Polyurethane_GLTF_SHD_PBM" type="surfaceshader" doc="Modern car paints are nearly always an acrylic polyurethane &quot;enamel&quot; with a pigmented basecoat and a clear topcoat. It may be described as &quot;acrylic&quot;, &quot;acrylic enamel&quot;, &quot;urethane&quot;, etc. and the clearcoat in particular may be described as a lacquer.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/polyurethane.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.6" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Polyurethane -->
-  <surfacematerial name="MAT_PBM_GLTF_Polyurethane" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Polyurethane" />
+  <!-- Generated material: Polyurethane_GLTF_MAT_PBM -->
+  <surfacematerial name="Polyurethane_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Polyurethane_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Salt -->
-  <gltf_pbr name="SHD_PBM_GLTF_Salt" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/salt.jpeg">
+  <!-- Generated shader: Salt_GLTF_SHD_PBM -->
+  <gltf_pbr name="Salt_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/salt.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.2" />
     <input name="ior" type="float" value="1.5275" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Salt -->
-  <surfacematerial name="MAT_PBM_GLTF_Salt" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Salt" />
+  <!-- Generated material: Salt_GLTF_MAT_PBM -->
+  <surfacematerial name="Salt_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Salt_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Sand -->
-  <gltf_pbr name="SHD_PBM_GLTF_Sand" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sand.jpeg">
+  <!-- Generated shader: Sand_GLTF_SHD_PBM -->
+  <gltf_pbr name="Sand_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sand.jpeg">
     <input name="base_color" type="color3" value="0.44,0.386,0.23074" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Sand -->
-  <surfacematerial name="MAT_PBM_GLTF_Sand" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Sand" />
+  <!-- Generated material: Sand_GLTF_MAT_PBM -->
+  <surfacematerial name="Sand_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Sand_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Sapphire -->
-  <gltf_pbr name="SHD_PBM_GLTF_Sapphire" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sapphire.jpeg">
+  <!-- Generated shader: Sapphire_GLTF_SHD_PBM -->
+  <gltf_pbr name="Sapphire_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sapphire.jpeg">
     <input name="base_color" type="color3" value="0.67,0.764,0.855" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.7682" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Sapphire -->
-  <surfacematerial name="MAT_PBM_GLTF_Sapphire" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Sapphire" />
+  <!-- Generated material: Sapphire_GLTF_MAT_PBM -->
+  <surfacematerial name="Sapphire_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Sapphire_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Silicon -->
-  <gltf_pbr name="SHD_PBM_GLTF_Silicon" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silicon.jpeg">
+  <!-- Generated shader: Silicon_GLTF_SHD_PBM -->
+  <gltf_pbr name="Silicon_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silicon.jpeg">
     <input name="base_color" type="color3" value="0.344,0.367,0.419" />
     <input name="metallic" type="float" value="1" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Silicon -->
-  <surfacematerial name="MAT_PBM_GLTF_Silicon" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Silicon" />
+  <!-- Generated material: Silicon_GLTF_MAT_PBM -->
+  <surfacematerial name="Silicon_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Silicon_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Silver -->
-  <gltf_pbr name="SHD_PBM_GLTF_Silver" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silver.jpeg">
+  <!-- Generated shader: Silver_GLTF_SHD_PBM -->
+  <gltf_pbr name="Silver_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silver.jpeg">
     <input name="base_color" type="color3" value="0.962,0.949,0.922" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.999,0.998,0.998" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Silver -->
-  <surfacematerial name="MAT_PBM_GLTF_Silver" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Silver" />
+  <!-- Generated material: Silver_GLTF_MAT_PBM -->
+  <surfacematerial name="Silver_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Silver_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Skin_I -->
-  <gltf_pbr name="SHD_PBM_GLTF_Skin_I" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-i.jpeg">
+  <!-- Generated shader: Skin_I_GLTF_SHD_PBM -->
+  <gltf_pbr name="Skin_I_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-i.jpeg">
     <input name="base_color" type="color3" value="0.847,0.638,0.552" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Skin_I -->
-  <surfacematerial name="MAT_PBM_GLTF_Skin_I" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Skin_I" />
+  <!-- Generated material: Skin_I_GLTF_MAT_PBM -->
+  <surfacematerial name="Skin_I_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_I_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Skin_II -->
-  <gltf_pbr name="SHD_PBM_GLTF_Skin_II" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-ii.jpeg">
+  <!-- Generated shader: Skin_II_GLTF_SHD_PBM -->
+  <gltf_pbr name="Skin_II_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-ii.jpeg">
     <input name="base_color" type="color3" value="0.799,0.485,0.347" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Skin_II -->
-  <surfacematerial name="MAT_PBM_GLTF_Skin_II" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Skin_II" />
+  <!-- Generated material: Skin_II_GLTF_MAT_PBM -->
+  <surfacematerial name="Skin_II_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_II_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Skin_III -->
-  <gltf_pbr name="SHD_PBM_GLTF_Skin_III" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-iii.jpeg">
+  <!-- Generated shader: Skin_III_GLTF_SHD_PBM -->
+  <gltf_pbr name="Skin_III_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-iii.jpeg">
     <input name="base_color" type="color3" value="0.623,0.433,0.343" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Skin_III -->
-  <surfacematerial name="MAT_PBM_GLTF_Skin_III" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Skin_III" />
+  <!-- Generated material: Skin_III_GLTF_MAT_PBM -->
+  <surfacematerial name="Skin_III_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_III_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Skin_IV -->
-  <gltf_pbr name="SHD_PBM_GLTF_Skin_IV" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-iv.jpeg">
+  <!-- Generated shader: Skin_IV_GLTF_SHD_PBM -->
+  <gltf_pbr name="Skin_IV_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-iv.jpeg">
     <input name="base_color" type="color3" value="0.436,0.227,0.131" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Skin_IV -->
-  <surfacematerial name="MAT_PBM_GLTF_Skin_IV" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Skin_IV" />
+  <!-- Generated material: Skin_IV_GLTF_MAT_PBM -->
+  <surfacematerial name="Skin_IV_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_IV_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Skin_V -->
-  <gltf_pbr name="SHD_PBM_GLTF_Skin_V" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-v.jpeg">
+  <!-- Generated shader: Skin_V_GLTF_SHD_PBM -->
+  <gltf_pbr name="Skin_V_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-v.jpeg">
     <input name="base_color" type="color3" value="0.283,0.148,0.079" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Skin_V -->
-  <surfacematerial name="MAT_PBM_GLTF_Skin_V" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Skin_V" />
+  <!-- Generated material: Skin_V_GLTF_MAT_PBM -->
+  <surfacematerial name="Skin_V_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_V_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Skin_VI -->
-  <gltf_pbr name="SHD_PBM_GLTF_Skin_VI" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-vi.jpeg">
+  <!-- Generated shader: Skin_VI_GLTF_SHD_PBM -->
+  <gltf_pbr name="Skin_VI_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-vi.jpeg">
     <input name="base_color" type="color3" value="0.09,0.05,0.02" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Skin_VI -->
-  <surfacematerial name="MAT_PBM_GLTF_Skin_VI" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Skin_VI" />
+  <!-- Generated material: Skin_VI_GLTF_MAT_PBM -->
+  <surfacematerial name="Skin_VI_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_VI_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Snow -->
-  <gltf_pbr name="SHD_PBM_GLTF_Snow" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/snow.jpeg">
+  <!-- Generated shader: Snow_GLTF_SHD_PBM -->
+  <gltf_pbr name="Snow_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/snow.jpeg">
     <input name="base_color" type="color3" value="0.85,0.85,0.85" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.3098" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Snow -->
-  <surfacematerial name="MAT_PBM_GLTF_Snow" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Snow" />
+  <!-- Generated material: Snow_GLTF_MAT_PBM -->
+  <surfacematerial name="Snow_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Snow_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Soap_Bubble -->
-  <gltf_pbr name="SHD_PBM_GLTF_Soap_Bubble" type="surfaceshader" doc="The colors of a soap bubble are the result of an interaction between the light reflected from the front and back surfaces of the soap film, a phenomenon known as thin-film interference. The thickness of a soap bubble can range between 10 nm and 1000 nm. It's thinner at the top due to gravity.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/soap-bubble.jpeg">
+  <!-- Generated shader: Soap_Bubble_GLTF_SHD_PBM -->
+  <gltf_pbr name="Soap_Bubble_GLTF_SHD_PBM" type="surfaceshader" doc="The colors of a soap bubble are the result of an interaction between the light reflected from the front and back surfaces of the soap film, a phenomenon known as thin-film interference. The thickness of a soap bubble can range between 10 nm and 1000 nm. It's thinner at the top due to gravity.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/soap-bubble.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Soap_Bubble -->
-  <surfacematerial name="MAT_PBM_GLTF_Soap_Bubble" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Soap_Bubble" />
+  <!-- Generated material: Soap_Bubble_GLTF_MAT_PBM -->
+  <surfacematerial name="Soap_Bubble_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Soap_Bubble_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Tire -->
-  <gltf_pbr name="SHD_PBM_GLTF_Tire" type="surfaceshader" doc="Car tire.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tire.jpeg">
+  <!-- Generated shader: Tire_GLTF_SHD_PBM -->
+  <gltf_pbr name="Tire_GLTF_SHD_PBM" type="surfaceshader" doc="Car tire.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tire.jpeg">
     <input name="base_color" type="color3" value="0.023,0.023,0.023" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Tire -->
-  <surfacematerial name="MAT_PBM_GLTF_Tire" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Tire" />
+  <!-- Generated material: Tire_GLTF_MAT_PBM -->
+  <surfacematerial name="Tire_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Tire_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Titanium -->
-  <gltf_pbr name="SHD_PBM_GLTF_Titanium" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/titanium.jpeg">
+  <!-- Generated shader: Titanium_GLTF_SHD_PBM -->
+  <gltf_pbr name="Titanium_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/titanium.jpeg">
     <input name="base_color" type="color3" value="0.616,0.582,0.544" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.689,0.683,0.689" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Titanium -->
-  <surfacematerial name="MAT_PBM_GLTF_Titanium" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Titanium" />
+  <!-- Generated material: Titanium_GLTF_MAT_PBM -->
+  <surfacematerial name="Titanium_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Titanium_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Tungsten -->
-  <gltf_pbr name="SHD_PBM_GLTF_Tungsten" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tungsten.jpeg">
+  <!-- Generated shader: Tungsten_GLTF_SHD_PBM -->
+  <gltf_pbr name="Tungsten_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tungsten.jpeg">
     <input name="base_color" type="color3" value="0.504,0.498,0.478" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.403,0.418,0.423" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Tungsten -->
-  <surfacematerial name="MAT_PBM_GLTF_Tungsten" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Tungsten" />
+  <!-- Generated material: Tungsten_GLTF_MAT_PBM -->
+  <surfacematerial name="Tungsten_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Tungsten_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Vanadium -->
-  <gltf_pbr name="SHD_PBM_GLTF_Vanadium" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/vanadium.jpeg">
+  <!-- Generated shader: Vanadium_GLTF_SHD_PBM -->
+  <gltf_pbr name="Vanadium_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/vanadium.jpeg">
     <input name="base_color" type="color3" value="0.52,0.532,0.541" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.402,0.447,0.395" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Vanadium -->
-  <surfacematerial name="MAT_PBM_GLTF_Vanadium" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Vanadium" />
+  <!-- Generated material: Vanadium_GLTF_MAT_PBM -->
+  <surfacematerial name="Vanadium_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Vanadium_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Water -->
-  <gltf_pbr name="SHD_PBM_GLTF_Water" type="surfaceshader" doc="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/water.jpeg">
+  <!-- Generated shader: Water_GLTF_SHD_PBM -->
+  <gltf_pbr name="Water_GLTF_SHD_PBM" type="surfaceshader" doc="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/water.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.3325" />
     <input name="transmission" type="float" value="1" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Water -->
-  <surfacematerial name="MAT_PBM_GLTF_Water" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Water" />
+  <!-- Generated material: Water_GLTF_MAT_PBM -->
+  <surfacematerial name="Water_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Water_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Whiteboard -->
-  <gltf_pbr name="SHD_PBM_GLTF_Whiteboard" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/whiteboard.jpeg">
+  <!-- Generated shader: Whiteboard_GLTF_SHD_PBM -->
+  <gltf_pbr name="Whiteboard_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/whiteboard.jpeg">
     <input name="base_color" type="color3" value="0.869,0.867,0.771" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Whiteboard -->
-  <surfacematerial name="MAT_PBM_GLTF_Whiteboard" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Whiteboard" />
+  <!-- Generated material: Whiteboard_GLTF_MAT_PBM -->
+  <surfacematerial name="Whiteboard_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Whiteboard_GLTF_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: SHD_PBM_GLTF_Zinc -->
-  <gltf_pbr name="SHD_PBM_GLTF_Zinc" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/zinc.jpeg">
+  <!-- Generated shader: Zinc_GLTF_SHD_PBM -->
+  <gltf_pbr name="Zinc_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/zinc.jpeg">
     <input name="base_color" type="color3" value="0.802,0.844,0.863" />
     <input name="metallic" type="float" value="1" />
     <input name="specular_color" type="color3" value="0.817,0.922,0.964" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
-  <!-- Generated material: MAT_PBM_GLTF_Zinc -->
-  <surfacematerial name="MAT_PBM_GLTF_Zinc" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SHD_PBM_GLTF_Zinc" />
+  <!-- Generated material: Zinc_GLTF_MAT_PBM -->
+  <surfacematerial name="Zinc_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Zinc_GLTF_SHD_PBM" />
   </surfacematerial>
 </materialx>

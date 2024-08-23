@@ -317,9 +317,9 @@ class PhysicallyBasedMaterialLoader:
                 continue            
 
             if (len(shaderPreFix) > 0):
-                matName = shaderPreFix + '_' + matName
+                matName = matName + '_' + shaderPreFix 
 
-            shaderName = self.doc.createValidChildName('SHD_PBM_' + matName)
+            shaderName = self.doc.createValidChildName(matName + '_SHD_PBM')
             self.addComment(self.doc, ' Generated shader: ' + shaderName + ' ')         
             shaderNode = self.doc.addNode(shaderCategory, shaderName, self.mx.SURFACE_SHADER_TYPE_STRING)
             docString = mat['description']            
@@ -334,7 +334,7 @@ class PhysicallyBasedMaterialLoader:
             #shaderNode.setAttribute(self.mx.InterfaceElement.NODE_DEF_ATTRIBUTE, nodedefString)
 
             # Create a new material
-            materialName = self.doc.createValidChildName('MAT_PBM_' + matName)
+            materialName = self.doc.createValidChildName(matName + '_MAT_PBM')
             self.addComment(self.doc, ' Generated material: ' + materialName + ' ')         
             materialNode = self.doc.addNode(self.mx.SURFACE_MATERIAL_NODE_STRING, materialName, self.mx.MATERIAL_TYPE_STRING)
             shaderInput = materialNode.addInput(self.mx.SURFACE_SHADER_TYPE_STRING, self.mx.SURFACE_SHADER_TYPE_STRING)
