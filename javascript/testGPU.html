@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPUOpen Material Loader</title>
+    <script src="JsGpuOpenLoader.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #materials {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GPUOpen Material Loader</h1>
+    <button id="loadMaterials">Load Materials</button>
+    <div id="materials">
+        <h2>Materials List</h2>
+        <ul id="materialsList"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = new GPUOpenMaterialLoader();
+
+            document.getElementById('loadMaterials').addEventListener('click', async () => {
+                const materials = await loader.getMaterials();
+                const materialsList = document.getElementById('materialsList');
+                materialsList.innerHTML = '';
+
+                if (materials.length > 0) {
+                    materials.forEach((materialList, index) => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `Material Batch ${index + 1}: ${JSON.stringify(materialList)}`;
+                        materialsList.appendChild(listItem);
+                    });
+                } else {
+                    materialsList.innerHTML = '<li>No materials found.</li>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

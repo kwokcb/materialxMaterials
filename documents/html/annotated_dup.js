@@ -8,5 +8,6 @@ var annotated_dup =
         [ "PhysicallyBasedMaterialLoader", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader" ]
       ] ]
     ] ],
+    [ "GPUOpenMaterialLoader", "class_g_p_u_open_material_loader.html", "class_g_p_u_open_material_loader" ],
     [ "JsPhysicallyBasedMaterialLoader", "class_js_physically_based_material_loader.html", "class_js_physically_based_material_loader" ]
 ];

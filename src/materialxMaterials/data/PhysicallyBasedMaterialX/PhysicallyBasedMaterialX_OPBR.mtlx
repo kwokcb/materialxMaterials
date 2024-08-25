@@ -197,6 +197,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_ior" type="float" value="2.4168" />
     <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_scale" type="float" value="55.3" />
     <input name="transmission_color" type="color3" value="1,1,1" />
   </open_pbr_surface>
   <!-- Generated material: Diamond_OPBR_MAT_PBM -->
@@ -271,6 +272,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_ior" type="float" value="1.52" />
     <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_scale" type="float" value="64" />
     <input name="transmission_color" type="color3" value="1,1,1" />
   </open_pbr_surface>
   <!-- Generated material: Glass_OPBR_MAT_PBM -->
@@ -320,6 +322,7 @@
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_ior" type="float" value="1.3098" />
     <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_scale" type="float" value="64.87" />
   </open_pbr_surface>
   <!-- Generated material: Ice_OPBR_MAT_PBM -->
   <surfacematerial name="Ice_OPBR_MAT_PBM" type="material">
@@ -575,6 +578,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_ior" type="float" value="1.7682" />
     <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_scale" type="float" value="72.2" />
     <input name="transmission_color" type="color3" value="0.67,0.764,0.855" />
   </open_pbr_surface>
   <!-- Generated material: Sapphire_OPBR_MAT_PBM -->
@@ -754,6 +758,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_ior" type="float" value="1.3325" />
     <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_scale" type="float" value="55.78" />
     <input name="transmission_color" type="color3" value="1,1,1" />
   </open_pbr_surface>
   <!-- Generated material: Water_OPBR_MAT_PBM -->

@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "MaterialXMaterials", "index.html", [
     [ "Packages", "namespaces.html", [
-      [ "Package List", "namespaces.html", null ]
+      [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -45,7 +45,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"____init_____8py_source.html"
+""
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
