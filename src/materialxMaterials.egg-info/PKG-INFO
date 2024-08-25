@@ -219,6 +219,7 @@ Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: materialx>=1.39
 Requires-Dist: requests
+Requires-Dist: pillow
 
 <!--Start-->
 

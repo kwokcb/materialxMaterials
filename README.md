@@ -49,6 +49,7 @@ The Python utilities require:
 
 1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation
 2. The `requests` package.
+3. The `pillow` package for image handling for GPUOpen package handling
 
 <h3>Building</h3>
 

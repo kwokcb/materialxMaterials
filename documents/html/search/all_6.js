@@ -10,5 +10,5 @@ var searchData=
   ['getmaterialxdocument_16',['getMaterialXDocument',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ab5cb1ede45bf58bfeddb8948fde47a3e',1,'materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.getMaterialXDocument()'],['../class_js_physically_based_material_loader.html#a50d3f165475f4b6857db44f46b3e24b9',1,'JsPhysicallyBasedMaterialLoader::getMaterialXDocument()']]],
   ['getmaterialxstring_17',['getMaterialXString',['../class_js_physically_based_material_loader.html#a7dc871ee8d3fc8aa1f5cc1429f27bc7a',1,'JsPhysicallyBasedMaterialLoader']]],
   ['getphysicallybasedmaterials_18',['getPhysicallyBasedMaterials',['../class_js_physically_based_material_loader.html#a8faa3eec07fd099bb55a65187b07460d',1,'JsPhysicallyBasedMaterialLoader']]],
-  ['gpuopenmaterialloader_19',['GPUOpenMaterialLoader',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html',1,'materialxMaterials::GPUOpenLoader']]]
+  ['gpuopenmaterialloader_19',['GPUOpenMaterialLoader',['../class_g_p_u_open_material_loader.html',1,'GPUOpenMaterialLoader'],['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html',1,'materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader']]]
 ];

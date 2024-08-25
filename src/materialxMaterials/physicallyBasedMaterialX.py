@@ -92,6 +92,7 @@ class PhysicallyBasedMaterialLoader:
             #'metalness': 'metalness',
             'ior': 'specular_IOR',
             #'transmission': 'transmission',
+            'transmission_color': 'transmission_color',
             'thinFilmIor' : 'thin_film_IOR',
             'thinFilmThickness' : 'thin_film_thickness',
             'transmissionDispersion' : 'transmission_dispersion',
@@ -104,6 +105,7 @@ class PhysicallyBasedMaterialLoader:
             'metalness': 'base_metalness',
             'ior': 'specular_ior',
             'transmission': 'transmission_weight',
+            'transmission_color': 'transmission_color',
             'subsurfaceRadius': 'subsurface_radius',
             'thinFilmIor' : 'thinfilm_ior',
             'thinFilmThickness' : 'thinfilm_thickness',
@@ -343,8 +345,22 @@ class PhysicallyBasedMaterialLoader:
             # Keys to skip.
             skipKeys = ['name', "density", "category", "description", "sources", "tags", "reference"]
 
+            metallness = None
+            roughness = None
+            color = None
+            transmission = None
             for key, value in mat.items():
+                
                 if (key not in skipKeys):
+                    if key == 'metalness':
+                        metallness = value
+                    if key == 'roughness':
+                        roughness = value
+                    if key == 'transmission':
+                        transmission = value
+                    if key == 'color':
+                        color = value
+
                     if key in remapKeys:
                         key = remapKeys[key]
                     input = shaderNode.addInputFromNodeDef(key)
@@ -358,6 +374,16 @@ class PhysicallyBasedMaterialLoader:
                         input.setValueString(value)
                     #else:
                     #    self.logger.debug('Skip unsupported key: ' + key)
+
+            if (transmission != None) and (metallness != None) and (roughness != None) and (color != None):
+                if (metallness == 0) and (roughness == 0):
+                    if 'transmission_color' in remapKeys:
+                        key = remapKeys['transmission_color']
+                        input = shaderNode.addInputFromNodeDef(key)
+                        if input:
+                            self.logger.debug(f'Set transmission color {key}: {color}')
+                            value = ','.join([str(x) for x in color])                        
+                            input.setValueString(value)
 
         return self.doc
     

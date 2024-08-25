@@ -45,6 +45,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.301" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="0.64448,0.003,0.005" />
   </standard_surface>
   <!-- Generated material: Blood_SS_MAT_PBM -->
   <surfacematerial name="Blood_SS_MAT_PBM" type="material">
@@ -170,6 +171,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.47" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="0.737911,0.687,0.091" />
   </standard_surface>
   <!-- Generated material: Cooking_Oil_SS_MAT_PBM -->
   <surfacematerial name="Cooking_Oil_SS_MAT_PBM" type="material">
@@ -195,6 +197,7 @@
     <input name="specular_IOR" type="float" value="2.4168" />
     <input name="transmission" type="float" value="1" />
     <input name="transmission_dispersion" type="float" value="55.3" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Diamond_SS_MAT_PBM -->
   <surfacematerial name="Diamond_SS_MAT_PBM" type="material">
@@ -218,6 +221,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.376" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Eye__cornea__SS_MAT_PBM -->
   <surfacematerial name="Eye__cornea__SS_MAT_PBM" type="material">
@@ -230,6 +234,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.386" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Eye__lens__SS_MAT_PBM -->
   <surfacematerial name="Eye__lens__SS_MAT_PBM" type="material">
@@ -253,6 +258,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.427" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,0.97,0.617" />
   </standard_surface>
   <!-- Generated material: Gasoline_SS_MAT_PBM -->
   <surfacematerial name="Gasoline_SS_MAT_PBM" type="material">
@@ -266,6 +272,7 @@
     <input name="specular_IOR" type="float" value="1.52" />
     <input name="transmission" type="float" value="1" />
     <input name="transmission_dispersion" type="float" value="64" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Glass_SS_MAT_PBM -->
   <surfacematerial name="Glass_SS_MAT_PBM" type="material">
@@ -301,6 +308,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.504" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="0.83077,0.397,0.038" />
   </standard_surface>
   <!-- Generated material: Honey_SS_MAT_PBM -->
   <surfacematerial name="Honey_SS_MAT_PBM" type="material">
@@ -453,6 +461,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.476" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Plastic__Acrylic__SS_MAT_PBM -->
   <surfacematerial name="Plastic__Acrylic__SS_MAT_PBM" type="material">
@@ -465,6 +474,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.5848" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Plastic__PC__SS_MAT_PBM -->
   <surfacematerial name="Plastic__PC__SS_MAT_PBM" type="material">
@@ -477,6 +487,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.575" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Plastic__PET__SS_MAT_PBM -->
   <surfacematerial name="Plastic__PET__SS_MAT_PBM" type="material">
@@ -489,6 +500,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.492" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Plastic__PP__SS_MAT_PBM -->
   <surfacematerial name="Plastic__PP__SS_MAT_PBM" type="material">
@@ -501,6 +513,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.531" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Plastic__PVC__SS_MAT_PBM -->
   <surfacematerial name="Plastic__PVC__SS_MAT_PBM" type="material">
@@ -525,6 +538,7 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.6" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Polyurethane_SS_MAT_PBM -->
   <surfacematerial name="Polyurethane_SS_MAT_PBM" type="material">
@@ -561,6 +575,7 @@
     <input name="specular_IOR" type="float" value="1.7682" />
     <input name="transmission" type="float" value="1" />
     <input name="transmission_dispersion" type="float" value="72.2" />
+    <input name="transmission_color" type="color3" value="0.67,0.764,0.855" />
   </standard_surface>
   <!-- Generated material: Sapphire_SS_MAT_PBM -->
   <surfacematerial name="Sapphire_SS_MAT_PBM" type="material">
@@ -675,6 +690,7 @@
     <input name="transmission" type="float" value="1" />
     <input name="thin_film_thickness" type="float" value="500" />
     <input name="thin_film_IOR" type="float" value="1.4" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Soap_Bubble_SS_MAT_PBM -->
   <surfacematerial name="Soap_Bubble_SS_MAT_PBM" type="material">
@@ -735,6 +751,7 @@
     <input name="specular_IOR" type="float" value="1.3325" />
     <input name="transmission" type="float" value="1" />
     <input name="transmission_dispersion" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
   <!-- Generated material: Water_SS_MAT_PBM -->
   <surfacematerial name="Water_SS_MAT_PBM" type="material">
