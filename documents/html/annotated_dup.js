@@ -8,8 +8,5 @@ var annotated_dup =
         [ "PhysicallyBasedMaterialLoader", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader" ]
       ] ]
     ] ],
-    [ "myserver", null, [
-      [ "MyHTTPRequestHandler", "classmyserver_1_1_my_h_t_t_p_request_handler.html", null ]
-    ] ],
     [ "JsPhysicallyBasedMaterialLoader", "class_js_physically_based_material_loader.html", "class_js_physically_based_material_loader" ]
 ];
