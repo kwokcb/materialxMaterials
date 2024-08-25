@@ -149,6 +149,7 @@ class JsPhysicallyBasedMaterialLoader {
             //'metalness': 'metalness',
             'ior': 'specular_IOR',
             //'transmission': 'transmission',
+            'transmission_color': 'transmission_color',
             'thinFilmIor': 'thin_film_IOR',
             'thinFilmThickness': 'thin_film_thickness',
             'transmissionDispersion': 'transmission_dispersion',
@@ -161,6 +162,7 @@ class JsPhysicallyBasedMaterialLoader {
             'metalness': 'base_metalness',
             'ior': 'specular_ior',
             'transmission': 'transmission_weight',
+            'transmission_color': 'transmission_color',
             'subsurfaceRadius': 'subsurface_radius',
             'thinFilmIor': 'thinfilm_ior',
             'thinFilmThickness': 'thinfilm_thickness',
@@ -381,8 +383,31 @@ class JsPhysicallyBasedMaterialLoader {
             // to Autodesk Standard Surface shader inputs
             const skipKeys = ['name', "density", "category", "description", "sources", "tags", "reference"];
 
+            let metallness = null;
+            let roughness = null;
+            let transmission_color = null;
+            let transmission = null;
             Object.entries(mat).forEach(([key, value]) => {
+
                 if (!skipKeys.includes(key)) {
+
+                    if (key == 'metalness') {
+                        metallness = value;
+                        //console.log('Metalness:', metallness);
+                    }
+                    if (key == 'roughness') {
+                        roughness = value;
+                        //console.log('Roughness:', roughness);
+                    }
+                    if (key == 'transmission') {
+                        transmission = value;
+                        //console.log('Transmission:', transmission);
+                    }
+                    if (key == 'color') {
+                        transmission_color = value;
+                        //console.log('Color:', color);
+                    }    
+
                     if (remapKeys[key]) {
                         key = remapKeys[key];
                     }
@@ -413,6 +438,22 @@ class JsPhysicallyBasedMaterialLoader {
                     }
                 }
             });
+
+            if (transmission !== null && metallness !== null && roughness !== null && transmission_color !== null) 
+            {
+                if (metallness == 0 && roughness == 0) 
+                {
+                    if (remapKeys['transmission_color']) {
+                        let inputName = remapKeys['transmission_color'];
+                        let input = shaderNode.addInput(inputName);
+                        if (input) {
+                            let value = transmission_color.join(',');
+                            console.log(`Add "${inputName}": "${value}"`);
+                            input.setValueString(value, 'color3');
+                        }
+                    }
+                }
+            };                
         }
         return true;
     }

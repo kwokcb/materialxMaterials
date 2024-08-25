@@ -350,6 +350,7 @@ class PhysicallyBasedMaterialLoader:
             color = None
             transmission = None
             for key, value in mat.items():
+                
                 if (key not in skipKeys):
                     if key == 'metalness':
                         metallness = value
