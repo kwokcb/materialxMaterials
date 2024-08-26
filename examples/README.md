@@ -774,6 +774,10 @@ The resulting MaterialX document using the glTF PBR shader is given below:
 
 The results have been converted to glTF format and shown below:
 
+```sh
+python -m materialxgltf mtlx2gltf --translateShaders True --bakeTextures False --packageBinary True --bakeResolution 1024 --gltfGeomFileName shaderball.gltf PhysicallyBasedMaterialX_GLTF.mtlx --primsPerMaterial 1
+```
+
 <table class="container" id="phys_container">
 <tr class="row">
 <td class="col" id="phys_view_container" style="min-height: 320px">
@@ -1018,7 +1022,7 @@ The following image was produced by loading into the `MaterialXView` application
 Additionally the package has been converted to glTF format using the `materialx2gltf` Python package availbe from PyPi.
 
 The command below will convert from an Autodesk standard surface shader to a glTF PBR shader, bake upstream graphs and then create a binary file using an input shaderball geometry. 
-```
+```sh
 python -m materialxgltf mtlx2gltf Indigo_Palm_Wallpaper.mtlx --translateShaders True --bakeTextures True --packageBinary True --bakeResolution 1024 --gltfGeomFileName shaderball.gltf
 ```
 

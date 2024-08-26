@@ -441,6 +441,8 @@
     <input name="specular_roughness" type="float" value="0.35" />
     <input name="specular_ior" type="float" value="1.68" />
     <input name="subsurface_radius" type="float" value="0.3,0.5,0.3" />
+    <input name="thin_film_thickness" type="float" value="420" />
+    <input name="thin_film_ior" type="float" value="2" />
   </open_pbr_surface>
   <!-- Generated material: Pearl_OPBR_MAT_PBM -->
   <surfacematerial name="Pearl_OPBR_MAT_PBM" type="material">
@@ -698,6 +700,8 @@
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_ior" type="float" value="1" />
     <input name="transmission_weight" type="float" value="1" />
+    <input name="thin_film_thickness" type="float" value="500" />
+    <input name="thin_film_ior" type="float" value="1.4" />
     <input name="transmission_color" type="color3" value="1,1,1" />
   </open_pbr_surface>
   <!-- Generated material: Soap_Bubble_OPBR_MAT_PBM -->

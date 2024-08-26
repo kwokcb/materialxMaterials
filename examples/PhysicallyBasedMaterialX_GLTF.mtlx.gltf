@@ -197,7 +197,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Aluminum",
+      "name": "Aluminum_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.9120000004768372,
@@ -210,7 +210,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Banana",
+      "name": "Banana_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6340000033378601,
@@ -223,7 +223,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Blackboard",
+      "name": "Blackboard_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.039000000804662704,
@@ -244,7 +244,7 @@
           "ior": 1.3009999990463257
         }
       },
-      "name": "SHD_PBM_GLTF_Blood",
+      "name": "Blood_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6444799900054932,
@@ -257,7 +257,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Bone",
+      "name": "Bone_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.7929999828338623,
@@ -279,7 +279,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Brass",
+      "name": "Brass_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8870000243186951,
@@ -292,7 +292,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Brick",
+      "name": "Brick_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.2619999945163727,
@@ -305,7 +305,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Carrot",
+      "name": "Carrot_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.7129999995231628,
@@ -318,7 +318,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Charcoal",
+      "name": "Charcoal_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.019999999552965164,
@@ -331,7 +331,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Chocolate",
+      "name": "Chocolate_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.16200000047683716,
@@ -353,7 +353,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Chromium",
+      "name": "Chromium_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6380000114440918,
@@ -375,7 +375,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Cobalt",
+      "name": "Cobalt_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6919999718666077,
@@ -393,7 +393,7 @@
           "ior": 1.3300000429153442
         }
       },
-      "name": "SHD_PBM_GLTF_Coffee",
+      "name": "Coffee_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.027000000700354576,
@@ -406,7 +406,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Concrete",
+      "name": "Concrete_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.5099999904632568,
@@ -427,7 +427,7 @@
           "ior": 1.4700000286102295
         }
       },
-      "name": "SHD_PBM_GLTF_Cooking_Oil",
+      "name": "Cooking_Oil_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.7379109859466553,
@@ -449,7 +449,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Copper",
+      "name": "Copper_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.9259999990463257,
@@ -470,7 +470,7 @@
           "ior": 2.416800022125244
         }
       },
-      "name": "SHD_PBM_GLTF_Diamond",
+      "name": "Diamond_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -483,7 +483,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Egg_Shell",
+      "name": "Egg_Shell_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6100000143051147,
@@ -504,7 +504,7 @@
           "ior": 1.3760000467300415
         }
       },
-      "name": "SHD_PBM_GLTF_Eye__cornea_",
+      "name": "Eye__cornea__GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -525,7 +525,7 @@
           "ior": 1.3860000371932983
         }
       },
-      "name": "SHD_PBM_GLTF_Eye__lens_",
+      "name": "Eye__lens__GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -543,7 +543,7 @@
           "ior": 1.399999976158142
         }
       },
-      "name": "SHD_PBM_GLTF_Eye__sclera_",
+      "name": "Eye__sclera__GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6800000071525574,
@@ -564,7 +564,7 @@
           "ior": 1.4270000457763672
         }
       },
-      "name": "SHD_PBM_GLTF_Gasoline",
+      "name": "Gasoline_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -585,7 +585,7 @@
           "ior": 1.5199999809265137
         }
       },
-      "name": "SHD_PBM_GLTF_Glass",
+      "name": "Glass_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -607,7 +607,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Gold",
+      "name": "Gold_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.9440000057220459,
@@ -620,7 +620,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Gray_Card",
+      "name": "Gray_Card_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.18000000715255737,
@@ -641,7 +641,7 @@
           "ior": 1.503999948501587
         }
       },
-      "name": "SHD_PBM_GLTF_Honey",
+      "name": "Honey_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8307700157165527,
@@ -662,7 +662,7 @@
           "ior": 1.3098000288009644
         }
       },
-      "name": "SHD_PBM_GLTF_Ice",
+      "name": "Ice_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -684,7 +684,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Iron",
+      "name": "Iron_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.531000018119812,
@@ -702,7 +702,7 @@
           "ior": 1.2999999523162842
         }
       },
-      "name": "SHD_PBM_GLTF_Ketchup",
+      "name": "Ketchup_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.164000004529953,
@@ -724,7 +724,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Lead",
+      "name": "Lead_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6320000290870667,
@@ -737,7 +737,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Lemon",
+      "name": "Lemon_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.7179999947547913,
@@ -750,7 +750,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Marble",
+      "name": "Marble_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8299999833106995,
@@ -772,7 +772,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Mercury",
+      "name": "Mercury_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.781000018119812,
@@ -790,7 +790,7 @@
           "ior": 1.3480000495910645
         }
       },
-      "name": "SHD_PBM_GLTF_Milk",
+      "name": "Milk_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8149999976158142,
@@ -812,7 +812,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Nickel",
+      "name": "Nickel_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6489999890327454,
@@ -825,7 +825,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Office_Paper",
+      "name": "Office_Paper_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.7940000295639038,
@@ -843,7 +843,7 @@
           "ior": 1.6799999475479126
         }
       },
-      "name": "SHD_PBM_GLTF_Pearl",
+      "name": "Pearl_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.800000011920929,
@@ -856,7 +856,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Petroleum",
+      "name": "Petroleum_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.029999999329447746,
@@ -877,7 +877,7 @@
           "ior": 1.4759999513626099
         }
       },
-      "name": "SHD_PBM_GLTF_Plastic__Acrylic_",
+      "name": "Plastic__Acrylic__GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -898,7 +898,7 @@
           "ior": 1.5848000049591064
         }
       },
-      "name": "SHD_PBM_GLTF_Plastic__PC_",
+      "name": "Plastic__PC__GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -919,7 +919,7 @@
           "ior": 1.5750000476837158
         }
       },
-      "name": "SHD_PBM_GLTF_Plastic__PET_",
+      "name": "Plastic__PET__GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -940,7 +940,7 @@
           "ior": 1.4919999837875366
         }
       },
-      "name": "SHD_PBM_GLTF_Plastic__PP_",
+      "name": "Plastic__PP__GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -961,7 +961,7 @@
           "ior": 1.531000018119812
         }
       },
-      "name": "SHD_PBM_GLTF_Plastic__PVC_",
+      "name": "Plastic__PVC__GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -983,7 +983,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Platinum",
+      "name": "Platinum_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6790000200271606,
@@ -1004,7 +1004,7 @@
           "ior": 1.600000023841858
         }
       },
-      "name": "SHD_PBM_GLTF_Polyurethane",
+      "name": "Polyurethane_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1025,7 +1025,7 @@
           "ior": 1.527500033378601
         }
       },
-      "name": "SHD_PBM_GLTF_Salt",
+      "name": "Salt_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1038,7 +1038,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Sand",
+      "name": "Sand_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.4399999976158142,
@@ -1059,7 +1059,7 @@
           "ior": 1.7682000398635864
         }
       },
-      "name": "SHD_PBM_GLTF_Sapphire",
+      "name": "Sapphire_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6700000166893005,
@@ -1072,7 +1072,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Silicon",
+      "name": "Silicon_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.3440000116825104,
@@ -1094,7 +1094,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Silver",
+      "name": "Silver_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.9620000123977661,
@@ -1112,7 +1112,7 @@
           "ior": 1.399999976158142
         }
       },
-      "name": "SHD_PBM_GLTF_Skin_I",
+      "name": "Skin_I_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.847000002861023,
@@ -1130,7 +1130,7 @@
           "ior": 1.399999976158142
         }
       },
-      "name": "SHD_PBM_GLTF_Skin_II",
+      "name": "Skin_II_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.7990000247955322,
@@ -1148,7 +1148,7 @@
           "ior": 1.399999976158142
         }
       },
-      "name": "SHD_PBM_GLTF_Skin_III",
+      "name": "Skin_III_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6230000257492065,
@@ -1166,7 +1166,7 @@
           "ior": 1.399999976158142
         }
       },
-      "name": "SHD_PBM_GLTF_Skin_IV",
+      "name": "Skin_IV_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.4359999895095825,
@@ -1184,7 +1184,7 @@
           "ior": 1.399999976158142
         }
       },
-      "name": "SHD_PBM_GLTF_Skin_V",
+      "name": "Skin_V_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.28299999237060547,
@@ -1202,7 +1202,7 @@
           "ior": 1.399999976158142
         }
       },
-      "name": "SHD_PBM_GLTF_Skin_VI",
+      "name": "Skin_VI_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.09000000357627869,
@@ -1220,7 +1220,7 @@
           "ior": 1.3098000288009644
         }
       },
-      "name": "SHD_PBM_GLTF_Snow",
+      "name": "Snow_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8500000238418579,
@@ -1241,7 +1241,7 @@
           "ior": 1.0
         }
       },
-      "name": "SHD_PBM_GLTF_Soap_Bubble",
+      "name": "Soap_Bubble_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1254,7 +1254,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Tire",
+      "name": "Tire_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.023000000044703484,
@@ -1276,7 +1276,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Titanium",
+      "name": "Titanium_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.6159999966621399,
@@ -1298,7 +1298,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Tungsten",
+      "name": "Tungsten_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.5040000081062317,
@@ -1320,7 +1320,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Vanadium",
+      "name": "Vanadium_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.5199999809265137,
@@ -1341,7 +1341,7 @@
           "ior": 1.3324999809265137
         }
       },
-      "name": "SHD_PBM_GLTF_Water",
+      "name": "Water_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           1.0,
@@ -1354,7 +1354,7 @@
       }
     },
     {
-      "name": "SHD_PBM_GLTF_Whiteboard",
+      "name": "Whiteboard_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8690000176429749,
@@ -1376,7 +1376,7 @@
           ]
         }
       },
-      "name": "SHD_PBM_GLTF_Zinc",
+      "name": "Zinc_GLTF_SHD_PBM",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
           0.8019999861717224,

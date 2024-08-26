@@ -94,10 +94,11 @@ class PhysicallyBasedMaterialLoader:
             #'transmission': 'transmission',
             'transmission_color': 'transmission_color',
             'thinFilmIor' : 'thin_film_IOR',
-            'thinFilmThickness' : 'thin_film_thickness',
+            'thinFilmThickness' : 'thin_film_thickness',            
             'transmissionDispersion' : 'transmission_dispersion',
         }
         # Remap keys for OpenPBR shading model.
+        # Q: When to set geometry_thin_walled to true?
         openpbr_remapKeys = {
             'color': 'base_color',
             'specularColor': 'specular_color',
@@ -107,8 +108,8 @@ class PhysicallyBasedMaterialLoader:
             'transmission': 'transmission_weight',
             'transmission_color': 'transmission_color',
             'subsurfaceRadius': 'subsurface_radius',
-            'thinFilmIor' : 'thinfilm_ior',
-            'thinFilmThickness' : 'thinfilm_thickness',
+            'thinFilmIor' : 'thin_film_ior',
+            'thinFilmThickness' : 'thin_film_thickness',
             'transmissionDispersion' : 'transmission_dispersion_scale',
         }
         # Remap keys for Khronos glTF shading model.

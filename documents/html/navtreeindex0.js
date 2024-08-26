@@ -1,9 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[0,0,0],
-"":[0,0,0,0],
-"":[0,0,0,2],
-"":[0,0,0,4],
 "____init_____8py.html#a0a3e35178588ad1393c61d4b0b4952d3":[0,0,0,5],
 "____init_____8py_source.html":[2,0,0],
 "____main_____8py.html#acd7f5fefcd7146c6dd868607d85c04f7":[0,0,0,0,0],
@@ -11,7 +7,7 @@ var NAVTREEINDEX0 =
 "_g_p_u_open_loader_8py_source.html":[2,0,2],
 "_g_p_u_open_loader_cmd_8py.html#acba9ba30ffec65ce6e1120f01a32b4b1":[0,0,0,2,0],
 "_g_p_u_open_loader_cmd_8py_source.html":[2,0,3],
-"_js_g_p_u_open_loader_8js_source.html":[2,0,4],
+"_js_g_p_u_open_loader__test_8js_source.html":[2,0,4],
 "_js_material_x_physically_based_8js_source.html":[2,0,5],
 "annotated.html":[1,0],
 "class_g_p_u_open_material_loader.html":[1,0,1],
@@ -102,5 +98,9 @@ var NAVTREEINDEX0 =
 "pages.html":[],
 "physically_based_material_x_8py_source.html":[2,0,6],
 "physically_based_material_x_cmd_8py.html#a962926b309ce16afa06401e2549c4f77":[0,0,0,4,0],
-"physically_based_material_x_cmd_8py_source.html":[2,0,7]
+"physically_based_material_x_cmd_8py_source.html":[2,0,7],
+"":[0,0,0,0],
+"":[0,0,0,4],
+"":[0,0,0],
+"":[0,0,0,2]
 };
