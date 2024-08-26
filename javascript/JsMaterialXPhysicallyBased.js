@@ -164,8 +164,8 @@ class JsPhysicallyBasedMaterialLoader {
             'transmission': 'transmission_weight',
             'transmission_color': 'transmission_color',
             'subsurfaceRadius': 'subsurface_radius',
-            'thinFilmIor': 'thinfilm_ior',
-            'thinFilmThickness': 'thinfilm_thickness',
+            'thinFilmIor': 'thin_film_ior',
+            'thinFilmThickness': 'thin_film_thickness',
             'transmissionDispersion': 'transmission_dispersion_scale',
         }
         // Remap keys for Khronos glTF shading model.
@@ -174,6 +174,7 @@ class JsPhysicallyBasedMaterialLoader {
             'specularColor': 'specular_color',
             'roughness': 'roughness',
             'metalness': 'metallic',
+            'transmission_color': 'attenuation_color',
             //'ior': 'ior',
             //'transmission': 'transmission',
         }

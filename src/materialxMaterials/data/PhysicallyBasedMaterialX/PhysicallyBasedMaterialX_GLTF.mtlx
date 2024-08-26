@@ -45,6 +45,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.301" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="0.64448,0.003,0.005" />
   </gltf_pbr>
   <!-- Generated material: Blood_GLTF_MAT_PBM -->
   <surfacematerial name="Blood_GLTF_MAT_PBM" type="material">
@@ -170,6 +171,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.47" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="0.737911,0.687,0.091" />
   </gltf_pbr>
   <!-- Generated material: Cooking_Oil_GLTF_MAT_PBM -->
   <surfacematerial name="Cooking_Oil_GLTF_MAT_PBM" type="material">
@@ -194,6 +196,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="2.4168" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Diamond_GLTF_MAT_PBM -->
   <surfacematerial name="Diamond_GLTF_MAT_PBM" type="material">
@@ -217,6 +220,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.376" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Eye__cornea__GLTF_MAT_PBM -->
   <surfacematerial name="Eye__cornea__GLTF_MAT_PBM" type="material">
@@ -229,6 +233,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.386" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Eye__lens__GLTF_MAT_PBM -->
   <surfacematerial name="Eye__lens__GLTF_MAT_PBM" type="material">
@@ -252,6 +257,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.427" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,0.97,0.617" />
   </gltf_pbr>
   <!-- Generated material: Gasoline_GLTF_MAT_PBM -->
   <surfacematerial name="Gasoline_GLTF_MAT_PBM" type="material">
@@ -264,6 +270,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.52" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Glass_GLTF_MAT_PBM -->
   <surfacematerial name="Glass_GLTF_MAT_PBM" type="material">
@@ -299,6 +306,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.504" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="0.83077,0.397,0.038" />
   </gltf_pbr>
   <!-- Generated material: Honey_GLTF_MAT_PBM -->
   <surfacematerial name="Honey_GLTF_MAT_PBM" type="material">
@@ -448,6 +456,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.476" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Plastic__Acrylic__GLTF_MAT_PBM -->
   <surfacematerial name="Plastic__Acrylic__GLTF_MAT_PBM" type="material">
@@ -460,6 +469,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5848" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Plastic__PC__GLTF_MAT_PBM -->
   <surfacematerial name="Plastic__PC__GLTF_MAT_PBM" type="material">
@@ -472,6 +482,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.575" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Plastic__PET__GLTF_MAT_PBM -->
   <surfacematerial name="Plastic__PET__GLTF_MAT_PBM" type="material">
@@ -484,6 +495,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.492" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Plastic__PP__GLTF_MAT_PBM -->
   <surfacematerial name="Plastic__PP__GLTF_MAT_PBM" type="material">
@@ -496,6 +508,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.531" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Plastic__PVC__GLTF_MAT_PBM -->
   <surfacematerial name="Plastic__PVC__GLTF_MAT_PBM" type="material">
@@ -520,6 +533,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.6" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Polyurethane_GLTF_MAT_PBM -->
   <surfacematerial name="Polyurethane_GLTF_MAT_PBM" type="material">
@@ -555,6 +569,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.7682" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="0.67,0.764,0.855" />
   </gltf_pbr>
   <!-- Generated material: Sapphire_GLTF_MAT_PBM -->
   <surfacematerial name="Sapphire_GLTF_MAT_PBM" type="material">
@@ -667,6 +682,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Soap_Bubble_GLTF_MAT_PBM -->
   <surfacematerial name="Soap_Bubble_GLTF_MAT_PBM" type="material">
@@ -726,6 +742,7 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.3325" />
     <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
   </gltf_pbr>
   <!-- Generated material: Water_GLTF_MAT_PBM -->
   <surfacematerial name="Water_GLTF_MAT_PBM" type="material">

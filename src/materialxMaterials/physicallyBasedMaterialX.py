@@ -118,6 +118,7 @@ class PhysicallyBasedMaterialLoader:
             'specularColor': 'specular_color',
             'roughness': 'roughness',
             'metalness': 'metallic',
+            'transmission_color': 'attenuation_color',
             #'ior': 'ior',
             #'transmission': 'transmission',
         }
