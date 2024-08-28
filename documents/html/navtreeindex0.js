@@ -1,9 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[0,0,0],
-"":[0,0,0,0],
-"":[0,0,0,2],
-"":[0,0,0,4],
 "____init_____8py.html#a0a3e35178588ad1393c61d4b0b4952d3":[0,0,0,5],
 "____init_____8py_source.html":[2,0,0],
 "____main_____8py.html#acd7f5fefcd7146c6dd868607d85c04f7":[0,0,0,0,0],
@@ -96,5 +92,9 @@ var NAVTREEINDEX0 =
 "pages.html":[],
 "physically_based_material_x_8py_source.html":[2,0,5],
 "physically_based_material_x_cmd_8py.html#a962926b309ce16afa06401e2549c4f77":[0,0,0,4,0],
-"physically_based_material_x_cmd_8py_source.html":[2,0,6]
+"physically_based_material_x_cmd_8py_source.html":[2,0,6],
+"":[0,0,0],
+"":[0,0,0,2],
+"":[0,0,0,0],
+"":[0,0,0,4]
 };
