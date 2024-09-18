@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: standard_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Blood_SS_SHD_PBM -->
+  <standard_surface name="Blood_SS_SHD_PBM" type="surfaceshader" doc="The color of blood depends on its oxygen level. When there is plenty of oxygen, the color is a brighter red. The reason is because of a protein called hemoglobin, which carries the oxygen in your blood. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.jpeg">
+    <input name="base_color" type="color3" value="0.64448,0.003,0.005" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.301" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="0.64448,0.003,0.005" />
+  </standard_surface>
+  <!-- Generated material: Blood_SS_MAT_PBM -->
+  <surfacematerial name="Blood_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Blood_SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

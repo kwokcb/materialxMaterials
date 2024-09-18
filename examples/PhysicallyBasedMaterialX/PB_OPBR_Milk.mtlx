@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: open_pbr_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Milk_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Milk_OPBR_SHD_PBM" type="surfaceshader" doc="Cow's milk. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/milk.jpeg">
+    <input name="base_color" type="color3" value="0.815,0.813,0.682" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.348" />
+    <input name="subsurface_radius" type="float" value="1.842,1.044,0.35" />
+  </open_pbr_surface>
+  <!-- Generated material: Milk_OPBR_MAT_PBM -->
+  <surfacematerial name="Milk_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Milk_OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

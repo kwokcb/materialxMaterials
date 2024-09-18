@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: open_pbr_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Office_Paper_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Office_Paper_OPBR_SHD_PBM" type="surfaceshader" doc="Office paper contains optical brightening additives that absorb light in the ultraviolet and violet region (usually 340-370 nm), and re-emit light in the blue region (typically 420-470 nm) by fluorescence.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/office-paper.jpeg">
+    <input name="base_color" type="color3" value="0.794,0.834,0.884" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Office_Paper_OPBR_MAT_PBM -->
+  <surfacematerial name="Office_Paper_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Office_Paper_OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

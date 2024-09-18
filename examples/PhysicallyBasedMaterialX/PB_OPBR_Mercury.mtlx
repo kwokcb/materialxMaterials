@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: open_pbr_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Mercury_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Mercury_OPBR_SHD_PBM" type="surfaceshader" doc="Mercury is the only metallic element that is known to be liquid at standard conditions.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/mercury.jpeg">
+    <input name="base_color" type="color3" value="0.781,0.779,0.779" />
+    <input name="base_metalness" type="float" value="1" />
+    <input name="specular_color" type="color3" value="0.879,0.91,0.941" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Mercury_OPBR_MAT_PBM -->
+  <surfacematerial name="Mercury_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Mercury_OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

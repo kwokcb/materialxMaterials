@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: gltf_pbr-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Lead_GLTF_SHD_PBM -->
+  <gltf_pbr name="Lead_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lead.jpeg">
+    <input name="base_color" type="color3" value="0.632,0.626,0.641" />
+    <input name="metallic" type="float" value="1" />
+    <input name="specular_color" type="color3" value="0.803,0.808,0.862" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+  </gltf_pbr>
+  <!-- Generated material: Lead_GLTF_MAT_PBM -->
+  <surfacematerial name="Lead_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Lead_GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: gltf_pbr-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Water_GLTF_SHD_PBM -->
+  <gltf_pbr name="Water_GLTF_SHD_PBM" type="surfaceshader" doc="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/water.jpeg">
+    <input name="base_color" type="color3" value="1,1,1" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
+  </gltf_pbr>
+  <!-- Generated material: Water_GLTF_MAT_PBM -->
+  <surfacematerial name="Water_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Water_GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>

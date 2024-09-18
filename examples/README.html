@@ -369,9 +369,9 @@ code {
 <h2 class="bg-gradient rounded-2 p-0"> <img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=32px>MaterialX Materials Examples</h2>
 <div class="container p-2 rounded-4 border border-secondary border-rounded">
 <h3 id="physicallybased-materials">PhysicallyBased Materials</h3>
-<p>The resulting MaterialX document using the glTF PBR shader is given below:</p>
+<p>The resulting MaterialX document using the glTF PBR shader is given below.</p>
 <details>
-<summary>Click to expand</summary>
+<summary>Document</summary>
 <pre class="hljs"><code><div><span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">materialx</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.39"</span>&gt;</span>
   <span class="hljs-comment">&lt;!--Physically Based Materials from https://api.physicallybased.info --&gt;</span>
@@ -1132,7 +1132,422 @@ code {
 </div></code></pre>
 </details>
 <p>
+<p>The results of rendering glTF, OpenPBR and Standard Surface materials is shown below:</p>
+<details>
+<summary>Rendered Materials</summary>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Render OpenPBR</th>
+<th>Render SS</th>
+<th>Render glTF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aluminum</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Aluminum.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Aluminum.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Aluminum.png" width=100%></td>
+</tr>
+<tr>
+<td>Banana</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Banana.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Banana.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Banana.png" width=100%></td>
+</tr>
+<tr>
+<td>Blackboard</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Blackboard.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Blackboard.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Blackboard.png" width=100%></td>
+</tr>
+<tr>
+<td>Blood</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Blood.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Blood.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Blood.png" width=100%></td>
+</tr>
+<tr>
+<td>Bone</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Bone.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Bone.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Bone.png" width=100%></td>
+</tr>
+<tr>
+<td>Brass</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Brass.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Brass.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Brass.png" width=100%></td>
+</tr>
+<tr>
+<td>Brick</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Brick.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Brick.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Brick.png" width=100%></td>
+</tr>
+<tr>
+<td>Car Paint</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Car Paint.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Car Paint.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Car Paint.png" width=100%></td>
+</tr>
+<tr>
+<td>Carrot</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Carrot.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Carrot.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Carrot.png" width=100%></td>
+</tr>
+<tr>
+<td>Charcoal</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Charcoal.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Charcoal.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Charcoal.png" width=100%></td>
+</tr>
+<tr>
+<td>Chocolate</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Chocolate.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Chocolate.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Chocolate.png" width=100%></td>
+</tr>
+<tr>
+<td>Chromium</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Chromium.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Chromium.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Chromium.png" width=100%></td>
+</tr>
+<tr>
+<td>Cobalt</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Cobalt.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Cobalt.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Cobalt.png" width=100%></td>
+</tr>
+<tr>
+<td>Coffee</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Coffee.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Coffee.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Coffee.png" width=100%></td>
+</tr>
+<tr>
+<td>Concrete</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Concrete.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Concrete.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Concrete.png" width=100%></td>
+</tr>
+<tr>
+<td>Cooking Oil</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Cooking Oil.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Cooking Oil.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Cooking Oil.png" width=100%></td>
+</tr>
+<tr>
+<td>Copper</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Copper.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Copper.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Copper.png" width=100%></td>
+</tr>
+<tr>
+<td>Diamond</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Diamond.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Diamond.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Diamond.png" width=100%></td>
+</tr>
+<tr>
+<td>Egg Shell</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Egg Shell.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Egg Shell.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Egg Shell.png" width=100%></td>
+</tr>
+<tr>
+<td>Eye (cornea)</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Eye (cornea).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Eye (cornea).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Eye (cornea).png" width=100%></td>
+</tr>
+<tr>
+<td>Eye (lens)</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Eye (lens).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Eye (lens).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Eye (lens).png" width=100%></td>
+</tr>
+<tr>
+<td>Eye (sclera)</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Eye (sclera).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Eye (sclera).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Eye (sclera).png" width=100%></td>
+</tr>
+<tr>
+<td>Gasoline</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Gasoline.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Gasoline.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Gasoline.png" width=100%></td>
+</tr>
+<tr>
+<td>Glass</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Glass.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Glass.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Glass.png" width=100%></td>
+</tr>
+<tr>
+<td>Gold</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Gold.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Gold.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Gold.png" width=100%></td>
+</tr>
+<tr>
+<td>Gray Card</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Gray Card.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Gray Card.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Gray Card.png" width=100%></td>
+</tr>
+<tr>
+<td>Honey</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Honey.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Honey.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Honey.png" width=100%></td>
+</tr>
+<tr>
+<td>Ice</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Ice.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Ice.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Ice.png" width=100%></td>
+</tr>
+<tr>
+<td>Iron</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Iron.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Iron.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Iron.png" width=100%></td>
+</tr>
+<tr>
+<td>Ketchup</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Ketchup.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Ketchup.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Ketchup.png" width=100%></td>
+</tr>
+<tr>
+<td>Lead</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Lead.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Lead.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Lead.png" width=100%></td>
+</tr>
+<tr>
+<td>Lemon</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Lemon.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Lemon.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Lemon.png" width=100%></td>
+</tr>
+<tr>
+<td>Marble</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Marble.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Marble.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Marble.png" width=100%></td>
+</tr>
+<tr>
+<td>Mercury</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Mercury.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Mercury.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Mercury.png" width=100%></td>
+</tr>
+<tr>
+<td>Milk</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Milk.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Milk.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Milk.png" width=100%></td>
+</tr>
+<tr>
+<td>Nickel</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Nickel.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Nickel.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Nickel.png" width=100%></td>
+</tr>
+<tr>
+<td>Office Paper</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Office Paper.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Office Paper.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Office Paper.png" width=100%></td>
+</tr>
+<tr>
+<td>Pearl</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Pearl.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Pearl.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Pearl.png" width=100%></td>
+</tr>
+<tr>
+<td>Petroleum</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Petroleum.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Petroleum.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Petroleum.png" width=100%></td>
+</tr>
+<tr>
+<td>Plastic (Acrylic)</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Plastic (Acrylic).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Plastic (Acrylic).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Plastic (Acrylic).png" width=100%></td>
+</tr>
+<tr>
+<td>Plastic (PC)</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Plastic (PC).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Plastic (PC).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Plastic (PC).png" width=100%></td>
+</tr>
+<tr>
+<td>Plastic (PET)</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Plastic (PET).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Plastic (PET).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Plastic (PET).png" width=100%></td>
+</tr>
+<tr>
+<td>Plastic (PP)</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Plastic (PP).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Plastic (PP).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Plastic (PP).png" width=100%></td>
+</tr>
+<tr>
+<td>Plastic (PVC)</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Plastic (PVC).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Plastic (PVC).png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Plastic (PVC).png" width=100%></td>
+</tr>
+<tr>
+<td>Platinum</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Platinum.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Platinum.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Platinum.png" width=100%></td>
+</tr>
+<tr>
+<td>Polyurethane</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Polyurethane.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Polyurethane.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Polyurethane.png" width=100%></td>
+</tr>
+<tr>
+<td>Salt</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Salt.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Salt.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Salt.png" width=100%></td>
+</tr>
+<tr>
+<td>Sand</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Sand.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Sand.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Sand.png" width=100%></td>
+</tr>
+<tr>
+<td>Sapphire</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Sapphire.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Sapphire.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Sapphire.png" width=100%></td>
+</tr>
+<tr>
+<td>Silicon</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Silicon.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Silicon.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Silicon.png" width=100%></td>
+</tr>
+<tr>
+<td>Silver</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Silver.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Silver.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Silver.png" width=100%></td>
+</tr>
+<tr>
+<td>Skin I</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Skin I.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Skin I.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Skin I.png" width=100%></td>
+</tr>
+<tr>
+<td>Skin II</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Skin II.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Skin II.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Skin II.png" width=100%></td>
+</tr>
+<tr>
+<td>Skin III</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Skin III.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Skin III.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Skin III.png" width=100%></td>
+</tr>
+<tr>
+<td>Skin IV</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Skin IV.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Skin IV.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Skin IV.png" width=100%></td>
+</tr>
+<tr>
+<td>Skin V</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Skin V.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Skin V.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Skin V.png" width=100%></td>
+</tr>
+<tr>
+<td>Skin VI</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Skin VI.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Skin VI.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Skin VI.png" width=100%></td>
+</tr>
+<tr>
+<td>Snow</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Snow.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Snow.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Snow.png" width=100%></td>
+</tr>
+<tr>
+<td>Soap Bubble</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Soap Bubble.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Soap Bubble.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Soap Bubble.png" width=100%></td>
+</tr>
+<tr>
+<td>Tire</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Tire.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Tire.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Tire.png" width=100%></td>
+</tr>
+<tr>
+<td>Titanium</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Titanium.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Titanium.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Titanium.png" width=100%></td>
+</tr>
+<tr>
+<td>Tungsten</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Tungsten.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Tungsten.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Tungsten.png" width=100%></td>
+</tr>
+<tr>
+<td>Vanadium</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Vanadium.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Vanadium.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Vanadium.png" width=100%></td>
+</tr>
+<tr>
+<td>Water</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Water.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Water.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Water.png" width=100%></td>
+</tr>
+<tr>
+<td>Whiteboard</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Whiteboard.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Whiteboard.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Whiteboard.png" width=100%></td>
+</tr>
+<tr>
+<td>Zinc</td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_OPBR_Zinc.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_SS_Zinc.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/PB_GLTF_Zinc.png" width=100%></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>
 <p>The results have been converted to glTF format and shown below:</p>
+<pre class="hljs"><code><div>python -m materialxgltf mtlx2gltf --translateShaders True --bakeTextures False --packageBinary True --bakeResolution 1024 --gltfGeomFileName shaderball.gltf PhysicallyBasedMaterialX_GLTF.mtlx --primsPerMaterial 1
+</div></code></pre>
 <table class="container" id="phys_container">
 <tr class="row">
 <td class="col" id="phys_view_container" style="min-height: 320px">

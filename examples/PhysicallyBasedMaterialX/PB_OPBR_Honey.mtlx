@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: open_pbr_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Honey_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Honey_OPBR_SHD_PBM" type="surfaceshader" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey.jpeg">
+    <input name="base_color" type="color3" value="0.83077,0.397,0.038" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.504" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="0.83077,0.397,0.038" />
+  </open_pbr_surface>
+  <!-- Generated material: Honey_OPBR_MAT_PBM -->
+  <surfacematerial name="Honey_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Honey_OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: open_pbr_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Ketchup_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Ketchup_OPBR_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ketchup.jpeg">
+    <input name="base_color" type="color3" value="0.164,0.006,0.002" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.1" />
+    <input name="specular_ior" type="float" value="1.3" />
+    <input name="subsurface_radius" type="float" value="0.476,0.058,0.039" />
+  </open_pbr_surface>
+  <!-- Generated material: Ketchup_OPBR_MAT_PBM -->
+  <surfacematerial name="Ketchup_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Ketchup_OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

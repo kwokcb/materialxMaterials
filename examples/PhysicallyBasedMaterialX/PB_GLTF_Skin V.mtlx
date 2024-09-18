@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: gltf_pbr-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Skin_V_GLTF_SHD_PBM -->
+  <gltf_pbr name="Skin_V_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-v.jpeg">
+    <input name="base_color" type="color3" value="0.283,0.148,0.079" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="ior" type="float" value="1.4" />
+  </gltf_pbr>
+  <!-- Generated material: Skin_V_GLTF_MAT_PBM -->
+  <surfacematerial name="Skin_V_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_V_GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>

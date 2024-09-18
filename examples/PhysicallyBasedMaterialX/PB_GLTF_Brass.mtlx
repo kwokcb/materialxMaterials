@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: gltf_pbr-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Brass_GLTF_SHD_PBM -->
+  <gltf_pbr name="Brass_GLTF_SHD_PBM" type="surfaceshader" doc="Brass is an alloy of copper and zinc, with a bright and gold-like appearance. It is similar to bronze, another alloy containing copper that uses tin instead of zinc. Historically, the distinction between the two alloys has been less consistent and clear, and modern practice in museums and archaeology increasingly avoids both terms for historical objects in favor of the more general &quot;copper alloy&quot;.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brass.jpeg">
+    <input name="base_color" type="color3" value="0.887,0.789,0.434" />
+    <input name="metallic" type="float" value="1" />
+    <input name="specular_color" type="color3" value="0.988,0.976,0.843" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+  </gltf_pbr>
+  <!-- Generated material: Brass_GLTF_MAT_PBM -->
+  <surfacematerial name="Brass_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Brass_GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>
