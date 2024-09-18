@@ -85,6 +85,17 @@
   <surfacematerial name="Brick_GLTF_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Brick_GLTF_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Car_Paint_GLTF_SHD_PBM -->
+  <gltf_pbr name="Car_Paint_GLTF_SHD_PBM" type="surfaceshader" doc="Modern car paints are nearly always an acrylic polyurethane &quot;enamel&quot; with a pigmented basecoat and a clear topcoat. It may be described as &quot;acrylic&quot;, &quot;acrylic enamel&quot;, &quot;urethane&quot;, etc. and the clearcoat in particular may be described as a lacquer. The size of the metal flakes in metallic paints is typically between 100 to 400 microns in diameter. Modern automobile paint is applied in several layers, with a total thickness of around 100 μm (0.1mm).. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/car-paint.jpeg">
+    <input name="base_color" type="color3" value="0.1,0.1,0.1" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+  </gltf_pbr>
+  <!-- Generated material: Car_Paint_GLTF_MAT_PBM -->
+  <surfacematerial name="Car_Paint_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Car_Paint_GLTF_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Carrot_GLTF_SHD_PBM -->
   <gltf_pbr name="Carrot_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/carrot.jpeg">
     <input name="base_color" type="color3" value="0.713,0.17,0.026" />
