@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: standard_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Pearl_SS_SHD_PBM -->
+  <standard_surface name="Pearl_SS_SHD_PBM" type="surfaceshader" doc="The akoya pearl is a saltwater cultured pearl from the akoya oyster. Akoya are considered to be the classic pearl used for necklaces and other pearl jewelry. Nacre is the material of which pearls are composed and consists of aragonite crystal layers separated by conchiolin, a protein secreted by mollusk shells. The thickness of these layers determines the color of reflection from the nacre. The transmission interference color is complementary to the reflection interference color.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/pearl.jpeg">
+    <input name="base_color" type="color3" value="0.8,0.75,0.7" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.35" />
+    <input name="specular_IOR" type="float" value="1.68" />
+    <input name="thin_film_thickness" type="float" value="420" />
+    <input name="thin_film_IOR" type="float" value="2" />
+  </standard_surface>
+  <!-- Generated material: Pearl_SS_MAT_PBM -->
+  <surfacematerial name="Pearl_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Pearl_SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

@@ -95,7 +95,7 @@ A `Jupyter` notebook demonstrates the direct usage of the Python library. The ou
 
 <h3>Results</h3>
 
-The following are some samples which have been rendered using the `MaterialXViewer` utility which is part of the MaterialX binary distribution.
+The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
 
 Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a>
 

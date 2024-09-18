@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: open_pbr_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Skin_I_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Skin_I_OPBR_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-i.jpeg">
+    <input name="base_color" type="color3" value="0.847,0.638,0.552" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_ior" type="float" value="1.4" />
+    <input name="subsurface_radius" type="float" value="0.482,0.169,0.109" />
+  </open_pbr_surface>
+  <!-- Generated material: Skin_I_OPBR_MAT_PBM -->
+  <surfacematerial name="Skin_I_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_I_OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

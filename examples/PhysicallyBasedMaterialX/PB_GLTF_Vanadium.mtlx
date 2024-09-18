@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: gltf_pbr-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Vanadium_GLTF_SHD_PBM -->
+  <gltf_pbr name="Vanadium_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/vanadium.jpeg">
+    <input name="base_color" type="color3" value="0.52,0.532,0.541" />
+    <input name="metallic" type="float" value="1" />
+    <input name="specular_color" type="color3" value="0.402,0.447,0.395" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+  </gltf_pbr>
+  <!-- Generated material: Vanadium_GLTF_MAT_PBM -->
+  <surfacematerial name="Vanadium_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Vanadium_GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>

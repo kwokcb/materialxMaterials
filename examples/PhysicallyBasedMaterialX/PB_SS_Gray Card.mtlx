@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: standard_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Gray_Card_SS_SHD_PBM -->
+  <standard_surface name="Gray_Card_SS_SHD_PBM" type="surfaceshader" doc="18% gray has a perceptual lightness of 50%.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gray-card.jpeg">
+    <input name="base_color" type="color3" value="0.18,0.18,0.18" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_IOR" type="float" value="1.5" />
+  </standard_surface>
+  <!-- Generated material: Gray_Card_SS_MAT_PBM -->
+  <surfacematerial name="Gray_Card_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Gray_Card_SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

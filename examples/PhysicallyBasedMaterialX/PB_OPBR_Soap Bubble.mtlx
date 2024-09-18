@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: open_pbr_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Soap_Bubble_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Soap_Bubble_OPBR_SHD_PBM" type="surfaceshader" doc="The colors of a soap bubble are the result of an interaction between the light reflected from the front and back surfaces of the soap film, a phenomenon known as thin-film interference. The thickness of a soap bubble can range between 10 nm and 1000 nm. It's thinner at the top due to gravity.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/soap-bubble.jpeg">
+    <input name="base_color" type="color3" value="1,1,1" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="thin_film_thickness" type="float" value="500" />
+    <input name="thin_film_ior" type="float" value="1.4" />
+    <input name="transmission_color" type="color3" value="1,1,1" />
+  </open_pbr_surface>
+  <!-- Generated material: Soap_Bubble_OPBR_MAT_PBM -->
+  <surfacematerial name="Soap_Bubble_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Soap_Bubble_OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

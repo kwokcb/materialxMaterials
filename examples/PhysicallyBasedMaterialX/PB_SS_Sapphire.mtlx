@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: standard_surface-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Sapphire_SS_SHD_PBM -->
+  <standard_surface name="Sapphire_SS_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sapphire.jpeg">
+    <input name="base_color" type="color3" value="0.67,0.764,0.855" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.7682" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmission_dispersion" type="float" value="72.2" />
+    <input name="transmission_color" type="color3" value="0.67,0.764,0.855" />
+  </standard_surface>
+  <!-- Generated material: Sapphire_SS_MAT_PBM -->
+  <surfacematerial name="Sapphire_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Sapphire_SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

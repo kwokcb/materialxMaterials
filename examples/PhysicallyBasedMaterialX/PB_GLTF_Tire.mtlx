@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Processsed via API and converted to MaterialX -->
+  <!--  Target Shading Model: gltf_pbr-->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Tire_GLTF_SHD_PBM -->
+  <gltf_pbr name="Tire_GLTF_SHD_PBM" type="surfaceshader" doc="Car tire.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tire.jpeg">
+    <input name="base_color" type="color3" value="0.023,0.023,0.023" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="ior" type="float" value="1.5" />
+  </gltf_pbr>
+  <!-- Generated material: Tire_GLTF_MAT_PBM -->
+  <surfacematerial name="Tire_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Tire_GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>
