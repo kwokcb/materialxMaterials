@@ -1,0 +1,24 @@
+{
+    "name": "jsgpuopenloader",
+    "version": "0.0.1",
+    "description": "A sample package to fetch material information and materials GPUOpen material database.",
+    "main": "gpuOpenFetch.js",
+    "scripts": {
+      "build": "cp ../JsGPUOpenLoader.js .",
+      "start": "node gpuOpenFetch.js"
+    },
+    "author": {
+      "name": "Bernard Kwok",
+      "email": "kwokcb@gmail.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kwokcb/materialxMaterials"
+    },
+    "license": "MIT",
+    "copyright": "© 2024 Bernard Kwok",
+    "dependencies": {
+      "node-fetch": "^3.0.0",
+      "yargs": "^17.0.0"
+    }
+  }
