@@ -43,6 +43,10 @@ An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMate
 </a> for extracting <code>PhysicallyBased</code> uses a Javascript implementation found <a href="https://github.com/kwokcb/materialxMaterials/blob/main/javascript/JsMaterialXPhysicallyBased.js">here</a>
 </p>
 
+<p>
+A command line utility is available [here](https://github.com/kwokcb/materialxMaterials/tree/main/javascript/JsGPUOpenLoaderPackage). This uses Node.js to allow for accessing to fetching materials (which is not available via a web page).
+
+
 <h3>Dependencies</h3>
 
 The Python utilities require:
@@ -51,19 +55,31 @@ The Python utilities require:
 2. The `requests` package.
 3. The `pillow` package for image handling for GPUOpen package handling
 
+The GPUOpen Javascript logic requires:
+1. `node-fetch` if fetch is not available in the version of Node.js used. 
+2. `yargs` for the command line utility 
+
 <h3>Building</h3>
 
-The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned and the package built using:
+The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned.
+
+The Python package can be built using:
 
 ```
 pip install .
 ```
 
-This will pull down the dependent packages as needed.
+This will pull down the dependent Python packages as needed.
+
+The GPUOpen Javascript utility requires Node.js to be installed. From the package folder (`javascript\JsGPUOpenLoaderPackage`) the following should be run:
+```
+npm install     # Install dependent packages
+npm run build   # Setup runtime area
+```
 
 <h3>Usage</h3>
 
-<h4>Commands</h4>
+<h4>Python Commands</h4>
 
 - Query all materials fom PhysicallyBased and convert them to all  support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
@@ -88,6 +104,23 @@ packages (zip). Save the material lists, material names and unzipped packages (M
   ```sh
   python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
   ```
+
+<h4>GPU Open Node.js Utility</h4>
+
+The utility can be run from the `javascript\JsGPUOpenLoaderPackage` folder as follows:
+
+```
+npm start -- [<arguments>]
+```
+or:
+```
+node gpuOpenFetch.js [<arguments>]
+```
+with the appropriate arguments. It supports the same options as the Python utility -- namely material information, and package (zip) downloads. For the following 2 lines are equivalent to download a material called "Moss Green Solid Granite".
+```
+node gpuOpenFetch.js  -n "Moss Green Solid Granite"
+npm start -- -n "Moss Green Solid Granite"
+```
 
 <h3>Library</h3>
 

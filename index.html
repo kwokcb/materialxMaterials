@@ -84,6 +84,8 @@ Each currently has <code>Python</code> implementations.
 An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
 </a> for extracting <code>PhysicallyBased</code> uses a Javascript implementation found <a href="https://github.com/kwokcb/materialxMaterials/blob/main/javascript/JsMaterialXPhysicallyBased.js">here</a>
 </p>
+<p>
+A command line utility is available [here](https://github.com/kwokcb/materialxMaterials/tree/main/javascript/JsGPUOpenLoaderPackage). This uses Node.js to allow for accessing to fetching materials (which is not available via a web page).
 <h3>Dependencies</h3>
 <p>The Python utilities require:</p>
 <ol>
@@ -91,13 +93,23 @@ An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMate
 <li>The <code>requests</code> package.</li>
 <li>The <code>pillow</code> package for image handling for GPUOpen package handling</li>
 </ol>
+<p>The GPUOpen Javascript logic requires:</p>
+<ol>
+<li><code>node-fetch</code> if fetch is not available in the version of Node.js used.</li>
+<li><code>yargs</code> for the command line utility</li>
+</ol>
 <h3>Building</h3>
-<p>The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned and the package built using:</p>
+<p>The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned.</p>
+<p>The Python package can be built using:</p>
 <pre class="hljs"><code><div>pip install .
 </div></code></pre>
-<p>This will pull down the dependent packages as needed.</p>
+<p>This will pull down the dependent Python packages as needed.</p>
+<p>The GPUOpen Javascript utility requires Node.js to be installed. From the package folder the following should be run:</p>
+<pre class="hljs"><code><div>npm install # Install dependent packages
+npm run build # Setup runtime area
+</div></code></pre>
 <h3>Usage</h3>
-<h4>Commands</h4>
+<h4>Python Commands</h4>
 <ul>
 <li>
 <p>Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
@@ -117,10 +129,21 @@ packages (zip). Save the material lists, material names and unzipped packages (M
 </div></code></pre>
 </li>
 </ul>
+<h4>GPU Open Node.js Utility</h4>
+<p>The utility can be run from the <code>javascript\JsGPUOpenLoaderPackage</code> folder as follows:</p>
+<pre class="hljs"><code><div>npm start -- [&lt;arguments&gt;]
+</div></code></pre>
+<p>or:</p>
+<pre class="hljs"><code><div>node gpuOpenFetch.js [&lt;arguments&gt;]
+</div></code></pre>
+<p>with the appropriate arguments. It supports the same options as the Python utility -- namely material information, and package (zip) downloads. For the following 2 lines are equivalent to download a material called &quot;Moss Green Solid Granite&quot;.</p>
+<pre class="hljs"><code><div>node gpuOpenFetch.js -n &quot;Moss Green Solid Granite&quot;
+npm start -- -n &quot;Moss Green Solid Granite&quot;
+</div></code></pre>
 <h3>Library</h3>
 <p>A <code>Jupyter</code> notebook demonstrates the direct usage of the Python library. The output of the notebook can be found <a href="https://kwokcb.github.io/materialxMaterials/examples/materialxMaterials_tutorial_out_iframe.html">here</a>. The notebook can found in the Github repository under the <code>examples</code> folder.</p>
 <h3>Results</h3>
-<p>The following are some samples which have been rendered using the <code>MaterialXViewer</code> utility which is part of the MaterialX binary distribution.</p>
+<p>The following are some samples which have been rendered using the <code>MaterialXView</code> utility which is part of the MaterialX binary distribution.</p>
 <p>Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a></p>
 <table>
 <tr >
