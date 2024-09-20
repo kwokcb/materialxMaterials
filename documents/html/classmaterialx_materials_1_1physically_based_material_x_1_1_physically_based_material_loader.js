@@ -1,6 +1,6 @@
 var classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader =
 [
-    [ "__init__", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ac0402372fc17f1b12d5fb9e0222d8db9", null ],
+    [ "__init__", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a66367f05d514ce58d052e8aad16d5bbc", null ],
     [ "addComment", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aeebf1a5739a076154a34bd6d58bea8d4", null ],
     [ "convertToMaterialX", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ad568a7f8abedc69fb614271dd3faff2a", null ],
     [ "convertToMaterialXString", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7", null ],

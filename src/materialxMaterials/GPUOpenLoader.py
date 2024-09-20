@@ -5,7 +5,7 @@ and extract out specific packages from the list of available materials.
 See: https://api.matlib.gpuopen.com/api/swagger/ for information on available API calls.
 '''
 
-import requests, json, os, io, re, zipfile, logging
+import requests, json, os, io, re, zipfile, logging # type: ignore
 from http import HTTPStatus
 # Note: MaterialX is not currently a dependency since no MaterialX processing is required.
 #import MaterialX as mx
@@ -145,6 +145,12 @@ class GPUOpenMaterialLoader():
         return [data, title]
     
     def downloadPackageByExpression(self, searchExpr, packageId=0):
+        '''
+        Download a package for a given material from the GPUOpen material database.
+        @param searchExpr: The regular expression to match the material name.
+        @param packageId: The package ID to download.
+        @return: A list of downloaded packages of the form:
+        '''
         downloadList = []
 
         foundList = self.findMaterialsByName(searchExpr)
@@ -166,7 +172,7 @@ class GPUOpenMaterialLoader():
         [ { 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title } ]
         '''
         if (self.materials == None):
-            return None
+            return []
 
         materialsList = []
         listNumber = 0
@@ -262,10 +268,10 @@ class GPUOpenMaterialLoader():
         Get the JSON strings for the materials
         @return: List of JSON strings for the materials. One string per material batch.
         '''
-        results = []
+        results : list = []
 
         if (self.materials == None):
-            return 0
+            return results
         for material in self.materials:
             results.append(json.dumps(material, indent=4, sort_keys=True))
         return results
@@ -280,6 +286,7 @@ class GPUOpenMaterialLoader():
             with open(fileName) as f:
                 data = json.load(f)
                 self.materials.append(data)
+        return self.materials
 
     def writeMaterialFiles(self, folder, rootFileName) -> int:
         '''
