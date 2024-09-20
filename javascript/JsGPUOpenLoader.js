@@ -18,7 +18,7 @@ class MxGPUOpenMaterialLoader {
         this.logger = console;
     }
 
-    getMaterials() {
+    getMaterialList() {
         return this.materials;
     }
 
@@ -74,11 +74,11 @@ class MxGPUOpenMaterialLoader {
                     this.materialNames.push(material['title']);
                 }
                 
-                console.log("Number of materials fetched:", jsonData.results.length)
+                //console.log("Number of materials fetched:", jsonData.results.length)
 
                 let nextURL = jsonData.next
                 if (nextURL) {
-                    console.log('Next URL: ', jsonData.next)
+                    //console.log('Next URL: ', jsonData.next)
                     url = nextURL;
                     haveMoreMaterials = true
                 }
@@ -148,14 +148,54 @@ class MxGPUOpenMaterialLoader {
         const title = jsonResult['title'];
 
         console.log(`Downloaded package: ${title} from ${url}`);
-        console.log(`Package size: ${data.byteLength} bytes`);        
+        //console.log(`Package size: ${data.byteLength} bytes`);        
         return [data, title];
     }
+
+    findMaterialsByName(materialName) {
+        /**
+         * Find materials by name.
+         * @param {string} materialName - Regular expression to match the material name.
+         * @return {Array} - A list of materials that match the regular expression of the form:
+         * [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }]
+         */
+
+        if (!this.materials) {
+            return [];
+        }
+
+        const materialsList = [];
+        let listNumber = 0;
+        
+        // Create a RegExp object for case-insensitive matching
+        const regex = new RegExp(materialName, 'i');
+        
+        this.materials.forEach((materialList, materialIndex) => {
+            let materialNumber = 0;
+
+            materialList['results'].forEach((material) => {
+
+                //console.log('testing material:', material['title'], ' with regex:', regex)
+                if (regex.test(material['title'])) {
+                    materialsList.push({
+                        listNumber: listNumber,
+                        materialNumber: materialNumber,
+                        title: material['title'],
+                    });
+                }
+                materialNumber += 1;
+            });
+
+            listNumber += 1;
+        });
+
+        return materialsList;
+    }        
 
     async downloadPackageByExpression(searchExpr, packageId = 0) {
         const downloadList = [];
 
-        const foundList = await this.findMaterialsByName(searchExpr);
+        const foundList = this.findMaterialsByName(searchExpr);
         if (foundList.length > 0) {
             for (const found of foundList) {
                 const listNumber = found['listNumber'];

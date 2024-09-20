@@ -1,6 +1,10 @@
 /*
  * Sample script to fetch materials from the GPUOpen Material Library
  * and download the first package.
+ * Usage:
+ *  npm start -- <arguments> 
+ * or
+ *  node gpuOpenFetch.js <arguments>
  */
 
 const fs = require('fs');
@@ -36,6 +40,9 @@ async function getMaterialInformation(batchSize=50, fileName="gpuOpenMaterials.j
         const materialNames = materialLoader.getMaterialNames()
         console.log('Fetched materials:', materialNames.length);
 
+        if (fileName.length == 0) {
+            return;
+        }
         // Save each JSON object in materials to disk
         fs.writeFileSync(fileName, JSON.stringify(materials, null, 2));
         console.log('Wrote material information to:', fileName);
@@ -52,17 +59,60 @@ async function getMaterialInformation(batchSize=50, fileName="gpuOpenMaterials.j
     }
 }
 
-// Download a material
+// Download a material from list
 async function downloadMaterial(listNumber=0, materialNumber=0, packageId = 0) {
     try {
-        await getMaterialInformation();
-        materialLoader.downloadPackage(listNumber, materialNumber, packageId)
+        await getMaterialInformation(100, "");
+        let [data, title] = await materialLoader.downloadPackage(listNumber, materialNumber, packageId)
+        if (!data) {
+            console.error('Error downloading material:', title);
+            return;
+        }
+
+        let filename = title.replace(/[^a-z0-9]/gi, '_') + '.zip';
+        fs.writeFileSync(filename, Buffer.from(data));    
+        console.log(`Wrote material ${title} package (${data.byteLength} bytes) to: ${filename}`);
+        return ;        
+    } catch (error) {
+        console.error('Error fetching materials:', error);
+    }
+}
+
+// Download a material by expression
+async function downloadMaterialByExpression(expression = '', packageIndex = 0) {
+    if (expression.length === 0) {
+        console.error('No material expression provided');
+        return;
+    }
+
+    try {
+        await getMaterialInformation(100, "");
+        let dataItems = await materialLoader.downloadPackageByExpression(expression, packageIndex)
+        if (!dataItems) {
+            console.error('Error downloading material:', expression);
+            return;
+        }
+
+        for (const dataItem of dataItems) 
+        {
+            const [data, title] = dataItem;
+            let filename = title.replace(/[^a-z0-9]/gi, '_') + '.zip';
+            fs.writeFileSync(filename, Buffer.from(data));    
+            console.log(`Wrote material ${title} package (${data.byteLength} bytes) to: ${filename}`);
+        }
+        return ;        
     } catch (error) {
         console.error('Error fetching materials:', error);
     }
 }
 
 const argv = yargs(hideBin(process.argv))
+    .option('materialName', {
+        alias: 'n',
+        type: 'string',
+        description: 'Name of the material to fetch',
+        default: ''
+    })
     .option('batchSize', {
         alias: 'b',
         type: 'number',
@@ -76,7 +126,7 @@ const argv = yargs(hideBin(process.argv))
         default: 0
     })
     .option('materialIndex', {
-        alias: 'm',
+        alias: 'i',
         type: 'number',
         description: 'Index of the material in the list',
         default: 0
@@ -105,11 +155,21 @@ const argv = yargs(hideBin(process.argv))
 console.log(argv)
 
 // Check if we are fetching material information or downloading a package
-if (argv.getInfo) 
-{
-    getMaterialInformation(argv.batchSize, argv.outputFilename);
-} 
-else 
-{
-    downloadMaterial(argv.materialList, argv.materialIndex, argv.packageIndex);
+let materialName = argv.materialName
+console.log('Material name:', argv.materialName)
+if (argv.materialName.length > 0) {
+    console.log('------------- Look for material:', argv.materialName);
+    downloadMaterialByExpression(argv.materialName, argv.packageIndex);
+}
+else {
+    if (argv.getInfo) 
+    {
+        console.log('-- Fetching material information --');
+        getMaterialInformation(argv.batchSize, argv.outputFilename);
+    } 
+    else 
+    {
+        console.log('-- Fetching material --');
+        downloadMaterial(argv.materialList, argv.materialIndex, argv.packageIndex);
+    }
 }
