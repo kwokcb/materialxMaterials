@@ -1,13 +1,17 @@
 // Use node-fetch in case Node.js does not have fetch
 //const fetch = require('node-fetch'); 
 
-class MxGPUOpenMaterialLoader {
-    /* 
-     * Class to load materials from the GPUOpen material database.
-     * The class provides methods to fetch materials and download material packages.
-     * The class uses the fetch API to make HTTP requests.
-     * The class is intended to be used in a Node.js environment.
-     */ 
+/**
+ * @class JsGPUOpenMaterialLoader
+ * @brief Class to download MaterialX materials from the GPUOpen material database.
+ * The class provides methods to fetch materials and download material packages.
+ * The class uses the fetch API to make HTTP requests.
+ * The class is intended to be used in a Node.js environment.
+ */
+class JsGPUOpenMaterialLoader {
+    /**
+     * Constructor for the JsGPUOpenMaterialLoader class.
+     */
     constructor() {
         this.rootUrl = 'https://api.matlib.gpuopen.com/api';
         this.url = `${this.rootUrl}/materials`;
@@ -18,14 +22,27 @@ class MxGPUOpenMaterialLoader {
         this.logger = console;
     }
 
+    /** 
+     * Return downloaded material list
+     * @return {Array} - List of materials
+     */    
     getMaterialList() {
         return this.materials;
     }
 
+    /**
+     * Return downloaded material names
+     * @return {Array} - List of material names
+     */
     getMaterialNames() {
         return this.materialNames;
     }
 
+    /**
+     * Get lists of materials from the GPUOpen material database.
+     * @param {number} batchSize - Number of materials to fetch per batch
+     * @return {Array} - List of material lists
+     */
     async getMaterials(batchSize = 50) {
 
         const fetch = (await import('node-fetch')).default;
@@ -98,6 +115,13 @@ class MxGPUOpenMaterialLoader {
         return this.materials;
     }    
 
+    /**
+     * Download a material package from the GPUOpen material database.
+     * @param {number} listNumber - Index of the material list
+     * @param {number} materialNumber - Index of the material in the list
+     * @param {number} packageId - Index of the package in the material
+     * @return {Array} - A list containing the package data and title
+     */
     async downloadPackage(listNumber, materialNumber, packageId = 0) {
         if (this.materials === null || this.materials.length === 0) {
             return [null, null];
@@ -152,14 +176,14 @@ class MxGPUOpenMaterialLoader {
         return [data, title];
     }
 
-    findMaterialsByName(materialName) {
-        /**
-         * Find materials by name.
-         * @param {string} materialName - Regular expression to match the material name.
-         * @return {Array} - A list of materials that match the regular expression of the form:
-         * [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }]
-         */
-
+    /**
+     * Find materials by name.
+     * @param {string} materialName - Regular expression to match the material name.
+     * @return {Array} - A list of materials that match the regular expression of the form:
+     * [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }]
+     */
+    findMaterialsByName(materialName) 
+    {
         if (!this.materials) {
             return [];
         }
@@ -192,6 +216,14 @@ class MxGPUOpenMaterialLoader {
         return materialsList;
     }        
 
+    /**
+     * Download a material package by string expression.
+     * @param {string} searchExpr - Regular expression to match the material name
+     * @param {number} packageId - Index of the package in the material
+     * @return {Array} - A list of material items that match the regular expression of the form:
+     * [[data, title], [data, title], ...]
+     * where data is the package data (in zip form) and title is the material title
+     */
     async downloadPackageByExpression(searchExpr, packageId = 0) {
         const downloadList = [];
 
@@ -210,4 +242,4 @@ class MxGPUOpenMaterialLoader {
     }
 }
 
-module.exports = { MxGPUOpenMaterialLoader };
+module.exports = { JsGPUOpenMaterialLoader };

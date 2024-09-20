@@ -27,10 +27,10 @@ async function testFetch()
 }
 
  // Import the loader class
-const { MxGPUOpenMaterialLoader } = require('./JsGPUOpenLoader'); 
+const { JsGPUOpenMaterialLoader } = require('./JsGPUOpenLoader'); 
 
 // Create an loader instance
-const materialLoader = new MxGPUOpenMaterialLoader();
+const materialLoader = new JsGPUOpenMaterialLoader();
 
 // Get materials
 async function getMaterialInformation(batchSize=50, fileName="gpuOpenMaterials.json") {
@@ -152,7 +152,7 @@ const argv = yargs(hideBin(process.argv))
     .help()
     .argv;
 
-console.log(argv)
+//console.log(argv)
 
 // Check if we are fetching material information or downloading a package
 let materialName = argv.materialName
