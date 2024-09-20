@@ -1,6 +1,7 @@
 var classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader =
 [
     [ "downloadPackage", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a78bd0830e40c7ed0f19a3f6792a79b49", null ],
+    [ "downloadPackageByExpression", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a74e51310848bbd1047b525e82b434fc2", null ],
     [ "extractPackageData", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a9868e4fb69f84012a19957c624e0c1dc", null ],
     [ "findMaterialsByName", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a761935f0293fab3ffb6b852ecf543c64", null ],
     [ "getMaterialNames", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#adacaa6cff169e56b7df3ddb761ffcde0", null ],

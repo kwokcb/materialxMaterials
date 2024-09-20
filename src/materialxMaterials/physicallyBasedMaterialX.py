@@ -3,17 +3,18 @@
 and convert the materials to MaterialX format for given target shading models.
 '''
 
-import requests, json, os, inspect
+import requests, json, os, inspect # type: ignore
 import logging as lg 
 from http import HTTPStatus
-import MaterialX as mx
+import MaterialX as mx # type: ignore
+from typing import Optional
 
 class PhysicallyBasedMaterialLoader:
     '''
     @brief Class to load Physically Based Materials from the PhysicallyBased site.
     The class can convert the materials to MaterialX format for given target shading models.
     '''
-    def __init__(self, mx_module, mx_stdlib : mx.Document = None):
+    def __init__(self, mx_module, mx_stdlib : Optional[mx.Document] = None):
         '''
         @brief Constructor for the PhysicallyBasedMaterialLoader class. 
         Will initialize shader mappings and load the MaterialX standard library
@@ -24,8 +25,8 @@ class PhysicallyBasedMaterialLoader:
         self.logger = lg.getLogger('PBMXLoader')
         lg.basicConfig(level=lg.INFO)
 
-        self.materials = {}
-        self.materialNames = []
+        self.materials : dict = {}
+        self.materialNames : list[str]= []
         self.uri = 'https://api.physicallybased.info/materials'
         self.doc = None
         self.mx = mx_module
@@ -153,11 +154,11 @@ class PhysicallyBasedMaterialLoader:
         @param fileName The filename to load the JSON file from
         @return The JSON object representing the Physically Based Materials
         '''
-        self.materials = None
-        self.materialNames = []
+        self.materials.clear()
+        self.materialNames.clear()
         if not os.path.exists(fileName):
             self.logger.error(f'> File does not exist: {fileName}')
-            return None
+            return {}
 
         with open(fileName, 'r') as json_file:
             self.materials = json.load(json_file)
@@ -172,8 +173,8 @@ class PhysicallyBasedMaterialLoader:
         @param matString The JSON string to load the Physically Based Materials from
         @return The JSON object representing the Physically Based Materials
         '''
-        self.materials = None
-        self.materialNames = []
+        self.materials.clear()
+        self.materialNames.clear()
         self.materials = json.loads(matString)
         for mat in self.materials:
             self.materialNames.append(mat['name'])
@@ -186,8 +187,8 @@ class PhysicallyBasedMaterialLoader:
         @return The JSON object representing the Physically Based Materials
         '''
 
-        self.materials = None
-        self.materialNames = []
+        self.materials.clear()
+        self.materialNames.clear()
         url = self.uri
         headers = {
             'Accept': 'application/json'
@@ -303,6 +304,9 @@ class PhysicallyBasedMaterialLoader:
 
         # Create main document and import the library document
         self.doc = self.mx.createDocument()
+        if not self.doc:
+            return None
+
         self.doc.importLibrary(self.stdlib)
 
         # Add header comments

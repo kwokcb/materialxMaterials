@@ -18,7 +18,7 @@
 '''
 import os, sys, argparse, logging
 
-import MaterialX as mx
+import MaterialX as mx # type: ignore
 import physicallyBasedMaterialX as pbmx
 
 def physicallBasedMaterialXCmd():
