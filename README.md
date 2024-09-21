@@ -14,14 +14,13 @@ query remote databases for MaterialX materials.
 > Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
 <p>
 Related utilities and libraries can be found at the:
-<button class="btn btn-outline-secondary">
+<div class="btn btn-outline-secondary">
 <a href="https://kwokcb.github.io/MaterialXLab" target="_blank">
 <img src="https://kwokcb.github.io/MaterialXLab/documents/icons/teapot_logo.svg"
 width=32px>
-MaterialXLab</a>
+MaterialXLab home page</a>
 </a>
-</button>
-home page.
+</div>
 </p>
 
 The current utilities support:
@@ -37,15 +36,29 @@ The current utilities support:
 documents can be extracted for any of the posted materials in the database.
 </div>
 Each currently has <code>Python</code> implementations.
+</p>
 
-<p>
-An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page <img src="https://kwokcb.github.io/materialxMaterials/documents/images/PhysicallBased_Carrot.png" width=100%>
-</a> for extracting <code>PhysicallyBased</code> uses a Javascript implementation found <a href="https://github.com/kwokcb/materialxMaterials/blob/main/javascript/JsMaterialXPhysicallyBased.js">here</a>
+<h3>Usage Examples</h3>
+An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page: 
+<br>
+<img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/physicallyBased_material_fetch.png" width=100%/>
+</a> 
+
+for extracting <code>PhysicallyBased</code> uses a Javascript implementation found <a href="https://github.com/kwokcb/materialxMaterials/blob/main/javascript/JsMaterialXPhysicallyBased.js">here</a>
 </p>
 
 <p>
-A command line utility is available [here](https://github.com/kwokcb/materialxMaterials/tree/main/javascript/JsGPUOpenLoaderPackage). This uses Node.js to allow for accessing to fetching materials (which is not available via a web page).
+A command line utility is available <a href="https://github.com/kwokcb/materialxMaterials/tree/main/javascript/JsGPUOpenLoaderPackage">here</a>. This uses <code>Node.js</code> to allow access to fetch materials from the <code>GPU Open</code> site(which is not available via a web page).
 
+<p>
+Below are screenshots of materials fetched from from <code>PhysicallyBased</code> and <code>GPU Open</code> (left and right images respectively). Note that the material zip from <code>GPU Open</code> is directly read in. 
+<table>
+<tr>
+<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_phybased_node_editor.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_zip_node_editor_3.png" width=100%></td>
+</tr>
+</table>
+<p></p>
 
 <h3>Dependencies</h3>
 
@@ -173,7 +186,7 @@ Brass
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%>
 </td>
 </table>
-
+<p></p>
 
 <h3>API Reference</h3>
 

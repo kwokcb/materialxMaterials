@@ -1,6 +1,3 @@
-// Use node-fetch in case Node.js does not have fetch
-//const fetch = require('node-fetch'); 
-
 /**
  * @class JsGPUOpenMaterialLoader
  * @brief Class to download MaterialX materials from the GPUOpen material database.
