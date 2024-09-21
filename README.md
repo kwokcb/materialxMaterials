@@ -38,6 +38,14 @@ documents can be extracted for any of the posted materials in the database.
 Each currently has <code>Python</code> implementations.
 </p>
 
+<iframe
+  src="https://www.youtube.com/embed/4KiPW9IUR6U?rel=0&vq=hd1080"
+  title="Using Material Libraries" width="100%"
+  height="600px" frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
 <h3>Usage Examples</h3>
 An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page: 
 <br>
