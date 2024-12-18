@@ -12,7 +12,9 @@ from http import HTTPStatus
 
 import io
 import zipfile
-from PIL import Image as pilImage
+from io import BytesIO
+from PIL import Image as PILImage
+import base64
 
 class GPUOpenMaterialLoader():
     '''
@@ -63,6 +65,32 @@ class GPUOpenMaterialLoader():
 
         return True
     
+    def convertPilImageToBase64(self, image):
+        """
+        Convert a PIL image to a Base64 string.
+        @param pilImage: An instance of PIL.Image
+        @return: Base64-encoded string of the image
+        """
+        pilImage = PILImage
+        if not pilImage:            
+            self.logger.debug('Pillow (PIL) image module not provided. Image data will not be converted to Base64.')
+            return None
+        if not image:
+            self.logger.debug('No image data. Image data will not be converted to Base64.')
+            return None
+
+        # - Create an in-memory buffer
+        # - Save the image to the buffer in PNG format
+        # - Get the PNG file data from the buffer
+        # - Encode the binary data to Base64
+        buffer = BytesIO()
+        image.save(buffer, format="PNG")
+        binary_data = buffer.getvalue()
+        base64_encoded_data = base64.b64encode(binary_data).decode('utf-8')
+        buffer.close()
+
+        return base64_encoded_data    
+    
     def extractPackageData(self, data, pilImage):
         '''
         Extract the package data from a zip file.
@@ -71,6 +99,8 @@ class GPUOpenMaterialLoader():
         @return: A list of extracted data of the form:
         [ { 'file_name': file_name, 'data': data, 'type': type } ]
         '''
+        if not pilImage:
+            pilImage = PILImage
         if not pilImage:
             self.logger.debug('Pillow (PIL) image module provided. Image data will not be extracted.')
 
