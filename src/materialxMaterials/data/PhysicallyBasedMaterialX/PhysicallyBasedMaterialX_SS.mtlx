@@ -418,6 +418,28 @@
   <surfacematerial name="Milk_SS_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Milk_SS_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: MIT_Black_SS_SHD_PBM -->
+  <standard_surface name="MIT_Black_SS_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/mit-black.jpeg">
+    <input name="base_color" type="color3" value="5e-05,5e-05,5e-05" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.99" />
+    <input name="specular_IOR" type="float" value="1.5" />
+  </standard_surface>
+  <!-- Generated material: MIT_Black_SS_MAT_PBM -->
+  <surfacematerial name="MIT_Black_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="MIT_Black_SS_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Musou_Black_SS_SHD_PBM -->
+  <standard_surface name="Musou_Black_SS_SHD_PBM" type="surfaceshader" doc="Musou Black is one of the darkest paints available. Darker materials can be achieved by using technology such as carbon nanotubes, like the MIT Black material.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/musou-black.jpeg">
+    <input name="base_color" type="color3" value="0.006,0.006,0.006" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.9" />
+    <input name="specular_IOR" type="float" value="1.5" />
+  </standard_surface>
+  <!-- Generated material: Musou_Black_SS_MAT_PBM -->
+  <surfacematerial name="Musou_Black_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Musou_Black_SS_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Nickel_SS_SHD_PBM -->
   <standard_surface name="Nickel_SS_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/nickel.jpeg">
     <input name="base_color" type="color3" value="0.649,0.61,0.541" />
@@ -729,6 +751,17 @@
   <!-- Generated material: Titanium_SS_MAT_PBM -->
   <surfacematerial name="Titanium_SS_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Titanium_SS_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Toner__black__SS_SHD_PBM -->
+  <standard_surface name="Toner__black__SS_SHD_PBM" type="surfaceshader" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toner-black.jpeg">
+    <input name="base_color" type="color3" value="0.05,0.05,0.05" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_IOR" type="float" value="1.5" />
+  </standard_surface>
+  <!-- Generated material: Toner__black__SS_MAT_PBM -->
+  <surfacematerial name="Toner__black__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Toner__black__SS_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Tungsten_SS_SHD_PBM -->
   <standard_surface name="Tungsten_SS_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tungsten.jpeg">

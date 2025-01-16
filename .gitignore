@@ -1,3 +1,5 @@
 src/materialxMaterials/__pycache__/
 build
 node_modules
+dist/
+.vs/
