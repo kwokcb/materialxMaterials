@@ -5,6 +5,8 @@ src/materialxMaterials/GPUOpenLoader.py
 src/materialxMaterials/GPUOpenLoaderCmd.py
 src/materialxMaterials/__init__.py
 src/materialxMaterials/__main__.py
+src/materialxMaterials/ambientCGLoader.py
+src/materialxMaterials/ambientCGLoaderCmd.py
 src/materialxMaterials/physicallyBasedMaterialX.py
 src/materialxMaterials/physicallyBasedMaterialXCmd.py
 src/materialxMaterials.egg-info/PKG-INFO

@@ -35,6 +35,12 @@ The current utilities support:
 <a href="https://matlib.gpuopen.com/main/materials/all">AMD GPUOpen database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX
 documents can be extracted for any of the posted materials in the database.
 </div>
+<br>
+<div style="display: flex; align-items: center;">
+<img src="https://acg-media.struffelproductions.com/file/ambientCG-Web/media/thumbnail/2048-JPG-242424/PavingStones142.jpg" width="64px" style="margin-right: 5px;">
+<a href="https://ambientcg.com/list?type=material&sort=popular">ambientCG database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database.
+</div>
+
 Each currently has <code>Python</code> implementations.
 </p>
 
@@ -47,6 +53,8 @@ Each currently has <code>Python</code> implementations.
 </iframe>
 
 <h3>Usage Examples</h3>
+
+<h4>PhysicallyBased</h4>
 An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page: 
 <br>
 <img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/physicallyBased_material_fetch.png" width=100%/>
@@ -56,7 +64,16 @@ for extracting <code>PhysicallyBased</code> uses a Javascript implementation fou
 </p>
 
 <p>
+<hr>
+<h4>AMD GPUOpen</h4>
 A command line utility is available <a href="https://github.com/kwokcb/materialxMaterials/tree/main/javascript/JsGPUOpenLoaderPackage">here</a>. This uses <code>Node.js</code> to allow access to fetch materials from the <code>GPU Open</code> site(which is not available via a web page).
+<p>
+
+<p><a href="https://github.com/kwokcb/materialxWeb/blob/main/flask/gpuopen/README.md">A <b>Flask</b> application</a> is also available which uses the Python package with a Web based front here.
+<img src="https://raw.githubusercontent.com/kwokcb/materialxWeb/refs/heads/main/flask/gpuopen/images/extract_material_1.png" width=100%>
+</p>
+
+<hr>
 
 <p>
 Below are screenshots of materials fetched from from <code>PhysicallyBased</code> and <code>GPU Open</code> (left and right images respectively). Note that the material zip from <code>GPU Open</code> is directly read in. 
@@ -66,6 +83,7 @@ Below are screenshots of materials fetched from from <code>PhysicallyBased</code
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_zip_node_editor_3.png" width=100%></td>
 </tr>
 </table>
+</p>
 <p></p>
 
 <h3>Dependencies</h3>
@@ -82,7 +100,8 @@ The GPUOpen Javascript logic requires:
 
 <h3>Building</h3>
 
-The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/20cbe6bde0844699824a9a7a05afe882c42b071d/documents/icons/github-mark-white.svg?token=ALYVGHLEDNQAPHZHPUNJNP3GXTAUQ" width=16px> GitHub repository</a> can be cloned.
+The <a href="https://github.com/kwokcb/materialxMaterials">
+<img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/4125d04c73fc2b1755f5b6054b25b6d1bdabcf6b/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a> can be cloned.
 
 The Python package can be built using:
 
@@ -113,17 +132,23 @@ npm run build   # Setup runtime area
   python -m materialxMaterials physbased
   ```
 
+  or 
+
+  ```sh
+  python -m materialxMaterials acg
+  ```
+
 - Query all materials fom GPUOpen. Extract out a few material
 packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
   ```sh
-  python GPUOpenLoaderCmd.py --materialNames=1 --saveMaterials=1 
+  python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
   ```
 
-  or 
+- Query all materials fom ambientCG. Extract out a material package for the "WoodFloor038" material where the images are 2K PNG files (zip). 
 
   ```sh
-  python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
+  python -m materialxMaterials acg --downloadMaterial "WoodFloor038" --downloadResolution 2
   ```
 
 <h4>GPU Open Node.js Utility</h4>
@@ -194,6 +219,28 @@ Brass
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%>
 </td>
 </table>
+
+<table>
+<tr >
+<th>
+Metal (53)
+<th>
+Paving Stones (142)
+<th>
+Wood Float (38)
+</th>
+<tr >
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/Metal053C_1K-PNG.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/PavingStones142_1K-PNG.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%>
+</td>
+</table>
+
 <p></p>
 
 <h3>API Reference</h3>

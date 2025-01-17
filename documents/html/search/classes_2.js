@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['physicallybasedmaterialloader_0',['PhysicallyBasedMaterialLoader',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html',1,'materialxMaterials::physicallyBasedMaterialX']]]
+  ['jsgpuopenmaterialloader_0',['JsGPUOpenMaterialLoader',['../class_js_g_p_u_open_material_loader.html',1,'']]],
+  ['jsphysicallybasedmaterialloader_1',['JsPhysicallyBasedMaterialLoader',['../class_js_physically_based_material_loader.html',1,'']]]
 ];
