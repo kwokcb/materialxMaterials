@@ -10,7 +10,7 @@ def main() -> int:
         print('No arguments provided. Use -h or --help for help.')
         return 1
     if sys.argv[1] == '-h' or sys.argv[1] == '--help':
-        print('Usage: python -m materialxMaterials <command> [options] where command is gpuopen or physbased')
+        print('Usage: python -m materialxMaterials <command> [options] where command is gpuopen, physbased or acg')
 
     # Check if the command is valid
     cmdArgs = sys.argv[1:]
@@ -18,6 +18,8 @@ def main() -> int:
         cmdArgs[0] = 'physicallyBasedMaterialXCmd.py'
     elif cmdArgs[0] == 'gpuopen':
         cmdArgs[0] = 'GPUOpenLoaderCmd.py'
+    elif cmdArgs[0] == 'acg':
+        cmdArgs[0] = 'ambientCGLoaderCmd.py'
     else:
         print('Unknown command specified:', cmdArgs[0])
         return 1
