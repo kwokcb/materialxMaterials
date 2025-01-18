@@ -1,5 +1,6 @@
 var classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader =
 [
+    [ "__init__", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#aecaec686dd6501b881d5b831433071c6", null ],
     [ "convertPilImageToBase64", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a61d16733c41af4d6fe1330d407f66cc3", null ],
     [ "downloadPackage", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a78bd0830e40c7ed0f19a3f6792a79b49", null ],
     [ "downloadPackageByExpression", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a74e51310848bbd1047b525e82b434fc2", null ],
@@ -11,5 +12,11 @@ var classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loade
     [ "readMaterialFiles", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#aea6443970a62b7e354441e331e99d962", null ],
     [ "writeMaterialFiles", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a547938c19b0d7e814389a4f6e6da3b1d", null ],
     [ "writeMaterialNamesToFile", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a007539622ada6fdeda6b61d260c9824f", null ],
-    [ "writePackageDataToFile", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a6e21d13a797c2291f867883624ec1e26", null ]
+    [ "writePackageDataToFile", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a6e21d13a797c2291f867883624ec1e26", null ],
+    [ "logger", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a03e5b0c8561400aa1605b37f612f15d0", null ],
+    [ "materialNames", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a57510e165aacaea0b1d8be8501cbeda1", null ],
+    [ "materials", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#ade4072ea508aa5c7df000d2bad9d2c5a", null ],
+    [ "package_url", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a5c0cb4582ed87562b5e396565574dd01", null ],
+    [ "root_url", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a75cc666e2e848809d3d961217a8dbd84", null ],
+    [ "url", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a85a8b682966565994bb69281d0f96a71", null ]
 ];

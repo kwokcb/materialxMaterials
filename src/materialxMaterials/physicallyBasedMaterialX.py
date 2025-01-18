@@ -22,16 +22,25 @@ class PhysicallyBasedMaterialLoader:
         @param mx_module The MaterialX module. Required.
         @param mx_stdlib The MaterialX standard library. Optional.        
         '''
+        ### Logger
         self.logger = lg.getLogger('PBMXLoader')
         lg.basicConfig(level=lg.INFO)
 
+        ### Materials list
         self.materials : dict = {}
+        ### Material names
         self.materialNames : list[str]= []
+        ### Root URI for the PhysicallyBased site
         self.uri = 'https://api.physicallybased.info/materials'
+        ### MaterialX document used for conversion
         self.doc = None
+        ### MaterialX module
         self.mx = mx_module
+        ### MaterialX standard library
         self.stdlib = mx_stdlib
+        ### MaterialX node name attribute
         self.MTLX_NODE_NAME_ATTRIBUTE = 'nodename'
+        ### OpenPBR support flag
         self.support_openpbr = False
 
         if not mx_module:

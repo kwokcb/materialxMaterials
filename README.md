@@ -11,7 +11,9 @@ Welcome to MaterialX Materials.
 This site hosts a set of libraries and command line utilities to
 query remote databases for MaterialX materials.
 
-> Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
+<h4> > Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
+</h4>
+
 <p>
 Related utilities and libraries can be found at the:
 <div class="btn btn-outline-secondary">
@@ -105,14 +107,20 @@ The <a href="https://github.com/kwokcb/materialxMaterials">
 
 The Python package can be built using:
 
-```
+```shell
 pip install .
 ```
 
 This will pull down the dependent Python packages as needed.
 
+Build scripts can be found in the `utilities` folder.
+
+- `build.sh` will install the package and run package commands to update package data.
+- `buildDocs.sh` will prepare documents and run Doxygen to build API docs.
+
 The GPUOpen Javascript utility requires Node.js to be installed. From the package folder (`javascript\JsGPUOpenLoaderPackage`) the following should be run:
-```
+
+```shell
 npm install     # Install dependent packages
 npm run build   # Setup runtime area
 ```
@@ -132,20 +140,20 @@ npm run build   # Setup runtime area
   python -m materialxMaterials physbased
   ```
 
-  or 
-
-  ```sh
-  python -m materialxMaterials acg
-  ```
-
-- Query all materials fom GPUOpen. Extract out a few material
-packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
+- Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
   ```sh
   python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
   ```
 
-- Query all materials fom ambientCG. Extract out a material package for the "WoodFloor038" material where the images are 2K PNG files (zip). 
+- Download the materials list fom ambientCG: 
+
+  ```sh
+  python -m materialxMaterials acg --saveMaterials True
+  ```
+
+- Extract out a material package for the "WoodFloor038" material from ambientCG requesting the 
+package where the images are 2K PNG files:
 
   ```sh
   python -m materialxMaterials acg --downloadMaterial "WoodFloor038" --downloadResolution 2
@@ -174,8 +182,9 @@ A `Jupyter` notebook demonstrates the direct usage of the Python library. The ou
 
 <h3>Results</h3>
 
-The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution.
+The following are some samples which have been rendered using the `MaterialXView` utility which is part of the MaterialX binary distribution. 
 
+<h4>Examples</h4>
 Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a>
 
 <table>
@@ -240,6 +249,7 @@ Wood Float (38)
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%>
 </td>
 </table>
+<sub>The rows of materials are from `GPUOpen` `PhysicallyBased`, and `ambientCG` from top to bottom respectively.</sub>
 
 <p></p>
 

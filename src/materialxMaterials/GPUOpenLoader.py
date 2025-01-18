@@ -22,11 +22,21 @@ class GPUOpenMaterialLoader():
     See: https://api.matlib.gpuopen.com/api/swagger/ for API information.
     '''
     def __init__(self):
+        '''
+        Initialize the GPUOpen material loader.
+        '''
+        ### Root URL for the GPUOpen material database
         self.root_url = 'https://api.matlib.gpuopen.com/api'
+        ### URL for the materials
         self.url = self.root_url + '/materials'
+        ### URL for the packages
         self.package_url = self.root_url + '/packages'
+        ### List of materials
         self.materials = None
+        ### List of material names
+        self.materialNames = None
 
+        ### Logger
         self.logger = logging.getLogger('GPUO')
         logging.basicConfig(level=logging.INFO)
 
@@ -68,7 +78,7 @@ class GPUOpenMaterialLoader():
     def convertPilImageToBase64(self, image):
         """
         Convert a PIL image to a Base64 string.
-        @param pilImage: An instance of PIL.Image
+        @param image: An instance of PIL.Image
         @return: Base64-encoded string of the image
         """
         pilImage = PILImage

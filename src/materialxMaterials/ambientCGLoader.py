@@ -1,4 +1,8 @@
+'''
+@brief Utilities to extract materials from the ambientCG material database. 
 
+See: https://docs.ambientcg.com/api/ for information on available API calls.
+'''
 import logging as lg
 
 from http import HTTPStatus
@@ -19,28 +23,38 @@ class AmbientCGLoader:
     '''
     def __init__(self, mx_module, mx_stdlib : Optional[mx.Document] = None):
         '''
-        @brief Constructor for the PhysicallyBasedMaterialLoader class. 
+        @brief Constructor for the AmbientCGLoader class. 
         Will initialize shader mappings and load the MaterialX standard library
         if it is not passed in as an argument.
         @param mx_module The MaterialX module. Required.
         @param mx_stdlib The MaterialX standard library. Optional.        
         '''
+        
+        ### logger is the logging object for the class
         self.logger = lg.getLogger('ACGLoader')
         lg.basicConfig(level=lg.INFO)
 
-        # General asset information
+        ### Database of asset information
         self.database : dict = {}
+        ### Reference to database found assets
         self.assets : dict = {}
 
         # Material download information
+        ### List of materials in JSON format
         self.materials = None
+        ### List of material names
         self.materialNames : list[str]= []
+        ### List of materials in CSV format
+        self.csv_materials = None
 
-        # URI for full asset information
+        ### URI for full asset information
         self.uri = 'https://ambientcg.com/api/v2/full_json'
 
+        ### MaterialX module
         self.mx = mx_module
+        ### MaterialX standard library
         self.stdlib = mx_stdlib
+        ### Flag to indicate OpenPBR shader support
         self.support_openpbr = False
 
         if not mx_module:
@@ -60,7 +74,7 @@ class AmbientCGLoader:
             libFiles = self.mx.loadLibraries(mx.getDefaultDataLibraryFolders(), mx.getDefaultDataSearchPath(), self.stdlib)            
             self.logger.debug(f'> Loaded standard library: {libFiles}')
 
-    def setDebugging(self, debug=True):
+    def setDebugging(self, debug : Optional[bool]=True):
         '''
         @brief Set the debugging level for the logger.
         @param debug True to set the logger to debug level, otherwise False.
@@ -71,16 +85,18 @@ class AmbientCGLoader:
         else:
             self.logger.setLevel(lg.INFO)
     
-    def getMaterialNames(self) -> list:
+    def getMaterialNames(self, key='assetId') -> list:
         ''' 
         Get the list of material names.     
+        @param key The key to use for the material name. Default is 'assetId' based
+        on the version 2 ambientCG API.
         @return The list of material names
         '''
         self.materialNames.clear()
         unique_names = set()
         if self.materials:
             for item in self.materials:
-                unique_names.add(item.get("assetId") )
+                unique_names.add(item.get(key) )
         self.materialNames = list(sorted(unique_names))
         return self.materialNames
 
@@ -96,37 +112,46 @@ class AmbientCGLoader:
             json.dump(materialList, json_file, indent=4)
 
     def buildDownLoadAttribute(self, imageFormat='PNG', imageResolution='1'):
-        # WARNING: This is a hard-coded string format
-        # used by ambientCG. If this changes then this
-        # must be updated !
+        '''
+        @brief Build the download attribute string for a given image format and resolution
+        Note: This is a hard-coded string format used by ambientCG. If this changes then this
+        must be updated !
+        @param imageFormat The image format to download
+        @param imageResolution The image resolution to download
+        @return The download attribute string
+        '''
         target = f"{imageResolution}K-{imageFormat}"
         return target
 
-    def downloadMaterial(self, assetId, path='', imageFormat='PNG', imageResolution='1'):
+    def downloadMaterial(self, assetId, path='', imageFormat='PNG', imageResolution='1',
+                         downloadAttributeKey = 'downloadAttribute', downloadLinkKey = 'downloadLink'):
         '''
         @brief Download a material with a given id and format + resolution for images.
         Default is to look for a 1K PNG variant.
         @param assetId The string id of the material
         @param path The output path for the download. Default is empty.
-        @param index The index into the list of materials matching a given
-        identifier.
+        @param imageFormat The image format to download. Default is PNG.
+        @param imageResolution The image resolution to download. Default is 1.
+        @param downloadAttributeKey The download attribute key. Default is 'downloadAttribute' based on the V2 ambientCG API.
+        @param downloadLinkKey The download link key. Default is 'downloadLink' based on the V2 ambientCG API.
         @return None
         '''
+        # Look item with the given assetId, imageFormat and imageResolution
         url = ''
         downloadAttribute = ''
         items = self.findMaterial(assetId)
         target = self.buildDownLoadAttribute(imageFormat, imageResolution)
         for item in items:
-            downloadAttribute = item['downloadAttribute']
+            downloadAttribute = item[downloadAttributeKey]
             if  downloadAttribute == target:
-                url = item['downloadLink']
+                url = item[downloadLinkKey]
                 self.logger.info(f'Found Asset: {assetId}. Download Attribute: {downloadAttribute} -> {url}')
 
         if len(url) == 0:
             self.logger.error(f'No download link found for asset: {assetId}, attribute: {target}')
             return
 
-        # Get local filename to save the file to
+        # Get local filename to save the file the content to
         filename = url.split("file=")[-1]
         filename = os.path.join(path, filename)
 
@@ -136,8 +161,10 @@ class AmbientCGLoader:
             response.raise_for_status()  # Raise an exception for HTTP errors
 
             # Write the file in chunks to avoid memory issues with large files
+            # TBD: What is the "ideal" chunk size.
+            CHUNK_SIZE = 8192
             with open(filename, "wb") as file:
-                for chunk in response.iter_content(chunk_size=8192):
+                for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
                     file.write(chunk)
 
             self.logger.info(f"File downloaded successfully and saved as: {filename}")
@@ -145,14 +172,15 @@ class AmbientCGLoader:
         except requests.exceptions.RequestException as e:
             self.logger.info(f"Error occurred while downloading the file: {e}")        
 
-    def findMaterial(self, assetId):
+    def findMaterial(self, assetId, key='assetId'):
         '''
         @brief Get the list of materials matching a material identifier
         @param assetId Material string identifier
+        @param key The key to lookup asset identifiers. Default is 'assetId' based on the version 2 ambientCG API.
         @return List of materials, or None if not found
         '''
         if self.materials:
-            materialList = [item for item in self.materials if item.get("assetId") == assetId]
+            materialList = [item for item in self.materials if item.get(key) == assetId]
             return materialList
         return None
 
@@ -169,24 +197,22 @@ class AmbientCGLoader:
 
     def downloadMaterialsList(self):
         '''
-        @brief Download the list of materials from the ambientCG site.
-        Takes the origina CSV file and remaps this into JSON
-        for runtime.
+        @brief Download the list of materials from the ambientCG site: "ttps://ambientCG.com/api/v2/downloads_csv"
+        Takes the origina CSV file and remaps this into JSON for runtime.
         @return Materials list
         '''
-
         # URL of the CSV file
         url = "https://ambientCG.com/api/v2/downloads_csv"
         headers = {
             'Accept': 'application/csv'
         }
         parameters = {
-            'method': 'PBRPhotogrammetry',
+            'method': 'PBRPhotogrammetry', # TODO: Allow user filtering options
             'type': 'Material',
             'sort': 'Alphabet',
         }
 
-        self.logger.info('Downloading materials list...')
+        self.logger.info('Downloading materials CSV list...')
         response = requests.get(url, headers=headers, params=parameters)
 
         # Check if the request was successful
@@ -201,7 +227,7 @@ class AmbientCGLoader:
                 # Convert the CSV rows to a JSON object (list of dictionaries)
                 self.materials = [row for row in csv_reader]
 
-                self.logger.info("Downloaded materials.")
+                self.logger.info("Downloaded CSV material list as JSON.")
             else:
                 self.materials = None
                 self.logger.warning("Failed to parse the CSV material content")
@@ -240,7 +266,7 @@ class AmbientCGLoader:
             'Accept': 'application/json'
         }
         parameters = {
-            'method': 'PBRPhotogrammetry',
+            'method': 'PBRPhotogrammetry', # TODO: Allow user filtering options
             'type': 'Material',
             'sort': 'Alphabet',
         }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remapmap_0',['remapMap',['../class_js_physically_based_material_loader.html#a547c339e2799cf483f11af5c1883a5ac',1,'JsPhysicallyBasedMaterialLoader']]]
+  ['headers_0',['headers',['../class_js_physically_based_material_loader.html#ab92e487175c47f2d8f2c9ce2f8500765',1,'JsPhysicallyBasedMaterialLoader']]]
 ];
