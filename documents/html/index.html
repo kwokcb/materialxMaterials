@@ -101,7 +101,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">MaterialXMaterials </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2_users_2bernardkwok_2work_2materialx_materials_2_r_e_a_d_m_e"></a></p>
+<div class="textblock"><p><a class="anchor" id="md__d_1_2work_2materialx_2materialx_materials_2_r_e_a_d_m_e"></a></p>
 <h2 class="bg-gradient rounded-2 p-0"><img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" alt="" width="32px" class="inline"/>MaterialX Materials</h2>
 <div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h3>Introduction</h3>
 </div><div class="container p-2 rounded-4 border border-secondary border-rounded"></div><div class="container p-2 rounded-4 border border-secondary border-rounded">Welcome to MaterialX Materials.</div><div class="container p-2 rounded-4 border border-secondary border-rounded">This site hosts a set of libraries and command line utilities to query remote databases for MaterialX materials.</div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h4>&gt; Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b> </h4>
@@ -146,16 +146,16 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <li><p class="startli">Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
 <div class="fragment"><div class="line">python physicallyBasedMaterialXCmd.py</div>
 </div><!-- fragment --><p> or</p>
-<div class="fragment"><div class="line">python -m materialxMaterials physbased</div>
+<div class="fragment"><div class="line">materialxMaterials physbased</div>
 </div><!-- fragment --></li>
 <li><p class="startli">Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
-<div class="fragment"><div class="line">python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1</div>
+<div class="fragment"><div class="line">materialxMaterials gpuopen --materialNames=1 --saveMaterials=1</div>
 </div><!-- fragment --></li>
 <li><p class="startli">Download the materials list fom ambientCG:</p>
-<div class="fragment"><div class="line">python -m materialxMaterials acg --saveMaterials True</div>
+<div class="fragment"><div class="line">materialxMaterials acg --saveMaterials True</div>
 </div><!-- fragment --></li>
 <li><p class="startli">Extract out a material package for the "WoodFloor038" material from ambientCG requesting the package where the images are 2K PNG files:</p>
-<div class="fragment"><div class="line">python -m materialxMaterials acg --downloadMaterial &quot;WoodFloor038&quot; --downloadResolution 2</div>
+<div class="fragment"><div class="line">materialxMaterials acg --downloadMaterial &quot;WoodFloor038&quot; --downloadResolution 2</div>
 </div><!-- fragment --></li>
 </ul>
 </div><div class="container p-2 rounded-4 border border-secondary border-rounded"><h4>GPU Open Node.js Utility</h4>

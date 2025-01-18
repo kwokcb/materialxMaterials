@@ -354,7 +354,7 @@ code {
 
 </style>
 
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.min.js"></script>
 </head>
 <body>
   <script>
@@ -370,7 +370,7 @@ code {
 <div class="container p-2 rounded-4 border border-secondary border-rounded">
 <h3>Introduction</h3>
 <p>Welcome to MaterialX Materials.</p>
-<p>This site hosts a set of libraries and command line utilities to
+<p>This site hosts a set of libraries and command line utilities to<br>
 query remote databases for MaterialX materials.</p>
 <h4> > Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
 </h4>
@@ -449,7 +449,7 @@ Below are screenshots of materials fetched from from <code>PhysicallyBased</code
 <li><code>yargs</code> for the command line utility</li>
 </ol>
 <h3>Building</h3>
-<p>The <a href="https://github.com/kwokcb/materialxMaterials">
+<p>The <a href="https://github.com/kwokcb/materialxMaterials"><br>
 <img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/4125d04c73fc2b1755f5b6054b25b6d1bdabcf6b/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a> can be cloned.</p>
 <p>The Python package can be built using:</p>
 <pre class="hljs"><code><div>pip install .
@@ -472,23 +472,23 @@ npm run build   # Setup runtime area
 <pre class="hljs"><code><div>python physicallyBasedMaterialXCmd.py
 </div></code></pre>
 <p>or</p>
-<pre class="hljs"><code><div>python -m materialxMaterials physbased
+<pre class="hljs"><code><div>materialxMaterials physbased
 </div></code></pre>
 </li>
 <li>
 <p>Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
-<pre class="hljs"><code><div>python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
+<pre class="hljs"><code><div>materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
 </div></code></pre>
 </li>
 <li>
 <p>Download the materials list fom ambientCG:</p>
-<pre class="hljs"><code><div>python -m materialxMaterials acg --saveMaterials True
+<pre class="hljs"><code><div>materialxMaterials acg --saveMaterials True
 </div></code></pre>
 </li>
 <li>
-<p>Extract out a material package for the &quot;WoodFloor038&quot; material from ambientCG requesting the
+<p>Extract out a material package for the &quot;WoodFloor038&quot; material from ambientCG requesting the<br>
 package where the images are 2K PNG files:</p>
-<pre class="hljs"><code><div>python -m materialxMaterials acg --downloadMaterial <span class="hljs-string">"WoodFloor038"</span> --downloadResolution 2
+<pre class="hljs"><code><div>materialxMaterials acg --downloadMaterial <span class="hljs-string">"WoodFloor038"</span> --downloadResolution 2
 </div></code></pre>
 </li>
 </ul>

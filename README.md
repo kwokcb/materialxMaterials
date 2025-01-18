@@ -137,26 +137,26 @@ npm run build   # Setup runtime area
   or 
 
   ```sh
-  python -m materialxMaterials physbased
+  materialxMaterials physbased
   ```
 
 - Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
   ```sh
-  python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
+  materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
   ```
 
 - Download the materials list fom ambientCG: 
 
   ```sh
-  python -m materialxMaterials acg --saveMaterials True
+  materialxMaterials acg --saveMaterials True
   ```
 
 - Extract out a material package for the "WoodFloor038" material from ambientCG requesting the 
 package where the images are 2K PNG files:
 
   ```sh
-  python -m materialxMaterials acg --downloadMaterial "WoodFloor038" --downloadResolution 2
+  materialxMaterials acg --downloadMaterial "WoodFloor038" --downloadResolution 2
   ```
 
 <h4>GPU Open Node.js Utility</h4>
