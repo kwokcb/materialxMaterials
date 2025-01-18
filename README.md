@@ -235,7 +235,7 @@ Metal (53)
 <th>
 Paving Stones (142)
 <th>
-Wood Float (38)
+Wood Floor (38)
 </th>
 <tr >
 <td >
