@@ -12,6 +12,8 @@ import os # type: ignore
 
 import csv # type: ignore
 import json # type: ignore
+import io # type: ignore
+import zipfile # type: ignore
 
 import MaterialX as mx # type: ignore
 from typing import Optional
@@ -47,8 +49,11 @@ class AmbientCGLoader:
         ### List of materials in CSV format
         self.csv_materials = None
 
-        ### URI for full asset information
-        self.uri = 'https://ambientcg.com/api/v2/full_json'
+        # Downloaded material information
+        ### Current downloaded material
+        self.downloadMaterial = None
+        ### Current downlaoded material file name
+        self.downloadMaterialFileName = ''
 
         ### MaterialX module
         self.mx = mx_module
@@ -123,19 +128,66 @@ class AmbientCGLoader:
         target = f"{imageResolution}K-{imageFormat}"
         return target
 
-    def downloadMaterial(self, assetId, path='', imageFormat='PNG', imageResolution='1',
-                         downloadAttributeKey = 'downloadAttribute', downloadLinkKey = 'downloadLink'):
+    def getDownloadedMaterialInformation(self):
+        '''
+        @brief Get the current downloaded material information 
+        '''
+        return { 'filename': self.downloadMaterialFileName, 
+                  'content': self.downloadMaterial }
+    
+    def clearDownloadMaterial(self):
+        '''
+        @brief Clear any cached current material asset
+        '''
+        if self.downloadMaterial:
+            self.downloadMaterial.seek(0)  # Reset position
+            self.downloadMaterial.truncate(0)  # Clear the buffer
+            self.downloadMaterial = None
+        self.downloadMaterialFileName = ''
+
+    def writeDownloadedMaterialToFile(self, path=''):
+        '''
+        @brief Write the currently downloaded file to file
+        @param path The output path for the material. Default is empty.
+        '''
+        haveDownload = len(self.downloadMaterialFileName) > 0 and self.downloadMaterial
+        if not haveDownload:
+            self.logger.warning('No current material downloaded')
+
+        # Write the file in chunks to avoid memory issues with large files
+        # TBD: What is the "ideal" chunk size.
+        filename = self.downloadMaterialFileName
+        filename = os.path.join(path, filename)
+
+        # Write the file in chunks to avoid memory issues
+        CHUNK_SIZE = 8192
+        self.downloadMaterial.seek(0)
+        with open(filename, "wb") as file:
+            while True:
+                chunk = self.downloadMaterial.read(CHUNK_SIZE)
+                if not chunk:
+                    break  # End of file
+                file.write(chunk)        
+        #with open(filename, "wb") as file:
+        #    file.write(self.downloadMaterial.read())
+
+        self.logger.info(f"Saved downloaded material to: {filename}")
+
+    def downloadMaterialAsset(self, assetId, imageFormat='PNG', imageResolution='1',
+                        downloadAttributeKey = 'downloadAttribute', downloadLinkKey = 'downloadLink'):
         '''
         @brief Download a material with a given id and format + resolution for images.
         Default is to look for a 1K PNG variant.
         @param assetId The string id of the material
-        @param path The output path for the download. Default is empty.
         @param imageFormat The image format to download. Default is PNG.
         @param imageResolution The image resolution to download. Default is 1.
         @param downloadAttributeKey The download attribute key. Default is 'downloadAttribute' based on the V2 ambientCG API.
         @param downloadLinkKey The download link key. Default is 'downloadLink' based on the V2 ambientCG API.
-        @return None
+        @return File name of downloaded content
         '''
+        # Clear previous data
+        self.clearDownloadMaterial()
+
         # Look item with the given assetId, imageFormat and imageResolution
         url = ''
         downloadAttribute = ''
@@ -149,28 +201,32 @@ class AmbientCGLoader:
 
         if len(url) == 0:
             self.logger.error(f'No download link found for asset: {assetId}, attribute: {target}')
-            return
+            return ''
 
-        # Get local filename to save the file the content to
-        filename = url.split("file=")[-1]
-        filename = os.path.join(path, filename)
+        # Extract filename for save
+        self.downloadMaterialFileName = url.split("file=")[-1]
 
         try:
             # Send a GET request to the URL
             response = requests.get(url, stream=True)
             response.raise_for_status()  # Raise an exception for HTTP errors
 
-            # Write the file in chunks to avoid memory issues with large files
-            # TBD: What is the "ideal" chunk size.
-            CHUNK_SIZE = 8192
-            with open(filename, "wb") as file:
-                for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
-                    file.write(chunk)
+            # Create an in-memory binary stream
+            self.downloadMaterial = io.BytesIO()
 
-            self.logger.info(f"File downloaded successfully and saved as: {filename}")
+            # Write the file in chunks to avoid memory issues with large files
+            CHUNK_SIZE = 8192
+            for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
+                self.downloadMaterial.write(chunk)            
+
+            self.logger.info(f"Material file downloaded: {self.downloadMaterialFileName}")
             
         except requests.exceptions.RequestException as e:
-            self.logger.info(f"Error occurred while downloading the file: {e}")        
+            self.downloadMaterialFileName = ''
+
+            self.logger.info(f"Error occurred while downloading the file: {e}") 
+
+        return self.downloadMaterialFileName       
 
     def findMaterial(self, assetId, key='assetId'):
         '''
@@ -252,16 +308,15 @@ class AmbientCGLoader:
         '''
         return self.assets
 
-    def getMaterialsFromURL(self) -> dict:
+    def downloadAssetDatabase(self) -> dict:
         ''' 
-        @brief Download the asset database and database materials 
-        list from the ambientCG site.
+        @brief Download the asset database for materials from the ambientCG site.
         @return None
         '''
         self.database.clear()
         self.assets = None
 
-        url = self.uri
+        url = 'https://ambientcg.com/api/v2/full_json'
         headers = {
             'Accept': 'application/json'
         }

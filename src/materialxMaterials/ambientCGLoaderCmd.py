@@ -16,12 +16,17 @@ def ambientCgLoaderCmd():
                                      ' package will be extracted.')
 
     parser.add_argument('--loadMaterials', type=str, default='', 
-                        help='File containing list of materials and download information')
-    # TODO: Add a --downloadMaterials
+                        help='Load JSON file containing list of materials that can be downloaded.')
+    parser.add_argument('--downloadMaterials', type=bool, default=None, 
+                        help='Download JSON file containing list of materials that can be downloaded.'
+                        ' Has no effect if --loadMaterials is set')    
 
+    # Material names query
     parser.add_argument('--materialNames', type=bool, default=None,
                         help='Return material names. Default is False')
     
+    # Save download information for all materials or a specific one
+    # based on asset identifier 
     parser.add_argument('--saveMaterials', type=bool, default=None, 
                         help='Save material lists. Default is None.'
                         ' Has no effect if --loadMaterials is set')    
@@ -36,43 +41,66 @@ def ambientCgLoaderCmd():
     parser.add_argument('--downloadResolution', type=str, default='1', 
                         help='Download image resulution. Valid values include 1,2,4,8 to indicate 1K to 8K.')
 
+    # Download full database iformation for material assets
+    parser.add_argument('--downloadDatabase', type=bool, default=None, 
+                        help='Download information database')
+    parser.add_argument('--saveDatabase', type=str, default='ambientCG_database.json', 
+                        help='Save information database')
+
+    # Output options
     parser.add_argument('--output', type=str, default='', 
                         help='Output folder for data files. Default location is the current execution folder.')
     opts = parser.parse_args()
 
     loader = acg.AmbientCGLoader(mx, None)
     
+    # Set output folder. Default is current folder
     outputFolder = '.'
     if opts.output:
         outputFolder = opts.output
     if not os.path.exists(outputFolder):
-        logger.error(f'Error: Output directory does not exist: {outputFolder}')
+        logger.error(f'Output directory does not exist: {outputFolder}')
         sys.exit(1)
     
-    getMaterials = False
-    materialName = opts.downloadMaterial
-    downloadMaterial = len(materialName) > 0
-    if opts.materialNames or downloadMaterial or opts.saveMaterials:
-        getMaterials = True
-
+    # Get materials list which contains download information
     loadMaterials = opts.loadMaterials
-    materialsList = None
-    if len(loadMaterials) > 0:
-        materialsList = loader.loadMaterialsList(loadMaterials)
-    elif getMaterials:
-        materialsList = loader.downloadMaterialsList()
-        loader.writeMaterialList(materialsList, os.path.join(outputFolder,'ambientCG_materialsList.json'))
+    downloadMaterials = opts.downloadMaterials or opts.saveMaterials
+    if loadMaterials or downloadMaterials:
+        materialsList = None
+        if len(loadMaterials) > 0:
+            materialsList = loader.loadMaterialsList(loadMaterials)
+        elif downloadMaterials:
+            materialsList = loader.downloadMaterialsList()
+            # Save materials list if specified. Only do so for download case
+            if opts.saveMaterials:
+                loader.writeMaterialList(materialsList, os.path.join(outputFolder,'ambientCG_materialsList.json'))
 
-    if opts.materialNames:
-        materialNames = loader.getMaterialNames()
-        print(f'Found: {len(materialNames)} materials, {materialNames}')        
+        # Check if the list of materials is asked to be returned
+        if opts.materialNames:
+            materialNames = loader.getMaterialNames()
+            print(f'{materialNames}')        
 
-    if downloadMaterial:
-        result = loader.findMaterial(materialName)
-        if result:
-            loader.downloadMaterial(materialName, outputFolder, opts.downloadmageFormat, opts.downloadResolution)
-        else:
-            print(f'Material not found: {materialName}')                
+        # Check if a material asset is specified to downloaded  
+        materialName = opts.downloadMaterial
+        if len(materialName) > 0:
+            result = loader.findMaterial(materialName)
+            if result:
+                fileName = loader.downloadMaterialAsset(materialName) #, opts.downloadmageFormat, opts.downloadResolution)
+                if len(fileName) > 0:
+                    loader.writeDownloadedMaterialToFile(outputFolder)
+            else:
+                print(f'Material not found: {materialName}')      
+
+    # Check if material database is specified for download
+    databaseFileName = opts.saveDatabase
+    haveDatabaseFileName = len(databaseFileName) > 0
+    downloadDatabase = opts.downloadDatabase and haveDatabaseFileName
+    if downloadDatabase:
+        print('download database')
+        loader.downloadAssetDatabase()        
+        if haveDatabaseFileName:
+            path = os.path.join(outputFolder, databaseFileName)
+            loader.writeDatabaseToFile(path)    
 
 if __name__ == '__main__':
     ambientCgLoaderCmd()

@@ -12,5 +12,6 @@ src/materialxMaterials/physicallyBasedMaterialXCmd.py
 src/materialxMaterials.egg-info/PKG-INFO
 src/materialxMaterials.egg-info/SOURCES.txt
 src/materialxMaterials.egg-info/dependency_links.txt
+src/materialxMaterials.egg-info/entry_points.txt
 src/materialxMaterials.egg-info/requires.txt
 src/materialxMaterials.egg-info/top_level.txt

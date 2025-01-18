@@ -50,7 +50,7 @@
     <div class="container-fluid p-4">
       <h2 class="bg-gradient rounded-2 p-0"> <img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=32px>MaterialX Materials Examples</h2>
 <div class="container p-2 rounded-4 border border-secondary border-rounded">
-<h3 id="physicallybased-materials">PhysicallyBased Materials</h3>
+<h3 id="1-physicallybased-materials">1. PhysicallyBased Materials</h3>
 <p>The resulting MaterialX document using the glTF PBR shader is given below.</p>
 <details>
 <summary>Document</summary>
@@ -1245,7 +1245,7 @@
 </td>
 </tr>
 </table>
-<h3 id="sample-gpuopen-material">Sample GPUOpen Material</h3>
+<h3 id="2-gpuopen-sample-material">2. GPUOpen Sample Material</h3>
 <p>This is a sample material package downloaded from AMD GPUOpen.</p>
 <p>The package entry is as follows (at time of writing):</p>
 <details>
@@ -1436,7 +1436,7 @@
 </div></code></pre>
 </details>
 <p>
-<p>The MaterialX file and resources can directly be loaded into any application / integration that can accept MaterialX file.
+<p>The MaterialX file and resources can directly be loaded into any application / integration that can accept MaterialX file.<br>
 The following image was produced by loading into the <code>MaterialXView</code> application.</p>
 <table class="container" id="table_container">
 <tr class="row">
@@ -1462,9 +1462,84 @@ The following image was produced by loading into the <code>MaterialXView</code> 
 <p>The command below will convert from an Autodesk standard surface shader to a glTF PBR shader, bake upstream graphs and then create a binary file using an input shaderball geometry.</p>
 <pre class="hljs"><code><div>python -m materialxgltf mtlx2gltf Indigo_Palm_Wallpaper.mtlx --translateShaders True --bakeTextures True --packageBinary True --bakeResolution 1024 --gltfGeomFileName shaderball.gltf
 </div></code></pre>
-<p>This can be used in any gltF viewer. As a simple example, this is using the <code>Filament</code> viewer inside of Visual Studio Code.
+<p>This can be used in any gltF viewer. As a simple example, this is using the <code>Filament</code> viewer inside of Visual Studio Code.<br>
 <img loading="lazy" src="https://kwokcb.github.io/materialxMaterials/examples/Indigo_Palm_Wallpaper_VScode.png" width=100%></p>
+<h3 id="3-ambientcg-sample-material">3. ambientCG Sample Material</h3>
+<p>This is a sample &quot;Wood&quot; material asset downloaded from ambientCG.</p>
+<p>The asset entry is as follows (at time of writing):</p>
+<ul>
+<li>The MaterialX file and resources can directly be loaded into any application / integration that can accept MaterialX file.</li>
+<li>The image was rendered using the MaterialXView application.</li>
+<li>The include <code>usdc</code> file is not shown here.</li>
+</ul>
+<table class="container-fluid" id="table_container">
+<tr class="row">
+<th class="col-sm-6">MaterialXView Image
+<th class="col-sm-6">MaterialX Asset (zip contents)
+</tr>
+<tr class="row">
+<td class="col-sm-6">
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials\data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%>
+<td class="col-sm-6">
+<p>
+Images
+</p>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Color.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_NormalDX.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_NormalGL.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Roughness.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_AmbientOcclusion.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Displacement.png" width=64px>
+<p>
+<details>
+<summary>XML</summary>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">materialx</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.38"</span> &gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">standard_surface</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_StandardSurface"</span> <span class="hljs-attr">xpos</span>=<span class="hljs-string">"6.159420"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"surfaceshader"</span> <span class="hljs-attr">ypos</span>=<span class="hljs-string">"-1.879310"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"specular"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"coat"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"coat_color"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"color3"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1, 1, 1"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"base"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"base_color"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_Color"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"color3"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"normal"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"normalmap"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector3"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"coat_normal"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"normalmap"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector3"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"specular_roughness"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_Roughness"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"coat_roughness"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_Roughness"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">standard_surface</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">surfacematerial</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"WoodFloor038_1K_PNG"</span> <span class="hljs-attr">xpos</span>=<span class="hljs-string">"8.695652"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"material"</span> <span class="hljs-attr">ypos</span>=<span class="hljs-string">"0.000000"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"surfaceshader"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_StandardSurface"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"surfaceshader"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"displacementshader"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"displacement"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"displacementshader"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">surfacematerial</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tiledimage</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_Color"</span> <span class="hljs-attr">xpos</span>=<span class="hljs-string">"3.623188"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"color3"</span> <span class="hljs-attr">ypos</span>=<span class="hljs-string">"-3.103448"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">colorspace</span>=<span class="hljs-string">"srgb_texture"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"WoodFloor038_1K-PNG_Color.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"uvtiling"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector2"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1.0, 1.0"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tiledimage</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tiledimage</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_Displacement"</span> <span class="hljs-attr">xpos</span>=<span class="hljs-string">"3.623188"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">ypos</span>=<span class="hljs-string">"5.163793"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"WoodFloor038_1K-PNG_Displacement.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"uvtiling"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector2"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1.0, 1.0"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tiledimage</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">displacement</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"displacement"</span> <span class="hljs-attr">xpos</span>=<span class="hljs-string">"6.159420"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"displacementshader"</span> <span class="hljs-attr">ypos</span>=<span class="hljs-string">"1.879310"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"displacement"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_Displacement"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1.0"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">displacement</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tiledimage</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_NormalGL"</span> <span class="hljs-attr">xpos</span>=<span class="hljs-string">"1.086957"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector3"</span> <span class="hljs-attr">ypos</span>=<span class="hljs-string">"0.879310"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"WoodFloor038_1K-PNG_NormalGL.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"uvtiling"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector2"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1.0, 1.0"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tiledimage</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">normalmap</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"normalmap"</span> <span class="hljs-attr">xpos</span>=<span class="hljs-string">"3.623188"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector3"</span> <span class="hljs-attr">ypos</span>=<span class="hljs-string">"3.586207"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"in"</span> <span class="hljs-attr">nodename</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_NormalGL"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector3"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1.0"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">normalmap</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tiledimage</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"WoodFloor038_1K_PNG_Roughness"</span> <span class="hljs-attr">xpos</span>=<span class="hljs-string">"3.623188"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"float"</span> <span class="hljs-attr">ypos</span>=<span class="hljs-string">"-0.413793"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"filename"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"WoodFloor038_1K-PNG_Roughness.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"uvtiling"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"vector2"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1.0, 1.0"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tiledimage</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">materialx</span>&gt;</span>
+</div></code></pre>
+</details>
+</table>
 </div>
+<!---------------------------------------------------->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
   </script>
 <script>
