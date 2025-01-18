@@ -3,7 +3,7 @@
 
 <div class="container p-2 rounded-4 border border-secondary border-rounded">
 
-### PhysicallyBased Materials
+### 1. PhysicallyBased Materials
 
 The resulting MaterialX document using the glTF PBR shader is given below. 
 
@@ -873,7 +873,7 @@ python -m materialxgltf mtlx2gltf --translateShaders True --bakeTextures False -
 
 
 
-### Sample GPUOpen Material
+### 2. GPUOpen Sample Material
 
 This is a sample material package downloaded from AMD GPUOpen.
 
@@ -1108,7 +1108,90 @@ python -m materialxgltf mtlx2gltf Indigo_Palm_Wallpaper.mtlx --translateShaders 
 This can be used in any gltF viewer. As a simple example, this is using the `Filament` viewer inside of Visual Studio Code.
 <img loading="lazy" src="https://kwokcb.github.io/materialxMaterials/examples/Indigo_Palm_Wallpaper_VScode.png" width=100%>
 
+### 3. ambientCG Sample Material
+
+This is a sample "Wood" material asset downloaded from ambientCG.
+
+The asset entry is as follows (at time of writing): 
+- The MaterialX file and resources can directly be loaded into any application / integration that can accept MaterialX file. 
+- The image was rendered using the MaterialXView application.
+- The include `usdc` file is not shown here.
+
+<table class="container-fluid" id="table_container">
+<tr class="row">
+<th class="col-sm-6">MaterialXView Image
+<th class="col-sm-6">MaterialX Asset (zip contents)
+</tr>  
+<tr class="row">
+<td class="col-sm-6">
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials\data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%>
+<td class="col-sm-6">
+
+<p>
+Images
+</p>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Color.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_NormalDX.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_NormalGL.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Roughness.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_AmbientOcclusion.png" width=64px>
+<img src="WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Displacement.png" width=64px>
+<p>
+<details>
+<summary>XML</summary>
+
+```xml
+<?xml version="1.0"?>
+<materialx version="1.38" >
+  <standard_surface name="WoodFloor038_1K_PNG_StandardSurface" xpos="6.159420" type="surfaceshader" ypos="-1.879310">
+    <input name="specular" type="float" value="0" />
+    <input name="coat" type="float" value="1" />
+    <input name="coat_color" type="color3" value="1, 1, 1" />
+    <input name="base" type="float" value="1" />
+    <input name="base_color" nodename="WoodFloor038_1K_PNG_Color" type="color3" />
+    <input name="normal" nodename="normalmap" type="vector3" />
+    <input name="coat_normal" nodename="normalmap" type="vector3" />
+    <input name="specular_roughness" nodename="WoodFloor038_1K_PNG_Roughness" type="float" />
+    <input name="coat_roughness" nodename="WoodFloor038_1K_PNG_Roughness" type="float" />
+  </standard_surface>
+  <surfacematerial name="WoodFloor038_1K_PNG" xpos="8.695652" type="material" ypos="0.000000">
+    <input name="surfaceshader" nodename="WoodFloor038_1K_PNG_StandardSurface" type="surfaceshader" />
+    <input name="displacementshader" nodename="displacement" type="displacementshader" />
+  </surfacematerial>
+  <tiledimage name="WoodFloor038_1K_PNG_Color" xpos="3.623188" type="color3" ypos="-3.103448">
+    <input name="file" type="filename" colorspace="srgb_texture" value="WoodFloor038_1K-PNG_Color.png" />
+    <input name="uvtiling" type="vector2" value="1.0, 1.0" />
+  </tiledimage>
+  <tiledimage name="WoodFloor038_1K_PNG_Displacement" xpos="3.623188" type="float" ypos="5.163793">
+    <input name="file" type="filename" value="WoodFloor038_1K-PNG_Displacement.png" />
+    <input name="uvtiling" type="vector2" value="1.0, 1.0" />
+  </tiledimage>
+  <displacement name="displacement" xpos="6.159420" type="displacementshader" ypos="1.879310">
+    <input name="displacement" nodename="WoodFloor038_1K_PNG_Displacement" type="float" />
+    <input name="scale" type="float" value="1.0" />
+  </displacement>
+  <tiledimage name="WoodFloor038_1K_PNG_NormalGL" xpos="1.086957" type="vector3" ypos="0.879310">
+    <input name="file" type="filename" value="WoodFloor038_1K-PNG_NormalGL.png" />
+    <input name="uvtiling" type="vector2" value="1.0, 1.0" />
+  </tiledimage>
+  <normalmap name="normalmap" xpos="3.623188" type="vector3" ypos="3.586207">
+    <input name="in" nodename="WoodFloor038_1K_PNG_NormalGL" type="vector3" />
+    <input name="scale" type="float" value="1.0" />
+  </normalmap>
+  <tiledimage name="WoodFloor038_1K_PNG_Roughness" xpos="3.623188" type="float" ypos="-0.413793">
+    <input name="file" type="filename" value="WoodFloor038_1K-PNG_Roughness.png" />
+    <input name="uvtiling" type="vector2" value="1.0, 1.0" />
+  </tiledimage>
+</materialx>
+```
+</details>
+
+</table>
+
 </div>
+
+
+<!---------------------------------------------------->
 
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">    
   </script>  

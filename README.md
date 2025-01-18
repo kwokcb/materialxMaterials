@@ -83,6 +83,7 @@ Below are screenshots of materials fetched from from <code>PhysicallyBased</code
 <tr>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_phybased_node_editor.png" width=100%></td>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_zip_node_editor_3.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_ambientCG_node_editor.png" width=100%></td>
 </tr>
 </table>
 </p>

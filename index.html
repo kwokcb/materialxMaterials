@@ -54,9 +54,8 @@
 <p>Welcome to MaterialX Materials.</p>
 <p>This site hosts a set of libraries and command line utilities to<br>
 query remote databases for MaterialX materials.</p>
-<blockquote>
-<p>Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b></p>
-</blockquote>
+<h4> > Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
+</h4>
 <p>
 Related utilities and libraries can be found at the:
 <div class="btn btn-outline-secondary">
@@ -115,6 +114,7 @@ Below are screenshots of materials fetched from from <code>PhysicallyBased</code
 <tr>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_phybased_node_editor.png" width=100%></td>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_zip_node_editor_3.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_ambientCG_node_editor.png" width=100%></td>
 </tr>
 </table>
 </p>
@@ -138,6 +138,11 @@ Below are screenshots of materials fetched from from <code>PhysicallyBased</code
 <pre class="hljs"><code><div>pip install .
 </div></code></pre>
 <p>This will pull down the dependent Python packages as needed.</p>
+<p>Build scripts can be found in the <code>utilities</code> folder.</p>
+<ul>
+<li><code>build.sh</code> will install the package and run package commands to update package data.</li>
+<li><code>buildDocs.sh</code> will prepare documents and run Doxygen to build API docs.</li>
+</ul>
 <p>The GPUOpen Javascript utility requires Node.js to be installed. From the package folder (<code>javascript\JsGPUOpenLoaderPackage</code>) the following should be run:</p>
 <pre class="hljs"><code><div>npm install # Install dependent packages
 npm run build # Setup runtime area
@@ -150,21 +155,23 @@ npm run build # Setup runtime area
 <pre class="hljs"><code><div>python physicallyBasedMaterialXCmd.py
 </div></code></pre>
 <p>or</p>
-<pre class="hljs"><code><div>python -m materialxMaterials physbased
-</div></code></pre>
-<p>or</p>
-<pre class="hljs"><code><div>python -m materialxMaterials acg
+<pre class="hljs"><code><div>materialxMaterials physbased
 </div></code></pre>
 </li>
 <li>
-<p>Query all materials fom GPUOpen. Extract out a few material<br>
-packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
-<pre class="hljs"><code><div>python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
+<p>Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
+<pre class="hljs"><code><div>materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
 </div></code></pre>
 </li>
 <li>
-<p>Query all materials fom ambientCG. Extract out a material package for the &quot;WoodFloor038&quot; material where the images are 2K PNG files (zip).</p>
-<pre class="hljs"><code><div>python -m materialxMaterials acg --downloadMaterial <span class="hljs-string">"WoodFloor038"</span> --downloadResolution 2
+<p>Download the materials list fom ambientCG:</p>
+<pre class="hljs"><code><div>materialxMaterials acg --saveMaterials True
+</div></code></pre>
+</li>
+<li>
+<p>Extract out a material package for the &quot;WoodFloor038&quot; material from ambientCG requesting the<br>
+package where the images are 2K PNG files:</p>
+<pre class="hljs"><code><div>materialxMaterials acg --downloadMaterial <span class="hljs-string">"WoodFloor038"</span> --downloadResolution 2
 </div></code></pre>
 </li>
 </ul>
@@ -183,7 +190,8 @@ npm start -- -n &quot;Moss Green Solid Granite&quot;
 <p>A <code>Jupyter</code> notebook demonstrates the direct usage of the Python library. The output of the notebook can be found <a href="https://kwokcb.github.io/materialxMaterials/examples/materialxMaterials_tutorial_out_iframe.html">here</a>. The notebook can found in the Github repository under the <code>examples</code> folder.</p>
 <h3>Results</h3>
 <p>The following are some samples which have been rendered using the <code>MaterialXView</code> utility which is part of the MaterialX binary distribution.</p>
-<p>Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a></p>
+<h4>Examples</h4>
+Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a>
 <table>
 <tr >
 <th >
@@ -244,6 +252,7 @@ Wood Float (38)
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%>
 </td>
 </table>
+<sub>The rows of materials are from `GPUOpen` `PhysicallyBased`, and `ambientCG` from top to bottom respectively.</sub>
 <p></p>
 <h3>API Reference</h3>
 <p>The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a></p>
