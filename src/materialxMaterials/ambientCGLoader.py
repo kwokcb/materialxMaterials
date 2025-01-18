@@ -1,4 +1,8 @@
+'''
+@brief Utilities to extract materials from the ambientCG material database. 
 
+See: https://docs.ambientcg.com/api/ for information on available API calls.
+'''
 import logging as lg
 
 from http import HTTPStatus
@@ -19,7 +23,7 @@ class AmbientCGLoader:
     '''
     def __init__(self, mx_module, mx_stdlib : Optional[mx.Document] = None):
         '''
-        @brief Constructor for the PhysicallyBasedMaterialLoader class. 
+        @brief Constructor for the AmbientCGLoader class. 
         Will initialize shader mappings and load the MaterialX standard library
         if it is not passed in as an argument.
         @param mx_module The MaterialX module. Required.
@@ -203,7 +207,7 @@ class AmbientCGLoader:
             'Accept': 'application/csv'
         }
         parameters = {
-            'method': 'PBRPhotogrammetry',
+            'method': 'PBRPhotogrammetry', # TODO: Allow user filtering options
             'type': 'Material',
             'sort': 'Alphabet',
         }
@@ -262,7 +266,7 @@ class AmbientCGLoader:
             'Accept': 'application/json'
         }
         parameters = {
-            'method': 'PBRPhotogrammetry',
+            'method': 'PBRPhotogrammetry', # TODO: Allow user filtering options
             'type': 'Material',
             'sort': 'Alphabet',
         }

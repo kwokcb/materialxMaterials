@@ -1,7 +1,7 @@
 var annotated_dup =
 [
     [ "materialxMaterials", null, [
-      [ "ambientCGLoader", null, [
+      [ "ambientCGLoader", "namespacematerialx_materials_1_1ambient_c_g_loader.html", [
         [ "AmbientCGLoader", "classmaterialx_materials_1_1ambient_c_g_loader_1_1_ambient_c_g_loader.html", "classmaterialx_materials_1_1ambient_c_g_loader_1_1_ambient_c_g_loader" ]
       ] ],
       [ "GPUOpenLoader", "namespacematerialx_materials_1_1_g_p_u_open_loader.html", [
