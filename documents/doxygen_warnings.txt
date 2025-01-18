@@ -1,0 +1,31 @@
+warning: Specified markdown mainpage 'README.md' does not exist
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialXCmd.py:24: warning: Member physicallBasedMaterialXCmd() (function) of namespace materialxMaterials.physicallyBasedMaterialXCmd is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:117: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:117: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:117: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:117: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0) are not documented:
+  parameter 'listNumber'
+  parameter 'materialNumber'
+  parameter 'packageId'
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:218: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:218: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:218: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0) are not documented:
+  parameter 'searchExpr'
+  parameter 'packageId'
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:178: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::findMaterialsByName(materialName)
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:178: warning: The following parameter of JsGPUOpenMaterialLoader::findMaterialsByName(materialName) is not documented:
+  parameter 'materialName'
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:40: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::getMaterials(batchSize=50)
+D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:40: warning: The following parameter of JsGPUOpenMaterialLoader::getMaterials(batchSize=50) is not documented:
+  parameter 'batchSize'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/ambientCGLoader.py:215: warning: Member downloadMaterial (variable) of class materialxMaterials.ambientCGLoader.AmbientCGLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/ambientCGLoader.py:317: warning: Member assets (variable) of class materialxMaterials.ambientCGLoader.AmbientCGLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:214: warning: Member materials (variable) of class materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:344: warning: Member materials (variable) of class materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:82: warning: Member remapMap (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:223: warning: Member materials (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:297: warning: Member mx (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:305: warning: Member materials (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:254: warning: Member _getMethodName(self) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/README.md:52: warning: Unsupported xml/html tag <iframe> found
+D:/Work/materialx/materialxMaterials/README.md:53: warning: Unsupported xml/html tag </iframe> found

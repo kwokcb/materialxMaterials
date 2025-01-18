@@ -231,8 +231,7 @@ Requires-Dist: pillow
 
 Welcome to MaterialX Materials.
 
-This site hosts a set of libraries and command line utilities to
-query remote databases for MaterialX materials.
+This site hosts a set of libraries and command line utilities to query remote databases for MaterialX materials.
 
 <h4> > Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
 </h4>
@@ -257,8 +256,7 @@ The current utilities support:
 <br>
 <div style="display: flex; align-items: center;">
 <img src="https://image.matlib.gpuopen.com/afff0c66-dba8-4d79-b96b-459fbd9cbef5.jpeg" width="64px" style="margin-right: 5px;">
-<a href="https://matlib.gpuopen.com/main/materials/all">AMD GPUOpen database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX
-documents can be extracted for any of the posted materials in the database.
+<a href="https://matlib.gpuopen.com/main/materials/all">AMD GPUOpen database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database.
 </div>
 <br>
 <div style="display: flex; align-items: center;">
@@ -279,10 +277,10 @@ Each currently has <code>Python</code> implementations.
 
 <h3>Usage Examples</h3>
 
-<h4>PhysicallyBased</h4>
+<h4>A. PhysicallyBased</h4>
 An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page: 
 <br>
-<img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/physicallyBased_material_fetch.png" width=100%/>
+<img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/physicallyBased_material_fetch.png" width=50%/>
 </a> 
 
 for extracting <code>PhysicallyBased</code> uses a Javascript implementation found <a href="https://github.com/kwokcb/materialxMaterials/blob/main/javascript/JsMaterialXPhysicallyBased.js">here</a>
@@ -290,28 +288,30 @@ for extracting <code>PhysicallyBased</code> uses a Javascript implementation fou
 
 <p>
 <hr>
-<h4>AMD GPUOpen</h4>
+<h4>B. AMD GPUOpen</h4>
 A command line utility is available <a href="https://github.com/kwokcb/materialxMaterials/tree/main/javascript/JsGPUOpenLoaderPackage">here</a>. This uses <code>Node.js</code> to allow access to fetch materials from the <code>GPU Open</code> site(which is not available via a web page).
 <p>
 
 <p><a href="https://github.com/kwokcb/materialxWeb/blob/main/flask/gpuopen/README.md">A <b>Flask</b> application</a> is also available which uses the Python package with a Web based front here.
-<img src="https://raw.githubusercontent.com/kwokcb/materialxWeb/refs/heads/main/flask/gpuopen/images/extract_material_1.png" width=100%>
+<img src="https://raw.githubusercontent.com/kwokcb/materialxWeb/refs/heads/main/flask/gpuopen/images/extract_material_1.png" width=50%>
 </p>
 
 <hr>
+<h4>C. Loading into Web Editor</h4>
 
 <p>
-Below are screenshots of materials fetched from from <code>PhysicallyBased</code> and <code>GPU Open</code> (left and right images respectively). Note that the material zip from <code>GPU Open</code> is directly read in. 
+Below are screenshots of materials fetched from from <code>PhysicallyBased</code> and <code>GPU Open</code> and <code>ambientCg></code> (left to right  images respectively). Note that the material zip from <code>GPU Open</code> and <code>ambientCg</code> is directly read into the editor via it's zip loading option. 
 <table>
 <tr>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_phybased_node_editor.png" width=100%></td>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_zip_node_editor_3.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_ambientCG_node_editor.png" width=100%></td>
 </tr>
 </table>
 </p>
 <p></p>
 
-<h3>Dependencies</h3>
+<h3>Library Dependencies</h3>
 
 The Python utilities require:
 
@@ -323,10 +323,9 @@ The GPUOpen Javascript logic requires:
 1. `node-fetch` if fetch is not available in the version of Node.js used. 
 2. `yargs` for the command line utility 
 
-<h3>Building</h3>
+<h3>Package Building</h3>
 
-The <a href="https://github.com/kwokcb/materialxMaterials">
-<img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/4125d04c73fc2b1755f5b6054b25b6d1bdabcf6b/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a> can be cloned.
+The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/4125d04c73fc2b1755f5b6054b25b6d1bdabcf6b/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a> can be cloned.
 
 The Python package can be built using:
 

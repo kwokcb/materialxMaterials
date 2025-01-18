@@ -9,4 +9,5 @@ pushd .
 cd documents
 echo "Building Doxygen Documents..."
 doxygen Doxyfile
+echo "Finish Doxygen build. See documents/doxygen_warnings.txt for any documentation warnings"
 popd
