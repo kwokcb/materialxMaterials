@@ -16,5 +16,14 @@ var classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based
     [ "setDebugging", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a8dd7341a2015ea81c2affca688f91f52", null ],
     [ "validateMaterialXDocument", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a611d7f557adf6ca07928a7f7cac6c8dc", null ],
     [ "writeJSONToFile", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a9234b66dabe72170e0a47f61722e9761", null ],
-    [ "writeMaterialXToFile", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a4a4c8283eead5ae269a566782fd55fa3", null ]
+    [ "writeMaterialXToFile", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a4a4c8283eead5ae269a566782fd55fa3", null ],
+    [ "doc", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a1602d9f79454e1faaa224410ddcd697c", null ],
+    [ "logger", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#abb0fd25e18379d961cebf80307352b32", null ],
+    [ "materialNames", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#afbf64f0d3d409a6ba17d938128322828", null ],
+    [ "materials", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a4b4a9cf55cb2a7d52250701f19ef08ab", null ],
+    [ "MTLX_NODE_NAME_ATTRIBUTE", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aab6479228f71f8b7f3b6077f67c7d103", null ],
+    [ "mx", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ae10fc6e2a8a66c4e09ad3f6b5dc320f3", null ],
+    [ "stdlib", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aa92dc0c1dee535196fccaa43814e728d", null ],
+    [ "support_openpbr", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a5cb354ab20d9ee591c392004f1ca2ad9", null ],
+    [ "uri", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a185c147ae9a4910e08bbb3ad4f983cb1", null ]
 ];

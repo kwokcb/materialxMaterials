@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['doc_0',['doc',['../class_js_physically_based_material_loader.html#a19ba3f660663b91ec2be3fe81b45b2b4',1,'JsPhysicallyBasedMaterialLoader']]]
+  ['assets_0',['assets',['../classmaterialx_materials_1_1ambient_c_g_loader_1_1_ambient_c_g_loader.html#addb76425ea20df7883e15fc749400cdd',1,'materialxMaterials::ambientCGLoader::AmbientCGLoader']]]
 ];

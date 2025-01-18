@@ -115,28 +115,29 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8844fb389aa4c16e3071d15bc65fc9eb" id="r_a8844fb389aa4c16e3071d15bc65fc9eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8844fb389aa4c16e3071d15bc65fc9eb">__init__</a> (self, mx_module, Optional[mx.Document] mx_stdlib=None)</td></tr>
 <tr class="memdesc:a8844fb389aa4c16e3071d15bc65fc9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the PhysicallyBasedMaterialLoader class.  <br /></td></tr>
 <tr class="separator:a8844fb389aa4c16e3071d15bc65fc9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa555470dd390f98c53cb44cb143e7d3d" id="r_aa555470dd390f98c53cb44cb143e7d3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa555470dd390f98c53cb44cb143e7d3d">setDebugging</a> (self, debug=True)</td></tr>
-<tr class="memdesc:aa555470dd390f98c53cb44cb143e7d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the debugging level for the logger.  <br /></td></tr>
-<tr class="separator:aa555470dd390f98c53cb44cb143e7d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96f15a3c723faf2d832831ed30d993c0" id="r_a96f15a3c723faf2d832831ed30d993c0"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96f15a3c723faf2d832831ed30d993c0">getMaterialNames</a> (self)</td></tr>
-<tr class="memdesc:a96f15a3c723faf2d832831ed30d993c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of material names.  <br /></td></tr>
-<tr class="separator:a96f15a3c723faf2d832831ed30d993c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf4d8a4aabfa0535a93b4a2421531f93" id="r_abf4d8a4aabfa0535a93b4a2421531f93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf4d8a4aabfa0535a93b4a2421531f93">setDebugging</a> (self, Optional[bool] debug=True)</td></tr>
+<tr class="memdesc:abf4d8a4aabfa0535a93b4a2421531f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the debugging level for the logger.  <br /></td></tr>
+<tr class="separator:abf4d8a4aabfa0535a93b4a2421531f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f79858be54683eb2af727329e3f5e0" id="r_ac6f79858be54683eb2af727329e3f5e0"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6f79858be54683eb2af727329e3f5e0">getMaterialNames</a> (self, key='assetId')</td></tr>
+<tr class="memdesc:ac6f79858be54683eb2af727329e3f5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of material names.  <br /></td></tr>
+<tr class="separator:ac6f79858be54683eb2af727329e3f5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac17f49d0ca8281130f0bbef3f78004cc" id="r_ac17f49d0ca8281130f0bbef3f78004cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac17f49d0ca8281130f0bbef3f78004cc">writeMaterialList</a> (self, materialList, filename)</td></tr>
 <tr class="memdesc:ac17f49d0ca8281130f0bbef3f78004cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the material list in JSON format to a file.  <br /></td></tr>
 <tr class="separator:ac17f49d0ca8281130f0bbef3f78004cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a7c35d91c43aa83d9d4aa688c85232f" id="r_a7a7c35d91c43aa83d9d4aa688c85232f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a7c35d91c43aa83d9d4aa688c85232f">buildDownLoadAttribute</a> (self, imageFormat='PNG', imageResolution='1')</td></tr>
+<tr class="memdesc:a7a7c35d91c43aa83d9d4aa688c85232f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the download attribute string for a given image format and resolution Note: This is a hard-coded string format used by ambientCG.  <br /></td></tr>
 <tr class="separator:a7a7c35d91c43aa83d9d4aa688c85232f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a394eea1102456d6d93cebaff19d42190" id="r_a394eea1102456d6d93cebaff19d42190"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a394eea1102456d6d93cebaff19d42190">downloadMaterial</a> (self, assetId, path='', imageFormat='PNG', imageResolution='1')</td></tr>
-<tr class="memdesc:a394eea1102456d6d93cebaff19d42190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download a material with a given id and format + resolution for images.  <br /></td></tr>
-<tr class="separator:a394eea1102456d6d93cebaff19d42190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6681ca22b0d4863610fe1b4c462f0224" id="r_a6681ca22b0d4863610fe1b4c462f0224"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6681ca22b0d4863610fe1b4c462f0224">findMaterial</a> (self, assetId)</td></tr>
-<tr class="memdesc:a6681ca22b0d4863610fe1b4c462f0224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of materials matching a material identifier.  <br /></td></tr>
-<tr class="separator:a6681ca22b0d4863610fe1b4c462f0224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0ddef043c8e5f473f17aaf226be66b" id="r_aaa0ddef043c8e5f473f17aaf226be66b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa0ddef043c8e5f473f17aaf226be66b">downloadMaterial</a> (self, assetId, path='', imageFormat='PNG', imageResolution='1', downloadAttributeKey='downloadAttribute', downloadLinkKey='downloadLink')</td></tr>
+<tr class="memdesc:aaa0ddef043c8e5f473f17aaf226be66b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download a material with a given id and format + resolution for images.  <br /></td></tr>
+<tr class="separator:aaa0ddef043c8e5f473f17aaf226be66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e441bef4c36b2cc5f6d01229859ffee" id="r_a3e441bef4c36b2cc5f6d01229859ffee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e441bef4c36b2cc5f6d01229859ffee">findMaterial</a> (self, assetId, key='assetId')</td></tr>
+<tr class="memdesc:a3e441bef4c36b2cc5f6d01229859ffee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of materials matching a material identifier.  <br /></td></tr>
+<tr class="separator:a3e441bef4c36b2cc5f6d01229859ffee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae885e0d454801827ebdc6f5dc4a06f8c" id="r_ae885e0d454801827ebdc6f5dc4a06f8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae885e0d454801827ebdc6f5dc4a06f8c">loadMaterialsList</a> (self, fileName)</td></tr>
 <tr class="memdesc:ae885e0d454801827ebdc6f5dc4a06f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load in the list of downloadable materials from file.  <br /></td></tr>
 <tr class="separator:ae885e0d454801827ebdc6f5dc4a06f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71f04ede162618f58eca9e42cdd0c302" id="r_a71f04ede162618f58eca9e42cdd0c302"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71f04ede162618f58eca9e42cdd0c302">downloadMaterialsList</a> (self)</td></tr>
-<tr class="memdesc:a71f04ede162618f58eca9e42cdd0c302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download the list of materials from the ambientCG site.  <br /></td></tr>
+<tr class="memdesc:a71f04ede162618f58eca9e42cdd0c302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download the list of materials from the ambientCG site: "ttps://ambientCG.com/api/v2/downloads_csv" Takes the origina CSV file and remaps this into JSON for runtime.  <br /></td></tr>
 <tr class="separator:a71f04ede162618f58eca9e42cdd0c302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27a8bc030c3b00feca949d7d838669ec" id="r_a27a8bc030c3b00feca949d7d838669ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27a8bc030c3b00feca949d7d838669ec">getDataBase</a> (self)</td></tr>
 <tr class="memdesc:a27a8bc030c3b00feca949d7d838669ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get asset database.  <br /></td></tr>
@@ -166,25 +167,35 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0329896e190ff637478b74a3feaa7a93" id="r_a0329896e190ff637478b74a3feaa7a93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0329896e190ff637478b74a3feaa7a93">logger</a> = lg.getLogger('ACGLoader')</td></tr>
+<tr class="memdesc:a0329896e190ff637478b74a3feaa7a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">logger is the logging object for the class  <br /></td></tr>
 <tr class="separator:a0329896e190ff637478b74a3feaa7a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3025ac89c5a9ebcc4292bbad4ec88c3e" id="r_a3025ac89c5a9ebcc4292bbad4ec88c3e"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3025ac89c5a9ebcc4292bbad4ec88c3e">database</a> = {}</td></tr>
+<tr class="memdesc:a3025ac89c5a9ebcc4292bbad4ec88c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Database of asset information.  <br /></td></tr>
 <tr class="separator:a3025ac89c5a9ebcc4292bbad4ec88c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addb76425ea20df7883e15fc749400cdd" id="r_addb76425ea20df7883e15fc749400cdd"><td class="memItemLeft" align="right" valign="top">dict&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addb76425ea20df7883e15fc749400cdd">assets</a> = {}</td></tr>
+<tr class="memdesc:addb76425ea20df7883e15fc749400cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to database found assets.  <br /></td></tr>
 <tr class="separator:addb76425ea20df7883e15fc749400cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b7c1e3402ec5c0c018333a08a6b8035" id="r_a3b7c1e3402ec5c0c018333a08a6b8035"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b7c1e3402ec5c0c018333a08a6b8035">materials</a> = None</td></tr>
+<tr class="memdesc:a3b7c1e3402ec5c0c018333a08a6b8035"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of materials in JSON format.  <br /></td></tr>
 <tr class="separator:a3b7c1e3402ec5c0c018333a08a6b8035"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa34ae535541c7c4cbe4971cbbb102e8f" id="r_aa34ae535541c7c4cbe4971cbbb102e8f"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa34ae535541c7c4cbe4971cbbb102e8f">materialNames</a> = []</td></tr>
+<tr class="memdesc:aa34ae535541c7c4cbe4971cbbb102e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of material names.  <br /></td></tr>
 <tr class="separator:aa34ae535541c7c4cbe4971cbbb102e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a7cefe50d69449a3bd24f470ccb19c" id="r_a41a7cefe50d69449a3bd24f470ccb19c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41a7cefe50d69449a3bd24f470ccb19c">csv_materials</a> = None</td></tr>
+<tr class="memdesc:a41a7cefe50d69449a3bd24f470ccb19c"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of materials in CSV format.  <br /></td></tr>
+<tr class="separator:a41a7cefe50d69449a3bd24f470ccb19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46eff09717cad4d02c5766851cae484f" id="r_a46eff09717cad4d02c5766851cae484f"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46eff09717cad4d02c5766851cae484f">uri</a> = 'https://ambientcg.com/api/v2/full_json'</td></tr>
+<tr class="memdesc:a46eff09717cad4d02c5766851cae484f"><td class="mdescLeft">&#160;</td><td class="mdescRight">URI for full asset information.  <br /></td></tr>
 <tr class="separator:a46eff09717cad4d02c5766851cae484f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8a12e3dfd3fb10e4c74f79509cddbf6" id="r_ad8a12e3dfd3fb10e4c74f79509cddbf6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8a12e3dfd3fb10e4c74f79509cddbf6">mx</a> = mx_module</td></tr>
+<tr class="memdesc:ad8a12e3dfd3fb10e4c74f79509cddbf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">MaterialX module.  <br /></td></tr>
 <tr class="separator:ad8a12e3dfd3fb10e4c74f79509cddbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa844e68d863a31c402ff0cc8a97669e4" id="r_aa844e68d863a31c402ff0cc8a97669e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa844e68d863a31c402ff0cc8a97669e4">stdlib</a> = mx_stdlib</td></tr>
+<tr class="memdesc:aa844e68d863a31c402ff0cc8a97669e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">MaterialX standard library.  <br /></td></tr>
 <tr class="separator:aa844e68d863a31c402ff0cc8a97669e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29c25f5085dec8810621ca0f50d619a7" id="r_a29c25f5085dec8810621ca0f50d619a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29c25f5085dec8810621ca0f50d619a7">support_openpbr</a> = False</td></tr>
+<tr class="memdesc:a29c25f5085dec8810621ca0f50d619a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to indicate OpenPBR shader support.  <br /></td></tr>
 <tr class="separator:a29c25f5085dec8810621ca0f50d619a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41a7cefe50d69449a3bd24f470ccb19c" id="r_a41a7cefe50d69449a3bd24f470ccb19c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41a7cefe50d69449a3bd24f470ccb19c">csv_materials</a> = response.content.decode(&quot;utf-8&quot;)</td></tr>
-<tr class="separator:a41a7cefe50d69449a3bd24f470ccb19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81643bbf81866cfd7d0020308ecbe2e7" id="r_a81643bbf81866cfd7d0020308ecbe2e7"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81643bbf81866cfd7d0020308ecbe2e7">assets</a> = self.uri</td></tr>
 <tr class="separator:a81643bbf81866cfd7d0020308ecbe2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -237,41 +248,51 @@ Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   25</span><span class="stringliteral">        @param mx_module The MaterialX module. Required.</span></div>
 <div class="line"><span class="lineno">   26</span><span class="stringliteral">        @param mx_stdlib The MaterialX standard library. Optional.        </span></div>
 <div class="line"><span class="lineno">   27</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   28</span>        self.logger = lg.getLogger(<span class="stringliteral">&#39;ACGLoader&#39;</span>)</div>
-<div class="line"><span class="lineno">   29</span>        lg.basicConfig(level=lg.INFO)</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>        <span class="comment"># General asset information</span></div>
-<div class="line"><span class="lineno">   32</span>        self.database : dict = {}</div>
-<div class="line"><span class="lineno">   33</span>        self.assets : dict = {}</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>        <span class="comment"># Material download information</span></div>
-<div class="line"><span class="lineno">   36</span>        self.materials = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">   37</span>        self.materialNames : list[str]= []</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>        <span class="comment"># URI for full asset information</span></div>
-<div class="line"><span class="lineno">   40</span>        self.uri = <span class="stringliteral">&#39;https://ambientcg.com/api/v2/full_json&#39;</span></div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>        self.mx = mx_module</div>
-<div class="line"><span class="lineno">   43</span>        self.stdlib = mx_stdlib</div>
-<div class="line"><span class="lineno">   44</span>        self.support_openpbr = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">   28</span>        </div>
+<div class="line"><span class="lineno">   29</span>        </div>
+<div class="line"><span class="lineno">   30</span>        self.logger = lg.getLogger(<span class="stringliteral">&#39;ACGLoader&#39;</span>)</div>
+<div class="line"><span class="lineno">   31</span>        lg.basicConfig(level=lg.INFO)</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>        </div>
+<div class="line"><span class="lineno">   34</span>        self.database : dict = {}</div>
+<div class="line"><span class="lineno">   35</span>        </div>
+<div class="line"><span class="lineno">   36</span>        self.assets : dict = {}</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>        <span class="comment"># Material download information</span></div>
+<div class="line"><span class="lineno">   39</span>        </div>
+<div class="line"><span class="lineno">   40</span>        self.materials = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">   41</span>        </div>
+<div class="line"><span class="lineno">   42</span>        self.materialNames : list[str]= []</div>
+<div class="line"><span class="lineno">   43</span>        </div>
+<div class="line"><span class="lineno">   44</span>        self.csv_materials = <span class="keywordtype">None</span></div>
 <div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> mx_module:</div>
-<div class="line"><span class="lineno">   47</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module not specified.&#39;</span>)</div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">   46</span>        </div>
+<div class="line"><span class="lineno">   47</span>        self.uri = <span class="stringliteral">&#39;https://ambientcg.com/api/v2/full_json&#39;</span></div>
+<div class="line"><span class="lineno">   48</span> </div>
 <div class="line"><span class="lineno">   49</span>        </div>
-<div class="line"><span class="lineno">   50</span>        <span class="comment"># Check for OpenPBR support which is only available in 1.39 and above</span></div>
-<div class="line"><span class="lineno">   51</span>        version_major, version_minor, version_patch = self.mx.getVersionIntegers()</div>
-<div class="line"><span class="lineno">   52</span>        self.logger.info(f<span class="stringliteral">&#39;Using MaterialX version: {version_major}.{version_minor}.{version_patch}&#39;</span>)</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">if</span> (version_major &gt;=1 <span class="keywordflow">and</span> version_minor &gt;= 39) <span class="keywordflow">or</span> version_major &gt; 1:</div>
-<div class="line"><span class="lineno">   54</span>            self.logger.debug(<span class="stringliteral">&#39;&gt; OpenPBR shading model supported&#39;</span>)</div>
-<div class="line"><span class="lineno">   55</span>            self.support_openpbr = <span class="keyword">True</span></div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>        <span class="comment"># Load the MaterialX standard library if not provided</span></div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.stdlib:</div>
-<div class="line"><span class="lineno">   59</span>            self.stdlib = self.mx.createDocument()</div>
-<div class="line"><span class="lineno">   60</span>            libFiles = self.mx.loadLibraries(mx.getDefaultDataLibraryFolders(), mx.getDefaultDataSearchPath(), self.stdlib)            </div>
-<div class="line"><span class="lineno">   61</span>            self.logger.debug(f<span class="stringliteral">&#39;&gt; Loaded standard library: {libFiles}&#39;</span>)</div>
-<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   50</span>        self.mx = mx_module</div>
+<div class="line"><span class="lineno">   51</span>        </div>
+<div class="line"><span class="lineno">   52</span>        self.stdlib = mx_stdlib</div>
+<div class="line"><span class="lineno">   53</span>        </div>
+<div class="line"><span class="lineno">   54</span>        self.support_openpbr = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> mx_module:</div>
+<div class="line"><span class="lineno">   57</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module not specified.&#39;</span>)</div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">   59</span>        </div>
+<div class="line"><span class="lineno">   60</span>        <span class="comment"># Check for OpenPBR support which is only available in 1.39 and above</span></div>
+<div class="line"><span class="lineno">   61</span>        version_major, version_minor, version_patch = self.mx.getVersionIntegers()</div>
+<div class="line"><span class="lineno">   62</span>        self.logger.info(f<span class="stringliteral">&#39;Using MaterialX version: {version_major}.{version_minor}.{version_patch}&#39;</span>)</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">if</span> (version_major &gt;=1 <span class="keywordflow">and</span> version_minor &gt;= 39) <span class="keywordflow">or</span> version_major &gt; 1:</div>
+<div class="line"><span class="lineno">   64</span>            self.logger.debug(<span class="stringliteral">&#39;&gt; OpenPBR shading model supported&#39;</span>)</div>
+<div class="line"><span class="lineno">   65</span>            self.support_openpbr = <span class="keyword">True</span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>        <span class="comment"># Load the MaterialX standard library if not provided</span></div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.stdlib:</div>
+<div class="line"><span class="lineno">   69</span>            self.stdlib = self.mx.createDocument()</div>
+<div class="line"><span class="lineno">   70</span>            libFiles = self.mx.loadLibraries(mx.getDefaultDataLibraryFolders(), mx.getDefaultDataSearchPath(), self.stdlib)            </div>
+<div class="line"><span class="lineno">   71</span>            self.logger.debug(f<span class="stringliteral">&#39;&gt; Loaded standard library: {libFiles}&#39;</span>)</div>
+<div class="line"><span class="lineno">   72</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -318,17 +339,17 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00291">291</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  291</span>    <span class="keyword">def </span>addComment(self, doc, commentString):</div>
-<div class="line"><span class="lineno">  292</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  293</span><span class="stringliteral">        @brief Add a comment to the MaterialX document</span></div>
-<div class="line"><span class="lineno">  294</span><span class="stringliteral">        @param doc The MaterialX document to add the comment to</span></div>
-<div class="line"><span class="lineno">  295</span><span class="stringliteral">        @param commentString The comment string to add</span></div>
-<div class="line"><span class="lineno">  296</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">  297</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  298</span>        comment = doc.addChildOfCategory(<span class="stringliteral">&#39;comment&#39;</span>)</div>
-<div class="line"><span class="lineno">  299</span>        comment.setDocString(commentString)</div>
-<div class="line"><span class="lineno">  300</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00313">313</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  313</span>    <span class="keyword">def </span>addComment(self, doc, commentString):</div>
+<div class="line"><span class="lineno">  314</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  315</span><span class="stringliteral">        @brief Add a comment to the MaterialX document</span></div>
+<div class="line"><span class="lineno">  316</span><span class="stringliteral">        @param doc The MaterialX document to add the comment to</span></div>
+<div class="line"><span class="lineno">  317</span><span class="stringliteral">        @param commentString The comment string to add</span></div>
+<div class="line"><span class="lineno">  318</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  319</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  320</span>        comment = doc.addChildOfCategory(<span class="stringliteral">&#39;comment&#39;</span>)</div>
+<div class="line"><span class="lineno">  321</span>        comment.setDocString(commentString)</div>
+<div class="line"><span class="lineno">  322</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,19 +377,34 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00098">98</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>    <span class="keyword">def </span>buildDownLoadAttribute(self, imageFormat=&#39;PNG&#39;, imageResolution=&#39;1&#39;):</div>
-<div class="line"><span class="lineno">   99</span>        <span class="comment"># WARNING: This is a hard-coded string format</span></div>
-<div class="line"><span class="lineno">  100</span>        <span class="comment"># used by ambientCG. If this changes then this</span></div>
-<div class="line"><span class="lineno">  101</span>        <span class="comment"># must be updated !</span></div>
-<div class="line"><span class="lineno">  102</span>        target = f<span class="stringliteral">&quot;{imageResolution}K-{imageFormat}&quot;</span></div>
-<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span> target</div>
-<div class="line"><span class="lineno">  104</span> </div>
+<p>Build the download attribute string for a given image format and resolution Note: This is a hard-coded string format used by ambientCG. </p>
+<p>If this changes then this must be updated ! </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imageFormat</td><td>The image format to download </td></tr>
+    <tr><td class="paramname">imageResolution</td><td>The image resolution to download </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The download attribute string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00110">110</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>    <span class="keyword">def </span>buildDownLoadAttribute(self, imageFormat=&#39;PNG&#39;, imageResolution=&#39;1&#39;):</div>
+<div class="line"><span class="lineno">  111</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  112</span><span class="stringliteral">        @brief Build the download attribute string for a given image format and resolution</span></div>
+<div class="line"><span class="lineno">  113</span><span class="stringliteral">        Note: This is a hard-coded string format used by ambientCG. If this changes then this</span></div>
+<div class="line"><span class="lineno">  114</span><span class="stringliteral">        must be updated !</span></div>
+<div class="line"><span class="lineno">  115</span><span class="stringliteral">        @param imageFormat The image format to download</span></div>
+<div class="line"><span class="lineno">  116</span><span class="stringliteral">        @param imageResolution The image resolution to download</span></div>
+<div class="line"><span class="lineno">  117</span><span class="stringliteral">        @return The download attribute string</span></div>
+<div class="line"><span class="lineno">  118</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  119</span>        target = f<span class="stringliteral">&quot;{imageResolution}K-{imageFormat}&quot;</span></div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">return</span> target</div>
+<div class="line"><span class="lineno">  121</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a394eea1102456d6d93cebaff19d42190" name="a394eea1102456d6d93cebaff19d42190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a394eea1102456d6d93cebaff19d42190">&#9670;&#160;</a></span>downloadMaterial()</h2>
+<a id="aaa0ddef043c8e5f473f17aaf226be66b" name="aaa0ddef043c8e5f473f17aaf226be66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa0ddef043c8e5f473f17aaf226be66b">&#9670;&#160;</a></span>downloadMaterial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,7 +432,17 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>imageResolution</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'1'</span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>imageResolution</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'1'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>downloadAttributeKey</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'downloadAttribute'</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>downloadLinkKey</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'downloadLink'</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -406,56 +452,64 @@ Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">assetId</td><td>The string id of the material </td></tr>
     <tr><td class="paramname">path</td><td>The output path for the download. Default is empty. </td></tr>
-    <tr><td class="paramname">index</td><td>The index into the list of materials matching a given identifier. </td></tr>
+    <tr><td class="paramname">imageFormat</td><td>The image format to download. Default is PNG. </td></tr>
+    <tr><td class="paramname">imageResolution</td><td>The image resolution to download. Default is 1. </td></tr>
+    <tr><td class="paramname">downloadAttributeKey</td><td>The download attribute key. Default is 'downloadAttribute' based on the V2 ambientCG API. </td></tr>
+    <tr><td class="paramname">downloadLinkKey</td><td>The download link key. Default is 'downloadLink' based on the V2 ambientCG API. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00105">105</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>    <span class="keyword">def </span>downloadMaterial(self, assetId, path=&#39;&#39;, imageFormat=&#39;PNG&#39;, imageResolution=&#39;1&#39;):</div>
-<div class="line"><span class="lineno">  106</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  107</span><span class="stringliteral">        @brief Download a material with a given id and format + resolution for images.</span></div>
-<div class="line"><span class="lineno">  108</span><span class="stringliteral">        Default is to look for a 1K PNG variant.</span></div>
-<div class="line"><span class="lineno">  109</span><span class="stringliteral">        @param assetId The string id of the material</span></div>
-<div class="line"><span class="lineno">  110</span><span class="stringliteral">        @param path The output path for the download. Default is empty.</span></div>
-<div class="line"><span class="lineno">  111</span><span class="stringliteral">        @param index The index into the list of materials matching a given</span></div>
-<div class="line"><span class="lineno">  112</span><span class="stringliteral">        identifier.</span></div>
-<div class="line"><span class="lineno">  113</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">  114</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  115</span>        url = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  116</span>        downloadAttribute = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  117</span>        items = self.findMaterial(assetId)</div>
-<div class="line"><span class="lineno">  118</span>        target = self.buildDownLoadAttribute(imageFormat, imageResolution)</div>
-<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">for</span> item <span class="keywordflow">in</span> items:</div>
-<div class="line"><span class="lineno">  120</span>            downloadAttribute = item[<span class="stringliteral">&#39;downloadAttribute&#39;</span>]</div>
-<div class="line"><span class="lineno">  121</span>            <span class="keywordflow">if</span>  downloadAttribute == target:</div>
-<div class="line"><span class="lineno">  122</span>                url = item[<span class="stringliteral">&#39;downloadLink&#39;</span>]</div>
-<div class="line"><span class="lineno">  123</span>                self.logger.info(f<span class="stringliteral">&#39;Found Asset: {assetId}. Download Attribute: {downloadAttribute} -&gt; {url}&#39;</span>)</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span> len(url) == 0:</div>
-<div class="line"><span class="lineno">  126</span>            self.logger.error(f<span class="stringliteral">&#39;No download link found for asset: {assetId}, attribute: {target}&#39;</span>)</div>
-<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>        <span class="comment"># Get local filename to save the file to</span></div>
-<div class="line"><span class="lineno">  130</span>        filename = url.split(<span class="stringliteral">&quot;file=&quot;</span>)[-1]</div>
-<div class="line"><span class="lineno">  131</span>        filename = os.path.join(path, filename)</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">try</span>:</div>
-<div class="line"><span class="lineno">  134</span>            <span class="comment"># Send a GET request to the URL</span></div>
-<div class="line"><span class="lineno">  135</span>            response = requests.get(url, stream=<span class="keyword">True</span>)</div>
-<div class="line"><span class="lineno">  136</span>            response.raise_for_status()  <span class="comment"># Raise an exception for HTTP errors</span></div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>            <span class="comment"># Write the file in chunks to avoid memory issues with large files</span></div>
-<div class="line"><span class="lineno">  139</span>            <span class="keyword">with</span> open(filename, <span class="stringliteral">&quot;wb&quot;</span>) <span class="keyword">as</span> file:</div>
-<div class="line"><span class="lineno">  140</span>                <span class="keywordflow">for</span> chunk <span class="keywordflow">in</span> response.iter_content(chunk_size=8192):</div>
-<div class="line"><span class="lineno">  141</span>                    file.write(chunk)</div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>            self.logger.info(f<span class="stringliteral">&quot;File downloaded successfully and saved as: {filename}&quot;</span>)</div>
-<div class="line"><span class="lineno">  144</span>            </div>
-<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</div>
-<div class="line"><span class="lineno">  146</span>            self.logger.info(f<span class="stringliteral">&quot;Error occurred while downloading the file: {e}&quot;</span>)        </div>
-<div class="line"><span class="lineno">  147</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00122">122</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>                         downloadAttributeKey = <span class="stringliteral">&#39;downloadAttribute&#39;</span>, downloadLinkKey = <span class="stringliteral">&#39;downloadLink&#39;</span>):</div>
+<div class="line"><span class="lineno">  124</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  125</span><span class="stringliteral">        @brief Download a material with a given id and format + resolution for images.</span></div>
+<div class="line"><span class="lineno">  126</span><span class="stringliteral">        Default is to look for a 1K PNG variant.</span></div>
+<div class="line"><span class="lineno">  127</span><span class="stringliteral">        @param assetId The string id of the material</span></div>
+<div class="line"><span class="lineno">  128</span><span class="stringliteral">        @param path The output path for the download. Default is empty.</span></div>
+<div class="line"><span class="lineno">  129</span><span class="stringliteral">        @param imageFormat The image format to download. Default is PNG.</span></div>
+<div class="line"><span class="lineno">  130</span><span class="stringliteral">        @param imageResolution The image resolution to download. Default is 1.</span></div>
+<div class="line"><span class="lineno">  131</span><span class="stringliteral">        @param downloadAttributeKey The download attribute key. Default is &#39;downloadAttribute&#39; based on the V2 ambientCG API.</span></div>
+<div class="line"><span class="lineno">  132</span><span class="stringliteral">        @param downloadLinkKey The download link key. Default is &#39;downloadLink&#39; based on the V2 ambientCG API.</span></div>
+<div class="line"><span class="lineno">  133</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  134</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  135</span>        <span class="comment"># Look item with the given assetId, imageFormat and imageResolution</span></div>
+<div class="line"><span class="lineno">  136</span>        url = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  137</span>        downloadAttribute = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  138</span>        items = self.findMaterial(assetId)</div>
+<div class="line"><span class="lineno">  139</span>        target = self.buildDownLoadAttribute(imageFormat, imageResolution)</div>
+<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">for</span> item <span class="keywordflow">in</span> items:</div>
+<div class="line"><span class="lineno">  141</span>            downloadAttribute = item[downloadAttributeKey]</div>
+<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">if</span>  downloadAttribute == target:</div>
+<div class="line"><span class="lineno">  143</span>                url = item[downloadLinkKey]</div>
+<div class="line"><span class="lineno">  144</span>                self.logger.info(f<span class="stringliteral">&#39;Found Asset: {assetId}. Download Attribute: {downloadAttribute} -&gt; {url}&#39;</span>)</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">if</span> len(url) == 0:</div>
+<div class="line"><span class="lineno">  147</span>            self.logger.error(f<span class="stringliteral">&#39;No download link found for asset: {assetId}, attribute: {target}&#39;</span>)</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>        <span class="comment"># Get local filename to save the file the content to</span></div>
+<div class="line"><span class="lineno">  151</span>        filename = url.split(<span class="stringliteral">&quot;file=&quot;</span>)[-1]</div>
+<div class="line"><span class="lineno">  152</span>        filename = os.path.join(path, filename)</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno">  155</span>            <span class="comment"># Send a GET request to the URL</span></div>
+<div class="line"><span class="lineno">  156</span>            response = requests.get(url, stream=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">  157</span>            response.raise_for_status()  <span class="comment"># Raise an exception for HTTP errors</span></div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>            <span class="comment"># Write the file in chunks to avoid memory issues with large files</span></div>
+<div class="line"><span class="lineno">  160</span>            <span class="comment"># TBD: What is the &quot;ideal&quot; chunk size.</span></div>
+<div class="line"><span class="lineno">  161</span>            CHUNK_SIZE = 8192</div>
+<div class="line"><span class="lineno">  162</span>            <span class="keyword">with</span> open(filename, <span class="stringliteral">&quot;wb&quot;</span>) <span class="keyword">as</span> file:</div>
+<div class="line"><span class="lineno">  163</span>                <span class="keywordflow">for</span> chunk <span class="keywordflow">in</span> response.iter_content(chunk_size=CHUNK_SIZE):</div>
+<div class="line"><span class="lineno">  164</span>                    file.write(chunk)</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>            self.logger.info(f<span class="stringliteral">&quot;File downloaded successfully and saved as: {filename}&quot;</span>)</div>
+<div class="line"><span class="lineno">  167</span>            </div>
+<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">except</span> requests.exceptions.RequestException <span class="keyword">as</span> e:</div>
+<div class="line"><span class="lineno">  169</span>            self.logger.info(f<span class="stringliteral">&quot;Error occurred while downloading the file: {e}&quot;</span>)        </div>
+<div class="line"><span class="lineno">  170</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -474,60 +528,58 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Download the list of materials from the ambientCG site. </p>
-<p>Takes the origina CSV file and remaps this into JSON for runtime. </p><dl class="section return"><dt>Returns</dt><dd>Materials list </dd></dl>
+<p>Download the list of materials from the ambientCG site: "ttps://ambientCG.com/api/v2/downloads_csv" Takes the origina CSV file and remaps this into JSON for runtime. </p>
+<dl class="section return"><dt>Returns</dt><dd>Materials list </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00170">170</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  170</span>    <span class="keyword">def </span>downloadMaterialsList(self):</div>
-<div class="line"><span class="lineno">  171</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  172</span><span class="stringliteral">        @brief Download the list of materials from the ambientCG site.</span></div>
-<div class="line"><span class="lineno">  173</span><span class="stringliteral">        Takes the origina CSV file and remaps this into JSON</span></div>
-<div class="line"><span class="lineno">  174</span><span class="stringliteral">        for runtime.</span></div>
-<div class="line"><span class="lineno">  175</span><span class="stringliteral">        @return Materials list</span></div>
-<div class="line"><span class="lineno">  176</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>        <span class="comment"># URL of the CSV file</span></div>
-<div class="line"><span class="lineno">  179</span>        url = <span class="stringliteral">&quot;https://ambientCG.com/api/v2/downloads_csv&quot;</span></div>
-<div class="line"><span class="lineno">  180</span>        headers = {</div>
-<div class="line"><span class="lineno">  181</span>            <span class="stringliteral">&#39;Accept&#39;</span>: <span class="stringliteral">&#39;application/csv&#39;</span></div>
-<div class="line"><span class="lineno">  182</span>        }</div>
-<div class="line"><span class="lineno">  183</span>        parameters = {</div>
-<div class="line"><span class="lineno">  184</span>            <span class="stringliteral">&#39;method&#39;</span>: <span class="stringliteral">&#39;PBRPhotogrammetry&#39;</span>,</div>
-<div class="line"><span class="lineno">  185</span>            <span class="stringliteral">&#39;type&#39;</span>: <span class="stringliteral">&#39;Material&#39;</span>,</div>
-<div class="line"><span class="lineno">  186</span>            <span class="stringliteral">&#39;sort&#39;</span>: <span class="stringliteral">&#39;Alphabet&#39;</span>,</div>
-<div class="line"><span class="lineno">  187</span>        }</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>        self.logger.info(<span class="stringliteral">&#39;Downloading materials list...&#39;</span>)</div>
-<div class="line"><span class="lineno">  190</span>        response = requests.get(url, headers=headers, params=parameters)</div>
-<div class="line"><span class="lineno">  191</span> </div>
-<div class="line"><span class="lineno">  192</span>        <span class="comment"># Check if the request was successful</span></div>
-<div class="line"><span class="lineno">  193</span>        <span class="keywordflow">if</span> response.status_code == HTTPStatus.OK:</div>
-<div class="line"><span class="lineno">  194</span>            <span class="comment"># Decode the CSV content from the response</span></div>
-<div class="line"><span class="lineno">  195</span>            self.csv_materials = response.content.decode(<span class="stringliteral">&quot;utf-8&quot;</span>)</div>
-<div class="line"><span class="lineno">  196</span>            </div>
-<div class="line"><span class="lineno">  197</span>            <span class="comment"># Parse the CSV content</span></div>
-<div class="line"><span class="lineno">  198</span>            <span class="keywordflow">if</span> self.csv_materials:</div>
-<div class="line"><span class="lineno">  199</span>                csv_reader = csv.DictReader(self.csv_materials.splitlines())</div>
-<div class="line"><span class="lineno">  200</span>            </div>
-<div class="line"><span class="lineno">  201</span>                <span class="comment"># Convert the CSV rows to a JSON object (list of dictionaries)</span></div>
-<div class="line"><span class="lineno">  202</span>                self.materials = [row <span class="keywordflow">for</span> row <span class="keywordflow">in</span> csv_reader]</div>
-<div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  204</span>                self.logger.info(<span class="stringliteral">&quot;Downloaded materials.&quot;</span>)</div>
-<div class="line"><span class="lineno">  205</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  206</span>                self.materials = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  207</span>                self.logger.warning(<span class="stringliteral">&quot;Failed to parse the CSV material content&quot;</span>)</div>
-<div class="line"><span class="lineno">  208</span>            </div>
-<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  210</span>            self.materials = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  211</span>            self.logger.warning(f<span class="stringliteral">&quot;Failed to fetch the CSV material content. HTTP status code: {response.status_code}&quot;</span>)</div>
-<div class="line"><span class="lineno">  212</span> </div>
-<div class="line"><span class="lineno">  213</span>        <span class="keywordflow">return</span> self.materials</div>
-<div class="line"><span class="lineno">  214</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00194">194</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  194</span>    <span class="keyword">def </span>downloadMaterialsList(self):</div>
+<div class="line"><span class="lineno">  195</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  196</span><span class="stringliteral">        @brief Download the list of materials from the ambientCG site: &quot;ttps://ambientCG.com/api/v2/downloads_csv&quot;</span></div>
+<div class="line"><span class="lineno">  197</span><span class="stringliteral">        Takes the origina CSV file and remaps this into JSON for runtime.</span></div>
+<div class="line"><span class="lineno">  198</span><span class="stringliteral">        @return Materials list</span></div>
+<div class="line"><span class="lineno">  199</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  200</span>        <span class="comment"># URL of the CSV file</span></div>
+<div class="line"><span class="lineno">  201</span>        url = <span class="stringliteral">&quot;https://ambientCG.com/api/v2/downloads_csv&quot;</span></div>
+<div class="line"><span class="lineno">  202</span>        headers = {</div>
+<div class="line"><span class="lineno">  203</span>            <span class="stringliteral">&#39;Accept&#39;</span>: <span class="stringliteral">&#39;application/csv&#39;</span></div>
+<div class="line"><span class="lineno">  204</span>        }</div>
+<div class="line"><span class="lineno">  205</span>        parameters = {</div>
+<div class="line"><span class="lineno">  206</span>            <span class="stringliteral">&#39;method&#39;</span>: <span class="stringliteral">&#39;PBRPhotogrammetry&#39;</span>,</div>
+<div class="line"><span class="lineno">  207</span>            <span class="stringliteral">&#39;type&#39;</span>: <span class="stringliteral">&#39;Material&#39;</span>,</div>
+<div class="line"><span class="lineno">  208</span>            <span class="stringliteral">&#39;sort&#39;</span>: <span class="stringliteral">&#39;Alphabet&#39;</span>,</div>
+<div class="line"><span class="lineno">  209</span>        }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>        self.logger.info(<span class="stringliteral">&#39;Downloading materials CSV list...&#39;</span>)</div>
+<div class="line"><span class="lineno">  212</span>        response = requests.get(url, headers=headers, params=parameters)</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>        <span class="comment"># Check if the request was successful</span></div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">if</span> response.status_code == HTTPStatus.OK:</div>
+<div class="line"><span class="lineno">  216</span>            <span class="comment"># Decode the CSV content from the response</span></div>
+<div class="line"><span class="lineno">  217</span>            self.csv_materials = response.content.decode(<span class="stringliteral">&quot;utf-8&quot;</span>)</div>
+<div class="line"><span class="lineno">  218</span>            </div>
+<div class="line"><span class="lineno">  219</span>            <span class="comment"># Parse the CSV content</span></div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">if</span> self.csv_materials:</div>
+<div class="line"><span class="lineno">  221</span>                csv_reader = csv.DictReader(self.csv_materials.splitlines())</div>
+<div class="line"><span class="lineno">  222</span>            </div>
+<div class="line"><span class="lineno">  223</span>                <span class="comment"># Convert the CSV rows to a JSON object (list of dictionaries)</span></div>
+<div class="line"><span class="lineno">  224</span>                self.materials = [row <span class="keywordflow">for</span> row <span class="keywordflow">in</span> csv_reader]</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>                self.logger.info(<span class="stringliteral">&quot;Downloaded CSV material list as JSON.&quot;</span>)</div>
+<div class="line"><span class="lineno">  227</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  228</span>                self.materials = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  229</span>                self.logger.warning(<span class="stringliteral">&quot;Failed to parse the CSV material content&quot;</span>)</div>
+<div class="line"><span class="lineno">  230</span>            </div>
+<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  232</span>            self.materials = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  233</span>            self.logger.warning(f<span class="stringliteral">&quot;Failed to fetch the CSV material content. HTTP status code: {response.status_code}&quot;</span>)</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordflow">return</span> self.materials</div>
+<div class="line"><span class="lineno">  236</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6681ca22b0d4863610fe1b4c462f0224" name="a6681ca22b0d4863610fe1b4c462f0224"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6681ca22b0d4863610fe1b4c462f0224">&#9670;&#160;</a></span>findMaterial()</h2>
+<a id="a3e441bef4c36b2cc5f6d01229859ffee" name="a3e441bef4c36b2cc5f6d01229859ffee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e441bef4c36b2cc5f6d01229859ffee">&#9670;&#160;</a></span>findMaterial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -540,7 +592,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>assetId</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>assetId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>key</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'assetId'</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -549,23 +606,25 @@ Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">assetId</td><td>Material string identifier </td></tr>
+    <tr><td class="paramname">key</td><td>The key to lookup asset identifiers. Default is 'assetId' based on the version 2 ambientCG API. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>List of materials, or None if not found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00148">148</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>    <span class="keyword">def </span>findMaterial(self, assetId):</div>
-<div class="line"><span class="lineno">  149</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  150</span><span class="stringliteral">        @brief Get the list of materials matching a material identifier</span></div>
-<div class="line"><span class="lineno">  151</span><span class="stringliteral">        @param assetId Material string identifier</span></div>
-<div class="line"><span class="lineno">  152</span><span class="stringliteral">        @return List of materials, or None if not found</span></div>
-<div class="line"><span class="lineno">  153</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">if</span> self.materials:</div>
-<div class="line"><span class="lineno">  155</span>            materialList = [item <span class="keywordflow">for</span> item <span class="keywordflow">in</span> self.materials <span class="keywordflow">if</span> item.get(<span class="stringliteral">&quot;assetId&quot;</span>) == assetId]</div>
-<div class="line"><span class="lineno">  156</span>            <span class="keywordflow">return</span> materialList</div>
-<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  158</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00171">171</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>    <span class="keyword">def </span>findMaterial(self, assetId, key=&#39;assetId&#39;):</div>
+<div class="line"><span class="lineno">  172</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  173</span><span class="stringliteral">        @brief Get the list of materials matching a material identifier</span></div>
+<div class="line"><span class="lineno">  174</span><span class="stringliteral">        @param assetId Material string identifier</span></div>
+<div class="line"><span class="lineno">  175</span><span class="stringliteral">        @param key The key to lookup asset identifiers. Default is &#39;assetId&#39; based on the version 2 ambientCG API.</span></div>
+<div class="line"><span class="lineno">  176</span><span class="stringliteral">        @return List of materials, or None if not found</span></div>
+<div class="line"><span class="lineno">  177</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  178</span>        <span class="keywordflow">if</span> self.materials:</div>
+<div class="line"><span class="lineno">  179</span>            materialList = [item <span class="keywordflow">for</span> item <span class="keywordflow">in</span> self.materials <span class="keywordflow">if</span> item.get(key) == assetId]</div>
+<div class="line"><span class="lineno">  180</span>            <span class="keywordflow">return</span> materialList</div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  182</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -587,14 +646,14 @@ Public Attributes</h2></td></tr>
 <p>Get asset database. </p>
 <dl class="section return"><dt>Returns</dt><dd>Asset database </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00215">215</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  215</span>    <span class="keyword">def </span>getDataBase(self):</div>
-<div class="line"><span class="lineno">  216</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  217</span><span class="stringliteral">        @brief Get asset database</span></div>
-<div class="line"><span class="lineno">  218</span><span class="stringliteral">        @return Asset database </span></div>
-<div class="line"><span class="lineno">  219</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  220</span>        <span class="keywordflow">return</span> self.database</div>
-<div class="line"><span class="lineno">  221</span>    </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00237">237</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  237</span>    <span class="keyword">def </span>getDataBase(self):</div>
+<div class="line"><span class="lineno">  238</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  239</span><span class="stringliteral">        @brief Get asset database</span></div>
+<div class="line"><span class="lineno">  240</span><span class="stringliteral">        @return Asset database </span></div>
+<div class="line"><span class="lineno">  241</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  242</span>        <span class="keywordflow">return</span> self.database</div>
+<div class="line"><span class="lineno">  243</span>    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -616,19 +675,19 @@ Public Attributes</h2></td></tr>
 <p>Get asset database material list. </p>
 <dl class="section return"><dt>Returns</dt><dd>Material list </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00222">222</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  222</span>    <span class="keyword">def </span>getDataBaseMaterialList(self):</div>
-<div class="line"><span class="lineno">  223</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  224</span><span class="stringliteral">        @brief Get asset database material list</span></div>
-<div class="line"><span class="lineno">  225</span><span class="stringliteral">        @return Material list</span></div>
-<div class="line"><span class="lineno">  226</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  227</span>        <span class="keywordflow">return</span> self.assets</div>
-<div class="line"><span class="lineno">  228</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00244">244</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  244</span>    <span class="keyword">def </span>getDataBaseMaterialList(self):</div>
+<div class="line"><span class="lineno">  245</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  246</span><span class="stringliteral">        @brief Get asset database material list</span></div>
+<div class="line"><span class="lineno">  247</span><span class="stringliteral">        @return Material list</span></div>
+<div class="line"><span class="lineno">  248</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">return</span> self.assets</div>
+<div class="line"><span class="lineno">  250</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a96f15a3c723faf2d832831ed30d993c0" name="a96f15a3c723faf2d832831ed30d993c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96f15a3c723faf2d832831ed30d993c0">&#9670;&#160;</a></span>getMaterialNames()</h2>
+<a id="ac6f79858be54683eb2af727329e3f5e0" name="ac6f79858be54683eb2af727329e3f5e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f79858be54683eb2af727329e3f5e0">&#9670;&#160;</a></span>getMaterialNames()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -636,30 +695,42 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname"> list materialxMaterials.ambientCGLoader.AmbientCGLoader.getMaterialNames </td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>key</em></span><span class="paramdefsep"> = </span><span class="paramdefval">'assetId'</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Get the list of material names. </p>
 <p><br  />
- </p><dl class="section return"><dt>Returns</dt><dd>The list of material names </dd></dl>
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key to use for the material name. Default is 'assetId' based on the version 2 ambientCG API. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The list of material names </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00074">74</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>    <span class="keyword">def </span>getMaterialNames(self) -&gt; list:</div>
-<div class="line"><span class="lineno">   75</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
-<div class="line"><span class="lineno">   76</span><span class="stringliteral">        Get the list of material names.     </span></div>
-<div class="line"><span class="lineno">   77</span><span class="stringliteral">        @return The list of material names</span></div>
-<div class="line"><span class="lineno">   78</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   79</span>        self.materialNames.clear()</div>
-<div class="line"><span class="lineno">   80</span>        unique_names = set()</div>
-<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">if</span> self.materials:</div>
-<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">for</span> item <span class="keywordflow">in</span> self.materials:</div>
-<div class="line"><span class="lineno">   83</span>                unique_names.add(item.get(<span class="stringliteral">&quot;assetId&quot;</span>) )</div>
-<div class="line"><span class="lineno">   84</span>        self.materialNames = list(sorted(unique_names))</div>
-<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">return</span> self.materialNames</div>
-<div class="line"><span class="lineno">   86</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00084">84</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>    <span class="keyword">def </span>getMaterialNames(self, key=&#39;assetId&#39;) -&gt; list:</div>
+<div class="line"><span class="lineno">   85</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
+<div class="line"><span class="lineno">   86</span><span class="stringliteral">        Get the list of material names.     </span></div>
+<div class="line"><span class="lineno">   87</span><span class="stringliteral">        @param key The key to use for the material name. Default is &#39;assetId&#39; based</span></div>
+<div class="line"><span class="lineno">   88</span><span class="stringliteral">        on the version 2 ambientCG API.</span></div>
+<div class="line"><span class="lineno">   89</span><span class="stringliteral">        @return The list of material names</span></div>
+<div class="line"><span class="lineno">   90</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">   91</span>        self.materialNames.clear()</div>
+<div class="line"><span class="lineno">   92</span>        unique_names = set()</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> self.materials:</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">for</span> item <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">   95</span>                unique_names.add(item.get(key) )</div>
+<div class="line"><span class="lineno">   96</span>        self.materialNames = list(sorted(unique_names))</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">return</span> self.materialNames</div>
+<div class="line"><span class="lineno">   98</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -681,34 +752,34 @@ Public Attributes</h2></td></tr>
 <p>Download the asset database and database materials list from the ambientCG site. </p>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00229">229</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  229</span>    <span class="keyword">def </span>getMaterialsFromURL(self) -&gt; dict:</div>
-<div class="line"><span class="lineno">  230</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
-<div class="line"><span class="lineno">  231</span><span class="stringliteral">        @brief Download the asset database and database materials </span></div>
-<div class="line"><span class="lineno">  232</span><span class="stringliteral">        list from the ambientCG site.</span></div>
-<div class="line"><span class="lineno">  233</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">  234</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  235</span>        self.database.clear()</div>
-<div class="line"><span class="lineno">  236</span>        self.assets = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  237</span> </div>
-<div class="line"><span class="lineno">  238</span>        url = self.uri</div>
-<div class="line"><span class="lineno">  239</span>        headers = {</div>
-<div class="line"><span class="lineno">  240</span>            <span class="stringliteral">&#39;Accept&#39;</span>: <span class="stringliteral">&#39;application/json&#39;</span></div>
-<div class="line"><span class="lineno">  241</span>        }</div>
-<div class="line"><span class="lineno">  242</span>        parameters = {</div>
-<div class="line"><span class="lineno">  243</span>            <span class="stringliteral">&#39;method&#39;</span>: <span class="stringliteral">&#39;PBRPhotogrammetry&#39;</span>,</div>
-<div class="line"><span class="lineno">  244</span>            <span class="stringliteral">&#39;type&#39;</span>: <span class="stringliteral">&#39;Material&#39;</span>,</div>
-<div class="line"><span class="lineno">  245</span>            <span class="stringliteral">&#39;sort&#39;</span>: <span class="stringliteral">&#39;Alphabet&#39;</span>,</div>
-<div class="line"><span class="lineno">  246</span>        }</div>
-<div class="line"><span class="lineno">  247</span> </div>
-<div class="line"><span class="lineno">  248</span>        response = requests.get(url, headers=headers, params=parameters)</div>
-<div class="line"><span class="lineno">  249</span> </div>
-<div class="line"><span class="lineno">  250</span>        <span class="keywordflow">if</span> response.status_code == HTTPStatus.OK:</div>
-<div class="line"><span class="lineno">  251</span>            self.database = response.json()</div>
-<div class="line"><span class="lineno">  252</span>            self.assets = self.database[<span class="stringliteral">&#39;foundAssets&#39;</span>]                </div>
-<div class="line"><span class="lineno">  253</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  254</span>            self.logger.error(f<span class="stringliteral">&#39;&gt; Status: {response.status_code}, {response.text}&#39;</span>)</div>
-<div class="line"><span class="lineno">  255</span>            </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00251">251</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>    <span class="keyword">def </span>getMaterialsFromURL(self) -&gt; dict:</div>
+<div class="line"><span class="lineno">  252</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
+<div class="line"><span class="lineno">  253</span><span class="stringliteral">        @brief Download the asset database and database materials </span></div>
+<div class="line"><span class="lineno">  254</span><span class="stringliteral">        list from the ambientCG site.</span></div>
+<div class="line"><span class="lineno">  255</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  256</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  257</span>        self.database.clear()</div>
+<div class="line"><span class="lineno">  258</span>        self.assets = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>        url = self.uri</div>
+<div class="line"><span class="lineno">  261</span>        headers = {</div>
+<div class="line"><span class="lineno">  262</span>            <span class="stringliteral">&#39;Accept&#39;</span>: <span class="stringliteral">&#39;application/json&#39;</span></div>
+<div class="line"><span class="lineno">  263</span>        }</div>
+<div class="line"><span class="lineno">  264</span>        parameters = {</div>
+<div class="line"><span class="lineno">  265</span>            <span class="stringliteral">&#39;method&#39;</span>: <span class="stringliteral">&#39;PBRPhotogrammetry&#39;</span>,</div>
+<div class="line"><span class="lineno">  266</span>            <span class="stringliteral">&#39;type&#39;</span>: <span class="stringliteral">&#39;Material&#39;</span>,</div>
+<div class="line"><span class="lineno">  267</span>            <span class="stringliteral">&#39;sort&#39;</span>: <span class="stringliteral">&#39;Alphabet&#39;</span>,</div>
+<div class="line"><span class="lineno">  268</span>        }</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>        response = requests.get(url, headers=headers, params=parameters)</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>        <span class="keywordflow">if</span> response.status_code == HTTPStatus.OK:</div>
+<div class="line"><span class="lineno">  273</span>            self.database = response.json()</div>
+<div class="line"><span class="lineno">  274</span>            self.assets = self.database[<span class="stringliteral">&#39;foundAssets&#39;</span>]                </div>
+<div class="line"><span class="lineno">  275</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  276</span>            self.logger.error(f<span class="stringliteral">&#39;&gt; Status: {response.status_code}, {response.text}&#39;</span>)</div>
+<div class="line"><span class="lineno">  277</span>            </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -742,21 +813,21 @@ Public Attributes</h2></td></tr>
 <p>Convert the MaterialX document to a string. </p>
 <dl class="section return"><dt>Returns</dt><dd>The MaterialX document as a string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00302">302</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  302</span>    <span class="keyword">def </span>getMaterialXString(self, doc):</div>
-<div class="line"><span class="lineno">  303</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
-<div class="line"><span class="lineno">  304</span><span class="stringliteral">        @brief Convert the MaterialX document to a string </span></div>
-<div class="line"><span class="lineno">  305</span><span class="stringliteral">        @return The MaterialX document as a string</span></div>
-<div class="line"><span class="lineno">  306</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  307</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
-<div class="line"><span class="lineno">  308</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)</div>
-<div class="line"><span class="lineno">  309</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  310</span> </div>
-<div class="line"><span class="lineno">  311</span>        writeOptions = self.mx.XmlWriteOptions()</div>
-<div class="line"><span class="lineno">  312</span>        writeOptions.writeXIncludeEnable = <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  313</span>        writeOptions.elementPredicate = self.skipLibraryElement        </div>
-<div class="line"><span class="lineno">  314</span>        mtlx = self.mx.writeToXmlString(doc, writeOptions)</div>
-<div class="line"><span class="lineno">  315</span>        <span class="keywordflow">return</span> mtlx</div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00324">324</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  324</span>    <span class="keyword">def </span>getMaterialXString(self, doc):</div>
+<div class="line"><span class="lineno">  325</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
+<div class="line"><span class="lineno">  326</span><span class="stringliteral">        @brief Convert the MaterialX document to a string </span></div>
+<div class="line"><span class="lineno">  327</span><span class="stringliteral">        @return The MaterialX document as a string</span></div>
+<div class="line"><span class="lineno">  328</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  329</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
+<div class="line"><span class="lineno">  330</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)</div>
+<div class="line"><span class="lineno">  331</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">  332</span> </div>
+<div class="line"><span class="lineno">  333</span>        writeOptions = self.mx.XmlWriteOptions()</div>
+<div class="line"><span class="lineno">  334</span>        writeOptions.writeXIncludeEnable = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  335</span>        writeOptions.elementPredicate = self.skipLibraryElement        </div>
+<div class="line"><span class="lineno">  336</span>        mtlx = self.mx.writeToXmlString(doc, writeOptions)</div>
+<div class="line"><span class="lineno">  337</span>        <span class="keywordflow">return</span> mtlx</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -788,23 +859,23 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Materials list </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00159">159</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  159</span>    <span class="keyword">def </span>loadMaterialsList(self, fileName):</div>
-<div class="line"><span class="lineno">  160</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  161</span><span class="stringliteral">        @brief Load in the list of downloadable materials from file.</span></div>
-<div class="line"><span class="lineno">  162</span><span class="stringliteral">        @param fileName Name of JSON containing list</span></div>
-<div class="line"><span class="lineno">  163</span><span class="stringliteral">        @return Materials list</span></div>
-<div class="line"><span class="lineno">  164</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  165</span>        <span class="keyword">with</span> open(fileName, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> json_file:</div>
-<div class="line"><span class="lineno">  166</span>            self.materials = json.load(json_file)</div>
-<div class="line"><span class="lineno">  167</span>        self.logger.info(f<span class="stringliteral">&#39;Loaded materials list from: {fileName}&#39;</span>)</div>
-<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">return</span> self.materials</div>
-<div class="line"><span class="lineno">  169</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00183">183</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>    <span class="keyword">def </span>loadMaterialsList(self, fileName):</div>
+<div class="line"><span class="lineno">  184</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  185</span><span class="stringliteral">        @brief Load in the list of downloadable materials from file.</span></div>
+<div class="line"><span class="lineno">  186</span><span class="stringliteral">        @param fileName Name of JSON containing list</span></div>
+<div class="line"><span class="lineno">  187</span><span class="stringliteral">        @return Materials list</span></div>
+<div class="line"><span class="lineno">  188</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  189</span>        <span class="keyword">with</span> open(fileName, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> json_file:</div>
+<div class="line"><span class="lineno">  190</span>            self.materials = json.load(json_file)</div>
+<div class="line"><span class="lineno">  191</span>        self.logger.info(f<span class="stringliteral">&#39;Loaded materials list from: {fileName}&#39;</span>)</div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">return</span> self.materials</div>
+<div class="line"><span class="lineno">  193</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa555470dd390f98c53cb44cb143e7d3d" name="aa555470dd390f98c53cb44cb143e7d3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa555470dd390f98c53cb44cb143e7d3d">&#9670;&#160;</a></span>setDebugging()</h2>
+<a id="abf4d8a4aabfa0535a93b4a2421531f93" name="abf4d8a4aabfa0535a93b4a2421531f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf4d8a4aabfa0535a93b4a2421531f93">&#9670;&#160;</a></span>setDebugging()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -817,7 +888,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>debug</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>&#160;)</td>
+          <td class="paramtype">Optional[bool]</td>          <td class="paramname"><span class="paramname"><em>debug</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -831,18 +902,18 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00063">63</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>    <span class="keyword">def </span>setDebugging(self, debug=True):</div>
-<div class="line"><span class="lineno">   64</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   65</span><span class="stringliteral">        @brief Set the debugging level for the logger.</span></div>
-<div class="line"><span class="lineno">   66</span><span class="stringliteral">        @param debug True to set the logger to debug level, otherwise False.</span></div>
-<div class="line"><span class="lineno">   67</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">   68</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">if</span> debug:</div>
-<div class="line"><span class="lineno">   70</span>            self.logger.setLevel(lg.DEBUG)</div>
-<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   72</span>            self.logger.setLevel(lg.INFO)</div>
-<div class="line"><span class="lineno">   73</span>    </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00073">73</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>    <span class="keyword">def </span>setDebugging(self, debug : Optional[bool]=<span class="keyword">True</span>):</div>
+<div class="line"><span class="lineno">   74</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">   75</span><span class="stringliteral">        @brief Set the debugging level for the logger.</span></div>
+<div class="line"><span class="lineno">   76</span><span class="stringliteral">        @param debug True to set the logger to debug level, otherwise False.</span></div>
+<div class="line"><span class="lineno">   77</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">   78</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> debug:</div>
+<div class="line"><span class="lineno">   80</span>            self.logger.setLevel(lg.DEBUG)</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   82</span>            self.logger.setLevel(lg.INFO)</div>
+<div class="line"><span class="lineno">   83</span>    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -882,24 +953,24 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A tuple of (valid, errors) where valid is True if the document is valid, and errors is a list of errors if the document is invalid. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00273">273</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  273</span>    <span class="keyword">def </span>validateMaterialXDocument(self, doc):</div>
-<div class="line"><span class="lineno">  274</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
-<div class="line"><span class="lineno">  275</span><span class="stringliteral">        @brief Validate the MaterialX document </span></div>
-<div class="line"><span class="lineno">  276</span><span class="stringliteral">        @param doc The MaterialX document to validate</span></div>
-<div class="line"><span class="lineno">  277</span><span class="stringliteral">        @return A tuple of (valid, errors) where valid is True if the document is valid, and errors is a list of errors if the document is invalid.</span></div>
-<div class="line"><span class="lineno">  278</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  279</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
-<div class="line"><span class="lineno">  280</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)        </div>
-<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">return</span> <span class="keyword">False</span>, <span class="stringliteral">&#39;&#39;</span> </div>
-<div class="line"><span class="lineno">  282</span>        </div>
-<div class="line"><span class="lineno">  283</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> doc:</div>
-<div class="line"><span class="lineno">  284</span>            self.logger.warning(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX document is required&#39;</span>)</div>
-<div class="line"><span class="lineno">  285</span>            <span class="keywordflow">return</span> <span class="keyword">False</span>, <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  286</span> </div>
-<div class="line"><span class="lineno">  287</span>        valid, errors = doc.validate()</div>
-<div class="line"><span class="lineno">  288</span>        <span class="keywordflow">return</span> valid, errors</div>
-<div class="line"><span class="lineno">  289</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00295">295</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  295</span>    <span class="keyword">def </span>validateMaterialXDocument(self, doc):</div>
+<div class="line"><span class="lineno">  296</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
+<div class="line"><span class="lineno">  297</span><span class="stringliteral">        @brief Validate the MaterialX document </span></div>
+<div class="line"><span class="lineno">  298</span><span class="stringliteral">        @param doc The MaterialX document to validate</span></div>
+<div class="line"><span class="lineno">  299</span><span class="stringliteral">        @return A tuple of (valid, errors) where valid is True if the document is valid, and errors is a list of errors if the document is invalid.</span></div>
+<div class="line"><span class="lineno">  300</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  301</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
+<div class="line"><span class="lineno">  302</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)        </div>
+<div class="line"><span class="lineno">  303</span>            <span class="keywordflow">return</span> <span class="keyword">False</span>, <span class="stringliteral">&#39;&#39;</span> </div>
+<div class="line"><span class="lineno">  304</span>        </div>
+<div class="line"><span class="lineno">  305</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> doc:</div>
+<div class="line"><span class="lineno">  306</span>            self.logger.warning(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX document is required&#39;</span>)</div>
+<div class="line"><span class="lineno">  307</span>            <span class="keywordflow">return</span> <span class="keyword">False</span>, <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  308</span> </div>
+<div class="line"><span class="lineno">  309</span>        valid, errors = doc.validate()</div>
+<div class="line"><span class="lineno">  310</span>        <span class="keywordflow">return</span> valid, errors</div>
+<div class="line"><span class="lineno">  311</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -931,23 +1002,23 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the file was written successfully, otherwise False </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00256">256</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  256</span>    <span class="keyword">def </span>writeDatabaseToFile(self, filename):</div>
-<div class="line"><span class="lineno">  257</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  258</span><span class="stringliteral">        @brief Write the database file</span></div>
-<div class="line"><span class="lineno">  259</span><span class="stringliteral">        @param filename The filename to write the JSON file to</span></div>
-<div class="line"><span class="lineno">  260</span><span class="stringliteral">        @return True if the file was written successfully, otherwise False</span></div>
-<div class="line"><span class="lineno">  261</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.database:</div>
-<div class="line"><span class="lineno">  263</span>            self.logger.warning(<span class="stringliteral">&#39;No database to write&#39;</span>)</div>
-<div class="line"><span class="lineno">  264</span>            <span class="keywordflow">return</span> <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  265</span> </div>
-<div class="line"><span class="lineno">  266</span>        <span class="keyword">with</span> open(filename, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> json_file:</div>
-<div class="line"><span class="lineno">  267</span>            json.dump(self.database, json_file, indent=4)</div>
-<div class="line"><span class="lineno">  268</span>            <span class="keywordflow">return</span> <span class="keyword">True</span></div>
-<div class="line"><span class="lineno">  269</span>        </div>
-<div class="line"><span class="lineno">  270</span>        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  271</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00278">278</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  278</span>    <span class="keyword">def </span>writeDatabaseToFile(self, filename):</div>
+<div class="line"><span class="lineno">  279</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  280</span><span class="stringliteral">        @brief Write the database file</span></div>
+<div class="line"><span class="lineno">  281</span><span class="stringliteral">        @param filename The filename to write the JSON file to</span></div>
+<div class="line"><span class="lineno">  282</span><span class="stringliteral">        @return True if the file was written successfully, otherwise False</span></div>
+<div class="line"><span class="lineno">  283</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.database:</div>
+<div class="line"><span class="lineno">  285</span>            self.logger.warning(<span class="stringliteral">&#39;No database to write&#39;</span>)</div>
+<div class="line"><span class="lineno">  286</span>            <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>        <span class="keyword">with</span> open(filename, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> json_file:</div>
+<div class="line"><span class="lineno">  289</span>            json.dump(self.database, json_file, indent=4)</div>
+<div class="line"><span class="lineno">  290</span>            <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><span class="lineno">  291</span>        </div>
+<div class="line"><span class="lineno">  292</span>        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  293</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -985,18 +1056,18 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00087">87</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>    <span class="keyword">def </span>writeMaterialList(self, materialList, filename):</div>
-<div class="line"><span class="lineno">   88</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   89</span><span class="stringliteral">        @brief Write the material list in JSON format to a file</span></div>
-<div class="line"><span class="lineno">   90</span><span class="stringliteral">        @param materialList The list of materials to write</span></div>
-<div class="line"><span class="lineno">   91</span><span class="stringliteral">        @param filename The file path to write the list to</span></div>
-<div class="line"><span class="lineno">   92</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">   93</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   94</span>        self.logger.info(f<span class="stringliteral">&#39;Writing material list to file: {filename}&#39;</span>)</div>
-<div class="line"><span class="lineno">   95</span>        <span class="keyword">with</span> open(filename, mode=<span class="stringliteral">&#39;w&#39;</span>, encoding=<span class="stringliteral">&#39;utf-8&#39;</span>) <span class="keyword">as</span> json_file:</div>
-<div class="line"><span class="lineno">   96</span>            json.dump(materialList, json_file, indent=4)</div>
-<div class="line"><span class="lineno">   97</span> </div>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00099">99</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>    <span class="keyword">def </span>writeMaterialList(self, materialList, filename):</div>
+<div class="line"><span class="lineno">  100</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  101</span><span class="stringliteral">        @brief Write the material list in JSON format to a file</span></div>
+<div class="line"><span class="lineno">  102</span><span class="stringliteral">        @param materialList The list of materials to write</span></div>
+<div class="line"><span class="lineno">  103</span><span class="stringliteral">        @param filename The file path to write the list to</span></div>
+<div class="line"><span class="lineno">  104</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  105</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  106</span>        self.logger.info(f<span class="stringliteral">&#39;Writing material list to file: {filename}&#39;</span>)</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keyword">with</span> open(filename, mode=<span class="stringliteral">&#39;w&#39;</span>, encoding=<span class="stringliteral">&#39;utf-8&#39;</span>) <span class="keyword">as</span> json_file:</div>
+<div class="line"><span class="lineno">  108</span>            json.dump(materialList, json_file, indent=4)</div>
+<div class="line"><span class="lineno">  109</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1013,7 +1084,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00033">33</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>Reference to database found assets. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00036">36</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1029,7 +1102,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00236">236</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00258">258</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1040,12 +1113,14 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">materialxMaterials.ambientCGLoader.AmbientCGLoader.csv_materials = response.content.decode(&quot;utf-8&quot;)</td>
+          <td class="memname">materialxMaterials.ambientCGLoader.AmbientCGLoader.csv_materials = None</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00195">195</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>List of materials in CSV format. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00044">44</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1061,7 +1136,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00032">32</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>Database of asset information. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00034">34</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1077,7 +1154,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00028">28</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>logger is the logging object for the class </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00030">30</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1093,7 +1172,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00037">37</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>List of material names. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00042">42</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1109,7 +1190,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00036">36</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>List of materials in JSON format. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00040">40</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1125,7 +1208,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00042">42</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>MaterialX module. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00050">50</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1141,7 +1226,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00043">43</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>MaterialX standard library. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00052">52</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1157,7 +1244,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00044">44</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>Flag to indicate OpenPBR shader support. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00054">54</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>
@@ -1173,7 +1262,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00040">40</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
+<p>URI for full asset information. </p>
+
+<p class="definition">Definition at line <a class="el" href="ambient_c_g_loader_8py_source.html#l00047">47</a> of file <a class="el" href="ambient_c_g_loader_8py_source.html">ambientCGLoader.py</a>.</p>
 
 </div>
 </div>

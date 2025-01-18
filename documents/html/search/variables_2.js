@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['materialnames_0',['materialNames',['../class_js_physically_based_material_loader.html#a928e3076af0dcaf80dd46476c854a574',1,'JsPhysicallyBasedMaterialLoader']]],
-  ['materials_1',['materials',['../class_js_physically_based_material_loader.html#a57aeca3f4ef045e2f8d844495ea9bcf2',1,'JsPhysicallyBasedMaterialLoader']]],
-  ['mx_2',['mx',['../class_js_physically_based_material_loader.html#aaa493b357111b16358c52bdcd99047b6',1,'JsPhysicallyBasedMaterialLoader']]],
-  ['mxmaterialnames_3',['mxMaterialNames',['../class_js_physically_based_material_loader.html#ab5c494882c44f41a973cd826591c0497',1,'JsPhysicallyBasedMaterialLoader']]]
+  ['database_0',['database',['../classmaterialx_materials_1_1ambient_c_g_loader_1_1_ambient_c_g_loader.html#a3025ac89c5a9ebcc4292bbad4ec88c3e',1,'materialxMaterials::ambientCGLoader::AmbientCGLoader']]],
+  ['doc_1',['doc',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a1602d9f79454e1faaa224410ddcd697c',1,'materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.doc'],['../class_js_physically_based_material_loader.html#a19ba3f660663b91ec2be3fe81b45b2b4',1,'JsPhysicallyBasedMaterialLoader::doc']]]
 ];
