@@ -26,11 +26,8 @@ async function testFetch()
     fetchMaterials().catch(error => console.error('Error:', error));
 }
 
- // Import the loader class
-const { JsGPUOpenMaterialLoader } = require('./JsGPUOpenLoader'); 
-
 // Create an loader instance
-const materialLoader = new JsGPUOpenMaterialLoader();
+const materialLoader = require('../JsGPUOpenLoader');
 
 // Get materials
 async function getMaterialInformation(batchSize=50, fileName="gpuOpenMaterials.json") {

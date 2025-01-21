@@ -10,6 +10,10 @@ class JsGPUOpenMaterialLoader {
      * Constructor for the JsGPUOpenMaterialLoader class.
      */
     constructor() {
+        if (JsGPUOpenMaterialLoader.instance) {
+            return JsGPUOpenMaterialLoader.instance;
+        }
+
         this.rootUrl = 'https://api.matlib.gpuopen.com/api';
         this.url = `${this.rootUrl}/materials`;
         this.packageUrl = `${this.rootUrl}/packages`;
@@ -17,6 +21,9 @@ class JsGPUOpenMaterialLoader {
         this.materialNames = null;
 
         this.logger = console;
+
+        // Cache the instance
+        JsGPUOpenMaterialLoader.instance = this;
     }
 
     /** 
@@ -41,8 +48,6 @@ class JsGPUOpenMaterialLoader {
      * @return {Array} - List of material lists
      */
     async getMaterials(batchSize = 50) {
-
-        const fetch = (await import('node-fetch')).default;
 
         /*
          * Get the materials returned from the GPUOpen material database.
@@ -161,15 +166,12 @@ class JsGPUOpenMaterialLoader {
             return [null, null];
         }
 
-        const fetch = (await import('node-fetch')).default;
-
         const url = `${this.packageUrl}/${packageIdValue}/download`;
         const response = await fetch(url);
         const data = await response.arrayBuffer();
         const title = jsonResult['title'];
 
-        console.log(`Downloaded package: ${title} from ${url}`);
-        //console.log(`Package size: ${data.byteLength} bytes`);        
+        console.log(`- Loader: Downloaded package: ${title} from ${url}`);
         return [data, title];
     }
 
@@ -239,4 +241,6 @@ class JsGPUOpenMaterialLoader {
     }
 }
 
-module.exports = { JsGPUOpenMaterialLoader };
+// Export a singleton instance of the class
+module.exports = new JsGPUOpenMaterialLoader();
+
