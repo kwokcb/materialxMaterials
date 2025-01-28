@@ -78,8 +78,7 @@ A command line utility is available <a href="https://github.com/kwokcb/materialx
 A <b>NodeJS / Express</b> application can also be found on the <a href="https://kwokcb.github.io/materialxWeb/index.html" target="_blank">MaterialXWeb</a> site.
 
 It is designed to be a general purpose MaterialX material inspector supporting ambientCg and GPUOpen currently with the intent to add new libraries as they become available.
-<img src="
-https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=100%>
+<img src="https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=100%>
 
 <hr>
 <h4>Loading into Web Editor</h4>
