@@ -15,29 +15,39 @@ def GPUOpenLoaderCmd():
                                      ' package will be extracted.')
     parser.add_argument('--materialNames', type=bool, default=None,
                         help='Return material names. Default is False')
-    #parser.add_argument('--loadMaterials', type=str, default='', 
-    #                    help='Folder to load materials from. All JSON files with post-fix _#.json are loaded. Default is false'
-    #                    ' meaning to download materials')
+    parser.add_argument('--loadMaterials', type=str, default='', 
+                        help='Folder to load materials from. All JSON files with post-fix _#.json are loaded. Default is false'
+                        ' meaning to download materials')
     parser.add_argument('--saveMaterials', type=bool, default=None, 
                         help='Save material lists. Default is None.'
                         ' Has no effect if --loadMaterials is set')
     parser.add_argument('--extractExpression', type=str, default='Oliana Blue Painted Wood', 
                         help='Extract out a package for a materials which match a given expression. Default is a sample material'
-                        ' Has no effect if --loadMaterials is set')
-    parser.add_argument('--extractIndices', type=str, default='0,1,0', 
+                        )
+    parser.add_argument('--extractIndices', type=str, default='', 
                         help='Extract out a package for a materials which match a given material list, material index, and package index.'
-                        ' Default is 0,1,0 which is currently the "Emerald Peaks Wallpaper" material')
+                        ' Default is empty. Format is: <materialList>,<materialIndex>,<materialPackage>')
     parser.add_argument('--output', type=str, default='', 
-                        help='Output folder for data files. Default location is GPUOpenMaterialX.'
-                        ' Has no effect if --loadMaterials is set')
+                        help='Output folder for data files. Default location is GPUOpenMaterialX.')
+    parser.add_argument('--unzip', type=bool, default=None, 
+                        help='Unzip the downloaded package. Default is None.')
     opts = parser.parse_args()
 
     loader = gpuo.GPUOpenMaterialLoader()
+    materials = None
 
-    # TODO: Add support for this
-    #if opts.loadMaterials:
-    #    logger.info(f'> Load materials from folder: {opts.loadMaterials}')  
-    #    return
+    if opts.loadMaterials:
+        filePaths = loader.getMaterialFileNames(opts.loadMaterials)
+        if len(filePaths) == 0:
+            logger.error(f'Error: No files found in folder: {opts.loadMaterials}')
+            sys.exit(1)
+
+        logger.info(f'> Load materials from files: {filePaths}')
+        materials = loader.readMaterialFiles(filePaths)
+    else:
+        # Download materials
+        logger.info(f'> Download materials from GPUOpen')
+        materials = loader.getMaterials()
     
     outputFolder = 'GPUOpenMaterialX'
     if opts.output:
@@ -47,8 +57,6 @@ def GPUOpenLoaderCmd():
         else:
             outputFolder = opts.output
 
-    # Download materials
-    materials = loader.getMaterials()
     materialNames = loader.getMaterialNames()
     materialCount = len(materialNames)
     logger.info(f'Available number of materials: {materialCount}')
@@ -63,10 +71,13 @@ def GPUOpenLoaderCmd():
         logger.info(f'> No search expression given.')
     else:    
         dataItems = loader.downloadPackageByExpression(searchExpr, 0)
+        toMB = 1.0 / (1024.0 * 1024.0)
+        unzipFile = opts.unzip if opts.unzip else False
         for dataItem in dataItems:
             data = dataItem[0]
             title = dataItem[1]
-            loader.writePackageDataToFile(data, outputFolder, title)    
+            logger.info(f'Write package data to file: {title}, Data size: {len(data)*toMB:.2f} MB')
+            loader.writePackageDataToFile(data, outputFolder, title, unzipFile=unzipFile)    
 
     extractIndices = opts.extractIndices
     if len(extractIndices) > 0:

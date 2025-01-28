@@ -146,10 +146,12 @@ class GPUOpenMaterialLoader():
         with index 0 containing the smallest package (smallest resolution referenced textures).
         '''
         if self.materials == None or len(self.materials) == 0:
+            self.logger.info('No material loaded.')
             return [None, None]
 
         json_data = self.materials[listNumber]
         if not json_data:
+            self.logger.info(f'No material for list {listNumber}.')
             return [None, None]
 
         jsonResults = None 
@@ -157,6 +159,7 @@ class GPUOpenMaterialLoader():
         if "results" in json_data:
             jsonResults = json_data["results"]
             if len(jsonResults) <= materialNumber:
+                self.logger.info(f'No material for index {materialNumber}.')
                 return [None, None]
             else:
                 jsonResult = jsonResults[materialNumber]
@@ -169,13 +172,16 @@ class GPUOpenMaterialLoader():
         if "packages" in jsonResult:
             jsonPackages = jsonResult["packages"]
         if not jsonPackages:
+            self.logger.info(f'No packages for material {materialNumber}.')
             return [None, None]
 
         if len(jsonPackages) <= packageId:
+            self.logger.info(f'No package for index {packageId}.')
             return [None, None]
         package_id = jsonPackages[packageId]
 
         if not package_id:
+            self.logger.info(f'No package for index {packageId}.')
             return [None, None]
 
         url = f"{self.package_url}/{package_id}/download"
@@ -216,8 +222,8 @@ class GPUOpenMaterialLoader():
 
         materialsList = []
         listNumber = 0
-        materialNumber = 0                
         for materialList in self.materials:
+            materialNumber = 0                
             for material in materialList['results']:
                 if re.match(materialName, material['title'], re.IGNORECASE):
                     materialsList.append({ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': material['title'] })
@@ -316,6 +322,27 @@ class GPUOpenMaterialLoader():
             results.append(json.dumps(material, indent=4, sort_keys=True))
         return results
 
+    def getMaterialFileNames(self, rootName) -> list:
+        '''
+        Get list of material file names based on root file name.
+        @param rootName: The root name of the files to load. The files are assumed to be named: rootName_#.json
+        '''
+        filePaths = []
+        rootName = os.path.basename(rootName)
+        rootDir = os.path.dirname(rootName)
+        if not rootDir:
+            rootDir = '.'
+        print('RootDir:', rootDir)
+        print('RootName:', rootName)
+        for root, dirs, files in os.walk(rootDir):
+            for file in files:
+                # Check that it ends with a number + ".json". e.g.
+                # "GPUOpenMaterialX_0.json"
+                if file.startswith(rootName) and file.endswith('.json') and file[len(rootName):-5].isdigit():
+                    filePath = os.path.join(root, file)
+                    filePaths.append(filePath)
+        return filePaths
+
     def readMaterialFiles(self, fileNames) -> list:
         '''
         Load the materials from a set of JSON files downloaded from
@@ -325,6 +352,8 @@ class GPUOpenMaterialLoader():
         for fileName in fileNames:
             with open(fileName) as f:
                 data = json.load(f)
+                results = data['results']
+                results_count = len(results)
                 self.materials.append(data)
         return self.materials
 
