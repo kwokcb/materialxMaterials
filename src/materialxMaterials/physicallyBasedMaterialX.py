@@ -138,6 +138,8 @@ class PhysicallyBasedMaterialLoader:
             'ior': 'ior',
             'transmission': 'transmission',
             'transmission_color': 'attenuation_color', # Remap transmission color to attenuation color
+            'thinFilmThickness' : 'iridescence_thickness',
+            'thinFilmIor' : 'iridescence_ior',
         }
 
         self.remapMap = {}
