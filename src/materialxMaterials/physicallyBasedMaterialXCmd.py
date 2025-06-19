@@ -27,16 +27,18 @@ def physicallBasedMaterialXCmd():
 
     # TODO: Add arguments for shading model, and output directory using argparse
     parser = argparse.ArgumentParser(description='Convert Physically Based Materials to MaterialX')
-    parser.add_argument('--shadingModel', type=str, default='', help='Shading models to use for conversion. '
+    parser.add_argument('-m', '--shadingModel', type=str, default='', help='Shading models to use for conversion. '
                         ' If not specified then all will be used. '
                         ' Options: standard_surface, gltf_pbr, open_pbr_surface')
-    parser.add_argument('--outputDir', type=str, default='', 
+    parser.add_argument('-o', '--outputDir', type=str, default='', 
                         help='Output directory for MaterialX files. Default location is PhysicallyBasedMaterialX')
-    parser.add_argument('--writeJSON', type=bool, default=True, 
+    parser.add_argument('-j', '--writeJSON', type=bool, default=True, 
                         help='Write materials JSON file. Default is True')
-    parser.add_argument('--separateFiles', type=bool, default=False, 
+    parser.add_argument('-s', '--separateFiles', type=bool, default=False, 
                         help='Convert individual MaterialX files per material. Default is false')
-    parser.add_argument('--loadFromFile', type=str, default='', help='Load materials a specified file')
+    parser.add_argument('-l', '--loadFromFile', type=str, default='', help='Load materials a specified file')
+    parser.add_argument('-wr', '--writeRemapping', type=bool, default=True, help='Write remapping from PhysicallyBased to MaterialX. Default is False')
+    parser.add_argument('-rr', '--readRemapping', type=str, default='', help='Read remapping from PhysicallyBased to MaterialX. Default is empty')
     opts = parser.parse_args()
 
     outputDir = 'PhysicallyBasedMaterialX'
@@ -65,6 +67,20 @@ def physicallBasedMaterialXCmd():
     # Create loader and get PhysicallyBasedMaterials
     jsonMat = None
     loader = pbmx.PhysicallyBasedMaterialLoader(mx, None)
+
+    readRemapping = opts.readRemapping
+    if readRemapping:
+        if not os.path.exists(readRemapping):
+            logger.info(f'> Error: Remapping file does not exist: {readRemapping}')
+        logger.info(f'> Read remapping file: {readRemapping}')
+        loader.readRemappingFile(readRemapping)
+    else:
+        writeRemapping = opts.writeRemapping
+        if writeRemapping:
+            outputFile = os.path.join(outputDir, 'PhysicallyBasedToMtlxMappings.json')
+            logger.info(f'> Write remapping file: {outputFile}')
+            loader.writeRemappingFile(outputFile)
+
     if opts.loadFromFile:
         if not os.path.exists(opts.loadFromFile):
             logger.info(f'> Error: File does not exist: {opts.loadFromFile}')
@@ -80,7 +96,7 @@ def physicallBasedMaterialXCmd():
         os.makedirs(outputDir, exist_ok=True)
 
         if writeJSON:
-            logger.info(f'> Write: {outputDir}/PhysicallyBasedMaterial.json')
+            logger.info(f'> Write PB material file: {outputDir}/PhysicallyBasedMaterial.json')
             loader.writeJSONToFile(os.path.join(outputDir, 'PhysicallyBasedMaterial.json'))
 
         if not separateFiles:

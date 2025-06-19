@@ -88,6 +88,9 @@ class PhysicallyBasedMaterialLoader:
     def initializeInputRemapping(self): 
         ''' 
         @brief Initialize remapping keys for different shading models.
+        See: https://api.physicallybased.info/operations/get-materials
+        for more information on material properties.
+
         The currently supported shading models are:
         - standard_surface
         - open_pbr_surface
@@ -99,13 +102,14 @@ class PhysicallyBasedMaterialLoader:
             'color': 'base_color',
             'specularColor': 'specular_color',
             'roughness': 'specular_roughness',
-            #'metalness': 'metalness',
+            'metalness': 'metalness',
             'ior': 'specular_IOR',
-            #'transmission': 'transmission',
-            'transmission_color': 'transmission_color',
-            'thinFilmIor' : 'thin_film_IOR',
-            'thinFilmThickness' : 'thin_film_thickness',            
+            'subsurfaceRadius': 'subsurface_radius',
+            'transmission': 'transmission',
+            'transmission_color': 'transmission_color', # 'color' remapping as needed 
             'transmissionDispersion' : 'transmission_dispersion',
+            'thinFilmThickness' : 'thin_film_thickness',            
+            'thinFilmIor' : 'thin_film_IOR',
         }
         # Remap keys for OpenPBR shading model.
         # Q: When to set geometry_thin_walled to true?
@@ -115,12 +119,15 @@ class PhysicallyBasedMaterialLoader:
             'roughness': 'specular_roughness', # 'base_diffuse_roughness',
             'metalness': 'base_metalness',
             'ior': 'specular_ior',
-            'transmission': 'transmission_weight',
-            'transmission_color': 'transmission_color',
             'subsurfaceRadius': 'subsurface_radius',
-            'thinFilmIor' : 'thin_film_ior',
+            'transmission': 'transmission_weight',
+            'transmission_color': 'transmission_color', # 'color' remapping as needed 
+            'transmissionDispersion': 'transmission_dispersion_abbe_number',
+            #'complexIor' TODO : add in array remap 
+            # Complex IOR values, n (refractive index), and k (extinction coefficient), for each color channel, in the following order:
+            #   nR, kR, nG, kG, nB, kB. 
             'thinFilmThickness' : 'thin_film_thickness',
-            'transmissionDispersion' : 'transmission_dispersion_scale',
+            'thinFilmIor' : 'thin_film_ior',
         }
         # Remap keys for Khronos glTF shading model.
         gltf_remapKeys = {
@@ -128,9 +135,9 @@ class PhysicallyBasedMaterialLoader:
             'specularColor': 'specular_color',
             'roughness': 'roughness',
             'metalness': 'metallic',
-            'transmission_color': 'attenuation_color',
-            #'ior': 'ior',
-            #'transmission': 'transmission',
+            'ior': 'ior',
+            'transmission': 'transmission',
+            'transmission_color': 'attenuation_color', # Remap transmission color to attenuation color
         }
 
         self.remapMap = {}
@@ -138,6 +145,34 @@ class PhysicallyBasedMaterialLoader:
         self.remapMap['gltf_pbr'] = gltf_remapKeys; 
         if self.support_openpbr:
             self.remapMap['open_pbr_surface'] = openpbr_remapKeys; 
+
+    def writeRemappingFile(self, filepath):
+        '''
+        @brief Write the remapping keys to a JSON file.
+        @param filename The filename to write the remapping keys to.
+        @return None
+        '''
+        if not self.remapMap:
+            self.logger.warning('No remapping keys to write')
+            return
+                
+        with open(filepath, 'w') as json_file:
+            json.dump(self.remapMap, json_file, indent=4)
+
+    def readRemappingFile(self, filepath):
+        '''
+        @brief Read the remapping keys from a JSON file.
+        @param filename The filename to read the remapping keys from.
+        @return A dictionary of remapping keys.
+        '''
+        if not os.path.exists(filepath):
+            self.logger.error(f'> File does not exist: {filepath}')
+            return {}
+
+        with open(filepath, 'r') as json_file:
+            self.remapMap = json.load(json_file)
+
+        return self.remapMap
 
     def getJSON(self) -> dict:
         ''' Get the JSON object representing the Physically Based Materials '''
@@ -320,13 +355,15 @@ class PhysicallyBasedMaterialLoader:
 
         # Add header comments
         self.addComment(self.doc, 'Physically Based Materials from https://api.physicallybased.info ')
-        self.addComment(self.doc, '  Processsed via API and converted to MaterialX ')  
-        self.addComment(self.doc, '  Target Shading Model: ' + shaderCategory)  
+        self.addComment(self.doc, '  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ ')
+        self.addComment(self.doc, f'  Content processsed via REST API and mapped to MaterialX V{self.mx.getVersionString()} ')
+        self.addComment(self.doc, f'  Target Shading Model: {shaderCategory} ')  
         self.addComment(self.doc, '  Utility Author: Bernard Kwok. kwokcb@gmail.com ')  
 
         # Add properties to the material
         for mat in self.materials:
             matName = mat['name']
+            uiName = matName
 
             # Filter by material name(s)
             if len(materialNames) > 0 and matName not in materialNames:
@@ -339,6 +376,18 @@ class PhysicallyBasedMaterialLoader:
             shaderName = self.doc.createValidChildName(matName + '_SHD_PBM')
             self.addComment(self.doc, ' Generated shader: ' + shaderName + ' ')         
             shaderNode = self.doc.addNode(shaderCategory, shaderName, self.mx.SURFACE_SHADER_TYPE_STRING)
+            shaderNode.setAttribute('uiname', uiName)
+
+            folderString = ''
+            if 'category' in mat:
+                folderString = mat['category'][0]
+            if 'group' in mat:
+                if len(folderString) > 0:
+                    folderString += '/'
+                    folderString += mat['group']
+            if len(folderString) > 0:
+                shaderNode.setAttribute("uifolder", folderString)
+
             docString = mat['description']            
             refString = mat['reference']
             if len(refString) > 0:
@@ -347,6 +396,8 @@ class PhysicallyBasedMaterialLoader:
                 docString += 'Reference: ' + refString[0]
             if len(docString) > 0:
                 shaderNode.setDocString(docString)
+            
+            # TODO: Add in option to add all inputs + add nodedef string
             #shaderNode.addInputsFromNodeDef()
             #shaderNode.setAttribute(self.mx.InterfaceElement.NODE_DEF_ATTRIBUTE, nodedefString)
 
@@ -367,6 +418,7 @@ class PhysicallyBasedMaterialLoader:
             for key, value in mat.items():
                 
                 if (key not in skipKeys):
+                    # Keep track of these for possible transmission color remapping
                     if key == 'metalness':
                         metallness = value
                     if key == 'roughness':
@@ -387,9 +439,10 @@ class PhysicallyBasedMaterialLoader:
                         elif isinstance(value, (int, float)):
                             value = str(value)
                         input.setValueString(value)
-                    #else:
-                    #    self.logger.debug('Skip unsupported key: ' + key)
+                    else:
+                        self.logger.debug('Skip unsupported key: ' + key)
 
+            # Re-route color to mapped transmission_color if needed
             if (transmission != None) and (metallness != None) and (roughness != None) and (color != None):
                 if (metallness == 0) and (roughness == 0):
                     if 'transmission_color' in remapKeys:
