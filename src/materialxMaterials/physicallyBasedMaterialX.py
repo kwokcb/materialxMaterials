@@ -104,11 +104,12 @@ class PhysicallyBasedMaterialLoader:
             'roughness': 'specular_roughness',
             'metalness': 'metalness',
             'ior': 'specular_IOR',
+            'subsurfaceRadius': 'subsurface_radius',
             'transmission': 'transmission',
-            'transmission_color': 'transmission_color',
-            'thinFilmIor' : 'thin_film_IOR',
-            'thinFilmThickness' : 'thin_film_thickness',            
+            'transmission_color': 'transmission_color', # 'color' remapping as needed 
             'transmissionDispersion' : 'transmission_dispersion',
+            'thinFilmThickness' : 'thin_film_thickness',            
+            'thinFilmIor' : 'thin_film_IOR',
         }
         # Remap keys for OpenPBR shading model.
         # Q: When to set geometry_thin_walled to true?
@@ -127,7 +128,6 @@ class PhysicallyBasedMaterialLoader:
             #   nR, kR, nG, kG, nB, kB. 
             'thinFilmThickness' : 'thin_film_thickness',
             'thinFilmIor' : 'thin_film_ior',
-            #'viscosity': ''
         }
         # Remap keys for Khronos glTF shading model.
         gltf_remapKeys = {
@@ -135,9 +135,9 @@ class PhysicallyBasedMaterialLoader:
             'specularColor': 'specular_color',
             'roughness': 'roughness',
             'metalness': 'metallic',
-            'transmission_color': 'attenuation_color',
-            #'ior': 'ior',
-            #'transmission': 'transmission',
+            'ior': 'ior',
+            'transmission': 'transmission',
+            'transmission_color': 'attenuation_color', # Remap transmission color to attenuation color
         }
 
         self.remapMap = {}

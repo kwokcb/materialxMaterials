@@ -160,6 +160,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.33" />
+    <input name="subsurface_radius" type="color3" value="10,5,1" />
   </standard_surface>
   <!-- Generated material: Coffee_SS_MAT_PBM -->
   <surfacematerial name="Coffee_SS_MAT_PBM" type="material">
@@ -357,6 +358,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.1" />
     <input name="specular_IOR" type="float" value="1.3" />
+    <input name="subsurface_radius" type="color3" value="0.476,0.058,0.039" />
   </standard_surface>
   <!-- Generated material: Ketchup_SS_MAT_PBM -->
   <surfacematerial name="Ketchup_SS_MAT_PBM" type="material">
@@ -391,6 +393,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.5" />
+    <input name="subsurface_radius" type="color3" value="0.851,0.557,0.395" />
   </standard_surface>
   <!-- Generated material: Marble_SS_MAT_PBM -->
   <surfacematerial name="Marble_SS_MAT_PBM" type="material">
@@ -414,6 +417,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.348" />
+    <input name="subsurface_radius" type="color3" value="1.842,1.044,0.35" />
   </standard_surface>
   <!-- Generated material: Milk_SS_MAT_PBM -->
   <surfacematerial name="Milk_SS_MAT_PBM" type="material">
@@ -470,6 +474,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.35" />
     <input name="specular_IOR" type="float" value="1.68" />
+    <input name="subsurface_radius" type="color3" value="0.3,0.5,0.3" />
     <input name="thin_film_thickness" type="float" value="420" />
     <input name="thin_film_IOR" type="float" value="2" />
   </standard_surface>
@@ -483,6 +488,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.5" />
+    <input name="subsurface_radius" type="color3" value="3,1,0.25" />
   </standard_surface>
   <!-- Generated material: Petroleum_SS_MAT_PBM -->
   <surfacematerial name="Petroleum_SS_MAT_PBM" type="material">
@@ -662,6 +668,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.4" />
+    <input name="subsurface_radius" type="color3" value="0.482,0.169,0.109" />
   </standard_surface>
   <!-- Generated material: Skin_I_SS_MAT_PBM -->
   <surfacematerial name="Skin_I_SS_MAT_PBM" type="material">
@@ -673,6 +680,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.4" />
+    <input name="subsurface_radius" type="color3" value="0.482,0.169,0.109" />
   </standard_surface>
   <!-- Generated material: Skin_II_SS_MAT_PBM -->
   <surfacematerial name="Skin_II_SS_MAT_PBM" type="material">
@@ -684,6 +692,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.4" />
+    <input name="subsurface_radius" type="color3" value="0.482,0.169,0.109" />
   </standard_surface>
   <!-- Generated material: Skin_III_SS_MAT_PBM -->
   <surfacematerial name="Skin_III_SS_MAT_PBM" type="material">
@@ -695,6 +704,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.4" />
+    <input name="subsurface_radius" type="color3" value="0.367,0.137,0.068" />
   </standard_surface>
   <!-- Generated material: Skin_IV_SS_MAT_PBM -->
   <surfacematerial name="Skin_IV_SS_MAT_PBM" type="material">
@@ -706,6 +716,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.4" />
+    <input name="subsurface_radius" type="color3" value="0.367,0.137,0.068" />
   </standard_surface>
   <!-- Generated material: Skin_V_SS_MAT_PBM -->
   <surfacematerial name="Skin_V_SS_MAT_PBM" type="material">
@@ -717,6 +728,7 @@
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.4" />
+    <input name="subsurface_radius" type="color3" value="0.367,0.137,0.068" />
   </standard_surface>
   <!-- Generated material: Skin_VI_SS_MAT_PBM -->
   <surfacematerial name="Skin_VI_SS_MAT_PBM" type="material">

@@ -77,7 +77,7 @@ def physicallBasedMaterialXCmd():
     else:
         writeRemapping = opts.writeRemapping
         if writeRemapping:
-            outputFile = os.path.join(outputDir, 'PhysicallyBaseToMtlx.json')
+            outputFile = os.path.join(outputDir, 'PhysicallyBasedToMtlxMappings.json')
             logger.info(f'> Write remapping file: {outputFile}')
             loader.writeRemappingFile(outputFile)
 
