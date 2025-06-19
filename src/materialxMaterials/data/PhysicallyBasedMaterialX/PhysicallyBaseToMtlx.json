@@ -1,0 +1,34 @@
+{
+    "standard_surface": {
+        "color": "base_color",
+        "specularColor": "specular_color",
+        "roughness": "specular_roughness",
+        "metalness": "metalness",
+        "ior": "specular_IOR",
+        "transmission": "transmission",
+        "transmission_color": "transmission_color",
+        "thinFilmIor": "thin_film_IOR",
+        "thinFilmThickness": "thin_film_thickness",
+        "transmissionDispersion": "transmission_dispersion"
+    },
+    "gltf_pbr": {
+        "color": "base_color",
+        "specularColor": "specular_color",
+        "roughness": "roughness",
+        "metalness": "metallic",
+        "transmission_color": "attenuation_color"
+    },
+    "open_pbr_surface": {
+        "color": "base_color",
+        "specularColor": "specular_color",
+        "roughness": "specular_roughness",
+        "metalness": "base_metalness",
+        "ior": "specular_ior",
+        "subsurfaceRadius": "subsurface_radius",
+        "transmission": "transmission_weight",
+        "transmission_color": "transmission_color",
+        "transmissionDispersion": "transmission_dispersion_abbe_number",
+        "thinFilmThickness": "thin_film_thickness",
+        "thinFilmIor": "thin_film_ior"
+    }
+}

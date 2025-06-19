@@ -146,6 +146,34 @@ class PhysicallyBasedMaterialLoader:
         if self.support_openpbr:
             self.remapMap['open_pbr_surface'] = openpbr_remapKeys; 
 
+    def writeRemappingFile(self, filepath):
+        '''
+        @brief Write the remapping keys to a JSON file.
+        @param filename The filename to write the remapping keys to.
+        @return None
+        '''
+        if not self.remapMap:
+            self.logger.warning('No remapping keys to write')
+            return
+                
+        with open(filepath, 'w') as json_file:
+            json.dump(self.remapMap, json_file, indent=4)
+
+    def readRemappingFile(self, filepath):
+        '''
+        @brief Read the remapping keys from a JSON file.
+        @param filename The filename to read the remapping keys from.
+        @return A dictionary of remapping keys.
+        '''
+        if not os.path.exists(filepath):
+            self.logger.error(f'> File does not exist: {filepath}')
+            return {}
+
+        with open(filepath, 'r') as json_file:
+            self.remapMap = json.load(json_file)
+
+        return self.remapMap
+
     def getJSON(self) -> dict:
         ''' Get the JSON object representing the Physically Based Materials '''
         return self.materials
