@@ -136,53 +136,93 @@ class JsPhysicallyBasedMaterialLoader {
     }
 
     /**
+     * Set the default remapping keys for different shading models : glTF, OpenPBR, and Autodesk Standard Surface
+     * @returns {void}
+     */
+    setDefaultRemapKeys() 
+    {
+        const standard_surface_remapKeys = {
+            "color": "base_color",
+            "specularColor": "specular_color",
+            "roughness": "specular_roughness",
+            "metalness": "metalness",
+            "ior": "specular_IOR",
+            "subsurfaceRadius": "subsurface_radius",
+            "transmission": "transmission",
+            "transmission_color": "transmission_color",
+            "transmissionDispersion": "transmission_dispersion",
+            "thinFilmThickness": "thin_film_thickness",
+            "thinFilmIor": "thin_film_IOR"
+        };
+
+        const openpbr_remapKeys = {
+            "color": "base_color",
+            "specularColor": "specular_color",
+            "roughness": "specular_roughness",
+            "metalness": "base_metalness",
+            "ior": "specular_ior",
+            "subsurfaceRadius": "subsurface_radius",
+            "transmission": "transmission_weight",
+            "transmission_color": "transmission_color",
+            "transmissionDispersion": "transmission_dispersion_abbe_number",
+            "thinFilmThickness": "thin_film_thickness",
+            "thinFilmIor": "thin_film_ior"
+        };
+
+        const gltf_remapKeys = {
+            "color": "base_color",
+            "specularColor": "specular_color",
+            "roughness": "roughness",
+            "metalness": "metallic",
+            "ior": "ior",
+            "transmission": "transmission",
+            "transmission_color": "attenuation_color",
+            "thinFilmThickness": "iridescence_thickness",
+            "thinFilmIor": "iridescence_ior"
+        };
+
+        this.remapMap = {
+            'standard_surface': standard_surface_remapKeys,
+            'gltf_pbr': gltf_remapKeys,
+            'open_pbr_surface': openpbr_remapKeys
+        };
+    }
+
+
+    /**
      * Initialize the input remapping for different shading models
      * @returns {void}
      */
     initializeInputRemapping() 
     {
-        // Remap keys for Autodesk Standard Surface shader. How to verify this?
-        const standard_surface_remapKeys = {
-            'color': 'base_color',
-            'specularColor': 'specular_color',
-            'roughness': 'specular_roughness',
-            //'metalness': 'metalness',
-            'ior': 'specular_IOR',
-            //'transmission': 'transmission',
-            'transmission_color': 'transmission_color',
-            'thinFilmIor': 'thin_film_IOR',
-            'thinFilmThickness': 'thin_film_thickness',
-            'transmissionDispersion': 'transmission_dispersion',
-        }
-        // Remap keys for OpenPBR shading model.
-        const openpbr_remapKeys = {
-            'color': 'base_color',
-            'specularColor': 'specular_color',
-            'roughness': 'specular_roughness', // 'base_diffuse_roughness',
-            'metalness': 'base_metalness',
-            'ior': 'specular_ior',
-            'transmission': 'transmission_weight',
-            'transmission_color': 'transmission_color',
-            'subsurfaceRadius': 'subsurface_radius',
-            'thinFilmIor': 'thin_film_ior',
-            'thinFilmThickness': 'thin_film_thickness',
-            'transmissionDispersion': 'transmission_dispersion_scale',
-        }
-        // Remap keys for Khronos glTF shading model.
-        const gltf_remapKeys = {
-            'color': 'base_color',
-            'specularColor': 'specular_color',
-            'roughness': 'roughness',
-            'metalness': 'metallic',
-            'transmission_color': 'attenuation_color',
-            //'ior': 'ior',
-            //'transmission': 'transmission',
-        }
+        console.log('Initializing input remapping for Physically Based Materials...');
+        this.remapMap = null;
 
-        this.remapMap = {}
-        this.remapMap['standard_surface'] = standard_surface_remapKeys;
-        this.remapMap['gltf_pbr'] = gltf_remapKeys;
-        this.remapMap['open_pbr_surface'] = openpbr_remapKeys;
+        const remapKeyURL = 'https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/src/materialxMaterials/data/PhysicallyBasedMaterialX/PhysicallyBasedToMtlxMappings.json';
+
+        fetch(remapKeyURL)
+            .then((response) => 
+            {
+                if (!response.ok) {
+                    console.warn(`HTTP error! Status: ${response.status}`);
+                    return null;
+        }
+                return response.json();
+            })
+            .then((data) => {
+                if (data) {
+                    this.remapMap = data;
+                    console.log('- Remap keys loaded from repo:', this.remapMap);
+                } else {
+                    console.warn('- No remap keys from repo. Using default remap keys.');
+                    this.setDefaultRemapKeys();
+        }
+            })
+            .catch((error) => {
+                console.log('- Error loading remap keys:', error);
+                this.setDefaultRemapKeys();
+                console.warn('- Using default remap keys.', this.remapMap);
+            });
     }
 
     /**
@@ -309,9 +349,10 @@ class JsPhysicallyBasedMaterialLoader {
      * @param materialNames - List of material names to convert. If empty all materials are converted
      * @param remapKeys - Remap keys to MaterialX shader inputs. If not specified the default remap keys are used if any.
      * @param shaderPreFix - Prefix for the shader name. Default is empty
+     * @param references - List of references found. (returned). Each reference is a object: { name: string, reference: string } 
      * @returns True if the conversion is successful. False otherwise
      */
-    convertToMaterialX(shaderCategory, addAllInputs = false, materialNames = [], remapKeys = {}, shaderPreFix = '') 
+    convertToMaterialX(shaderCategory, references, addAllInputs = false, materialNames = [], remapKeys = {}, shaderPreFix = '') 
     {
         if (!this.mx) {
             console.error('MaterialX module is not loaded');
@@ -335,11 +376,13 @@ class JsPhysicallyBasedMaterialLoader {
         //refNode.addInputsFromNodeDef() -- This is missing from the JS API.
         this.doc = this.mx.createDocument();
 
-        // Add header comments
-        this.addComment(this.doc, 'Physically Based Materials from https://api.physicallybased.info ');
-        this.addComment(this.doc, '  Processed via API and converted to MaterialX ');
-        this.addComment(this.doc, '  Target Shading Model: ' + shaderCategory);
-        this.addComment(this.doc, '  Utility Author: Bernard Kwok. kwokcb@gmail.com ');
+        // Add document level accreditation
+        let docString = 'Physically Based Materials from https://api.physicallybased.info.\n'
+        docString += '  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ \n'
+        docString += `  Content processsed via REST API and mapped to MaterialX V${this.mx.getVersionString()} \n`
+        docString +=  `  Target Shading Model: ${shaderCategory} \n`
+        docString +=  '  Utility Author: Bernard Kwok. kwokcb@gmail.com '  
+        this.doc.setDocString(docString);
 
         // Add properties to the material
         for (let i = 0; i < this.materials.length; i++) {
@@ -358,24 +401,48 @@ class JsPhysicallyBasedMaterialLoader {
                 matName = shaderPreFix + '_' + matName;
             }
 
-            const shaderName = this.doc.createValidChildName('SPB_' + matName);
-            this.addComment(this.doc, ' Generated shader: ' + shaderName + ' ');
+            const shaderName = this.doc.createValidChildName('SPB_' + matName + '_' + shaderCategory);
+            this.addComment(this.doc, ' Generated shader: ' + matName + ' ');
             const shaderNode = this.doc.addNode(shaderCategory, shaderName, this.mx.SURFACE_SHADER_TYPE_STRING);
-            let docString = mat['description'];
+
+            const category = mat['category'];
+            const group = mat['group'];
+            let uifolder = '';
+            if (category && category.length > 0) {
+                uifolder = category[0];
+            }
+            if (group && group.length > 0) {
+                if (uifolder.length > 0) {
+                    uifolder += '/';
+                }
+                uifolder += group[0];
+            }
+            if (uifolder.length > 0) {
+                shaderNode.setAttribute('uifolder', uifolder);
+            }
+
+            let docString = ''
+            if (mat['description'].length > 0) {
+                docString += 'Description: ' + mat['description'];
+            }
             const refString = mat['reference'];
             if (refString.length > 0) {
                 if (docString.length > 0) {
                     docString += '. ';
                 }
                 docString += 'Reference: ' + refString[0];
+
+                let referenceItem = { name: matName, reference: refString[0] };
+                console.log('Add Reference:', referenceItem);
+                references.push(referenceItem);
             }
             if (docString.length > 0) {
                 shaderNode.setDocString(docString);
             }
 
             // Create a new material
-            const materialName = this.doc.createValidChildName('MPB_' + matName);
-            this.addComment(this.doc, ' Generated material: ' + materialName + ' ');
+            const materialName = this.doc.createValidChildName('MPB_' + matName + '_' + shaderCategory);
+            this.addComment(this.doc, ' Generated material: ' + matName + ' ');
             const materialNode = this.doc.addNode(this.mx.SURFACE_MATERIAL_NODE_STRING, materialName, this.mx.MATERIAL_TYPE_STRING);
             const shaderInput = materialNode.addInput(this.mx.SURFACE_SHADER_TYPE_STRING, this.mx.SURFACE_SHADER_TYPE_STRING);
             shaderInput.setAttribute(MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName());
@@ -449,7 +516,7 @@ class JsPhysicallyBasedMaterialLoader {
                         let input = shaderNode.addInput(inputName);
                         if (input) {
                             let value = transmission_color.join(',');
-                            console.log(`Add "${inputName}": "${value}"`);
+                            //console.log(`Add "${inputName}": "${value}"`);
                             input.setValueString(value, 'color3');
                         }
                     }

@@ -48,24 +48,21 @@
   <!-- Section Information -->
   <section class="py-0 px-0 g-0">
     <div class="container-fluid p-4">
-      <h2 class="bg-gradient rounded-2 p-0"> <img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=32px>MaterialX Materials</h2>
-<div class="container p-2 rounded-4 border border-secondary border-rounded">
-<h3>Introduction</h3>
-<p>Welcome to MaterialX Materials.</p>
-<p>This site hosts a set of libraries and command line utilities to query remote databases for MaterialX materials.</p>
-<h4> > Visit the <b><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></b>
-</h4>
-<p>
-Related utilities and libraries can be found at the:
-<div class="btn btn-outline-secondary">
-<a href="https://kwokcb.github.io/MaterialXLab" target="_blank">
-<img src="https://kwokcb.github.io/MaterialXLab/documents/icons/teapot_logo.svg"
-width=32px>
-MaterialXLab home page</a>
-</a>
-</div>
-</p>
-<p>The current utilities support:</p>
+      <h2 class="bg-gradient rounded-2 p-0"> <img src="https://kwokcb.github.io/materialxMaterials/documents/icons/logo_large_blue_teapot_no_text.png" width=32px>MaterialX Materials
+</h2>
+<div class="container p-4 rounded-4 border border-secondary border-rounded">
+<h4>Introduction</h4>
+<p>Welcome to <code>MaterialX Materials</code>.</p>
+<p>This site hosts a set of libraries and utilities to query remote databases for materials which can<br>
+either be mapped to MaterialX materials or are natively stored in that format.</p>
+<p><strong>Last Updated</strong>: June, 2025</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a></li>
+<li><a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/4125d04c73fc2b1755f5b6054b25b6d1bdabcf6b/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a>.</li>
+<li>Related utilities and libraries can be found at: <div class="btn btn-outline-secondary"><a href="https://kwokcb.github.io/MaterialXLab" target="_blank"><img src="https://kwokcb.github.io/MaterialXLab/documents/icons/teapot_logo.svg" width=32px> MaterialXLab</a></li>
+</ul>
+<p><strong>Utilities</strong></p>
 <div style="display: flex; align-items: center;">
 <img src="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg" width="64px" style="margin-right: 5px;">
 <a href="https://physicallybased.info/">PhysicallyBased database</a> Material descriptions can be downloaded with additional utilities to create materials using either: Autodesk Standard Surface, OpenPBR, or glTF PBR shading model shaders.
@@ -80,8 +77,10 @@ MaterialXLab home page</a>
 <img src="https://acg-media.struffelproductions.com/file/ambientCG-Web/media/thumbnail/2048-JPG-242424/PavingStones142.jpg" width="64px" style="margin-right: 5px;">
 <a href="https://ambientcg.com/list?type=material&sort=popular">ambientCG database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database.
 </div>
-<p>Each currently has <code>Python</code> implementations.</p>
 </p>
+Each currently has <code>Python</code> or <code>Javascript</code> implementations.
+</div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
+<h4>Usage Examples</h4>
 <iframe
   src="https://www.youtube.com/embed/4KiPW9IUR6U?rel=0&vq=hd1080"
   title="Using Material Libraries" width="100%"
@@ -89,29 +88,28 @@ MaterialXLab home page</a>
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen>
 </iframe>
-<h3>Usage Examples</h3>
-<h4>PhysicallyBased</h4>
-An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page:
-<br>
-<img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/physicallyBased_material_fetch.png" width=100%/>
+<p>
+<h5>1. PhysicallyBased</h5>
+<p>
+<p>An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page</a> for extracting <code>PhysicallyBased</code> uses a Javascript implementation found <a href="https://github.com/kwokcb/materialxMaterials/blob/main/javascript/JsMaterialXPhysicallyBased.js">here</p>
+<img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/physicallyBased_material_fetch.png" width=50%/>
 </a>
-<p>for extracting <code>PhysicallyBased</code> uses a Javascript implementation found <a href="https://github.com/kwokcb/materialxMaterials/blob/main/javascript/JsMaterialXPhysicallyBased.js">here</a></p>
 </p>
 <p>
 <hr>
-<h4>AMD GPUOpen</h4>
+<h5>2. AMD GPUOpen</h5>
 A command line utility is available <a href="https://github.com/kwokcb/materialxMaterials/tree/main/javascript/JsGPUOpenLoaderPackage">here</a>. This uses <code>Node.js</code> to allow access to fetch materials from the <code>GPU Open</code> site(which is not available via a web page).
 <p>
 <p><a href="https://github.com/kwokcb/materialxWeb/blob/main/flask/gpuopen/README.md">A <b>Flask</b> application</a> is also available which uses the Python package with a Web based front here.
-<img src="https://raw.githubusercontent.com/kwokcb/materialxWeb/refs/heads/main/flask/gpuopen/images/extract_material_2.png" width=100%>
+<img src="https://raw.githubusercontent.com/kwokcb/materialxWeb/refs/heads/main/flask/gpuopen/images/extract_material_2.png" width=50%>
 </p>
 <hr>
-<h4>ambientCg</h4>
-A <b>NodeJS / Express</b> application can also be found on the <a href="https://kwokcb.github.io/materialxWeb/index.html" target="_blank">MaterialXWeb</a> site.
-<p>It is designed to be a general purpose MaterialX material inspector supporting ambientCg and GPUOpen currently with the intent to add new libraries as they become available.<br>
-<img src="https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=100%></p>
-<hr>
-<h4>Loading into Web Editor</h4>
+<h5>3. ambientCg</h5>
+<p>A <b>NodeJS / Express</b> application can also be found on the <a href="https://kwokcb.github.io/materialxWeb/index.html" target="_blank">MaterialXWeb</a> site.</p>
+<p>This is designed to be a general purpose MaterialX <em>material inspector</em> supporting <code>ambientCg</code> and <code>GPUOpen</code> currently with the intent to add new libraries as they become available.</p>
+<img src="https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=50%>
+</div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
+<h5>Loading into Web Editor</h5>
 <p>
 Below are screenshots of materials fetched from from <code>PhysicallyBased</code> and <code>GPU Open</code> and <code>ambientCg></code> (left to right images respectively). Note that the material zip from <code>GPU Open</code> and <code>ambientCg</code> is directly read into the editor via it's zip loading option.
 <table>
@@ -123,7 +121,8 @@ Below are screenshots of materials fetched from from <code>PhysicallyBased</code
 </table>
 </p>
 <p></p>
-<h3>Library Dependencies</h3>
+</div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
+<h4>Library Dependencies</h4>
 <p>The Python utilities require:</p>
 <ol>
 <li>The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation</li>
@@ -135,7 +134,7 @@ Below are screenshots of materials fetched from from <code>PhysicallyBased</code
 <li><code>node-fetch</code> if fetch is not available in the version of Node.js used.</li>
 <li><code>yargs</code> for the command line utility</li>
 </ol>
-<h3>Package Building</h3>
+<h4>Package Building</h4>
 <p>The <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/4125d04c73fc2b1755f5b6054b25b6d1bdabcf6b/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a> can be cloned.</p>
 <p>The Python package can be built using:</p>
 <pre class="hljs"><code><div>pip install .
@@ -150,8 +149,8 @@ Below are screenshots of materials fetched from from <code>PhysicallyBased</code
 <pre class="hljs"><code><div>npm install # Install dependent packages
 npm run build # Setup runtime area
 </div></code></pre>
-<h3>Usage</h3>
-<h4>Python Commands</h4>
+<h4>Usage</h4>
+<h5>Python Commands</h5>
 <ul>
 <li>
 <p>Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
@@ -178,7 +177,7 @@ package where the images are 2K PNG files:</p>
 </div></code></pre>
 </li>
 </ul>
-<h4>GPU Open Node.js Utility</h4>
+<h5>GPU Open Node.js Utility</h5>
 <p>The utility can be run from the <code>javascript\JsGPUOpenLoaderPackage</code> folder as follows:</p>
 <pre class="hljs"><code><div>npm start -- [&lt;arguments&gt;]
 </div></code></pre>
@@ -189,11 +188,11 @@ package where the images are 2K PNG files:</p>
 <pre class="hljs"><code><div>node gpuOpenFetch.js -n &quot;Moss Green Solid Granite&quot;
 npm start -- -n &quot;Moss Green Solid Granite&quot;
 </div></code></pre>
-<h3>Library</h3>
+<h4>Library</h4>
 <p>A <code>Jupyter</code> notebook demonstrates the direct usage of the Python library. The output of the notebook can be found <a href="https://kwokcb.github.io/materialxMaterials/examples/materialxMaterials_tutorial_out_iframe.html">here</a>. The notebook can found in the Github repository under the <code>examples</code> folder.</p>
-<h3>Results</h3>
+<h4>Results</h4>
 <p>The following are some samples which have been rendered using the <code>MaterialXView</code> utility which is part of the MaterialX binary distribution.</p>
-<h4>Examples</h4>
+<h5>Examples</h5>
 Details about some examples can be found in the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html">Examples pages</a>
 <table>
 <tr >
@@ -257,7 +256,8 @@ Wood Floor (38)
 </table>
 <sub>The rows of materials are from `GPUOpen` `PhysicallyBased`, and `ambientCG` from top to bottom respectively.</sub>
 <p></p>
-<h3>API Reference</h3>
+</div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
+<h4>API Reference</h4>
 <p>The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a></p>
 </div>
 
