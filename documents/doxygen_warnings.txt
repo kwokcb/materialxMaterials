@@ -1,63 +1,6 @@
 warning: Specified markdown mainpage 'README.md' does not exist
-D:/Work/materialx/materialxMaterials/javascript/JsAmbientCGLoader.js:7: warning: Compound AmbientCGLoader is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialXCmd.py:24: warning: Member physicallBasedMaterialXCmd() (function) of namespace materialxMaterials.physicallyBasedMaterialXCmd is not documented.
-<addComment>:1: warning: argument 'Object' of command @param is not found in the argument list of AmbientCGLoader::addComment(doc, commentString)
-<addComment>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::addComment(doc, commentString)
-<addComment>:1: warning: The following parameters of AmbientCGLoader::addComment(doc, commentString) are not documented:
-  parameter 'doc'
-  parameter 'commentString'
-<buildDownloadAttribute>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::buildDownloadAttribute(imageFormat='PNG', imageResolution='1')
-<buildDownloadAttribute>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::buildDownloadAttribute(imageFormat='PNG', imageResolution='1')
-<buildDownloadAttribute>:1: warning: The following parameters of AmbientCGLoader::buildDownloadAttribute(imageFormat='PNG', imageResolution='1') are not documented:
-  parameter 'imageFormat'
-  parameter 'imageResolution'
-D:/Work/materialx/materialxMaterials/javascript/JsAmbientCGLoader.js:10: warning: argument 'Object' of command @param is not found in the argument list of AmbientCGLoader::constructor(mxModule, mxStdlib=null)
-D:/Work/materialx/materialxMaterials/javascript/JsAmbientCGLoader.js:10: warning: argument 'Object' of command @param is not found in the argument list of AmbientCGLoader::constructor(mxModule, mxStdlib=null)
-D:/Work/materialx/materialxMaterials/javascript/JsAmbientCGLoader.js:10: warning: The following parameters of AmbientCGLoader::constructor(mxModule, mxStdlib=null) are not documented:
-  parameter 'mxModule'
-  parameter 'mxStdlib'
-<downloadMaterialAsset>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::downloadMaterialAsset(assetId, imageFormat='PNG', imageResolution='1', downloadAttributeKey='downloadAttribute', downloadLinkKey='downloadLink')
-<downloadMaterialAsset>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::downloadMaterialAsset(assetId, imageFormat='PNG', imageResolution='1', downloadAttributeKey='downloadAttribute', downloadLinkKey='downloadLink')
-<downloadMaterialAsset>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::downloadMaterialAsset(assetId, imageFormat='PNG', imageResolution='1', downloadAttributeKey='downloadAttribute', downloadLinkKey='downloadLink')
-<downloadMaterialAsset>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::downloadMaterialAsset(assetId, imageFormat='PNG', imageResolution='1', downloadAttributeKey='downloadAttribute', downloadLinkKey='downloadLink')
-<downloadMaterialAsset>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::downloadMaterialAsset(assetId, imageFormat='PNG', imageResolution='1', downloadAttributeKey='downloadAttribute', downloadLinkKey='downloadLink')
-<downloadMaterialAsset>:1: warning: The following parameters of AmbientCGLoader::downloadMaterialAsset(assetId, imageFormat='PNG', imageResolution='1', downloadAttributeKey='downloadAttribute', downloadLinkKey='downloadLink') are not documented:
-  parameter 'assetId'
-  parameter 'imageFormat'
-  parameter 'imageResolution'
-  parameter 'downloadAttributeKey'
-  parameter 'downloadLinkKey'
-<findMaterial>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::findMaterial(assetId, key='assetId')
-<findMaterial>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::findMaterial(assetId, key='assetId')
-<findMaterial>:1: warning: The following parameters of AmbientCGLoader::findMaterial(assetId, key='assetId') are not documented:
-  parameter 'assetId'
-  parameter 'key'
-<getMaterialNames>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::getMaterialNames(key='assetId')
-<getMaterialNames>:1: warning: The following parameter of AmbientCGLoader::getMaterialNames(key='assetId') is not documented:
-  parameter 'key'
-<getMaterialXString>:1: warning: argument 'Object' of command @param is not found in the argument list of AmbientCGLoader::getMaterialXString(doc)
-<getMaterialXString>:1: warning: The following parameter of AmbientCGLoader::getMaterialXString(doc) is not documented:
-  parameter 'doc'
-<loadMaterialsList>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::loadMaterialsList(fileName)
-<loadMaterialsList>:1: warning: The following parameter of AmbientCGLoader::loadMaterialsList(fileName) is not documented:
-  parameter 'fileName'
-<setDebugging>:1: warning: argument 'boolean' of command @param is not found in the argument list of AmbientCGLoader::setDebugging(debug=true)
-<setDebugging>:1: warning: The following parameter of AmbientCGLoader::setDebugging(debug=true) is not documented:
-  parameter 'debug'
-<validateMaterialXDocument>:1: warning: argument 'Object' of command @param is not found in the argument list of AmbientCGLoader::validateMaterialXDocument(doc)
-<validateMaterialXDocument>:1: warning: The following parameter of AmbientCGLoader::validateMaterialXDocument(doc) is not documented:
-  parameter 'doc'
-<writeDatabaseToFile>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::writeDatabaseToFile(filename)
-<writeDatabaseToFile>:1: warning: The following parameter of AmbientCGLoader::writeDatabaseToFile(filename) is not documented:
-  parameter 'filename'
-<writeDownloadedMaterialToFile>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::writeDownloadedMaterialToFile(path='')
-<writeDownloadedMaterialToFile>:1: warning: The following parameter of AmbientCGLoader::writeDownloadedMaterialToFile(path='') is not documented:
-  parameter 'path'
-<writeMaterialList>:1: warning: argument 'Array' of command @param is not found in the argument list of AmbientCGLoader::writeMaterialList(materialList, filename)
-<writeMaterialList>:1: warning: argument 'string' of command @param is not found in the argument list of AmbientCGLoader::writeMaterialList(materialList, filename)
-<writeMaterialList>:1: warning: The following parameters of AmbientCGLoader::writeMaterialList(materialList, filename) are not documented:
-  parameter 'materialList'
-  parameter 'filename'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:10: warning: Member main() (function) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
 D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:122: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
 D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:122: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
 D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:122: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
@@ -81,9 +24,21 @@ D:/Work/materialx/materialxMaterials/src/materialxMaterials/ambientCGLoader.py:3
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:220: warning: Member materials (variable) of class materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:373: warning: Member materials (variable) of class materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:82: warning: Member remapMap (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:223: warning: Member materials (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:297: warning: Member mx (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:305: warning: Member materials (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:254: warning: Member _getMethodName(self) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/README.md:52: warning: Unsupported xml/html tag <iframe> found
-D:/Work/materialx/materialxMaterials/README.md:53: warning: Unsupported xml/html tag </iframe> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:260: warning: Member materials (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:334: warning: Member mx (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:342: warning: Member materials (variable) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:291: warning: Member _getMethodName(self) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:167: warning: argument 'filename' of command @param is not found in the argument list of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader::readRemappingFile(self, filepath)
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:167: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.readRemappingFile(self, filepath) is not documented:
+  parameter 'filepath'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:154: warning: argument 'filename' of command @param is not found in the argument list of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader::writeRemappingFile(self, filepath)
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:154: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.writeRemappingFile(self, filepath) is not documented:
+  parameter 'filepath'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:18: warning: Member BASE_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:19: warning: Member ASSET_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:20: warning: Member INFO_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:21: warning: Member FILES_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:22: warning: Member HEADERS (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/README.md:58: warning: Unsupported xml/html tag <iframe> found
+D:/Work/materialx/materialxMaterials/README.md:59: warning: Unsupported xml/html tag </iframe> found
+D:/Work/materialx/materialxMaterials/README.md:287: warning: end of comment block while expecting command </div>

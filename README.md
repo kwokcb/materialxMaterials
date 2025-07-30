@@ -37,8 +37,14 @@ either be mapped to MaterialX materials or are natively stored in that format.
 <img src="https://acg-media.struffelproductions.com/file/ambientCG-Web/media/thumbnail/2048-JPG-242424/PavingStones142.jpg" width="64px" style="margin-right: 5px;">
 <a href="https://ambientcg.com/list?type=material&sort=popular">ambientCG database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database.
 </div>
+<br>
+<div style="display: flex; align-items: center;">
+<img src="https://polyhaven.com/Logo%20256.png" width="64px" style="margin-right: 5px;">
+<a href="https://polyhaven.com/">PolyHaven Library</a> MaterialX assets can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database. (More functionality is in progress)
+</div>
+
 </p>
-Each currently has <code>Python</code> or <code>Javascript</code> implementations.
+Each currently has <code>Python</code> or <code>Javascript</code> implementations, except for <em>Polyhaven</em> which only currently has <code>Python</code> support. 
 
 </div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
 
@@ -82,6 +88,14 @@ This is designed to be a general purpose MaterialX *material inspector* supporti
 <img src="https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=50%>
 
 </div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
+
+<hr>
+<h5>4. PolyHaven</h5>
+
+A Python library and command `polyHavenLoader` and `polyHavenLoaderCmd` are currently available which can 
+produce a filtered list of assets (textures) which have 
+MaterialX representations. This list cna be used to download
+specific assets and save to zip format. 
 
 <h5>Loading into Web Editor</h5>
 

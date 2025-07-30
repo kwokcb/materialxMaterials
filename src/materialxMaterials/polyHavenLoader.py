@@ -1,11 +1,20 @@
+'''
+@file : polyHavenLoader.py
+@brief: A module to fetch MaterialX assets from PolyHaven API and download them.
+'''
 import requests
-#import json
+import json
 from pathlib import Path
-import argparse
 import zipfile
 
 class PolyHavenLoader:
+    '''
+    A class to fetch MaterialX assets from PolyHaven API and download them.    
+    '''
     def __init__(self):
+        '''
+        Initialize the PolyHavenLoader with API endpoints and headers.
+        '''
         self.BASE_API = "https://api.polyhaven.com"
         self.ASSET_API = "https://api.polyhaven.com/assets"
         self.INFO_API = "https://api.polyhaven.com/info"
@@ -15,6 +24,11 @@ class PolyHavenLoader:
         }
 
     def fetch_materialx_assets(self, resolution="1k"):
+        '''
+        Fetch MaterialX assets from PolyHaven API and filter them by resolution.
+        @param resolution: The resolution of the MaterialX assets to fetch (e.g. "1k", "2k", "4k", "8k").
+        @return: A dictionary of MaterialX assets with their URLs and texture files.
+        '''
         parameters = {
             "type": "textures"
         }
@@ -87,7 +101,13 @@ class PolyHavenLoader:
         return materialx_assets
 
     def download_asset(self, asset_list):
-        # e.g. asset_list = {'polystyrene': {'url': 'https://.../polystyrene.mtlx', 'texture_files': {...}}}
+        '''
+        Download MaterialX asset and its textures from PolyHaven.
+        e.g. asset_list = {'polystyrene': {'url': 'https://.../polystyrene.mtlx', 'texture_files': {...}}}
+        
+        @param asset_list: A dictionary of MaterialX assets with their URLs and texture files.
+        @return: The ID of the downloaded asset, the MaterialX string, and a list of texture binaries.
+        '''
         for id, asset in asset_list.items():
             url = asset.get("url")
             if not url:
@@ -116,57 +136,21 @@ class PolyHavenLoader:
             return id, mtlx_string, texture_binaries
 
     def save_materialx_with_textures(self, id, mtlx_string, texture_binaries, data_folder):
-            # Create a zip file with MaterialX and textures
-            filename = f"{id}_materialx.zip"
-            filename = Path(data_folder) / filename
-            with zipfile.ZipFile(filename, "w") as zipf:
-                # Write MaterialX file
-                zipf.writestr(f"{id}.mtlx", mtlx_string)
-                # Write texture files
-                for path, content in texture_binaries:
-                    zipf.writestr(path, content)
-            print(f"Saved zip: {filename}")
+        ''''
+        Save MaterialX string and texture binaries to a zip file.'
+        @param id: The ID of the MaterialX asset.
+        @param mtlx_string: The MaterialX string content.
+        @param texture_binaries: A list of tuples containing texture file paths and their binary content.
+        @param data_folder: The folder to save the zip file.
+        '''
+        # Create a zip file with MaterialX and textures
+        filename = f"{id}_materialx.zip"
+        filename = Path(data_folder) / filename
+        with zipfile.ZipFile(filename, "w") as zipf:
+            # Write MaterialX file
+            zipf.writestr(f"{id}.mtlx", mtlx_string)
+            # Write texture files
+            for path, content in texture_binaries:
+                zipf.writestr(path, content)
+        print(f"Saved zip: {filename}")
 
-def main():
-    parser = argparse.ArgumentParser(description="Fetch MaterialX assets from PolyHaven")
-    parser.add_argument("-id", "--download_id", type=str, default="polystyrene", help="Filter ID to fetch MaterialX assets (e.g. 'polystyrene')")
-    parser.add_argument("-res", "--download_resolution", type=str, default="1k", help="Resolution of the MaterialX assets to download (e.g. '1k', '2k', '4k', '8k') ")
-    parser.add_argument("-f", "--fetch", type=str, default="polyhaven_materialx_assets.json", help="Fetch and save the MaterialX assets to a file")
-    parser.add_argument("-l", "--load", type=str, default="polyhaven_materialx_assets.json", help="Load the MaterialX assets")
-    parser.add_argument("-df", "--data_folder", type=str, default="data", help="Data folder to save / load MaterialX assets")
-
-    args = parser.parse_args()
-    fetch_location = args.fetch
-    load_location = args.load
-    data_folder = args.data_folder
-    if not fetch_location and not load_location:
-        print("Please specify --fetch or --load to perform an action.")
-        return
-    
-    loader = PolyHavenLoader()
-
-    if load_location:
-        load_location = Path(data_folder) / load_location
-        with open(load_location, "r") as f:
-            print(f"Loaded MaterialX assets from {load_location}")
-            materialx_assets = json.load(f)
-    elif fetch_location:
-        fetch_location = Path(data_folder) / fetch_location
-        print(f"Fetching MaterialX assets to {fetch_location}...")
-        materialx_assets = loader.fetch_materialx_assets("polystyrene")
-        with open(fetch_location, "w") as f:
-            json.dump(materialx_assets, f, indent=4)
-        print(f"FInished fetching MaterialX assets to {fetch_location}")
-
-    download_id = args.download_id
-    if download_id:
-        # Find download entry by ID
-            entry = materialx_assets.get(download_id)
-            if entry:
-                print(f"Downloading asset with ID '{download_id}'")
-                asset_list = {download_id: entry}
-                id, mtlx_string, texture_binaries = loader.download_asset(asset_list)                
-                loader.save_materialx_with_textures(id, mtlx_string, texture_binaries, data_folder)
-
-if __name__ == "__main__":
-    main()
