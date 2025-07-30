@@ -294,10 +294,10 @@ Wood Floor (38)
 </td>
 <tr >
 <td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/PolyHavenMaterialX/data/polyhaven_aerial_asphalt_1.png" width=100%>
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_aerial_asphalt_1.png" width=100%>
 </td>
 <td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_polystrylene.png" width=100%>
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_polystrylene.png" width=100%>
 </td>
 <td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png" width=100%>
