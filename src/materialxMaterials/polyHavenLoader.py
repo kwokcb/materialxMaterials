@@ -48,17 +48,13 @@ class PolyHavenLoader:
                 #print(f"Skipping asset id: '{id}' (not matching {download_id})")
                 continue
 
-            if False:
-                print(f"Checking asset id: '{id}'")
-                resp = requests.get(f"{self.INFO_API}/{id}", headers=self.HEADERS)
-                resp.raise_for_status()
-                asset_data = resp.json()
-                json_string = json.dumps(asset_data, indent=4)
+            # Get the thumbnail
+            thumbnail_url = data.get("thumbnail_url")
 
             resp = requests.get(f"{self.FILES_API}/{id}", headers=self.HEADERS)
             resp.raise_for_status()
             files_data = resp.json()
-            json_string = json.dumps(files_data, indent=4)
+            #json_string = json.dumps(files_data, indent=4)
 
             # Remove all keys other than "mtlx"
             files_data = {k: v for k, v in files_data.items() if k == "mtlx"}            
@@ -95,7 +91,8 @@ class PolyHavenLoader:
                     if mtlx_url:
                         materialx_assets[res_id] = {
                             "url": mtlx_url,
-                            "texture_files": texture_struct
+                            "texture_files": texture_struct,
+                            "thumbnail_url": thumbnail_url
                         }
                         json_string = json.dumps(materialx_assets[res_id], indent=4)
                         #print(f"Found MaterialX for '{res_id}': {json_string}") 
@@ -156,6 +153,19 @@ class PolyHavenLoader:
                 if ext == ".exr":
                     print(f"  > WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}")
                 texture_binaries.append((path, texture_resp.content))
+
+            thumbnail_url = asset.get("thumbnail_url")
+            if thumbnail_url:
+                print(f"> Download thumbnail from {thumbnail_url} ...")                
+                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)
+                thumbnail_resp.raise_for_status()
+                
+                clean_url = thumbnail_url
+                # Strip any ? or # from the URL
+                clean_url = clean_url.split('?')[0].split('#')[0]
+                clean_url = clean_url.split('/')[-1]  # Get the last part of the URL
+                extension = Path(clean_url).suffix.lower()
+                texture_binaries.append((f"{id}_thumbnail.{extension}", thumbnail_resp.content))
 
             return id, mtlx_string, texture_binaries
 

@@ -31,7 +31,7 @@ def main():
         if fetch_count and fetch_count < 1:
             fetch_count = 1
         fetch_location = Path(data_folder) / data_file
-        print("Fetching MaterialX assets to {fetch_location}...")
+        print(f"Fetching MaterialX assets to {fetch_location}...")
         materialx_assets, all_assets, filtered_polyhaven_assets = loader.fetch_materialx_assets(download_id=download_id, max_items=fetch_count)
         with open(fetch_location, "w") as f:
             json.dump(materialx_assets, f, indent=4)
@@ -40,12 +40,12 @@ def main():
         all_location = Path(data_folder) / "polyhaven_assets.json"
         with open(all_location, "w") as f:
             json.dump(all_assets, f, indent=4)
-            print("Saved all assets to {all_location}")
+            print(f"Saved all assets to {all_location}")
         # Write filtered assets to JSON file:
         filtered_location = Path(data_folder) / "filtered_polyhaven_assets.json"
         with open(filtered_location, "w") as f:
             json.dump(filtered_polyhaven_assets, f, indent=4)
-            print("Saved MaterialX assets to {filtered_location}")
+            print(f"Saved MaterialX assets to {filtered_location}")
 
     elif load:
         load_location = Path(data_folder) / data_file
