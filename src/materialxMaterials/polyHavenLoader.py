@@ -23,7 +23,7 @@ class PolyHavenLoader:
             "User-Agent": "MTLX_Polyaven_Loader/1.0",  # Required by PolyHaven API
         }
 
-    def fetch_materialx_assets(self, resolution="1k"):
+    def fetch_materialx_assets(self, max_items=1, download_id=None):
         '''
         Fetch MaterialX assets from PolyHaven API and filter them by resolution.
         @param resolution: The resolution of the MaterialX assets to fetch (e.g. "1k", "2k", "4k", "8k").
@@ -41,7 +41,13 @@ class PolyHavenLoader:
         materialx_assets = {}
         filtered_polyhaven_assets = {}
 
+        item_count = 0;
         for id, data in all_assets.items():
+
+            if download_id and id != download_id:
+                #print(f"Skipping asset id: '{id}' (not matching {download_id})")
+                continue
+
             if False:
                 print(f"Checking asset id: '{id}'")
                 resp = requests.get(f"{self.INFO_API}/{id}", headers=self.HEADERS)
@@ -54,51 +60,69 @@ class PolyHavenLoader:
             files_data = resp.json()
             json_string = json.dumps(files_data, indent=4)
 
+            # Remove all keys other than "mtlx"
+            files_data = {k: v for k, v in files_data.items() if k == "mtlx"}            
+
             mtlx_files = files_data.get("mtlx", [])
             if mtlx_files:
+
+                print(f"Found MaterialX data for '{id}'") 
+
                 # Look for 1K, 2K , 4K, and 8K versions
-                one_k = mtlx_files.get(resolution)
-                #two_k = mtlx_files.get("2k")
-                #four_k = mtlx_files.get("4j")
-                #eight_k = mtlx_files.get("8k")
-                if one_k:
-                    one_k_mtlx = one_k.get("mtlx")
+                resolutions = {
+                    "1k": None,
+                    "2k": None,
+                    "4k": None,
+                    "8k": None
+                }
+                for resolution_key in resolutions.keys():
+                    res = mtlx_files.get(resolution_key, None)
+                    if not res:
+                        continue
+
+                    n_k_mtlx = res.get("mtlx")
                     texture_struct = {}
-                    if one_k_mtlx:
+                    if n_k_mtlx:
                         #print(f"Found MaterialX files for '{one_k}'")
-                        include_files = one_k_mtlx.get("include", {})
+                        include_files = n_k_mtlx.get("include", {})
                         #print(f"Found include files for '{id}': {one_k}")
                         for path, data in include_files.items():
                             texture_url = data.get("url")
                             #print("Texture path:", path, "URL:", texture_url)
                             texture_struct[path] = texture_url
-                    mtlx_url = one_k_mtlx.get("url")
+                    mtlx_url = n_k_mtlx.get("url")
+                    res_id = id + '___' + resolution_key
                     if mtlx_url:
-                        materialx_assets[id] = {
+                        materialx_assets[res_id] = {
                             "url": mtlx_url,
                             "texture_files": texture_struct
                         }
-                        json_string = json.dumps(materialx_assets[id], indent=4)
-                        print(f"Found MaterialX for '{id}': {json_string}") 
+                        json_string = json.dumps(materialx_assets[res_id], indent=4)
+                        #print(f"Found MaterialX for '{res_id}': {json_string}") 
+                        #print(f"Found MaterialX for '{res_id}'") 
                     # Create folder poly_have_data
 
-                # Save asset data to JSON file
-                #with open(f"polyhaven_data/{id}_data.json", "w") as f:
-                #    json.dump(asset_data, f, indent=4)
-                #    print(f"Saved asset data for '{id}' to polyhaven_data/{id}_data.json")
+                    # Save asset data to JSON file
+                    #with open(f"polyhaven_data/{id}_data.json", "w") as f:
+                    #    json.dump(asset_data, f, indent=4)
+                    #    print(f"Saved asset data for '{id}' to polyhaven_data/{id}_data.json")
 
-                filtered_polyhaven_assets[id] = data
-        
+                filtered_polyhaven_assets[id] = files_data
+
+            # Halt if download_id is specified and matches the current asset ID        
+            if download_id == id:
+                break
+
+            # Halt if max_items is specified and reached
+            if not download_id and max_items:
+                item_count += 1
+                if item_count >= max_items:
+                    break            
+
             #if "materialx" in formats:
             #    materialx_assets[slug] = formats["materialx"]
 
-        # Write all_assets to JSON file:
-        Path("polyhaven_data").mkdir(parents=True, exist_ok=True)
-        with open("polyhaven_assets.json", "w") as f:
-            json.dump(all_assets, f, indent=4)
-            print("Saved all assets to polyhaven_assets.json")
-
-        return materialx_assets
+        return materialx_assets, all_assets, filtered_polyhaven_assets
 
     def download_asset(self, asset_list):
         '''

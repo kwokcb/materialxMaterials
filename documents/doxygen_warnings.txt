@@ -39,6 +39,10 @@ D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:1
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:20: warning: Member INFO_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:21: warning: Member FILES_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:22: warning: Member HEADERS (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:29: warning: argument 'resolution' of command @param is not found in the argument list of materialxMaterials.polyHavenLoader.PolyHavenLoader::fetch_materialx_assets(self, max_items=1, download_id=None)
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:29: warning: The following parameters of materialxMaterials.polyHavenLoader.PolyHavenLoader.fetch_materialx_assets(self, max_items=1, download_id=None) are not documented:
+  parameter 'max_items'
+  parameter 'download_id'
 D:/Work/materialx/materialxMaterials/README.md:58: warning: Unsupported xml/html tag <iframe> found
 D:/Work/materialx/materialxMaterials/README.md:59: warning: Unsupported xml/html tag </iframe> found
 D:/Work/materialx/materialxMaterials/README.md:287: warning: end of comment block while expecting command </div>
