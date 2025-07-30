@@ -272,8 +272,18 @@ Wood Floor (38)
 <td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%>
 </td>
+<tr >
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/PolyHavenMaterialX/data/polyhaven_aerial_asphalt_1.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_polystrylene.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png" width=100%>
+</td>
 </table>
-<sub>The rows of materials are from `GPUOpen` `PhysicallyBased`, and `ambientCG` from top to bottom respectively.</sub>
+<sub>The rows of materials are from `GPUOpen` `PhysicallyBased`, and `ambientCG` and `PolyHaven` from top to bottom respectively.</sub>
 
 <p></p>
 
