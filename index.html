@@ -187,6 +187,26 @@ package where the images are 2K PNG files:</p>
 <pre class="hljs"><code><div>materialxMaterials acg --downloadMaterial <span class="hljs-string">"WoodFloor038"</span> --downloadResolution 2
 </div></code></pre>
 </li>
+<li>
+<p>Examine all texture assets on PolyHaven, and find all ones which have MaterialX resources. Does not download the asset.</p>
+<pre class="hljs"><code><div>polyHavenLoaderCmd.py --fetch --download_id=<span class="hljs-string">""</span>
+</div></code></pre>
+</li>
+<li>
+<p>Extract out a specific MateriaX asset with a given identifier.</p>
+<pre class="hljs"><code><div>polyHavenLoaderCmd.py --fetch --download_id=<span class="hljs-string">"aerial_asphalt_01"</span>
+</div></code></pre>
+</li>
+<li>
+<p>Extract out the first 10 MaterialX assets.</p>
+<pre class="hljs"><code><div>polyHavenLoaderCmd.py --fetch -c 10
+</div></code></pre>
+</li>
+<li>
+<p>Scan locally downloaded MaterialX asset information to download.</p>
+<pre class="hljs"><code><div>python -m materialxMaterials polyhaven --load --download_id=<span class="hljs-string">"aerial_asphalt_01"</span>
+</div></code></pre>
+</li>
 </ul>
 <h5>GPU Open Node.js Utility</h5>
 <p>The utility can be run from the <code>javascript\JsGPUOpenLoaderPackage</code> folder as follows:</p>

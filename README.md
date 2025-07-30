@@ -182,6 +182,26 @@ package where the images are 2K PNG files:
   ```sh
   materialxMaterials acg --downloadMaterial "WoodFloor038" --downloadResolution 2
   ```
+- Examine all texture assets on PolyHaven, and find all ones which have MaterialX resources. Does not download the asset.
+
+  ```sh
+  polyHavenLoaderCmd.py --fetch --download_id=""
+  ```
+
+- Extract out a specific MateriaX asset with a given identifier.
+  ```sh
+  polyHavenLoaderCmd.py --fetch --download_id="aerial_asphalt_01"
+  ```
+- Extract out the first 10 MaterialX assets.
+  ```sh
+  polyHavenLoaderCmd.py --fetch -c 10
+  ```
+
+- Scan locally downloaded MaterialX asset information to download.
+
+  ```sh
+  python -m materialxMaterials polyhaven --load --download_id="aerial_asphalt_01"
+  ```
 
 <h5>GPU Open Node.js Utility</h5>
 

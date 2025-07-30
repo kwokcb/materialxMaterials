@@ -10,12 +10,10 @@ src/materialxMaterials/ambientCGLoaderCmd.py
 src/materialxMaterials/physicallyBasedMaterialX.py
 src/materialxMaterials/physicallyBasedMaterialXCmd.py
 src/materialxMaterials/polyHavenLoader.py
+src/materialxMaterials/polyHavenLoaderCmd.py
 src/materialxMaterials.egg-info/PKG-INFO
 src/materialxMaterials.egg-info/SOURCES.txt
 src/materialxMaterials.egg-info/dependency_links.txt
 src/materialxMaterials.egg-info/entry_points.txt
 src/materialxMaterials.egg-info/requires.txt
 src/materialxMaterials.egg-info/top_level.txt
-src/materialxMaterials/data/polyhaven_assets.json
-src/materialxMaterials/data/polyhaven_materialx_assets.json
-src/materialxMaterials/data/polystyrene_materialx.zip
