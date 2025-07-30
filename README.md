@@ -37,8 +37,14 @@ either be mapped to MaterialX materials or are natively stored in that format.
 <img src="https://acg-media.struffelproductions.com/file/ambientCG-Web/media/thumbnail/2048-JPG-242424/PavingStones142.jpg" width="64px" style="margin-right: 5px;">
 <a href="https://ambientcg.com/list?type=material&sort=popular">ambientCG database</a> MaterialX packages can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database.
 </div>
+<br>
+<div style="display: flex; align-items: center;">
+<img src="https://polyhaven.com/Logo%20256.png" width="64px" style="margin-right: 5px;">
+<a href="https://polyhaven.com/">PolyHaven Library</a> MaterialX assets can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database. (More functionality is in progress)
+</div>
+
 </p>
-Each currently has <code>Python</code> or <code>Javascript</code> implementations.
+Each currently has <code>Python</code> or <code>Javascript</code> implementations, except for <em>Polyhaven</em> which only currently has <code>Python</code> support. 
 
 </div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
 
@@ -82,6 +88,14 @@ This is designed to be a general purpose MaterialX *material inspector* supporti
 <img src="https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=50%>
 
 </div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
+
+<hr>
+<h5>4. PolyHaven</h5>
+
+A Python library and command `polyHavenLoader` and `polyHavenLoaderCmd` are currently available which can 
+produce a filtered list of assets (textures) which have 
+MaterialX representations. This list cna be used to download
+specific assets and save to zip format. 
 
 <h5>Loading into Web Editor</h5>
 
@@ -167,6 +181,26 @@ package where the images are 2K PNG files:
 
   ```sh
   materialxMaterials acg --downloadMaterial "WoodFloor038" --downloadResolution 2
+  ```
+- Examine all texture assets on PolyHaven, and find all ones which have MaterialX resources. Does not download the asset.
+
+  ```sh
+  polyHavenLoaderCmd.py --fetch --download_id=""
+  ```
+
+- Extract out a specific MateriaX asset with a given identifier.
+  ```sh
+  polyHavenLoaderCmd.py --fetch --download_id="aerial_asphalt_01"
+  ```
+- Extract out the first 10 MaterialX assets.
+  ```sh
+  polyHavenLoaderCmd.py --fetch -c 10
+  ```
+
+- Scan locally downloaded MaterialX asset information to download.
+
+  ```sh
+  python -m materialxMaterials polyhaven --load --download_id="aerial_asphalt_01"
   ```
 
 <h5>GPU Open Node.js Utility</h5>
@@ -258,8 +292,18 @@ Wood Floor (38)
 <td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%>
 </td>
+<tr >
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/PolyHavenMaterialX/data/polyhaven_aerial_asphalt_1.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_polystrylene.png" width=100%>
+</td>
+<td >
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png" width=100%>
+</td>
 </table>
-<sub>The rows of materials are from `GPUOpen` `PhysicallyBased`, and `ambientCG` from top to bottom respectively.</sub>
+<sub>The rows of materials are from `GPUOpen` `PhysicallyBased`, and `ambientCG` and `PolyHaven` from top to bottom respectively.</sub>
 
 <p></p>
 

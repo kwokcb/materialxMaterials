@@ -9,9 +9,11 @@ var annotated_dup =
       ] ],
       [ "physicallyBasedMaterialX", "namespacematerialx_materials_1_1physically_based_material_x.html", [
         [ "PhysicallyBasedMaterialLoader", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader" ]
+      ] ],
+      [ "polyHavenLoader", null, [
+        [ "PolyHavenLoader", "classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html", "classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader" ]
       ] ]
     ] ],
-    [ "AmbientCGLoader", "class_ambient_c_g_loader.html", "class_ambient_c_g_loader" ],
     [ "JsGPUOpenMaterialLoader", "class_js_g_p_u_open_material_loader.html", "class_js_g_p_u_open_material_loader" ],
     [ "JsPhysicallyBasedMaterialLoader", "class_js_physically_based_material_loader.html", "class_js_physically_based_material_loader" ]
 ];

@@ -9,6 +9,8 @@ src/materialxMaterials/ambientCGLoader.py
 src/materialxMaterials/ambientCGLoaderCmd.py
 src/materialxMaterials/physicallyBasedMaterialX.py
 src/materialxMaterials/physicallyBasedMaterialXCmd.py
+src/materialxMaterials/polyHavenLoader.py
+src/materialxMaterials/polyHavenLoaderCmd.py
 src/materialxMaterials.egg-info/PKG-INFO
 src/materialxMaterials.egg-info/SOURCES.txt
 src/materialxMaterials.egg-info/dependency_links.txt

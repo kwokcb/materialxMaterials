@@ -20,6 +20,8 @@ def main() -> int:
         cmdArgs[0] = 'GPUOpenLoaderCmd.py'
     elif cmdArgs[0] == 'acg':
         cmdArgs[0] = 'ambientCGLoaderCmd.py'
+    elif cmdArgs[0] == 'polyhaven':
+        cmdArgs[0] = 'polyHavenLoaderCmd.py'
     else:
         print('Unknown command specified:', cmdArgs[0])
         return 1
