@@ -424,7 +424,7 @@ package where the images are 2K PNG files:
 - Scan locally downloaded MaterialX asset information to download.
 
   ```sh
-  polyHavenLoaderCmd.py --load --download_id="aerial_asphalt_01"
+  python -m materialxMaterials polyhaven --load --download_id="aerial_asphalt_01"
   ```
 
 <h5>GPU Open Node.js Utility</h5>
@@ -518,10 +518,10 @@ Wood Floor (38)
 </td>
 <tr >
 <td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/PolyHavenMaterialX/data/polyhaven_aerial_asphalt_1.png" width=100%>
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_aerial_asphalt_1.png" width=100%>
 </td>
 <td >
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_polystrylene.png" width=100%>
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_polystrylene.png" width=100%>
 </td>
 <td >
 <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png" width=100%>

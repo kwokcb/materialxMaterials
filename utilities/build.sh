@@ -4,7 +4,10 @@ echo "Finished Package Install"
 
 echo "Start Updating Package Data..."
 pushd .
-cd src/materialxMaterials/data
+cd src/materialxMaterials
+python -m materialxMaterials polyhaven -fe
+python -m materialxMaterials polyhaven -l
+cd data
 python -m materialxMaterials gpuopen --materialNames=1 --saveMaterials=1 
 python -m materialxMaterials physbased
 python -m materialxMaterials acg --saveMaterials True --output ambientCgMaterials/

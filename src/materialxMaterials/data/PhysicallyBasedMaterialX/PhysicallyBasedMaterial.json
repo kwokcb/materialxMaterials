@@ -2,25 +2,25 @@
     {
         "name": "Aluminum",
         "color": [
-            0.933,
-            0.912,
-            0.853
+            0.916,
+            0.923,
+            0.924
         ],
         "metalness": 1,
         "specularColor": [
-            0.981,
-            0.979,
-            0.961
+            0.989,
+            0.989,
+            0.972
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            1.16234,
-            7.90265,
-            0.958053,
-            6.29309,
-            1.04947,
-            5.01364
+            0.728978,
+            6.45971,
+            0.588215,
+            5.19646,
+            0.78354,
+            4.37746
         ],
         "density": 2700,
         "category": [
@@ -28,7 +28,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=3d&book=metals&page=aluminium",
+            "https://refractiveindex.info/?shelf=main&book=Al&page=Cheng",
             "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
             "https://en.wikipedia.org/wiki/Aluminium",
             "https://en.wikipedia.org/wiki/Density",
@@ -68,6 +68,46 @@
         ]
     },
     {
+        "name": "Beryllium",
+        "color": [
+            0.539,
+            0.533,
+            0.534
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.549,
+            0.503,
+            0.364
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            3.21038,
+            3.29815,
+            3.32907,
+            3.11669,
+            3.77105,
+            2.66995
+        ],
+        "density": 1850,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Be&page=Rakic-BB",
+            "https://en.wikipedia.org/w/index.php?title=Beryllium&oldid=1295895956",
+            "https://en.wikipedia.org/wiki/Density"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/beryllium.jpeg"
+        ]
+    },
+    {
         "name": "Blackboard",
         "color": [
             0.039,
@@ -75,7 +115,7 @@
             0.039
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.9,
         "ior": 1.5,
         "density": 0,
         "category": [
@@ -102,8 +142,9 @@
         ],
         "metalness": 0,
         "roughness": 0,
-        "ior": 1.301,
+        "ior": 1.35,
         "transmission": 1,
+        "transmissionDispersion": 54,
         "density": 1060,
         "viscosity": 2.8,
         "category": [
@@ -113,7 +154,7 @@
         "sources": [
             "https://en.wikipedia.org/wiki/Blood",
             "https://en.wikipedia.org/wiki/Blood_red",
-            "https://refractiveindex.info/?shelf=other&book=blood&page=Rowe",
+            "https://refractiveindex.info/?shelf=other&book=blood&page=Liu",
             "https://hypertextbook.com/facts/2004/MichaelShmukler.shtml",
             "https://www.researchgate.net/figure/Color-chart-for-the-measurement-of-methemoglobin-The-color-chart-was-prepared-according_fig2_26884296",
             "https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html",
@@ -137,7 +178,7 @@
             0.664
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.9,
         "ior": 1.5,
         "density": 1900,
         "densityRange": [
@@ -163,9 +204,9 @@
     {
         "name": "Brass",
         "color": [
-            0.931,
-            0.776,
-            0.392
+            0.91,
+            0.778,
+            0.423
         ],
         "metalness": 1,
         "specularColor": [
@@ -208,7 +249,7 @@
             0.061
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.9,
         "ior": 1.5,
         "density": 2000,
         "densityRange": [
@@ -268,8 +309,7 @@
             "acrylic",
             "coat",
             "car paint",
-            "lacquer",
-            "metallic"
+            "lacquer"
         ],
         "reference": [
             "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/car-paint.jpeg"
@@ -301,6 +341,45 @@
         ]
     },
     {
+        "name": "Cesium",
+        "color": [
+            0.718,
+            0.554,
+            0.237
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.997,
+            1.002,
+            1.073
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.204334,
+            1.19256,
+            0.272018,
+            0.906033,
+            0.449252,
+            0.517209
+        ],
+        "density": 1886,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Cs&page=Monin",
+            "https://en.wikipedia.org/w/index.php?title=Caesium&oldid=1297091310"
+        ],
+        "tags": [
+            "caesium"
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cesium.jpeg"
+        ]
+    },
+    {
         "name": "Charcoal",
         "color": [
             0.02,
@@ -308,7 +387,7 @@
             0.02
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.9,
         "ior": 1.5,
         "density": 300,
         "densityRange": [
@@ -342,6 +421,11 @@
         "metalness": 0,
         "roughness": 0.5,
         "ior": 1.5,
+        "subsurfaceRadius": [
+            0.1,
+            0.05,
+            0.025
+        ],
         "density": 1300,
         "densityRange": [
             1229,
@@ -366,25 +450,25 @@
     {
         "name": "Chromium",
         "color": [
-            0.653,
-            0.65,
-            0.615
+            0.654,
+            0.685,
+            0.701
         ],
         "metalness": 1,
         "specularColor": [
+            0.591,
             0.675,
-            0.72,
-            0.711
+            0.703
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            3.20617,
-            4.38724,
-            2.76851,
-            4.18069,
-            2.56326,
-            3.75018
+            4.19382,
+            4.85545,
+            3.53806,
+            4.89986,
+            2.91521,
+            4.25568
         ],
         "density": 7200,
         "category": [
@@ -392,7 +476,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=main&book=Cr&page=Rakic-BB",
+            "https://refractiveindex.info/?shelf=main&book=Cr&page=Sytchkova",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -405,9 +489,9 @@
     {
         "name": "Cobalt",
         "color": [
-            0.715,
-            0.702,
-            0.622
+            0.699,
+            0.704,
+            0.671
         ],
         "metalness": 1,
         "specularColor": [
@@ -451,20 +535,21 @@
         ],
         "metalness": 0,
         "roughness": 0,
-        "ior": 1.33,
+        "ior": 1.34,
         "subsurfaceRadius": [
             10,
             5,
             1
         ],
-        "density": 1000,
-        "viscosity": 1.002,
+        "density": 1020,
+        "viscosity": 1.7,
         "category": [
             "Liquid"
         ],
         "description": "",
         "sources": [
-            "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/coffee/"
+            "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/coffee/",
+            "https://books.google.com/books?id=cptQBAAAQBAJ&lpg=PP1"
         ],
         "tags": [
             "sss"
@@ -546,25 +631,25 @@
     {
         "name": "Copper",
         "color": [
-            0.988,
-            0.688,
-            0.448
+            0.932,
+            0.623,
+            0.522
         ],
         "metalness": 1,
         "specularColor": [
             0.999,
-            0.946,
-            0.705
+            0.9,
+            0.744
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            0.137212,
-            5.48257,
-            0.750114,
-            2.56138,
-            1.75582,
-            2.26828
+            0.133762,
+            3.10615,
+            1.05661,
+            2.63095,
+            1.68637,
+            2.42655
         ],
         "density": 8940,
         "category": [
@@ -572,7 +657,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=3d&book=metals&page=copper",
+            "https://refractiveindex.info/?shelf=main&book=Cu&page=Johnson",
             "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
             "https://en.wikipedia.org/wiki/Density"
         ],
@@ -622,7 +707,7 @@
             0.631
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.9,
         "ior": 1.5,
         "density": 0,
         "category": [
@@ -697,13 +782,18 @@
     {
         "name": "Eye (sclera)",
         "color": [
-            0.68,
-            0.49,
-            0.37
+            0.652,
+            0.5,
+            0.394
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0,
         "ior": 1.4,
+        "subsurfaceRadius": [
+            0.482,
+            0.169,
+            0.109
+        ],
         "density": 0,
         "category": [
             "Human"
@@ -711,7 +801,9 @@
         "description": "",
         "sources": [
             "https://www.researchgate.net/publication/225767258_Optical_properties_of_human_sclera_in_spectral_range_370-2500_nm",
-            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx"
+            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
+            "https://vgl.ict.usc.edu/Data/DigitalEmily2/",
+            "https://eisko.com/louise/"
         ],
         "tags": [
             ""
@@ -749,6 +841,45 @@
         ],
         "reference": [
             "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gasoline.jpeg"
+        ]
+    },
+    {
+        "name": "Germanium",
+        "color": [
+            0.5,
+            0.517,
+            0.465
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.068,
+            0.179,
+            0.002
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            5.63391,
+            1.44383,
+            5.06611,
+            2.25088,
+            4.81402,
+            0.279501
+        ],
+        "density": 5327,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Ge&page=Aspnes",
+            "https://en.wikipedia.org/w/index.php?title=Germanium&oldid=1294309596"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/germanium.jpeg"
         ]
     },
     {
@@ -793,25 +924,25 @@
     {
         "name": "Gold",
         "color": [
-            1.0,
-            0.72,
-            0.315
+            1.059,
+            0.773,
+            0.307
         ],
         "metalness": 1,
         "specularColor": [
-            1.0,
-            0.973,
-            0.597
+            1.001,
+            0.985,
+            0.523
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
             0,
-            6.3108,
-            0.487424,
-            2.18391,
-            1.74577,
-            1.63493
+            6.59401,
+            0.351563,
+            2.08143,
+            1.85894,
+            1.49631
         ],
         "density": 19320,
         "category": [
@@ -819,7 +950,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=3d&book=metals&page=gold",
+            "https://refractiveindex.info/?shelf=main&book=Ag&page=Babar",
             "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
             "https://en.wikipedia.org/wiki/Density"
         ],
@@ -838,7 +969,7 @@
             0.18
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.9,
         "ior": 1.5,
         "density": 0,
         "category": [
@@ -846,7 +977,10 @@
         ],
         "description": "In photography and computer graphics, middle gray is a tone that is perceptually about halfway between black and white on a lightness scale. Light meters and cameras are often calibrated using an 18% gray card or a color reference card such as a ColorChecker. It is typically defined as 18% reflectance in visible light.",
         "sources": [
-            "https://en.wikipedia.org/wiki/Middle_gray"
+            "https://en.wikipedia.org/w/index.php?title=Gray_card&oldid=1244084939",
+            "https://www.xrite.com/service-support/new_color_specifications_for_colorchecker_sg_and_classic_charts",
+            "https://babelcolor.com/colorchecker.htm",
+            "https://github.com/colour-science/colour-nuke/tree/master/colour_nuke/resources/images/ColorChecker2014"
         ],
         "tags": [
             "grey",
@@ -876,7 +1010,7 @@
         "category": [
             "Liquid"
         ],
-        "description": "Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%.",
+        "description": "Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose.",
         "sources": [
             "https://www.color-name.com/honey.color",
             "https://en.wikipedia.org/wiki/Honey",
@@ -925,11 +1059,50 @@
         ]
     },
     {
+        "name": "Iridium",
+        "color": [
+            0.745,
+            0.734,
+            0.704
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.818,
+            0.81,
+            0.727
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            2.79209,
+            5.68877,
+            2.56343,
+            5.0549,
+            2.7216,
+            4.20215
+        ],
+        "density": 22562,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Ir&page=Schmitt-ALD",
+            "https://en.wikipedia.org/w/index.php?title=Iridium&oldid=1296793846"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/iridium.jpeg"
+        ]
+    },
+    {
         "name": "Iron",
         "color": [
-            0.542,
-            0.512,
-            0.458
+            0.53,
+            0.513,
+            0.494
         ],
         "metalness": 1,
         "specularColor": [
@@ -1004,25 +1177,25 @@
     {
         "name": "Lead",
         "color": [
-            0.641,
-            0.622,
-            0.59
+            0.626,
+            0.64,
+            0.693
         ],
         "metalness": 1,
         "specularColor": [
-            0.819,
-            0.804,
-            0.769
+            0.717,
+            0.717,
+            0.696
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            1.81659,
-            3.50606,
-            1.84441,
-            3.37971,
-            1.96022,
-            3.23189
+            2.71051,
+            4.04246,
+            2.68791,
+            4.01366,
+            2.9091,
+            4.17426
         ],
         "density": 11340,
         "category": [
@@ -1030,7 +1203,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=3d&book=metals&page=lead",
+            "https://refractiveindex.info/?shelf=main&book=Pb&page=Werner-DFT",
             "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
             "https://en.wikipedia.org/wiki/Density"
         ],
@@ -1064,6 +1237,124 @@
         ],
         "reference": [
             "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lemon.jpeg"
+        ]
+    },
+    {
+        "name": "Lithium",
+        "color": [
+            0.916,
+            0.89,
+            0.807
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.998,
+            0.995,
+            0.975
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.141612,
+            2.7434,
+            0.215656,
+            2.48258,
+            0.481854,
+            2.35726
+        ],
+        "density": 535,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Li&page=Rasigni",
+            "https://en.wikipedia.org/w/index.php?title=Lithium&oldid=1297355131"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lithium.jpeg"
+        ]
+    },
+    {
+        "name": "Magnesium",
+        "color": [
+            0.956,
+            0.953,
+            0.95
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.998,
+            0.996,
+            0.983
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.286425,
+            6.75553,
+            0.322265,
+            4.94909,
+            0.594764,
+            4.25174
+        ],
+        "density": 1737,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Mg&page=Hagemann",
+            "https://en.wikipedia.org/w/index.php?title=Magnesium&oldid=1297525267",
+            "https://en.wikipedia.org/w/index.php?title=Density&oldid=1271894167"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/magnesium.jpeg"
+        ]
+    },
+    {
+        "name": "Manganese",
+        "color": [
+            0.606,
+            0.592,
+            0.573
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.757,
+            0.761,
+            0.715
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            2.22147,
+            3.60175,
+            2.02055,
+            3.25337,
+            2.03472,
+            2.862
+        ],
+        "density": 7476,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Mn&page=Querry",
+            "https://en.wikipedia.org/w/index.php?title=Manganese&oldid=1296594586"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/manganese.jpeg"
         ]
     },
     {
@@ -1103,9 +1394,9 @@
     {
         "name": "Mercury",
         "color": [
-            0.799,
-            0.777,
-            0.721
+            0.781,
+            0.78,
+            0.778
         ],
         "metalness": 1,
         "specularColor": [
@@ -1211,6 +1502,45 @@
         ]
     },
     {
+        "name": "Molybdenum",
+        "color": [
+            0.589,
+            0.612,
+            0.594
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.495,
+            0.505,
+            0.383
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            4.13827,
+            3.90428,
+            4.14866,
+            4.00545,
+            4.27845,
+            3.21018
+        ],
+        "density": 10223,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Mo&page=Werner-DFT",
+            "https://en.wikipedia.org/w/index.php?title=Molybdenum&oldid=1288578240"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/molybdenum.jpeg"
+        ]
+    },
+    {
         "name": "Musou Black",
         "color": [
             0.006,
@@ -1239,25 +1569,25 @@
     {
         "name": "Nickel",
         "color": [
-            0.664,
-            0.606,
-            0.495
+            0.697,
+            0.641,
+            0.563
         ],
         "metalness": 1,
         "specularColor": [
-            0.824,
-            0.798,
-            0.68
+            0.855,
+            0.805,
+            0.675
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            1.88896,
-            3.7543,
-            1.81884,
-            3.2447,
-            2.0708,
-            2.64853
+            1.8644,
+            4.21007,
+            1.92207,
+            3.57008,
+            2.22915,
+            2.87501
         ],
         "density": 8900,
         "category": [
@@ -1265,7 +1595,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=main&book=Ni&page=Rakic-BB",
+            "https://refractiveindex.info/?shelf=main&book=Ni&page=Johnson",
             "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
             "https://en.wikipedia.org/wiki/Density"
         ],
@@ -1284,7 +1614,7 @@
             0.884
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.8,
         "ior": 1.5,
         "density": 800,
         "category": [
@@ -1301,6 +1631,45 @@
         ],
         "reference": [
             "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/office-paper.jpeg"
+        ]
+    },
+    {
+        "name": "Palladium",
+        "color": [
+            0.734,
+            0.7036,
+            0.662
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.874,
+            0.854,
+            0.779
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            1.88141,
+            4.66959,
+            1.79976,
+            4.03631,
+            2.00737,
+            3.43839
+        ],
+        "density": 12007,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Pd&page=Palm",
+            "https://en.wikipedia.org/w/index.php?title=Palladium&oldid=1296661941"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/palladium.jpeg"
         ]
     },
     {
@@ -1497,6 +1866,39 @@
         ]
     },
     {
+        "name": "Plastic (PUR)",
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.6,
+        "transmission": 1,
+        "density": 0,
+        "category": [
+            "Plastic"
+        ],
+        "description": "Modern car paints are nearly always an acrylic polyurethane \"enamel\" with a pigmented basecoat and a clear topcoat. It may be described as \"acrylic\", \"acrylic enamel\", \"urethane\", etc. and the clearcoat in particular may be described as a lacquer.",
+        "sources": [
+            "https://en.wikipedia.org/wiki/Automotive_paint",
+            "https://en.wikipedia.org/wiki/Lacquer#Acrylic_lacquers",
+            "https://hal.science/hal-04030017/document",
+            "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2011163461"
+        ],
+        "tags": [
+            "acrylic",
+            "coat",
+            "car paint",
+            "lacquer",
+            "polyurethane"
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pur.jpeg"
+        ]
+    },
+    {
         "name": "Plastic (PVC)",
         "color": [
             1,
@@ -1530,25 +1932,25 @@
     {
         "name": "Platinum",
         "color": [
-            0.695,
-            0.638,
-            0.541
+            0.765,
+            0.73,
+            0.676
         ],
         "metalness": 1,
         "specularColor": [
-            0.816,
-            0.786,
-            0.671
+            0.873,
+            0.85,
+            0.747
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            2.1755,
-            4.28265,
-            2.0879,
-            3.67782,
-            2.35677,
-            3.05144
+            2.17679,
+            5.44798,
+            2.02616,
+            4.54881,
+            2.34437,
+            3.74446
         ],
         "density": 21450,
         "category": [
@@ -1556,7 +1958,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=3d&book=metals&page=platinum",
+            "https://refractiveindex.info/?shelf=main&book=Pt&page=Werner-DFT",
             "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
             "https://en.wikipedia.org/wiki/Density"
         ],
@@ -1568,35 +1970,42 @@
         ]
     },
     {
-        "name": "Polyurethane",
+        "name": "Potassium",
         "color": [
-            1,
-            1,
-            1
+            0.983,
+            0.956,
+            0.906
         ],
-        "metalness": 0,
+        "metalness": 1,
+        "specularColor": [
+            1.0,
+            1.0,
+            0.994
+        ],
         "roughness": 0,
-        "ior": 1.6,
-        "transmission": 1,
-        "density": 0,
-        "category": [
-            "Plastic"
+        "ior": 1.5,
+        "complexIor": [
+            0.0,
+            3.37295,
+            0.041228,
+            1.56367,
+            0.220328,
+            2.05971
         ],
-        "description": "Modern car paints are nearly always an acrylic polyurethane \"enamel\" with a pigmented basecoat and a clear topcoat. It may be described as \"acrylic\", \"acrylic enamel\", \"urethane\", etc. and the clearcoat in particular may be described as a lacquer.",
+        "density": 859,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
         "sources": [
-            "https://en.wikipedia.org/wiki/Automotive_paint",
-            "https://en.wikipedia.org/wiki/Lacquer#Acrylic_lacquers",
-            "https://hal.science/hal-04030017/document",
-            "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2011163461"
+            "https://refractiveindex.info/?shelf=main&book=K&page=Monin",
+            "https://en.wikipedia.org/w/index.php?title=Potassium&oldid=1291714608"
         ],
         "tags": [
-            "acrylic",
-            "coat",
-            "car paint",
-            "lacquer"
+            ""
         ],
         "reference": [
-            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/polyurethane.jpeg"
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/potassium.jpeg"
         ]
     },
     {
@@ -1624,6 +2033,45 @@
         "tags": [],
         "reference": [
             "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/quartz.jpeg"
+        ]
+    },
+    {
+        "name": "Rubidium",
+        "color": [
+            0.919,
+            0.859,
+            0.747
+        ],
+        "metalness": 1,
+        "specularColor": [
+            1.0,
+            0.999,
+            0.998
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.0391755,
+            1.22619,
+            0.101768,
+            1.27629,
+            0.205178,
+            1.13104
+        ],
+        "density": 1534,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Rb&page=Monin",
+            "https://en.wikipedia.org/w/index.php?title=Rubidium&oldid=1297114941"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/rubidium.jpeg"
         ]
     },
     {
@@ -1660,7 +2108,7 @@
             0.23074
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.9,
         "ior": 1.5,
         "density": 1600,
         "category": [
@@ -1711,9 +2159,9 @@
     {
         "name": "Silicon",
         "color": [
-            0.351,
-            0.367,
-            0.394
+            0.345,
+            0.369,
+            0.426
         ],
         "metalness": 1,
         "specularColor": [
@@ -1724,11 +2172,11 @@
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            3.63351,
-            0.966245,
-            4.06958,
+            3.65156,
+            0.972551,
+            4.08561,
             0,
-            4.36103,
+            4.36337,
             0
         ],
         "density": 2330,
@@ -1737,7 +2185,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=main&book=Si&page=Schinke",
+            "https://refractiveindex.info/?shelf=main&book=Si&page=Aspnes",
             "https://en.wikipedia.org/wiki/Density",
             "https://en.wikipedia.org/wiki/Silicon"
         ],
@@ -1751,25 +2199,25 @@
     {
         "name": "Silver",
         "color": [
-            0.984,
-            0.946,
-            0.851
+            0.991,
+            0.985,
+            0.974
         ],
         "metalness": 1,
         "specularColor": [
-            0.999,
-            0.998,
-            0.986
+            1.0,
+            1.0,
+            0.991
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            0.0636949,
-            3.69295,
-            0.155409,
-            3.20559,
-            0.426839,
-            3.12206
+            0,
+            8.06675,
+            0.0626977,
+            3.62828,
+            0.382178,
+            3.80086
         ],
         "density": 10500,
         "category": [
@@ -1777,7 +2225,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=3d&book=metals&page=silver",
+            "https://refractiveindex.info/?shelf=main&book=Ag&page=Babar",
             "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
             "https://en.wikipedia.org/wiki/Density",
             "https://en.wikipedia.org/wiki/Mirror"
@@ -2026,6 +2474,11 @@
         "metalness": 0,
         "roughness": 0.5,
         "ior": 1.3098,
+        "subsurfaceRadius": [
+            0.2,
+            0.2,
+            1
+        ],
         "density": 100,
         "densityRange": [
             90,
@@ -2086,11 +2539,50 @@
         ]
     },
     {
+        "name": "Sodium",
+        "color": [
+            0.977,
+            0.962,
+            0.936
+        ],
+        "metalness": 1,
+        "specularColor": [
+            1.0,
+            1.0,
+            0.991
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.0,
+            4.94428,
+            0.0669661,
+            2.3243,
+            0.325253,
+            2.89317
+        ],
+        "density": 969,
+        "category": [
+            "Metal"
+        ],
+        "description": "",
+        "sources": [
+            "https://refractiveindex.info/?shelf=main&book=Na&page=Smith",
+            "https://en.wikipedia.org/w/index.php?title=Sodium&oldid=1292971623"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sodium.jpeg"
+        ]
+    },
+    {
         "name": "Stainless Steel",
         "color": [
-            0.685,
-            0.637,
-            0.554
+            0.669,
+            0.639,
+            0.598
         ],
         "metalness": 1,
         "specularColor": [
@@ -2136,7 +2628,7 @@
             0.023
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0.7,
         "ior": 1.5,
         "density": 0,
         "category": [
@@ -2158,25 +2650,25 @@
     {
         "name": "Titanium",
         "color": [
-            0.633,
-            0.578,
-            0.503
+            0.441,
+            0.4,
+            0.361
         ],
         "metalness": 1,
         "specularColor": [
-            0.728,
-            0.68,
-            0.55
+            0.67,
+            0.641,
+            0.52
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            2.55584,
-            3.89385,
-            2.52916,
-            3.39243,
-            2.8235,
-            2.85229
+            1.9345,
+            2.33987,
+            1.86761,
+            2.05312,
+            2.05863,
+            1.74518
         ],
         "density": 4540,
         "category": [
@@ -2184,7 +2676,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=3d&book=metals&page=titanium",
+            "https://refractiveindex.info/?shelf=main&book=Ti&page=Palm",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -2223,25 +2715,25 @@
     {
         "name": "Tungsten",
         "color": [
-            0.518,
-            0.495,
-            0.442
+            0.537,
+            0.536,
+            0.519
         ],
         "metalness": 1,
         "specularColor": [
-            0.461,
-            0.413,
-            0.206
+            0.45,
+            0.409,
+            0.193
         ],
         "roughness": 0,
         "ior": 1.5,
         "complexIor": [
-            3.45096,
-            2.96613,
-            3.51714,
-            2.7338,
-            4.02045,
-            1.90549
+            3.8332,
+            3.26472,
+            3.92528,
+            3.0739,
+            4.53149,
+            2.0965
         ],
         "density": 19300,
         "category": [
@@ -2249,7 +2741,7 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=main&book=W&page=Rakic-BB",
+            "https://refractiveindex.info/?shelf=main&book=W&page=Werner-DFT",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -2262,9 +2754,9 @@
     {
         "name": "Vanadium",
         "color": [
-            0.547,
-            0.525,
-            0.506
+            0.534,
+            0.526,
+            0.546
         ],
         "metalness": 1,
         "specularColor": [
@@ -2377,9 +2869,9 @@
     {
         "name": "Zinc",
         "color": [
-            0.826,
-            0.842,
-            0.801
+            0.808,
+            0.844,
+            0.865
         ],
         "metalness": 1,
         "specularColor": [

@@ -99,7 +99,8 @@ $(function(){initNavTree('poly_haven_loader_cmd_8py.html',''); initResizable(tru
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">polyHavenLoaderCmd.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -113,6 +114,13 @@ $(function(){initNavTree('poly_haven_loader_cmd_8py.html',''); initResizable(tru
 Functions</h2></td></tr>
 <tr class="memitem:a0358fef013aa817011cdbfbf43888ca8" id="r_a0358fef013aa817011cdbfbf43888ca8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0358fef013aa817011cdbfbf43888ca8">materialxMaterials.polyHavenLoaderCmd.main</a> ()</td></tr>
 <tr class="separator:a0358fef013aa817011cdbfbf43888ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a014709add93c9d57390d4de3240e46b1" id="r_a014709add93c9d57390d4de3240e46b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a014709add93c9d57390d4de3240e46b1">materialxMaterials.polyHavenLoaderCmd.logger</a> = logging.getLogger('POLYH_CMD')</td></tr>
+<tr class="separator:a014709add93c9d57390d4de3240e46b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff4acc6731d9d9b1b9606ac30b749f66" id="r_aff4acc6731d9d9b1b9606ac30b749f66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff4acc6731d9d9b1b9606ac30b749f66">materialxMaterials.polyHavenLoaderCmd.level</a></td></tr>
+<tr class="separator:aff4acc6731d9d9b1b9606ac30b749f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>: A command-line interface to fetch MaterialX assets from PolyHaven and download them. </p>
@@ -134,68 +142,105 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_cmd_8py_source.html#l00010">10</a> of file <a class="el" href="poly_haven_loader_cmd_8py_source.html">polyHavenLoaderCmd.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   10</span><span class="keyword">def </span>main():</div>
-<div class="line"><span class="lineno">   11</span>    parser = argparse.ArgumentParser(description=<span class="stringliteral">&quot;Fetch MaterialX assets from PolyHaven&quot;</span>)</div>
-<div class="line"><span class="lineno">   12</span>    parser.add_argument(<span class="stringliteral">&quot;-id&quot;</span>, <span class="stringliteral">&quot;--download_id&quot;</span>, type=str, default=<span class="stringliteral">&quot;polystyrene&quot;</span>, help=<span class="stringliteral">&quot;Filter ID to fetch MaterialX assets (e.g. &#39;polystyrene&#39;)&quot;</span>)</div>
-<div class="line"><span class="lineno">   13</span>    parser.add_argument(<span class="stringliteral">&quot;-res&quot;</span>, <span class="stringliteral">&quot;--download_resolution&quot;</span>, type=str, default=<span class="stringliteral">&quot;1k&quot;</span>, help=<span class="stringliteral">&quot;Resolution of the MaterialX assets to download (e.g. &#39;1k&#39;, &#39;2k&#39;, &#39;4k&#39;, &#39;8k&#39;) &quot;</span>)</div>
-<div class="line"><span class="lineno">   14</span>    parser.add_argument(<span class="stringliteral">&quot;-fe&quot;</span>, <span class="stringliteral">&quot;--fetch&quot;</span>, action=<span class="stringliteral">&#39;store_true&#39;</span>, help=<span class="stringliteral">&quot;Fetch and save the MaterialX assets to a file&quot;</span>)</div>
-<div class="line"><span class="lineno">   15</span>    parser.add_argument(<span class="stringliteral">&quot;-l&quot;</span>, <span class="stringliteral">&quot;--load&quot;</span>, action=<span class="stringliteral">&#39;store_true&#39;</span>, help=<span class="stringliteral">&quot;Load the MaterialX assets&quot;</span>)</div>
-<div class="line"><span class="lineno">   16</span>    parser.add_argument(<span class="stringliteral">&quot;-df&quot;</span>, <span class="stringliteral">&quot;--data_folder&quot;</span>, type=str, default=<span class="stringliteral">&quot;data/PolyHavenMaterialX&quot;</span>, help=<span class="stringliteral">&quot;Data folder to save / load MaterialX assets&quot;</span>)</div>
-<div class="line"><span class="lineno">   17</span>    parser.add_argument(<span class="stringliteral">&quot;-c&quot;</span>, <span class="stringliteral">&quot;--count&quot;</span>, type=int, default=<span class="keywordtype">None</span>, help=<span class="stringliteral">&quot;Number of assets to fetch (default: 1)&quot;</span>)</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    args = parser.parse_args()</div>
-<div class="line"><span class="lineno">   20</span>    data_file = <span class="stringliteral">&quot;polyhaven_materialx_assets.json&quot;</span></div>
-<div class="line"><span class="lineno">   21</span>    fetch = args.fetch</div>
-<div class="line"><span class="lineno">   22</span>    download_id = args.download_id</div>
-<div class="line"><span class="lineno">   23</span>    resolution = args.download_resolution</div>
-<div class="line"><span class="lineno">   24</span>    load = args.load</div>
-<div class="line"><span class="lineno">   25</span>    data_folder = args.data_folder</div>
-<div class="line"><span class="lineno">   26</span>    </div>
-<div class="line"><span class="lineno">   27</span>    loader = polyHavenLoader.PolyHavenLoader()</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> fetch:</div>
-<div class="line"><span class="lineno">   30</span>        fetch_count = args.count</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> fetch_count <span class="keywordflow">and</span> fetch_count &lt; 1:</div>
-<div class="line"><span class="lineno">   32</span>            fetch_count = 1</div>
-<div class="line"><span class="lineno">   33</span>        fetch_location = Path(data_folder) / data_file</div>
-<div class="line"><span class="lineno">   34</span>        print(f<span class="stringliteral">&quot;Fetching MaterialX assets to {fetch_location}...&quot;</span>)</div>
-<div class="line"><span class="lineno">   35</span>        materialx_assets, all_assets, filtered_polyhaven_assets = loader.fetch_materialx_assets(download_id=download_id, max_items=fetch_count)</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keyword">with</span> open(fetch_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   37</span>            json.dump(materialx_assets, f, indent=4)</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>        <span class="comment"># Write all_assets to JSON file:        </span></div>
-<div class="line"><span class="lineno">   40</span>        all_location = Path(data_folder) / <span class="stringliteral">&quot;polyhaven_assets.json&quot;</span></div>
-<div class="line"><span class="lineno">   41</span>        <span class="keyword">with</span> open(all_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   42</span>            json.dump(all_assets, f, indent=4)</div>
-<div class="line"><span class="lineno">   43</span>            print(f<span class="stringliteral">&quot;Saved all assets to {all_location}&quot;</span>)</div>
-<div class="line"><span class="lineno">   44</span>        <span class="comment"># Write filtered assets to JSON file:</span></div>
-<div class="line"><span class="lineno">   45</span>        filtered_location = Path(data_folder) / <span class="stringliteral">&quot;filtered_polyhaven_assets.json&quot;</span></div>
-<div class="line"><span class="lineno">   46</span>        <span class="keyword">with</span> open(filtered_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   47</span>            json.dump(filtered_polyhaven_assets, f, indent=4)</div>
-<div class="line"><span class="lineno">   48</span>            print(f<span class="stringliteral">&quot;Saved MaterialX assets to {filtered_location}&quot;</span>)</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">elif</span> load:</div>
-<div class="line"><span class="lineno">   51</span>        load_location = Path(data_folder) / data_file</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keyword">with</span> open(load_location, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   53</span>            print(f<span class="stringliteral">&quot;Loaded MaterialX assets from {load_location}&quot;</span>)</div>
-<div class="line"><span class="lineno">   54</span>            materialx_assets = json.load(f)</div>
-<div class="line"><span class="lineno">   55</span>        <span class="comment">#json_string = json.dumps(materialx_assets, indent=4)</span></div>
-<div class="line"><span class="lineno">   56</span>        <span class="comment">#print(f&quot;MaterialX assets: {json_string}&quot;)</span></div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> download_id:</div>
-<div class="line"><span class="lineno">   59</span>        <span class="comment"># Find download entry by ID</span></div>
-<div class="line"><span class="lineno">   60</span>        entry_id = download_id + <span class="stringliteral">&#39;___&#39;</span> + resolution</div>
-<div class="line"><span class="lineno">   61</span>        entry = materialx_assets.get(entry_id)</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> entry:</div>
-<div class="line"><span class="lineno">   63</span>            print(f<span class="stringliteral">&quot;Downloading asset with ID &#39;{download_id}&#39;, resolution &#39;{resolution}&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">   64</span>            asset_list = {entry_id: entry, resolution: resolution}</div>
-<div class="line"><span class="lineno">   65</span>            id, mtlx_string, texture_binaries = loader.download_asset(asset_list)                </div>
-<div class="line"><span class="lineno">   66</span>            loader.save_materialx_with_textures(id, mtlx_string, texture_binaries, data_folder)</div>
-<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   68</span>            print(f<span class="stringliteral">&quot;No asset found with ID &#39;{entry_id}&#39; in the MaterialX assets.&quot;</span>)</div>
-<div class="line"><span class="lineno">   69</span> </div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_cmd_8py_source.html#l00014">14</a> of file <a class="el" href="poly_haven_loader_cmd_8py_source.html">polyHavenLoaderCmd.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span><span class="keyword">def </span>main():</div>
+<div class="line"><span class="lineno">   15</span>    parser = argparse.ArgumentParser(description=<span class="stringliteral">&quot;Fetch MaterialX assets from PolyHaven&quot;</span>)</div>
+<div class="line"><span class="lineno">   16</span>    parser.add_argument(<span class="stringliteral">&quot;-id&quot;</span>, <span class="stringliteral">&quot;--download_id&quot;</span>, type=str, default=<span class="stringliteral">&quot;polystyrene&quot;</span>, help=<span class="stringliteral">&quot;Filter ID to fetch MaterialX assets (e.g. &#39;polystyrene&#39;)&quot;</span>)</div>
+<div class="line"><span class="lineno">   17</span>    parser.add_argument(<span class="stringliteral">&quot;-res&quot;</span>, <span class="stringliteral">&quot;--download_resolution&quot;</span>, type=str, default=<span class="stringliteral">&quot;1k&quot;</span>, help=<span class="stringliteral">&quot;Resolution of the MaterialX assets to download (e.g. &#39;1k&#39;, &#39;2k&#39;, &#39;4k&#39;, &#39;8k&#39;) &quot;</span>)</div>
+<div class="line"><span class="lineno">   18</span>    parser.add_argument(<span class="stringliteral">&quot;-fe&quot;</span>, <span class="stringliteral">&quot;--fetch&quot;</span>, action=<span class="stringliteral">&#39;store_true&#39;</span>, help=<span class="stringliteral">&quot;Fetch and save the MaterialX assets to a file&quot;</span>)</div>
+<div class="line"><span class="lineno">   19</span>    parser.add_argument(<span class="stringliteral">&quot;-l&quot;</span>, <span class="stringliteral">&quot;--load&quot;</span>, action=<span class="stringliteral">&#39;store_true&#39;</span>, help=<span class="stringliteral">&quot;Load the MaterialX assets&quot;</span>)</div>
+<div class="line"><span class="lineno">   20</span>    parser.add_argument(<span class="stringliteral">&quot;-df&quot;</span>, <span class="stringliteral">&quot;--data_folder&quot;</span>, type=str, default=<span class="stringliteral">&quot;data/PolyHavenMaterialX&quot;</span>, help=<span class="stringliteral">&quot;Data folder to save / load MaterialX assets&quot;</span>)</div>
+<div class="line"><span class="lineno">   21</span>    parser.add_argument(<span class="stringliteral">&quot;-c&quot;</span>, <span class="stringliteral">&quot;--count&quot;</span>, type=int, default=<span class="keywordtype">None</span>, help=<span class="stringliteral">&quot;Number of assets to fetch (default: 1)&quot;</span>)</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    args = parser.parse_args()</div>
+<div class="line"><span class="lineno">   24</span>    data_file = <span class="stringliteral">&quot;polyhaven_materialx_assets.json&quot;</span></div>
+<div class="line"><span class="lineno">   25</span>    fetch = args.fetch</div>
+<div class="line"><span class="lineno">   26</span>    download_id = args.download_id</div>
+<div class="line"><span class="lineno">   27</span>    resolution = args.download_resolution</div>
+<div class="line"><span class="lineno">   28</span>    load = args.load</div>
+<div class="line"><span class="lineno">   29</span>    data_folder = args.data_folder</div>
+<div class="line"><span class="lineno">   30</span>    </div>
+<div class="line"><span class="lineno">   31</span>    loader = polyHavenLoader.PolyHavenLoader()</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    materialx_assets = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> fetch:</div>
+<div class="line"><span class="lineno">   36</span>        fetch_count = args.count</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> fetch_count <span class="keywordflow">and</span> fetch_count &lt; 1:</div>
+<div class="line"><span class="lineno">   38</span>            fetch_count = 1</div>
+<div class="line"><span class="lineno">   39</span>        fetch_location = Path(data_folder) / data_file</div>
+<div class="line"><span class="lineno">   40</span>        logger.info(f<span class="stringliteral">&quot;Fetching MaterialX assets to {fetch_location}...&quot;</span>)</div>
+<div class="line"><span class="lineno">   41</span>        materialx_assets, all_assets, filtered_polyhaven_assets = loader.fetch_materialx_assets(download_id=download_id, max_items=fetch_count)</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keyword">with</span> open(fetch_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   43</span>            json.dump(materialx_assets, f, indent=4)</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>        <span class="comment"># Write all_assets to JSON file:        </span></div>
+<div class="line"><span class="lineno">   46</span>        all_location = Path(data_folder) / <span class="stringliteral">&quot;polyhaven_assets.json&quot;</span></div>
+<div class="line"><span class="lineno">   47</span>        <span class="keyword">with</span> open(all_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   48</span>            json.dump(all_assets, f, indent=4)</div>
+<div class="line"><span class="lineno">   49</span>            logger.info(f<span class="stringliteral">&quot;Saved all assets to {all_location}&quot;</span>)</div>
+<div class="line"><span class="lineno">   50</span>        <span class="comment"># Write filtered assets to JSON file:</span></div>
+<div class="line"><span class="lineno">   51</span>        filtered_location = Path(data_folder) / <span class="stringliteral">&quot;filtered_polyhaven_assets.json&quot;</span></div>
+<div class="line"><span class="lineno">   52</span>        <span class="keyword">with</span> open(filtered_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   53</span>            json.dump(filtered_polyhaven_assets, f, indent=4)</div>
+<div class="line"><span class="lineno">   54</span>            logger.info(f<span class="stringliteral">&quot;Saved MaterialX assets to {filtered_location}&quot;</span>)</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">elif</span> load:</div>
+<div class="line"><span class="lineno">   57</span>        load_location = Path(data_folder) / data_file</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keyword">with</span> open(load_location, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   59</span>            logger.info(f<span class="stringliteral">&quot;Loaded MaterialX assets from {load_location}&quot;</span>)</div>
+<div class="line"><span class="lineno">   60</span>            materialx_assets = json.load(f)</div>
+<div class="line"><span class="lineno">   61</span>        <span class="comment">#json_string = json.dumps(materialx_assets, indent=4)</span></div>
+<div class="line"><span class="lineno">   62</span>        <span class="comment">#logger.info(f&quot;MaterialX assets: {json_string}&quot;)</span></div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> materialx_assets <span class="keywordflow">and</span> download_id:</div>
+<div class="line"><span class="lineno">   65</span>        <span class="comment"># Find download entry by ID</span></div>
+<div class="line"><span class="lineno">   66</span>        entry_id = download_id + <span class="stringliteral">&#39;___&#39;</span> + resolution</div>
+<div class="line"><span class="lineno">   67</span>        entry = materialx_assets.get(entry_id)</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> entry:</div>
+<div class="line"><span class="lineno">   69</span>            logger.info(f<span class="stringliteral">&quot;Downloading asset with ID &#39;{download_id}&#39;, resolution &#39;{resolution}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">   70</span>            asset_list = {entry_id: entry, resolution: resolution}</div>
+<div class="line"><span class="lineno">   71</span>            id, mtlx_string, texture_binaries = loader.download_asset(asset_list)                </div>
+<div class="line"><span class="lineno">   72</span>            loader.save_materialx_with_textures(id, mtlx_string, texture_binaries, data_folder)</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   74</span>            logger.info(f<span class="stringliteral">&quot;No asset found with ID &#39;{entry_id}&#39; in the MaterialX assets.&quot;</span>)</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   76</span>        logger.info(<span class="stringliteral">&quot;No operation specified.&quot;</span>)</div>
+<div class="line"><span class="lineno">   77</span> </div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aff4acc6731d9d9b1b9606ac30b749f66" name="aff4acc6731d9d9b1b9606ac30b749f66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff4acc6731d9d9b1b9606ac30b749f66">&#9670;&#160;</a></span>level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">materialxMaterials.polyHavenLoaderCmd.level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_cmd_8py_source.html#l00012">12</a> of file <a class="el" href="poly_haven_loader_cmd_8py_source.html">polyHavenLoaderCmd.py</a>.</p>
+
+</div>
+</div>
+<a id="a014709add93c9d57390d4de3240e46b1" name="a014709add93c9d57390d4de3240e46b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a014709add93c9d57390d4de3240e46b1">&#9670;&#160;</a></span>logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">materialxMaterials.polyHavenLoaderCmd.logger = logging.getLogger('POLYH_CMD')</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_cmd_8py_source.html#l00011">11</a> of file <a class="el" href="poly_haven_loader_cmd_8py_source.html">polyHavenLoaderCmd.py</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

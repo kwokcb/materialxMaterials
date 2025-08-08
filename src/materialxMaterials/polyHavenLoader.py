@@ -6,6 +6,8 @@ import requests
 import json
 from pathlib import Path
 import zipfile
+import logging
+
 
 class PolyHavenLoader:
     '''
@@ -23,6 +25,9 @@ class PolyHavenLoader:
             "User-Agent": "MTLX_Polyaven_Loader/1.0",  # Required by PolyHaven API
         }
 
+        self.logger = logging.getLogger('PolyH')
+        logging.basicConfig(level=self.logger.info)
+
     def fetch_materialx_assets(self, max_items=1, download_id=None):
         '''
         Fetch MaterialX assets from PolyHaven API and filter them by resolution.
@@ -36,7 +41,6 @@ class PolyHavenLoader:
         resp = requests.get(self.ASSET_API, headers=self.HEADERS, params=parameters)
         resp.raise_for_status()
         all_assets = resp.json()
-        #print("fethced assets", all_assets.keys())
 
         materialx_assets = {}
         filtered_polyhaven_assets = {}
@@ -45,7 +49,7 @@ class PolyHavenLoader:
         for id, data in all_assets.items():
 
             if download_id and id != download_id:
-                #print(f"Skipping asset id: '{id}' (not matching {download_id})")
+                #self.logger.info(f"Skipping asset id: '{id}' (not matching {download_id})")
                 continue
 
             # Get the thumbnail
@@ -62,7 +66,7 @@ class PolyHavenLoader:
             mtlx_files = files_data.get("mtlx", [])
             if mtlx_files:
 
-                print(f"Found MaterialX data for '{id}'") 
+                self.logger.info(f"Found MaterialX data for '{id}'") 
 
                 # Look for 1K, 2K , 4K, and 8K versions
                 resolutions = {
@@ -79,12 +83,12 @@ class PolyHavenLoader:
                     n_k_mtlx = res.get("mtlx")
                     texture_struct = {}
                     if n_k_mtlx:
-                        #print(f"Found MaterialX files for '{one_k}'")
+                        #self.logger.info(f"Found MaterialX files for '{one_k}'")
                         include_files = n_k_mtlx.get("include", {})
-                        #print(f"Found include files for '{id}': {one_k}")
+                        #self.logger.info(f"Found include files for '{id}': {one_k}")
                         for path, data in include_files.items():
                             texture_url = data.get("url")
-                            #print("Texture path:", path, "URL:", texture_url)
+                            #self.logger.info("Texture path:", path, "URL:", texture_url)
                             texture_struct[path] = texture_url
                     mtlx_url = n_k_mtlx.get("url")
                     res_id = id + '___' + resolution_key
@@ -95,14 +99,14 @@ class PolyHavenLoader:
                             "thumbnail_url": thumbnail_url
                         }
                         json_string = json.dumps(materialx_assets[res_id], indent=4)
-                        #print(f"Found MaterialX for '{res_id}': {json_string}") 
-                        #print(f"Found MaterialX for '{res_id}'") 
+                        #self.logger.info(f"Found MaterialX for '{res_id}': {json_string}") 
+                        #self.logger.info(f"Found MaterialX for '{res_id}'") 
                     # Create folder poly_have_data
 
                     # Save asset data to JSON file
                     #with open(f"polyhaven_data/{id}_data.json", "w") as f:
                     #    json.dump(asset_data, f, indent=4)
-                    #    print(f"Saved asset data for '{id}' to polyhaven_data/{id}_data.json")
+                    #    self.logger.info(f"Saved asset data for '{id}' to polyhaven_data/{id}_data.json")
 
                 filtered_polyhaven_assets[id] = files_data
 
@@ -132,18 +136,18 @@ class PolyHavenLoader:
         for id, asset in asset_list.items():
             url = asset.get("url")
             if not url:
-                print(f"No MaterialX URL found for '{id}'")
+                self.logger.info(f"No MaterialX URL found for '{id}'")
                 continue
 
             resp = requests.get(url, headers=self.HEADERS)
             resp.raise_for_status()
             mtlx_string = resp.text
-            print(f"> Download MaterialX document {url}, length: {len(mtlx_string)} characters")
+            self.logger.info(f"Download MaterialX document {url}, length: {len(mtlx_string)} characters")
 
             texture_binaries = []
             for path, texture_url in asset.get("texture_files", {}).items():
                 # Get texture files
-                print(f"> Download texture from {texture_url} ...")
+                self.logger.info(f"Download texture from {texture_url} ...")
                 texture_resp = requests.get(texture_url, headers=self.HEADERS)
                 texture_resp.raise_for_status()            
 
@@ -151,12 +155,12 @@ class PolyHavenLoader:
                 name = Path(path).stem
 
                 if ext == ".exr":
-                    print(f"  > WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}")
+                    self.logger.info(f"  WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}")
                 texture_binaries.append((path, texture_resp.content))
 
             thumbnail_url = asset.get("thumbnail_url")
             if thumbnail_url:
-                print(f"> Download thumbnail from {thumbnail_url} ...")                
+                self.logger.info(f"Download thumbnail from {thumbnail_url} ...")                
                 thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)
                 thumbnail_resp.raise_for_status()
                 
@@ -186,5 +190,5 @@ class PolyHavenLoader:
             # Write texture files
             for path, content in texture_binaries:
                 zipf.writestr(path, content)
-        print(f"Saved zip: {filename}")
+        self.logger.info(f"Saved zip: {filename}")
 
