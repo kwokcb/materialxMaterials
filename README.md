@@ -40,11 +40,11 @@ either be mapped to MaterialX materials or are natively stored in that format.
 <br>
 <div style="display: flex; align-items: center;">
 <img src="https://polyhaven.com/Logo%20256.png" width="64px" style="margin-right: 5px;">
-<a href="https://polyhaven.com/">PolyHaven Library</a> MaterialX assets can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database. (More functionality is in progress)
+<a href="https://polyhaven.com/">PolyHaven Library</a> MaterialX assets can be downloaded (as zip files). Images and MaterialX documents can be extracted for any of the posted materials in the database.
 </div>
 
 </p>
-Each currently has <code>Python</code> or <code>Javascript</code> implementations, except for <em>Polyhaven</em> which only currently has <code>Python</code> support. 
+Each currently has <code>Python</code> or <code>Javascript</code> implementations. 
 
 </div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
 
@@ -87,8 +87,6 @@ This is designed to be a general purpose MaterialX *material inspector* supporti
 
 <img src="https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=50%>
 
-</div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
-
 <hr>
 <h5>4. PolyHaven</h5>
 
@@ -97,15 +95,30 @@ produce a filtered list of assets (textures) which have
 MaterialX representations. This list cna be used to download
 specific assets and save to zip format. 
 
-<h5>Loading into Web Editor</h5>
+A Javascript library and Web interface is available <a href="https://kwokcb.github.io/materialxMaterials/javascript/JsPolyHaven/" target="__default">here</a>. Filtering by classification, name tags, and dependent image resolution is available. Materials may be previewed and / or saved.
+
+<table>
+<tr>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_0.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1a.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1b.png" width=100%></td>
+</tr>
+</table>
+
+</div><p><div class="container p-4 rounded-4 border border-secondary border-rounded">
+
+<h4>Loading into Web Editor</h4>
 
 <p>
-Below are screenshots of materials fetched from from <code>PhysicallyBased</code> and <code>GPU Open</code> and <code>ambientCg></code> (left to right  images respectively). Note that the material zip from <code>GPU Open</code> and <code>ambientCg</code> is directly read into the editor via it's zip loading option. 
+Below are screenshots of materials fetched from <code>PhysicallyBased</code>, <code>GPU Open</code>, <code>ambientCg></code> and <code>PolyHaven</code> (left to right  images respectively). 
+
+Note that the material zip from <code>GPU Open</code> and <code>ambientCg</code> is directly read into the editor via it's zip loading option. <code>PolyHaven</code> builds a zip to allow loading via the zip loading option. 
 <table>
 <tr>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_phybased_node_editor.png" width=100%></td>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_zip_node_editor_3.png" width=100%></td>
 <td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_ambientCG_node_editor.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/load_polyhaven_node_editor.png" width=100%></td>
 </tr>
 </table>
 </p>
