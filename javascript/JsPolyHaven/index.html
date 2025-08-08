@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poly Haven Material Loader</title>
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="display-5 fw-bold">Poly Haven Material Loader</h1>
+                <p class="lead">Browse and load high-quality materials from Poly Haven</p>
+                
+                <div class="row g-3 align-items-center mb-3">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            <input type="text" id="searchInput" class="form-control" placeholder="Search materials...">
+                            <button class="btn btn-primary" id="searchButton">Search</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" id="categoryFilter">
+                            <option value="">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" id="resolutionFilter">
+                            <option value="1k">1K Resolution</option>
+                            <option value="2k" selected>2K Resolution</option>
+                            <option value="4k">4K Resolution</option>
+                            <option value="8k">8K Resolution</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border loading-spinner text-primary" role="status" id="mainSpinner">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" id="materialsContainer">
+            <!-- Materials will be loaded here -->
+        </div>
+    </div>
+    
+    <!-- Material Preview Modal -->
+    <div class="modal fade" id="materialModal" tabindex="-1" aria-labelledby="materialModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="materialModalLabel">Material Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="" alt="Material Preview" class="img-fluid rounded mb-3" id="materialPreview">
+                            <div id="materialTags" class="mb-3"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="materialTitle"></h4>
+                            <p id="materialDescription"></p>
+                            <div class="mb-3">
+                                <label for="materialResolution" class="form-label">Resolution</label>
+                                <select class="form-select" id="materialResolution">
+                                    <option value="1k">1K</option>
+                                    <option value="2k" selected>2K</option>
+                                    <option value="4k">4K</option>
+                                    <option value="8k">8K</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Maps Available</label>
+                                <div id="materialMaps" class="d-flex flex-wrap gap-2"></div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" id="downloadMaterial">
+                                    <i class="fas fa-download me-2"></i>Download Material
+                                </button>
+                                <button class="btn btn-outline-secondary" id="copyMaterialLink">
+                                    <i class="fas fa-link me-2"></i>Copy Material Link
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap 5.3.2 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
