@@ -13,7 +13,7 @@ Welcome to `MaterialX Materials`.
 This site hosts a set of libraries and utilities to query remote databases for materials which can
 either be mapped to MaterialX materials or are natively stored in that format.
 
-**Last Updated**: June, 2025
+**Last Updated**: September, 2025
 
 
 **Links**
@@ -75,6 +75,7 @@ A command line utility is available <a href="https://github.com/kwokcb/materialx
 <p>
 
 <p><a href="https://github.com/kwokcb/materialxWeb/blob/main/flask/gpuopen/README.md">A <b>Flask</b> application</a> is also available which uses the Python package with a Web based front here.
+<br>
 <img src="https://raw.githubusercontent.com/kwokcb/materialxWeb/refs/heads/main/flask/gpuopen/images/extract_material_2.png" width=50%>
 </p>
 
@@ -130,7 +131,7 @@ Note that the material zip from <code>GPU Open</code> and <code>ambientCg</code>
 
 The Python utilities require:
 
-1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation
+1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation. The current build is against 1.39.4.
 2. The `requests` package.
 3. The `pillow` package for image handling for GPUOpen package handling
 
