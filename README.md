@@ -13,7 +13,7 @@ Welcome to `MaterialX Materials`.
 This site hosts a set of libraries and utilities to query remote databases for materials which can
 either be mapped to MaterialX materials or are natively stored in that format.
 
-**Last Updated**: September, 2025
+**Last Updated**: January, 2026 (1.39.5 in progress)
 
 
 **Links**
