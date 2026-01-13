@@ -29,26 +29,23 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Cleanup old distribution folder
-        run: |
-          rm -rf distribution
-          mkdir -p distribution
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Create distribution 
         run: |
-          cp index.html distribution
-          cp -R documents distribution
-          cp -R examples distribution
-          cp -R src distribution
-          cp -R javascript distribution
+          mkdir distrib
+          cp index.html distrib
+          cp -R documents distrib
+          cp -R examples distrib
+          cp -R src distrib
+          cp -R javascript distrib
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: distribution
-          path: distribution
+          path: distrib
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
