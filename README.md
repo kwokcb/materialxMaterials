@@ -131,7 +131,7 @@ Note that the material zip from <code>GPU Open</code> and <code>ambientCg</code>
 
 The Python utilities require:
 
-1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation. The current build is against 1.39.4.
+1. The MaterialX 1.39 or greater package for PhysicallyBased OpenPBR shader creation. The current build is against 1.39.5.
 2. The `requests` package.
 3. The `pillow` package for image handling for GPUOpen package handling
 

@@ -2,7 +2,7 @@
 <materialx version="1.39">
   <!--Physically Based Materials from https://api.physicallybased.info -->
   <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
-  <!--  Content processsed via REST API and mapped to MaterialX V1.39.4 -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Aluminum_SS_SHD_PBM -->
@@ -182,11 +182,13 @@
   </surfacematerial>
   <!-- Generated shader: Coffee_SS_SHD_PBM -->
   <standard_surface name="Coffee_SS_SHD_PBM" type="surfaceshader" uiname="Coffee" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/coffee.jpeg">
-    <input name="base_color" type="color3" value="0.027,0.019,0.018" />
+    <input name="base_color" type="color3" value="0.447,0.133,0.034" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.34" />
-    <input name="subsurface_radius" type="color3" value="10,5,1" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmission_dispersion" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.447,0.133,0.034" />
   </standard_surface>
   <!-- Generated material: Coffee_SS_MAT_PBM -->
   <surfacematerial name="Coffee_SS_MAT_PBM" type="material">
@@ -253,8 +255,8 @@
   <surfacematerial name="Egg_Shell_SS_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Egg_Shell_SS_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: Eye__cornea__SS_SHD_PBM -->
-  <standard_surface name="Eye__cornea__SS_SHD_PBM" type="surfaceshader" uiname="Eye (cornea)" uifolder="Human" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-cornea.jpeg">
+  <!-- Generated shader: Eye__Cornea__SS_SHD_PBM -->
+  <standard_surface name="Eye__Cornea__SS_SHD_PBM" type="surfaceshader" uiname="Eye (Cornea)" uifolder="Human" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-cornea.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
@@ -262,12 +264,12 @@
     <input name="transmission" type="float" value="1" />
     <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
-  <!-- Generated material: Eye__cornea__SS_MAT_PBM -->
-  <surfacematerial name="Eye__cornea__SS_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Eye__cornea__SS_SHD_PBM" />
+  <!-- Generated material: Eye__Cornea__SS_MAT_PBM -->
+  <surfacematerial name="Eye__Cornea__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Eye__Cornea__SS_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: Eye__lens__SS_SHD_PBM -->
-  <standard_surface name="Eye__lens__SS_SHD_PBM" type="surfaceshader" uiname="Eye (lens)" uifolder="Human" doc="The refractive index of human lens varies from approximately 1.406 in the central layers down to 1.386 in less dense layers of the lens. This index gradient enhances the optical power of the lens.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-lens.jpeg">
+  <!-- Generated shader: Eye__Lens__SS_SHD_PBM -->
+  <standard_surface name="Eye__Lens__SS_SHD_PBM" type="surfaceshader" uiname="Eye (Lens)" uifolder="Human" doc="The refractive index of human lens varies from approximately 1.406 in the central layers down to 1.386 in less dense layers of the lens. This index gradient enhances the optical power of the lens.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-lens.jpeg">
     <input name="base_color" type="color3" value="1,1,1" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
@@ -275,21 +277,21 @@
     <input name="transmission" type="float" value="1" />
     <input name="transmission_color" type="color3" value="1,1,1" />
   </standard_surface>
-  <!-- Generated material: Eye__lens__SS_MAT_PBM -->
-  <surfacematerial name="Eye__lens__SS_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Eye__lens__SS_SHD_PBM" />
+  <!-- Generated material: Eye__Lens__SS_MAT_PBM -->
+  <surfacematerial name="Eye__Lens__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Eye__Lens__SS_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: Eye__sclera__SS_SHD_PBM -->
-  <standard_surface name="Eye__sclera__SS_SHD_PBM" type="surfaceshader" uiname="Eye (sclera)" uifolder="Human" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-sclera.jpeg">
+  <!-- Generated shader: Eye__Sclera__SS_SHD_PBM -->
+  <standard_surface name="Eye__Sclera__SS_SHD_PBM" type="surfaceshader" uiname="Eye (Sclera)" uifolder="Human" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-sclera.jpeg">
     <input name="base_color" type="color3" value="0.652,0.5,0.394" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.4" />
     <input name="subsurface_radius" type="color3" value="0.482,0.169,0.109" />
   </standard_surface>
-  <!-- Generated material: Eye__sclera__SS_MAT_PBM -->
-  <surfacematerial name="Eye__sclera__SS_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Eye__sclera__SS_SHD_PBM" />
+  <!-- Generated material: Eye__Sclera__SS_MAT_PBM -->
+  <surfacematerial name="Eye__Sclera__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Eye__Sclera__SS_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Gasoline_SS_SHD_PBM -->
   <standard_surface name="Gasoline_SS_SHD_PBM" type="surfaceshader" uiname="Gasoline" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gasoline.jpeg">
@@ -353,18 +355,30 @@
   <surfacematerial name="Gray_Card_SS_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Gray_Card_SS_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: Honey_SS_SHD_PBM -->
-  <standard_surface name="Honey_SS_SHD_PBM" type="surfaceshader" uiname="Honey" uifolder="Liquid" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey.jpeg">
-    <input name="base_color" type="color3" value="0.83077,0.397,0.038" />
+  <!-- Generated shader: Honey__Liquid__SS_SHD_PBM -->
+  <standard_surface name="Honey__Liquid__SS_SHD_PBM" type="surfaceshader" uiname="Honey (Liquid)" uifolder="Liquid" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey-liquid.jpeg">
+    <input name="base_color" type="color3" value="0.831,0.571,0.037" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="1.504" />
     <input name="transmission" type="float" value="1" />
-    <input name="transmission_color" type="color3" value="0.83077,0.397,0.038" />
+    <input name="transmission_color" type="color3" value="0.831,0.571,0.037" />
   </standard_surface>
-  <!-- Generated material: Honey_SS_MAT_PBM -->
-  <surfacematerial name="Honey_SS_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Honey_SS_SHD_PBM" />
+  <!-- Generated material: Honey__Liquid__SS_MAT_PBM -->
+  <surfacematerial name="Honey__Liquid__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Honey__Liquid__SS_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Honey__Crystallized__SS_SHD_PBM -->
+  <standard_surface name="Honey__Crystallized__SS_SHD_PBM" type="surfaceshader" uiname="Honey (Crystallized)" uifolder="Liquid" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey-crystallized.jpeg">
+    <input name="base_color" type="color3" value="0.449,0.319,0.011" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.504" />
+    <input name="subsurface_radius" type="color3" value="0.2,0.2,0.2" />
+  </standard_surface>
+  <!-- Generated material: Honey__Crystallized__SS_MAT_PBM -->
+  <surfacematerial name="Honey__Crystallized__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Honey__Crystallized__SS_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Ice_SS_SHD_PBM -->
   <standard_surface name="Ice_SS_SHD_PBM" type="surfaceshader" uiname="Ice" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ice.jpeg">
@@ -943,16 +957,16 @@
   <surfacematerial name="Titanium_SS_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Titanium_SS_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: Toner__black__SS_SHD_PBM -->
-  <standard_surface name="Toner__black__SS_SHD_PBM" type="surfaceshader" uiname="Toner (black)" uifolder="Manmade" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toner-black.jpeg">
+  <!-- Generated shader: Toner__Black__SS_SHD_PBM -->
+  <standard_surface name="Toner__Black__SS_SHD_PBM" type="surfaceshader" uiname="Toner (Black)" uifolder="Manmade" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toner-black.jpeg">
     <input name="base_color" type="color3" value="0.05,0.05,0.05" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.5" />
   </standard_surface>
-  <!-- Generated material: Toner__black__SS_MAT_PBM -->
-  <surfacematerial name="Toner__black__SS_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Toner__black__SS_SHD_PBM" />
+  <!-- Generated material: Toner__Black__SS_MAT_PBM -->
+  <surfacematerial name="Toner__Black__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Toner__Black__SS_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Tungsten_SS_SHD_PBM -->
   <standard_surface name="Tungsten_SS_SHD_PBM" type="surfaceshader" uiname="Tungsten" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tungsten.jpeg">

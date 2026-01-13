@@ -336,9 +336,17 @@ async function showMaterialDetails(material) {
 
     // Set tags
     const tagsContainer = document.getElementById('materialTags');
-    tagsContainer.innerHTML = material.tags.map(tag =>
+    tagsList = material.tags.map(tag =>
         `<span class="badge bg-secondary">${tag}</span>`
     ).join(' ');
+    tagsContainer.innerHTML = '<span class="badge bg-dark">Tags</span> ' + tagsList
+
+    // Set categories
+    const categoriesContainer = document.getElementById('materialCategories');
+    categoriesList = material.categories.map(cat =>
+        `<span class="badge bg-secondary">${cat}</span>`
+    ).join(' ');
+    categoriesContainer.innerHTML = '<span class="badge bg-dark">Cartegories</span> ' + categoriesList
 
     // Reset content preview section
     document.getElementById('contentPreview').innerHTML = `
