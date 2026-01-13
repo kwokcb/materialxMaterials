@@ -17,3 +17,9 @@ src/materialxMaterials.egg-info/dependency_links.txt
 src/materialxMaterials.egg-info/entry_points.txt
 src/materialxMaterials.egg-info/requires.txt
 src/materialxMaterials.egg-info/top_level.txt
+src/materialxmaterials.egg-info/PKG-INFO
+src/materialxmaterials.egg-info/SOURCES.txt
+src/materialxmaterials.egg-info/dependency_links.txt
+src/materialxmaterials.egg-info/entry_points.txt
+src/materialxmaterials.egg-info/requires.txt
+src/materialxmaterials.egg-info/top_level.txt

@@ -144,9 +144,11 @@
         "roughness": 0,
         "ior": 1.35,
         "transmission": 1,
+        "transmissionDepth": 0.08,
         "transmissionDispersion": 54,
         "density": 1060,
         "viscosity": 2.8,
+        "surfaceTension": 56,
         "category": [
             "Human"
         ],
@@ -161,7 +163,8 @@
             "https://en.wikipedia.org/wiki/Hemorheology",
             "https://www.frontiersin.org/articles/10.3389/fphys.2019.01329/full",
             "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
-            "https://wiki.anton-paar.com/en/whole-blood/"
+            "https://wiki.anton-paar.com/en/whole-blood/",
+            "https://en.wikipedia.org/w/index.php?title=Surface_tension&oldid=1304099149#Values"
         ],
         "tags": [
             "liquid"
@@ -529,18 +532,16 @@
     {
         "name": "Coffee",
         "color": [
-            0.027,
-            0.019,
-            0.018
+            0.447,
+            0.133,
+            0.034
         ],
         "metalness": 0,
         "roughness": 0,
         "ior": 1.34,
-        "subsurfaceRadius": [
-            10,
-            5,
-            1
-        ],
+        "transmission": 1,
+        "transmissionDepth": 0.1,
+        "transmissionDispersion": 55.78,
         "density": 1020,
         "viscosity": 1.7,
         "category": [
@@ -608,6 +609,7 @@
         "transmission": 1,
         "density": 920,
         "viscosity": 46,
+        "surfaceTension": 31,
         "category": [
             "Liquid"
         ],
@@ -619,7 +621,8 @@
             "https://en.wikipedia.org/wiki/Density",
             "https://en.wikipedia.org/wiki/List_of_viscosities",
             "https://downloads.hindawi.com/archive/2014/234583.pdf",
-            "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table"
+            "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
+            "https://www.tandfonline.com/doi/full/10.1080/10942912.2017.1360905"
         ],
         "tags": [
             ""
@@ -726,7 +729,7 @@
         ]
     },
     {
-        "name": "Eye (cornea)",
+        "name": "Eye (Cornea)",
         "color": [
             1,
             1,
@@ -753,7 +756,7 @@
         ]
     },
     {
-        "name": "Eye (lens)",
+        "name": "Eye (Lens)",
         "color": [
             1,
             1,
@@ -780,7 +783,7 @@
         ]
     },
     {
-        "name": "Eye (sclera)",
+        "name": "Eye (Sclera)",
         "color": [
             0.652,
             0.5,
@@ -991,11 +994,11 @@
         ]
     },
     {
-        "name": "Honey",
+        "name": "Honey (Liquid)",
         "color": [
-            0.83077,
-            0.397,
-            0.038
+            0.831,
+            0.571,
+            0.037
         ],
         "metalness": 0,
         "roughness": 0,
@@ -1025,7 +1028,49 @@
             ""
         ],
         "reference": [
-            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey.jpeg"
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey-liquid.jpeg"
+        ]
+    },
+    {
+        "name": "Honey (Crystallized)",
+        "color": [
+            0.449,
+            0.319,
+            0.011
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.504,
+        "subsurfaceRadius": [
+            0.2,
+            0.2,
+            0.2
+        ],
+        "density": 1400,
+        "densityRange": [
+            1380,
+            1450
+        ],
+        "viscosity": 15000,
+        "category": [
+            "Liquid"
+        ],
+        "description": "Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose.",
+        "sources": [
+            "https://www.color-name.com/honey.color",
+            "https://en.wikipedia.org/wiki/Honey",
+            "https://carolinahoneybees.com/the-color-of-honey/",
+            "https://books.google.se/books?id=6RfVqdqxCiUC&pg=PA74&redir_esc=y#v=onepage&q&f=false",
+            "https://wiki.anton-paar.com/en/flower-honey-blended/",
+            "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
+            "https://en.wikipedia.org/wiki/List_of_viscosities",
+            "https://www.engineeringtoolbox.com/dynamic-absolute-kinematic-viscosity-d_412.html"
+        ],
+        "tags": [
+            ""
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey-crystallized.jpeg"
         ]
     },
     {
@@ -1416,6 +1461,7 @@
         ],
         "density": 13546,
         "viscosity": 1.552,
+        "surfaceTension": 487,
         "category": [
             "Metal"
         ],
@@ -1425,7 +1471,8 @@
             "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
             "https://en.wikipedia.org/wiki/Density",
             "https://en.wikipedia.org/wiki/List_of_viscosities",
-            "https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html"
+            "https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html",
+            "https://en.wikipedia.org/w/index.php?title=Surface_tension&oldid=1304099149#Values"
         ],
         "tags": [
             "liquid"
@@ -1455,6 +1502,7 @@
             1035
         ],
         "viscosity": 2,
+        "surfaceTension": 48,
         "category": [
             "Liquid"
         ],
@@ -1467,7 +1515,8 @@
             "https://hypertextbook.com/facts/2002/AliciaNoelleJones.shtml",
             "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
             "https://en.wikipedia.org/wiki/List_of_viscosities",
-            "https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html"
+            "https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html",
+            "https://www.journalofdairyscience.org/article/S0022-0302(59)90760-X/pdf"
         ],
         "tags": [
             "sss"
@@ -1731,6 +1780,7 @@
             1000
         ],
         "viscosity": 100,
+        "surfaceTension": 21,
         "category": [
             "Liquid"
         ],
@@ -1740,7 +1790,8 @@
             "https://en.wikipedia.org/wiki/API_gravity",
             "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9922782/",
             "https://www.sciencedirect.com/science/article/abs/pii/S1350449520305636",
-            "https://www.sciencedirect.com/science/article/pii/S003442572200133X"
+            "https://www.sciencedirect.com/science/article/pii/S003442572200133X",
+            "https://www.scientific.net/DDF.391.106"
         ],
         "tags": [
             "oil",
@@ -2687,7 +2738,7 @@
         ]
     },
     {
-        "name": "Toner (black)",
+        "name": "Toner (Black)",
         "color": [
             0.05,
             0.05,
@@ -2808,6 +2859,7 @@
             1000
         ],
         "viscosity": 1.002,
+        "surfaceTension": 72,
         "acousticAbsorption": [
             0.008,
             0.008,
@@ -2832,7 +2884,8 @@
             "https://www.engineeringtoolbox.com/water-dynamic-kinematic-viscosity-d_596.html",
             "https://en.wikipedia.org/wiki/List_of_viscosities",
             "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
-            "https://www.researchgate.net/journal/Optics-Express-1094-4087/publication/235415649_Zoom_lens_design_using_liquid_lens_for_laparoscope/links/6609e54d10ca86798731ef50/Zoom-lens-design-using-liquid-lens-for-laparoscope.pdf"
+            "https://www.researchgate.net/journal/Optics-Express-1094-4087/publication/235415649_Zoom_lens_design_using_liquid_lens_for_laparoscope/links/6609e54d10ca86798731ef50/Zoom-lens-design-using-liquid-lens-for-laparoscope.pdf",
+            "https://en.wikipedia.org/w/index.php?title=Surface_tension&oldid=1304099149#Values"
         ],
         "tags": [
             ""
