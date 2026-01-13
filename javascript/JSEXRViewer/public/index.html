@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Babylon.js EXR Viewer</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #111;
+    }
+    #ui {
+      position: absolute;
+      z-index: 10;
+      padding: 8px;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="ui">
+  <input type="file" id="fileInput" accept=".exr" />
+</div>
+
+<canvas id="renderCanvas"></canvas>
+
+<!-- Babylon.js core -->
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+
+<!-- Loaders (EXR support lives here) -->
+<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

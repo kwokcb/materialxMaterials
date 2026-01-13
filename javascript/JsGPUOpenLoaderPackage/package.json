@@ -1,6 +1,6 @@
 {
     "name": "jsgpuopenloader",
-    "version": "0.0.1",
+    "version": "1.39.5",
     "description": "A sample package to fetch material information and materials GPUOpen material database.",
     "main": "gpuOpenFetch.js",
     "scripts": {
