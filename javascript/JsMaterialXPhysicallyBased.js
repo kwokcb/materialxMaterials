@@ -132,7 +132,20 @@ class JsPhysicallyBasedMaterialLoader {
         if (shadingModel in this.remapMap) {
             return this.remapMap[shadingModel];
         }
+        else
+        {
+            console.warn('>> No remap keys for shading model:', shadingModel);
+        }
         return {};
+    }
+
+    /**
+     * Get remmapping map
+     * @returns {object} - Remapping map
+     */
+    getInputRemappingMap() 
+    {
+        return this.remapMap;
     }
 
     /**
@@ -206,7 +219,7 @@ class JsPhysicallyBasedMaterialLoader {
                 if (!response.ok) {
                     console.warn(`HTTP error! Status: ${response.status}`);
                     return null;
-        }
+                }
                 return response.json();
             })
             .then((data) => {
@@ -216,7 +229,7 @@ class JsPhysicallyBasedMaterialLoader {
                 } else {
                     console.warn('- No remap keys from repo. Using default remap keys.');
                     this.setDefaultRemapKeys();
-        }
+                }
             })
             .catch((error) => {
                 console.log('- Error loading remap keys:', error);
@@ -282,7 +295,7 @@ class JsPhysicallyBasedMaterialLoader {
             // Call the asynchronous function and then perform additional logic
             this.loadMaterialX().then(() => {
 
-                this.esslgenerator = new this.mx.EsslShaderGenerator();
+                this.esslgenerator = new this.mx.EsslShaderGenerator.create();
                 this.esslgenContext = new this.mx.GenContext(this.esslgenerator);
                 this.stdlib = this.mx.loadStandardLibraries(this.esslgenContext);
                 let children = this.stdlib.getChildren();
@@ -343,6 +356,33 @@ class JsPhysicallyBasedMaterialLoader {
 
 
     /**
+     * Return a sorted list reference names mapped reference images.
+     * @returns {object[]} - List of references. 
+     */
+    getReferenceList()
+    {
+        let references = [];
+        if (this.materials) {
+            for (let i = 0; i < this.materials.length; i++) {
+                const mat = this.materials[i];
+                const matName = mat['name'];
+                const refString = mat['reference']; 
+                const tags = mat['tags'];
+                const category = mat['category'];
+                if (refString.length > 0)
+                {
+                    let referenceItem = { name: matName, reference: refString[0], tags: tags, category: category };
+                    //console.log('Add Reference:', referenceItem);
+                    references.push(referenceItem);
+                }
+            }
+            // Sort references by name
+            references.sort((a, b) => a.name.localeCompare(b.name));
+        }
+        return references;
+    }
+
+    /**
      * @brief Convert the Physically Based Materials to MaterialX
      * @param shaderCategory - MaterialX shader category
      * @param addAllInputs - Add all inputs from node definitions
@@ -364,16 +404,21 @@ class JsPhysicallyBasedMaterialLoader {
             return false;
         }
 
-        if (remapKeys.length == 0) {
+        if (Object.keys(remapKeys).length === 0)
+        {
             remapKeys = this.getInputRemapping(shaderCategory);
         }
+        //console.log('Using remap keys for shading model:', shaderCategory, remapKeys);
 
         // Create a dummy doc with the surface shader with all inputs
         // as reference
         let refDoc = this.mx.createDocument();
         refDoc.importLibrary(this.stdlib);
         const refNode = refDoc.addNode(shaderCategory, 'refShader', this.mx.SURFACE_SHADER_TYPE_STRING);
-        //refNode.addInputsFromNodeDef() -- This is missing from the JS API.
+        if (addAllInputs) {
+            console.warn('MaterialX JS API missing addInputsFromNodeDef()');
+            //refNode.addInputsFromNodeDef() -- This is missing from the JS API.
+        }
         this.doc = this.mx.createDocument();
 
         // Add document level accreditation
@@ -390,41 +435,42 @@ class JsPhysicallyBasedMaterialLoader {
             let matName = mat['name'];
 
             // Filter by material name(s)
-            if (materialNames.length > 0 && !materialNames.includes(matName)) {
-                // Skip material
-                console.log('Skipping material:', matName);
-                continue;
-            }
+            let skipGeneration = materialNames.length > 0 && !materialNames.includes(matName);
 
-
-            if (shaderPreFix.length > 0) {
-                matName = shaderPreFix + '_' + matName;
-            }
-
-            const shaderName = this.doc.createValidChildName('SPB_' + matName + '_' + shaderCategory);
-            this.addComment(this.doc, ' Generated shader: ' + matName + ' ');
-            const shaderNode = this.doc.addNode(shaderCategory, shaderName, this.mx.SURFACE_SHADER_TYPE_STRING);
-
-            const category = mat['category'];
-            const group = mat['group'];
-            let uifolder = '';
-            if (category && category.length > 0) {
-                uifolder = category[0];
-            }
-            if (group && group.length > 0) {
-                if (uifolder.length > 0) {
-                    uifolder += '/';
+            let shaderNode = null;
+            if (!skipGeneration) 
+            {
+                if (shaderPreFix.length > 0) {
+                    matName = shaderPreFix + '_' + matName;
                 }
-                uifolder += group[0];
-            }
-            if (uifolder.length > 0) {
-                shaderNode.setAttribute('uifolder', uifolder);
+
+                const shaderName = this.doc.createValidChildName(matName + '_' + shaderCategory + '_SPB');
+                this.addComment(this.doc, ' Generated shader: ' + matName + ' ');
+                shaderNode = this.doc.addNode(shaderCategory, shaderName, this.mx.SURFACE_SHADER_TYPE_STRING);
+
+                const category = mat['category'];
+                const group = mat['group'];
+                let uifolder = '';
+                if (category && category.length > 0) {
+                    uifolder = category[0];
+                }
+                if (group && group.length > 0) {
+                    if (uifolder.length > 0) {
+                        uifolder += '/';
+                    }
+                    uifolder += group[0];
+                }
+                if (uifolder.length > 0) {
+                    shaderNode.setAttribute('uifolder', uifolder);
+                }
+
+                let docString = ''
+                if (mat['description'].length > 0) {
+                    docString += 'Description: ' + mat['description'];
+                }
             }
 
-            let docString = ''
-            if (mat['description'].length > 0) {
-                docString += 'Description: ' + mat['description'];
-            }
+            // Always want to build the ference
             const refString = mat['reference'];
             if (refString.length > 0) {
                 if (docString.length > 0) {
@@ -433,15 +479,21 @@ class JsPhysicallyBasedMaterialLoader {
                 docString += 'Reference: ' + refString[0];
 
                 let referenceItem = { name: matName, reference: refString[0] };
-                console.log('Add Reference:', referenceItem);
+                //console.log('Add Reference:', referenceItem);
                 references.push(referenceItem);
+            }
+            // Sort references by name
+            references.sort((a, b) => a.name.localeCompare(b.name));
+
+            if (!shaderNode) {
+                continue;
             }
             if (docString.length > 0) {
                 shaderNode.setDocString(docString);
             }
 
             // Create a new material
-            const materialName = this.doc.createValidChildName('MPB_' + matName + '_' + shaderCategory);
+            const materialName = this.doc.createValidChildName(matName + '_' + shaderCategory + '_MPB');
             this.addComment(this.doc, ' Generated material: ' + matName + ' ');
             const materialNode = this.doc.addNode(this.mx.SURFACE_MATERIAL_NODE_STRING, materialName, this.mx.MATERIAL_TYPE_STRING);
             const shaderInput = materialNode.addInput(this.mx.SURFACE_SHADER_TYPE_STRING, this.mx.SURFACE_SHADER_TYPE_STRING);
@@ -458,6 +510,8 @@ class JsPhysicallyBasedMaterialLoader {
             Object.entries(mat).forEach(([key, value]) => {
 
                 if (!skipKeys.includes(key)) {
+
+                    //console.log(`-- Processing key: "${key}" with value:`, value);
 
                     if (key == 'metalness') {
                         metallness = value;
@@ -476,6 +530,7 @@ class JsPhysicallyBasedMaterialLoader {
                         //console.log('Color:', color);
                     }    
 
+                    //console.log(`-- Remapping key "${key}" to "${remapKeys[key]}"`);
                     if (remapKeys[key]) {
                         key = remapKeys[key];
                     }
@@ -502,7 +557,7 @@ class JsPhysicallyBasedMaterialLoader {
                         }
                     }
                     else {
-                        //console.log('>>> Cannot create input:', key)
+                        //console.log('>> Could not map input:', key, 'to node definition')
                     }
                 }
             });
