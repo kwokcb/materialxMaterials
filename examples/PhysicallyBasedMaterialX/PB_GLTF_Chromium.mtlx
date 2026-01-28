@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <materialx version="1.39">
   <!--Physically Based Materials from https://api.physicallybased.info -->
-  <!--  Processsed via API and converted to MaterialX -->
-  <!--  Target Shading Model: gltf_pbr-->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Chromium_GLTF_SHD_PBM -->
-  <gltf_pbr name="Chromium_GLTF_SHD_PBM" type="surfaceshader" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chromium.jpeg">
-    <input name="base_color" type="color3" value="0.638,0.651,0.663" />
+  <gltf_pbr name="Chromium_GLTF_SHD_PBM" type="surfaceshader" uiname="Chromium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chromium.jpeg">
+    <input name="base_color" type="color3" value="0.654,0.685,0.701" />
     <input name="metallic" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.632,0.718,0.809" />
+    <input name="specular_color" type="color3" value="0.591,0.675,0.703" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
   </gltf_pbr>

@@ -8,7 +8,7 @@ version = "1.39.5"
 authors = [
   { name="Bernard Kwok", email="kwokcb@gmail.com" },
 ]
-description = "Utilities to get materials stored on a remote server"
+description = "Utilities to obtains materials from material libraries. Supported libraries include PhysicallyBased, GPUOpen, AmbientCG, and PolyHaven."
 readme = "README.md"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
@@ -20,7 +20,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "materialx==1.39.5",
+    "materialx>=1.39.4",
     "requests",
     "pillow"
 ]
@@ -31,7 +31,7 @@ materialxMaterials = "materialxMaterials.__main__:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 [tool.setuptools.package-data]
-"materialxMaterials.data" = ["*.*"]
+"materialxMaterials.data" = ["**/*"]
 
 [project.urls]
 "Homepage" = "https://kwokcb.github.io/materialxMaterials/"

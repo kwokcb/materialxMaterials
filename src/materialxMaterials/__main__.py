@@ -10,7 +10,7 @@ def main() -> int:
         print('No arguments provided. Use -h or --help for help.')
         return 1
     if sys.argv[1] == '-h' or sys.argv[1] == '--help':
-        print('Usage: python -m materialxMaterials <command> [options] where command is gpuopen, physbased or acg')
+        print('Usage: python -m materialxMaterials <command> [options] where command is gpuopen, physbased, acg (AmbientCG), or polyhaven')
 
     # Check if the command is valid
     cmdArgs = sys.argv[1:]

@@ -8,6 +8,8 @@ import logging as lg
 from http import HTTPStatus
 import MaterialX as mx # type: ignore
 from typing import Optional
+import importlib.resources
+import json
 
 class PhysicallyBasedMaterialLoader:
     '''
@@ -42,6 +44,10 @@ class PhysicallyBasedMaterialLoader:
         self.MTLX_NODE_NAME_ATTRIBUTE = 'nodename'
         ### OpenPBR support flag
         self.support_openpbr = False
+        ### Remapping keys for different shading models
+        self.remapMap = {}
+        ### Default remapping file (part of installed package)
+        self.remapFile = 'PhysicallyBasedMaterialX/PhysicallyBasedToMtlxMappings.json'
 
         if not mx_module:
             self.logger.critical(f'> {self._getMethodName()}: MaterialX module not specified.')
@@ -91,12 +97,28 @@ class PhysicallyBasedMaterialLoader:
         See: https://api.physicallybased.info/operations/get-materials
         for more information on material properties.
 
+        The JSON file PhysicallyBasedToMtlxMappings.json which is part of the package
+        will be used if it exists. Otherwise, default remapping keys will be used.
+
         The currently supported shading models are:
         - standard_surface
         - open_pbr_surface
         - gltf_pbr
         @return None
         '''
+        # Read PhysicallyBasedToMtlxMappings.json installed package
+        self.remapMap = {}
+
+        try:
+            with importlib.resources.files("materialxMaterials.data").joinpath(self.remapFile).open("r", encoding="utf-8") as json_file:
+                self.logger.info(f'> Load remapping from installed package: {self.remapFile}')
+                self.remapMap = json.load(json_file)
+        except FileNotFoundError:
+            self.logger.warn('> No remapping file found in installed package. Using default remapping keys.')
+
+        if self.remapMap:
+            return
+    
         # Remap keys for Autodesk Standard Surface shading model. 
         standard_surface_remapKeys = {
             'color': 'base_color',

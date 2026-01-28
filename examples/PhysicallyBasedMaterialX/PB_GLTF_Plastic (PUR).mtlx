@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: gltf_pbr -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Plastic__PUR__GLTF_SHD_PBM -->
+  <gltf_pbr name="Plastic__PUR__GLTF_SHD_PBM" type="surfaceshader" uiname="Plastic (PUR)" uifolder="Plastic" doc="Modern car paints are nearly always an acrylic polyurethane &quot;enamel&quot; with a pigmented basecoat and a clear topcoat. It may be described as &quot;acrylic&quot;, &quot;acrylic enamel&quot;, &quot;urethane&quot;, etc. and the clearcoat in particular may be described as a lacquer.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pur.jpeg">
+    <input name="base_color" type="color3" value="1,1,1" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.6" />
+    <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="1,1,1" />
+  </gltf_pbr>
+  <!-- Generated material: Plastic__PUR__GLTF_MAT_PBM -->
+  <surfacematerial name="Plastic__PUR__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Plastic__PUR__GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>

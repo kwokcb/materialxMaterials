@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: gltf_pbr -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: MIT_Black_GLTF_SHD_PBM -->
+  <gltf_pbr name="MIT_Black_GLTF_SHD_PBM" type="surfaceshader" uiname="MIT Black" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/mit-black.jpeg">
+    <input name="base_color" type="color3" value="5e-05,5e-05,5e-05" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.99" />
+    <input name="ior" type="float" value="1.5" />
+  </gltf_pbr>
+  <!-- Generated material: MIT_Black_GLTF_MAT_PBM -->
+  <surfacematerial name="MIT_Black_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="MIT_Black_GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>
