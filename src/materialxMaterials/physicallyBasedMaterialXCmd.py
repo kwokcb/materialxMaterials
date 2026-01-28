@@ -37,7 +37,7 @@ def physicallBasedMaterialXCmd():
     parser.add_argument('-s', '--separateFiles', type=bool, default=False, 
                         help='Convert individual MaterialX files per material. Default is false')
     parser.add_argument('-l', '--loadFromFile', type=str, default='', help='Load materials a specified file')
-    parser.add_argument('-wr', '--writeRemapping', type=bool, default=True, help='Write remapping from PhysicallyBased to MaterialX. Default is False')
+    parser.add_argument('-wr', '--writeRemapping', type=bool, default=False, help='Write remapping from PhysicallyBased to MaterialX. Default is False')
     parser.add_argument('-rr', '--readRemapping', type=str, default='', help='Read remapping from PhysicallyBased to MaterialX. Default is empty')
     opts = parser.parse_args()
 

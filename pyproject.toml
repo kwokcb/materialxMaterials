@@ -31,7 +31,7 @@ materialxMaterials = "materialxMaterials.__main__:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 [tool.setuptools.package-data]
-"materialxMaterials.data" = ["*.*"]
+"materialxMaterials.data" = ["**/*"]
 
 [project.urls]
 "Homepage" = "https://kwokcb.github.io/materialxMaterials/"
