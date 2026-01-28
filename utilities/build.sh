@@ -1,5 +1,5 @@
 echo "Start Package Install..."
-pip install . --quiet
+pip install .
 echo "Finished Package Install"
 
 echo "Start Updating Package Data..."
