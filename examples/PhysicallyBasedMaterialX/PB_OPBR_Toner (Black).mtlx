@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: open_pbr_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Toner__Black__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Toner__Black__OPBR_SHD_PBM" type="surfaceshader" uiname="Toner (Black)" uifolder="Manmade" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toner-black.jpeg">
+    <input name="base_color" type="color3" value="0.05,0.05,0.05" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Toner__Black__OPBR_MAT_PBM -->
+  <surfacematerial name="Toner__Black__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Toner__Black__OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

@@ -34,7 +34,7 @@ def render_folder(render_cmd, input_paths):
             print("Rendering: " + input_path)
             # Replace .mtlx with .png
             captureFilename = input_path.replace(".mtlx", ".png")
-            cmd = render_cmd + f' --captureFilename {captureFilename} --material {input_path}'
+            cmd = render_cmd + f' --captureFilename "{captureFilename}" --material "{input_path}"'
             print(cmd)
             os.system(cmd)     
     
@@ -45,6 +45,7 @@ def main():
     parser.add_argument('-r', '--resolution', type=int, help='Resolution of the render. Default is 256', default=256)
     parser.add_argument('-m', '--mesh', type=str, help='Mesh file to render', default='')
     parser.add_argument('input_path', type=str, help='Input path MaterialX file or folder containing MaterialX files')
+    parser.add_argument('-e', '--extraArgs', type=str, help='Extra arges', default='')
     args = parser.parse_args()
 
     render_cmd = ''
@@ -60,6 +61,9 @@ def main():
 
     resolution = args.resolution
     render_cmd += f' --screenWidth {resolution} --screenHeight {resolution} '
+
+    if args.extraArgs:
+        render_cmd += ' ' + args.extraArgs + ' '
 
     # Check for mesh file option
     mesh = args.mesh
