@@ -1,8 +1,9 @@
 var searchData=
 [
   ['cleardownloadmaterial_0',['clearDownloadMaterial',['../classmaterialx_materials_1_1ambient_c_g_loader_1_1_ambient_c_g_loader.html#a8ee7b8755560bd710361415ce505b4ef',1,'materialxMaterials::ambientCGLoader::AmbientCGLoader']]],
-  ['constructor_1',['constructor',['../class_js_g_p_u_open_material_loader.html#ac14a2316019215170e6a5b41796083a0',1,'JsGPUOpenMaterialLoader::constructor()'],['../class_js_physically_based_material_loader.html#a5f0042da938b9c18e1906422a61962cb',1,'JsPhysicallyBasedMaterialLoader::constructor()']]],
+  ['constructor_1',['constructor',['../class_js_g_p_u_open_material_loader.html#ac14a2316019215170e6a5b41796083a0',1,'JsGPUOpenMaterialLoader::constructor()'],['../class_js_physically_based_material_loader.html#a5f0042da938b9c18e1906422a61962cb',1,'JsPhysicallyBasedMaterialLoader::constructor()'],['../class_js_g_p_u_open_material_loader.html#ac14a2316019215170e6a5b41796083a0',1,'JsGPUOpenMaterialLoader::constructor()']]],
   ['convertpilimagetobase64_2',['convertPilImageToBase64',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a61d16733c41af4d6fe1330d407f66cc3',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]],
   ['converttomaterialx_3',['convertToMaterialX',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ad568a7f8abedc69fb614271dd3faff2a',1,'materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.convertToMaterialX()'],['../class_js_physically_based_material_loader.html#afe778eeb96b2d5c13292cfb7d858aad0',1,'JsPhysicallyBasedMaterialLoader::convertToMaterialX()']]],
-  ['converttomaterialxstring_4',['convertToMaterialXString',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
+  ['converttomaterialxstring_4',['convertToMaterialXString',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
+  ['creatematerialxpackage_5',['createMaterialXPackage',['../class_poly_haven_a_p_i.html#a04b87f5f29b9782f49fd75202f019057',1,'PolyHavenAPI']]]
 ];

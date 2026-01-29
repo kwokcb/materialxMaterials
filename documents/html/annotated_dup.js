@@ -14,9 +14,7 @@ var annotated_dup =
         [ "PolyHavenLoader", "classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html", "classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader" ]
       ] ]
     ] ],
-    [ "myserver", null, [
-      [ "MyHTTPRequestHandler", "classmyserver_1_1_my_h_t_t_p_request_handler.html", null ]
-    ] ],
     [ "JsGPUOpenMaterialLoader", "class_js_g_p_u_open_material_loader.html", "class_js_g_p_u_open_material_loader" ],
-    [ "JsPhysicallyBasedMaterialLoader", "class_js_physically_based_material_loader.html", "class_js_physically_based_material_loader" ]
+    [ "JsPhysicallyBasedMaterialLoader", "class_js_physically_based_material_loader.html", "class_js_physically_based_material_loader" ],
+    [ "PolyHavenAPI", "class_poly_haven_a_p_i.html", "class_poly_haven_a_p_i" ]
 ];
