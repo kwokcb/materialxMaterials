@@ -76,19 +76,17 @@ D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:3
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:34: warning: The following parameters of materialxMaterials.polyHavenLoader.PolyHavenLoader.fetch_materialx_assets(self, max_items=1, download_id=None) are not documented:
   parameter 'max_items'
   parameter 'download_id'
-D:/Work/materialx/materialxMaterials/README.md:84: warning: expected <tr> tag but found TK_LNKWORD token instead!
-D:/Work/materialx/materialxMaterials/README.md:105: warning: expected <tr> tag but found TK_LNKWORD token instead!
-D:/Work/materialx/materialxMaterials/README.md:196: warning: Unexpected html tag <table> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:197: warning: Unexpected html tag <tr> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:194: warning: Unexpected html tag <table> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:195: warning: Unexpected html tag <tr> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:196: warning: Unexpected html tag <td> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:196: warning: Unexpected html tag </td> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:197: warning: Unexpected html tag <td> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:197: warning: Unexpected html tag </td> found within <a href=...> context
 D:/Work/materialx/materialxMaterials/README.md:198: warning: Unexpected html tag <td> found within <a href=...> context
 D:/Work/materialx/materialxMaterials/README.md:198: warning: Unexpected html tag </td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:199: warning: Unexpected html tag <td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:199: warning: Unexpected html tag </td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:200: warning: Unexpected html tag <td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:200: warning: Unexpected html tag </td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:201: warning: Unexpected html tag </tr> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:202: warning: Unexpected html tag </table> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:209: warning: expected <td>, <th> or <tr> tag but found </td> instead!
-D:/Work/materialx/materialxMaterials/README.md:243: warning: Unsupported xml/html tag <iframe> found
-D:/Work/materialx/materialxMaterials/README.md:244: warning: Unsupported xml/html tag </iframe> found
-D:/Work/materialx/materialxMaterials/README.md:367: warning: end of comment block while expecting command </div> (Probable start 'D:/Work/materialx/materialxMaterials/README.md' at line 366)
+D:/Work/materialx/materialxMaterials/README.md:199: warning: Unexpected html tag </tr> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:200: warning: Unexpected html tag </table> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:207: warning: expected <td>, <th> or <tr> tag but found </td> instead!
+D:/Work/materialx/materialxMaterials/README.md:241: warning: Unsupported xml/html tag <iframe> found
+D:/Work/materialx/materialxMaterials/README.md:242: warning: Unsupported xml/html tag </iframe> found
+D:/Work/materialx/materialxMaterials/README.md:365: warning: end of comment block while expecting command </div> (Probable start 'D:/Work/materialx/materialxMaterials/README.md' at line 364)
