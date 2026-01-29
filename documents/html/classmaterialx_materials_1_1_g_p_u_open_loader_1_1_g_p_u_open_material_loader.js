@@ -15,8 +15,8 @@ var classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loade
     [ "writeMaterialNamesToFile", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a007539622ada6fdeda6b61d260c9824f", null ],
     [ "writePackageDataToFile", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a6e21d13a797c2291f867883624ec1e26", null ],
     [ "logger", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a03e5b0c8561400aa1605b37f612f15d0", null ],
-    [ "materialNames", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a57510e165aacaea0b1d8be8501cbeda1", null ],
-    [ "materials", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#ade4072ea508aa5c7df000d2bad9d2c5a", null ],
+    [ "materialNames", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#adbbabbd050a9b6daaa3e4a577dfb90ad", null ],
+    [ "materials", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#ad889c458007390326dfba90aa656a5da", null ],
     [ "package_url", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a5c0cb4582ed87562b5e396565574dd01", null ],
     [ "root_url", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a75cc666e2e848809d3d961217a8dbd84", null ],
     [ "url", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a85a8b682966565994bb69281d0f96a71", null ]

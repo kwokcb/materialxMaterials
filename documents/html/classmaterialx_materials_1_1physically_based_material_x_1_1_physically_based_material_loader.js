@@ -26,8 +26,8 @@ var classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based
     [ "MTLX_NODE_NAME_ATTRIBUTE", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aab6479228f71f8b7f3b6077f67c7d103", null ],
     [ "mx", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ae10fc6e2a8a66c4e09ad3f6b5dc320f3", null ],
     [ "remapFile", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ae160b34a1ecb219e149b25eb35302fa0", null ],
-    [ "remapMap", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aa896ba6b63011c6d0b9b4bda281edaa7", null ],
+    [ "remapMap", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a7124c367f11e6d430fa6ae58caa7c67e", null ],
     [ "stdlib", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aa92dc0c1dee535196fccaa43814e728d", null ],
-    [ "support_openpbr", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a5cb354ab20d9ee591c392004f1ca2ad9", null ],
+    [ "support_openpbr", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a34430b451ad8450e5650dfc5053ce46d", null ],
     [ "uri", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a185c147ae9a4910e08bbb3ad4f983cb1", null ]
 ];

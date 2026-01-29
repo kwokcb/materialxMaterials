@@ -35,7 +35,9 @@ src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_W
 src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_Normal.png
 src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_ORM.png
 src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_baseColor.png
+src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_basecolor.png
 src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_height.png
+src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_normal.png
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.mtlx
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/textures/Oliana_Blue_Painted_Wood_Mask.png
