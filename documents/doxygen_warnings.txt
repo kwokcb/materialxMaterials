@@ -1,6 +1,17 @@
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:14: warning: Member main() (function) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:11: warning: Member logger (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:12: warning: Member level (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:445: warning: Unsupported xml/html tag <nodegraph> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:446: warning: Unsupported xml/html tag <oren_nayar_diffuse_bsdf> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:447: warning: Unsupported xml/html tag <output> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:448: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:449: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:450: warning: Unsupported xml/html tag </oren_nayar_diffuse_bsdf> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:452: warning: Unsupported xml/html tag <surface> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:453: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:454: warning: Unsupported xml/html tag </surface> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:456: warning: Unsupported xml/html tag <output> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:457: warning: Unsupported xml/html tag </nodegraph> found
 D:/Work/materialx/materialxMaterials/README.md:197: warning: Unexpected html tag <table> found within <a href=...> context
 D:/Work/materialx/materialxMaterials/README.md:198: warning: Unexpected html tag <tr> found within <a href=...> context
 D:/Work/materialx/materialxMaterials/README.md:199: warning: Unexpected html tag <td> found within <a href=...> context

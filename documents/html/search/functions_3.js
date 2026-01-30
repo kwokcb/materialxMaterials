@@ -5,5 +5,6 @@ var searchData=
   ['convertpilimagetobase64_2',['convertPilImageToBase64',['../classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a61d16733c41af4d6fe1330d407f66cc3',1,'materialxMaterials::GPUOpenLoader::GPUOpenMaterialLoader']]],
   ['converttomaterialx_3',['convertToMaterialX',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ad568a7f8abedc69fb614271dd3faff2a',1,'materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.convertToMaterialX()'],['../class_js_physically_based_material_loader.html#afe778eeb96b2d5c13292cfb7d858aad0',1,'JsPhysicallyBasedMaterialLoader::convertToMaterialX()']]],
   ['converttomaterialxstring_4',['convertToMaterialXString',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
-  ['creatematerialxpackage_5',['createMaterialXPackage',['../class_js_poly_haven_a_p_i_loader.html#a8ad79ee7ffdc1baf41392339319254ab',1,'JsPolyHavenAPILoader']]]
+  ['creatematerialxpackage_5',['createMaterialXPackage',['../class_js_poly_haven_a_p_i_loader.html#a8ad79ee7ffdc1baf41392339319254ab',1,'JsPolyHavenAPILoader']]],
+  ['createnodedef_6',['createNodeDef',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ac800766a9160f68152c15cfe53032acb',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]]
 ];
