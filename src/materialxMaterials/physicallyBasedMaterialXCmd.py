@@ -99,18 +99,24 @@ def physicallBasedMaterialXCmd():
         create_nodedef = opts.createNodeDef
         if create_nodedef:
             logger.info('> Create definition for PhysicallyBased materials')
-            doc = loader.createNodeDef()
+            doc, doc_mat = loader.createNodeDef()
 
-            status, error = doc.validate()
-            if not status:
-                logger.error('> Error validating NodeDef document:')
-                logger.error(error)
+            if doc and doc_mat:
+                status, error = doc_mat.validate()
+                if not status:
+                    logger.error('> Error validating NodeDef document:')
+                    logger.error(error)
+                else:
+                    logger.info('> Definition documents passed validation.')
 
-            nodedef_file_name = os.path.join(outputDir, 'physbased_pbr.mtlx')
-            mx.writeToXmlFile(doc, nodedef_file_name)
-            logger.info(f'> Write definition file: {nodedef_file_name}')
-            #doc_string = mx.writeToXmlString(doc)
-            #print(doc_string)
+                nodedef_file_name = os.path.join(outputDir, 'physbased_pbr.mtlx')
+                mx.writeToXmlFile(doc, nodedef_file_name)
+                logger.info(f'> Write definition file: {nodedef_file_name}')
+
+                nodedef_mat_file_name = os.path.join(outputDir, 'physbased_pbr_materials.mtlx')
+                mx.writeToXmlFile(doc_mat, nodedef_mat_file_name)
+                logger.info(f'> Write materials file: {nodedef_mat_file_name}')
+
             return
 
         # Create folder for MaterialX call PhysicallyBasedMaterialX
