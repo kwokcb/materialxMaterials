@@ -35,9 +35,9 @@ def quantize_image(img, k):
     return quantized.reshape(img.shape)
 
 
-def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize, do_bitdepth, bitdepth):
+def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize, do_bitdepth, bitdepth, to_webp, webp_quality):
     """
-    @brief Process a single image: resize, quantize colors, and/or reduce bit depth, then save to output directory.
+    @brief Process a single image: resize, quantize colors, reduce bit depth, and/or convert to WebP, then save to output directory.
     @param path Path to the input image file.
     @param out_dir Output directory to save the processed image.
     @param resize_pct Resize percentage (int).
@@ -46,12 +46,14 @@ def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize,
     @param do_quantize Whether to quantize the image (bool).
     @param do_bitdepth Whether to reduce bit depth (bool).
     @param bitdepth Number of bits to keep per channel (int).
+    @param to_webp Whether to save as WebP (bool).
+    @param webp_quality WebP quality (int, 0-100).
     """
     img = cv2.imread(path)
     if img is None:
         print(f"Failed to read {path}")
         return
-    if do_resize:
+    if do_resize and resize_pct != 100:
         width = int(img.shape[1] * resize_pct / 100)
         height = int(img.shape[0] * resize_pct / 100)
         img = cv2.resize(img, (width, height), interpolation=cv2.INTER_AREA)
@@ -59,8 +61,13 @@ def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize,
         img = reduce_bit_depth(img, bitdepth)
     if do_quantize:
         img = quantize_image(img, quantize_k)
-    out_path = os.path.join(out_dir, os.path.basename(path))
-    cv2.imwrite(out_path, img)
+    if to_webp:
+        base = os.path.splitext(os.path.basename(path))[0]
+        out_path = os.path.join(out_dir, base + ".webp")
+        cv2.imwrite(out_path, img, [int(cv2.IMWRITE_WEBP_QUALITY), webp_quality])
+    else:
+        out_path = os.path.join(out_dir, os.path.basename(path))
+        cv2.imwrite(out_path, img)
     print(f"Saved: {out_path}")
 
 
@@ -68,12 +75,14 @@ def main():
     """
     @brief Main entry point for the script. Parses arguments and processes all PNG images in the input folder.
     """
-    parser = argparse.ArgumentParser(description="Batch optimize PNG images: resize, reduce bit depth, and/or reduce precision.")
+    parser = argparse.ArgumentParser(description="Batch optimize PNG images: resize, reduce bit depth, reduce precision, and/or convert to WebP.")
     parser.add_argument("input_folder", help="Folder containing PNG images")
     parser.add_argument("-o", "--output_folder", default=None, help="Output folder (default: input_folder/optimized)")
-    parser.add_argument("-r", "--resize", type=int, default=50, help="Resize percentage (default: 50)")
+    parser.add_argument("-r", "--resize", type=int, default=100, help="Resize percentage (default: 50)")
     parser.add_argument("-q", "--quantize", type=int, default=None, help="Reduce precision to K colors (e.g., 256)")
     parser.add_argument("-b", "--bitdepth", type=int, default=None, help="Reduce bit depth per channel (1-8, e.g., 4)")
+    parser.add_argument("--webp", action="store_true", help="Save output images as WebP format")
+    parser.add_argument("--webp_quality", type=int, default=80, help="WebP quality (0-100, default: 80)")
 
     args = parser.parse_args()
 
@@ -84,6 +93,8 @@ def main():
     do_resize = args.resize is not None
     do_quantize = args.quantize is not None
     do_bitdepth = args.bitdepth is not None
+    to_webp = args.webp
+    webp_quality = args.webp_quality
     resize_pct = args.resize if do_resize else 100
     quantize_k = args.quantize if do_quantize else 256
     bitdepth = args.bitdepth if do_bitdepth else 8
@@ -94,7 +105,7 @@ def main():
         if fname.lower().endswith(".png"):
             print(f"Processing: {fname}")
             in_path = os.path.join(input_folder, fname)
-            process_image(in_path, output_folder, resize_pct, quantize_k, do_resize, do_quantize, do_bitdepth, bitdepth)
+            process_image(in_path, output_folder, resize_pct, quantize_k, do_resize, do_quantize, do_bitdepth, bitdepth, to_webp, webp_quality)
             processed_count += 1
     print(f"Processed {processed_count} images.")
 if __name__ == "__main__":

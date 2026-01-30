@@ -62,15 +62,15 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
       <table>
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png" width=256px><br>
             Emerald Peaks Wallpaper
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png" width=256px><br>
             Indigo Palm Wallpaper
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png" width=256px><br>
             Oliana Blue Painted Wood
           </td>
         </tr>
@@ -81,15 +81,15 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
       <table>
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=256px><br>
             Ketchup
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=256px><br>
             Cooking Oil
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=256px><br>
             Brass
           </td>
         </tr>
@@ -102,15 +102,15 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
       <table>
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/Metal053C_1K-PNG.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/Metal053C_1K-PNG.png" width=256px><br>
             Metal (53)
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/PavingStones142_1K-PNG.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/PavingStones142_1K-PNG.png" width=256px><br>
             Paving Stones (142)
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=256px><br>
             Wood Floor (38)
           </td>
         </tr>
@@ -121,15 +121,15 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
       <table>
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_aerial_asphalt_1.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_aerial_asphalt_1.png" width=256px%><br>
             Ashphalt
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_polystrylene.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_polystrylene.png" width=256px><br>
             Polystyrene
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png" width=100%><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png" width=256px><br>
             Wood Trunk Wall
           </td>
         </tr>
@@ -151,7 +151,7 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
 
 An <a href="https://kwokcb.github.io/MaterialXLab/javascript/PhysicallyBasedMaterialX_out.html" target="_blank">interactive page</a> for extracting <code>PhysicallyBased</code> uses a Javascript implementation found <a href="https://github.com/kwokcb/materialxMaterials/blob/main/javascript/JsMaterialXPhysicallyBased.js">here
 
-<img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/physicallyBased_material_fetch.png" width=100%/>
+<img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/physicallyBased_material_fetch.png" width=512px/>
 </a>
 
 </td>
@@ -164,7 +164,7 @@ A command line utility is available <a href="https://github.com/kwokcb/materialx
 
 <p><a href="https://github.com/kwokcb/materialxWeb/blob/main/flask/gpuopen/README.md">A <b>Flask</b> application</a> is also available which uses the Python package with a Web based front here.
 <br>
-<img src="https://raw.githubusercontent.com/kwokcb/materialxWeb/refs/heads/main/flask/gpuopen/images/extract_material_2.png" width=100%>
+<img src="https://raw.githubusercontent.com/kwokcb/materialxWeb/refs/heads/main/flask/gpuopen/images/extract_material_2.png" width=512px>
 </p>
 
 </td>
@@ -179,7 +179,7 @@ A sample <a href="https://materialx-materials-library-inspector.onrender.com/">
 
 This is designed to be a general purpose MaterialX *material inspector* supporting `ambientCg` and `GPUOpen` currently with the intent to add new libraries as they become available.
 
-<img src="https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=100%>
+<img src="https://github.com/kwokcb/materialxWeb/blob/main/nodejs/materialxLibraryInspector/public/images/ambientCg_download_2.png?raw=true" width=512px>
 
 </td>
 
@@ -194,9 +194,9 @@ A Javascript library and Web interface is available <a href="https://kwokcb.gith
 
 <table>
 <tr>
-<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_0.png" width=100%></td>
-<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1a.png" width=100%></td>
-<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1b.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_0.png" width=256px></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1a.png" width=256px></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1b.png" width=256px></td>
 </tr>
 </table>
 </a>
@@ -221,10 +221,10 @@ Below are screenshots of materials fetched from <code>PhysicallyBased</code>, <c
 Note that the material zip from <code>GPU Open</code> and <code>ambientCg</code> is directly read into the editor via it's zip loading option. <code>PolyHaven</code> packages material content into a zip to allow loading via the zip loading option. 
 <table>
 <tr>
-<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_phybased_node_editor.png" width=100%></td>
-<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_zip_node_editor_3.png" width=100%></td>
-<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_ambientCG_node_editor.png" width=100%></td>
-<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/load_polyhaven_node_editor.png" width=100%></td>
+<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_phybased_node_editor.png" width=256px></td>
+<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_zip_node_editor_3.png" width=256px></td>
+<td><img src="https://kwokcb.github.io/MaterialXLab/documents/help/images/load_ambientCG_node_editor.png" width=256px></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/load_polyhaven_node_editor.png" width=256px></td>
 </tr>
 </table>
 </p>
