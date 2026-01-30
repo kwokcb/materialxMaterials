@@ -362,7 +362,7 @@ class PhysicallyBasedMaterialLoader:
                     pass 
                     #continue
 
-                print('Add key to nodedef:', key)
+                #print('Add key to nodedef:', key)
 
                 self.logger.debug(f'> Add key as input: {key}')
                 
@@ -425,12 +425,11 @@ class PhysicallyBasedMaterialLoader:
                     input.setAttribute("uifolder", uifolder)
 
                     # Add doc string
-                    doc_string = ''
-                    if key == 'description':
-                        print('set doc string to', value)
-                        doc_string = str(value)
-                    if len(doc_string) > 0:
-                        input.setDocString(doc_string)
+                    #doc_string = ''
+                    #if key == 'description':
+                    #    doc_string = str(value)
+                    #if len(doc_string) > 0:
+                    #    input.setDocString(doc_string)
 
                     if uifolder is not None:
                         input.setAttribute("uifolder", uifolder)
@@ -509,9 +508,9 @@ class PhysicallyBasedMaterialLoader:
                         # Split list into array
                         value_list = [str(x) for x in value]
                         # Check if values are numbers
-                        is_number_list = all(isinstance(x, (int, float)) for x in value)
-                        if is_number_list:
-                            value = ', '.join(value_list)
+                        #is_number_list = all(isinstance(x, (int, float)) for x in value)
+                        #if is_number_list:
+                        value = ', '.join(value_list)
                     input.setValueString(str(value))     
 
                     # Add doc string
@@ -519,7 +518,6 @@ class PhysicallyBasedMaterialLoader:
                     if key == 'description':
                         doc_string = str(value)
                     if len(doc_string) > 0:
-                        print('set doc string to', value)
                         shaderNode.setDocString(doc_string)
            
             shaderNode.setAttribute('uiname', matName)
