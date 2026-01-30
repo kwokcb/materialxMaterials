@@ -1,0 +1,85 @@
+
+import os
+import cv2
+import numpy as np
+import argparse
+
+## @file optimize_images.py
+#  @brief Batch optimize PNG images by resizing and/or reducing color precision using OpenCV.
+#
+#  This script allows batch processing of PNG images in a folder, supporting resizing by percentage 
+#  and color quantization. 
+
+def quantize_image(img, k):
+    """
+    @brief Reduce the number of colors in an image using k-means clustering.
+    @param img Input image as a NumPy array.
+    @param k Number of colors (clusters) to quantize to.
+    @return Quantized image as a NumPy array.
+    """
+    pixels = img.reshape((-1, 3))
+    pixels = np.float32(pixels)
+    criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
+    _, labels, centers = cv2.kmeans(pixels, k, None, criteria, 10, cv2.KMEANS_RANDOM_CENTERS)
+    centers = np.uint8(centers)
+    quantized = centers[labels.flatten()]
+    return quantized.reshape(img.shape)
+
+
+def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize):
+    """
+    @brief Process a single image: resize and/or quantize colors, then save to output directory.
+    @param path Path to the input image file.
+    @param out_dir Output directory to save the processed image.
+    @param resize_pct Resize percentage (int).
+    @param quantize_k Number of colors for quantization (int).
+    @param do_resize Whether to resize the image (bool).
+    @param do_quantize Whether to quantize the image (bool).
+    """
+    img = cv2.imread(path)
+    if img is None:
+        print(f"Failed to read {path}")
+        return
+    if do_resize:
+        width = int(img.shape[1] * resize_pct / 100)
+        height = int(img.shape[0] * resize_pct / 100)
+        img = cv2.resize(img, (width, height), interpolation=cv2.INTER_AREA)
+    if do_quantize:
+        img = quantize_image(img, quantize_k)
+    out_path = os.path.join(out_dir, os.path.basename(path))
+    cv2.imwrite(out_path, img)
+    print(f"Saved: {out_path}")
+
+
+def main():
+    """
+    @brief Main entry point for the script. Parses arguments and processes all PNG images in the input folder.
+    """
+    parser = argparse.ArgumentParser(description="Batch optimize PNG images: resize and/or reduce precision.")
+    parser.add_argument("input_folder", help="Folder containing PNG images")
+    parser.add_argument("-o", "--output_folder", default=None, help="Output folder (default: input_folder/optimized)")
+    parser.add_argument("-r", "--resize", type=int, default=50, help="Resize percentage (default: 50)")
+    parser.add_argument("-q","--quantize", type=int, default=None, help="Reduce precision to K colors (e.g., 256)")
+
+    args = parser.parse_args()
+
+    input_folder = args.input_folder
+    output_folder = args.output_folder or os.path.join(input_folder, "optimized")
+    os.makedirs(output_folder, exist_ok=True)
+
+    do_resize = args.resize is not None
+    do_quantize = args.quantize is not None
+    resize_pct = args.resize if do_resize else 100
+    quantize_k = args.quantize if do_quantize else 256
+
+    print(f'Processing folder: {input_folder}')
+    processed_count = 0
+    for fname in os.listdir(input_folder):
+        if fname.lower().endswith(".png"):
+            print(f"Processing: {fname}")
+            in_path = os.path.join(input_folder, fname)
+            process_image(in_path, output_folder, resize_pct, quantize_k, do_resize, do_quantize)
+            processed_count += 1
+    print(f"Processed {processed_count} images.")
+if __name__ == "__main__":
+    main()
