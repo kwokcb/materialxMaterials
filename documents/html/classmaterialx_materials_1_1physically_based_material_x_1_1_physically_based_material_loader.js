@@ -2,9 +2,11 @@ var classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based
 [
     [ "__init__", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a66367f05d514ce58d052e8aad16d5bbc", null ],
     [ "_getMethodName", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a9b69282d0acd1f1b5cf92807cad9c288", null ],
+    [ "_map_keys_to_definition", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#abebf5e69e92abb58a9738c1f38cc75d0", null ],
     [ "addComment", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aeebf1a5739a076154a34bd6d58bea8d4", null ],
     [ "convertToMaterialX", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ad568a7f8abedc69fb614271dd3faff2a", null ],
     [ "convertToMaterialXString", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7", null ],
+    [ "createNodeDef", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#ac800766a9160f68152c15cfe53032acb", null ],
     [ "getInputRemapping", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a00df7f744ae51556d8f63db4360eef43", null ],
     [ "getJSON", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#aae3e6a57ee0e7f49e394a172d87dc410", null ],
     [ "getJSONMaterialNames", "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a0fac543d80540406546451822598309e", null ],

@@ -347,6 +347,189 @@ class PhysicallyBasedMaterialLoader:
         comment = doc.addChildOfCategory('comment')
         comment.setDocString(commentString)
 
+    def _map_keys_to_definition(self, mat, ndef):
+        '''
+        @brief Map a key to a NodeDef input
+        @param mat Material to map keys from
+        @param ndef The definition to map the key to
+        @return The input name if the key was mapped, otherwise None
+        '''
+        for key, value in mat.items():
+            uifolder = None
+            if ndef.getInput(key) is None:
+                if key == 'name':
+                    # Skip as these wil be node instance names
+                    pass 
+                    #continue
+
+                #print('Add key to nodedef:', key)
+
+                self.logger.debug(f'> Add key as input: {key}')
+                
+                input_type = "string"
+                if 'color' in key.lower():
+                    input_type = "color3"
+                    value = "1,1,1"
+                elif isinstance(value, float):
+                    input_type = "float"
+                    value = "0.0"
+                elif isinstance(value, int):
+                    input_type = "float"
+                    value = "0.0"
+                elif key == 'category':
+                    #if isinstance(value, list) and len(value) > 0:                            
+                    #    uifolder = str(value[0])
+                    #else:
+                    #    uifolder = str(value)
+                    #value = None
+                    pass
+                elif key in ['sources', 'reference', 'tags', 'group']:
+                    value = ''
+
+                input = ndef.addInput(key, input_type)
+                if input:
+                    if value is not None:
+                        if isinstance(value, list):
+                            # Split list into array
+                            value_list = [str(x) for x in value]
+                            # Check if values are numbers
+                            is_number_list = all(isinstance(x, (int, float)) for x in value)
+                            if is_number_list:
+                                if len(value_list) > 4 :
+                                    input.setType('string') # floatarray will cause errors in shader generation ! 
+                                elif len(value_list) > 3 :
+                                    input.setType('vector4')
+                                elif len(value_list) > 2 :
+                                    input.setType('vector3')
+                                elif len(value_list) > 1 :
+                                    input.setType('vector2')
+                                else:
+                                    input.setType('float')    
+                                # Replace all numbers with 0.0
+                                value_list = ['0.0' for x in value_list]
+                            value = ', '.join(value_list)
+
+                            #value = ','.join([str(x) for x in value])
+                        input.setValueString(str(value))
+
+
+                    uiname = key
+                    # Split camel case names and separate by space
+                    # e.g. specularColor -> Specular Color
+                    uiname = ''.join([' ' + c if c.isupper() else c for c in key]).strip().title() 
+                    input.setAttribute("uiname", uiname)
+
+                    uifolder = 'Base'
+                    if key in ['description', 'sources', 'reference', 'tags']:
+                        uifolder = 'Metadata'
+                    input.setAttribute("uifolder", uifolder)
+
+                    # Add doc string
+                    #doc_string = ''
+                    #if key == 'description':
+                    #    doc_string = str(value)
+                    #if len(doc_string) > 0:
+                    #    input.setDocString(doc_string)
+
+                    if uifolder is not None:
+                        input.setAttribute("uifolder", uifolder)
+
+    def createNodeDef(self):
+        '''
+        @brief Create a NodeDef for the Physically Based Material inputs
+        @return The MaterialX document containing the NodeDef
+        @details The NodeDef will contain inputs for all the keys in the Physically Based Material JSON object.
+
+        The nodegraph is a placeholder with a simple diffuse shader accepting color as followe:
+        <pre>
+          <nodegraph name="NG_PhysicallyBasedMaterial" nodedef="ND_PhysicallyBasedMaterial">
+            <oren_nayar_diffuse_bsdf name="oren_nayar_diffuse_bsdf" type="BSDF" >
+                <output name="out" type="BSDF" />
+                <input name="color" type="color3" interfacename="color" />
+                <input name="roughness" type="color3" interfacename="roughness" />
+            </oren_nayar_diffuse_bsdf>
+            
+            <surface name="surface" type="surfaceshader">
+                <input name="bsdf" type="BSDF" output="out" nodename="oren_nayar_diffuse_bsdf" />
+            </surface>    
+            
+            <output name="out" type="surfaceshader" nodename="surface"/>
+          </nodegraph>
+        </pre>
+        '''
+        doc = mx.createDocument()
+
+        # Create placeholder nodegraph
+        graph = doc.addNodeGraph("NG_PhysicallyBasedMaterial")
+        graph.setNodeDefString('ND_PhysicallyBasedMaterial')
+
+        node = graph.addNode('oren_nayar_diffuse_bsdf', 'oren_nayar_diffuse_bsdf', 'BSDF')
+        node_in = node.addInput('color', 'color3')
+        node_in.setInterfaceName('color')
+        node_in_rough = node.addInput('roughness', 'float')
+        node_in_rough.setInterfaceName('roughness')
+        node.addOutput('out', 'BSDF')
+
+        node = graph.addNode('surface', 'surface', 'surfaceshader')
+        node_in = node.addInput('bsdf', 'BSDF')
+        node_in.setAttribute('out', 'out')
+        node_in.setNodeName('oren_nayar_diffuse_bsdf')
+
+        node_out = graph.addOutput('out', 'surfaceshader')
+        node_out.setNodeName('surface')
+
+        # Create definition template
+        ndef = doc.addNodeDef("ND_PhysicallyBasedMaterial", 'surfaceshader')
+        #graph.removeOutput('out')
+        ndef.setNodeString('physbased_pbr_surface')
+        ndef.setNodeGroup("pbr")
+        ndef.setDocString("NodeDef for Physically Based Material inputs")
+        ndef.setVersionString("1.0")
+        ndef.setAttribute("isdefaultversion", "true")
+
+        for mat in self.materials:
+            # Map keys to definition inputs
+            self._map_keys_to_definition(mat, ndef)
+
+        doc_mat = mx.createDocument()
+        doc_mat.copyContentFrom(doc)
+        for mat in self.materials:
+            matName = mat['name']
+            shaderName = doc_mat.createValidChildName(matName + '_SHD_PBM')
+            shaderNode = doc_mat.addNode('physbased_pbr_surface', shaderName, mx.SURFACE_SHADER_TYPE_STRING)
+            for key, value in mat.items():
+                if key == 'name':
+                    new_name = doc_mat.createValidChildName(str(value))
+                    shaderNode.setName(new_name)
+
+                input = shaderNode.addInputFromNodeDef(key)
+                if value is not None:
+                    if isinstance(value, list):
+                        # Split list into array
+                        value_list = [str(x) for x in value]
+                        # Check if values are numbers
+                        #is_number_list = all(isinstance(x, (int, float)) for x in value)
+                        #if is_number_list:
+                        value = ', '.join(value_list)
+                    input.setValueString(str(value))     
+
+                    # Add doc string
+                    doc_string = ''
+                    if key == 'description':
+                        doc_string = str(value)
+                    if len(doc_string) > 0:
+                        shaderNode.setDocString(doc_string)
+           
+            shaderNode.setAttribute('uiname', matName)
+
+            # Create a new material
+            materialName = doc_mat.createValidChildName(matName + '_MAT_PBM')
+            materialNode = doc_mat.addNode(mx.SURFACE_MATERIAL_NODE_STRING, materialName, mx.MATERIAL_TYPE_STRING)
+            shaderInput = materialNode.addInput(mx.SURFACE_SHADER_TYPE_STRING, mx.SURFACE_SHADER_TYPE_STRING)
+            shaderInput.setAttribute(self.MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName())
+
+        return doc, doc_mat
+
     def convertToMaterialX(self, materialNames = [], shaderCategory='standard_surface',
                            remapKeys = {}, shaderPreFix ='') -> mx.Document:
         '''

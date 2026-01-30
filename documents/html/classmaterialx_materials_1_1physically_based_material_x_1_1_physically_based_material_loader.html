@@ -143,6 +143,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a611d7f557adf6ca07928a7f7cac6c8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate the MaterialX document.  <br /></td></tr>
 <tr class="memitem:aeebf1a5739a076154a34bd6d58bea8d4" id="r_aeebf1a5739a076154a34bd6d58bea8d4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aeebf1a5739a076154a34bd6d58bea8d4">addComment</a> (self, <a class="el" href="#a1602d9f79454e1faaa224410ddcd697c">doc</a>, commentString)</td></tr>
 <tr class="memdesc:aeebf1a5739a076154a34bd6d58bea8d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a comment to the MaterialX document.  <br /></td></tr>
+<tr class="memitem:ac800766a9160f68152c15cfe53032acb" id="r_ac800766a9160f68152c15cfe53032acb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac800766a9160f68152c15cfe53032acb">createNodeDef</a> (self)</td></tr>
+<tr class="memdesc:ac800766a9160f68152c15cfe53032acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a NodeDef for the Physically Based Material inputs.  <br /></td></tr>
 <tr class="memitem:ad568a7f8abedc69fb614271dd3faff2a" id="r_ad568a7f8abedc69fb614271dd3faff2a"><td class="memItemLeft">mx.Document&#160;</td><td class="memItemRight"><a class="el" href="#ad568a7f8abedc69fb614271dd3faff2a">convertToMaterialX</a> (self, <a class="el" href="#afbf64f0d3d409a6ba17d938128322828">materialNames</a>=[], shaderCategory='standard_surface', remapKeys={}, shaderPreFix='')</td></tr>
 <tr class="memdesc:ad568a7f8abedc69fb614271dd3faff2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the Physically Based Materials to MaterialX format for a given target shading model.  <br /></td></tr>
 <tr class="memitem:a4a4c8283eead5ae269a566782fd55fa3" id="r_a4a4c8283eead5ae269a566782fd55fa3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4a4c8283eead5ae269a566782fd55fa3">writeMaterialXToFile</a> (self, filename)</td></tr>
@@ -184,6 +186,8 @@ Public Attributes</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9b69282d0acd1f1b5cf92807cad9c288" id="r_a9b69282d0acd1f1b5cf92807cad9c288"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9b69282d0acd1f1b5cf92807cad9c288">_getMethodName</a> (self)</td></tr>
 <tr class="memdesc:a9b69282d0acd1f1b5cf92807cad9c288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the calling method for logging purposes.  <br /></td></tr>
+<tr class="memitem:abebf5e69e92abb58a9738c1f38cc75d0" id="r_abebf5e69e92abb58a9738c1f38cc75d0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abebf5e69e92abb58a9738c1f38cc75d0">_map_keys_to_definition</a> (self, mat, ndef)</td></tr>
+<tr class="memdesc:abebf5e69e92abb58a9738c1f38cc75d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a key to a NodeDef input.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to load Physically Based Materials from the PhysicallyBased site. </p>
@@ -321,6 +325,139 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="abebf5e69e92abb58a9738c1f38cc75d0" name="abebf5e69e92abb58a9738c1f38cc75d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abebf5e69e92abb58a9738c1f38cc75d0">&#9670;&#160;</a></span>_map_keys_to_definition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader._map_keys_to_definition </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>mat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ndef</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Map a key to a NodeDef input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>Material to map keys from </td></tr>
+    <tr><td class="paramname">ndef</td><td>The definition to map the key to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The input name if the key was mapped, otherwise None </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="physically_based_material_x_8py_source.html#l00350">350</a> of file <a class="el" href="physically_based_material_x_8py_source.html">physicallyBasedMaterialX.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  350</span>    <span class="keyword">def </span>_map_keys_to_definition(self, mat, ndef):</div>
+<div class="line"><span class="lineno">  351</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  352</span><span class="stringliteral">        @brief Map a key to a NodeDef input</span></div>
+<div class="line"><span class="lineno">  353</span><span class="stringliteral">        @param mat Material to map keys from</span></div>
+<div class="line"><span class="lineno">  354</span><span class="stringliteral">        @param ndef The definition to map the key to</span></div>
+<div class="line"><span class="lineno">  355</span><span class="stringliteral">        @return The input name if the key was mapped, otherwise None</span></div>
+<div class="line"><span class="lineno">  356</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  357</span>        <span class="keywordflow">for</span> key, value <span class="keywordflow">in</span> mat.items():</div>
+<div class="line"><span class="lineno">  358</span>            uifolder = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  359</span>            <span class="keywordflow">if</span> ndef.getInput(key) <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno">  360</span>                <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;name&#39;</span>:</div>
+<div class="line"><span class="lineno">  361</span>                    <span class="comment"># Skip as these wil be node instance names</span></div>
+<div class="line"><span class="lineno">  362</span>                    <span class="keywordflow">pass</span> </div>
+<div class="line"><span class="lineno">  363</span>                    <span class="comment">#continue</span></div>
+<div class="line"><span class="lineno">  364</span> </div>
+<div class="line"><span class="lineno">  365</span>                <span class="comment">#print(&#39;Add key to nodedef:&#39;, key)</span></div>
+<div class="line"><span class="lineno">  366</span> </div>
+<div class="line"><span class="lineno">  367</span>                self.logger.debug(f<span class="stringliteral">&#39;&gt; Add key as input: {key}&#39;</span>)</div>
+<div class="line"><span class="lineno">  368</span>                </div>
+<div class="line"><span class="lineno">  369</span>                input_type = <span class="stringliteral">&quot;string&quot;</span></div>
+<div class="line"><span class="lineno">  370</span>                <span class="keywordflow">if</span> <span class="stringliteral">&#39;color&#39;</span> <span class="keywordflow">in</span> key.lower():</div>
+<div class="line"><span class="lineno">  371</span>                    input_type = <span class="stringliteral">&quot;color3&quot;</span></div>
+<div class="line"><span class="lineno">  372</span>                    value = <span class="stringliteral">&quot;1,1,1&quot;</span></div>
+<div class="line"><span class="lineno">  373</span>                <span class="keywordflow">elif</span> isinstance(value, float):</div>
+<div class="line"><span class="lineno">  374</span>                    input_type = <span class="stringliteral">&quot;float&quot;</span></div>
+<div class="line"><span class="lineno">  375</span>                    value = <span class="stringliteral">&quot;0.0&quot;</span></div>
+<div class="line"><span class="lineno">  376</span>                <span class="keywordflow">elif</span> isinstance(value, int):</div>
+<div class="line"><span class="lineno">  377</span>                    input_type = <span class="stringliteral">&quot;float&quot;</span></div>
+<div class="line"><span class="lineno">  378</span>                    value = <span class="stringliteral">&quot;0.0&quot;</span></div>
+<div class="line"><span class="lineno">  379</span>                <span class="keywordflow">elif</span> key == <span class="stringliteral">&#39;category&#39;</span>:</div>
+<div class="line"><span class="lineno">  380</span>                    <span class="comment">#if isinstance(value, list) and len(value) &gt; 0:                            </span></div>
+<div class="line"><span class="lineno">  381</span>                    <span class="comment">#    uifolder = str(value[0])</span></div>
+<div class="line"><span class="lineno">  382</span>                    <span class="comment">#else:</span></div>
+<div class="line"><span class="lineno">  383</span>                    <span class="comment">#    uifolder = str(value)</span></div>
+<div class="line"><span class="lineno">  384</span>                    <span class="comment">#value = None</span></div>
+<div class="line"><span class="lineno">  385</span>                    <span class="keywordflow">pass</span></div>
+<div class="line"><span class="lineno">  386</span>                <span class="keywordflow">elif</span> key <span class="keywordflow">in</span> [<span class="stringliteral">&#39;sources&#39;</span>, <span class="stringliteral">&#39;reference&#39;</span>, <span class="stringliteral">&#39;tags&#39;</span>, <span class="stringliteral">&#39;group&#39;</span>]:</div>
+<div class="line"><span class="lineno">  387</span>                    value = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  388</span> </div>
+<div class="line"><span class="lineno">  389</span>                input = ndef.addInput(key, input_type)</div>
+<div class="line"><span class="lineno">  390</span>                <span class="keywordflow">if</span> input:</div>
+<div class="line"><span class="lineno">  391</span>                    <span class="keywordflow">if</span> value <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno">  392</span>                        <span class="keywordflow">if</span> isinstance(value, list):</div>
+<div class="line"><span class="lineno">  393</span>                            <span class="comment"># Split list into array</span></div>
+<div class="line"><span class="lineno">  394</span>                            value_list = [str(x) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> value]</div>
+<div class="line"><span class="lineno">  395</span>                            <span class="comment"># Check if values are numbers</span></div>
+<div class="line"><span class="lineno">  396</span>                            is_number_list = all(isinstance(x, (int, float)) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> value)</div>
+<div class="line"><span class="lineno">  397</span>                            <span class="keywordflow">if</span> is_number_list:</div>
+<div class="line"><span class="lineno">  398</span>                                <span class="keywordflow">if</span> len(value_list) &gt; 4 :</div>
+<div class="line"><span class="lineno">  399</span>                                    input.setType(<span class="stringliteral">&#39;string&#39;</span>) <span class="comment"># floatarray will cause errors in shader generation ! </span></div>
+<div class="line"><span class="lineno">  400</span>                                <span class="keywordflow">elif</span> len(value_list) &gt; 3 :</div>
+<div class="line"><span class="lineno">  401</span>                                    input.setType(<span class="stringliteral">&#39;vector4&#39;</span>)</div>
+<div class="line"><span class="lineno">  402</span>                                <span class="keywordflow">elif</span> len(value_list) &gt; 2 :</div>
+<div class="line"><span class="lineno">  403</span>                                    input.setType(<span class="stringliteral">&#39;vector3&#39;</span>)</div>
+<div class="line"><span class="lineno">  404</span>                                <span class="keywordflow">elif</span> len(value_list) &gt; 1 :</div>
+<div class="line"><span class="lineno">  405</span>                                    input.setType(<span class="stringliteral">&#39;vector2&#39;</span>)</div>
+<div class="line"><span class="lineno">  406</span>                                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  407</span>                                    input.setType(<span class="stringliteral">&#39;float&#39;</span>)    </div>
+<div class="line"><span class="lineno">  408</span>                                <span class="comment"># Replace all numbers with 0.0</span></div>
+<div class="line"><span class="lineno">  409</span>                                value_list = [<span class="stringliteral">&#39;0.0&#39;</span> <span class="keywordflow">for</span> x <span class="keywordflow">in</span> value_list]</div>
+<div class="line"><span class="lineno">  410</span>                            value = <span class="stringliteral">&#39;, &#39;</span>.join(value_list)</div>
+<div class="line"><span class="lineno">  411</span> </div>
+<div class="line"><span class="lineno">  412</span>                            <span class="comment">#value = &#39;,&#39;.join([str(x) for x in value])</span></div>
+<div class="line"><span class="lineno">  413</span>                        input.setValueString(str(value))</div>
+<div class="line"><span class="lineno">  414</span> </div>
+<div class="line"><span class="lineno">  415</span> </div>
+<div class="line"><span class="lineno">  416</span>                    uiname = key</div>
+<div class="line"><span class="lineno">  417</span>                    <span class="comment"># Split camel case names and separate by space</span></div>
+<div class="line"><span class="lineno">  418</span>                    <span class="comment"># e.g. specularColor -&gt; Specular Color</span></div>
+<div class="line"><span class="lineno">  419</span>                    uiname = <span class="stringliteral">&#39;&#39;</span>.join([<span class="stringliteral">&#39; &#39;</span> + c <span class="keywordflow">if</span> c.isupper() <span class="keywordflow">else</span> c <span class="keywordflow">for</span> c <span class="keywordflow">in</span> key]).strip().title() </div>
+<div class="line"><span class="lineno">  420</span>                    input.setAttribute(<span class="stringliteral">&quot;uiname&quot;</span>, uiname)</div>
+<div class="line"><span class="lineno">  421</span> </div>
+<div class="line"><span class="lineno">  422</span>                    uifolder = <span class="stringliteral">&#39;Base&#39;</span></div>
+<div class="line"><span class="lineno">  423</span>                    <span class="keywordflow">if</span> key <span class="keywordflow">in</span> [<span class="stringliteral">&#39;description&#39;</span>, <span class="stringliteral">&#39;sources&#39;</span>, <span class="stringliteral">&#39;reference&#39;</span>, <span class="stringliteral">&#39;tags&#39;</span>]:</div>
+<div class="line"><span class="lineno">  424</span>                        uifolder = <span class="stringliteral">&#39;Metadata&#39;</span></div>
+<div class="line"><span class="lineno">  425</span>                    input.setAttribute(<span class="stringliteral">&quot;uifolder&quot;</span>, uifolder)</div>
+<div class="line"><span class="lineno">  426</span> </div>
+<div class="line"><span class="lineno">  427</span>                    <span class="comment"># Add doc string</span></div>
+<div class="line"><span class="lineno">  428</span>                    <span class="comment">#doc_string = &#39;&#39;</span></div>
+<div class="line"><span class="lineno">  429</span>                    <span class="comment">#if key == &#39;description&#39;:</span></div>
+<div class="line"><span class="lineno">  430</span>                    <span class="comment">#    doc_string = str(value)</span></div>
+<div class="line"><span class="lineno">  431</span>                    <span class="comment">#if len(doc_string) &gt; 0:</span></div>
+<div class="line"><span class="lineno">  432</span>                    <span class="comment">#    input.setDocString(doc_string)</span></div>
+<div class="line"><span class="lineno">  433</span> </div>
+<div class="line"><span class="lineno">  434</span>                    <span class="keywordflow">if</span> uifolder <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno">  435</span>                        input.setAttribute(<span class="stringliteral">&quot;uifolder&quot;</span>, uifolder)</div>
+<div class="line"><span class="lineno">  436</span> </div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="aeebf1a5739a076154a34bd6d58bea8d4" name="aeebf1a5739a076154a34bd6d58bea8d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeebf1a5739a076154a34bd6d58bea8d4">&#9670;&#160;</a></span>addComment()</h2>
 
@@ -415,142 +552,142 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The MaterialX document </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="physically_based_material_x_8py_source.html#l00350">350</a> of file <a class="el" href="physically_based_material_x_8py_source.html">physicallyBasedMaterialX.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  351</span>                           remapKeys = {}, shaderPreFix =<span class="stringliteral">&#39;&#39;</span>) -&gt; mx.Document:</div>
-<div class="line"><span class="lineno">  352</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  353</span><span class="stringliteral">        @brief Convert the Physically Based Materials to MaterialX format for a given target shading model.</span></div>
-<div class="line"><span class="lineno">  354</span><span class="stringliteral">        @param materialNames The list of material names to convert. If empty, all materials will be converted.</span></div>
-<div class="line"><span class="lineno">  355</span><span class="stringliteral">        @param shaderCategory The target shading model to convert to. Default is &#39;standard_surface&#39;.</span></div>
-<div class="line"><span class="lineno">  356</span><span class="stringliteral">        @param remapKeys The remapping keys for the target shading model. If empty, the default remapping keys will be used.</span></div>
-<div class="line"><span class="lineno">  357</span><span class="stringliteral">        @param shaderPreFix The prefix to add to the shader name. Default is an empty string.</span></div>
-<div class="line"><span class="lineno">  358</span><span class="stringliteral">        @return The MaterialX document</span></div>
-<div class="line"><span class="lineno">  359</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  360</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
-<div class="line"><span class="lineno">  361</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)</div>
-<div class="line"><span class="lineno">  362</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  363</span>        </div>
-<div class="line"><span class="lineno">  364</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.support_openpbr <span class="keywordflow">and</span> shaderCategory == <span class="stringliteral">&#39;open_pbr_surface&#39;</span>:</div>
-<div class="line"><span class="lineno">  365</span>            self.logger.warning(f<span class="stringliteral">&#39;&gt; OpenPBR shading model not supported in MaterialX version {self.mx.getVersionString()}&#39;</span>)</div>
-<div class="line"><span class="lineno">  366</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  367</span> </div>
-<div class="line"><span class="lineno">  368</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.materials:</div>
-<div class="line"><span class="lineno">  369</span>            self.logger.info(<span class="stringliteral">&#39;&gt; No materials to convert&#39;</span>)</div>
-<div class="line"><span class="lineno">  370</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span>            </div>
-<div class="line"><span class="lineno">  371</span>        </div>
-<div class="line"><span class="lineno">  372</span>        <span class="keywordflow">if</span> len(remapKeys) == 0:</div>
-<div class="line"><span class="lineno">  373</span>            remapKeys = self.getInputRemapping(shaderCategory)</div>
-<div class="line"><span class="lineno">  374</span>            <span class="keywordflow">if</span> len(remapKeys) == 0:</div>
-<div class="line"><span class="lineno">  375</span>                self.logger.warning(f<span class="stringliteral">&#39;&gt; No remapping keys found for shading model: {shaderCategory}&#39;</span>)</div>
-<div class="line"><span class="lineno">  376</span> </div>
-<div class="line"><span class="lineno">  377</span>        <span class="comment"># Create main document and import the library document</span></div>
-<div class="line"><span class="lineno">  378</span>        self.doc = self.mx.createDocument()</div>
-<div class="line"><span class="lineno">  379</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.doc:</div>
-<div class="line"><span class="lineno">  380</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  381</span> </div>
-<div class="line"><span class="lineno">  382</span>        self.doc.importLibrary(self.stdlib)</div>
-<div class="line"><span class="lineno">  383</span> </div>
-<div class="line"><span class="lineno">  384</span>        <span class="comment"># Add header comments</span></div>
-<div class="line"><span class="lineno">  385</span>        self.addComment(self.doc, <span class="stringliteral">&#39;Physically Based Materials from https://api.physicallybased.info &#39;</span>)</div>
-<div class="line"><span class="lineno">  386</span>        self.addComment(self.doc, <span class="stringliteral">&#39;  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ &#39;</span>)</div>
-<div class="line"><span class="lineno">  387</span>        self.addComment(self.doc, f<span class="stringliteral">&#39;  Content processsed via REST API and mapped to MaterialX V{self.mx.getVersionString()} &#39;</span>)</div>
-<div class="line"><span class="lineno">  388</span>        self.addComment(self.doc, f<span class="stringliteral">&#39;  Target Shading Model: {shaderCategory} &#39;</span>)  </div>
-<div class="line"><span class="lineno">  389</span>        self.addComment(self.doc, <span class="stringliteral">&#39;  Utility Author: Bernard Kwok. kwokcb@gmail.com &#39;</span>)  </div>
-<div class="line"><span class="lineno">  390</span> </div>
-<div class="line"><span class="lineno">  391</span>        <span class="comment"># Add properties to the material</span></div>
-<div class="line"><span class="lineno">  392</span>        <span class="keywordflow">for</span> mat <span class="keywordflow">in</span> self.materials:</div>
-<div class="line"><span class="lineno">  393</span>            matName = mat[<span class="stringliteral">&#39;name&#39;</span>]</div>
-<div class="line"><span class="lineno">  394</span>            uiName = matName</div>
-<div class="line"><span class="lineno">  395</span> </div>
-<div class="line"><span class="lineno">  396</span>            <span class="comment"># Filter by material name(s)</span></div>
-<div class="line"><span class="lineno">  397</span>            <span class="keywordflow">if</span> len(materialNames) &gt; 0 <span class="keywordflow">and</span> matName <span class="keywordflow">not</span> <span class="keywordflow">in</span> materialNames:</div>
-<div class="line"><span class="lineno">  398</span>                <span class="comment">#self.logger.debug(&#39;Skip material: &#39; + matName)</span></div>
-<div class="line"><span class="lineno">  399</span>                <span class="keywordflow">continue</span>            </div>
-<div class="line"><span class="lineno">  400</span> </div>
-<div class="line"><span class="lineno">  401</span>            <span class="keywordflow">if</span> (len(shaderPreFix) &gt; 0):</div>
-<div class="line"><span class="lineno">  402</span>                matName = matName + <span class="stringliteral">&#39;_&#39;</span> + shaderPreFix </div>
-<div class="line"><span class="lineno">  403</span> </div>
-<div class="line"><span class="lineno">  404</span>            shaderName = self.doc.createValidChildName(matName + <span class="stringliteral">&#39;_SHD_PBM&#39;</span>)</div>
-<div class="line"><span class="lineno">  405</span>            self.addComment(self.doc, <span class="stringliteral">&#39; Generated shader: &#39;</span> + shaderName + <span class="stringliteral">&#39; &#39;</span>)         </div>
-<div class="line"><span class="lineno">  406</span>            shaderNode = self.doc.addNode(shaderCategory, shaderName, self.mx.SURFACE_SHADER_TYPE_STRING)</div>
-<div class="line"><span class="lineno">  407</span>            shaderNode.setAttribute(<span class="stringliteral">&#39;uiname&#39;</span>, uiName)</div>
-<div class="line"><span class="lineno">  408</span> </div>
-<div class="line"><span class="lineno">  409</span>            folderString = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  410</span>            <span class="keywordflow">if</span> <span class="stringliteral">&#39;category&#39;</span> <span class="keywordflow">in</span> mat:</div>
-<div class="line"><span class="lineno">  411</span>                folderString = mat[<span class="stringliteral">&#39;category&#39;</span>][0]</div>
-<div class="line"><span class="lineno">  412</span>            <span class="keywordflow">if</span> <span class="stringliteral">&#39;group&#39;</span> <span class="keywordflow">in</span> mat:</div>
-<div class="line"><span class="lineno">  413</span>                <span class="keywordflow">if</span> len(folderString) &gt; 0:</div>
-<div class="line"><span class="lineno">  414</span>                    folderString += <span class="stringliteral">&#39;/&#39;</span></div>
-<div class="line"><span class="lineno">  415</span>                    folderString += mat[<span class="stringliteral">&#39;group&#39;</span>]</div>
-<div class="line"><span class="lineno">  416</span>            <span class="keywordflow">if</span> len(folderString) &gt; 0:</div>
-<div class="line"><span class="lineno">  417</span>                shaderNode.setAttribute(<span class="stringliteral">&quot;uifolder&quot;</span>, folderString)</div>
-<div class="line"><span class="lineno">  418</span> </div>
-<div class="line"><span class="lineno">  419</span>            docString = mat[<span class="stringliteral">&#39;description&#39;</span>]            </div>
-<div class="line"><span class="lineno">  420</span>            refString = mat[<span class="stringliteral">&#39;reference&#39;</span>]</div>
-<div class="line"><span class="lineno">  421</span>            <span class="keywordflow">if</span> len(refString) &gt; 0:</div>
-<div class="line"><span class="lineno">  422</span>                <span class="keywordflow">if</span> len(docString) &gt; 0:</div>
-<div class="line"><span class="lineno">  423</span>                    docString += <span class="stringliteral">&#39;. &#39;</span></div>
-<div class="line"><span class="lineno">  424</span>                docString += <span class="stringliteral">&#39;Reference: &#39;</span> + refString[0]</div>
-<div class="line"><span class="lineno">  425</span>            <span class="keywordflow">if</span> len(docString) &gt; 0:</div>
-<div class="line"><span class="lineno">  426</span>                shaderNode.setDocString(docString)</div>
-<div class="line"><span class="lineno">  427</span>            </div>
-<div class="line"><span class="lineno">  428</span>            <span class="comment"># TODO: Add in option to add all inputs + add nodedef string</span></div>
-<div class="line"><span class="lineno">  429</span>            <span class="comment">#shaderNode.addInputsFromNodeDef()</span></div>
-<div class="line"><span class="lineno">  430</span>            <span class="comment">#shaderNode.setAttribute(self.mx.InterfaceElement.NODE_DEF_ATTRIBUTE, nodedefString)</span></div>
-<div class="line"><span class="lineno">  431</span> </div>
-<div class="line"><span class="lineno">  432</span>            <span class="comment"># Create a new material</span></div>
-<div class="line"><span class="lineno">  433</span>            materialName = self.doc.createValidChildName(matName + <span class="stringliteral">&#39;_MAT_PBM&#39;</span>)</div>
-<div class="line"><span class="lineno">  434</span>            self.addComment(self.doc, <span class="stringliteral">&#39; Generated material: &#39;</span> + materialName + <span class="stringliteral">&#39; &#39;</span>)         </div>
-<div class="line"><span class="lineno">  435</span>            materialNode = self.doc.addNode(self.mx.SURFACE_MATERIAL_NODE_STRING, materialName, self.mx.MATERIAL_TYPE_STRING)</div>
-<div class="line"><span class="lineno">  436</span>            shaderInput = materialNode.addInput(self.mx.SURFACE_SHADER_TYPE_STRING, self.mx.SURFACE_SHADER_TYPE_STRING)</div>
-<div class="line"><span class="lineno">  437</span>            shaderInput.setAttribute(self.MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName())</div>
-<div class="line"><span class="lineno">  438</span>            </div>
-<div class="line"><span class="lineno">  439</span>            <span class="comment"># Keys to skip.</span></div>
-<div class="line"><span class="lineno">  440</span>            skipKeys = [<span class="stringliteral">&#39;name&#39;</span>, <span class="stringliteral">&quot;density&quot;</span>, <span class="stringliteral">&quot;category&quot;</span>, <span class="stringliteral">&quot;description&quot;</span>, <span class="stringliteral">&quot;sources&quot;</span>, <span class="stringliteral">&quot;tags&quot;</span>, <span class="stringliteral">&quot;reference&quot;</span>]</div>
-<div class="line"><span class="lineno">  441</span> </div>
-<div class="line"><span class="lineno">  442</span>            metallness = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  443</span>            roughness = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  444</span>            color = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  445</span>            transmission = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  446</span>            <span class="keywordflow">for</span> key, value <span class="keywordflow">in</span> mat.items():</div>
-<div class="line"><span class="lineno">  447</span>                </div>
-<div class="line"><span class="lineno">  448</span>                <span class="keywordflow">if</span> (key <span class="keywordflow">not</span> <span class="keywordflow">in</span> skipKeys):</div>
-<div class="line"><span class="lineno">  449</span>                    <span class="comment"># Keep track of these for possible transmission color remapping</span></div>
-<div class="line"><span class="lineno">  450</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;metalness&#39;</span>:</div>
-<div class="line"><span class="lineno">  451</span>                        metallness = value</div>
-<div class="line"><span class="lineno">  452</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;roughness&#39;</span>:</div>
-<div class="line"><span class="lineno">  453</span>                        roughness = value</div>
-<div class="line"><span class="lineno">  454</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;transmission&#39;</span>:</div>
-<div class="line"><span class="lineno">  455</span>                        transmission = value</div>
-<div class="line"><span class="lineno">  456</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;color&#39;</span>:</div>
-<div class="line"><span class="lineno">  457</span>                        color = value</div>
-<div class="line"><span class="lineno">  458</span> </div>
-<div class="line"><span class="lineno">  459</span>                    <span class="keywordflow">if</span> key <span class="keywordflow">in</span> remapKeys:</div>
-<div class="line"><span class="lineno">  460</span>                        key = remapKeys[key]</div>
-<div class="line"><span class="lineno">  461</span>                    input = shaderNode.addInputFromNodeDef(key)</div>
-<div class="line"><span class="lineno">  462</span>                    <span class="keywordflow">if</span> input:</div>
-<div class="line"><span class="lineno">  463</span>                        <span class="comment"># Convert number vector to string</span></div>
-<div class="line"><span class="lineno">  464</span>                        <span class="keywordflow">if</span> isinstance(value, list):</div>
-<div class="line"><span class="lineno">  465</span>                            value = <span class="stringliteral">&#39;,&#39;</span>.join([str(x) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> value])                        </div>
-<div class="line"><span class="lineno">  466</span>                        <span class="comment"># Convert number to string:</span></div>
-<div class="line"><span class="lineno">  467</span>                        <span class="keywordflow">elif</span> isinstance(value, (int, float)):</div>
-<div class="line"><span class="lineno">  468</span>                            value = str(value)</div>
-<div class="line"><span class="lineno">  469</span>                        input.setValueString(value)</div>
-<div class="line"><span class="lineno">  470</span>                    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  471</span>                        self.logger.debug(<span class="stringliteral">&#39;Skip unsupported key: &#39;</span> + key)</div>
-<div class="line"><span class="lineno">  472</span> </div>
-<div class="line"><span class="lineno">  473</span>            <span class="comment"># Re-route color to mapped transmission_color if needed</span></div>
-<div class="line"><span class="lineno">  474</span>            <span class="keywordflow">if</span> (transmission != <span class="keywordtype">None</span>) <span class="keywordflow">and</span> (metallness != <span class="keywordtype">None</span>) <span class="keywordflow">and</span> (roughness != <span class="keywordtype">None</span>) <span class="keywordflow">and</span> (color != <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  475</span>                <span class="keywordflow">if</span> (metallness == 0) <span class="keywordflow">and</span> (roughness == 0):</div>
-<div class="line"><span class="lineno">  476</span>                    <span class="keywordflow">if</span> <span class="stringliteral">&#39;transmission_color&#39;</span> <span class="keywordflow">in</span> remapKeys:</div>
-<div class="line"><span class="lineno">  477</span>                        key = remapKeys[<span class="stringliteral">&#39;transmission_color&#39;</span>]</div>
-<div class="line"><span class="lineno">  478</span>                        input = shaderNode.addInputFromNodeDef(key)</div>
-<div class="line"><span class="lineno">  479</span>                        <span class="keywordflow">if</span> input:</div>
-<div class="line"><span class="lineno">  480</span>                            self.logger.debug(f<span class="stringliteral">&#39;Set transmission color {key}: {color}&#39;</span>)</div>
-<div class="line"><span class="lineno">  481</span>                            value = <span class="stringliteral">&#39;,&#39;</span>.join([str(x) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> color])                        </div>
-<div class="line"><span class="lineno">  482</span>                            input.setValueString(value)</div>
-<div class="line"><span class="lineno">  483</span> </div>
-<div class="line"><span class="lineno">  484</span>        <span class="keywordflow">return</span> self.doc</div>
-<div class="line"><span class="lineno">  485</span>    </div>
+<p class="definition">Definition at line <a class="el" href="physically_based_material_x_8py_source.html#l00533">533</a> of file <a class="el" href="physically_based_material_x_8py_source.html">physicallyBasedMaterialX.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  534</span>                           remapKeys = {}, shaderPreFix =<span class="stringliteral">&#39;&#39;</span>) -&gt; mx.Document:</div>
+<div class="line"><span class="lineno">  535</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  536</span><span class="stringliteral">        @brief Convert the Physically Based Materials to MaterialX format for a given target shading model.</span></div>
+<div class="line"><span class="lineno">  537</span><span class="stringliteral">        @param materialNames The list of material names to convert. If empty, all materials will be converted.</span></div>
+<div class="line"><span class="lineno">  538</span><span class="stringliteral">        @param shaderCategory The target shading model to convert to. Default is &#39;standard_surface&#39;.</span></div>
+<div class="line"><span class="lineno">  539</span><span class="stringliteral">        @param remapKeys The remapping keys for the target shading model. If empty, the default remapping keys will be used.</span></div>
+<div class="line"><span class="lineno">  540</span><span class="stringliteral">        @param shaderPreFix The prefix to add to the shader name. Default is an empty string.</span></div>
+<div class="line"><span class="lineno">  541</span><span class="stringliteral">        @return The MaterialX document</span></div>
+<div class="line"><span class="lineno">  542</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  543</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
+<div class="line"><span class="lineno">  544</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)</div>
+<div class="line"><span class="lineno">  545</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  546</span>        </div>
+<div class="line"><span class="lineno">  547</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.support_openpbr <span class="keywordflow">and</span> shaderCategory == <span class="stringliteral">&#39;open_pbr_surface&#39;</span>:</div>
+<div class="line"><span class="lineno">  548</span>            self.logger.warning(f<span class="stringliteral">&#39;&gt; OpenPBR shading model not supported in MaterialX version {self.mx.getVersionString()}&#39;</span>)</div>
+<div class="line"><span class="lineno">  549</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  550</span> </div>
+<div class="line"><span class="lineno">  551</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.materials:</div>
+<div class="line"><span class="lineno">  552</span>            self.logger.info(<span class="stringliteral">&#39;&gt; No materials to convert&#39;</span>)</div>
+<div class="line"><span class="lineno">  553</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span>            </div>
+<div class="line"><span class="lineno">  554</span>        </div>
+<div class="line"><span class="lineno">  555</span>        <span class="keywordflow">if</span> len(remapKeys) == 0:</div>
+<div class="line"><span class="lineno">  556</span>            remapKeys = self.getInputRemapping(shaderCategory)</div>
+<div class="line"><span class="lineno">  557</span>            <span class="keywordflow">if</span> len(remapKeys) == 0:</div>
+<div class="line"><span class="lineno">  558</span>                self.logger.warning(f<span class="stringliteral">&#39;&gt; No remapping keys found for shading model: {shaderCategory}&#39;</span>)</div>
+<div class="line"><span class="lineno">  559</span> </div>
+<div class="line"><span class="lineno">  560</span>        <span class="comment"># Create main document and import the library document</span></div>
+<div class="line"><span class="lineno">  561</span>        self.doc = self.mx.createDocument()</div>
+<div class="line"><span class="lineno">  562</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.doc:</div>
+<div class="line"><span class="lineno">  563</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  564</span> </div>
+<div class="line"><span class="lineno">  565</span>        self.doc.importLibrary(self.stdlib)</div>
+<div class="line"><span class="lineno">  566</span> </div>
+<div class="line"><span class="lineno">  567</span>        <span class="comment"># Add header comments</span></div>
+<div class="line"><span class="lineno">  568</span>        self.addComment(self.doc, <span class="stringliteral">&#39;Physically Based Materials from https://api.physicallybased.info &#39;</span>)</div>
+<div class="line"><span class="lineno">  569</span>        self.addComment(self.doc, <span class="stringliteral">&#39;  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ &#39;</span>)</div>
+<div class="line"><span class="lineno">  570</span>        self.addComment(self.doc, f<span class="stringliteral">&#39;  Content processsed via REST API and mapped to MaterialX V{self.mx.getVersionString()} &#39;</span>)</div>
+<div class="line"><span class="lineno">  571</span>        self.addComment(self.doc, f<span class="stringliteral">&#39;  Target Shading Model: {shaderCategory} &#39;</span>)  </div>
+<div class="line"><span class="lineno">  572</span>        self.addComment(self.doc, <span class="stringliteral">&#39;  Utility Author: Bernard Kwok. kwokcb@gmail.com &#39;</span>)  </div>
+<div class="line"><span class="lineno">  573</span> </div>
+<div class="line"><span class="lineno">  574</span>        <span class="comment"># Add properties to the material</span></div>
+<div class="line"><span class="lineno">  575</span>        <span class="keywordflow">for</span> mat <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">  576</span>            matName = mat[<span class="stringliteral">&#39;name&#39;</span>]</div>
+<div class="line"><span class="lineno">  577</span>            uiName = matName</div>
+<div class="line"><span class="lineno">  578</span> </div>
+<div class="line"><span class="lineno">  579</span>            <span class="comment"># Filter by material name(s)</span></div>
+<div class="line"><span class="lineno">  580</span>            <span class="keywordflow">if</span> len(materialNames) &gt; 0 <span class="keywordflow">and</span> matName <span class="keywordflow">not</span> <span class="keywordflow">in</span> materialNames:</div>
+<div class="line"><span class="lineno">  581</span>                <span class="comment">#self.logger.debug(&#39;Skip material: &#39; + matName)</span></div>
+<div class="line"><span class="lineno">  582</span>                <span class="keywordflow">continue</span>            </div>
+<div class="line"><span class="lineno">  583</span> </div>
+<div class="line"><span class="lineno">  584</span>            <span class="keywordflow">if</span> (len(shaderPreFix) &gt; 0):</div>
+<div class="line"><span class="lineno">  585</span>                matName = matName + <span class="stringliteral">&#39;_&#39;</span> + shaderPreFix </div>
+<div class="line"><span class="lineno">  586</span> </div>
+<div class="line"><span class="lineno">  587</span>            shaderName = self.doc.createValidChildName(matName + <span class="stringliteral">&#39;_SHD_PBM&#39;</span>)</div>
+<div class="line"><span class="lineno">  588</span>            self.addComment(self.doc, <span class="stringliteral">&#39; Generated shader: &#39;</span> + shaderName + <span class="stringliteral">&#39; &#39;</span>)         </div>
+<div class="line"><span class="lineno">  589</span>            shaderNode = self.doc.addNode(shaderCategory, shaderName, self.mx.SURFACE_SHADER_TYPE_STRING)</div>
+<div class="line"><span class="lineno">  590</span>            shaderNode.setAttribute(<span class="stringliteral">&#39;uiname&#39;</span>, uiName)</div>
+<div class="line"><span class="lineno">  591</span> </div>
+<div class="line"><span class="lineno">  592</span>            folderString = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  593</span>            <span class="keywordflow">if</span> <span class="stringliteral">&#39;category&#39;</span> <span class="keywordflow">in</span> mat:</div>
+<div class="line"><span class="lineno">  594</span>                folderString = mat[<span class="stringliteral">&#39;category&#39;</span>][0]</div>
+<div class="line"><span class="lineno">  595</span>            <span class="keywordflow">if</span> <span class="stringliteral">&#39;group&#39;</span> <span class="keywordflow">in</span> mat:</div>
+<div class="line"><span class="lineno">  596</span>                <span class="keywordflow">if</span> len(folderString) &gt; 0:</div>
+<div class="line"><span class="lineno">  597</span>                    folderString += <span class="stringliteral">&#39;/&#39;</span></div>
+<div class="line"><span class="lineno">  598</span>                    folderString += mat[<span class="stringliteral">&#39;group&#39;</span>]</div>
+<div class="line"><span class="lineno">  599</span>            <span class="keywordflow">if</span> len(folderString) &gt; 0:</div>
+<div class="line"><span class="lineno">  600</span>                shaderNode.setAttribute(<span class="stringliteral">&quot;uifolder&quot;</span>, folderString)</div>
+<div class="line"><span class="lineno">  601</span> </div>
+<div class="line"><span class="lineno">  602</span>            docString = mat[<span class="stringliteral">&#39;description&#39;</span>]            </div>
+<div class="line"><span class="lineno">  603</span>            refString = mat[<span class="stringliteral">&#39;reference&#39;</span>]</div>
+<div class="line"><span class="lineno">  604</span>            <span class="keywordflow">if</span> len(refString) &gt; 0:</div>
+<div class="line"><span class="lineno">  605</span>                <span class="keywordflow">if</span> len(docString) &gt; 0:</div>
+<div class="line"><span class="lineno">  606</span>                    docString += <span class="stringliteral">&#39;. &#39;</span></div>
+<div class="line"><span class="lineno">  607</span>                docString += <span class="stringliteral">&#39;Reference: &#39;</span> + refString[0]</div>
+<div class="line"><span class="lineno">  608</span>            <span class="keywordflow">if</span> len(docString) &gt; 0:</div>
+<div class="line"><span class="lineno">  609</span>                shaderNode.setDocString(docString)</div>
+<div class="line"><span class="lineno">  610</span>            </div>
+<div class="line"><span class="lineno">  611</span>            <span class="comment"># TODO: Add in option to add all inputs + add nodedef string</span></div>
+<div class="line"><span class="lineno">  612</span>            <span class="comment">#shaderNode.addInputsFromNodeDef()</span></div>
+<div class="line"><span class="lineno">  613</span>            <span class="comment">#shaderNode.setAttribute(self.mx.InterfaceElement.NODE_DEF_ATTRIBUTE, nodedefString)</span></div>
+<div class="line"><span class="lineno">  614</span> </div>
+<div class="line"><span class="lineno">  615</span>            <span class="comment"># Create a new material</span></div>
+<div class="line"><span class="lineno">  616</span>            materialName = self.doc.createValidChildName(matName + <span class="stringliteral">&#39;_MAT_PBM&#39;</span>)</div>
+<div class="line"><span class="lineno">  617</span>            self.addComment(self.doc, <span class="stringliteral">&#39; Generated material: &#39;</span> + materialName + <span class="stringliteral">&#39; &#39;</span>)         </div>
+<div class="line"><span class="lineno">  618</span>            materialNode = self.doc.addNode(self.mx.SURFACE_MATERIAL_NODE_STRING, materialName, self.mx.MATERIAL_TYPE_STRING)</div>
+<div class="line"><span class="lineno">  619</span>            shaderInput = materialNode.addInput(self.mx.SURFACE_SHADER_TYPE_STRING, self.mx.SURFACE_SHADER_TYPE_STRING)</div>
+<div class="line"><span class="lineno">  620</span>            shaderInput.setAttribute(self.MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName())</div>
+<div class="line"><span class="lineno">  621</span>            </div>
+<div class="line"><span class="lineno">  622</span>            <span class="comment"># Keys to skip.</span></div>
+<div class="line"><span class="lineno">  623</span>            skipKeys = [<span class="stringliteral">&#39;name&#39;</span>, <span class="stringliteral">&quot;density&quot;</span>, <span class="stringliteral">&quot;category&quot;</span>, <span class="stringliteral">&quot;description&quot;</span>, <span class="stringliteral">&quot;sources&quot;</span>, <span class="stringliteral">&quot;tags&quot;</span>, <span class="stringliteral">&quot;reference&quot;</span>]</div>
+<div class="line"><span class="lineno">  624</span> </div>
+<div class="line"><span class="lineno">  625</span>            metallness = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  626</span>            roughness = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  627</span>            color = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  628</span>            transmission = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  629</span>            <span class="keywordflow">for</span> key, value <span class="keywordflow">in</span> mat.items():</div>
+<div class="line"><span class="lineno">  630</span>                </div>
+<div class="line"><span class="lineno">  631</span>                <span class="keywordflow">if</span> (key <span class="keywordflow">not</span> <span class="keywordflow">in</span> skipKeys):</div>
+<div class="line"><span class="lineno">  632</span>                    <span class="comment"># Keep track of these for possible transmission color remapping</span></div>
+<div class="line"><span class="lineno">  633</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;metalness&#39;</span>:</div>
+<div class="line"><span class="lineno">  634</span>                        metallness = value</div>
+<div class="line"><span class="lineno">  635</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;roughness&#39;</span>:</div>
+<div class="line"><span class="lineno">  636</span>                        roughness = value</div>
+<div class="line"><span class="lineno">  637</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;transmission&#39;</span>:</div>
+<div class="line"><span class="lineno">  638</span>                        transmission = value</div>
+<div class="line"><span class="lineno">  639</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;color&#39;</span>:</div>
+<div class="line"><span class="lineno">  640</span>                        color = value</div>
+<div class="line"><span class="lineno">  641</span> </div>
+<div class="line"><span class="lineno">  642</span>                    <span class="keywordflow">if</span> key <span class="keywordflow">in</span> remapKeys:</div>
+<div class="line"><span class="lineno">  643</span>                        key = remapKeys[key]</div>
+<div class="line"><span class="lineno">  644</span>                    input = shaderNode.addInputFromNodeDef(key)</div>
+<div class="line"><span class="lineno">  645</span>                    <span class="keywordflow">if</span> input:</div>
+<div class="line"><span class="lineno">  646</span>                        <span class="comment"># Convert number vector to string</span></div>
+<div class="line"><span class="lineno">  647</span>                        <span class="keywordflow">if</span> isinstance(value, list):</div>
+<div class="line"><span class="lineno">  648</span>                            value = <span class="stringliteral">&#39;,&#39;</span>.join([str(x) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> value])                        </div>
+<div class="line"><span class="lineno">  649</span>                        <span class="comment"># Convert number to string:</span></div>
+<div class="line"><span class="lineno">  650</span>                        <span class="keywordflow">elif</span> isinstance(value, (int, float)):</div>
+<div class="line"><span class="lineno">  651</span>                            value = str(value)</div>
+<div class="line"><span class="lineno">  652</span>                        input.setValueString(value)</div>
+<div class="line"><span class="lineno">  653</span>                    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  654</span>                        self.logger.debug(<span class="stringliteral">&#39;Skip unsupported key: &#39;</span> + key)</div>
+<div class="line"><span class="lineno">  655</span> </div>
+<div class="line"><span class="lineno">  656</span>            <span class="comment"># Re-route color to mapped transmission_color if needed</span></div>
+<div class="line"><span class="lineno">  657</span>            <span class="keywordflow">if</span> (transmission != <span class="keywordtype">None</span>) <span class="keywordflow">and</span> (metallness != <span class="keywordtype">None</span>) <span class="keywordflow">and</span> (roughness != <span class="keywordtype">None</span>) <span class="keywordflow">and</span> (color != <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  658</span>                <span class="keywordflow">if</span> (metallness == 0) <span class="keywordflow">and</span> (roughness == 0):</div>
+<div class="line"><span class="lineno">  659</span>                    <span class="keywordflow">if</span> <span class="stringliteral">&#39;transmission_color&#39;</span> <span class="keywordflow">in</span> remapKeys:</div>
+<div class="line"><span class="lineno">  660</span>                        key = remapKeys[<span class="stringliteral">&#39;transmission_color&#39;</span>]</div>
+<div class="line"><span class="lineno">  661</span>                        input = shaderNode.addInputFromNodeDef(key)</div>
+<div class="line"><span class="lineno">  662</span>                        <span class="keywordflow">if</span> input:</div>
+<div class="line"><span class="lineno">  663</span>                            self.logger.debug(f<span class="stringliteral">&#39;Set transmission color {key}: {color}&#39;</span>)</div>
+<div class="line"><span class="lineno">  664</span>                            value = <span class="stringliteral">&#39;,&#39;</span>.join([str(x) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> color])                        </div>
+<div class="line"><span class="lineno">  665</span>                            input.setValueString(value)</div>
+<div class="line"><span class="lineno">  666</span> </div>
+<div class="line"><span class="lineno">  667</span>        <span class="keywordflow">return</span> self.doc</div>
+<div class="line"><span class="lineno">  668</span>    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -572,21 +709,154 @@ Protected Member Functions</h2></td></tr>
 <p>Convert the MaterialX document to a string. </p>
 <dl class="section return"><dt>Returns</dt><dd>The MaterialX document as a string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="physically_based_material_x_8py_source.html#l00501">501</a> of file <a class="el" href="physically_based_material_x_8py_source.html">physicallyBasedMaterialX.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  501</span>    <span class="keyword">def </span>convertToMaterialXString(self):</div>
-<div class="line"><span class="lineno">  502</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
-<div class="line"><span class="lineno">  503</span><span class="stringliteral">        @brief Convert the MaterialX document to a string </span></div>
-<div class="line"><span class="lineno">  504</span><span class="stringliteral">        @return The MaterialX document as a string</span></div>
-<div class="line"><span class="lineno">  505</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  506</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
-<div class="line"><span class="lineno">  507</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)</div>
-<div class="line"><span class="lineno">  508</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  509</span> </div>
-<div class="line"><span class="lineno">  510</span>        writeOptions = self.mx.XmlWriteOptions()</div>
-<div class="line"><span class="lineno">  511</span>        writeOptions.writeXIncludeEnable = <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  512</span>        writeOptions.elementPredicate = self.skipLibraryElement        </div>
-<div class="line"><span class="lineno">  513</span>        mtlx = self.mx.writeToXmlString(self.doc, writeOptions)</div>
-<div class="line"><span class="lineno">  514</span>        <span class="keywordflow">return</span> mtlx</div>
+<p class="definition">Definition at line <a class="el" href="physically_based_material_x_8py_source.html#l00684">684</a> of file <a class="el" href="physically_based_material_x_8py_source.html">physicallyBasedMaterialX.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  684</span>    <span class="keyword">def </span>convertToMaterialXString(self):</div>
+<div class="line"><span class="lineno">  685</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
+<div class="line"><span class="lineno">  686</span><span class="stringliteral">        @brief Convert the MaterialX document to a string </span></div>
+<div class="line"><span class="lineno">  687</span><span class="stringliteral">        @return The MaterialX document as a string</span></div>
+<div class="line"><span class="lineno">  688</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  689</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
+<div class="line"><span class="lineno">  690</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)</div>
+<div class="line"><span class="lineno">  691</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">  692</span> </div>
+<div class="line"><span class="lineno">  693</span>        writeOptions = self.mx.XmlWriteOptions()</div>
+<div class="line"><span class="lineno">  694</span>        writeOptions.writeXIncludeEnable = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  695</span>        writeOptions.elementPredicate = self.skipLibraryElement        </div>
+<div class="line"><span class="lineno">  696</span>        mtlx = self.mx.writeToXmlString(self.doc, writeOptions)</div>
+<div class="line"><span class="lineno">  697</span>        <span class="keywordflow">return</span> mtlx</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac800766a9160f68152c15cfe53032acb" name="ac800766a9160f68152c15cfe53032acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac800766a9160f68152c15cfe53032acb">&#9670;&#160;</a></span>createNodeDef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.createNodeDef </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a NodeDef for the Physically Based Material inputs. </p>
+<dl class="section return"><dt>Returns</dt><dd>The MaterialX document containing the NodeDef</dd></dl>
+<p>The NodeDef will contain inputs for all the keys in the Physically Based Material JSON object.</p>
+<p>The nodegraph is a placeholder with a simple diffuse shader accepting color as followe: </p><pre>
+  &lt;nodegraph name="NG_PhysicallyBasedMaterial" nodedef="ND_PhysicallyBasedMaterial"&gt;
+    &lt;oren_nayar_diffuse_bsdf name="oren_nayar_diffuse_bsdf" type="BSDF" &gt;
+        &lt;output name="out" type="BSDF" &gt;
+        &lt;input name="color" type="color3" interfacename="color" &gt;
+        &lt;input name="roughness" type="color3" interfacename="roughness" &gt;
+    &lt;/oren_nayar_diffuse_bsdf&gt;
+
+    &lt;surface name="surface" type="surfaceshader"&gt;
+        &lt;input name="bsdf" type="BSDF" output="out" nodename="oren_nayar_diffuse_bsdf" &gt;
+    &lt;/surface&gt;    
+
+    &lt;output name="out" type="surfaceshader" nodename="surface"&gt;
+  &lt;/nodegraph&gt;
+</pre> 
+<p class="definition">Definition at line <a class="el" href="physically_based_material_x_8py_source.html#l00437">437</a> of file <a class="el" href="physically_based_material_x_8py_source.html">physicallyBasedMaterialX.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  437</span>    <span class="keyword">def </span>createNodeDef(self):</div>
+<div class="line"><span class="lineno">  438</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  439</span><span class="stringliteral">        @brief Create a NodeDef for the Physically Based Material inputs</span></div>
+<div class="line"><span class="lineno">  440</span><span class="stringliteral">        @return The MaterialX document containing the NodeDef</span></div>
+<div class="line"><span class="lineno">  441</span><span class="stringliteral">        @details The NodeDef will contain inputs for all the keys in the Physically Based Material JSON object.</span></div>
+<div class="line"><span class="lineno">  442</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  443</span><span class="stringliteral">        The nodegraph is a placeholder with a simple diffuse shader accepting color as followe:</span></div>
+<div class="line"><span class="lineno">  444</span><span class="stringliteral">        &lt;pre&gt;</span></div>
+<div class="line"><span class="lineno">  445</span><span class="stringliteral">          &lt;nodegraph name=&quot;NG_PhysicallyBasedMaterial&quot; nodedef=&quot;ND_PhysicallyBasedMaterial&quot;&gt;</span></div>
+<div class="line"><span class="lineno">  446</span><span class="stringliteral">            &lt;oren_nayar_diffuse_bsdf name=&quot;oren_nayar_diffuse_bsdf&quot; type=&quot;BSDF&quot; &gt;</span></div>
+<div class="line"><span class="lineno">  447</span><span class="stringliteral">                &lt;output name=&quot;out&quot; type=&quot;BSDF&quot; /&gt;</span></div>
+<div class="line"><span class="lineno">  448</span><span class="stringliteral">                &lt;input name=&quot;color&quot; type=&quot;color3&quot; interfacename=&quot;color&quot; /&gt;</span></div>
+<div class="line"><span class="lineno">  449</span><span class="stringliteral">                &lt;input name=&quot;roughness&quot; type=&quot;color3&quot; interfacename=&quot;roughness&quot; /&gt;</span></div>
+<div class="line"><span class="lineno">  450</span><span class="stringliteral">            &lt;/oren_nayar_diffuse_bsdf&gt;</span></div>
+<div class="line"><span class="lineno">  451</span><span class="stringliteral">            </span></div>
+<div class="line"><span class="lineno">  452</span><span class="stringliteral">            &lt;surface name=&quot;surface&quot; type=&quot;surfaceshader&quot;&gt;</span></div>
+<div class="line"><span class="lineno">  453</span><span class="stringliteral">                &lt;input name=&quot;bsdf&quot; type=&quot;BSDF&quot; output=&quot;out&quot; nodename=&quot;oren_nayar_diffuse_bsdf&quot; /&gt;</span></div>
+<div class="line"><span class="lineno">  454</span><span class="stringliteral">            &lt;/surface&gt;    </span></div>
+<div class="line"><span class="lineno">  455</span><span class="stringliteral">            </span></div>
+<div class="line"><span class="lineno">  456</span><span class="stringliteral">            &lt;output name=&quot;out&quot; type=&quot;surfaceshader&quot; nodename=&quot;surface&quot;/&gt;</span></div>
+<div class="line"><span class="lineno">  457</span><span class="stringliteral">          &lt;/nodegraph&gt;</span></div>
+<div class="line"><span class="lineno">  458</span><span class="stringliteral">        &lt;/pre&gt;</span></div>
+<div class="line"><span class="lineno">  459</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  460</span>        doc = mx.createDocument()</div>
+<div class="line"><span class="lineno">  461</span> </div>
+<div class="line"><span class="lineno">  462</span>        <span class="comment"># Create placeholder nodegraph</span></div>
+<div class="line"><span class="lineno">  463</span>        graph = doc.addNodeGraph(<span class="stringliteral">&quot;NG_PhysicallyBasedMaterial&quot;</span>)</div>
+<div class="line"><span class="lineno">  464</span>        graph.setNodeDefString(<span class="stringliteral">&#39;ND_PhysicallyBasedMaterial&#39;</span>)</div>
+<div class="line"><span class="lineno">  465</span> </div>
+<div class="line"><span class="lineno">  466</span>        node = graph.addNode(<span class="stringliteral">&#39;oren_nayar_diffuse_bsdf&#39;</span>, <span class="stringliteral">&#39;oren_nayar_diffuse_bsdf&#39;</span>, <span class="stringliteral">&#39;BSDF&#39;</span>)</div>
+<div class="line"><span class="lineno">  467</span>        node_in = node.addInput(<span class="stringliteral">&#39;color&#39;</span>, <span class="stringliteral">&#39;color3&#39;</span>)</div>
+<div class="line"><span class="lineno">  468</span>        node_in.setInterfaceName(<span class="stringliteral">&#39;color&#39;</span>)</div>
+<div class="line"><span class="lineno">  469</span>        node_in_rough = node.addInput(<span class="stringliteral">&#39;roughness&#39;</span>, <span class="stringliteral">&#39;float&#39;</span>)</div>
+<div class="line"><span class="lineno">  470</span>        node_in_rough.setInterfaceName(<span class="stringliteral">&#39;roughness&#39;</span>)</div>
+<div class="line"><span class="lineno">  471</span>        node.addOutput(<span class="stringliteral">&#39;out&#39;</span>, <span class="stringliteral">&#39;BSDF&#39;</span>)</div>
+<div class="line"><span class="lineno">  472</span> </div>
+<div class="line"><span class="lineno">  473</span>        node = graph.addNode(<span class="stringliteral">&#39;surface&#39;</span>, <span class="stringliteral">&#39;surface&#39;</span>, <span class="stringliteral">&#39;surfaceshader&#39;</span>)</div>
+<div class="line"><span class="lineno">  474</span>        node_in = node.addInput(<span class="stringliteral">&#39;bsdf&#39;</span>, <span class="stringliteral">&#39;BSDF&#39;</span>)</div>
+<div class="line"><span class="lineno">  475</span>        node_in.setAttribute(<span class="stringliteral">&#39;out&#39;</span>, <span class="stringliteral">&#39;out&#39;</span>)</div>
+<div class="line"><span class="lineno">  476</span>        node_in.setNodeName(<span class="stringliteral">&#39;oren_nayar_diffuse_bsdf&#39;</span>)</div>
+<div class="line"><span class="lineno">  477</span> </div>
+<div class="line"><span class="lineno">  478</span>        node_out = graph.addOutput(<span class="stringliteral">&#39;out&#39;</span>, <span class="stringliteral">&#39;surfaceshader&#39;</span>)</div>
+<div class="line"><span class="lineno">  479</span>        node_out.setNodeName(<span class="stringliteral">&#39;surface&#39;</span>)</div>
+<div class="line"><span class="lineno">  480</span> </div>
+<div class="line"><span class="lineno">  481</span>        <span class="comment"># Create definition template</span></div>
+<div class="line"><span class="lineno">  482</span>        ndef = doc.addNodeDef(<span class="stringliteral">&quot;ND_PhysicallyBasedMaterial&quot;</span>, <span class="stringliteral">&#39;surfaceshader&#39;</span>)</div>
+<div class="line"><span class="lineno">  483</span>        <span class="comment">#graph.removeOutput(&#39;out&#39;)</span></div>
+<div class="line"><span class="lineno">  484</span>        ndef.setNodeString(<span class="stringliteral">&#39;physbased_pbr_surface&#39;</span>)</div>
+<div class="line"><span class="lineno">  485</span>        ndef.setNodeGroup(<span class="stringliteral">&quot;pbr&quot;</span>)</div>
+<div class="line"><span class="lineno">  486</span>        ndef.setDocString(<span class="stringliteral">&quot;NodeDef for Physically Based Material inputs&quot;</span>)</div>
+<div class="line"><span class="lineno">  487</span>        ndef.setVersionString(<span class="stringliteral">&quot;1.0&quot;</span>)</div>
+<div class="line"><span class="lineno">  488</span>        ndef.setAttribute(<span class="stringliteral">&quot;isdefaultversion&quot;</span>, <span class="stringliteral">&quot;true&quot;</span>)</div>
+<div class="line"><span class="lineno">  489</span> </div>
+<div class="line"><span class="lineno">  490</span>        <span class="keywordflow">for</span> mat <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">  491</span>            <span class="comment"># Map keys to definition inputs</span></div>
+<div class="line"><span class="lineno">  492</span>            self._map_keys_to_definition(mat, ndef)</div>
+<div class="line"><span class="lineno">  493</span> </div>
+<div class="line"><span class="lineno">  494</span>        doc_mat = mx.createDocument()</div>
+<div class="line"><span class="lineno">  495</span>        doc_mat.copyContentFrom(doc)</div>
+<div class="line"><span class="lineno">  496</span>        <span class="keywordflow">for</span> mat <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">  497</span>            matName = mat[<span class="stringliteral">&#39;name&#39;</span>]</div>
+<div class="line"><span class="lineno">  498</span>            shaderName = doc_mat.createValidChildName(matName + <span class="stringliteral">&#39;_SHD_PBM&#39;</span>)</div>
+<div class="line"><span class="lineno">  499</span>            shaderNode = doc_mat.addNode(<span class="stringliteral">&#39;physbased_pbr_surface&#39;</span>, shaderName, mx.SURFACE_SHADER_TYPE_STRING)</div>
+<div class="line"><span class="lineno">  500</span>            <span class="keywordflow">for</span> key, value <span class="keywordflow">in</span> mat.items():</div>
+<div class="line"><span class="lineno">  501</span>                <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;name&#39;</span>:</div>
+<div class="line"><span class="lineno">  502</span>                    new_name = doc_mat.createValidChildName(str(value))</div>
+<div class="line"><span class="lineno">  503</span>                    shaderNode.setName(new_name)</div>
+<div class="line"><span class="lineno">  504</span> </div>
+<div class="line"><span class="lineno">  505</span>                input = shaderNode.addInputFromNodeDef(key)</div>
+<div class="line"><span class="lineno">  506</span>                <span class="keywordflow">if</span> value <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno">  507</span>                    <span class="keywordflow">if</span> isinstance(value, list):</div>
+<div class="line"><span class="lineno">  508</span>                        <span class="comment"># Split list into array</span></div>
+<div class="line"><span class="lineno">  509</span>                        value_list = [str(x) <span class="keywordflow">for</span> x <span class="keywordflow">in</span> value]</div>
+<div class="line"><span class="lineno">  510</span>                        <span class="comment"># Check if values are numbers</span></div>
+<div class="line"><span class="lineno">  511</span>                        <span class="comment">#is_number_list = all(isinstance(x, (int, float)) for x in value)</span></div>
+<div class="line"><span class="lineno">  512</span>                        <span class="comment">#if is_number_list:</span></div>
+<div class="line"><span class="lineno">  513</span>                        value = <span class="stringliteral">&#39;, &#39;</span>.join(value_list)</div>
+<div class="line"><span class="lineno">  514</span>                    input.setValueString(str(value))     </div>
+<div class="line"><span class="lineno">  515</span> </div>
+<div class="line"><span class="lineno">  516</span>                    <span class="comment"># Add doc string</span></div>
+<div class="line"><span class="lineno">  517</span>                    doc_string = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  518</span>                    <span class="keywordflow">if</span> key == <span class="stringliteral">&#39;description&#39;</span>:</div>
+<div class="line"><span class="lineno">  519</span>                        doc_string = str(value)</div>
+<div class="line"><span class="lineno">  520</span>                    <span class="keywordflow">if</span> len(doc_string) &gt; 0:</div>
+<div class="line"><span class="lineno">  521</span>                        shaderNode.setDocString(doc_string)</div>
+<div class="line"><span class="lineno">  522</span>           </div>
+<div class="line"><span class="lineno">  523</span>            shaderNode.setAttribute(<span class="stringliteral">&#39;uiname&#39;</span>, matName)</div>
+<div class="line"><span class="lineno">  524</span> </div>
+<div class="line"><span class="lineno">  525</span>            <span class="comment"># Create a new material</span></div>
+<div class="line"><span class="lineno">  526</span>            materialName = doc_mat.createValidChildName(matName + <span class="stringliteral">&#39;_MAT_PBM&#39;</span>)</div>
+<div class="line"><span class="lineno">  527</span>            materialNode = doc_mat.addNode(mx.SURFACE_MATERIAL_NODE_STRING, materialName, mx.MATERIAL_TYPE_STRING)</div>
+<div class="line"><span class="lineno">  528</span>            shaderInput = materialNode.addInput(mx.SURFACE_SHADER_TYPE_STRING, mx.SURFACE_SHADER_TYPE_STRING)</div>
+<div class="line"><span class="lineno">  529</span>            shaderInput.setAttribute(self.MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName())</div>
+<div class="line"><span class="lineno">  530</span> </div>
+<div class="line"><span class="lineno">  531</span>        <span class="keywordflow">return</span> doc, doc_mat</div>
+<div class="line"><span class="lineno">  532</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1255,22 +1525,22 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="physically_based_material_x_8py_source.html#l00486">486</a> of file <a class="el" href="physically_based_material_x_8py_source.html">physicallyBasedMaterialX.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  486</span>    <span class="keyword">def </span>writeMaterialXToFile(self, filename):</div>
-<div class="line"><span class="lineno">  487</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
-<div class="line"><span class="lineno">  488</span><span class="stringliteral">        @brief Write the MaterialX document to disk </span></div>
-<div class="line"><span class="lineno">  489</span><span class="stringliteral">        @param filename The filename to write the MaterialX document to</span></div>
-<div class="line"><span class="lineno">  490</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">  491</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  492</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
-<div class="line"><span class="lineno">  493</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)</div>
-<div class="line"><span class="lineno">  494</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  495</span> </div>
-<div class="line"><span class="lineno">  496</span>        writeOptions = self.mx.XmlWriteOptions()</div>
-<div class="line"><span class="lineno">  497</span>        writeOptions.writeXIncludeEnable = <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  498</span>        writeOptions.elementPredicate = self.skipLibraryElement        </div>
-<div class="line"><span class="lineno">  499</span>        self.mx.writeToXmlFile(self.doc, filename, writeOptions)</div>
-<div class="line"><span class="lineno">  500</span> </div>
+<p class="definition">Definition at line <a class="el" href="physically_based_material_x_8py_source.html#l00669">669</a> of file <a class="el" href="physically_based_material_x_8py_source.html">physicallyBasedMaterialX.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  669</span>    <span class="keyword">def </span>writeMaterialXToFile(self, filename):</div>
+<div class="line"><span class="lineno">  670</span>        <span class="stringliteral">&#39;&#39;&#39; </span></div>
+<div class="line"><span class="lineno">  671</span><span class="stringliteral">        @brief Write the MaterialX document to disk </span></div>
+<div class="line"><span class="lineno">  672</span><span class="stringliteral">        @param filename The filename to write the MaterialX document to</span></div>
+<div class="line"><span class="lineno">  673</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  674</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  675</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.mx:</div>
+<div class="line"><span class="lineno">  676</span>            self.logger.critical(f<span class="stringliteral">&#39;&gt; {self._getMethodName()}: MaterialX module is required&#39;</span>)</div>
+<div class="line"><span class="lineno">  677</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">  678</span> </div>
+<div class="line"><span class="lineno">  679</span>        writeOptions = self.mx.XmlWriteOptions()</div>
+<div class="line"><span class="lineno">  680</span>        writeOptions.writeXIncludeEnable = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  681</span>        writeOptions.elementPredicate = self.skipLibraryElement        </div>
+<div class="line"><span class="lineno">  682</span>        self.mx.writeToXmlFile(self.doc, filename, writeOptions)</div>
+<div class="line"><span class="lineno">  683</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
