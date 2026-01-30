@@ -42,6 +42,7 @@ def physicallBasedMaterialXCmd():
     parser.add_argument('-l', '--loadFromFile', type=str, default='', help='Load materials a specified file')
     parser.add_argument('-wr', '--writeRemapping', type=bool, default=False, help='Write remapping from PhysicallyBased to MaterialX. Default is False')
     parser.add_argument('-rr', '--readRemapping', type=str, default='', help='Read remapping from PhysicallyBased to MaterialX. Default is empty')
+    parser.add_argument('-nd', '--createNodeDef', type=bool, default=False, help='Create NodeDef for Physically Based Material inputs. Default is False')
     opts = parser.parse_args()
 
     outputDir = 'PhysicallyBasedMaterialX'
@@ -94,6 +95,23 @@ def physicallBasedMaterialXCmd():
         jsonMat = loader.getMaterialsFromURL()
 
     if jsonMat:
+
+        create_nodedef = opts.createNodeDef
+        if create_nodedef:
+            logger.info('> Create definition for PhysicallyBased materials')
+            doc = loader.createNodeDef()
+
+            status, error = doc.validate()
+            if not status:
+                logger.error('> Error validating NodeDef document:')
+                logger.error(error)
+
+            nodedef_file_name = os.path.join(outputDir, 'physbased_pbr.mtlx')
+            mx.writeToXmlFile(doc, nodedef_file_name)
+            logger.info(f'> Write definition file: {nodedef_file_name}')
+            #doc_string = mx.writeToXmlString(doc)
+            #print(doc_string)
+            return
 
         # Create folder for MaterialX call PhysicallyBasedMaterialX
         os.makedirs(outputDir, exist_ok=True)

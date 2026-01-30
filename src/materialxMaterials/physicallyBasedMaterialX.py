@@ -347,6 +347,101 @@ class PhysicallyBasedMaterialLoader:
         comment = doc.addChildOfCategory('comment')
         comment.setDocString(commentString)
 
+    def createNodeDef(self):
+        '''
+        @brief Create a NodeDef for the Physically Based Material inputs
+        @return The MaterialX document containing the NodeDef
+        @details The NodeDef will contain inputs for all the keys in the Physically Based Material JSON object.
+
+        The nodegraph is a placeholder with a simple diffuse shader accepting color as followe:
+        <pre>
+          <nodegraph name="NG_PhysicallyBasedMaterial" nodedef="ND_PhysicallyBasedMaterial">
+            <oren_nayar_diffuse_bsdf name="oren_nayar_diffuse_bsdf" type="BSDF" >
+                <output name="out" type="BSDF" />
+                <input name="color" type="color3" interfacename="color" />
+            </oren_nayar_diffuse_bsdf>
+            
+            <surface name="surface" type="surfaceshader">
+                <input name="bsdf" type="BSDF" output="out" nodename="oren_nayar_diffuse_bsdf" />
+            </surface>    
+            
+            <output name="out" type="surfaceshader" nodename="surface"/>
+          </nodegraph>
+        </pre>
+        '''
+        doc = mx.createDocument()
+        keys_added = dict()
+        # node="gltf_pbr" nodegroup="pbr" doc="glTF PBR" version="2.0.1" isdefaultversion="true">
+        graph = doc.addNodeGraph("NG_PhysicallyBasedMaterial")
+        graph.setNodeDefString('ND_PhysicallyBasedMaterial')
+
+        node = graph.addNode('oren_nayar_diffuse_bsdf', 'oren_nayar_diffuse_bsdf', 'BSDF')
+        node_in = node.addInput('color', 'color3')
+        node_in.setInterfaceName('color')
+        node.addOutput('out', 'BSDF')
+
+        node = graph.addNode('surface', 'surface', 'surfaceshader')
+        node_in = node.addInput('bsdf', 'BSDF')
+        node_in.setAttribute('out', 'out')
+        node_in.setNodeName('oren_nayar_diffuse_bsdf')
+
+        node_out = graph.addOutput('out', 'surfaceshader')
+        node_out.setNodeName('surface')
+
+        ndef = doc.addNodeDef("ND_PhysicallyBasedMaterial", 'surfaceshader')
+        #graph.removeOutput('out')
+        ndef.setNodeString('physbased_pbr_surface')
+        ndef.setNodeGroup("pbr")
+        ndef.setDocString("NodeDef for Physically Based Material inputs")
+        ndef.setVersionString("1.0")
+        ndef.setAttribute("isdefaultversion", "true")
+        for mat in self.materials:
+            for key, value in mat.items():
+                uifolder = None
+                if key not in keys_added:
+                    input_type = "string"
+                    if 'color' in key.lower():
+                        input_type = "color3"
+                        value = "1,1,1"
+                    elif isinstance(value, float):
+                        input_type = "float"
+                        value = "0.0"
+                    elif isinstance(value, int):
+                        input_type = "float"
+                        value = "0.0"
+                    elif key == 'category':
+                        #if isinstance(value, list) and len(value) > 0:                            
+                        #    uifolder = str(value[0])
+                        #else:
+                        #    uifolder = str(value)
+                        #value = None
+                        pass
+                    elif key in ['sources', 'reference', 'tags', 'group']:
+                        value = ''
+                    input = ndef.addInput(key, input_type)
+                    if input:
+                        if value is not None:
+                            if isinstance(value, list):
+                                # Split list into array
+                                value_list = [str(x) for x in value]
+                                # If value is a number replace it with 0.0
+                                for i in range(len(value_list)):
+                                    try:
+                                        float(value_list[i])
+                                        value_list[i] = '0.0'
+                                    except:
+                                        pass
+                                value = ','.join(value_list)
+
+                                #value = ','.join([str(x) for x in value])
+                            input.setValueString(str(value))
+                        if uifolder is not None:
+                            input.setAttribute("uifolder", uifolder)
+                    keys_added[key] = input
+#                    print(f'Added key: {key}')
+
+        return doc
+
     def convertToMaterialX(self, materialNames = [], shaderCategory='standard_surface',
                            remapKeys = {}, shaderPreFix ='') -> mx.Document:
         '''
