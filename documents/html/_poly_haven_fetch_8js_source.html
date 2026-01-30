@@ -102,14 +102,14 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html">    5</a></span><span class="keyword">class </span><a class="code hl_class" href="class_poly_haven_a_p_i.html">PolyHavenAPI</a> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html">    5</a></span><span class="keyword">class </span><a class="code hl_class" href="class_js_poly_haven_a_p_i_loader.html">JsPolyHavenAPILoader</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    constructor() {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        this.baseUrl = <span class="stringliteral">&quot;https://api.polyhaven.com&quot;</span>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        this.userAgent = <span class="stringliteral">&quot;MTLX_Polyhaven_Loader/1.0&quot;</span>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html#ae14c214c0d5291b3193a0c9d67838741">   15</a></span>    async <a class="code hl_function" href="class_poly_haven_a_p_i.html#ae14c214c0d5291b3193a0c9d67838741">fetchMaterials</a>() {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html#a76e7a3605e6fe8d54c98f5e88e223b7d">   15</a></span>    async <a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a76e7a3605e6fe8d54c98f5e88e223b7d">fetchMaterials</a>() {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keyword">const</span> response = await fetch(`${this.baseUrl}/assets?t=textures`, {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                headers: { <span class="stringliteral">&quot;User-Agent&quot;</span>: this.userAgent }</div>
@@ -120,7 +120,7 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            }</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keyword">const</span> data = await response.json();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">return</span> this.<a class="code hl_function" href="class_poly_haven_a_p_i.html#a6decffb15cf1c724d6efc171481e8a72">processMaterialsData</a>(data);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">return</span> this.<a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a6ab9f4e890b18b9558612a586e7c3e73">processMaterialsData</a>(data);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        } <span class="keywordflow">catch</span> (error) {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            console.error(<span class="stringliteral">&#39;Error fetching materials:&#39;</span>, error);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordflow">throw</span> error;</div>
@@ -129,7 +129,7 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
 <div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html#a6decffb15cf1c724d6efc171481e8a72">   38</a></span>    <a class="code hl_function" href="class_poly_haven_a_p_i.html#a6decffb15cf1c724d6efc171481e8a72">processMaterialsData</a>(rawData) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html#a6ab9f4e890b18b9558612a586e7c3e73">   38</a></span>    <a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a6ab9f4e890b18b9558612a586e7c3e73">processMaterialsData</a>(rawData) {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">const</span> materials = [];</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">const</span> categories = <span class="keyword">new</span> Set();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
@@ -170,7 +170,7 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 </div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
 <div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html#ad0742879fe5f4331c2217ff123c1b23c">   82</a></span>    async <a class="code hl_function" href="class_poly_haven_a_p_i.html#ad0742879fe5f4331c2217ff123c1b23c">fetchMaterialFiles</a>(materialId) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html#acd608bf9be05a42ab35cd0a816b48f0f">   82</a></span>    async <a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#acd608bf9be05a42ab35cd0a816b48f0f">fetchMaterialFiles</a>(materialId) {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keyword">const</span> response = await fetch(`${this.baseUrl}/files/${materialId}`, {</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                headers: { <span class="stringliteral">&quot;User-Agent&quot;</span>: this.userAgent }</div>
@@ -189,7 +189,7 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
 <div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html#a0c5ef8d91389c455c983149a35f620ac">  104</a></span>    async <a class="code hl_function" href="class_poly_haven_a_p_i.html#a0c5ef8d91389c455c983149a35f620ac">downloadMaterialXContent</a>(url) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html#a15550623465ac505ab7133230d5bc9fe">  104</a></span>    async <a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a15550623465ac505ab7133230d5bc9fe">downloadMaterialXContent</a>(url) {</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keyword">const</span> response = await fetch(url, {</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                headers: { <span class="stringliteral">&quot;User-Agent&quot;</span>: this.userAgent }</div>
@@ -208,7 +208,7 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
 <div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html#a468adb5b474fbac0e81a65dd90d24171">  126</a></span>    async <a class="code hl_function" href="class_poly_haven_a_p_i.html#a468adb5b474fbac0e81a65dd90d24171">downloadTexture</a>(url) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html#ad3cc3a8bb8d5300ead3fcfaf03a53ead">  126</a></span>    async <a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#ad3cc3a8bb8d5300ead3fcfaf03a53ead">downloadTexture</a>(url) {</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keyword">const</span> response = await fetch(url, {</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                headers: { <span class="stringliteral">&quot;User-Agent&quot;</span>: this.userAgent }</div>
@@ -227,7 +227,7 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 </div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
 <div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html#aa1ef65c9d85a00be67330448c52e6236">  148</a></span>    async <a class="code hl_function" href="class_poly_haven_a_p_i.html#aa1ef65c9d85a00be67330448c52e6236">downloadThumbnail</a>(thumbnailUrl) {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html#a4d46dbd83a8e83144a28eb6fd61fb599">  148</a></span>    async <a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a4d46dbd83a8e83144a28eb6fd61fb599">downloadThumbnail</a>(thumbnailUrl) {</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            <span class="keyword">const</span> response = await fetch(thumbnailUrl, {</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                headers: { <span class="stringliteral">&quot;User-Agent&quot;</span>: this.userAgent }</div>
@@ -246,10 +246,10 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
 <div class="foldopen" id="foldopen00171" data-start="{" data-end="}">
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html#a04b87f5f29b9782f49fd75202f019057">  171</a></span>    async <a class="code hl_function" href="class_poly_haven_a_p_i.html#a04b87f5f29b9782f49fd75202f019057">createMaterialXPackage</a>(material, resolution) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html#a8ad79ee7ffdc1baf41392339319254ab">  171</a></span>    async <a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a8ad79ee7ffdc1baf41392339319254ab">createMaterialXPackage</a>(material, resolution) {</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="comment">// Fetch MaterialX files data</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keyword">const</span> filesData = await this.<a class="code hl_function" href="class_poly_haven_a_p_i.html#ad0742879fe5f4331c2217ff123c1b23c">fetchMaterialFiles</a>(material.id);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keyword">const</span> filesData = await this.<a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#acd608bf9be05a42ab35cd0a816b48f0f">fetchMaterialFiles</a>(material.id);</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            <span class="keyword">const</span> mtlxData = filesData.mtlx?.[resolution]?.mtlx;</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="keywordflow">if</span> (!mtlxData) {</div>
@@ -260,14 +260,14 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keyword">const</span> zip = <span class="keyword">new</span> JSZip();</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="comment">// 1. Download and add the main MaterialX file</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keyword">const</span> mtlxContent = await this.<a class="code hl_function" href="class_poly_haven_a_p_i.html#a0c5ef8d91389c455c983149a35f620ac">downloadMaterialXContent</a>(mtlxData.url);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keyword">const</span> mtlxContent = await this.<a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a15550623465ac505ab7133230d5bc9fe">downloadMaterialXContent</a>(mtlxData.url);</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            zip.file(`${material.id}.mtlx`, mtlxContent);</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <span class="comment">// 2. Download and add all included texture files</span></div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            <span class="keyword">const</span> textureFiles = mtlxData.include || {};</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            <span class="keyword">const</span> texturePromises = Object.entries(textureFiles).map(async ([path, fileData]) =&gt; {</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                    <span class="keyword">const</span> textureBlob = await this.<a class="code hl_function" href="class_poly_haven_a_p_i.html#a468adb5b474fbac0e81a65dd90d24171">downloadTexture</a>(fileData.url);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                    <span class="keyword">const</span> textureBlob = await this.<a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#ad3cc3a8bb8d5300ead3fcfaf03a53ead">downloadTexture</a>(fileData.url);</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                    </div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                    <span class="comment">// Maintain the folder structure from the include paths</span></div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                    <span class="keyword">const</span> pathParts = path.split(<span class="charliteral">&#39;/&#39;</span>);</div>
@@ -294,7 +294,7 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="comment">// 3. Download and add thumbnail</span></div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keywordflow">if</span> (material.thumb_url) {</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                    <span class="keyword">const</span> thumbBlob = await this.<a class="code hl_function" href="class_poly_haven_a_p_i.html#aa1ef65c9d85a00be67330448c52e6236">downloadThumbnail</a>(material.thumb_url);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                    <span class="keyword">const</span> thumbBlob = await this.<a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a4d46dbd83a8e83144a28eb6fd61fb599">downloadThumbnail</a>(material.thumb_url);</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                    <span class="keyword">const</span> thumbUrl = <span class="keyword">new</span> URL(material.thumb_url);</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                    <span class="keyword">const</span> thumbPath = thumbUrl.pathname.split(<span class="charliteral">&#39;/&#39;</span>).pop();</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                    <span class="keyword">const</span> thumbExt = thumbPath.split(<span class="charliteral">&#39;.&#39;</span>).pop();</div>
@@ -330,9 +330,9 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 </div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span></div>
 <div class="foldopen" id="foldopen00259" data-start="{" data-end="}">
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="class_poly_haven_a_p_i.html#afe0762b4b4c40ea603f78bb60f2c0fb0">  259</a></span>    async <a class="code hl_function" href="class_poly_haven_a_p_i.html#afe0762b4b4c40ea603f78bb60f2c0fb0">getMaterialContent</a>(materialId, resolution) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="class_js_poly_haven_a_p_i_loader.html#a0bfbe07a1f5205ab39649f625f551649">  259</a></span>    async <a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a0bfbe07a1f5205ab39649f625f551649">getMaterialContent</a>(materialId, resolution) {</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            <span class="keyword">const</span> filesData = await this.<a class="code hl_function" href="class_poly_haven_a_p_i.html#ad0742879fe5f4331c2217ff123c1b23c">fetchMaterialFiles</a>(materialId);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            <span class="keyword">const</span> filesData = await this.<a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#acd608bf9be05a42ab35cd0a816b48f0f">fetchMaterialFiles</a>(materialId);</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            <span class="keyword">const</span> mtlxData = filesData.mtlx?.[resolution]?.mtlx;</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="keywordflow">if</span> (!mtlxData) {</div>
@@ -340,7 +340,7 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            }</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            <span class="comment">// Get MaterialX content</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            <span class="keyword">const</span> mtlxContent = await this.<a class="code hl_function" href="class_poly_haven_a_p_i.html#a0c5ef8d91389c455c983149a35f620ac">downloadMaterialXContent</a>(mtlxData.url);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            <span class="keyword">const</span> mtlxContent = await this.<a class="code hl_function" href="class_js_poly_haven_a_p_i_loader.html#a15550623465ac505ab7133230d5bc9fe">downloadMaterialXContent</a>(mtlxData.url);</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            <span class="keywordflow">return</span> {</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                mtlxContent,</div>
@@ -357,19 +357,19 @@ $(function(){initNavTree('_poly_haven_fetch_8js_source.html','',''); });
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">// Export for use in other scripts</span></div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="keywordflow">if</span> (typeof module !== <span class="stringliteral">&#39;undefined&#39;</span> &amp;&amp; module.exports) {</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    module.exports = <a class="code hl_class" href="class_poly_haven_a_p_i.html">PolyHavenAPI</a>;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    module.exports = <a class="code hl_class" href="class_js_poly_haven_a_p_i_loader.html">JsPolyHavenAPILoader</a>;</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>} <span class="keywordflow">else</span> <span class="keywordflow">if</span> (typeof window !== <span class="stringliteral">&#39;undefined&#39;</span>) {</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    window.PolyHavenAPI = <a class="code hl_class" href="class_poly_haven_a_p_i.html">PolyHavenAPI</a>;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    window.JsPolyHavenAPILoader = <a class="code hl_class" href="class_js_poly_haven_a_p_i_loader.html">JsPolyHavenAPILoader</a>;</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>}</div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html"><div class="ttname"><a href="class_poly_haven_a_p_i.html">PolyHavenAPI</a></div><div class="ttdoc">PolyHavenAPI - A JavaScript class for interacting with the Poly Haven API Handles fetching materials,...</div><div class="ttdef"><b>Definition</b> <a href="#l00005">PolyHavenFetch.js:5</a></div></div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html_a04b87f5f29b9782f49fd75202f019057"><div class="ttname"><a href="class_poly_haven_a_p_i.html#a04b87f5f29b9782f49fd75202f019057">PolyHavenAPI::createMaterialXPackage</a></div><div class="ttdeci">async createMaterialXPackage(material, resolution)</div><div class="ttdoc">Create a complete MaterialX package with all textures.</div><div class="ttdef"><b>Definition</b> <a href="#l00171">PolyHavenFetch.js:171</a></div></div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html_a0c5ef8d91389c455c983149a35f620ac"><div class="ttname"><a href="class_poly_haven_a_p_i.html#a0c5ef8d91389c455c983149a35f620ac">PolyHavenAPI::downloadMaterialXContent</a></div><div class="ttdeci">async downloadMaterialXContent(url)</div><div class="ttdoc">Download MaterialX content from URL.</div><div class="ttdef"><b>Definition</b> <a href="#l00104">PolyHavenFetch.js:104</a></div></div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html_a468adb5b474fbac0e81a65dd90d24171"><div class="ttname"><a href="class_poly_haven_a_p_i.html#a468adb5b474fbac0e81a65dd90d24171">PolyHavenAPI::downloadTexture</a></div><div class="ttdeci">async downloadTexture(url)</div><div class="ttdoc">Download a texture file from URL.</div><div class="ttdef"><b>Definition</b> <a href="#l00126">PolyHavenFetch.js:126</a></div></div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html_a6decffb15cf1c724d6efc171481e8a72"><div class="ttname"><a href="class_poly_haven_a_p_i.html#a6decffb15cf1c724d6efc171481e8a72">PolyHavenAPI::processMaterialsData</a></div><div class="ttdeci">processMaterialsData(rawData)</div><div class="ttdoc">Process raw materials data from API into structured format.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">PolyHavenFetch.js:38</a></div></div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html_aa1ef65c9d85a00be67330448c52e6236"><div class="ttname"><a href="class_poly_haven_a_p_i.html#aa1ef65c9d85a00be67330448c52e6236">PolyHavenAPI::downloadThumbnail</a></div><div class="ttdeci">async downloadThumbnail(thumbnailUrl)</div><div class="ttdoc">Download thumbnail image.</div><div class="ttdef"><b>Definition</b> <a href="#l00148">PolyHavenFetch.js:148</a></div></div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html_ad0742879fe5f4331c2217ff123c1b23c"><div class="ttname"><a href="class_poly_haven_a_p_i.html#ad0742879fe5f4331c2217ff123c1b23c">PolyHavenAPI::fetchMaterialFiles</a></div><div class="ttdeci">async fetchMaterialFiles(materialId)</div><div class="ttdoc">Fetch MaterialX files data for a specific material.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">PolyHavenFetch.js:82</a></div></div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html_ae14c214c0d5291b3193a0c9d67838741"><div class="ttname"><a href="class_poly_haven_a_p_i.html#ae14c214c0d5291b3193a0c9d67838741">PolyHavenAPI::fetchMaterials</a></div><div class="ttdeci">async fetchMaterials()</div><div class="ttdoc">Fetch all materials from Poly Haven API.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">PolyHavenFetch.js:15</a></div></div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html_afe0762b4b4c40ea603f78bb60f2c0fb0"><div class="ttname"><a href="class_poly_haven_a_p_i.html#afe0762b4b4c40ea603f78bb60f2c0fb0">PolyHavenAPI::getMaterialContent</a></div><div class="ttdeci">async getMaterialContent(materialId, resolution)</div><div class="ttdoc">Get MaterialX content and texture files for preview.</div><div class="ttdef"><b>Definition</b> <a href="#l00259">PolyHavenFetch.js:259</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html">JsPolyHavenAPILoader</a></div><div class="ttdoc">JsPolyHavenAPILoader - A JavaScript class for interacting with the Poly Haven API Handles fetching ma...</div><div class="ttdef"><b>Definition</b> <a href="#l00005">PolyHavenFetch.js:5</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html_a0bfbe07a1f5205ab39649f625f551649"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html#a0bfbe07a1f5205ab39649f625f551649">JsPolyHavenAPILoader::getMaterialContent</a></div><div class="ttdeci">async getMaterialContent(materialId, resolution)</div><div class="ttdoc">Get MaterialX content and texture files for preview.</div><div class="ttdef"><b>Definition</b> <a href="#l00259">PolyHavenFetch.js:259</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html_a15550623465ac505ab7133230d5bc9fe"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html#a15550623465ac505ab7133230d5bc9fe">JsPolyHavenAPILoader::downloadMaterialXContent</a></div><div class="ttdeci">async downloadMaterialXContent(url)</div><div class="ttdoc">Download MaterialX content from URL.</div><div class="ttdef"><b>Definition</b> <a href="#l00104">PolyHavenFetch.js:104</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html_a4d46dbd83a8e83144a28eb6fd61fb599"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html#a4d46dbd83a8e83144a28eb6fd61fb599">JsPolyHavenAPILoader::downloadThumbnail</a></div><div class="ttdeci">async downloadThumbnail(thumbnailUrl)</div><div class="ttdoc">Download thumbnail image.</div><div class="ttdef"><b>Definition</b> <a href="#l00148">PolyHavenFetch.js:148</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html_a6ab9f4e890b18b9558612a586e7c3e73"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html#a6ab9f4e890b18b9558612a586e7c3e73">JsPolyHavenAPILoader::processMaterialsData</a></div><div class="ttdeci">processMaterialsData(rawData)</div><div class="ttdoc">Process raw materials data from API into structured format.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">PolyHavenFetch.js:38</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html_a76e7a3605e6fe8d54c98f5e88e223b7d"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html#a76e7a3605e6fe8d54c98f5e88e223b7d">JsPolyHavenAPILoader::fetchMaterials</a></div><div class="ttdeci">async fetchMaterials()</div><div class="ttdoc">Fetch all materials from Poly Haven API.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">PolyHavenFetch.js:15</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html_a8ad79ee7ffdc1baf41392339319254ab"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html#a8ad79ee7ffdc1baf41392339319254ab">JsPolyHavenAPILoader::createMaterialXPackage</a></div><div class="ttdeci">async createMaterialXPackage(material, resolution)</div><div class="ttdoc">Create a complete MaterialX package with all textures.</div><div class="ttdef"><b>Definition</b> <a href="#l00171">PolyHavenFetch.js:171</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html_acd608bf9be05a42ab35cd0a816b48f0f"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html#acd608bf9be05a42ab35cd0a816b48f0f">JsPolyHavenAPILoader::fetchMaterialFiles</a></div><div class="ttdeci">async fetchMaterialFiles(materialId)</div><div class="ttdoc">Fetch MaterialX files data for a specific material.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">PolyHavenFetch.js:82</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html_ad3cc3a8bb8d5300ead3fcfaf03a53ead"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html#ad3cc3a8bb8d5300ead3fcfaf03a53ead">JsPolyHavenAPILoader::downloadTexture</a></div><div class="ttdeci">async downloadTexture(url)</div><div class="ttdoc">Download a texture file from URL.</div><div class="ttdef"><b>Definition</b> <a href="#l00126">PolyHavenFetch.js:126</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

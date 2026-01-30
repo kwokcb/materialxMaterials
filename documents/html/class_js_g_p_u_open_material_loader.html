@@ -25,6 +25,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>  
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.0/css/brands.min.css">  
 -->
+<style>
+ .table, th, td {
+      font-size: small;
+    }
+</style>    
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,9 +38,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="download_icon.png"/></td>
-  <td id="projectalign">
+  <td id="projectalign">    
    <div id="projectname">MaterialXMaterials<span id="projectnumber">&#160;1.39.5</span>
-   </div>
+   </div> 
    <div id="projectbrief">Utilities for retrieving materials from remote servers</div>
   </td>
  </tr>
@@ -242,13 +247,13 @@ Public Member Functions</h2></td></tr>
 <p>Download a material package from the GPUOpen material database. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>listNumber - Index of the material list </td></tr>
-    <tr><td class="paramname">{number}</td><td>materialNumber - Index of the material in the list </td></tr>
-    <tr><td class="paramname">{number}</td><td>packageId - Index of the package in the material </td></tr>
+    <tr><td class="paramname">listNumber</td><td>- Index of the material list </td></tr>
+    <tr><td class="paramname">materialNumber</td><td>- Index of the material in the list </td></tr>
+    <tr><td class="paramname">packageId</td><td>- Index of the package in the material </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Array} - A list containing the package data and title </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A list containing the package data and title </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_js_g_p_u_open_loader_8js_source.html#l00127">127</a> of file <a class="el" href="_js_g_p_u_open_loader_8js_source.html">JsGPUOpenLoader.js</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  127</span>                                                                   {</div>
@@ -331,13 +336,13 @@ Public Member Functions</h2></td></tr>
 <p>Download a material package from the GPUOpen material database. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>listNumber - Index of the material list </td></tr>
-    <tr><td class="paramname">{number}</td><td>materialNumber - Index of the material in the list </td></tr>
-    <tr><td class="paramname">{number}</td><td>packageId - Index of the package in the material </td></tr>
+    <tr><td class="paramname">listNumber</td><td>- Index of the material list </td></tr>
+    <tr><td class="paramname">materialNumber</td><td>- Index of the material in the list </td></tr>
+    <tr><td class="paramname">packageId</td><td>- Index of the package in the material </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Array} - A list containing the package data and title </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A list containing the package data and title </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_js_g_p_u_open_loader_package_2_js_g_p_u_open_loader_8js_source.html#l00127">127</a> of file <a class="el" href="_js_g_p_u_open_loader_package_2_js_g_p_u_open_loader_8js_source.html">JsGPUOpenLoaderPackage/JsGPUOpenLoader.js</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  127</span>                                                                   {</div>
@@ -415,12 +420,12 @@ Public Member Functions</h2></td></tr>
 <p>Download a material package by string expression. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{string}</td><td>searchExpr - Regular expression to match the material name </td></tr>
-    <tr><td class="paramname">{number}</td><td>packageId - Index of the package in the material </td></tr>
+    <tr><td class="paramname">searchExpr</td><td>- Regular expression to match the material name </td></tr>
+    <tr><td class="paramname">packageId</td><td>- Index of the package in the material </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Array} - A list of material items that match the regular expression of the form: [[data, title], [data, title], ...] where data is the package data (in zip form) and title is the material title </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of material items that match the regular expression of the form: [[data, title], [data, title], ...] where data is the package data (in zip form) and title is the material title </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_js_g_p_u_open_loader_8js_source.html#l00226">226</a> of file <a class="el" href="_js_g_p_u_open_loader_8js_source.html">JsGPUOpenLoader.js</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  226</span>                                                               {</div>
@@ -466,12 +471,12 @@ Public Member Functions</h2></td></tr>
 <p>Download a material package by string expression. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{string}</td><td>searchExpr - Regular expression to match the material name </td></tr>
-    <tr><td class="paramname">{number}</td><td>packageId - Index of the package in the material </td></tr>
+    <tr><td class="paramname">searchExpr</td><td>- Regular expression to match the material name </td></tr>
+    <tr><td class="paramname">packageId</td><td>- Index of the package in the material </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Array} - A list of material items that match the regular expression of the form: [[data, title], [data, title], ...] where data is the package data (in zip form) and title is the material title </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of material items that match the regular expression of the form: [[data, title], [data, title], ...] where data is the package data (in zip form) and title is the material title </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_js_g_p_u_open_loader_package_2_js_g_p_u_open_loader_8js_source.html#l00226">226</a> of file <a class="el" href="_js_g_p_u_open_loader_package_2_js_g_p_u_open_loader_8js_source.html">JsGPUOpenLoaderPackage/JsGPUOpenLoader.js</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  226</span>                                                               {</div>
@@ -511,11 +516,11 @@ Public Member Functions</h2></td></tr>
 <p>Find materials by name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{string}</td><td>materialName - Regular expression to match the material name. </td></tr>
+    <tr><td class="paramname">materialName</td><td>Regular expression to match the material name. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Array} - A list of materials that match the regular expression of the form: [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>List of materials that match the regular expression of the form: [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }] </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_js_g_p_u_open_loader_8js_source.html#l00184">184</a> of file <a class="el" href="_js_g_p_u_open_loader_8js_source.html">JsGPUOpenLoader.js</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  185</span>    {</div>
@@ -571,11 +576,11 @@ Public Member Functions</h2></td></tr>
 <p>Find materials by name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{string}</td><td>materialName - Regular expression to match the material name. </td></tr>
+    <tr><td class="paramname">materialName</td><td>Regular expression to match the material name. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Array} - A list of materials that match the regular expression of the form: [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of materials that match the regular expression of the form: [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }] </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_js_g_p_u_open_loader_package_2_js_g_p_u_open_loader_8js_source.html#l00184">184</a> of file <a class="el" href="_js_g_p_u_open_loader_package_2_js_g_p_u_open_loader_8js_source.html">JsGPUOpenLoaderPackage/JsGPUOpenLoader.js</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  185</span>    {</div>
@@ -731,11 +736,11 @@ Public Member Functions</h2></td></tr>
 <p>Get lists of materials from the GPUOpen material database. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>batchSize - Number of materials to fetch per batch </td></tr>
+    <tr><td class="paramname">batchSize</td><td>Number of materials to fetch per batch </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Array} - List of material lists </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>List of material lists </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_js_g_p_u_open_loader_8js_source.html#l00050">50</a> of file <a class="el" href="_js_g_p_u_open_loader_8js_source.html">JsGPUOpenLoader.js</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   50</span>                                     {</div>
@@ -828,11 +833,11 @@ Public Member Functions</h2></td></tr>
 <p>Get lists of materials from the GPUOpen material database. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{number}</td><td>batchSize - Number of materials to fetch per batch </td></tr>
+    <tr><td class="paramname">batchSize</td><td>Number of materials to fetch per batch </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Array} - List of material lists </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>List of material lists </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_js_g_p_u_open_loader_package_2_js_g_p_u_open_loader_8js_source.html#l00050">50</a> of file <a class="el" href="_js_g_p_u_open_loader_package_2_js_g_p_u_open_loader_8js_source.html">JsGPUOpenLoaderPackage/JsGPUOpenLoader.js</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   50</span>                                     {</div>

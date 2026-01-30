@@ -44,8 +44,8 @@ class JsGPUOpenMaterialLoader {
 
     /**
      * Get lists of materials from the GPUOpen material database.
-     * @param {number} batchSize - Number of materials to fetch per batch
-     * @return {Array} - List of material lists
+     * @param batchSize Number of materials to fetch per batch
+     * @return List of material lists
      */
     async getMaterials(batchSize = 50) {
 
@@ -119,10 +119,10 @@ class JsGPUOpenMaterialLoader {
 
     /**
      * Download a material package from the GPUOpen material database.
-     * @param {number} listNumber - Index of the material list
-     * @param {number} materialNumber - Index of the material in the list
-     * @param {number} packageId - Index of the package in the material
-     * @return {Array} - A list containing the package data and title
+     * @param listNumber - Index of the material list
+     * @param materialNumber - Index of the material in the list
+     * @param packageId - Index of the package in the material
+     * @return A list containing the package data and title
      */
     async downloadPackage(listNumber, materialNumber, packageId = 0) {
         if (this.materials === null || this.materials.length === 0) {
@@ -177,8 +177,8 @@ class JsGPUOpenMaterialLoader {
 
     /**
      * Find materials by name.
-     * @param {string} materialName - Regular expression to match the material name.
-     * @return {Array} - A list of materials that match the regular expression of the form:
+     * @param materialName Regular expression to match the material name.
+     * @return A list of materials that match the regular expression of the form:
      * [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }]
      */
     findMaterialsByName(materialName) 
@@ -217,9 +217,9 @@ class JsGPUOpenMaterialLoader {
 
     /**
      * Download a material package by string expression.
-     * @param {string} searchExpr - Regular expression to match the material name
-     * @param {number} packageId - Index of the package in the material
-     * @return {Array} - A list of material items that match the regular expression of the form:
+     * @param searchExpr - Regular expression to match the material name
+     * @param packageId - Index of the package in the material
+     * @return A list of material items that match the regular expression of the form:
      * [[data, title], [data, title], ...]
      * where data is the package data (in zip form) and title is the material title
      */

@@ -24,7 +24,7 @@ const materialModal = new bootstrap.Modal(document.getElementById('materialModal
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize the Poly Haven API
-    polyHavenAPI = new PolyHavenAPI();
+    polyHavenAPI = new JsPolyHavenAPILoader();
 
     // Set theme based on browser preference or default to light mode
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
