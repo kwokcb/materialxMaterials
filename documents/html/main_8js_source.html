@@ -25,6 +25,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>  
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.0/css/brands.min.css">  
 -->
+<style>
+ .table, th, td {
+      font-size: small;
+    }
+</style>    
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,9 +38,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="download_icon.png"/></td>
-  <td id="projectalign">
+  <td id="projectalign">    
    <div id="projectname">MaterialXMaterials<span id="projectnumber">&#160;1.39.5</span>
-   </div>
+   </div> 
    <div id="projectbrief">Utilities for retrieving materials from remote servers</div>
   </td>
  </tr>
@@ -126,7 +131,7 @@ $(function(){initNavTree('main_8js_source.html','',''); });
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// Initialize the application</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>document.addEventListener(<span class="stringliteral">&#39;DOMContentLoaded&#39;</span>, <span class="keyword">function</span> () {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// Initialize the Poly Haven API</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    polyHavenAPI = <span class="keyword">new</span> <a class="code hl_class" href="class_poly_haven_a_p_i.html">PolyHavenAPI</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    polyHavenAPI = <span class="keyword">new</span> <a class="code hl_class" href="class_js_poly_haven_a_p_i_loader.html">JsPolyHavenAPILoader</a>();</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Set theme based on browser preference or default to light mode</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">const</span> prefersDarkScheme = window.matchMedia(<span class="stringliteral">&quot;(prefers-color-scheme: dark)&quot;</span>).matches;</div>
@@ -508,7 +513,7 @@ $(function(){initNavTree('main_8js_source.html','',''); });
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>            alert(<span class="stringliteral">&#39;Failed to copy link to clipboard&#39;</span>);</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>        });</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>}</div>
-<div class="ttc" id="aclass_poly_haven_a_p_i_html"><div class="ttname"><a href="class_poly_haven_a_p_i.html">PolyHavenAPI</a></div><div class="ttdoc">PolyHavenAPI - A JavaScript class for interacting with the Poly Haven API Handles fetching materials,...</div><div class="ttdef"><b>Definition</b> <a href="_poly_haven_fetch_8js_source.html#l00005">PolyHavenFetch.js:5</a></div></div>
+<div class="ttc" id="aclass_js_poly_haven_a_p_i_loader_html"><div class="ttname"><a href="class_js_poly_haven_a_p_i_loader.html">JsPolyHavenAPILoader</a></div><div class="ttdoc">JsPolyHavenAPILoader - A JavaScript class for interacting with the Poly Haven API Handles fetching ma...</div><div class="ttdef"><b>Definition</b> <a href="js_poly_haven_loader_8js_source.html#l00005">jsPolyHavenLoader.js:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

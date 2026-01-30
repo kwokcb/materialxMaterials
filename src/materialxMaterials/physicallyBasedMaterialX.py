@@ -173,7 +173,7 @@ class PhysicallyBasedMaterialLoader:
     def writeRemappingFile(self, filepath):
         '''
         @brief Write the remapping keys to a JSON file.
-        @param filename The filename to write the remapping keys to.
+        @param filepath The filename to write the remapping keys to.
         @return None
         '''
         if not self.remapMap:
@@ -186,7 +186,7 @@ class PhysicallyBasedMaterialLoader:
     def readRemappingFile(self, filepath):
         '''
         @brief Read the remapping keys from a JSON file.
-        @param filename The filename to read the remapping keys from.
+        @param filepath The filename to read the remapping keys from.
         @return A dictionary of remapping keys.
         '''
         if not os.path.exists(filepath):
@@ -311,6 +311,10 @@ class PhysicallyBasedMaterialLoader:
         return not elem.hasSourceUri()
 
     def _getMethodName(self):
+        '''
+        @brief Get the name of the calling method for logging purposes.
+        @return The name of the calling method.
+        '''
         frame = inspect.currentframe().f_back
         method_name = frame.f_code.co_name
         return method_name

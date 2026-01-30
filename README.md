@@ -39,10 +39,12 @@ This site hosts a set of libraries and utilities to query remote databases for m
 </p>
 Each currently has <code>Python</code> and / or <code>Javascript</code> implementations. 
 
-**Links**
+<h3>Links</h3>
 
 - <a href="https://kwokcb.github.io/materialxMaterials" target="_blank">Home Page</a>
-- Main tooling site: <div class="btn btn-outline-secondary"><a href="https://kwokcb.github.io/MaterialXLab" target="_blank"><img src="https://kwokcb.github.io/MaterialXLab/documents/icons/teapot_logo.svg" height=24px> MaterialXLab</a> 
+- Main tooling site: <div class="btn btn-outline-secondary">
+<a href="https://kwokcb.github.io/MaterialXLab" target="_blank"><img src="https://kwokcb.github.io/MaterialXLab/documents/icons/teapot_logo.svg" height=24px> MaterialXLab</a>
+</div> 
 - The API reference can be found <a href="https://kwokcb.github.io/materialxMaterials/documents/html/index.html">here</a>
 - <a href="https://github.com/kwokcb/materialxMaterials"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/4125d04c73fc2b1755f5b6054b25b6d1bdabcf6b/documents/icons/github-mark-white.svg" width=16px> GitHub repository</a>.
 
@@ -191,12 +193,12 @@ A Python library and command `polyHavenLoader` and `polyHavenLoaderCmd` can be u
 format.
 
 A Javascript library and Web interface is available <a href="https://kwokcb.github.io/materialxMaterials/javascript/JsPolyHaven/" target="__default"><b>here</b>. 
-
+<br>
 <table>
 <tr>
-<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_0.png" width=256px></td>
-<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1a.png" width=256px></td>
-<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1b.png" width=256px></td>
+<td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_0.png" width=320px></td> 
+<!-- <td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1a.png" width=256px></td> -->
+<!-- <td><img src="https://kwokcb.github.io/materialxMaterials/documents/images/PolyHaven_Page_1b.png" height=256px></td> -->
 </tr>
 </table>
 </a>

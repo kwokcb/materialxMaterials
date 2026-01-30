@@ -22,6 +22,9 @@ import MaterialX as mx # type: ignore
 import physicallyBasedMaterialX as pbmx
 
 def physicallBasedMaterialXCmd():
+    '''
+    Command to parse PhysicallyBased materials and create MaterialX materials
+    '''
     logger = logging.getLogger('PB_CMD')
     logging.basicConfig(level=logging.INFO)
 
