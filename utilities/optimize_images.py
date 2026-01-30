@@ -1,3 +1,12 @@
+def reduce_bit_depth(img, bits=4):
+    """
+    @brief Reduce bit depth per channel for an image.
+    @param img Input image (uint8).
+    @param bits Number of bits to keep (1-8).
+    @return Image with reduced bit depth per channel.
+    """
+    shift = 8 - bits
+    return ((img >> shift) << shift).astype(np.uint8)
 
 import os
 import cv2
@@ -26,15 +35,17 @@ def quantize_image(img, k):
     return quantized.reshape(img.shape)
 
 
-def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize):
+def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize, do_bitdepth, bitdepth):
     """
-    @brief Process a single image: resize and/or quantize colors, then save to output directory.
+    @brief Process a single image: resize, quantize colors, and/or reduce bit depth, then save to output directory.
     @param path Path to the input image file.
     @param out_dir Output directory to save the processed image.
     @param resize_pct Resize percentage (int).
     @param quantize_k Number of colors for quantization (int).
     @param do_resize Whether to resize the image (bool).
     @param do_quantize Whether to quantize the image (bool).
+    @param do_bitdepth Whether to reduce bit depth (bool).
+    @param bitdepth Number of bits to keep per channel (int).
     """
     img = cv2.imread(path)
     if img is None:
@@ -44,6 +55,8 @@ def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize)
         width = int(img.shape[1] * resize_pct / 100)
         height = int(img.shape[0] * resize_pct / 100)
         img = cv2.resize(img, (width, height), interpolation=cv2.INTER_AREA)
+    if do_bitdepth:
+        img = reduce_bit_depth(img, bitdepth)
     if do_quantize:
         img = quantize_image(img, quantize_k)
     out_path = os.path.join(out_dir, os.path.basename(path))
@@ -55,11 +68,12 @@ def main():
     """
     @brief Main entry point for the script. Parses arguments and processes all PNG images in the input folder.
     """
-    parser = argparse.ArgumentParser(description="Batch optimize PNG images: resize and/or reduce precision.")
+    parser = argparse.ArgumentParser(description="Batch optimize PNG images: resize, reduce bit depth, and/or reduce precision.")
     parser.add_argument("input_folder", help="Folder containing PNG images")
     parser.add_argument("-o", "--output_folder", default=None, help="Output folder (default: input_folder/optimized)")
     parser.add_argument("-r", "--resize", type=int, default=50, help="Resize percentage (default: 50)")
-    parser.add_argument("-q","--quantize", type=int, default=None, help="Reduce precision to K colors (e.g., 256)")
+    parser.add_argument("-q", "--quantize", type=int, default=None, help="Reduce precision to K colors (e.g., 256)")
+    parser.add_argument("-b", "--bitdepth", type=int, default=None, help="Reduce bit depth per channel (1-8, e.g., 4)")
 
     args = parser.parse_args()
 
@@ -69,8 +83,10 @@ def main():
 
     do_resize = args.resize is not None
     do_quantize = args.quantize is not None
+    do_bitdepth = args.bitdepth is not None
     resize_pct = args.resize if do_resize else 100
     quantize_k = args.quantize if do_quantize else 256
+    bitdepth = args.bitdepth if do_bitdepth else 8
 
     print(f'Processing folder: {input_folder}')
     processed_count = 0
@@ -78,7 +94,7 @@ def main():
         if fname.lower().endswith(".png"):
             print(f"Processing: {fname}")
             in_path = os.path.join(input_folder, fname)
-            process_image(in_path, output_folder, resize_pct, quantize_k, do_resize, do_quantize)
+            process_image(in_path, output_folder, resize_pct, quantize_k, do_resize, do_quantize, do_bitdepth, bitdepth)
             processed_count += 1
     print(f"Processed {processed_count} images.")
 if __name__ == "__main__":
