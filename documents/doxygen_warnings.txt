@@ -1,92 +1,92 @@
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialXCmd.py:24: warning: Member physicallBasedMaterialXCmd() (function) of namespace materialxMaterials.physicallyBasedMaterialXCmd is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:14: warning: Member main() (function) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:11: warning: Member logger (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:12: warning: Member level (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:122: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:122: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0) are not documented:
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialXCmd.py:24: warning: Member physicallBasedMaterialXCmd() (function) of namespace materialxMaterials.physicallyBasedMaterialXCmd is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:14: warning: Member main() (function) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:11: warning: Member logger (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:12: warning: Member level (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:122: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:122: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0) are not documented:
   parameter 'listNumber'
   parameter 'materialNumber'
   parameter 'packageId'
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:122: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:122: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0) are not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:122: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:122: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackage(listNumber, materialNumber, packageId=0) are not documented:
   parameter 'listNumber'
   parameter 'materialNumber'
   parameter 'packageId'
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:220: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:220: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:220: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0) are not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:220: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:220: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:220: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0) are not documented:
   parameter 'searchExpr'
   parameter 'packageId'
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:220: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:220: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:220: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0) are not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:220: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:220: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:220: warning: The following parameters of JsGPUOpenMaterialLoader::downloadPackageByExpression(searchExpr, packageId=0) are not documented:
   parameter 'searchExpr'
   parameter 'packageId'
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:180: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::findMaterialsByName(materialName)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:180: warning: The following parameter of JsGPUOpenMaterialLoader::findMaterialsByName(materialName) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:180: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::findMaterialsByName(materialName)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:180: warning: The following parameter of JsGPUOpenMaterialLoader::findMaterialsByName(materialName) is not documented:
   parameter 'materialName'
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:180: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::findMaterialsByName(materialName)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:180: warning: The following parameter of JsGPUOpenMaterialLoader::findMaterialsByName(materialName) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:180: warning: argument 'string' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::findMaterialsByName(materialName)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:180: warning: The following parameter of JsGPUOpenMaterialLoader::findMaterialsByName(materialName) is not documented:
   parameter 'materialName'
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:47: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::getMaterials(batchSize=50)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoader.js:47: warning: The following parameter of JsGPUOpenMaterialLoader::getMaterials(batchSize=50) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:47: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::getMaterials(batchSize=50)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoader.js:47: warning: The following parameter of JsGPUOpenMaterialLoader::getMaterials(batchSize=50) is not documented:
   parameter 'batchSize'
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:47: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::getMaterials(batchSize=50)
-D:/Work/materialx/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:47: warning: The following parameter of JsGPUOpenMaterialLoader::getMaterials(batchSize=50) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:47: warning: argument 'number' of command @param is not found in the argument list of JsGPUOpenMaterialLoader::getMaterials(batchSize=50)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsGPUOpenLoaderPackage/JsGPUOpenLoader.js:47: warning: The following parameter of JsGPUOpenMaterialLoader::getMaterials(batchSize=50) is not documented:
   parameter 'batchSize'
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:6: warning: Member constructor() (function) of class PolyHavenAPI is not documented.
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:167: warning: argument 'Object' of command @param is not found in the argument list of PolyHavenAPI::createMaterialXPackage(material, resolution)
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:167: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::createMaterialXPackage(material, resolution)
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:167: warning: The following parameters of PolyHavenAPI::createMaterialXPackage(material, resolution) are not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:6: warning: Member constructor() (function) of class PolyHavenAPI is not documented.
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:167: warning: argument 'Object' of command @param is not found in the argument list of PolyHavenAPI::createMaterialXPackage(material, resolution)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:167: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::createMaterialXPackage(material, resolution)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:167: warning: The following parameters of PolyHavenAPI::createMaterialXPackage(material, resolution) are not documented:
   parameter 'material'
   parameter 'resolution'
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:101: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::downloadMaterialXContent(url)
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:101: warning: The following parameter of PolyHavenAPI::downloadMaterialXContent(url) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:101: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::downloadMaterialXContent(url)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:101: warning: The following parameter of PolyHavenAPI::downloadMaterialXContent(url) is not documented:
   parameter 'url'
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:123: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::downloadTexture(url)
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:123: warning: The following parameter of PolyHavenAPI::downloadTexture(url) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:123: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::downloadTexture(url)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:123: warning: The following parameter of PolyHavenAPI::downloadTexture(url) is not documented:
   parameter 'url'
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:145: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::downloadThumbnail(thumbnailUrl)
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:145: warning: The following parameter of PolyHavenAPI::downloadThumbnail(thumbnailUrl) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:145: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::downloadThumbnail(thumbnailUrl)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:145: warning: The following parameter of PolyHavenAPI::downloadThumbnail(thumbnailUrl) is not documented:
   parameter 'thumbnailUrl'
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:79: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::fetchMaterialFiles(materialId)
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:79: warning: The following parameter of PolyHavenAPI::fetchMaterialFiles(materialId) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:79: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::fetchMaterialFiles(materialId)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:79: warning: The following parameter of PolyHavenAPI::fetchMaterialFiles(materialId) is not documented:
   parameter 'materialId'
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:255: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::getMaterialContent(materialId, resolution)
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:255: warning: The following parameters of PolyHavenAPI::getMaterialContent(materialId, resolution) are not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:255: warning: argument 'string' of command @param is not found in the argument list of PolyHavenAPI::getMaterialContent(materialId, resolution)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:255: warning: The following parameters of PolyHavenAPI::getMaterialContent(materialId, resolution) are not documented:
   parameter 'materialId'
   parameter 'resolution'
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:35: warning: argument 'Object' of command @param is not found in the argument list of PolyHavenAPI::processMaterialsData(rawData)
-D:/Work/materialx/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:35: warning: The following parameter of PolyHavenAPI::processMaterialsData(rawData) is not documented:
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:35: warning: argument 'Object' of command @param is not found in the argument list of PolyHavenAPI::processMaterialsData(rawData)
+/Users/bernardkwok/work/materialxMaterials/javascript/JsPolyHaven/PolyHavenFetch.js:35: warning: The following parameter of PolyHavenAPI::processMaterialsData(rawData) is not documented:
   parameter 'rawData'
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:313: warning: Member _getMethodName(self) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:189: warning: argument 'filename' of command @param is not found in the argument list of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader::readRemappingFile(self, filepath)
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:189: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.readRemappingFile(self, filepath) is not documented:
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:313: warning: Member _getMethodName(self) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:189: warning: argument 'filename' of command @param is not found in the argument list of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader::readRemappingFile(self, filepath)
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:189: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.readRemappingFile(self, filepath) is not documented:
   parameter 'filepath'
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:176: warning: argument 'filename' of command @param is not found in the argument list of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader::writeRemappingFile(self, filepath)
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:176: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.writeRemappingFile(self, filepath) is not documented:
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:176: warning: argument 'filename' of command @param is not found in the argument list of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader::writeRemappingFile(self, filepath)
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:176: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.writeRemappingFile(self, filepath) is not documented:
   parameter 'filepath'
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:20: warning: Member BASE_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:21: warning: Member ASSET_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:22: warning: Member INFO_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:23: warning: Member FILES_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:24: warning: Member HEADERS (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:28: warning: Member logger (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:34: warning: argument 'resolution' of command @param is not found in the argument list of materialxMaterials.polyHavenLoader.PolyHavenLoader::fetch_materialx_assets(self, max_items=1, download_id=None)
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:34: warning: The following parameters of materialxMaterials.polyHavenLoader.PolyHavenLoader.fetch_materialx_assets(self, max_items=1, download_id=None) are not documented:
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:20: warning: Member BASE_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:21: warning: Member ASSET_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:22: warning: Member INFO_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:23: warning: Member FILES_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:24: warning: Member HEADERS (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:28: warning: Member logger (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:34: warning: argument 'resolution' of command @param is not found in the argument list of materialxMaterials.polyHavenLoader.PolyHavenLoader::fetch_materialx_assets(self, max_items=1, download_id=None)
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:34: warning: The following parameters of materialxMaterials.polyHavenLoader.PolyHavenLoader.fetch_materialx_assets(self, max_items=1, download_id=None) are not documented:
   parameter 'max_items'
   parameter 'download_id'
-D:/Work/materialx/materialxMaterials/README.md:194: warning: Unexpected html tag <table> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:195: warning: Unexpected html tag <tr> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:196: warning: Unexpected html tag <td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:196: warning: Unexpected html tag </td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:197: warning: Unexpected html tag <td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:197: warning: Unexpected html tag </td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:198: warning: Unexpected html tag <td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:198: warning: Unexpected html tag </td> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:199: warning: Unexpected html tag </tr> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:200: warning: Unexpected html tag </table> found within <a href=...> context
-D:/Work/materialx/materialxMaterials/README.md:207: warning: expected <td>, <th> or <tr> tag but found </td> instead!
-D:/Work/materialx/materialxMaterials/README.md:241: warning: Unsupported xml/html tag <iframe> found
-D:/Work/materialx/materialxMaterials/README.md:242: warning: Unsupported xml/html tag </iframe> found
-D:/Work/materialx/materialxMaterials/README.md:365: warning: end of comment block while expecting command </div> (Probable start 'D:/Work/materialx/materialxMaterials/README.md' at line 364)
+/Users/bernardkwok/work/materialxMaterials/README.md:195: warning: Unexpected html tag <table> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:196: warning: Unexpected html tag <tr> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:197: warning: Unexpected html tag <td> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:197: warning: Unexpected html tag </td> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:198: warning: Unexpected html tag <td> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:198: warning: Unexpected html tag </td> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:199: warning: Unexpected html tag <td> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:199: warning: Unexpected html tag </td> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:200: warning: Unexpected html tag </tr> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:201: warning: Unexpected html tag </table> found within <a href=...> context
+/Users/bernardkwok/work/materialxMaterials/README.md:208: warning: expected <td>, <th> or <tr> tag but found </td> instead!
+/Users/bernardkwok/work/materialxMaterials/README.md:242: warning: Unsupported xml/html tag <iframe> found
+/Users/bernardkwok/work/materialxMaterials/README.md:243: warning: Unsupported xml/html tag </iframe> found
+/Users/bernardkwok/work/materialxMaterials/README.md:366: warning: end of comment block while expecting command </div> (Probable start '/Users/bernardkwok/work/materialxMaterials/README.md' at line 365)

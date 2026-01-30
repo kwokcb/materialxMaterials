@@ -174,7 +174,8 @@ A command line utility is available <a href="https://github.com/kwokcb/materialx
 
 <h4>3. ambientCg</h4>
 
-A <b>NodeJS / Express</b> application can also be found on the <a href="https://kwokcb.github.io/materialxWeb/index.html" target="_blank">MaterialXWeb</a> site.
+A sample <a href="https://materialx-materials-library-inspector.onrender.com/">
+<b>NodeJS / Express</b></a> application is available from the <a href="https://kwokcb.github.io/materialxWeb/index.html" target="_blank">MaterialXWeb</a> site. `Flask` deployment is on `Render`.
 
 This is designed to be a general purpose MaterialX *material inspector* supporting `ambientCg` and `GPUOpen` currently with the intent to add new libraries as they become available.
 
