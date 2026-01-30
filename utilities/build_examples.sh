@@ -9,5 +9,5 @@ python -m materialxMaterials physbased -o . -s 1
 # 2048px square images. 
 python ../../utilities/render_materialx.py . -e "--drawEnvironment true" -r 512
 # 1c. Build summary page
-python ../../utilities/renderView -t
+python ../../utilities/renderView.py -t
 popd

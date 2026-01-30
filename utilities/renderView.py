@@ -1,4 +1,5 @@
 import os, sys, argparse
+import markdown as md
 
 def getFiles(rootPath, exts = ('mtlx', 'MTLX' )):
     filelist = []
@@ -69,7 +70,8 @@ def main():
         # Create a set of all material names from all three lists
         def extract_material_name(filename, prefix):
             base = os.path.basename(filename)
-            return base.replace(prefix, "").replace(".png", "")
+            result = base.replace(prefix, "").replace(".png", "")
+            return result
 
         opbr_names = {extract_material_name(f, "PB_OPBR_") for f in OPBR_pixFileList}
         ss_names = {extract_material_name(f, "PB_SS_") for f in SS_pixFileList}
@@ -80,6 +82,8 @@ def main():
         def find_file_by_name(filelist, prefix, name):
             for f in filelist:
                 if extract_material_name(f, prefix) == name:
+                    # Remove any path prefix.
+                    f = os.path.basename(f)
                     return f
             return None
 
@@ -98,9 +102,9 @@ def main():
             if not gltf:
                 missing_files.append(f"PB_GLTF_{name}.png")
 
-            opbr_img = f'<img src="{opbr}" width=100%>' if opbr else f'<img src="{svg_placeholder}" width=100%>'
-            ss_img = f'<img src="{ss}" width=100%>' if ss else f'<img src="{svg_placeholder}" width=100%>'
-            gltf_img = f'<img src="{gltf}" width=100%>' if gltf else f'<img src="{svg_placeholder}" width=100%>'
+            opbr_img = f'<img loading="lazy" src="{opbr}" width=100%>' if opbr else f'<img src="{svg_placeholder}" width=100%>'
+            ss_img = f'<img loading="lazy" src="{ss}" width=100%>' if ss else f'<img src="{svg_placeholder}" width=100%>'
+            gltf_img = f'<img loading="lazy" src="{gltf}" width=100%>' if gltf else f'<img src="{svg_placeholder}" width=100%>'
 
             markdown += f"| {name} | {opbr_img} | {ss_img} | {gltf_img} |\n"
             output_count += 1
@@ -116,7 +120,6 @@ def main():
         
         # Convert markdown to HTML
         try:
-            import markdown as md
             html = md.markdown(markdown, extensions=['tables'])
             style = """
                 <style>
@@ -136,11 +139,42 @@ def main():
                 <h2>MaterialXView Rendering of Physically Based Materials</h2>
                 """
             html = style + html
-            with open("images.html", "w") as f:
+            html_file_name = "images.html"
+            with open(html_file_name, "w") as f:
                 f.write(html)
-            print("Write HTML table to file {'images.html'}")
+            print("Write HTML table to file {html_file_name}")
         except ImportError:
             print("Markdown module not found. Skipping HTML generation.")   
+
+        # Open parent folder's README.md and insert the generated table
+        readme_path = os.path.join(opts.inputFileName, "..", "README.md")
+        if os.path.isfile(readme_path):
+            print(f"Updating README file at {readme_path}")
+            with open(readme_path, "r") as f:
+                readme_content = f.read()
+            start_marker = "<!--GEN_IMAGES_START-->"
+            end_marker = "<!--GEN_IMAGES_END-->"
+            start_index = readme_content.find(start_marker)
+            end_index = readme_content.find(end_marker)
+
+            # Prepare markdown for insertion
+            # - Prepend uri to src= links
+            uri = 'https://kwokcb.github.io/materialxMaterials/examples/PhysicallyBasedMaterialX/'
+            markdown = markdown.replace('src="', f'src="{uri}')
+            # - Convert markdown to html
+            html_output = md.markdown(markdown, extensions=['tables'])
+
+            if start_index != -1 and end_index != -1 and end_index > start_index:
+                new_readme_content = (readme_content[:start_index + len(start_marker)] + "\n" +
+                                      html_output +
+                                      readme_content[end_index:])
+                with open(readme_path, "w") as f:
+                    f.write(new_readme_content)
+                print("README.md updated successfully.")
+            else:
+                print("Markers for image table not found in README.md. Skipping update.")
+        else:
+            print(f"README.md file not found at {readme_path}. Skipping update.")
 
 if __name__ == '__main__':
     main()
