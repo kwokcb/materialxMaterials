@@ -1,7 +1,6 @@
 #/usr/bin/env python3
 '''
-@file physicallyBasedMaterialXCmd.py
-@brief Convert Physically Based Materials to MaterialX Command Line Utility
+@brief Command to convert Physically Based Materials to MaterialX Command Line Utility
 @details This script converts Physically Based Materials to MaterialX using the MaterialX Python API.
 @details The script can be run from the command line with the following options:
 @details --shadingModel: Shading models to use for conversion. If not specified then all will be used.

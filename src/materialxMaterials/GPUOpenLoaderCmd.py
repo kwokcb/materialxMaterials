@@ -1,11 +1,13 @@
 #/usr/bin/env python3
-
+'''
+@brief Command to download GPUOpen MaterialX materials
+'''
 import os, argparse, sys, logging
 import GPUOpenLoader as gpuo
 
 def GPUOpenLoaderCmd():
     '''
-    Utility to download and write GPUOpen materials
+    @brief Command to download GPUOpen materials
     '''
     logger = logging.getLogger('GPUO_CMD')
     logging.basicConfig(level=logging.INFO)

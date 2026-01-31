@@ -1,6 +1,5 @@
 '''
-@file : polyHavenLoader.py
-@brief: A module to fetch MaterialX assets from PolyHaven API and download them.
+@brief Module to fetch MaterialX assets from PolyHaven API and download them.
 '''
 import requests
 import json
@@ -10,14 +9,14 @@ import logging
 
 class PolyHavenLoader:
     """
-    @class PolyHavenLoader
-    @brief A class to fetch MaterialX assets from the PolyHaven API and download them.
-    """
+    @brief Fetch MaterialX assets from PolyHaven API and download them.
 
+    This class provides methods to fetch and download MaterialX assets and textures from PolyHaven.
+    """
     def __init__(self):
-        """
-        @brief Initialize the PolyHavenLoader with API endpoints and headers.
-        """
+        '''
+        Initialize the PolyHavenLoader with API endpoints and headers.
+        '''
         self.BASE_API = "https://api.polyhaven.com"
         self.ASSET_API = "https://api.polyhaven.com/assets"
         self.INFO_API = "https://api.polyhaven.com/info"
@@ -30,15 +29,16 @@ class PolyHavenLoader:
         logging.basicConfig(level=self.logger.info)
 
     def fetch_materialx_assets(self, max_items=1, download_id=None):
-        """
-        @brief Fetch MaterialX assets from PolyHaven API and filter them by resolution.
-        @param max_items The maximum number of assets to fetch.
-        @param download_id If specified, only fetch the asset with this ID.
-        @return Tuple of (materialx_assets, all_assets, filtered_polyhaven_assets):
-            - materialx_assets: dict of MaterialX assets with their URLs and texture files.
-            - all_assets: dict of all assets returned by the API.
-            - filtered_polyhaven_assets: dict of filtered assets containing only MaterialX data.
-        """
+        '''
+        Fetch MaterialX assets from PolyHaven API and filter them by resolution.
+
+        @param max_items Maximum number of assets to fetch. If None, fetch all.
+        @param download_id If set, only fetch asset with this ID.
+        @return Tuple (materialx_assets, all_assets, filtered_polyhaven_assets):
+            - materialx_assets: Dictionary of MaterialX assets with URLs and texture files.
+            - all_assets: All assets returned by PolyHaven API.
+            - filtered_polyhaven_assets: Filtered assets containing only MaterialX files.
+        '''
         parameters = {
             "type": "textures"
         }
@@ -131,15 +131,15 @@ class PolyHavenLoader:
         return materialx_assets, all_assets, filtered_polyhaven_assets
 
     def download_asset(self, asset_list):
-        """
-        @brief Download MaterialX asset and its textures from PolyHaven.
-        @param asset_list Dictionary of MaterialX assets with their URLs and texture files.
+        '''
+        Download MaterialX asset and its textures from PolyHaven.
+
+        @param asset_list Dictionary of MaterialX assets with URLs and texture files.
         @return Tuple (id, mtlx_string, texture_binaries):
-            - id: The ID of the downloaded asset.
+            - id: ID of the downloaded asset.
             - mtlx_string: The MaterialX document as a string.
-            - texture_binaries: List of tuples (path, binary content) for each texture and thumbnail.
-        @details Example asset_list: {'polystyrene': {'url': 'https://.../polystyrene.mtlx', 'texture_files': {...}}}
-        """
+            - texture_binaries: List of tuples (path, binary content) for textures and thumbnails.
+        '''
         for id, asset in asset_list.items():
             url = asset.get("url")
             if not url:
@@ -181,13 +181,15 @@ class PolyHavenLoader:
             return id, mtlx_string, texture_binaries
 
     def save_materialx_with_textures(self, id, mtlx_string, texture_binaries, data_folder):
-        """
-        @brief Save MaterialX string and texture binaries to a zip file.
+        '''
+        Save MaterialX string and texture binaries to a zip file.
+
         @param id The ID of the MaterialX asset.
         @param mtlx_string The MaterialX string content.
         @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.
-        @param data_folder The folder to save the zip file.
-        """
+        @param data_folder Folder to save the zip file.
+        @return None
+        '''
         # Create a zip file with MaterialX and textures
         filename = f"{id}_materialx.zip"
         filename = Path(data_folder) / filename

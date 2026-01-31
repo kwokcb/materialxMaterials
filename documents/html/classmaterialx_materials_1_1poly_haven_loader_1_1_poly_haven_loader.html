@@ -25,6 +25,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>  
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.0/css/brands.min.css">  
 -->
+<style>
+ .table, th, td {
+      font-size: small;
+    }
+</style>    
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,9 +38,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="download_icon.png"/></td>
-  <td id="projectalign">
+  <td id="projectalign">    
    <div id="projectname">MaterialXMaterials<span id="projectnumber">&#160;1.39.5</span>
-   </div>
+   </div> 
    <div id="projectbrief">Utilities for retrieving materials from remote servers</div>
   </td>
  </tr>
@@ -101,19 +106,19 @@ $(function(){initNavTree('classmaterialx_materials_1_1poly_haven_loader_1_1_poly
 </div><!--header-->
 <div class="contents">
 
-<p>A class to fetch MaterialX assets from PolyHaven API and download them.  
+<p>Fetch MaterialX assets from PolyHaven API and download them.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3e872c750393881290dabb36bc930242" id="r_a3e872c750393881290dabb36bc930242"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3e872c750393881290dabb36bc930242">__init__</a> (self)</td></tr>
-<tr class="memdesc:a3e872c750393881290dabb36bc930242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html" title="A class to fetch MaterialX assets from PolyHaven API and download them.">PolyHavenLoader</a> with API endpoints and headers.  <br /></td></tr>
+<tr class="memdesc:a3e872c750393881290dabb36bc930242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html" title="Fetch MaterialX assets from PolyHaven API and download them.">PolyHavenLoader</a> with API endpoints and headers.  <br /></td></tr>
 <tr class="memitem:aabfef3ca674414d9d47dafe8acf6b816" id="r_aabfef3ca674414d9d47dafe8acf6b816"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aabfef3ca674414d9d47dafe8acf6b816">fetch_materialx_assets</a> (self, max_items=1, download_id=None)</td></tr>
 <tr class="memdesc:aabfef3ca674414d9d47dafe8acf6b816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch MaterialX assets from PolyHaven API and filter them by resolution.  <br /></td></tr>
 <tr class="memitem:a514dd8fcb27f0087647793e3de140c4d" id="r_a514dd8fcb27f0087647793e3de140c4d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a514dd8fcb27f0087647793e3de140c4d">download_asset</a> (self, asset_list)</td></tr>
 <tr class="memdesc:a514dd8fcb27f0087647793e3de140c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download MaterialX asset and its textures from PolyHaven.  <br /></td></tr>
 <tr class="memitem:aa657e07904ca115f216425a6dbea20e8" id="r_aa657e07904ca115f216425a6dbea20e8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa657e07904ca115f216425a6dbea20e8">save_materialx_with_textures</a> (self, id, mtlx_string, texture_binaries, data_folder)</td></tr>
-<tr class="memdesc:aa657e07904ca115f216425a6dbea20e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">' Save MaterialX string and texture binaries to a zip file.  <br /></td></tr>
+<tr class="memdesc:aa657e07904ca115f216425a6dbea20e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save MaterialX string and texture binaries to a zip file.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -125,9 +130,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8367375b8ee8aac25f666604c221bc2b" id="r_a8367375b8ee8aac25f666604c221bc2b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8367375b8ee8aac25f666604c221bc2b">logger</a> = logging.getLogger('PolyH')</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class to fetch MaterialX assets from PolyHaven API and download them. </p>
+<div class="textblock"><p>Fetch MaterialX assets from PolyHaven API and download them. </p>
+<p>This class provides methods to fetch and download MaterialX assets and textures from PolyHaven. </p>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00012">12</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00010">10</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3e872c750393881290dabb36bc930242" name="a3e872c750393881290dabb36bc930242"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e872c750393881290dabb36bc930242">&#9670;&#160;</a></span>__init__()</h2>
@@ -144,7 +150,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the <a class="el" href="classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html" title="A class to fetch MaterialX assets from PolyHaven API and download them.">PolyHavenLoader</a> with API endpoints and headers. </p>
+<p>Initialize the <a class="el" href="classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html" title="Fetch MaterialX assets from PolyHaven API and download them.">PolyHavenLoader</a> with API endpoints and headers. </p>
 
 <p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00016">16</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>    <span class="keyword">def </span>__init__(self):</div>
@@ -186,64 +192,70 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Download MaterialX asset and its textures from PolyHaven. </p>
-<p>e.g. asset_list = {'polystyrene': {'url': '<a href="https://.../polystyrene.mtlx'">https://.../polystyrene.mtlx'</a>, 'texture_files': {...}}}</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">asset_list</td><td>A dictionary of MaterialX assets with their URLs and texture files. </td></tr>
+    <tr><td class="paramname">asset_list</td><td>Dictionary of MaterialX assets with URLs and texture files. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>: The ID of the downloaded asset, the MaterialX string, and a list of texture binaries. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Tuple (id, mtlx_string, texture_binaries):<ul>
+<li>id: ID of the downloaded asset.</li>
+<li>mtlx_string: The MaterialX document as a string.</li>
+<li>texture_binaries: List of tuples (path, binary content) for textures and thumbnails. </li>
+</ul>
+</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00128">128</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>    <span class="keyword">def </span>download_asset(self, asset_list):</div>
-<div class="line"><span class="lineno">  129</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  130</span><span class="stringliteral">        Download MaterialX asset and its textures from PolyHaven.</span></div>
-<div class="line"><span class="lineno">  131</span><span class="stringliteral">        e.g. asset_list = {&#39;polystyrene&#39;: {&#39;url&#39;: &#39;https://.../polystyrene.mtlx&#39;, &#39;texture_files&#39;: {...}}}</span></div>
-<div class="line"><span class="lineno">  132</span><span class="stringliteral">        </span></div>
-<div class="line"><span class="lineno">  133</span><span class="stringliteral">        @param asset_list: A dictionary of MaterialX assets with their URLs and texture files.</span></div>
-<div class="line"><span class="lineno">  134</span><span class="stringliteral">        @return: The ID of the downloaded asset, the MaterialX string, and a list of texture binaries.</span></div>
-<div class="line"><span class="lineno">  135</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">for</span> id, asset <span class="keywordflow">in</span> asset_list.items():</div>
-<div class="line"><span class="lineno">  137</span>            url = asset.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url:</div>
-<div class="line"><span class="lineno">  139</span>                self.logger.info(f<span class="stringliteral">&quot;No MaterialX URL found for &#39;{id}&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">  140</span>                <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>            resp = requests.get(url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  143</span>            resp.raise_for_status()</div>
-<div class="line"><span class="lineno">  144</span>            mtlx_string = resp.text</div>
-<div class="line"><span class="lineno">  145</span>            self.logger.info(f<span class="stringliteral">&quot;Download MaterialX document {url}, length: {len(mtlx_string)} characters&quot;</span>)</div>
-<div class="line"><span class="lineno">  146</span> </div>
-<div class="line"><span class="lineno">  147</span>            texture_binaries = []</div>
-<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">for</span> path, texture_url <span class="keywordflow">in</span> asset.get(<span class="stringliteral">&quot;texture_files&quot;</span>, {}).items():</div>
-<div class="line"><span class="lineno">  149</span>                <span class="comment"># Get texture files</span></div>
-<div class="line"><span class="lineno">  150</span>                self.logger.info(f<span class="stringliteral">&quot;Download texture from {texture_url} ...&quot;</span>)</div>
-<div class="line"><span class="lineno">  151</span>                texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  152</span>                texture_resp.raise_for_status()            </div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00133">133</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>    <span class="keyword">def </span>download_asset(self, asset_list):</div>
+<div class="line"><span class="lineno">  134</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  135</span><span class="stringliteral">        Download MaterialX asset and its textures from PolyHaven.</span></div>
+<div class="line"><span class="lineno">  136</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  137</span><span class="stringliteral">        @param asset_list Dictionary of MaterialX assets with URLs and texture files.</span></div>
+<div class="line"><span class="lineno">  138</span><span class="stringliteral">        @return Tuple (id, mtlx_string, texture_binaries):</span></div>
+<div class="line"><span class="lineno">  139</span><span class="stringliteral">            - id: ID of the downloaded asset.</span></div>
+<div class="line"><span class="lineno">  140</span><span class="stringliteral">            - mtlx_string: The MaterialX document as a string.</span></div>
+<div class="line"><span class="lineno">  141</span><span class="stringliteral">            - texture_binaries: List of tuples (path, binary content) for textures and thumbnails.</span></div>
+<div class="line"><span class="lineno">  142</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">for</span> id, asset <span class="keywordflow">in</span> asset_list.items():</div>
+<div class="line"><span class="lineno">  144</span>            url = asset.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url:</div>
+<div class="line"><span class="lineno">  146</span>                self.logger.info(f<span class="stringliteral">&quot;No MaterialX URL found for &#39;{id}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">  147</span>                <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>            resp = requests.get(url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  150</span>            resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  151</span>            mtlx_string = resp.text</div>
+<div class="line"><span class="lineno">  152</span>            self.logger.info(f<span class="stringliteral">&quot;Download MaterialX document {url}, length: {len(mtlx_string)} characters&quot;</span>)</div>
 <div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>                ext = Path(path).suffix.lower()</div>
-<div class="line"><span class="lineno">  155</span>                name = Path(path).stem</div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>                <span class="keywordflow">if</span> ext == <span class="stringliteral">&quot;.exr&quot;</span>:</div>
-<div class="line"><span class="lineno">  158</span>                    self.logger.info(f<span class="stringliteral">&quot;  WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}&quot;</span>)</div>
-<div class="line"><span class="lineno">  159</span>                texture_binaries.append((path, texture_resp.content))</div>
+<div class="line"><span class="lineno">  154</span>            texture_binaries = []</div>
+<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">for</span> path, texture_url <span class="keywordflow">in</span> asset.get(<span class="stringliteral">&quot;texture_files&quot;</span>, {}).items():</div>
+<div class="line"><span class="lineno">  156</span>                <span class="comment"># Get texture files</span></div>
+<div class="line"><span class="lineno">  157</span>                self.logger.info(f<span class="stringliteral">&quot;Download texture from {texture_url} ...&quot;</span>)</div>
+<div class="line"><span class="lineno">  158</span>                texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  159</span>                texture_resp.raise_for_status()            </div>
 <div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>            thumbnail_url = asset.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
-<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">if</span> thumbnail_url:</div>
-<div class="line"><span class="lineno">  163</span>                self.logger.info(f<span class="stringliteral">&quot;Download thumbnail from {thumbnail_url} ...&quot;</span>)                </div>
-<div class="line"><span class="lineno">  164</span>                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  165</span>                thumbnail_resp.raise_for_status()</div>
-<div class="line"><span class="lineno">  166</span>                </div>
-<div class="line"><span class="lineno">  167</span>                clean_url = thumbnail_url</div>
-<div class="line"><span class="lineno">  168</span>                <span class="comment"># Strip any ? or # from the URL</span></div>
-<div class="line"><span class="lineno">  169</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;?&#39;</span>)[0].split(<span class="stringliteral">&#39;#&#39;</span>)[0]</div>
-<div class="line"><span class="lineno">  170</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]  <span class="comment"># Get the last part of the URL</span></div>
-<div class="line"><span class="lineno">  171</span>                extension = Path(clean_url).suffix.lower()</div>
-<div class="line"><span class="lineno">  172</span>                texture_binaries.append((f<span class="stringliteral">&quot;{id}_thumbnail.{extension}&quot;</span>, thumbnail_resp.content))</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">return</span> id, mtlx_string, texture_binaries</div>
-<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  161</span>                ext = Path(path).suffix.lower()</div>
+<div class="line"><span class="lineno">  162</span>                name = Path(path).stem</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>                <span class="keywordflow">if</span> ext == <span class="stringliteral">&quot;.exr&quot;</span>:</div>
+<div class="line"><span class="lineno">  165</span>                    self.logger.info(f<span class="stringliteral">&quot;  WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}&quot;</span>)</div>
+<div class="line"><span class="lineno">  166</span>                texture_binaries.append((path, texture_resp.content))</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>            thumbnail_url = asset.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
+<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">if</span> thumbnail_url:</div>
+<div class="line"><span class="lineno">  170</span>                self.logger.info(f<span class="stringliteral">&quot;Download thumbnail from {thumbnail_url} ...&quot;</span>)                </div>
+<div class="line"><span class="lineno">  171</span>                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  172</span>                thumbnail_resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  173</span>                </div>
+<div class="line"><span class="lineno">  174</span>                clean_url = thumbnail_url</div>
+<div class="line"><span class="lineno">  175</span>                <span class="comment"># Strip any ? or # from the URL</span></div>
+<div class="line"><span class="lineno">  176</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;?&#39;</span>)[0].split(<span class="stringliteral">&#39;#&#39;</span>)[0]</div>
+<div class="line"><span class="lineno">  177</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]  <span class="comment"># Get the last part of the URL</span></div>
+<div class="line"><span class="lineno">  178</span>                extension = Path(clean_url).suffix.lower()</div>
+<div class="line"><span class="lineno">  179</span>                texture_binaries.append((f<span class="stringliteral">&quot;{id}_thumbnail.{extension}&quot;</span>, thumbnail_resp.content))</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">return</span> id, mtlx_string, texture_binaries</div>
+<div class="line"><span class="lineno">  182</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -274,110 +286,121 @@ Public Attributes</h2></td></tr>
 <p>Fetch MaterialX assets from PolyHaven API and filter them by resolution. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">resolution</td><td>The resolution of the MaterialX assets to fetch (e.g. "1k", "2k", "4k", "8k"). </td></tr>
+    <tr><td class="paramname">max_items</td><td>Maximum number of assets to fetch. If None, fetch all. </td></tr>
+    <tr><td class="paramname">download_id</td><td>If set, only fetch asset with this ID. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>: A dictionary of MaterialX assets with their URLs and texture files. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Tuple (materialx_assets, all_assets, filtered_polyhaven_assets):<ul>
+<li>materialx_assets: Dictionary of MaterialX assets with URLs and texture files.</li>
+<li>all_assets: All assets returned by PolyHaven API.</li>
+<li>filtered_polyhaven_assets: Filtered assets containing only MaterialX files. </li>
+</ul>
+</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00031">31</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   31</span>    <span class="keyword">def </span>fetch_materialx_assets(self, max_items=1, download_id=None):</div>
 <div class="line"><span class="lineno">   32</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
 <div class="line"><span class="lineno">   33</span><span class="stringliteral">        Fetch MaterialX assets from PolyHaven API and filter them by resolution.</span></div>
-<div class="line"><span class="lineno">   34</span><span class="stringliteral">        @param resolution: The resolution of the MaterialX assets to fetch (e.g. &quot;1k&quot;, &quot;2k&quot;, &quot;4k&quot;, &quot;8k&quot;).</span></div>
-<div class="line"><span class="lineno">   35</span><span class="stringliteral">        @return: A dictionary of MaterialX assets with their URLs and texture files.</span></div>
-<div class="line"><span class="lineno">   36</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">   37</span>        parameters = {</div>
-<div class="line"><span class="lineno">   38</span>            <span class="stringliteral">&quot;type&quot;</span>: <span class="stringliteral">&quot;textures&quot;</span></div>
-<div class="line"><span class="lineno">   39</span>        }</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>        resp = requests.get(self.ASSET_API, headers=self.HEADERS, params=parameters)</div>
-<div class="line"><span class="lineno">   42</span>        resp.raise_for_status()</div>
-<div class="line"><span class="lineno">   43</span>        all_assets = resp.json()</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>        materialx_assets = {}</div>
-<div class="line"><span class="lineno">   46</span>        filtered_polyhaven_assets = {}</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>        item_count = 0;</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">for</span> id, data <span class="keywordflow">in</span> all_assets.items():</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">if</span> download_id <span class="keywordflow">and</span> id != download_id:</div>
-<div class="line"><span class="lineno">   52</span>                <span class="comment">#self.logger.info(f&quot;Skipping asset id: &#39;{id}&#39; (not matching {download_id})&quot;)</span></div>
-<div class="line"><span class="lineno">   53</span>                <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>            <span class="comment"># Get the thumbnail</span></div>
-<div class="line"><span class="lineno">   56</span>            thumbnail_url = data.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>            resp = requests.get(f<span class="stringliteral">&quot;{self.FILES_API}/{id}&quot;</span>, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">   59</span>            resp.raise_for_status()</div>
-<div class="line"><span class="lineno">   60</span>            files_data = resp.json()</div>
-<div class="line"><span class="lineno">   61</span>            <span class="comment">#json_string = json.dumps(files_data, indent=4)</span></div>
+<div class="line"><span class="lineno">   34</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   35</span><span class="stringliteral">        @param max_items Maximum number of assets to fetch. If None, fetch all.</span></div>
+<div class="line"><span class="lineno">   36</span><span class="stringliteral">        @param download_id If set, only fetch asset with this ID.</span></div>
+<div class="line"><span class="lineno">   37</span><span class="stringliteral">        @return Tuple (materialx_assets, all_assets, filtered_polyhaven_assets):</span></div>
+<div class="line"><span class="lineno">   38</span><span class="stringliteral">            - materialx_assets: Dictionary of MaterialX assets with URLs and texture files.</span></div>
+<div class="line"><span class="lineno">   39</span><span class="stringliteral">            - all_assets: All assets returned by PolyHaven API.</span></div>
+<div class="line"><span class="lineno">   40</span><span class="stringliteral">            - filtered_polyhaven_assets: Filtered assets containing only MaterialX files.</span></div>
+<div class="line"><span class="lineno">   41</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">   42</span>        parameters = {</div>
+<div class="line"><span class="lineno">   43</span>            <span class="stringliteral">&quot;type&quot;</span>: <span class="stringliteral">&quot;textures&quot;</span></div>
+<div class="line"><span class="lineno">   44</span>        }</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>        resp = requests.get(self.ASSET_API, headers=self.HEADERS, params=parameters)</div>
+<div class="line"><span class="lineno">   47</span>        resp.raise_for_status()</div>
+<div class="line"><span class="lineno">   48</span>        all_assets = resp.json()</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>        materialx_assets = {}</div>
+<div class="line"><span class="lineno">   51</span>        filtered_polyhaven_assets = {}</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>        item_count = 0;</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">for</span> id, data <span class="keywordflow">in</span> all_assets.items():</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">if</span> download_id <span class="keywordflow">and</span> id != download_id:</div>
+<div class="line"><span class="lineno">   57</span>                <span class="comment">#self.logger.info(f&quot;Skipping asset id: &#39;{id}&#39; (not matching {download_id})&quot;)</span></div>
+<div class="line"><span class="lineno">   58</span>                <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>            <span class="comment"># Get the thumbnail</span></div>
+<div class="line"><span class="lineno">   61</span>            thumbnail_url = data.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
 <div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>            <span class="comment"># Remove all keys other than &quot;mtlx&quot;</span></div>
-<div class="line"><span class="lineno">   64</span>            files_data = {k: v <span class="keywordflow">for</span> k, v <span class="keywordflow">in</span> files_data.items() <span class="keywordflow">if</span> k == <span class="stringliteral">&quot;mtlx&quot;</span>}            </div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>            mtlx_files = files_data.get(<span class="stringliteral">&quot;mtlx&quot;</span>, [])</div>
-<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">if</span> mtlx_files:</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>                self.logger.info(f<span class="stringliteral">&quot;Found MaterialX data for &#39;{id}&#39;&quot;</span>) </div>
+<div class="line"><span class="lineno">   63</span>            resp = requests.get(f<span class="stringliteral">&quot;{self.FILES_API}/{id}&quot;</span>, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">   64</span>            resp.raise_for_status()</div>
+<div class="line"><span class="lineno">   65</span>            files_data = resp.json()</div>
+<div class="line"><span class="lineno">   66</span>            <span class="comment">#json_string = json.dumps(files_data, indent=4)</span></div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>            <span class="comment"># Remove all keys other than &quot;mtlx&quot;</span></div>
+<div class="line"><span class="lineno">   69</span>            files_data = {k: v <span class="keywordflow">for</span> k, v <span class="keywordflow">in</span> files_data.items() <span class="keywordflow">if</span> k == <span class="stringliteral">&quot;mtlx&quot;</span>}            </div>
 <div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>                <span class="comment"># Look for 1K, 2K , 4K, and 8K versions</span></div>
-<div class="line"><span class="lineno">   72</span>                resolutions = {</div>
-<div class="line"><span class="lineno">   73</span>                    <span class="stringliteral">&quot;1k&quot;</span>: <span class="keywordtype">None</span>,</div>
-<div class="line"><span class="lineno">   74</span>                    <span class="stringliteral">&quot;2k&quot;</span>: <span class="keywordtype">None</span>,</div>
-<div class="line"><span class="lineno">   75</span>                    <span class="stringliteral">&quot;4k&quot;</span>: <span class="keywordtype">None</span>,</div>
-<div class="line"><span class="lineno">   76</span>                    <span class="stringliteral">&quot;8k&quot;</span>: <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">   77</span>                }</div>
-<div class="line"><span class="lineno">   78</span>                <span class="keywordflow">for</span> resolution_key <span class="keywordflow">in</span> resolutions.keys():</div>
-<div class="line"><span class="lineno">   79</span>                    res = mtlx_files.get(resolution_key, <span class="keywordtype">None</span>)</div>
-<div class="line"><span class="lineno">   80</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> res:</div>
-<div class="line"><span class="lineno">   81</span>                        <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>                    n_k_mtlx = res.get(<span class="stringliteral">&quot;mtlx&quot;</span>)</div>
-<div class="line"><span class="lineno">   84</span>                    texture_struct = {}</div>
-<div class="line"><span class="lineno">   85</span>                    <span class="keywordflow">if</span> n_k_mtlx:</div>
-<div class="line"><span class="lineno">   86</span>                        <span class="comment">#self.logger.info(f&quot;Found MaterialX files for &#39;{one_k}&#39;&quot;)</span></div>
-<div class="line"><span class="lineno">   87</span>                        include_files = n_k_mtlx.get(<span class="stringliteral">&quot;include&quot;</span>, {})</div>
-<div class="line"><span class="lineno">   88</span>                        <span class="comment">#self.logger.info(f&quot;Found include files for &#39;{id}&#39;: {one_k}&quot;)</span></div>
-<div class="line"><span class="lineno">   89</span>                        <span class="keywordflow">for</span> path, data <span class="keywordflow">in</span> include_files.items():</div>
-<div class="line"><span class="lineno">   90</span>                            texture_url = data.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">   91</span>                            <span class="comment">#self.logger.info(&quot;Texture path:&quot;, path, &quot;URL:&quot;, texture_url)</span></div>
-<div class="line"><span class="lineno">   92</span>                            texture_struct[path] = texture_url</div>
-<div class="line"><span class="lineno">   93</span>                    mtlx_url = n_k_mtlx.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">   94</span>                    res_id = id + <span class="stringliteral">&#39;___&#39;</span> + resolution_key</div>
-<div class="line"><span class="lineno">   95</span>                    <span class="keywordflow">if</span> mtlx_url:</div>
-<div class="line"><span class="lineno">   96</span>                        materialx_assets[res_id] = {</div>
-<div class="line"><span class="lineno">   97</span>                            <span class="stringliteral">&quot;url&quot;</span>: mtlx_url,</div>
-<div class="line"><span class="lineno">   98</span>                            <span class="stringliteral">&quot;texture_files&quot;</span>: texture_struct,</div>
-<div class="line"><span class="lineno">   99</span>                            <span class="stringliteral">&quot;thumbnail_url&quot;</span>: thumbnail_url</div>
-<div class="line"><span class="lineno">  100</span>                        }</div>
-<div class="line"><span class="lineno">  101</span>                        json_string = json.dumps(materialx_assets[res_id], indent=4)</div>
-<div class="line"><span class="lineno">  102</span>                        <span class="comment">#self.logger.info(f&quot;Found MaterialX for &#39;{res_id}&#39;: {json_string}&quot;) </span></div>
-<div class="line"><span class="lineno">  103</span>                        <span class="comment">#self.logger.info(f&quot;Found MaterialX for &#39;{res_id}&#39;&quot;) </span></div>
-<div class="line"><span class="lineno">  104</span>                    <span class="comment"># Create folder poly_have_data</span></div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>                    <span class="comment"># Save asset data to JSON file</span></div>
-<div class="line"><span class="lineno">  107</span>                    <span class="comment">#with open(f&quot;polyhaven_data/{id}_data.json&quot;, &quot;w&quot;) as f:</span></div>
-<div class="line"><span class="lineno">  108</span>                    <span class="comment">#    json.dump(asset_data, f, indent=4)</span></div>
-<div class="line"><span class="lineno">  109</span>                    <span class="comment">#    self.logger.info(f&quot;Saved asset data for &#39;{id}&#39; to polyhaven_data/{id}_data.json&quot;)</span></div>
+<div class="line"><span class="lineno">   71</span>            mtlx_files = files_data.get(<span class="stringliteral">&quot;mtlx&quot;</span>, [])</div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> mtlx_files:</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>                self.logger.info(f<span class="stringliteral">&quot;Found MaterialX data for &#39;{id}&#39;&quot;</span>) </div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>                <span class="comment"># Look for 1K, 2K , 4K, and 8K versions</span></div>
+<div class="line"><span class="lineno">   77</span>                resolutions = {</div>
+<div class="line"><span class="lineno">   78</span>                    <span class="stringliteral">&quot;1k&quot;</span>: <span class="keywordtype">None</span>,</div>
+<div class="line"><span class="lineno">   79</span>                    <span class="stringliteral">&quot;2k&quot;</span>: <span class="keywordtype">None</span>,</div>
+<div class="line"><span class="lineno">   80</span>                    <span class="stringliteral">&quot;4k&quot;</span>: <span class="keywordtype">None</span>,</div>
+<div class="line"><span class="lineno">   81</span>                    <span class="stringliteral">&quot;8k&quot;</span>: <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">   82</span>                }</div>
+<div class="line"><span class="lineno">   83</span>                <span class="keywordflow">for</span> resolution_key <span class="keywordflow">in</span> resolutions.keys():</div>
+<div class="line"><span class="lineno">   84</span>                    res = mtlx_files.get(resolution_key, <span class="keywordtype">None</span>)</div>
+<div class="line"><span class="lineno">   85</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> res:</div>
+<div class="line"><span class="lineno">   86</span>                        <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>                    n_k_mtlx = res.get(<span class="stringliteral">&quot;mtlx&quot;</span>)</div>
+<div class="line"><span class="lineno">   89</span>                    texture_struct = {}</div>
+<div class="line"><span class="lineno">   90</span>                    <span class="keywordflow">if</span> n_k_mtlx:</div>
+<div class="line"><span class="lineno">   91</span>                        <span class="comment">#self.logger.info(f&quot;Found MaterialX files for &#39;{one_k}&#39;&quot;)</span></div>
+<div class="line"><span class="lineno">   92</span>                        include_files = n_k_mtlx.get(<span class="stringliteral">&quot;include&quot;</span>, {})</div>
+<div class="line"><span class="lineno">   93</span>                        <span class="comment">#self.logger.info(f&quot;Found include files for &#39;{id}&#39;: {one_k}&quot;)</span></div>
+<div class="line"><span class="lineno">   94</span>                        <span class="keywordflow">for</span> path, data <span class="keywordflow">in</span> include_files.items():</div>
+<div class="line"><span class="lineno">   95</span>                            texture_url = data.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">   96</span>                            <span class="comment">#self.logger.info(&quot;Texture path:&quot;, path, &quot;URL:&quot;, texture_url)</span></div>
+<div class="line"><span class="lineno">   97</span>                            texture_struct[path] = texture_url</div>
+<div class="line"><span class="lineno">   98</span>                    mtlx_url = n_k_mtlx.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">   99</span>                    res_id = id + <span class="stringliteral">&#39;___&#39;</span> + resolution_key</div>
+<div class="line"><span class="lineno">  100</span>                    <span class="keywordflow">if</span> mtlx_url:</div>
+<div class="line"><span class="lineno">  101</span>                        materialx_assets[res_id] = {</div>
+<div class="line"><span class="lineno">  102</span>                            <span class="stringliteral">&quot;url&quot;</span>: mtlx_url,</div>
+<div class="line"><span class="lineno">  103</span>                            <span class="stringliteral">&quot;texture_files&quot;</span>: texture_struct,</div>
+<div class="line"><span class="lineno">  104</span>                            <span class="stringliteral">&quot;thumbnail_url&quot;</span>: thumbnail_url</div>
+<div class="line"><span class="lineno">  105</span>                        }</div>
+<div class="line"><span class="lineno">  106</span>                        json_string = json.dumps(materialx_assets[res_id], indent=4)</div>
+<div class="line"><span class="lineno">  107</span>                        <span class="comment">#self.logger.info(f&quot;Found MaterialX for &#39;{res_id}&#39;: {json_string}&quot;) </span></div>
+<div class="line"><span class="lineno">  108</span>                        <span class="comment">#self.logger.info(f&quot;Found MaterialX for &#39;{res_id}&#39;&quot;) </span></div>
+<div class="line"><span class="lineno">  109</span>                    <span class="comment"># Create folder poly_have_data</span></div>
 <div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>                filtered_polyhaven_assets[id] = files_data</div>
-<div class="line"><span class="lineno">  112</span> </div>
-<div class="line"><span class="lineno">  113</span>            <span class="comment"># Halt if download_id is specified and matches the current asset ID        </span></div>
-<div class="line"><span class="lineno">  114</span>            <span class="keywordflow">if</span> download_id == id:</div>
-<div class="line"><span class="lineno">  115</span>                <span class="keywordflow">break</span></div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>            <span class="comment"># Halt if max_items is specified and reached</span></div>
-<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> download_id <span class="keywordflow">and</span> max_items:</div>
-<div class="line"><span class="lineno">  119</span>                item_count += 1</div>
-<div class="line"><span class="lineno">  120</span>                <span class="keywordflow">if</span> item_count &gt;= max_items:</div>
-<div class="line"><span class="lineno">  121</span>                    <span class="keywordflow">break</span>            </div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>            <span class="comment">#if &quot;materialx&quot; in formats:</span></div>
-<div class="line"><span class="lineno">  124</span>            <span class="comment">#    materialx_assets[slug] = formats[&quot;materialx&quot;]</span></div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>        <span class="keywordflow">return</span> materialx_assets, all_assets, filtered_polyhaven_assets</div>
+<div class="line"><span class="lineno">  111</span>                    <span class="comment"># Save asset data to JSON file</span></div>
+<div class="line"><span class="lineno">  112</span>                    <span class="comment">#with open(f&quot;polyhaven_data/{id}_data.json&quot;, &quot;w&quot;) as f:</span></div>
+<div class="line"><span class="lineno">  113</span>                    <span class="comment">#    json.dump(asset_data, f, indent=4)</span></div>
+<div class="line"><span class="lineno">  114</span>                    <span class="comment">#    self.logger.info(f&quot;Saved asset data for &#39;{id}&#39; to polyhaven_data/{id}_data.json&quot;)</span></div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>                filtered_polyhaven_assets[id] = files_data</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>            <span class="comment"># Halt if download_id is specified and matches the current asset ID        </span></div>
+<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">if</span> download_id == id:</div>
+<div class="line"><span class="lineno">  120</span>                <span class="keywordflow">break</span></div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>            <span class="comment"># Halt if max_items is specified and reached</span></div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> download_id <span class="keywordflow">and</span> max_items:</div>
+<div class="line"><span class="lineno">  124</span>                item_count += 1</div>
+<div class="line"><span class="lineno">  125</span>                <span class="keywordflow">if</span> item_count &gt;= max_items:</div>
+<div class="line"><span class="lineno">  126</span>                    <span class="keywordflow">break</span>            </div>
 <div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>            <span class="comment">#if &quot;materialx&quot; in formats:</span></div>
+<div class="line"><span class="lineno">  129</span>            <span class="comment">#    materialx_assets[slug] = formats[&quot;materialx&quot;]</span></div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">return</span> materialx_assets, all_assets, filtered_polyhaven_assets</div>
+<div class="line"><span class="lineno">  132</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -415,37 +438,40 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>' Save MaterialX string and texture binaries to a zip file. </p>
-<p>' </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Save MaterialX string and texture binaries to a zip file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>The ID of the MaterialX asset. </td></tr>
     <tr><td class="paramname">mtlx_string</td><td>The MaterialX string content. </td></tr>
-    <tr><td class="paramname">texture_binaries</td><td>A list of tuples containing texture file paths and their binary content. </td></tr>
-    <tr><td class="paramname">data_folder</td><td>The folder to save the zip file. </td></tr>
+    <tr><td class="paramname">texture_binaries</td><td>List of tuples (path, binary content) for textures and thumbnails. </td></tr>
+    <tr><td class="paramname">data_folder</td><td>Folder to save the zip file. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00176">176</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  176</span>    <span class="keyword">def </span>save_materialx_with_textures(self, id, mtlx_string, texture_binaries, data_folder):</div>
-<div class="line"><span class="lineno">  177</span>        <span class="stringliteral">&#39;&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  178</span><span class="stringliteral">        Save MaterialX string and texture binaries to a zip file.&#39;</span></div>
-<div class="line"><span class="lineno">  179</span><span class="stringliteral">        @param id: The ID of the MaterialX asset.</span></div>
-<div class="line"><span class="lineno">  180</span><span class="stringliteral">        @param mtlx_string: The MaterialX string content.</span></div>
-<div class="line"><span class="lineno">  181</span><span class="stringliteral">        @param texture_binaries: A list of tuples containing texture file paths and their binary content.</span></div>
-<div class="line"><span class="lineno">  182</span><span class="stringliteral">        @param data_folder: The folder to save the zip file.</span></div>
-<div class="line"><span class="lineno">  183</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  184</span>        <span class="comment"># Create a zip file with MaterialX and textures</span></div>
-<div class="line"><span class="lineno">  185</span>        filename = f<span class="stringliteral">&quot;{id}_materialx.zip&quot;</span></div>
-<div class="line"><span class="lineno">  186</span>        filename = Path(data_folder) / filename</div>
-<div class="line"><span class="lineno">  187</span>        <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> zipf:</div>
-<div class="line"><span class="lineno">  188</span>            <span class="comment"># Write MaterialX file</span></div>
-<div class="line"><span class="lineno">  189</span>            zipf.writestr(f<span class="stringliteral">&quot;{id}.mtlx&quot;</span>, mtlx_string)</div>
-<div class="line"><span class="lineno">  190</span>            <span class="comment"># Write texture files</span></div>
-<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">for</span> path, content <span class="keywordflow">in</span> texture_binaries:</div>
-<div class="line"><span class="lineno">  192</span>                zipf.writestr(path, content)</div>
-<div class="line"><span class="lineno">  193</span>        self.logger.info(f<span class="stringliteral">&quot;Saved zip: {filename}&quot;</span>)</div>
-<div class="line"><span class="lineno">  194</span> </div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00183">183</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>    <span class="keyword">def </span>save_materialx_with_textures(self, id, mtlx_string, texture_binaries, data_folder):</div>
+<div class="line"><span class="lineno">  184</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  185</span><span class="stringliteral">        Save MaterialX string and texture binaries to a zip file.</span></div>
+<div class="line"><span class="lineno">  186</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  187</span><span class="stringliteral">        @param id The ID of the MaterialX asset.</span></div>
+<div class="line"><span class="lineno">  188</span><span class="stringliteral">        @param mtlx_string The MaterialX string content.</span></div>
+<div class="line"><span class="lineno">  189</span><span class="stringliteral">        @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.</span></div>
+<div class="line"><span class="lineno">  190</span><span class="stringliteral">        @param data_folder Folder to save the zip file.</span></div>
+<div class="line"><span class="lineno">  191</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  192</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  193</span>        <span class="comment"># Create a zip file with MaterialX and textures</span></div>
+<div class="line"><span class="lineno">  194</span>        filename = f<span class="stringliteral">&quot;{id}_materialx.zip&quot;</span></div>
+<div class="line"><span class="lineno">  195</span>        filename = Path(data_folder) / filename</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> zipf:</div>
+<div class="line"><span class="lineno">  197</span>            <span class="comment"># Write MaterialX file</span></div>
+<div class="line"><span class="lineno">  198</span>            zipf.writestr(f<span class="stringliteral">&quot;{id}.mtlx&quot;</span>, mtlx_string)</div>
+<div class="line"><span class="lineno">  199</span>            <span class="comment"># Write texture files</span></div>
+<div class="line"><span class="lineno">  200</span>            <span class="keywordflow">for</span> path, content <span class="keywordflow">in</span> texture_binaries:</div>
+<div class="line"><span class="lineno">  201</span>                zipf.writestr(path, content)</div>
+<div class="line"><span class="lineno">  202</span>        self.logger.info(f<span class="stringliteral">&quot;Saved zip: {filename}&quot;</span>)</div>
+<div class="line"><span class="lineno">  203</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -566,7 +592,7 @@ Public Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>materialxMaterials</b></li><li class="navelem"><b>polyHavenLoader</b></li><li class="navelem"><a href="classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html">PolyHavenLoader</a></li>
+    <li class="navelem"><b>materialxMaterials</b></li><li class="navelem"><a href="namespacematerialx_materials_1_1poly_haven_loader.html">polyHavenLoader</a></li><li class="navelem"><a href="classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html">PolyHavenLoader</a></li>
     <li class="footer">
       <div style="font-size: x-small; display: flex; flex-direction: row; align-items: center;">
         <a href="https://kwokcb.github.io/nanmuconsulting/" target="_blank" style="margin-bottom: 4px;">

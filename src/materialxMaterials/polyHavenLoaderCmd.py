@@ -1,6 +1,5 @@
 '''
-@file: polyhavenLoaderCmd.py
-@brief: A command-line interface to fetch MaterialX assets from PolyHaven and download them.
+@brief Command to fetch MaterialX assets from PolyHaven and download them.
 '''
 from pathlib import Path
 import argparse
@@ -11,7 +10,10 @@ import polyHavenLoader
 logger = logging.getLogger('POLYH_CMD')
 logging.basicConfig(level=logging.INFO)
 
-def main():
+def PolyHavenLoaderCmd():
+    '''
+    @brief Command to fetch MaterialX assets from PolyHaven and download them.
+    '''
     parser = argparse.ArgumentParser(description="Fetch MaterialX assets from PolyHaven")
     parser.add_argument("-id", "--download_id", type=str, default="polystyrene", help="Filter ID to fetch MaterialX assets (e.g. 'polystyrene')")
     parser.add_argument("-res", "--download_resolution", type=str, default="1k", help="Resolution of the MaterialX assets to download (e.g. '1k', '2k', '4k', '8k') ")
@@ -76,4 +78,4 @@ def main():
         logger.info("No operation specified.")
 
 if __name__ == "__main__":
-    main()
+    PolyHavenLoaderCmd()

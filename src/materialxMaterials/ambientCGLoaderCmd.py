@@ -1,4 +1,6 @@
 #/usr/bin/env python3
+'''
+@brief Command to download ambientCG MaterialX materials'''
 
 import os, argparse, sys, logging
 import ambientCGLoader as acg
@@ -6,7 +8,7 @@ import MaterialX as mx
 
 def ambientCgLoaderCmd():
     '''
-    Utility to download and write ambientCG materials
+    Utility to download ambientCG MaterialX materials
     '''
     logger = logging.getLogger('ACG_CMD')
     logging.basicConfig(level=logging.INFO)
