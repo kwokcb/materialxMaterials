@@ -49,7 +49,7 @@
     <input name="density" type="float" value="2700" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Al&amp;page=Cheng, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Aluminium, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Mirror" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Al&amp;page=Cheng, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Aluminium, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Mirror" />
     <input name="tags" type="string" value="aluminium, mirror" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg" />
   </physbased_pbr_surface>
@@ -83,7 +83,7 @@
     <input name="density" type="float" value="1850" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Be&amp;page=Rakic-BB, https://en.wikipedia.org/w/index.php?title=Beryllium&amp;oldid=1295895956, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Be&amp;page=Rakic-BB, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Beryllium&amp;oldid=1295895956, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/beryllium.jpeg" />
   </physbased_pbr_surface>
@@ -155,7 +155,7 @@
     <input name="density" type="float" value="8600" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="Brass is an alloy of copper and zinc, with a bright and gold-like appearance. It is similar to bronze, another alloy containing copper that uses tin instead of zinc. Historically, the distinction between the two alloys has been less consistent and clear, and modern practice in museums and archaeology increasingly avoids both terms for historical objects in favor of the more general &quot;copper alloy&quot;." />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=metals&amp;page=brass, https://en.wikipedia.org/wiki/Brass, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=metals&amp;page=brass, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Brass, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brass.jpeg" />
   </physbased_pbr_surface>
@@ -223,7 +223,7 @@
     <input name="density" type="float" value="1886" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Cs&amp;page=Monin, https://en.wikipedia.org/w/index.php?title=Caesium&amp;oldid=1297091310" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Cs&amp;page=Monin, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Caesium&amp;oldid=1297091310" />
     <input name="tags" type="string" value="caesium" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cesium.jpeg" />
   </physbased_pbr_surface>
@@ -276,7 +276,7 @@
     <input name="density" type="float" value="7200" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Cr&amp;page=Sytchkova, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Cr&amp;page=Sytchkova, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="chrome" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chromium.jpeg" />
   </physbased_pbr_surface>
@@ -294,7 +294,7 @@
     <input name="density" type="float" value="8900" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Co&amp;page=Werner-DFT, https://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Co&amp;page=Werner-DFT, https://arxiv.org/pdf/2512.23696#appendix.D, https://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cobalt.jpeg" />
   </physbased_pbr_surface>
@@ -368,7 +368,7 @@
     <input name="density" type="float" value="8940" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Cu&amp;page=Johnson, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Cu&amp;page=Johnson, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/copper.jpeg" />
   </physbased_pbr_surface>
@@ -453,7 +453,7 @@
     <input name="density" type="float" value="0" />
     <input name="category" type="string" value="Human" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://www.researchgate.net/publication/225767258_Optical_properties_of_human_sclera_in_spectral_range_370-2500_nm, http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://vgl.ict.usc.edu/Data/DigitalEmily2/, https://eisko.com/louise/" />
+    <input name="sources" type="string" value="https://www.researchgate.net/publication/225767258_Optical_properties_of_human_sclera_in_spectral_range_370-2500_nm, https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://vgl.ict.usc.edu/Data/DigitalEmily2/, https://eisko.com/louise/" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-sclera.jpeg" />
   </physbased_pbr_surface>
@@ -489,7 +489,7 @@
     <input name="density" type="float" value="5327" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ge&amp;page=Aspnes, https://en.wikipedia.org/w/index.php?title=Germanium&amp;oldid=1294309596" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ge&amp;page=Aspnes, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Germanium&amp;oldid=1294309596" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/germanium.jpeg" />
   </physbased_pbr_surface>
@@ -526,7 +526,7 @@
     <input name="density" type="float" value="19320" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ag&amp;page=Babar, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Au&amp;page=Babar, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gold.jpeg" />
   </physbased_pbr_surface>
@@ -616,7 +616,7 @@
     <input name="density" type="float" value="22562" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ir&amp;page=Schmitt-ALD, https://en.wikipedia.org/w/index.php?title=Iridium&amp;oldid=1296793846" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ir&amp;page=Schmitt-ALD, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Iridium&amp;oldid=1296793846" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/iridium.jpeg" />
   </physbased_pbr_surface>
@@ -634,7 +634,7 @@
     <input name="density" type="float" value="7870" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=metals&amp;page=iron, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=metals&amp;page=iron, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/iron.jpeg" />
   </physbased_pbr_surface>
@@ -670,7 +670,7 @@
     <input name="density" type="float" value="11340" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Pb&amp;page=Werner-DFT, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Pb&amp;page=Werner-DFT, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lead.jpeg" />
   </physbased_pbr_surface>
@@ -679,14 +679,14 @@
   </surfacematerial>
   <physbased_pbr_surface name="Lemon" type="surfaceshader" uiname="Lemon">
     <input name="name" type="string" value="Lemon" />
-    <input name="color" type="color3" value="0.718, 0.483, 0" />
+    <input name="color" type="color3" value="0.617, 0.366, 0.045" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
     <input name="density" type="float" value="0" />
     <input name="category" type="string" value="Organic" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://spectraldb.com/measurements/00453/" />
+    <input name="sources" type="string" value="https://spectraldb.com/measurements/00453/, https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/lemon/" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lemon.jpeg" />
   </physbased_pbr_surface>
@@ -704,7 +704,7 @@
     <input name="density" type="float" value="535" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Li&amp;page=Rasigni, https://en.wikipedia.org/w/index.php?title=Lithium&amp;oldid=1297355131" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Li&amp;page=Rasigni, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Lithium&amp;oldid=1297355131" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lithium.jpeg" />
   </physbased_pbr_surface>
@@ -722,7 +722,7 @@
     <input name="density" type="float" value="1737" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Mg&amp;page=Hagemann, https://en.wikipedia.org/w/index.php?title=Magnesium&amp;oldid=1297525267, https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Mg&amp;page=Hagemann, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Magnesium&amp;oldid=1297525267, https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/magnesium.jpeg" />
   </physbased_pbr_surface>
@@ -740,7 +740,7 @@
     <input name="density" type="float" value="7476" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Mn&amp;page=Querry, https://en.wikipedia.org/w/index.php?title=Manganese&amp;oldid=1296594586" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Mn&amp;page=Querry, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Manganese&amp;oldid=1296594586" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/manganese.jpeg" />
   </physbased_pbr_surface>
@@ -777,7 +777,7 @@
     <input name="surfaceTension" type="float" value="487" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="Mercury is the only metallic element that is known to be liquid at standard conditions." />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=metals&amp;page=mercury, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/List_of_viscosities, https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html, https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=metals&amp;page=mercury, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/List_of_viscosities, https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html, https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values" />
     <input name="tags" type="string" value="liquid" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/mercury.jpeg" />
   </physbased_pbr_surface>
@@ -797,7 +797,7 @@
     <input name="surfaceTension" type="float" value="48" />
     <input name="category" type="string" value="Liquid" />
     <input name="description" type="string" value="Cow's milk" />
-    <input name="sources" type="string" value="https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://www.researchgate.net/publication/346758555_What_Is_the_Color_of_Milk_and_Dairy_Products_and_How_Is_It_Measured, http://dairy-technology.blogspot.com/2014/11/refractive-index.html, https://www.theengineer.co.uk/content/product/density-measurement-of-milk-and-dairy-products/, https://hypertextbook.com/facts/2002/AliciaNoelleJones.shtml, https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table, https://en.wikipedia.org/wiki/List_of_viscosities, https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html, https://www.journalofdairyscience.org/article/S0022-0302(59)90760-X/pdf" />
+    <input name="sources" type="string" value="https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://www.researchgate.net/publication/346758555_What_Is_the_Color_of_Milk_and_Dairy_Products_and_How_Is_It_Measured, https://dairy-technology.blogspot.com/2014/11/refractive-index.html, https://www.theengineer.co.uk/content/product/density-measurement-of-milk-and-dairy-products/, https://hypertextbook.com/facts/2002/AliciaNoelleJones.shtml, https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table, https://en.wikipedia.org/wiki/List_of_viscosities, https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html, https://www.journalofdairyscience.org/article/S0022-0302(59)90760-X/pdf" />
     <input name="tags" type="string" value="sss" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/milk.jpeg" />
   </physbased_pbr_surface>
@@ -831,7 +831,7 @@
     <input name="density" type="float" value="10223" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Mo&amp;page=Werner-DFT, https://en.wikipedia.org/w/index.php?title=Molybdenum&amp;oldid=1288578240" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Mo&amp;page=Werner-DFT, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Molybdenum&amp;oldid=1288578240" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/molybdenum.jpeg" />
   </physbased_pbr_surface>
@@ -865,7 +865,7 @@
     <input name="density" type="float" value="8900" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ni&amp;page=Johnson, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ni&amp;page=Johnson, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/nickel.jpeg" />
   </physbased_pbr_surface>
@@ -899,7 +899,7 @@
     <input name="density" type="float" value="12007" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Pd&amp;page=Palm, https://en.wikipedia.org/w/index.php?title=Palladium&amp;oldid=1296661941" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Pd&amp;page=Palm, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Palladium&amp;oldid=1296661941" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/palladium.jpeg" />
   </physbased_pbr_surface>
@@ -1061,12 +1061,29 @@
     <input name="density" type="float" value="21450" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Pt&amp;page=Werner-DFT, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Pt&amp;page=Werner-DFT, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/platinum.jpeg" />
   </physbased_pbr_surface>
   <surfacematerial name="Platinum_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Platinum" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Porcelain" type="surfaceshader" uiname="Porcelain">
+    <input name="name" type="string" value="Porcelain" />
+    <input name="color" type="color3" value="0.745, 0.745, 0.723" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="density" type="float" value="2400" />
+    <input name="densityRange" type="vector2" value="2000, 2500" />
+    <input name="description" type="string" value="" />
+    <input name="category" type="string" value="Manmade" />
+    <input name="sources" type="string" value="https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/porcelain/, https://en.wikipedia.org/w/index.php?title=Vitreous_china&amp;oldid=1291896907, https://en.wikipedia.org/w/index.php?title=Porcelain&amp;oldid=1320984472, https://en.wikipedia.org/w/index.php?title=Ceramic&amp;oldid=1326921651, https://www.engineeringtoolbox.com/ceramics-properties-d_1227.html" />
+    <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/porcelain.jpeg" />
+    <input name="tags" type="string" value="vitreous china, ceramic" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Porcelain_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Porcelain" />
   </surfacematerial>
   <physbased_pbr_surface name="Potassium" type="surfaceshader" uiname="Potassium">
     <input name="name" type="string" value="Potassium" />
@@ -1079,7 +1096,7 @@
     <input name="density" type="float" value="859" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=K&amp;page=Monin, https://en.wikipedia.org/w/index.php?title=Potassium&amp;oldid=1291714608" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=K&amp;page=Monin, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Potassium&amp;oldid=1291714608" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/potassium.jpeg" />
   </physbased_pbr_surface>
@@ -1115,7 +1132,7 @@
     <input name="density" type="float" value="1534" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Rb&amp;page=Monin, https://en.wikipedia.org/w/index.php?title=Rubidium&amp;oldid=1297114941" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Rb&amp;page=Monin, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Rubidium&amp;oldid=1297114941" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/rubidium.jpeg" />
   </physbased_pbr_surface>
@@ -1167,7 +1184,7 @@
     <input name="density" type="float" value="3980" />
     <input name="category" type="string" value="Crystal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=crystals&amp;page=sapphire, https://www.gemsociety.org/article/table-refractive-index-double-refraction-gems/, https://en.wikipedia.org/wiki/Sapphire, http://www.roditi.com/SingleCrystal/Sapphire/Properties.html" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=crystals&amp;page=sapphire, https://www.gemsociety.org/article/table-refractive-index-double-refraction-gems/, https://en.wikipedia.org/wiki/Sapphire, https://www.roditi.com/SingleCrystal/Sapphire/Properties.html" />
     <input name="tags" type="string" value="gem, gemstone" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sapphire.jpeg" />
   </physbased_pbr_surface>
@@ -1185,7 +1202,7 @@
     <input name="density" type="float" value="2330" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Si&amp;page=Aspnes, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Silicon" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Si&amp;page=Aspnes, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Silicon" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silicon.jpeg" />
   </physbased_pbr_surface>
@@ -1203,7 +1220,7 @@
     <input name="density" type="float" value="10500" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ag&amp;page=Babar, https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Mirror" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ag&amp;page=Babar, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Mirror" />
     <input name="tags" type="string" value="mirror" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silver.jpeg" />
   </physbased_pbr_surface>
@@ -1221,7 +1238,7 @@
     <input name="category" type="string" value="Human" />
     <input name="group" type="string" value="Skin" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html" />
+    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html" />
     <input name="tags" type="string" value="epidermis, sss" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-i.jpeg" />
   </physbased_pbr_surface>
@@ -1239,7 +1256,7 @@
     <input name="category" type="string" value="Human" />
     <input name="group" type="string" value="Skin" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html" />
+    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html" />
     <input name="tags" type="string" value="epidermis, sss" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-ii.jpeg" />
   </physbased_pbr_surface>
@@ -1257,7 +1274,7 @@
     <input name="category" type="string" value="Human" />
     <input name="group" type="string" value="Skin" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00490/, https://spectraldb.com/measurements/00403/" />
+    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00490/, https://spectraldb.com/measurements/00403/" />
     <input name="tags" type="string" value="epidermis, sss" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-iii.jpeg" />
   </physbased_pbr_surface>
@@ -1275,7 +1292,7 @@
     <input name="category" type="string" value="Human" />
     <input name="group" type="string" value="Skin" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00408/" />
+    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00408/" />
     <input name="tags" type="string" value="epidermis, sss" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-iv.jpeg" />
   </physbased_pbr_surface>
@@ -1293,7 +1310,7 @@
     <input name="category" type="string" value="Human" />
     <input name="group" type="string" value="Skin" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00396/" />
+    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00396/" />
     <input name="tags" type="string" value="epidermis, sss" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-v.jpeg" />
   </physbased_pbr_surface>
@@ -1311,7 +1328,7 @@
     <input name="category" type="string" value="Human" />
     <input name="group" type="string" value="Skin" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00414/" />
+    <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00414/" />
     <input name="tags" type="string" value="epidermis, sss" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-vi.jpeg" />
   </physbased_pbr_surface>
@@ -1367,12 +1384,28 @@
     <input name="density" type="float" value="969" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Na&amp;page=Smith, https://en.wikipedia.org/w/index.php?title=Sodium&amp;oldid=1292971623" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Na&amp;page=Smith, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Sodium&amp;oldid=1292971623" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sodium.jpeg" />
   </physbased_pbr_surface>
   <surfacematerial name="Sodium_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Sodium" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Spectralon" type="surfaceshader" doc="Spectralon is a fluoropolymer that has the highest diffuse reflectance of any known material or coating over the ultraviolet, visible, and near-infrared regions of the spectrum. It is the whitest substance available and reflects 99% of the light." uiname="Spectralon">
+    <input name="name" type="string" value="Spectralon" />
+    <input name="color" type="color3" value="0.99, 0.99, 0.99" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0.99" />
+    <input name="ior" type="float" value="1.35" />
+    <input name="density" type="float" value="0" />
+    <input name="description" type="string" value="Spectralon is a fluoropolymer that has the highest diffuse reflectance of any known material or coating over the ultraviolet, visible, and near-infrared regions of the spectrum. It is the whitest substance available and reflects 99% of the light." />
+    <input name="category" type="string" value="Manmade" />
+    <input name="sources" type="string" value="https://en.wikipedia.org/w/index.php?title=Spectralon&amp;oldid=1267333247, https://www.labsphere.com/product/spectralon-diffuse-reflectance-material/" />
+    <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/spectralon.jpeg" />
+    <input name="tags" type="string" value="" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Spectralon_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Spectralon" />
   </surfacematerial>
   <physbased_pbr_surface name="Stainless_Steel" type="surfaceshader" uiname="Stainless Steel">
     <input name="name" type="string" value="Stainless Steel" />
@@ -1386,7 +1419,7 @@
     <input name="densityRange" type="vector2" value="7500, 8000" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=metals&amp;page=stainless_steel, https://en.wikipedia.org/w/index.php?title=Stainless_steel&amp;oldid=1274079682" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=3d&amp;book=metals&amp;page=stainless_steel, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/w/index.php?title=Stainless_steel&amp;oldid=1274079682" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/stainless-steel.jpeg" />
   </physbased_pbr_surface>
@@ -1420,7 +1453,7 @@
     <input name="density" type="float" value="4540" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ti&amp;page=Palm, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ti&amp;page=Palm, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/titanium.jpeg" />
   </physbased_pbr_surface>
@@ -1454,7 +1487,7 @@
     <input name="density" type="float" value="19300" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=W&amp;page=Werner-DFT, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=W&amp;page=Werner-DFT, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tungsten.jpeg" />
   </physbased_pbr_surface>
@@ -1472,7 +1505,7 @@
     <input name="density" type="float" value="6100" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=V&amp;page=Werner-DFT, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=V&amp;page=Werner-DFT, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/vanadium.jpeg" />
   </physbased_pbr_surface>
@@ -1528,7 +1561,7 @@
     <input name="density" type="float" value="7000" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Zn&amp;page=Werner-DFT, https://en.wikipedia.org/wiki/Density" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Zn&amp;page=Werner-DFT, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density" />
     <input name="tags" type="string" value="" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/zinc.jpeg" />
   </physbased_pbr_surface>
