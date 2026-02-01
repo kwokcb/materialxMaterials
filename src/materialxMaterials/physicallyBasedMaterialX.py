@@ -3,6 +3,7 @@
 and convert the materials to MaterialX format for given target shading models.
 '''
 
+from numpy import source
 import requests, json, os, inspect # type: ignore
 import logging as lg 
 from http import HTTPStatus
@@ -434,7 +435,142 @@ class PhysicallyBasedMaterialLoader:
                     if uifolder is not None:
                         input.setAttribute("uifolder", uifolder)
 
-    def createNodeDef(self):
+    def find_all_bxdf(self, doc : mx.Document) -> list[mx.NodeDef]:
+        '''
+        @brief Scan all nodedefs with output type of "surfaceshader"
+        doc : The MaterialX document to scan
+        @return A list of nodedefs found
+        '''
+        bxdfs : list[mx.NodeDef] = []
+        for nodedef in doc.getNodeDefs():
+            if nodedef.getType() == "surfaceshader":    
+                if nodedef.getNodeString() not in ["convert", "surface"] and nodedef.getNodeGroup() == "pbr":   
+                    bxdfs.append(nodedef)
+        return bxdfs
+
+    def derive_translator_name_from_targets(self, source : str, target : str) -> str:
+        return f"ND_{source}_to_{target}"
+
+    def create_translator(self, doc : mx.Document, 
+                        source : str, target : str, 
+                        source_version = "", target_version = "", 
+                        mappings = None,
+                        output_doc : mx.Document | None = None) -> mx.NodeDef | None:
+        '''
+        @brief Create a translator nodedef and nodegraph from source to target definitions.
+        @param doc The source document containing the definition.
+        @param source The source definition category.
+        @param target The target definition category.
+        @param source_version The source version string. If empty, use the first source definition version found.
+        @param target_version The target version string. If empty, use the first target definition version found.
+        @param mappings A dictionary mapping source input names to target input names.
+        @param output_doc The document to add the translator to. If None, use the source doc.
+        @return The created translator definition.
+        '''
+        if not output_doc:
+            output_doc = doc
+        
+        # Get source and target nodedefs
+        nodedefs = self.find_all_bxdf(doc)
+
+        #nodedefs : list[mx.NodeDef] = doc.getNodeDefs()
+        #nodedefs_set = dict((nd.getNodeString() + nd.getVersionString(), nd) for nd in nodedefs)
+        #for key, value in nodedefs_set.items():
+        #    print(f"Key: '{key}' -> Nodedef: '{value.getNodeString()}'")
+        source_nodedef = None
+        target_nodedef = None
+        for nodedef in nodedefs:
+            if nodedef.getNodeString() == source:
+                if source_version == "" or nodedef.getVersionString() == source_version:
+                    source_nodedef = nodedef
+            if nodedef.getNodeString() == target:
+                if target_version == "" or nodedef.getVersionString() == target_version:
+                    target_nodedef = nodedef
+
+        if not source_nodedef or not target_nodedef:
+            #raise ValueError(f"Source or target nodedef not found for '{source}' to '{target}'")
+            if not source_nodedef:
+                print(f"Source nodedef not found for '{source}' with version '{source_version}'")
+            if not target_nodedef:
+                print(f"Target nodedef not found for '{target}' with version '{target_version}'")
+            return None
+        else: 
+            print("Found source nodedef:", source_nodedef.getNodeString(), "version:", source_nodedef.getVersionString())
+            print("Found target nodedef:", target_nodedef.getNodeString(), "version:", target_nodedef.getVersionString())
+
+        # 1. Add a new nodedef for the translator    
+        derived_name = self.derive_translator_name_from_targets(source, target)
+        nodename = derived_name[3:] if derived_name.startswith("ND_") else derived_name
+        translator_nodedef : mx.NodeDef = output_doc.getNodeDef(derived_name)
+        if translator_nodedef:
+            print(f'> Translator NodeDef already exists: {derived_name}')
+            mx.prettyPrint(translator_nodedef)
+            return translator_nodedef
+        translator_nodedef = output_doc.addNodeDef(derived_name)
+        translator_nodedef.removeOutput("out")
+        translator_nodedef.setNodeString(nodename)
+        translator_nodedef.setNodeGroup("translation")
+        translator_nodedef.setDocString(f"Translator from '{source}' to '{target}'")
+
+        version1 = source_nodedef.getVersionString()
+        if not version1:
+            version1 = "1.0"
+        translator_nodedef.setAttribute('source_version', version1)
+        translator_nodedef.setAttribute('source', source)
+        version2 = target_nodedef.getVersionString()
+        if not version2:
+            version2 = "1.0"
+        translator_nodedef.setAttribute('target_version', version2)
+        translator_nodedef.setAttribute('target', target)
+        
+        # Add inputs from source as inputs to the translator
+        comment = translator_nodedef.addChildOfCategory("comment")
+        comment.setDocString(f"Inputs (inputs from source '{source}')")
+        for input in source_nodedef.getActiveInputs():
+            #print('add input:', input.getName(), input.getType())
+            nodedef_input = translator_nodedef.addInput(input.getName(), input.getType())
+            if input.hasValueString():
+                nodedef_input.setValueString(input.getValueString())            
+        
+        # Add inputs from target as outputs to the translator
+        comment = translator_nodedef.addChildOfCategory("comment")
+        comment.setDocString(f"Outputs (inputs from target '{target}' with '_out' suffix)")
+        for input in target_nodedef.getActiveInputs():
+            output_name = input.getName() + "_out"
+            #print('add output:', output_name, input.getType())
+            translator_nodedef.addOutput(output_name, input.getType())
+        
+        # 2 Create a new functional nodegraph
+        comment = doc.addChildOfCategory("comment")
+        comment.setDocString(f"NodeGraph implementation for translator '{nodename}'")
+        nodegraph_id = 'NG_' + nodename
+        nodegraph : mx.NodeGraph = output_doc.addNodeGraph(nodegraph_id)
+        nodegraph.setNodeDefString(derived_name)
+        nodegraph.setDocString(f"NodeGraph implementation of translator from '{source}' to '{target}'")
+        nodegraph.setAttribute('source_version', version1)
+        nodegraph.setAttribute('source', source)
+        nodegraph.setAttribute('target_version', version2)
+        nodegraph.setAttribute('target', target)
+        for output in translator_nodedef.getActiveOutputs():
+            nodegraph.addOutput(output.getName(), output.getType())
+
+        for source_input_name, target_input_name in mappings.items():
+            source_input = translator_nodedef.getInput(source_input_name)
+            output_name = target_input_name + "_out"
+            target_output = nodegraph.getOutput(output_name)
+            if source_input and target_output:
+                dot_name = nodegraph.createValidChildName(target_input_name)
+                comment = nodegraph.addChildOfCategory("comment")
+                comment.setDocString(f"Routing source input: '{source_input_name}' to target input: '{target_input_name}'")
+                dot_node = nodegraph.addNode('dot', dot_name)
+                dot_inpput = dot_node.addInput('in', source_input.getType())
+                dot_inpput.setInterfaceName(source_input.getName())
+                target_output.setNodeName(dot_node.getName()) 
+                print(f" - Added connection from input '{source_input.getName()}' to output '{target_output.getName()}'")
+
+        return translator_nodedef
+
+    def create_nodedef(self):
         '''
         @brief Create a NodeDef for the Physically Based Material inputs
         @return The MaterialX document containing the NodeDef
