@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"functions_func.html":[1,2,1],
+"functions_vars.html":[1,2,2],
+"gpu_open_fetch_8js_source.html":[2,0,0,0,0],
+"index.html":[],
 "js_poly_haven_loader_8js_source.html":[2,0,0,1,0],
 "main_8js_source.html":[2,0,0,1,1],
 "namespacematerialx_materials_1_1_g_p_u_open_loader.html":[0,0,0,2],

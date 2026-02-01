@@ -494,9 +494,9 @@ class PhysicallyBasedMaterialLoader:
             if not target_nodedef:
                 print(f"Target nodedef not found for '{target}' with version '{target_version}'")
             return None
-        else: 
-            print("Found source nodedef:", source_nodedef.getNodeString(), "version:", source_nodedef.getVersionString())
-            print("Found target nodedef:", target_nodedef.getNodeString(), "version:", target_nodedef.getVersionString())
+        #else: 
+        #    print("Found source nodedef:", source_nodedef.getNodeString(), "version:", source_nodedef.getVersionString())
+        #    print("Found target nodedef:", target_nodedef.getNodeString(), "version:", target_nodedef.getVersionString())
 
         # 1. Add a new nodedef for the translator    
         derived_name = self.derive_translator_name_from_targets(source, target)
@@ -566,7 +566,7 @@ class PhysicallyBasedMaterialLoader:
                 dot_inpput = dot_node.addInput('in', source_input.getType())
                 dot_inpput.setInterfaceName(source_input.getName())
                 target_output.setNodeName(dot_node.getName()) 
-                print(f" - Added connection from input '{source_input.getName()}' to output '{target_output.getName()}'")
+                #print(f" - Added connection from input '{source_input.getName()}' to output '{target_output.getName()}'")
 
         return translator_nodedef
 

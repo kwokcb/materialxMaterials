@@ -143,22 +143,27 @@ def physicallBasedMaterialXCmd():
             trans_doc.copyContentFrom(doc)
             bsdfs = loader.find_all_bxdf(trans_doc)
             for bsdf in bsdfs:
-                logger.info(f'> Found NodeDef: {bsdf.getName()}, {bsdf.getNodeString()}')       
-                mappings = dict()
+                bsdf_name = bsdf.getNodeString()
+                if bsdf_name == 'physbased_pbr_surface':
+                    continue
+                logger.info(f'> Found BSDF: {bsdf_name}')       
 
-            output_doc = mx.createDocument()
-            source_bsdf = 'physbased_pbr_surface'
-            target_bsdf = 'standard_surface'
-            trans_nodedef = loader.create_translator(trans_doc, 
-                                                        source_bsdf, target_bsdf, 
-                                                        "", "", 
-                                                        mappings, output_doc)
-            if trans_nodedef:
-                logger.info('> Created translator NodeDef:' + trans_nodedef.getName())
-                
-                trans_path = os.path.join(outputDir, 'physbased_pbr_to_standard_surface.mtlx')
-                logger.info('> Write translator file:' + trans_path)
-                mx.writeToXmlFile(output_doc, trans_path)
+                output_doc = mx.createDocument()
+                source_bsdf = 'physbased_pbr_surface'
+                target_bsdf = bsdf.getNodeString()
+                remapping = loader.getInputRemapping(target_bsdf)
+                print('Remapping:', remapping)
+                if len(remapping.items()) > 0:
+                    trans_nodedef = loader.create_translator(trans_doc, 
+                                                                source_bsdf, target_bsdf, 
+                                                                "", "", 
+                                                                remapping, output_doc)
+                    if trans_nodedef:
+                        logger.info('> Created translator NodeDef:' + trans_nodedef.getName())
+                        output_file_name = source_bsdf.replace('_surface', '') + '_to_' + target_bsdf + '.mtlx'
+                        trans_path = os.path.join(outputDir, output_file_name)
+                        logger.info('> Write translator file:' + trans_path)
+                        mx.writeToXmlFile(output_doc, mx.FilePath(trans_path))
 
             return
 

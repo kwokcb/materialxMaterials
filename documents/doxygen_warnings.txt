@@ -1,14 +1,16 @@
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:445: warning: Unsupported xml/html tag <nodegraph> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:446: warning: Unsupported xml/html tag <oren_nayar_diffuse_bsdf> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:447: warning: Unsupported xml/html tag <output> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:448: warning: Unsupported xml/html tag <input> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:449: warning: Unsupported xml/html tag <input> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:450: warning: Unsupported xml/html tag </oren_nayar_diffuse_bsdf> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:452: warning: Unsupported xml/html tag <surface> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:453: warning: Unsupported xml/html tag <input> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:454: warning: Unsupported xml/html tag </surface> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:456: warning: Unsupported xml/html tag <output> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:457: warning: Unsupported xml/html tag </nodegraph> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:451: warning: Member derive_translator_name_from_targets(self, str source, str target) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:581: warning: Unsupported xml/html tag <nodegraph> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:582: warning: Unsupported xml/html tag <oren_nayar_diffuse_bsdf> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:583: warning: Unsupported xml/html tag <output> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:584: warning: Unsupported xml/html tag <input> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:585: warning: Unsupported xml/html tag <input> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:586: warning: Unsupported xml/html tag </oren_nayar_diffuse_bsdf> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:588: warning: Unsupported xml/html tag <surface> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:589: warning: Unsupported xml/html tag <input> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:590: warning: Unsupported xml/html tag </surface> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:592: warning: Unsupported xml/html tag <output> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:593: warning: Unsupported xml/html tag </nodegraph> found
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialXCmd.py:26: warning: Member create_working_document() (function) of namespace materialxMaterials.physicallyBasedMaterialXCmd is not documented.
 /Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:20: warning: Member BASE_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
 /Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:21: warning: Member ASSET_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
 /Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:22: warning: Member INFO_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
