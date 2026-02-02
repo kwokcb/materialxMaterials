@@ -741,8 +741,7 @@ class PhysicallyBasedMaterialLoader:
 
         return doc_mat
 
-    @staticmethod
-    def find_translator(doc : mx.Document, source : str, target : str) -> mx.NodeDef | None:
+    def find_translator(self, doc : mx.Document, source : str, target : str) -> mx.NodeDef | None:
         '''
         @brief Find a translator nodedef from source to target in the document.
         @param doc The MaterialX document to search.
@@ -750,13 +749,12 @@ class PhysicallyBasedMaterialLoader:
         @param target The target definition category.
         @return The translator nodedef if found, otherwise None.
         '''
-        derived_name = derive_translator_name_from_targets(source, target)
+        derived_name = self.derive_translator_name_from_targets(source, target)
         # Look for the translator in the document
         translator_nodedef : mx.NodeDef = doc.getNodeDef(derived_name)
         return translator_nodedef
 
-    @staticmethod    
-    def translate_node(doc : mx.Document, source_bxdf : str, target_bxdf : str, node : mx.Node) -> dict[str, mx.Node] | None: 
+    def translate_node(self, doc : mx.Document, source_bxdf : str, target_bxdf : str, node : mx.Node) -> dict[str, mx.Node] | None: 
         '''
         @brief Translate a shader node of source_bxdf to target_bxdf using ungrouped nodes.
         @detail This function creates a target node and a translation node based on the translator nodedef, then 
@@ -769,14 +767,16 @@ class PhysicallyBasedMaterialLoader:
         '''
 
         # Look for a translator if one exists.
-        nodedef : mx.NodeDef | None = PhysicallyBasedMaterialLoader.find_translator(doc, source_bxdf, target_bxdf)
+        nodedef : mx.NodeDef | None = self.find_translator(doc, source_bxdf, target_bxdf)
         if not nodedef:
             print(f"- No translator found from '{source_bxdf}' to '{target_bxdf}' for node '{node.getName()}'")
             return None
 
         # Create a target node of the target_bxdf category.
         print('> Add target node of category:', target_bxdf)
-        targetNode = doc3.addChildOfCategory(target_bxdf, node.getName() + "_target")
+        replace_name = node.getName()
+        node.setName(replace_name + "_source")
+        targetNode = doc.addChildOfCategory(target_bxdf, replace_name)
         if not targetNode:
             print(f"- Failed to create target node of category '{target_bxdf}' for node '{node.getName()}'")
             return None    
@@ -785,11 +785,11 @@ class PhysicallyBasedMaterialLoader:
 
         # Create a translation node based on the translator nodedef.
         print('> Add translation node of category:', nodedef.getName())
-        translationNode = doc3.addNodeInstance(nodedef, node.getName() + "_translator")
-        translationNode.addInputsFromNodeDef()
+        translationNode = doc.addNodeInstance(nodedef, node.getName() + "_translator")
+        #translationNode.addInputsFromNodeDef()
 
         # Connect translation outputs to target inputs.
-        print('> Add translation outputs')
+        #print('> Add translation outputs')
         for output in nodedef.getActiveOutputs():
             #print('Add output:', output.getName())
             translationOutput = translationNode.addOutput(output.getName(), output.getType())
@@ -809,14 +809,17 @@ class PhysicallyBasedMaterialLoader:
 
         # Copy over inputs from the source node to the translation node.
         # Note that this will copy over all attributes including upstream connections.
-        print('> Add translation inputs.')
+        #print('> Add translation inputs.')
+        num_overrides = 0
         for input in node.getActiveInputs():
-            translationInput = translationNode.getInput(input.getName())
-            print('>> Overwrite input:', translationInput.getName())
+            translationInput = translationNode.addInputFromNodeDef(input.getName()) #translationNode.getInput(input.getName())
+            #print('>> Overwrite input:', translationInput.getName())
             if translationInput:
                 # Thish will copy over all attributes including
                 # updstream connections
                 translationInput.copyContentFrom(input)
+                num_overrides += 1
+        print(f'>> Overwrote {num_overrides} inputs on translation node.')                
 
         return {'translationNode' : translationNode, 
                 'targetNode' : targetNode }    

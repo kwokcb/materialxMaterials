@@ -119,11 +119,6 @@ def physicallBasedMaterialXCmd():
                 mx.writeToXmlFile(doc, nodedef_file_name)
                 logger.info(f'> Write definition file: {nodedef_file_name}')
 
-
-            #bsdfs = loader.find_all_bxdf(doc)
-            #for bsdf in bsdfs:
-            #    logger.info(f'> Found NodeDef: {bsdf.getName()}')
-
             doc_mat = None
             filter_list = []
             doc_mat = loader.create_definition_materials(doc_mat, doc, filter_list)
@@ -141,16 +136,45 @@ def physicallBasedMaterialXCmd():
                 logger.info(f'> Write materials file: {nodedef_mat_file_name}')
 
             # Create translation nodedef
-            output_doc = mx.createDocument()
-            resulting_definitions = loader.create_all_translators(doc, output_doc)
+            translations_doc = mx.createDocument()
+            resulting_definitions = loader.create_all_translators(doc, translations_doc)
             print(f'Number of translator definitions created: {len(resulting_definitions)}')
 
-            if resulting_definitions and output_doc:     
+            if resulting_definitions and translations_doc:     
                 output_file_name = 'physbased_pbr_translators.mtlx'
                 output_path = os.path.join(outputDir, output_file_name)                
                 logger.info('> Write translator file:' + output_path)
-                mx.writeToXmlFile(output_doc, mx.FilePath(output_path))
+                mx.writeToXmlFile(translations_doc, mx.FilePath(output_path))
 
+
+            # Doc with stdlib
+            result = loader.create_working_document()
+            stdlib = result['stdlib']
+            # Add Physically Based Material definitions 
+            stdlib.copyContentFrom(doc)
+            stdlib.copyContentFrom(translations_doc)
+            translated_doc = mx.createDocument()
+            translated_doc.setDataLibrary(stdlib)
+            # Copy over materials
+            translated_doc.copyContentFrom(doc_mat)
+            for node in translated_doc.getNodes():
+                if node.getCategory() == 'physbased_pbr_surface':
+                    # Translate using standard_surface as target
+                    orig_name = node.getName()
+                    replace_name = orig_name + "_source"
+                    target_bsdf = 'standard_surface'
+                    trans_result = loader.translate_node(translated_doc, 'physbased_pbr_surface', target_bsdf, node)
+                    if trans_result is not None:
+                        translationNode = trans_result['translationNode']
+                        targetNode = trans_result['targetNode'] 
+                        if translationNode and targetNode:
+                            print('Replacing node:', orig_name, 'with translated node:', targetNode.getName())
+                            translated_doc.removeNode(replace_name)                            
+
+            # Translate all the materials
+            mx.writeToXmlFile(translated_doc, os.path.join(outputDir, 'physbased_pbr_translated_materials.mtlx'))
+            
+            # Add
 
             # To fit this in...
             if not separateFiles:
