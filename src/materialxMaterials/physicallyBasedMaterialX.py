@@ -456,7 +456,7 @@ class PhysicallyBasedMaterialLoader:
                         source : str, target : str, 
                         source_version = "", target_version = "", 
                         mappings = None,
-                        output_doc : mx.Document | None = None) -> mx.NodeDef | None:
+                        output_doc : mx.Document | None = None):
         '''
         @brief Create a translator nodedef and nodegraph from source to target definitions.
         @param doc The source document containing the definition.
@@ -469,7 +469,7 @@ class PhysicallyBasedMaterialLoader:
         @return The created translator definition.
         '''
         if not output_doc:
-            output_doc = doc
+            return None
         
         # Get source and target nodedefs
         nodedefs = self.find_all_bxdf(doc)
@@ -542,7 +542,7 @@ class PhysicallyBasedMaterialLoader:
             translator_nodedef.addOutput(output_name, input.getType())
         
         # 2 Create a new functional nodegraph
-        comment = doc.addChildOfCategory("comment")
+        comment = output_doc.addChildOfCategory("comment")
         comment.setDocString(f"NodeGraph implementation for translator '{nodename}'")
         nodegraph_id = 'NG_' + nodename
         nodegraph : mx.NodeGraph = output_doc.addNodeGraph(nodegraph_id)
@@ -569,7 +569,54 @@ class PhysicallyBasedMaterialLoader:
                 target_output.setNodeName(dot_node.getName()) 
                 #print(f" - Added connection from input '{source_input.getName()}' to output '{target_output.getName()}'")
 
-        return translator_nodedef
+        return translator_nodedef, output_doc
+
+
+    def create_all_translators(self, definitions : mx.Document, output_doc : mx.Document | None = None) -> list[mx.NodeDef]:
+        '''
+        @brief Create translators for all supported shading models.
+        @param definitions The source document containing Physically Based MaterialX definitions.
+        @param output_doc The document to add the translators to. If None, use the source doc.
+        @return A list of created translator definitions.
+        '''
+        trans_nodedefs = []
+
+        # Create temporary doc with all standard library definitions
+        result = self.create_working_document()
+        trans_doc = result["doc"]
+
+        # Add Physically Based Material definitions to the temporary document
+        trans_doc.copyContentFrom(definitions)
+
+        self.add_copyright_comment(output_doc, None)
+
+        if not output_doc:
+            self.logger.error('No output document specified for translators')
+            return  trans_nodedef
+
+        # Source BSDF is always physbased_pbr_surface
+        source_bsdf = 'physbased_pbr_surface'
+
+        # Iterate over all target BSDFs
+        bsdfs = self.find_all_bxdf(trans_doc)
+        for bsdf in bsdfs:
+            bsdf_name = bsdf.getNodeString()
+            if bsdf_name == 'physbased_pbr_surface':
+                continue
+
+            target_bsdf = bsdf.getNodeString()
+            remapping = self.getInputRemapping(target_bsdf)
+            #print('Remapping:', remapping)
+            if len(remapping.items()) > 0:
+                trans_nodedef = self.create_translator(trans_doc, 
+                                                  source_bsdf, target_bsdf, 
+                                                  "", "", 
+                                                  remapping, output_doc)
+                if trans_nodedef:
+                    self.logger.info(f'> Created translator to BSDF: {bsdf_name}')       
+                    trans_nodedefs.append(trans_nodedef)
+
+        return trans_nodedefs        
 
     def create_definition(self, doc : mx.Document | None) -> tuple[mx.Document, mx.NodeDef]:
         '''
@@ -596,9 +643,9 @@ class PhysicallyBasedMaterialLoader:
           </nodegraph>
         </pre>
         '''
-        doc = mx.createDocument()
-
-        self.add_copyright_comment(doc, None)
+        if not doc:
+            doc = mx.createDocument()
+            self.add_copyright_comment(doc, None)
 
         # Create placeholder nodegraph
         graph = doc.addNodeGraph("NG_PhysicallyBasedMaterial")
@@ -647,6 +694,7 @@ class PhysicallyBasedMaterialLoader:
 
         if not doc_mat:
             doc_mat = mx.createDocument()
+            self.add_copyright_comment(doc_mat, None)
 
         # Embed the library definitions into the material document
         doc_mat.setDataLibrary(definitions)
@@ -946,3 +994,18 @@ class PhysicallyBasedMaterialLoader:
         writeOptions.elementPredicate = self.skipLibraryElement        
         mtlx = self.mx.writeToXmlString(self.doc, writeOptions)
         return mtlx
+
+    @staticmethod
+    def create_working_document() -> dict[str, mx.Document]:
+        doc : mx.Document = mx.createDocument()
+        stdlib : mx.Document = mx.createDocument()
+
+        searchPath : mx.FileSearchPath = mx.getDefaultDataSearchPath()
+        libraryFolders : list[mx.FilePath]= mx.getDefaultDataLibraryFolders()
+        libraryFiles : set[str] = mx.loadLibraries(libraryFolders, searchPath, stdlib)
+        doc.setDataLibrary(stdlib)
+        nodedefs : list[mx.NodeDef] = doc.getNodeDefs()
+        print(f"Created working doc with {len(nodedefs)} nodedefs from standard library.")
+
+        result = { "doc": doc, "stdlib": stdlib }
+        return result
