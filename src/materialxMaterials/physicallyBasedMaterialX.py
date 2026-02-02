@@ -3,7 +3,7 @@
 and convert the materials to MaterialX format for given target shading models.
 '''
 
-from numpy import source
+#from numpy import source
 import requests, json, os, inspect # type: ignore
 import logging as lg 
 from http import HTTPStatus
@@ -11,6 +11,7 @@ import MaterialX as mx # type: ignore
 from typing import Optional
 import importlib.resources
 import json
+import datetime
 
 class PhysicallyBasedMaterialLoader:
     '''
@@ -348,7 +349,7 @@ class PhysicallyBasedMaterialLoader:
         comment = doc.addChildOfCategory('comment')
         comment.setDocString(commentString)
 
-    def _map_keys_to_definition(self, mat, ndef):
+    def map_keys_to_definition(self, mat, ndef):
         '''
         @brief Map a key to a NodeDef input
         @param mat Material to map keys from
@@ -504,7 +505,7 @@ class PhysicallyBasedMaterialLoader:
         translator_nodedef : mx.NodeDef = output_doc.getNodeDef(derived_name)
         if translator_nodedef:
             print(f'> Translator NodeDef already exists: {derived_name}')
-            mx.prettyPrint(translator_nodedef)
+            #mx.prettyPrint(translator_nodedef)
             return translator_nodedef
         translator_nodedef = output_doc.addNodeDef(derived_name)
         translator_nodedef.removeOutput("out")
@@ -570,10 +571,12 @@ class PhysicallyBasedMaterialLoader:
 
         return translator_nodedef
 
-    def create_nodedef(self):
+    def create_definition(self, doc : mx.Document | None) -> tuple[mx.Document, mx.NodeDef]:
         '''
         @brief Create a NodeDef for the Physically Based Material inputs
-        @return The MaterialX document containing the NodeDef
+        @param doc The MaterialX document to add the NodeDef to. If None, a new document will be created.
+        @return A tuple of the MaterialX document and the created definition.
+
         @details The NodeDef will contain inputs for all the keys in the Physically Based Material JSON object.
 
         The nodegraph is a placeholder with a simple diffuse shader accepting color as followe:
@@ -594,6 +597,8 @@ class PhysicallyBasedMaterialLoader:
         </pre>
         '''
         doc = mx.createDocument()
+
+        self.add_copyright_comment(doc, None)
 
         # Create placeholder nodegraph
         graph = doc.addNodeGraph("NG_PhysicallyBasedMaterial")
@@ -625,12 +630,34 @@ class PhysicallyBasedMaterialLoader:
 
         for mat in self.materials:
             # Map keys to definition inputs
-            self._map_keys_to_definition(mat, ndef)
+            self.map_keys_to_definition(mat, ndef)
 
-        doc_mat = mx.createDocument()
-        doc_mat.copyContentFrom(doc)
+        return doc, ndef
+
+
+    def create_definition_materials(self, doc_mat, definitions, filter_list = None):
+        '''
+        @brief Create a MaterialX document containing Physically Based MaterialX materials
+        @param doc_mat The MaterialX document to add the materials to
+        @param definitions The document containing the Physically Based MaterialX definitions
+        @param filter_list A list of material names to filter. If None, all materials will be processed.
+        @return The MaterialX document containing the materials
+        '''
+        #ndef = definitions.getNodeDef("ND_PhysicallyBasedMaterial")
+
+        if not doc_mat:
+            doc_mat = mx.createDocument()
+
+        # Embed the library definitions into the material document
+        doc_mat.setDataLibrary(definitions)
+       
         for mat in self.materials:
+        
             matName = mat['name']
+            if filter_list and matName not in filter_list:
+                self.logger.info(f'> Skipping material: {matName}')
+                continue
+
             shaderName = doc_mat.createValidChildName(matName + '_SHD_PBM')
             shaderNode = doc_mat.addNode('physbased_pbr_surface', shaderName, mx.SURFACE_SHADER_TYPE_STRING)
             for key, value in mat.items():
@@ -664,7 +691,100 @@ class PhysicallyBasedMaterialLoader:
             shaderInput = materialNode.addInput(mx.SURFACE_SHADER_TYPE_STRING, mx.SURFACE_SHADER_TYPE_STRING)
             shaderInput.setAttribute(self.MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName())
 
-        return doc, doc_mat
+        return doc_mat
+
+    @staticmethod
+    def find_translator(doc : mx.Document, source : str, target : str) -> mx.NodeDef | None:
+        '''
+        @brief Find a translator nodedef from source to target in the document.
+        @param doc The MaterialX document to search.
+        @param source The source definition category.
+        @param target The target definition category.
+        @return The translator nodedef if found, otherwise None.
+        '''
+        derived_name = derive_translator_name_from_targets(source, target)
+        # Look for the translator in the document
+        translator_nodedef : mx.NodeDef = doc.getNodeDef(derived_name)
+        return translator_nodedef
+
+    @staticmethod    
+    def translate_node(doc : mx.Document, source_bxdf : str, target_bxdf : str, node : mx.Node) -> dict[str, mx.Node] | None: 
+        '''
+        @brief Translate a shader node of source_bxdf to target_bxdf using ungrouped nodes.
+        @detail This function creates a target node and a translation node based on the translator nodedef, then 
+        makes upstream and downstream connections.
+        @param doc The document to operate on.
+        @param source_bxdf The source BXDF shading model name.
+        @param target_bxdf The target BXDF shading model name.
+        @param node The source shader node to translate.
+        @return A dictionary with 'translationNode' and 'targetNode' if successful, None otherwise.
+        '''
+
+        # Look for a translator if one exists.
+        nodedef : mx.NodeDef | None = PhysicallyBasedMaterialLoader.find_translator(doc, source_bxdf, target_bxdf)
+        if not nodedef:
+            print(f"- No translator found from '{source_bxdf}' to '{target_bxdf}' for node '{node.getName()}'")
+            return None
+
+        # Create a target node of the target_bxdf category.
+        print('> Add target node of category:', target_bxdf)
+        targetNode = doc3.addChildOfCategory(target_bxdf, node.getName() + "_target")
+        if not targetNode:
+            print(f"- Failed to create target node of category '{target_bxdf}' for node '{node.getName()}'")
+            return None    
+        targetNode.setType("surfaceshader")
+        targetNode.addInputsFromNodeDef()
+
+        # Create a translation node based on the translator nodedef.
+        print('> Add translation node of category:', nodedef.getName())
+        translationNode = doc3.addNodeInstance(nodedef, node.getName() + "_translator")
+        translationNode.addInputsFromNodeDef()
+
+        # Connect translation outputs to target inputs.
+        print('> Add translation outputs')
+        for output in nodedef.getActiveOutputs():
+            #print('Add output:', output.getName())
+            translationOutput = translationNode.addOutput(output.getName(), output.getType())
+            translationOutput.copyContentFrom(output)  
+            target_input_name = output.getName()
+            # Remove trailing '_out' from name
+            target_input_name = target_input_name[:-4] if target_input_name.endswith('_out') else target_input_name
+            target_input = targetNode.getInput(target_input_name)
+            if not target_input:
+                print(f" - Warning: Target node '{targetNode.getName()}' has no input named '{target_input_name}' for output '{output.getName()}'")
+                continue
+            else:
+                #print('Target input name:', target_input_name)
+                target_input.setNodeName(translationNode.getName())
+                target_input.setOutputString(translationOutput.getName())
+                target_input.removeAttribute('value')
+
+        # Copy over inputs from the source node to the translation node.
+        # Note that this will copy over all attributes including upstream connections.
+        print('> Add translation inputs.')
+        for input in node.getActiveInputs():
+            translationInput = translationNode.getInput(input.getName())
+            print('>> Overwrite input:', translationInput.getName())
+            if translationInput:
+                # Thish will copy over all attributes including
+                # updstream connections
+                translationInput.copyContentFrom(input)
+
+        return {'translationNode' : translationNode, 
+                'targetNode' : targetNode }    
+
+    def add_copyright_comment(self, doc, shaderCategory, embedDate=True):
+          # Add header comments
+        self.addComment(doc, 'Physically Based Materials from https://api.physicallybased.info ')
+        self.addComment(doc, '  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ ')
+        self.addComment(doc, f'  Content processsed via REST API and mapped to MaterialX V{self.mx.getVersionString()} ')
+        if shaderCategory:
+            self.addComment(doc, f'  Target Shading Model: {shaderCategory} ')  
+        self.addComment(doc, '  Utility Author: Bernard Kwok. kwokcb@gmail.com ')
+        if embedDate:
+            now = datetime.datetime.now()
+            dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
+            self.addComment(doc, f'  Generated on: {dt_string} ')  
 
     def convertToMaterialX(self, materialNames = [], shaderCategory='standard_surface',
                            remapKeys = {}, shaderPreFix ='') -> mx.Document:
@@ -700,12 +820,7 @@ class PhysicallyBasedMaterialLoader:
 
         self.doc.importLibrary(self.stdlib)
 
-        # Add header comments
-        self.addComment(self.doc, 'Physically Based Materials from https://api.physicallybased.info ')
-        self.addComment(self.doc, '  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ ')
-        self.addComment(self.doc, f'  Content processsed via REST API and mapped to MaterialX V{self.mx.getVersionString()} ')
-        self.addComment(self.doc, f'  Target Shading Model: {shaderCategory} ')  
-        self.addComment(self.doc, '  Utility Author: Bernard Kwok. kwokcb@gmail.com ')  
+        self.add_copyright_comment(self.doc, shaderCategory)
 
         # Add properties to the material
         for mat in self.materials:

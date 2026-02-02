@@ -112,17 +112,17 @@ def physicallBasedMaterialXCmd():
 
     if jsonMat:
 
+        # Create folder for MaterialX call PhysicallyBasedMaterialX
+        os.makedirs(outputDir, exist_ok=True)
+
         create_nodedef = opts.createNodeDef
         if create_nodedef:
+
             logger.info('> Create definition for PhysicallyBased materials')
-            doc, doc_mat = loader.create_nodedef()
-
-            bsdfs = loader.find_all_bxdf(doc)
-            for bsdf in bsdfs:
-                logger.info(f'> Found NodeDef: {bsdf.getName()}')
-
-            if doc and doc_mat:
-                status, error = doc_mat.validate()
+            doc : mx.Document = mx.createDocument()
+            doc, definition = loader.create_definition(doc)
+            if doc:
+                status, error = doc.validate()
                 if not status:
                     logger.error('> Error validating NodeDef document:')
                     logger.error(error)
@@ -132,6 +132,24 @@ def physicallBasedMaterialXCmd():
                 nodedef_file_name = os.path.join(outputDir, 'physbased_pbr.mtlx')
                 mx.writeToXmlFile(doc, nodedef_file_name)
                 logger.info(f'> Write definition file: {nodedef_file_name}')
+
+
+            #bsdfs = loader.find_all_bxdf(doc)
+            #for bsdf in bsdfs:
+            #    logger.info(f'> Found NodeDef: {bsdf.getName()}')
+
+            doc_mat : mx.Document = mx.createDocument()
+            doc_mat.copyContentFrom(doc)
+            filter_list = []
+            doc_mat = loader.create_definition_materials(doc_mat, doc, filter_list)
+
+            if doc_mat:
+                status, error = doc_mat.validate()
+                if not status:
+                    logger.error('> Error validating definition materials document:')
+                    logger.error(error)
+                else:
+                    logger.info('> Definition materials document passed validation.')
 
                 nodedef_mat_file_name = os.path.join(outputDir, 'physbased_pbr_materials.mtlx')
                 mx.writeToXmlFile(doc_mat, nodedef_mat_file_name)
@@ -165,15 +183,39 @@ def physicallBasedMaterialXCmd():
                         logger.info('> Write translator file:' + trans_path)
                         mx.writeToXmlFile(output_doc, mx.FilePath(trans_path))
 
-            return
-
-        # Create folder for MaterialX call PhysicallyBasedMaterialX
-        os.makedirs(outputDir, exist_ok=True)
+            # To fit this in...
+            if not separateFiles:
+                for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
+                    logger.info(f'> Generate MaterialX using nodedefs for shading model: {shadingModel}')
+                    matdoc = None
+                    if matdoc is not None:
+                        valid, errors = loader.validateMaterialXDocument(matdoc)
+                        if valid:
+                            fileName = os.path.join(outputDir, f'PhysicallyBasedMaterialX_{prefix}.mtlx')
+                            loader.writeMaterialXToFile(fileName)
+                            logger.info(f'> Write: {fileName}')
+        
+            else:
+                for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
+                    logger.info(f'> Generate MaterialX using nodedefs for shading model: {shadingModel}')
+                    for mat in loader.getJSONMaterialNames():
+                        materialFilter = [mat]
+                        matdoc = None # loader.convertToMaterialX(materialFilter, shadingModel, {}, prefix)
+                        if matdoc is not None:
+                            valid, errors = loader.validateMaterialXDocument(matdoc)
+                            if valid:
+                                fileName = os.path.join(outputDir, f'PB_{prefix}_{mat}.mtlx')
+                                loader.writeMaterialXToFile(fileName)
+                                logger.info(f'> Write: {fileName}')
 
         if writeJSON:
             logger.info(f'> Write PB material file: {outputDir}/PhysicallyBasedMaterial.json')
             loader.writeJSONToFile(os.path.join(outputDir, 'PhysicallyBasedMaterial.json'))
 
+        if create_nodedef:
+            return
+
+        # Direct translation from JSON to MaterialX path. Skip if using PhysicallyBased nodedefs
         if not separateFiles:
             for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
                 logger.info(f'> Generate MaterialX for shading model: {shadingModel}')
