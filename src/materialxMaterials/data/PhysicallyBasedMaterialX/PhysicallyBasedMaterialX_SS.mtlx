@@ -5,6 +5,7 @@
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!--  Generated on: 2026-02-02 16:03:23 -->
   <!-- Generated shader: Aluminum_SS_SHD_PBM -->
   <standard_surface name="Aluminum_SS_SHD_PBM" type="surfaceshader" uiname="Aluminum" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg">
     <input name="base_color" type="color3" value="0.916,0.923,0.924" />
@@ -443,7 +444,7 @@
   </surfacematerial>
   <!-- Generated shader: Lemon_SS_SHD_PBM -->
   <standard_surface name="Lemon_SS_SHD_PBM" type="surfaceshader" uiname="Lemon" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lemon.jpeg">
-    <input name="base_color" type="color3" value="0.718,0.483,0" />
+    <input name="base_color" type="color3" value="0.617,0.366,0.045" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.5" />
@@ -711,6 +712,17 @@
   <surfacematerial name="Platinum_SS_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Platinum_SS_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Porcelain_SS_SHD_PBM -->
+  <standard_surface name="Porcelain_SS_SHD_PBM" type="surfaceshader" uiname="Porcelain" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/porcelain.jpeg">
+    <input name="base_color" type="color3" value="0.745,0.745,0.723" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.5" />
+  </standard_surface>
+  <!-- Generated material: Porcelain_SS_MAT_PBM -->
+  <surfacematerial name="Porcelain_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Porcelain_SS_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Potassium_SS_SHD_PBM -->
   <standard_surface name="Potassium_SS_SHD_PBM" type="surfaceshader" uiname="Potassium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/potassium.jpeg">
     <input name="base_color" type="color3" value="0.983,0.956,0.906" />
@@ -921,6 +933,17 @@
   <!-- Generated material: Sodium_SS_MAT_PBM -->
   <surfacematerial name="Sodium_SS_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Sodium_SS_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Spectralon_SS_SHD_PBM -->
+  <standard_surface name="Spectralon_SS_SHD_PBM" type="surfaceshader" uiname="Spectralon" uifolder="Manmade" doc="Spectralon is a fluoropolymer that has the highest diffuse reflectance of any known material or coating over the ultraviolet, visible, and near-infrared regions of the spectrum. It is the whitest substance available and reflects 99% of the light.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/spectralon.jpeg">
+    <input name="base_color" type="color3" value="0.99,0.99,0.99" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.99" />
+    <input name="specular_IOR" type="float" value="1.35" />
+  </standard_surface>
+  <!-- Generated material: Spectralon_SS_MAT_PBM -->
+  <surfacematerial name="Spectralon_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Spectralon_SS_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Stainless_Steel_SS_SHD_PBM -->
   <standard_surface name="Stainless_Steel_SS_SHD_PBM" type="surfaceshader" uiname="Stainless Steel" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/stainless-steel.jpeg">

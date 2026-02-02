@@ -1,5 +1,13 @@
 var NAVTREEINDEX1 =
 {
+"classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html#aabfef3ca674414d9d47dafe8acf6b816":[1,0,0,3,0,2],
+"dir_0e7a2bf207642fde32bb2644c27b5ffb.html":[2,0,0],
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[2,0,1],
+"dir_78e1788757bc8a41bfb523cf6ec06e27.html":[2,0,0,1],
+"dir_ed2309c38062a0ffa21222134f4047e1.html":[2,0,1,0],
+"dir_feb9c949544f96bccf9e8ccf4de2f51e.html":[2,0,0,0],
+"files.html":[2,0],
+"functions.html":[1,2,0],
 "functions_func.html":[1,2,1],
 "functions_vars.html":[1,2,2],
 "gpu_open_fetch_8js_source.html":[2,0,0,0,0],

@@ -5,6 +5,7 @@
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!--  Generated on: 2026-02-02 16:03:25 -->
   <!-- Generated shader: Aluminum_GLTF_SHD_PBM -->
   <gltf_pbr name="Aluminum_GLTF_SHD_PBM" type="surfaceshader" uiname="Aluminum" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg">
     <input name="base_color" type="color3" value="0.916,0.923,0.924" />
@@ -434,7 +435,7 @@
   </surfacematerial>
   <!-- Generated shader: Lemon_GLTF_SHD_PBM -->
   <gltf_pbr name="Lemon_GLTF_SHD_PBM" type="surfaceshader" uiname="Lemon" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lemon.jpeg">
-    <input name="base_color" type="color3" value="0.718,0.483,0" />
+    <input name="base_color" type="color3" value="0.617,0.366,0.045" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
@@ -696,6 +697,17 @@
   <surfacematerial name="Platinum_GLTF_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Platinum_GLTF_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Porcelain_GLTF_SHD_PBM -->
+  <gltf_pbr name="Porcelain_GLTF_SHD_PBM" type="surfaceshader" uiname="Porcelain" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/porcelain.jpeg">
+    <input name="base_color" type="color3" value="0.745,0.745,0.723" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+  </gltf_pbr>
+  <!-- Generated material: Porcelain_GLTF_MAT_PBM -->
+  <surfacematerial name="Porcelain_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Porcelain_GLTF_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Potassium_GLTF_SHD_PBM -->
   <gltf_pbr name="Potassium_GLTF_SHD_PBM" type="surfaceshader" uiname="Potassium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/potassium.jpeg">
     <input name="base_color" type="color3" value="0.983,0.956,0.906" />
@@ -896,6 +908,17 @@
   <!-- Generated material: Sodium_GLTF_MAT_PBM -->
   <surfacematerial name="Sodium_GLTF_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Sodium_GLTF_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Spectralon_GLTF_SHD_PBM -->
+  <gltf_pbr name="Spectralon_GLTF_SHD_PBM" type="surfaceshader" uiname="Spectralon" uifolder="Manmade" doc="Spectralon is a fluoropolymer that has the highest diffuse reflectance of any known material or coating over the ultraviolet, visible, and near-infrared regions of the spectrum. It is the whitest substance available and reflects 99% of the light.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/spectralon.jpeg">
+    <input name="base_color" type="color3" value="0.99,0.99,0.99" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0.99" />
+    <input name="ior" type="float" value="1.35" />
+  </gltf_pbr>
+  <!-- Generated material: Spectralon_GLTF_MAT_PBM -->
+  <surfacematerial name="Spectralon_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Spectralon_GLTF_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Stainless_Steel_GLTF_SHD_PBM -->
   <gltf_pbr name="Stainless_Steel_GLTF_SHD_PBM" type="surfaceshader" uiname="Stainless Steel" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/stainless-steel.jpeg">
