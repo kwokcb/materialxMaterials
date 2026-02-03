@@ -157,36 +157,19 @@ def physicallBasedMaterialXCmd():
             translated_doc.setDataLibrary(stdlib)
             # Copy over materials
             translated_doc.copyContentFrom(doc_mat)
-            for node in translated_doc.getNodes():
-                if node.getCategory() == 'physbased_pbr_surface':
-                    # Translate using standard_surface as target
-                    orig_name = node.getName()
-                    replace_name = orig_name + "_source"
-                    target_bsdf = 'standard_surface'
-                    trans_result = loader.translate_node(translated_doc, 'physbased_pbr_surface', target_bsdf, node)
-                    if trans_result is not None:
-                        translationNode = trans_result['translationNode']
-                        targetNode = trans_result['targetNode'] 
-                        if translationNode and targetNode:
-                            #print('Replacing node:', orig_name, 'with translated node:', targetNode.getName())
-                            translated_doc.removeNode(replace_name)                            
-
-            # Translate all the materials
-            mx.writeToXmlFile(translated_doc, os.path.join(outputDir, 'physbased_pbr_translated_materials.mtlx'))
             
-            # Add
-
             # To fit this in...
             if not separateFiles:
                 for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
-                    matdoc = None
-                    if matdoc is not None:
-                        valid, errors = loader.validateMaterialXDocument(matdoc)
-                        if valid:
-                            logger.info(f'> Generate MaterialX using nodedefs for shading model: {shadingModel}')
-                            fileName = os.path.join(outputDir, f'PhysicallyBasedMaterialX_{prefix}.mtlx')
-                            loader.writeMaterialXToFile(fileName)
-                            logger.info(f'> Write: {fileName}')
+
+                    for node in translated_doc.getNodes():
+                        if node.getCategory() == 'physbased_pbr_surface':
+                            trans_result = loader.translate_node(translated_doc, 'physbased_pbr_surface', shadingModel, node)
+
+                    logger.info(f'> Generate MaterialX using nodedefs for shading model: {shadingModel}')
+                    fileName = os.path.join(outputDir, f'PhysicallyBasedMaterialX_translated_{prefix}.mtlx')
+                    loader.writeMaterialXToFile(fileName, translated_doc)
+                    logger.info(f'> Write: {fileName}')
         
             else:
                 for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):

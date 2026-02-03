@@ -761,7 +761,7 @@ class PhysicallyBasedMaterialLoader:
         translator_nodedef : mx.NodeDef = doc.getNodeDef(derived_name)
         return translator_nodedef
 
-    def translate_node(self, doc : mx.Document, source_bxdf : str, target_bxdf : str, node : mx.Node) -> dict[str, mx.Node] | None: 
+    def translate_node(self, doc : mx.Document, source_bxdf : str, target_bxdf : str, node : mx.Node) -> dict | None: 
         '''
         @brief Translate a shader node of source_bxdf to target_bxdf using ungrouped nodes.
         @detail This function creates a target node and a translation node based on the translator nodedef, then 
@@ -827,9 +827,11 @@ class PhysicallyBasedMaterialLoader:
                 translationInput.copyContentFrom(input)
                 num_overrides += 1
         #print(f'>> Overwrote {num_overrides} inputs on translation node.')                
+        
+        # Remove original node
+        doc.removeNode(node.getName())
 
-        return {'translationNode' : translationNode, 
-                'targetNode' : targetNode }    
+        return {'translationNode' : translationNode, 'targetNode' : targetNode }    
 
     def add_copyright_comment(self, doc, shaderCategory, embedDate=True):
           # Add header comments
@@ -975,7 +977,7 @@ class PhysicallyBasedMaterialLoader:
 
         return self.doc
     
-    def writeMaterialXToFile(self, filename):
+    def writeMaterialXToFile(self, filename, doc = None):
         ''' 
         @brief Write the MaterialX document to disk 
         @param filename The filename to write the MaterialX document to
@@ -984,11 +986,16 @@ class PhysicallyBasedMaterialLoader:
         if not self.mx:
             self.logger.critical(f'> {self._getMethodName()}: MaterialX module is required')
             return
+                
+        output_doc = doc if doc else self.doc
+        if not output_doc:
+            self.logger.critical(f'> {self._getMethodName()}: No MaterialX document to write')
+            return
 
         writeOptions = self.mx.XmlWriteOptions()
         writeOptions.writeXIncludeEnable = False
         writeOptions.elementPredicate = self.skipLibraryElement        
-        self.mx.writeToXmlFile(self.doc, filename, writeOptions)
+        self.mx.writeToXmlFile(output_doc, filename, writeOptions)
 
     def convertToMaterialXString(self):
         ''' 

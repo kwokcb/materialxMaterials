@@ -4,7 +4,7 @@
   <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
-  <!--  Generated on: 2026-02-02 22:55:52 -->
+  <!--  Generated on: 2026-02-02 23:02:15 -->
   <nodedef name="ND_physbased_pbr_surface_to_open_pbr_surface" node="physbased_pbr_surface_to_open_pbr_surface" nodegroup="translation" doc="Translator from 'physbased_pbr_surface' to 'open_pbr_surface'" source_version="1.0" source="physbased_pbr_surface" target_version="1.1" target="open_pbr_surface">
     <!--Inputs (inputs from source 'physbased_pbr_surface')-->
     <input name="name" type="string" value="Aluminum" />
