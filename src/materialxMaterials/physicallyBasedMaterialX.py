@@ -18,7 +18,7 @@ class PhysicallyBasedMaterialLoader:
     @brief Class to load Physically Based Materials from the PhysicallyBased site.
     The class can convert the materials to MaterialX format for given target shading models.
     '''
-    def __init__(self, mx_module, mx_stdlib : Optional[mx.Document] = None):
+    def __init__(self, mx_module, mx_stdlib : Optional[mx.Document] = None, materials_file : str = ''):
         '''
         @brief Constructor for the PhysicallyBasedMaterialLoader class. 
         Will initialize shader mappings and load the MaterialX standard library
@@ -42,6 +42,16 @@ class PhysicallyBasedMaterialLoader:
         self.mx = mx_module
         ### MaterialX standard library
         self.stdlib = mx_stdlib
+        ### PhysicallyBased definition library
+        self.physlib = None
+        ### PhysicallyBased MaterialX surface definition name
+        self.physlib_definition_name = "ND_PhysicallyBasedMaterial"
+        ### PhysicallyBased MaterialX surface implementation (nodegraph) name
+        self.physlib_implementation_name = "NG_PhysicallyBasedMaterial"
+        ### PhysicallyBased MaterialX surface category
+        self.physlib_category = "physbased_pbr_surface"
+        ### PhysicallyBased MaterialX translators
+        self.physlib_translators = None
         ### MaterialX node name attribute
         self.MTLX_NODE_NAME_ATTRIBUTE = 'nodename'
         ### OpenPBR support flag
@@ -62,6 +72,12 @@ class PhysicallyBasedMaterialLoader:
             self.logger.debug('> OpenPBR shading model supported')
             self.support_openpbr = True
 
+
+        # Load information from PhysicallyBased site, and initialize remappings
+        if materials_file and os.path.exists(materials_file):
+            self.loadMaterialsFromFile(materials_file)
+        else:
+            self.getMaterialsFromURL()
         self.initializeInputRemapping()
 
         # Load the MaterialX standard library if not provided
@@ -69,6 +85,18 @@ class PhysicallyBasedMaterialLoader:
             self.stdlib = self.mx.createDocument()
             libFiles = self.mx.loadLibraries(mx.getDefaultDataLibraryFolders(), mx.getDefaultDataSearchPath(), self.stdlib)            
             self.logger.debug(f'> Loaded standard library: {libFiles}')
+
+        # Create Physically Based MaterialX definition library
+        self.physlib = self.create_definition(None)
+        self.logger.info('> Created Physically Based MaterialX definition library...')
+        status, error = self.physlib.validate()
+        if not status:
+            self.logger.info(mx.prettyPrint(self.physlib))
+            self.logger.error('> Error validating NodeDef document:')
+            self.logger.error(error)            
+        else:
+            self.logger.info('> Definition documents passed validation.')
+
 
     def setDebugging(self, debug=True):
         '''
@@ -80,6 +108,68 @@ class PhysicallyBasedMaterialLoader:
             self.logger.setLevel(lg.DEBUG)
         else:
             self.logger.setLevel(lg.INFO)
+
+    def get_stdlib(self) -> mx.Document:
+        '''
+        @brief Get the MaterialX standard library document.
+        @return The MaterialX standard library document.
+        '''
+        return self.stdlib
+    
+    def get_physlib(self) -> mx.Document:
+        '''
+        @brief Get the Physically Based MaterialX definition library.
+        @return The Physically Based MaterialX definition library.
+        '''
+        return self.physlib
+    
+    def get_physlib_definition(self) -> mx.NodeDef | None:
+        '''
+        @brief Get the Physically Based MaterialX definition NodeDef.
+        @return The Physically Based MaterialX definition NodeDef.
+        '''
+        if self.physlib:
+            return self.physlib.getNodeDef(self.get_physlib_definition_name())
+        return None
+    
+    def get_physlib_category(self) -> str:
+        '''
+        @brief Get the Physically Based MaterialX surface category.
+        @return The Physically Based MaterialX surface category.
+        '''
+        return self.physlib_category
+    
+    def get_physlib_definition_name(self) -> str:
+        '''
+        @brief Get the Physically Based MaterialX definition name.
+        @return The Physically Based MaterialX definition name.
+        '''
+        return self.physlib_definition_name
+    
+    def get_physlib_implementation_name(self) -> str:
+        '''
+        @brief Get the Physically Based MaterialX implementation (nodegraph) name.
+        @return The Physically Based MaterialX implementation (nodegraph) name.
+        '''
+        return self.physlib_implementation_name
+    
+    def get_all_lib(self) -> mx.Document:
+        '''
+        @brief Get a combined MaterialX document containing the standard library and Physically Based MaterialX definition library.
+        @return The combined MaterialX document.
+        '''
+        all_lib = self.mx.createDocument()
+        all_lib.copyContentFrom(self.stdlib)
+        if self.physlib:
+            all_lib.copyContentFrom(self.physlib)
+        return all_lib
+    
+    def get_translators(self) -> mx.Document:
+        '''
+        @brief Get the Physically Based MaterialX translators document.
+        @return The Physically Based MaterialX translators document.
+        '''
+        return self.physlib_translators
 
     def getInputRemapping(self, shadingModel) -> dict:
         '''
@@ -602,13 +692,13 @@ class PhysicallyBasedMaterialLoader:
             return  trans_nodedef
 
         # Source BSDF is always physbased_pbr_surface
-        source_bsdf = 'physbased_pbr_surface'
+        source_bsdf = self.physlib_category
 
         # Iterate over all target BSDFs
         bsdfs = self.find_all_bxdf(trans_doc)
         for bsdf in bsdfs:
             bsdf_name = bsdf.getNodeString()
-            if bsdf_name == 'physbased_pbr_surface':
+            if bsdf_name == self.physlib_category:
                 continue
 
             target_bsdf = bsdf.getNodeString()
@@ -625,7 +715,7 @@ class PhysicallyBasedMaterialLoader:
 
         return trans_nodedefs        
 
-    def create_definition(self, doc : mx.Document | None) -> tuple[mx.Document, mx.NodeDef]:
+    def create_definition(self, doc : mx.Document | None) -> mx.Document:
         '''
         @brief Create a NodeDef for the Physically Based Material inputs
         @param doc The MaterialX document to add the NodeDef to. If None, a new document will be created.
@@ -655,8 +745,8 @@ class PhysicallyBasedMaterialLoader:
             self.add_copyright_comment(doc, None)
 
         # Create placeholder nodegraph
-        graph = doc.addNodeGraph("NG_PhysicallyBasedMaterial")
-        graph.setNodeDefString('ND_PhysicallyBasedMaterial')
+        graph = doc.addNodeGraph(self.get_physlib_implementation_name())
+        graph.setNodeDefString(self.get_physlib_definition_name())
 
         node = graph.addNode('oren_nayar_diffuse_bsdf', 'oren_nayar_diffuse_bsdf', 'BSDF')
         node_in = node.addInput('color', 'color3')
@@ -674,11 +764,11 @@ class PhysicallyBasedMaterialLoader:
         node_out.setNodeName('surface')
 
         # Create definition template
-        ndef = doc.addNodeDef("ND_PhysicallyBasedMaterial", 'surfaceshader')
+        ndef = doc.addNodeDef(self.get_physlib_definition_name(), 'surfaceshader')
         #graph.removeOutput('out')
-        ndef.setNodeString('physbased_pbr_surface')
+        ndef.setNodeString(self.physlib_category)
         ndef.setNodeGroup("pbr")
-        ndef.setDocString("NodeDef for Physically Based Material inputs")
+        ndef.setDocString("Node definitions for PhysicallyBased Material")
         ndef.setVersionString("1.0")
         ndef.setAttribute("isdefaultversion", "true")
 
@@ -686,7 +776,7 @@ class PhysicallyBasedMaterialLoader:
             # Map keys to definition inputs
             self.map_keys_to_definition(mat, ndef)
 
-        return doc, ndef
+        return doc
 
 
     def create_definition_materials(self, doc_mat, definitions, filter_list = None):
@@ -716,7 +806,7 @@ class PhysicallyBasedMaterialLoader:
             #    self.logger.info(f'> Creating material: {matName}')
 
             shaderName = doc_mat.createValidChildName(matName + '_SHD_PBM')
-            shaderNode = doc_mat.addNode('physbased_pbr_surface', shaderName, mx.SURFACE_SHADER_TYPE_STRING)
+            shaderNode = doc_mat.addNode(self.physlib_category, shaderName, mx.SURFACE_SHADER_TYPE_STRING)
             for key, value in mat.items():
                 if key == 'name':
                     new_name = doc_mat.createValidChildName(str(value))

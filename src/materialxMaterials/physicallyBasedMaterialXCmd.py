@@ -77,9 +77,16 @@ def physicallBasedMaterialXCmd():
     writeJSON = opts.writeJSON
     separateFiles = opts.separateFiles
 
+    material_file = opts.loadFromFile
+    if material_file:
+        if not os.path.exists(opts.loadFromFile):
+            logger.info(f'> Error: File does not exist: {material_file}')
+            sys.exit(1)
+        logger.info(f'> Load materials from file: {material_file}')
+
     # Create loader and get PhysicallyBasedMaterials
-    jsonMat = None
-    loader = pbmx.PhysicallyBasedMaterialLoader(mx, None)
+    # Uses default remapping.
+    loader = pbmx.PhysicallyBasedMaterialLoader(mx, None, material_file)
 
     readRemapping = opts.readRemapping
     if readRemapping:
@@ -94,15 +101,7 @@ def physicallBasedMaterialXCmd():
             logger.info(f'> Write remapping file: {outputFile}')
             loader.writeRemappingFile(outputFile)
 
-    if opts.loadFromFile:
-        if not os.path.exists(opts.loadFromFile):
-            logger.info(f'> Error: File does not exist: {opts.loadFromFile}')
-            sys.exit(1)
-        logger.info(f'> Load materials from file: {opts.loadFromFile}')
-        jsonMat = loader.loadMaterialsFromFile(opts.loadFromFile)
-    else:
-        jsonMat = loader.getMaterialsFromURL()
-
+    jsonMat = loader.getJSON()
     if jsonMat:
 
         # Create folder for MaterialX call PhysicallyBasedMaterialX
@@ -114,16 +113,8 @@ def physicallBasedMaterialXCmd():
             # Create PhysicallyBased BSDF definition
             #
             logger.info('> Create definition for PhysicallyBased materials')
-            doc = None
-            doc, definition = loader.create_definition(doc)
+            doc = loader.get_physlib()
             if doc:
-                status, error = doc.validate()
-                if not status:
-                    logger.error('> Error validating NodeDef document:')
-                    logger.error(error)
-                else:
-                    logger.info('> Definition documents passed validation.')
-
                 nodedef_file_name = os.path.join(outputDir, 'physbased_pbr.mtlx')
                 mx.writeToXmlFile(doc, nodedef_file_name)
                 logger.info(f'> Write definition file: {nodedef_file_name}')
