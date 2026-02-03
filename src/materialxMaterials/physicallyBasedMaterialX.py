@@ -42,7 +42,7 @@ class PhysicallyBasedMaterialLoader:
         self.mx = mx_module
         ### MaterialX standard library
         self.stdlib = mx_stdlib
-        ### PhysicallyBased definition library
+        ### Document containing PhysicallyBased definition library
         self.physlib = None
         ### PhysicallyBased MaterialX surface definition name
         self.physlib_definition_name = "ND_PhysicallyBasedMaterial"
@@ -50,8 +50,12 @@ class PhysicallyBasedMaterialLoader:
         self.physlib_implementation_name = "NG_PhysicallyBasedMaterial"
         ### PhysicallyBased MaterialX surface category
         self.physlib_category = "physbased_pbr_surface"
-        ### PhysicallyBased MaterialX translators
+        ### Document containing PhysicallyBased materials using PhysicallyBasedMaterial definition
+        self.physlib_materials = None
+        ### Document containing PhysicallyBased MaterialX translators
         self.physlib_translators = None
+        ### All MaterialX definitions (standard library + PhysicallyBased definition + translators)
+        self.all_lib = None
         ### MaterialX node name attribute
         self.MTLX_NODE_NAME_ATTRIBUTE = 'nodename'
         ### OpenPBR support flag
@@ -72,19 +76,26 @@ class PhysicallyBasedMaterialLoader:
             self.logger.debug('> OpenPBR shading model supported')
             self.support_openpbr = True
 
+        # Load the MaterialX standard library if not provided
+        if not self.stdlib:
+            self.stdlib = self.mx.createDocument()
+            libFiles = self.mx.loadLibraries(mx.getDefaultDataLibraryFolders(), mx.getDefaultDataSearchPath(), self.stdlib)            
+            self.logger.debug(f'> Loaded standard library: {libFiles}')
 
+        # Initialize Physically Based MaterialX definitions, materials, remappings, and translators
+        self.initialize_definitions_and_materials()
+
+    def initialize_definitions_and_materials(self, materials_file : str = ''):
+        '''
+        @brief Initialize Physically Based MaterialX definitions, materials, remappings, and translators.
+        @return None
+        '''
         # Load information from PhysicallyBased site, and initialize remappings
         if materials_file and os.path.exists(materials_file):
             self.loadMaterialsFromFile(materials_file)
         else:
             self.getMaterialsFromURL()
         self.initializeInputRemapping()
-
-        # Load the MaterialX standard library if not provided
-        if not self.stdlib:
-            self.stdlib = self.mx.createDocument()
-            libFiles = self.mx.loadLibraries(mx.getDefaultDataLibraryFolders(), mx.getDefaultDataSearchPath(), self.stdlib)            
-            self.logger.debug(f'> Loaded standard library: {libFiles}')
 
         # Create Physically Based MaterialX definition library
         self.physlib = self.create_definition(None)
@@ -97,6 +108,13 @@ class PhysicallyBasedMaterialLoader:
         else:
             self.logger.info('> Definition documents passed validation.')
 
+        # Create all translators
+        self.physlib_translators = mx.createDocument()
+        self.create_all_translators(self.physlib, self.physlib_translators)
+
+        if self.physlib:
+            filter_list = []
+            self.physlib_materials = self.create_definition_materials(None, self.get_definitions(), filter_list)
 
     def setDebugging(self, debug=True):
         '''
@@ -153,16 +171,26 @@ class PhysicallyBasedMaterialLoader:
         '''
         return self.physlib_implementation_name
     
-    def get_all_lib(self) -> mx.Document:
+    def get_physlib_materials(self) -> mx.Document:
         '''
-        @brief Get a combined MaterialX document containing the standard library and Physically Based MaterialX definition library.
+        @brief Get the Physically Based MaterialX materials document.
+        @return The Physically Based MaterialX materials document.
+        '''
+        return self.physlib_materials
+    
+    def get_definitions(self) -> mx.Document:
+        '''
+        @brief Get a combined MaterialX document containing the standard library and Physically Based MaterialX definition and translators.
         @return The combined MaterialX document.
         '''
-        all_lib = self.mx.createDocument()
-        all_lib.copyContentFrom(self.stdlib)
-        if self.physlib:
-            all_lib.copyContentFrom(self.physlib)
-        return all_lib
+        if not self.all_lib:
+            self.all_lib = self.mx.createDocument()
+            self.all_lib.copyContentFrom(self.stdlib)
+            if self.physlib:
+                self.all_lib.copyContentFrom(self.physlib)
+            if self.physlib_translators:
+                self.all_lib.copyContentFrom(self.physlib_translators)
+        return self.all_lib
     
     def get_translators(self) -> mx.Document:
         '''
@@ -793,7 +821,7 @@ class PhysicallyBasedMaterialLoader:
             doc_mat = mx.createDocument()
             self.add_copyright_comment(doc_mat, None)
 
-        # Embed the library definitions into the material document
+        # Reference the library definitions into the material document
         doc_mat.setDataLibrary(definitions)
        
         for mat in self.materials:
@@ -925,7 +953,7 @@ class PhysicallyBasedMaterialLoader:
 
         return {'translationNode' : translationNode, 'targetNode' : targetNode }    
 
-    def add_copyright_comment(self, doc, shaderCategory, embedDate=True):
+    def add_copyright_comment(self, doc, shaderCategory, embedDate=False):
           # Add header comments
         self.addComment(doc, 'Physically Based Materials from https://api.physicallybased.info ')
         self.addComment(doc, '  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ ')

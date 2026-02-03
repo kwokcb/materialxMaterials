@@ -4,7 +4,6 @@
   <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
-  <!--  Generated on: 2026-02-03 00:07:16 -->
   <surfacematerial name="Lemon_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Lemon" />
   </surfacematerial>

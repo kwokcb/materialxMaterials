@@ -4,7 +4,6 @@
   <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
-  <!--  Generated on: 2026-02-03 09:15:59 -->
   <nodegraph name="NG_PhysicallyBasedMaterial" nodedef="ND_PhysicallyBasedMaterial">
     <oren_nayar_diffuse_bsdf name="oren_nayar_diffuse_bsdf" type="BSDF">
       <input name="color" type="color3" interfacename="color" />

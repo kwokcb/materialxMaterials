@@ -110,21 +110,18 @@ def physicallBasedMaterialXCmd():
         create_nodedef = opts.createNodeDef
         if create_nodedef:
 
-            # Create PhysicallyBased BSDF definition
+            # Write PhysicallyBased BSDF definition
             #
-            logger.info('> Create definition for PhysicallyBased materials')
-            doc = loader.get_physlib()
-            if doc:
+            logger.info('> Write definition for PhysicallyBased materials')
+            definitions_doc = loader.get_physlib()
+            if definitions_doc:
                 nodedef_file_name = os.path.join(outputDir, 'physbased_pbr.mtlx')
-                mx.writeToXmlFile(doc, nodedef_file_name)
+                mx.writeToXmlFile(definitions_doc, nodedef_file_name)
                 logger.info(f'> Write definition file: {nodedef_file_name}')
 
-            # Create PhysicallyBased materials using the definition
+            # Get PhysicallyBased materials using the definition
             #
-            doc_mat = None
-            filter_list = []
-            doc_mat = loader.create_definition_materials(doc_mat, doc, filter_list)
-
+            doc_mat = loader.get_physlib_materials()
             if doc_mat:
                 status, error = doc_mat.validate()
                 if not status:
@@ -137,31 +134,28 @@ def physicallBasedMaterialXCmd():
                 mx.writeToXmlFile(doc_mat, mx.FilePath(nodedef_mat_file_name))
                 logger.info(f'> Write materials file: {nodedef_mat_file_name}')
 
-            # Create translator definitions
+            # Write out translator definitions
             #
-            translations_doc = mx.createDocument()
-            resulting_definitions = loader.create_all_translators(doc, translations_doc)
-            print(f'Number of translator definitions created: {len(resulting_definitions)}')
+            translators_doc  = loader.get_translators()
+            translators = translators_doc.getNodeDefs()
+            print(f'Found  translator definitions: {len(translators)}')
 
-            if resulting_definitions and translations_doc:     
+            if translators_doc and translators:     
                 output_file_name = 'physbased_pbr_translators.mtlx'
                 output_path = os.path.join(outputDir, output_file_name)                
                 logger.info('> Write translator file:' + output_path)
-                mx.writeToXmlFile(translations_doc, mx.FilePath(output_path))
+                mx.writeToXmlFile(translators_doc, mx.FilePath(output_path))
 
-            # Doc with stdlib
-            result = loader.create_working_document()
-            stdlib = result['stdlib']
-            # Add Physically Based Material definitions 
-            stdlib.copyContentFrom(doc)
-            stdlib.copyContentFrom(translations_doc)
-            
+            # Get doc with all required definitions: stdlib, PhysicallyBased definition, and translator definitions
+            stdlib = loader.get_definitions()
+
+            # Export single file with all translated materials            
             if not separateFiles:
                 translated_doc = mx.createDocument()
-                translated_doc.setDataLibrary(stdlib)
 
-                # Copy over materials
+                # Copy over materials + reference libraries
                 translated_doc.copyContentFrom(doc_mat)
+                translated_doc.setDataLibrary(doc_mat.getDataLibrary())
 
                 for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
 
@@ -174,6 +168,7 @@ def physicallBasedMaterialXCmd():
                     loader.writeMaterialXToFile(fileName, translated_doc)
                     logger.info(f'> Write: {fileName}')
         
+            # Export separate files per translated material            
             else:
                 matDir = os.path.join(outputDir, 'Sep')
                 os.makedirs(matDir, exist_ok=True)
@@ -183,10 +178,10 @@ def physicallBasedMaterialXCmd():
                         materialFilter = [mat]
                         
                         # Create doc with single material
-                        matdoc = loader.create_definition_materials(None, doc, materialFilter)
+                        matdoc = loader.create_definition_materials(None, loader.get_definitions(), materialFilter)
                         if matdoc is not None:
                             # Set up definitions
-                            matdoc.setDataLibrary(stdlib)
+                            #matdoc.setDataLibrary(stdlib)
     
                             # Translate the material
                             mat_name = mx.createValidName(mat)  
