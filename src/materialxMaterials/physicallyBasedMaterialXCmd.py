@@ -160,8 +160,8 @@ def physicallBasedMaterialXCmd():
                 for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
 
                     for node in translated_doc.getNodes():
-                        if node.getCategory() == 'physbased_pbr_surface':
-                            trans_result = loader.translate_node(translated_doc, 'physbased_pbr_surface', shadingModel, node)
+                        if node.getCategory() == loader.get_physlib_category():
+                            trans_result = loader.translate_node(translated_doc, loader.get_physlib_category(), shadingModel, node)
 
                     logger.info(f'> Generate MaterialX using nodedefs for shading model: {shadingModel}')
                     fileName = os.path.join(outputDir, f'PhysicallyBasedMaterialX_translated_{prefix}.mtlx')
@@ -180,14 +180,12 @@ def physicallBasedMaterialXCmd():
                         # Create doc with single material
                         matdoc = loader.create_definition_materials(None, materialFilter)
                         if matdoc is not None:
-                            # Set up definitions
-                            #matdoc.setDataLibrary(stdlib)
-    
+
                             # Translate the material
                             mat_name = mx.createValidName(mat)  
                             node = matdoc.getNode(mat_name)
                             if node:
-                                trans_result = loader.translate_node(matdoc, 'physbased_pbr_surface', shadingModel, node)
+                                trans_result = loader.translate_node(matdoc, loader.get_physlib_category(), shadingModel, node)
                                 if not trans_result:
                                     logger.warning(f'Failed to translate node: {mat_name} for shading model: {shadingModel}')
                                 else:
