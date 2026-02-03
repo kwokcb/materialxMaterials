@@ -4,7 +4,7 @@
   <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
-  <!--  Generated on: 2026-02-02 15:49:24 -->
+  <!--  Generated on: 2026-02-02 22:55:52 -->
   <physbased_pbr_surface name="Aluminum" type="surfaceshader" uiname="Aluminum">
     <input name="name" type="string" value="Aluminum" />
     <input name="color" type="color3" value="0.916, 0.923, 0.924" />

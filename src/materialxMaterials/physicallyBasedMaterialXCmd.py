@@ -168,7 +168,7 @@ def physicallBasedMaterialXCmd():
                         translationNode = trans_result['translationNode']
                         targetNode = trans_result['targetNode'] 
                         if translationNode and targetNode:
-                            print('Replacing node:', orig_name, 'with translated node:', targetNode.getName())
+                            #print('Replacing node:', orig_name, 'with translated node:', targetNode.getName())
                             translated_doc.removeNode(replace_name)                            
 
             # Translate all the materials

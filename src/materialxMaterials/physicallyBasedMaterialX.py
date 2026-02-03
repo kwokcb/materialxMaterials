@@ -90,7 +90,7 @@ class PhysicallyBasedMaterialLoader:
         if (shadingModel in self.remapMap):
             return self.remapMap[shadingModel]
 
-        self.logger.warn(f'> No remapping keys found for shading model: {shadingModel}')
+        #self.logger.warning(f'> No remapping keys found for shading model: {shadingModel}')
         return {}
 
     def initializeInputRemapping(self): 
@@ -116,7 +116,7 @@ class PhysicallyBasedMaterialLoader:
                 self.logger.info(f'> Load remapping from installed package: {self.remapFile}')
                 self.remapMap = json.load(json_file)
         except FileNotFoundError:
-            self.logger.warn('> No remapping file found in installed package. Using default remapping keys.')
+            self.logger.warning('> No remapping file found in installed package. Using default remapping keys.')
 
         if self.remapMap:
             return
@@ -504,9 +504,16 @@ class PhysicallyBasedMaterialLoader:
         nodename = derived_name[3:] if derived_name.startswith("ND_") else derived_name
         translator_nodedef : mx.NodeDef = output_doc.getNodeDef(derived_name)
         if translator_nodedef:
-            print(f'> Translator NodeDef already exists: {derived_name}')
-            #mx.prettyPrint(translator_nodedef)
-            return translator_nodedef
+            # Try to append the version string to make unique. Note that translators
+            # do not support versioning so this will allow creation but not usage.
+            # Thus we skip doing this for now...
+            #derived_name += mx.createValidName(target_nodedef.getVersionString())
+            #translator_nodedef = output_doc.getNodeDef(derived_name)
+            if translator_nodedef:
+                self.logger.warning(f'> Translator NodeDef already exists: {target_nodedef.getName()}')
+                #mx.prettyPrint(translator_nodedef)
+                return translator_nodedef
+        
         translator_nodedef = output_doc.addNodeDef(derived_name)
         translator_nodedef.removeOutput("out")
         translator_nodedef.setNodeString(nodename)
@@ -773,7 +780,7 @@ class PhysicallyBasedMaterialLoader:
             return None
 
         # Create a target node of the target_bxdf category.
-        print('> Add target node of category:', target_bxdf)
+        #print('> Add target node of category:', target_bxdf)
         replace_name = node.getName()
         node.setName(replace_name + "_source")
         targetNode = doc.addChildOfCategory(target_bxdf, replace_name)
@@ -784,7 +791,7 @@ class PhysicallyBasedMaterialLoader:
         targetNode.addInputsFromNodeDef()
 
         # Create a translation node based on the translator nodedef.
-        print('> Add translation node of category:', nodedef.getName())
+        #print('> Add translation node of category:', nodedef.getName())
         translationNode = doc.addNodeInstance(nodedef, node.getName() + "_translator")
         #translationNode.addInputsFromNodeDef()
 
@@ -819,7 +826,7 @@ class PhysicallyBasedMaterialLoader:
                 # updstream connections
                 translationInput.copyContentFrom(input)
                 num_overrides += 1
-        print(f'>> Overwrote {num_overrides} inputs on translation node.')                
+        #print(f'>> Overwrote {num_overrides} inputs on translation node.')                
 
         return {'translationNode' : translationNode, 
                 'targetNode' : targetNode }    
@@ -861,8 +868,8 @@ class PhysicallyBasedMaterialLoader:
         
         if len(remapKeys) == 0:
             remapKeys = self.getInputRemapping(shaderCategory)
-            if len(remapKeys) == 0:
-                self.logger.warning(f'> No remapping keys found for shading model: {shaderCategory}')
+            #if len(remapKeys) == 0:
+            #    self.logger.warning(f'> No remapping keys found for shading model: {shaderCategory}')
 
         # Create main document and import the library document
         self.doc = self.mx.createDocument()
@@ -1008,7 +1015,7 @@ class PhysicallyBasedMaterialLoader:
         libraryFiles : set[str] = mx.loadLibraries(libraryFolders, searchPath, stdlib)
         doc.setDataLibrary(stdlib)
         nodedefs : list[mx.NodeDef] = doc.getNodeDefs()
-        print(f"Created working doc with {len(nodedefs)} nodedefs from standard library.")
+        #print(f"Created working doc with {len(nodedefs)} nodedefs from standard library.")
 
         result = { "doc": doc, "stdlib": stdlib }
         return result
