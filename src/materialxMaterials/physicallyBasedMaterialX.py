@@ -114,7 +114,7 @@ class PhysicallyBasedMaterialLoader:
 
         if self.physlib:
             filter_list = []
-            self.physlib_materials = self.create_definition_materials(None, self.get_definitions(), filter_list)
+            self.physlib_materials = self.create_definition_materials(None, filter_list)
 
     def setDebugging(self, debug=True):
         '''
@@ -807,16 +807,15 @@ class PhysicallyBasedMaterialLoader:
         return doc
 
 
-    def create_definition_materials(self, doc_mat, definitions, filter_list = None):
+    def create_definition_materials(self, doc_mat, filter_list = None):
         '''
         @brief Create a MaterialX document containing Physically Based MaterialX materials
         @param doc_mat The MaterialX document to add the materials to
-        @param definitions The document containing the Physically Based MaterialX definitions
         @param filter_list A list of material names to filter. If None, all materials will be processed.
         @return The MaterialX document containing the materials
         '''
-        #ndef = definitions.getNodeDef("ND_PhysicallyBasedMaterial")
-
+        definitions = self.get_definitions()
+        
         if not doc_mat:
             doc_mat = mx.createDocument()
             self.add_copyright_comment(doc_mat, None)

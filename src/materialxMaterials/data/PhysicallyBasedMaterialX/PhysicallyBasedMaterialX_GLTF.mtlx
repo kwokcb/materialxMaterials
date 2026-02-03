@@ -5,7 +5,6 @@
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
-  <!--  Generated on: 2026-02-02 22:32:11 -->
   <!-- Generated shader: Aluminum_GLTF_SHD_PBM -->
   <gltf_pbr name="Aluminum_GLTF_SHD_PBM" type="surfaceshader" uiname="Aluminum" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg">
     <input name="base_color" type="color3" value="0.916,0.923,0.924" />

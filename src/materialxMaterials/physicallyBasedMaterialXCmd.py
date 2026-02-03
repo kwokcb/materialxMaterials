@@ -151,11 +151,11 @@ def physicallBasedMaterialXCmd():
 
             # Export single file with all translated materials            
             if not separateFiles:
-                translated_doc = mx.createDocument()
+                translated_doc = loader.get_physlib_materials()
 
                 # Copy over materials + reference libraries
-                translated_doc.copyContentFrom(doc_mat)
-                translated_doc.setDataLibrary(doc_mat.getDataLibrary())
+                #translated_doc.copyContentFrom(doc_mat)
+                #translated_doc.setDataLibrary(doc_mat.getDataLibrary())
 
                 for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
 
@@ -178,7 +178,7 @@ def physicallBasedMaterialXCmd():
                         materialFilter = [mat]
                         
                         # Create doc with single material
-                        matdoc = loader.create_definition_materials(None, loader.get_definitions(), materialFilter)
+                        matdoc = loader.create_definition_materials(None, materialFilter)
                         if matdoc is not None:
                             # Set up definitions
                             #matdoc.setDataLibrary(stdlib)
