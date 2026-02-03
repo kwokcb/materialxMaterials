@@ -181,27 +181,29 @@ def physicallBasedMaterialXCmd():
                 matDir = os.path.join(outputDir, 'Sep')
                 os.makedirs(matDir, exist_ok=True)
                 for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
-                    count = 0
+                    converted = []
                     for mat in loader.getJSONMaterialNames():
                         materialFilter = [mat]
                         matdoc = loader.create_definition_materials(None, doc, materialFilter)
-                        matdoc.setDataLibrary(stdlib)
                         if matdoc is not None:
+                            # Set up definitions
+                            matdoc.setDataLibrary(stdlib)
+    
+                            # Translate the material
                             mat_name = mx.createValidName(mat)  
                             node = matdoc.getNode(mat_name)
                             if node:
                                 trans_result = loader.translate_node(matdoc, 'physbased_pbr_surface', shadingModel, node)
-                                if trans_result is not None:
-                                    logger.info(f'trans_result: {trans_result["translationNode"].getName()}, {trans_result["targetNode"].getName()}')
+                                if not trans_result:
+                                    logger.warning(f'Failed to translate node: {mat_name} for shading model: {shadingModel}')
                                 else:
-                                    logger.warning(f'Failed to translate node for material: {mat}')
-                                valid, errors = loader.validateMaterialXDocument(matdoc)
-                                if valid:
-                                    logger.info(f'> Generate material {mat_name} for shading model: {shadingModel}')
-                                    fileName = os.path.join(matDir, f'PB_{prefix}_{mat}.mtlx')
-                                    loader.writeMaterialXToFile(fileName, matdoc)
-                                    logger.info(f'> {count}. write: {fileName}')
-                                    count += 1
+                                    converted.append(trans_result['targetNode'].getName())
+                                    valid, errors = loader.validateMaterialXDocument(matdoc)
+                                    if valid:
+                                        #logger.info(f'> Generate material {mat_name} for shading model: {shadingModel}')
+                                        fileName = os.path.join(matDir, f'PB_{prefix}_{mat}.mtlx')
+                                        loader.writeMaterialXToFile(fileName, matdoc)
+                    logger.info(f'> Converted {len(converted)} materials for shading model: {shadingModel}')
 
         if writeJSON:
             logger.info(f'> Write PB material file: {outputDir}/PhysicallyBasedMaterial.json')
