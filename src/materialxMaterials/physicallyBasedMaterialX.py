@@ -710,8 +710,10 @@ class PhysicallyBasedMaterialLoader:
         
             matName = mat['name']
             if filter_list and matName not in filter_list:
-                self.logger.info(f'> Skipping material: {matName}')
+                #self.logger.info(f'> Skipping material: {matName}')
                 continue
+            #else:
+            #    self.logger.info(f'> Creating material: {matName}')
 
             shaderName = doc_mat.createValidChildName(matName + '_SHD_PBM')
             shaderNode = doc_mat.addNode('physbased_pbr_surface', shaderName, mx.SURFACE_SHADER_TYPE_STRING)
