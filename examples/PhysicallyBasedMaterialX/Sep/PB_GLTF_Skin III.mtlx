@@ -5,69 +5,19 @@
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <surfacematerial name="Skin_III_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Skin_III" />
+    <input name="surfaceshader" type="surfaceshader" nodename="Skin_III_gltf_pbr_SPB" />
   </surfacematerial>
-  <gltf_pbr name="Skin_III" type="surfaceshader">
-    <input name="base_color" type="color3" nodename="Skin_III_source_translator" output="base_color_out" />
-    <input name="metallic" type="float" nodename="Skin_III_source_translator" output="metallic_out" />
-    <input name="roughness" type="float" nodename="Skin_III_source_translator" output="roughness_out" />
-    <input name="normal" type="vector3" nodename="Skin_III_source_translator" output="normal_out" />
-    <input name="tangent" type="vector3" nodename="Skin_III_source_translator" output="tangent_out" />
-    <input name="occlusion" type="float" nodename="Skin_III_source_translator" output="occlusion_out" />
-    <input name="transmission" type="float" nodename="Skin_III_source_translator" output="transmission_out" />
-    <input name="specular" type="float" nodename="Skin_III_source_translator" output="specular_out" />
-    <input name="specular_color" type="color3" nodename="Skin_III_source_translator" output="specular_color_out" />
-    <input name="ior" type="float" nodename="Skin_III_source_translator" output="ior_out" />
-    <input name="alpha" type="float" nodename="Skin_III_source_translator" output="alpha_out" />
-    <input name="alpha_mode" type="integer" nodename="Skin_III_source_translator" output="alpha_mode_out" />
-    <input name="alpha_cutoff" type="float" nodename="Skin_III_source_translator" output="alpha_cutoff_out" />
-    <input name="iridescence" type="float" nodename="Skin_III_source_translator" output="iridescence_out" />
-    <input name="iridescence_ior" type="float" nodename="Skin_III_source_translator" output="iridescence_ior_out" />
-    <input name="iridescence_thickness" type="float" nodename="Skin_III_source_translator" output="iridescence_thickness_out" />
-    <input name="sheen_color" type="color3" nodename="Skin_III_source_translator" output="sheen_color_out" />
-    <input name="sheen_roughness" type="float" nodename="Skin_III_source_translator" output="sheen_roughness_out" />
-    <input name="clearcoat" type="float" nodename="Skin_III_source_translator" output="clearcoat_out" />
-    <input name="clearcoat_roughness" type="float" nodename="Skin_III_source_translator" output="clearcoat_roughness_out" />
-    <input name="clearcoat_normal" type="vector3" nodename="Skin_III_source_translator" output="clearcoat_normal_out" />
-    <input name="emissive" type="color3" nodename="Skin_III_source_translator" output="emissive_out" />
-    <input name="emissive_strength" type="float" nodename="Skin_III_source_translator" output="emissive_strength_out" />
-    <input name="thickness" type="float" nodename="Skin_III_source_translator" output="thickness_out" />
-    <input name="attenuation_distance" type="float" nodename="Skin_III_source_translator" output="attenuation_distance_out" />
-    <input name="attenuation_color" type="color3" nodename="Skin_III_source_translator" output="attenuation_color_out" />
-    <input name="anisotropy_strength" type="float" nodename="Skin_III_source_translator" output="anisotropy_strength_out" />
-    <input name="anisotropy_rotation" type="float" nodename="Skin_III_source_translator" output="anisotropy_rotation_out" />
-    <input name="dispersion" type="float" nodename="Skin_III_source_translator" output="dispersion_out" />
+  <gltf_pbr name="Skin_III_gltf_pbr_SPB" type="surfaceshader">
+    <input name="base_color" type="color3" nodename="Skin_III_gltf_pbr_SPB_translator" output="base_color_out" />
+    <input name="metallic" type="float" nodename="Skin_III_gltf_pbr_SPB_translator" output="metallic_out" />
+    <input name="roughness" type="float" nodename="Skin_III_gltf_pbr_SPB_translator" output="roughness_out" />
+    <input name="transmission" type="float" nodename="Skin_III_gltf_pbr_SPB_translator" output="transmission_out" />
+    <input name="specular_color" type="color3" nodename="Skin_III_gltf_pbr_SPB_translator" output="specular_color_out" />
+    <input name="ior" type="float" nodename="Skin_III_gltf_pbr_SPB_translator" output="ior_out" />
+    <input name="iridescence_ior" type="float" nodename="Skin_III_gltf_pbr_SPB_translator" output="iridescence_ior_out" />
+    <input name="iridescence_thickness" type="float" nodename="Skin_III_gltf_pbr_SPB_translator" output="iridescence_thickness_out" />
   </gltf_pbr>
-  <physbased_pbr_surface_to_gltf_pbr name="Skin_III_source_translator" type="multioutput" nodedef="ND_physbased_pbr_surface_to_gltf_pbr">
-    <output name="base_color_out" type="color3" />
-    <output name="metallic_out" type="float" />
-    <output name="roughness_out" type="float" />
-    <output name="normal_out" type="vector3" />
-    <output name="tangent_out" type="vector3" />
-    <output name="occlusion_out" type="float" />
-    <output name="transmission_out" type="float" />
-    <output name="specular_out" type="float" />
-    <output name="specular_color_out" type="color3" />
-    <output name="ior_out" type="float" />
-    <output name="alpha_out" type="float" />
-    <output name="alpha_mode_out" type="integer" />
-    <output name="alpha_cutoff_out" type="float" />
-    <output name="iridescence_out" type="float" />
-    <output name="iridescence_ior_out" type="float" />
-    <output name="iridescence_thickness_out" type="float" />
-    <output name="sheen_color_out" type="color3" />
-    <output name="sheen_roughness_out" type="float" />
-    <output name="clearcoat_out" type="float" />
-    <output name="clearcoat_roughness_out" type="float" />
-    <output name="clearcoat_normal_out" type="vector3" />
-    <output name="emissive_out" type="color3" />
-    <output name="emissive_strength_out" type="float" />
-    <output name="thickness_out" type="float" />
-    <output name="attenuation_distance_out" type="float" />
-    <output name="attenuation_color_out" type="color3" />
-    <output name="anisotropy_strength_out" type="float" />
-    <output name="anisotropy_rotation_out" type="float" />
-    <output name="dispersion_out" type="float" />
+  <physbased_pbr_surface_to_gltf_pbr name="Skin_III_gltf_pbr_SPB_translator" type="multioutput" nodedef="ND_physbased_pbr_surface_to_gltf_pbr">
     <input name="name" type="string" value="Skin III" />
     <input name="color" type="color3" value="0.623, 0.433, 0.343" />
     <input name="metalness" type="float" value="0" />
@@ -81,5 +31,13 @@
     <input name="sources" type="string" value="https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/, https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf, https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx, https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf, https://renderman.pixar.com/resources/RenderMan_20/subsurface.html, https://spectraldb.com/measurements/00490/, https://spectraldb.com/measurements/00403/" />
     <input name="tags" type="string" value="epidermis, sss" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-iii.jpeg" />
+    <output name="base_color_out" type="color3" />
+    <output name="metallic_out" type="float" />
+    <output name="roughness_out" type="float" />
+    <output name="transmission_out" type="float" />
+    <output name="specular_color_out" type="color3" />
+    <output name="ior_out" type="float" />
+    <output name="iridescence_ior_out" type="float" />
+    <output name="iridescence_thickness_out" type="float" />
   </physbased_pbr_surface_to_gltf_pbr>
 </materialx>

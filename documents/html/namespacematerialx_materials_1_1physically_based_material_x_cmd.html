@@ -186,190 +186,187 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> opts.outputDir:</div>
 <div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(opts.outputDir):</div>
 <div class="line"><span class="lineno">   53</span>            logger.info(f<span class="stringliteral">&#39;Error: Output directory does not exist: {opts.outputDir}&#39;</span>)</div>
-<div class="line"><span class="lineno">   54</span>            sys.exit(1)</div>
-<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   56</span>            outputDir = opts.outputDir</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    shadingModels = []</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> opts.shadingModel:</div>
-<div class="line"><span class="lineno">   60</span>        shadingModels = opts.shadingModel.split(<span class="stringliteral">&#39;,&#39;</span>)        </div>
-<div class="line"><span class="lineno">   61</span>    shadingModePrefixMap = { <span class="stringliteral">&#39;standard_surface&#39;</span>: <span class="stringliteral">&#39;SS&#39;</span>, <span class="stringliteral">&#39;gltf_pbr&#39;</span>: <span class="stringliteral">&#39;GLTF&#39;</span>, <span class="stringliteral">&#39;open_pbr_surface&#39;</span>: <span class="stringliteral">&#39;OPBR&#39;</span> }</div>
-<div class="line"><span class="lineno">   62</span>    shadingModelPrefixes = []</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> len(shadingModels) == 0:</div>
-<div class="line"><span class="lineno">   64</span>        shadingModels = [<span class="stringliteral">&#39;standard_surface&#39;</span>, <span class="stringliteral">&#39;gltf_pbr&#39;</span>, <span class="stringliteral">&#39;open_pbr_surface&#39;</span>]</div>
-<div class="line"><span class="lineno">   65</span>        shadingModelPrefixes = [<span class="stringliteral">&#39;SS&#39;</span>, <span class="stringliteral">&#39;GLTF&#39;</span>, <span class="stringliteral">&#39;OPBR&#39;</span>]</div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">for</span> shadingModel <span class="keywordflow">in</span> shadingModels:</div>
-<div class="line"><span class="lineno">   68</span>            shadingModelPrefixes.append(shadingModePrefixMap[shadingModel])</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    writeJSON = opts.writeJSON</div>
-<div class="line"><span class="lineno">   71</span>    separateFiles = opts.separateFiles</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>    <span class="comment"># Create loader and get PhysicallyBasedMaterials</span></div>
-<div class="line"><span class="lineno">   74</span>    jsonMat = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">   75</span>    loader = pbmx.PhysicallyBasedMaterialLoader(mx, <span class="keywordtype">None</span>)</div>
+<div class="line"><span class="lineno">   54</span>            <span class="comment"># Create the output directory</span></div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno">   56</span>                os.makedirs(opts.outputDir)</div>
+<div class="line"><span class="lineno">   57</span>                logger.info(f<span class="stringliteral">&#39;&gt; Created output directory: {opts.outputDir}&#39;</span>)</div>
+<div class="line"><span class="lineno">   58</span>                outputDir = opts.outputDir</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">except</span> Exception <span class="keyword">as</span> e:</div>
+<div class="line"><span class="lineno">   60</span>                logger.info(f<span class="stringliteral">&#39;&gt; Error: Could not create output directory: {opts.outputDir}&#39;</span>)</div>
+<div class="line"><span class="lineno">   61</span>                sys.exit(1)</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   63</span>            outputDir = opts.outputDir</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    shadingModels = []</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> opts.shadingModel:</div>
+<div class="line"><span class="lineno">   67</span>        shadingModels = opts.shadingModel.split(<span class="stringliteral">&#39;,&#39;</span>)        </div>
+<div class="line"><span class="lineno">   68</span>    shadingModePrefixMap = { <span class="stringliteral">&#39;standard_surface&#39;</span>: <span class="stringliteral">&#39;SS&#39;</span>, <span class="stringliteral">&#39;gltf_pbr&#39;</span>: <span class="stringliteral">&#39;GLTF&#39;</span>, <span class="stringliteral">&#39;open_pbr_surface&#39;</span>: <span class="stringliteral">&#39;OPBR&#39;</span> }</div>
+<div class="line"><span class="lineno">   69</span>    shadingModelPrefixes = []</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> len(shadingModels) == 0:</div>
+<div class="line"><span class="lineno">   71</span>        shadingModels = [<span class="stringliteral">&#39;standard_surface&#39;</span>, <span class="stringliteral">&#39;gltf_pbr&#39;</span>, <span class="stringliteral">&#39;open_pbr_surface&#39;</span>]</div>
+<div class="line"><span class="lineno">   72</span>        shadingModelPrefixes = [<span class="stringliteral">&#39;SS&#39;</span>, <span class="stringliteral">&#39;GLTF&#39;</span>, <span class="stringliteral">&#39;OPBR&#39;</span>]</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">for</span> shadingModel <span class="keywordflow">in</span> shadingModels:</div>
+<div class="line"><span class="lineno">   75</span>            shadingModelPrefixes.append(shadingModePrefixMap[shadingModel])</div>
 <div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    readRemapping = opts.readRemapping</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> readRemapping:</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(readRemapping):</div>
-<div class="line"><span class="lineno">   80</span>            logger.info(f<span class="stringliteral">&#39;&gt; Error: Remapping file does not exist: {readRemapping}&#39;</span>)</div>
-<div class="line"><span class="lineno">   81</span>        logger.info(f<span class="stringliteral">&#39;&gt; Read remapping file: {readRemapping}&#39;</span>)</div>
-<div class="line"><span class="lineno">   82</span>        loader.readRemappingFile(readRemapping)</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   84</span>        writeRemapping = opts.writeRemapping</div>
-<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span> writeRemapping:</div>
-<div class="line"><span class="lineno">   86</span>            outputFile = os.path.join(outputDir, <span class="stringliteral">&#39;PhysicallyBasedToMtlxMappings.json&#39;</span>)</div>
-<div class="line"><span class="lineno">   87</span>            logger.info(f<span class="stringliteral">&#39;&gt; Write remapping file: {outputFile}&#39;</span>)</div>
-<div class="line"><span class="lineno">   88</span>            loader.writeRemappingFile(outputFile)</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> opts.loadFromFile:</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(opts.loadFromFile):</div>
-<div class="line"><span class="lineno">   92</span>            logger.info(f<span class="stringliteral">&#39;&gt; Error: File does not exist: {opts.loadFromFile}&#39;</span>)</div>
-<div class="line"><span class="lineno">   93</span>            sys.exit(1)</div>
-<div class="line"><span class="lineno">   94</span>        logger.info(f<span class="stringliteral">&#39;&gt; Load materials from file: {opts.loadFromFile}&#39;</span>)</div>
-<div class="line"><span class="lineno">   95</span>        jsonMat = loader.loadMaterialsFromFile(opts.loadFromFile)</div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   97</span>        jsonMat = loader.getMaterialsFromURL()</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> jsonMat:</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>        <span class="comment"># Create folder for MaterialX call PhysicallyBasedMaterialX</span></div>
-<div class="line"><span class="lineno">  102</span>        os.makedirs(outputDir, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">   77</span>    writeJSON = opts.writeJSON</div>
+<div class="line"><span class="lineno">   78</span>    separateFiles = opts.separateFiles</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    material_file = opts.loadFromFile</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">if</span> material_file:</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(opts.loadFromFile):</div>
+<div class="line"><span class="lineno">   83</span>            logger.info(f<span class="stringliteral">&#39;&gt; Error: File does not exist: {material_file}&#39;</span>)</div>
+<div class="line"><span class="lineno">   84</span>            sys.exit(1)</div>
+<div class="line"><span class="lineno">   85</span>        logger.info(f<span class="stringliteral">&#39;&gt; Load materials from file: {material_file}&#39;</span>)</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment"># Create loader and get PhysicallyBasedMaterials</span></div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment"># Uses default remapping.</span></div>
+<div class="line"><span class="lineno">   89</span>    loader = pbmx.PhysicallyBasedMaterialLoader(mx, <span class="keywordtype">None</span>, material_file)</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    readRemapping = opts.readRemapping</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> readRemapping:</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(readRemapping):</div>
+<div class="line"><span class="lineno">   94</span>            logger.info(f<span class="stringliteral">&#39;&gt; Error: Remapping file does not exist: {readRemapping}&#39;</span>)</div>
+<div class="line"><span class="lineno">   95</span>        logger.info(f<span class="stringliteral">&#39;&gt; Read remapping file: {readRemapping}&#39;</span>)</div>
+<div class="line"><span class="lineno">   96</span>        loader.readRemappingFile(readRemapping)</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   98</span>        writeRemapping = opts.writeRemapping</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">if</span> writeRemapping:</div>
+<div class="line"><span class="lineno">  100</span>            outputFile = os.path.join(outputDir, <span class="stringliteral">&#39;PhysicallyBasedToMtlxMappings.json&#39;</span>)</div>
+<div class="line"><span class="lineno">  101</span>            logger.info(f<span class="stringliteral">&#39;&gt; Write remapping file: {outputFile}&#39;</span>)</div>
+<div class="line"><span class="lineno">  102</span>            loader.writeRemappingFile(outputFile)</div>
 <div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>        create_nodedef = opts.createNodeDef</div>
-<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span> create_nodedef:</div>
+<div class="line"><span class="lineno">  104</span>    jsonMat = loader.getJSON()</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> jsonMat:</div>
 <div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>            logger.info(<span class="stringliteral">&#39;&gt; Create definition for PhysicallyBased materials&#39;</span>)</div>
-<div class="line"><span class="lineno">  108</span>            doc = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  109</span>            doc, definition = loader.create_definition(doc)</div>
-<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">if</span> doc:</div>
-<div class="line"><span class="lineno">  111</span>                status, error = doc.validate()</div>
-<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">if</span> <span class="keywordflow">not</span> status:</div>
-<div class="line"><span class="lineno">  113</span>                    logger.error(<span class="stringliteral">&#39;&gt; Error validating NodeDef document:&#39;</span>)</div>
-<div class="line"><span class="lineno">  114</span>                    logger.error(error)</div>
-<div class="line"><span class="lineno">  115</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  116</span>                    logger.info(<span class="stringliteral">&#39;&gt; Definition documents passed validation.&#39;</span>)</div>
-<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  107</span>        <span class="comment"># Create folder for MaterialX call PhysicallyBasedMaterialX</span></div>
+<div class="line"><span class="lineno">  108</span>        os.makedirs(outputDir, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        create_nodedef = opts.createNodeDef</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> create_nodedef:</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>            <span class="comment"># Write PhysicallyBased BSDF definition</span></div>
+<div class="line"><span class="lineno">  114</span>            <span class="comment">#</span></div>
+<div class="line"><span class="lineno">  115</span>            logger.info(<span class="stringliteral">&#39;&gt; Write definition for PhysicallyBased materials&#39;</span>)</div>
+<div class="line"><span class="lineno">  116</span>            definitions_doc = loader.get_physlib()</div>
+<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">if</span> definitions_doc:</div>
 <div class="line"><span class="lineno">  118</span>                nodedef_file_name = os.path.join(outputDir, <span class="stringliteral">&#39;physbased_pbr.mtlx&#39;</span>)</div>
-<div class="line"><span class="lineno">  119</span>                mx.writeToXmlFile(doc, nodedef_file_name)</div>
+<div class="line"><span class="lineno">  119</span>                mx.writeToXmlFile(definitions_doc, nodedef_file_name)</div>
 <div class="line"><span class="lineno">  120</span>                logger.info(f<span class="stringliteral">&#39;&gt; Write definition file: {nodedef_file_name}&#39;</span>)</div>
 <div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>            doc_mat = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  123</span>            filter_list = []</div>
-<div class="line"><span class="lineno">  124</span>            doc_mat = loader.create_definition_materials(doc_mat, doc, filter_list)</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">if</span> doc_mat:</div>
-<div class="line"><span class="lineno">  127</span>                status, error = doc_mat.validate()</div>
-<div class="line"><span class="lineno">  128</span>                <span class="keywordflow">if</span> <span class="keywordflow">not</span> status:</div>
-<div class="line"><span class="lineno">  129</span>                    logger.error(<span class="stringliteral">&#39;&gt; Error validating definition materials document:&#39;</span>)</div>
-<div class="line"><span class="lineno">  130</span>                    logger.error(error)</div>
-<div class="line"><span class="lineno">  131</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  132</span>                    logger.info(<span class="stringliteral">&#39;&gt; Definition materials document passed validation.&#39;</span>)</div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>                nodedef_mat_file_name = os.path.join(outputDir, <span class="stringliteral">&#39;physbased_pbr_materials.mtlx&#39;</span>)</div>
-<div class="line"><span class="lineno">  135</span>                mx.writeToXmlFile(doc_mat, nodedef_mat_file_name)</div>
-<div class="line"><span class="lineno">  136</span>                logger.info(f<span class="stringliteral">&#39;&gt; Write materials file: {nodedef_mat_file_name}&#39;</span>)</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>            <span class="comment"># Create translation nodedef</span></div>
-<div class="line"><span class="lineno">  139</span>            translations_doc = mx.createDocument()</div>
-<div class="line"><span class="lineno">  140</span>            resulting_definitions = loader.create_all_translators(doc, translations_doc)</div>
-<div class="line"><span class="lineno">  141</span>            print(f<span class="stringliteral">&#39;Number of translator definitions created: {len(resulting_definitions)}&#39;</span>)</div>
+<div class="line"><span class="lineno">  122</span>            <span class="comment"># Get PhysicallyBased materials using the definition</span></div>
+<div class="line"><span class="lineno">  123</span>            <span class="comment">#</span></div>
+<div class="line"><span class="lineno">  124</span>            doc_mat = loader.get_physlib_materials()</div>
+<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">if</span> doc_mat:</div>
+<div class="line"><span class="lineno">  126</span>                status, error = doc_mat.validate()</div>
+<div class="line"><span class="lineno">  127</span>                <span class="keywordflow">if</span> <span class="keywordflow">not</span> status:</div>
+<div class="line"><span class="lineno">  128</span>                    logger.error(<span class="stringliteral">&#39;&gt; Error validating definition materials document:&#39;</span>)</div>
+<div class="line"><span class="lineno">  129</span>                    logger.error(error)</div>
+<div class="line"><span class="lineno">  130</span>                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  131</span>                    logger.info(<span class="stringliteral">&#39;&gt; Definition materials document passed validation.&#39;</span>)</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>                nodedef_mat_file_name = os.path.join(outputDir, <span class="stringliteral">&#39;physbased_pbr_materials.mtlx&#39;</span>)</div>
+<div class="line"><span class="lineno">  134</span>                mx.writeToXmlFile(doc_mat, mx.FilePath(nodedef_mat_file_name))</div>
+<div class="line"><span class="lineno">  135</span>                logger.info(f<span class="stringliteral">&#39;&gt; Write materials file: {nodedef_mat_file_name}&#39;</span>)</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>            <span class="comment"># Write out translator definitions</span></div>
+<div class="line"><span class="lineno">  138</span>            <span class="comment">#</span></div>
+<div class="line"><span class="lineno">  139</span>            translators_doc  = loader.get_translators()</div>
+<div class="line"><span class="lineno">  140</span>            translators = translators_doc.getNodeDefs()</div>
+<div class="line"><span class="lineno">  141</span>            print(f<span class="stringliteral">&#39;Found  translator definitions: {len(translators)}&#39;</span>)</div>
 <div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>            <span class="keywordflow">if</span> resulting_definitions <span class="keywordflow">and</span> translations_doc:     </div>
+<div class="line"><span class="lineno">  143</span>            <span class="keywordflow">if</span> translators_doc <span class="keywordflow">and</span> translators:     </div>
 <div class="line"><span class="lineno">  144</span>                output_file_name = <span class="stringliteral">&#39;physbased_pbr_translators.mtlx&#39;</span></div>
 <div class="line"><span class="lineno">  145</span>                output_path = os.path.join(outputDir, output_file_name)                </div>
 <div class="line"><span class="lineno">  146</span>                logger.info(<span class="stringliteral">&#39;&gt; Write translator file:&#39;</span> + output_path)</div>
-<div class="line"><span class="lineno">  147</span>                mx.writeToXmlFile(translations_doc, mx.FilePath(output_path))</div>
+<div class="line"><span class="lineno">  147</span>                mx.writeToXmlFile(translators_doc, mx.FilePath(output_path))</div>
 <div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span> </div>
-<div class="line"><span class="lineno">  150</span>            <span class="comment"># Doc with stdlib</span></div>
-<div class="line"><span class="lineno">  151</span>            result = loader.create_working_document()</div>
-<div class="line"><span class="lineno">  152</span>            stdlib = result[<span class="stringliteral">&#39;stdlib&#39;</span>]</div>
-<div class="line"><span class="lineno">  153</span>            <span class="comment"># Add Physically Based Material definitions </span></div>
-<div class="line"><span class="lineno">  154</span>            stdlib.copyContentFrom(doc)</div>
-<div class="line"><span class="lineno">  155</span>            stdlib.copyContentFrom(translations_doc)</div>
-<div class="line"><span class="lineno">  156</span>            translated_doc = mx.createDocument()</div>
-<div class="line"><span class="lineno">  157</span>            translated_doc.setDataLibrary(stdlib)</div>
-<div class="line"><span class="lineno">  158</span>            <span class="comment"># Copy over materials</span></div>
-<div class="line"><span class="lineno">  159</span>            translated_doc.copyContentFrom(doc_mat)</div>
-<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">for</span> node <span class="keywordflow">in</span> translated_doc.getNodes():</div>
-<div class="line"><span class="lineno">  161</span>                <span class="keywordflow">if</span> node.getCategory() == <span class="stringliteral">&#39;physbased_pbr_surface&#39;</span>:</div>
-<div class="line"><span class="lineno">  162</span>                    <span class="comment"># Translate using standard_surface as target</span></div>
-<div class="line"><span class="lineno">  163</span>                    orig_name = node.getName()</div>
-<div class="line"><span class="lineno">  164</span>                    replace_name = orig_name + <span class="stringliteral">&quot;_source&quot;</span></div>
-<div class="line"><span class="lineno">  165</span>                    target_bsdf = <span class="stringliteral">&#39;standard_surface&#39;</span></div>
-<div class="line"><span class="lineno">  166</span>                    trans_result = loader.translate_node(translated_doc, <span class="stringliteral">&#39;physbased_pbr_surface&#39;</span>, target_bsdf, node)</div>
-<div class="line"><span class="lineno">  167</span>                    <span class="keywordflow">if</span> trans_result <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno">  168</span>                        translationNode = trans_result[<span class="stringliteral">&#39;translationNode&#39;</span>]</div>
-<div class="line"><span class="lineno">  169</span>                        targetNode = trans_result[<span class="stringliteral">&#39;targetNode&#39;</span>] </div>
-<div class="line"><span class="lineno">  170</span>                        <span class="keywordflow">if</span> translationNode <span class="keywordflow">and</span> targetNode:</div>
-<div class="line"><span class="lineno">  171</span>                            print(<span class="stringliteral">&#39;Replacing node:&#39;</span>, orig_name, <span class="stringliteral">&#39;with translated node:&#39;</span>, targetNode.getName())</div>
-<div class="line"><span class="lineno">  172</span>                            translated_doc.removeNode(replace_name)                            </div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>            <span class="comment"># Translate all the materials</span></div>
-<div class="line"><span class="lineno">  175</span>            mx.writeToXmlFile(translated_doc, os.path.join(outputDir, <span class="stringliteral">&#39;physbased_pbr_translated_materials.mtlx&#39;</span>))</div>
-<div class="line"><span class="lineno">  176</span>            </div>
-<div class="line"><span class="lineno">  177</span>            <span class="comment"># Add</span></div>
-<div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>            <span class="comment"># To fit this in...</span></div>
-<div class="line"><span class="lineno">  180</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> separateFiles:</div>
-<div class="line"><span class="lineno">  181</span>                <span class="keywordflow">for</span> shadingModel, prefix <span class="keywordflow">in</span> zip(shadingModels, shadingModelPrefixes):</div>
-<div class="line"><span class="lineno">  182</span>                    matdoc = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  183</span>                    <span class="keywordflow">if</span> matdoc <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno">  184</span>                        valid, errors = loader.validateMaterialXDocument(matdoc)</div>
-<div class="line"><span class="lineno">  185</span>                        <span class="keywordflow">if</span> valid:</div>
-<div class="line"><span class="lineno">  186</span>                            logger.info(f<span class="stringliteral">&#39;&gt; Generate MaterialX using nodedefs for shading model: {shadingModel}&#39;</span>)</div>
-<div class="line"><span class="lineno">  187</span>                            fileName = os.path.join(outputDir, f<span class="stringliteral">&#39;PhysicallyBasedMaterialX_{prefix}.mtlx&#39;</span>)</div>
-<div class="line"><span class="lineno">  188</span>                            loader.writeMaterialXToFile(fileName)</div>
-<div class="line"><span class="lineno">  189</span>                            logger.info(f<span class="stringliteral">&#39;&gt; Write: {fileName}&#39;</span>)</div>
-<div class="line"><span class="lineno">  190</span>        </div>
-<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  192</span>                <span class="keywordflow">for</span> shadingModel, prefix <span class="keywordflow">in</span> zip(shadingModels, shadingModelPrefixes):</div>
-<div class="line"><span class="lineno">  193</span>                    <span class="keywordflow">for</span> mat <span class="keywordflow">in</span> loader.getJSONMaterialNames():</div>
-<div class="line"><span class="lineno">  194</span>                        materialFilter = [mat]</div>
-<div class="line"><span class="lineno">  195</span>                        matdoc = <span class="keywordtype">None</span> <span class="comment"># loader.convertToMaterialX(materialFilter, shadingModel, {}, prefix)</span></div>
-<div class="line"><span class="lineno">  196</span>                        <span class="keywordflow">if</span> matdoc <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno">  197</span>                            valid, errors = loader.validateMaterialXDocument(matdoc)</div>
-<div class="line"><span class="lineno">  198</span>                            <span class="keywordflow">if</span> valid:</div>
-<div class="line"><span class="lineno">  199</span>                                logger.info(f<span class="stringliteral">&#39;&gt; Generate MaterialX using nodedefs for shading model: {shadingModel}&#39;</span>)</div>
-<div class="line"><span class="lineno">  200</span>                                fileName = os.path.join(outputDir, f<span class="stringliteral">&#39;PB_{prefix}_{mat}.mtlx&#39;</span>)</div>
-<div class="line"><span class="lineno">  201</span>                                loader.writeMaterialXToFile(fileName)</div>
-<div class="line"><span class="lineno">  202</span>                                logger.info(f<span class="stringliteral">&#39;&gt; Write: {fileName}&#39;</span>)</div>
-<div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  204</span>        <span class="keywordflow">if</span> writeJSON:</div>
-<div class="line"><span class="lineno">  205</span>            logger.info(f<span class="stringliteral">&#39;&gt; Write PB material file: {outputDir}/PhysicallyBasedMaterial.json&#39;</span>)</div>
-<div class="line"><span class="lineno">  206</span>            loader.writeJSONToFile(os.path.join(outputDir, <span class="stringliteral">&#39;PhysicallyBasedMaterial.json&#39;</span>))</div>
+<div class="line"><span class="lineno">  149</span>            <span class="comment"># Get doc with all required definitions: stdlib, PhysicallyBased definition, and translator definitions</span></div>
+<div class="line"><span class="lineno">  150</span>            stdlib = loader.get_definitions()</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>            <span class="comment"># Export single file with all translated materials            </span></div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> separateFiles:</div>
+<div class="line"><span class="lineno">  154</span>                translated_doc = loader.get_physlib_materials()</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>                <span class="comment"># Copy over materials + reference libraries</span></div>
+<div class="line"><span class="lineno">  157</span>                <span class="comment">#translated_doc.copyContentFrom(doc_mat)</span></div>
+<div class="line"><span class="lineno">  158</span>                <span class="comment">#translated_doc.setDataLibrary(doc_mat.getDataLibrary())</span></div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>                <span class="keywordflow">for</span> shadingModel, prefix <span class="keywordflow">in</span> zip(shadingModels, shadingModelPrefixes):</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>                    <span class="keywordflow">for</span> node <span class="keywordflow">in</span> translated_doc.getNodes():</div>
+<div class="line"><span class="lineno">  163</span>                        <span class="keywordflow">if</span> node.getCategory() == loader.get_physlib_category():</div>
+<div class="line"><span class="lineno">  164</span>                            trans_result = loader.translate_node(translated_doc, loader.get_physlib_category(), shadingModel, node)</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>                    logger.info(f<span class="stringliteral">&#39;&gt; Generate MaterialX using nodedefs for shading model: {shadingModel}&#39;</span>)</div>
+<div class="line"><span class="lineno">  167</span>                    fileName = os.path.join(outputDir, f<span class="stringliteral">&#39;PhysicallyBasedMaterialX_translated_{prefix}.mtlx&#39;</span>)</div>
+<div class="line"><span class="lineno">  168</span>                    loader.writeMaterialXToFile(fileName, translated_doc)</div>
+<div class="line"><span class="lineno">  169</span>                    logger.info(f<span class="stringliteral">&#39;&gt; Write: {fileName}&#39;</span>)</div>
+<div class="line"><span class="lineno">  170</span>        </div>
+<div class="line"><span class="lineno">  171</span>            <span class="comment"># Export separate files per translated material            </span></div>
+<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  173</span>                matDir = os.path.join(outputDir, <span class="stringliteral">&#39;Sep&#39;</span>)</div>
+<div class="line"><span class="lineno">  174</span>                os.makedirs(matDir, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">  175</span>                <span class="keywordflow">for</span> shadingModel, prefix <span class="keywordflow">in</span> zip(shadingModels, shadingModelPrefixes):</div>
+<div class="line"><span class="lineno">  176</span>                    converted = []</div>
+<div class="line"><span class="lineno">  177</span>                    <span class="keywordflow">for</span> mat <span class="keywordflow">in</span> loader.getJSONMaterialNames():</div>
+<div class="line"><span class="lineno">  178</span>                        materialFilter = [mat]</div>
+<div class="line"><span class="lineno">  179</span>                        </div>
+<div class="line"><span class="lineno">  180</span>                        <span class="comment"># Create doc with single material</span></div>
+<div class="line"><span class="lineno">  181</span>                        matdoc = loader.create_definition_materials(<span class="keywordtype">None</span>, materialFilter)</div>
+<div class="line"><span class="lineno">  182</span>                        <span class="keywordflow">if</span> matdoc <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>                            <span class="comment"># Translate the material</span></div>
+<div class="line"><span class="lineno">  185</span>                            mat_name = mx.createValidName(mat)  </div>
+<div class="line"><span class="lineno">  186</span>                            node = matdoc.getNode(mat_name)</div>
+<div class="line"><span class="lineno">  187</span>                            <span class="keywordflow">if</span> node:</div>
+<div class="line"><span class="lineno">  188</span>                                trans_result = loader.translate_node(matdoc, loader.get_physlib_category(), shadingModel, node)</div>
+<div class="line"><span class="lineno">  189</span>                                <span class="keywordflow">if</span> <span class="keywordflow">not</span> trans_result:</div>
+<div class="line"><span class="lineno">  190</span>                                    logger.warning(f<span class="stringliteral">&#39;Failed to translate node: {mat_name} for shading model: {shadingModel}&#39;</span>)</div>
+<div class="line"><span class="lineno">  191</span>                                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  192</span>                                    converted.append(trans_result[<span class="stringliteral">&#39;targetNode&#39;</span>].getName())</div>
+<div class="line"><span class="lineno">  193</span>                                    valid, errors = loader.validateMaterialXDocument(matdoc)</div>
+<div class="line"><span class="lineno">  194</span>                                    <span class="keywordflow">if</span> valid:</div>
+<div class="line"><span class="lineno">  195</span>                                        <span class="comment">#logger.info(f&#39;&gt; Generate material {mat_name} for shading model: {shadingModel}&#39;)</span></div>
+<div class="line"><span class="lineno">  196</span>                                        fileName = os.path.join(matDir, f<span class="stringliteral">&#39;PB_{prefix}_{mat}.mtlx&#39;</span>)</div>
+<div class="line"><span class="lineno">  197</span>                                        loader.writeMaterialXToFile(fileName, matdoc)</div>
+<div class="line"><span class="lineno">  198</span>                                        </div>
+<div class="line"><span class="lineno">  199</span>                    logger.info(f<span class="stringliteral">&#39;&gt; Converted {len(converted)} materials for shading model: {shadingModel}&#39;</span>)</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>        <span class="keywordflow">if</span> writeJSON:</div>
+<div class="line"><span class="lineno">  202</span>            logger.info(f<span class="stringliteral">&#39;&gt; Write PB material file: {outputDir}/PhysicallyBasedMaterial.json&#39;</span>)</div>
+<div class="line"><span class="lineno">  203</span>            loader.writeJSONToFile(os.path.join(outputDir, <span class="stringliteral">&#39;PhysicallyBasedMaterial.json&#39;</span>))</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>        <span class="keywordflow">if</span> create_nodedef:</div>
+<div class="line"><span class="lineno">  206</span>            <span class="keywordflow">return</span></div>
 <div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">if</span> create_nodedef:</div>
-<div class="line"><span class="lineno">  209</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>        <span class="comment"># Direct translation from JSON to MaterialX path. Skip if using PhysicallyBased nodedefs</span></div>
-<div class="line"><span class="lineno">  212</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> separateFiles:</div>
-<div class="line"><span class="lineno">  213</span>            <span class="keywordflow">for</span> shadingModel, prefix <span class="keywordflow">in</span> zip(shadingModels, shadingModelPrefixes):</div>
-<div class="line"><span class="lineno">  214</span>                logger.info(f<span class="stringliteral">&#39;&gt; Generate MaterialX for shading model: {shadingModel}&#39;</span>)</div>
-<div class="line"><span class="lineno">  215</span>                matdoc = loader.convertToMaterialX([], shadingModel, {}, prefix)</div>
-<div class="line"><span class="lineno">  216</span>                valid, errors = loader.validateMaterialXDocument(matdoc)</div>
-<div class="line"><span class="lineno">  217</span>                <span class="keywordflow">if</span> valid:</div>
-<div class="line"><span class="lineno">  218</span>                    fileName = os.path.join(outputDir, f<span class="stringliteral">&#39;PhysicallyBasedMaterialX_{prefix}.mtlx&#39;</span>)</div>
-<div class="line"><span class="lineno">  219</span>                    loader.writeMaterialXToFile(fileName)</div>
-<div class="line"><span class="lineno">  220</span>                    logger.info(f<span class="stringliteral">&#39;&gt; Write: {fileName}&#39;</span>)</div>
-<div class="line"><span class="lineno">  221</span>    </div>
-<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">for</span> shadingModel, prefix <span class="keywordflow">in</span> zip(shadingModels, shadingModelPrefixes):</div>
-<div class="line"><span class="lineno">  224</span>                logger.info(f<span class="stringliteral">&#39;&gt; Generate MaterialX for shading model: {shadingModel}&#39;</span>)</div>
-<div class="line"><span class="lineno">  225</span>                <span class="keywordflow">for</span> mat <span class="keywordflow">in</span> loader.getJSONMaterialNames():</div>
-<div class="line"><span class="lineno">  226</span>                    materialFilter = [mat]</div>
-<div class="line"><span class="lineno">  227</span>                    matdoc = loader.convertToMaterialX(materialFilter, shadingModel, {}, prefix)</div>
-<div class="line"><span class="lineno">  228</span>                    <span class="keywordflow">if</span> matdoc <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno">  229</span>                        valid, errors = loader.validateMaterialXDocument(matdoc)</div>
-<div class="line"><span class="lineno">  230</span>                        <span class="keywordflow">if</span> valid:</div>
-<div class="line"><span class="lineno">  231</span>                            fileName = os.path.join(outputDir, f<span class="stringliteral">&#39;PB_{prefix}_{mat}.mtlx&#39;</span>)</div>
-<div class="line"><span class="lineno">  232</span>                            loader.writeMaterialXToFile(fileName)</div>
-<div class="line"><span class="lineno">  233</span>                            logger.info(f<span class="stringliteral">&#39;&gt; Write: {fileName}&#39;</span>)</div>
+<div class="line"><span class="lineno">  208</span>        <span class="comment"># Direct translation from JSON to MaterialX path. Skip if using PhysicallyBased nodedefs</span></div>
+<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> separateFiles:</div>
+<div class="line"><span class="lineno">  210</span>            <span class="keywordflow">for</span> shadingModel, prefix <span class="keywordflow">in</span> zip(shadingModels, shadingModelPrefixes):</div>
+<div class="line"><span class="lineno">  211</span>                logger.info(f<span class="stringliteral">&#39;&gt; Generate MaterialX for shading model: {shadingModel}&#39;</span>)</div>
+<div class="line"><span class="lineno">  212</span>                matdoc = loader.convertToMaterialX([], shadingModel, {}, prefix)</div>
+<div class="line"><span class="lineno">  213</span>                valid, errors = loader.validateMaterialXDocument(matdoc)</div>
+<div class="line"><span class="lineno">  214</span>                <span class="keywordflow">if</span> valid:</div>
+<div class="line"><span class="lineno">  215</span>                    fileName = os.path.join(outputDir, f<span class="stringliteral">&#39;PhysicallyBasedMaterialX_{prefix}.mtlx&#39;</span>)</div>
+<div class="line"><span class="lineno">  216</span>                    loader.writeMaterialXToFile(fileName)</div>
+<div class="line"><span class="lineno">  217</span>                    logger.info(f<span class="stringliteral">&#39;&gt; Write: {fileName}&#39;</span>)</div>
+<div class="line"><span class="lineno">  218</span>    </div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">for</span> shadingModel, prefix <span class="keywordflow">in</span> zip(shadingModels, shadingModelPrefixes):</div>
+<div class="line"><span class="lineno">  221</span>                logger.info(f<span class="stringliteral">&#39;&gt; Generate MaterialX for shading model: {shadingModel}&#39;</span>)</div>
+<div class="line"><span class="lineno">  222</span>                <span class="keywordflow">for</span> mat <span class="keywordflow">in</span> loader.getJSONMaterialNames():</div>
+<div class="line"><span class="lineno">  223</span>                    materialFilter = [mat]</div>
+<div class="line"><span class="lineno">  224</span>                    matdoc = loader.convertToMaterialX(materialFilter, shadingModel, {}, prefix)</div>
+<div class="line"><span class="lineno">  225</span>                    <span class="keywordflow">if</span> matdoc <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno">  226</span>                        valid, errors = loader.validateMaterialXDocument(matdoc)</div>
+<div class="line"><span class="lineno">  227</span>                        <span class="keywordflow">if</span> valid:</div>
+<div class="line"><span class="lineno">  228</span>                            fileName = os.path.join(outputDir, f<span class="stringliteral">&#39;PB_{prefix}_{mat}.mtlx&#39;</span>)</div>
+<div class="line"><span class="lineno">  229</span>                            loader.writeMaterialXToFile(fileName)</div>
+<div class="line"><span class="lineno">  230</span>                            logger.info(f<span class="stringliteral">&#39;&gt; Write: {fileName}&#39;</span>)</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  233</span>        logger.info(<span class="stringliteral">&#39;Could not retrieve PhysicallyBased Materials&#39;</span>)</div>
 <div class="line"><span class="lineno">  234</span> </div>
-<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  236</span>        logger.info(<span class="stringliteral">&#39;Could not retrieve PhysicallyBased Materials&#39;</span>)</div>
-<div class="line"><span class="lineno">  237</span> </div>
 </div><!-- fragment -->
 </div>
 </div>

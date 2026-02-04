@@ -1,18 +1,70 @@
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:452: warning: Member derive_translator_name_from_targets(self, str source, str target) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:827: warning: Member add_copyright_comment(self, doc, shaderCategory, embedDate=True) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1002: warning: Member create_working_document() (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:631: warning: Unsupported xml/html tag <nodegraph> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:632: warning: Unsupported xml/html tag <oren_nayar_diffuse_bsdf> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:633: warning: Unsupported xml/html tag <output> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:634: warning: Unsupported xml/html tag <input> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:635: warning: Unsupported xml/html tag <input> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:636: warning: Unsupported xml/html tag </oren_nayar_diffuse_bsdf> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:638: warning: Unsupported xml/html tag <surface> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:639: warning: Unsupported xml/html tag <input> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:640: warning: Unsupported xml/html tag </surface> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:642: warning: Unsupported xml/html tag <output> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:643: warning: Unsupported xml/html tag </nodegraph> found
-D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:760: warning: Found unknown command '@detail'
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:167: warning: Member get_physlib() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:172: warning: Member get_physlib_definition() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:180: warning: Member get_physlib_category() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:185: warning: Member get_physlib_definition_name() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:190: warning: Member get_physlib_implementation_name() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:195: warning: Member get_physlib_materials() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:200: warning: Member get_definitions() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:215: warning: Member map_keys_to_definition(mat, ndef) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:279: warning: Member find_all_bxdf(doc) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:292: warning: Member derive_translator_name_from_targets(source, target) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:462: warning: Member add_copyright_comment(doc, shaderCategory, embedDate=false) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+<create_all_translators>:1: warning: argument 'object' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_all_translators(definitions, output_doc=null)
+<create_all_translators>:1: warning: The following parameters of JsPhysicallyBasedMaterialLoader::create_all_translators(definitions, output_doc=null) are not documented:
+  parameter 'definitions'
+  parameter 'output_doc'
+<create_definition>:1: warning: argument 'object' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_definition(doc=null)
+<create_definition>:1: warning: argument 'null' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_definition(doc=null)
+<create_definition>:1: warning: The following parameter of JsPhysicallyBasedMaterialLoader::create_definition(doc=null) is not documented:
+  parameter 'doc'
+<create_definition_materials>:1: warning: argument 'object' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_definition_materials(doc_mat, filter_list=null)
+<create_definition_materials>:1: warning: argument 'null' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_definition_materials(doc_mat, filter_list=null)
+<create_definition_materials>:1: warning: argument 'string' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_definition_materials(doc_mat, filter_list=null)
+<create_definition_materials>:1: warning: The following parameters of JsPhysicallyBasedMaterialLoader::create_definition_materials(doc_mat, filter_list=null) are not documented:
+  parameter 'doc_mat'
+  parameter 'filter_list'
+<create_translator>:1: warning: argument 'object' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_translator(doc, source, target, source_version="", target_version="", mappings=null, output_doc)
+<create_translator>:1: warning: argument 'string' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_translator(doc, source, target, source_version="", target_version="", mappings=null, output_doc)
+<create_translator>:1: warning: The following parameters of JsPhysicallyBasedMaterialLoader::create_translator(doc, source, target, source_version="", target_version="", mappings=null, output_doc) are not documented:
+  parameter 'doc'
+  parameter 'source'
+  parameter 'target'
+  parameter 'source_version'
+  parameter 'target_version'
+  parameter 'mappings'
+  parameter 'output_doc'
+<find_translator>:1: warning: argument 'object' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::find_translator(doc, source, target)
+<find_translator>:1: warning: argument 'string' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::find_translator(doc, source, target)
+<find_translator>:1: warning: The following parameters of JsPhysicallyBasedMaterialLoader::find_translator(doc, source, target) are not documented:
+  parameter 'doc'
+  parameter 'source'
+  parameter 'target'
+<translate_node>:1: warning: argument 'object' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::translate_node(doc, source_bxdf, target_bxdf, node)
+<translate_node>:1: warning: argument 'string' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::translate_node(doc, source_bxdf, target_bxdf, node)
+<translate_node>:1: warning: The following parameters of JsPhysicallyBasedMaterialLoader::translate_node(doc, source_bxdf, target_bxdf, node) are not documented:
+  parameter 'doc'
+  parameter 'source_bxdf'
+  parameter 'target_bxdf'
+  parameter 'node'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:570: warning: Member derive_translator_name_from_targets(self, str source, str target) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:971: warning: Member add_copyright_comment(self, doc, shaderCategory, embedDate=False) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1151: warning: Member create_working_document() (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:24: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.__init__(self, mx_module, Optional[mx.Document] mx_stdlib=None, str materials_file='') is not documented:
+  parameter 'materials_file'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:756: warning: Unsupported xml/html tag <nodegraph> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:757: warning: Unsupported xml/html tag <oren_nayar_diffuse_bsdf> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:758: warning: Unsupported xml/html tag <output> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:759: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:760: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:761: warning: Unsupported xml/html tag </oren_nayar_diffuse_bsdf> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:763: warning: Unsupported xml/html tag <surface> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:764: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:765: warning: Unsupported xml/html tag </surface> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:767: warning: Unsupported xml/html tag <output> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:768: warning: Unsupported xml/html tag </nodegraph> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:886: warning: Found unknown command '@detail'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1118: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.writeMaterialXToFile(self, filename, doc=None) is not documented:
+  parameter 'doc'
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:20: warning: Member BASE_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:21: warning: Member ASSET_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
 D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:22: warning: Member INFO_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.

@@ -901,37 +901,28 @@ class PhysicallyBasedMaterialLoader:
         # Create a target node of the target_bxdf category.
         #print('> Add target node of category:', target_bxdf)
         replace_name = node.getName()
-        node.setName(replace_name + "_source")
-        targetNode = doc.addChildOfCategory(target_bxdf, replace_name)
+        target_node_name = doc.createValidChildName(f'{replace_name}_{target_bxdf}_SPB'); 
+
+        # Cleanup dowstream connections
+        downstream_ports = node.getDownstreamPorts()
+        for port in downstream_ports:
+            # print('Scan downstream port:', port.getName(), 'of node:', port.getParent().getName());
+            downstream_node = port.getParent()
+            downstream_input = downstream_node.getInput(port.getName())
+            if downstream_input:
+                #print(` - Reconnecting downstream node '${downstream_node.getName()}' input '${downstream_input.getName()}' from '${node.getName()}' to target node '${target_node_name}'`);
+                downstream_input.setNodeName(target_node_name);
+
+        targetNode = doc.addChildOfCategory(target_bxdf, target_node_name)
         if not targetNode:
             print(f"- Failed to create target node of category '{target_bxdf}' for node '{node.getName()}'")
             return None    
         targetNode.setType("surfaceshader")
-        targetNode.addInputsFromNodeDef()
+        #targetNodeDef = targetNode.getNodeDef()
 
         # Create a translation node based on the translator nodedef.
-        #print('> Add translation node of category:', nodedef.getName())
-        translationNode = doc.addNodeInstance(nodedef, node.getName() + "_translator")
-        #translationNode.addInputsFromNodeDef()
-
-        # Connect translation outputs to target inputs.
-        #print('> Add translation outputs')
-        for output in nodedef.getActiveOutputs():
-            #print('Add output:', output.getName())
-            translationOutput = translationNode.addOutput(output.getName(), output.getType())
-            translationOutput.copyContentFrom(output)  
-            target_input_name = output.getName()
-            # Remove trailing '_out' from name
-            target_input_name = target_input_name[:-4] if target_input_name.endswith('_out') else target_input_name
-            target_input = targetNode.getInput(target_input_name)
-            if not target_input:
-                print(f" - Warning: Target node '{targetNode.getName()}' has no input named '{target_input_name}' for output '{output.getName()}'")
-                continue
-            else:
-                #print('Target input name:', target_input_name)
-                target_input.setNodeName(translationNode.getName())
-                target_input.setOutputString(translationOutput.getName())
-                target_input.removeAttribute('value')
+        translationNode = doc.addNodeInstance(nodedef, 
+                                              targetNode.getName() + "_translator")
 
         # Copy over inputs from the source node to the translation node.
         # Note that this will copy over all attributes including upstream connections.
@@ -941,11 +932,36 @@ class PhysicallyBasedMaterialLoader:
             translationInput = translationNode.addInputFromNodeDef(input.getName()) #translationNode.getInput(input.getName())
             #print('>> Overwrite input:', translationInput.getName())
             if translationInput:
-                # Thish will copy over all attributes including
-                # updstream connections
                 translationInput.copyContentFrom(input)
                 num_overrides += 1
-        #print(f'>> Overwrote {num_overrides} inputs on translation node.')                
+        #print(f'>> Overwrote {num_overrides} inputs on translation node.')
+
+        # Connect translation outputs to target inputs.
+        impl = nodedef.getImplementation();
+        for output in nodedef.getActiveOutputs():
+
+            # Avoid adding ports which do not route an input data
+            impl_output = impl.getOutput(output.getName())
+            if not impl_output.getConnectedNode():
+                continue
+
+            target_input_name = output.getName()
+            # Remove trailing '_out' from name
+            target_input_name = target_input_name[:-4] if target_input_name.endswith('_out') else target_input_name
+
+            translationOutput = translationNode.addOutput(output.getName(), output.getType())
+            translationOutput.copyContentFrom(output)  
+            
+            target_input = targetNode.addInputFromNodeDef(target_input_name);
+            if not target_input:
+                print(f" - Warning: Target node '{targetNode.getName()}' has no input named '{target_input_name}' for output '{output.getName()}'")
+                continue
+            else:
+                #print('Target input name:', target_input_name)
+                target_input.setNodeName(translationNode.getName())
+                target_input.setOutputString(translationOutput.getName())
+                target_input.removeAttribute('value')
+
         
         # Remove original node
         doc.removeNode(node.getName())

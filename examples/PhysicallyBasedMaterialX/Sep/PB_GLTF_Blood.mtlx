@@ -5,69 +5,19 @@
   <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <surfacematerial name="Blood_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Blood" />
+    <input name="surfaceshader" type="surfaceshader" nodename="Blood_gltf_pbr_SPB" />
   </surfacematerial>
-  <gltf_pbr name="Blood" type="surfaceshader">
-    <input name="base_color" type="color3" nodename="Blood_source_translator" output="base_color_out" />
-    <input name="metallic" type="float" nodename="Blood_source_translator" output="metallic_out" />
-    <input name="roughness" type="float" nodename="Blood_source_translator" output="roughness_out" />
-    <input name="normal" type="vector3" nodename="Blood_source_translator" output="normal_out" />
-    <input name="tangent" type="vector3" nodename="Blood_source_translator" output="tangent_out" />
-    <input name="occlusion" type="float" nodename="Blood_source_translator" output="occlusion_out" />
-    <input name="transmission" type="float" nodename="Blood_source_translator" output="transmission_out" />
-    <input name="specular" type="float" nodename="Blood_source_translator" output="specular_out" />
-    <input name="specular_color" type="color3" nodename="Blood_source_translator" output="specular_color_out" />
-    <input name="ior" type="float" nodename="Blood_source_translator" output="ior_out" />
-    <input name="alpha" type="float" nodename="Blood_source_translator" output="alpha_out" />
-    <input name="alpha_mode" type="integer" nodename="Blood_source_translator" output="alpha_mode_out" />
-    <input name="alpha_cutoff" type="float" nodename="Blood_source_translator" output="alpha_cutoff_out" />
-    <input name="iridescence" type="float" nodename="Blood_source_translator" output="iridescence_out" />
-    <input name="iridescence_ior" type="float" nodename="Blood_source_translator" output="iridescence_ior_out" />
-    <input name="iridescence_thickness" type="float" nodename="Blood_source_translator" output="iridescence_thickness_out" />
-    <input name="sheen_color" type="color3" nodename="Blood_source_translator" output="sheen_color_out" />
-    <input name="sheen_roughness" type="float" nodename="Blood_source_translator" output="sheen_roughness_out" />
-    <input name="clearcoat" type="float" nodename="Blood_source_translator" output="clearcoat_out" />
-    <input name="clearcoat_roughness" type="float" nodename="Blood_source_translator" output="clearcoat_roughness_out" />
-    <input name="clearcoat_normal" type="vector3" nodename="Blood_source_translator" output="clearcoat_normal_out" />
-    <input name="emissive" type="color3" nodename="Blood_source_translator" output="emissive_out" />
-    <input name="emissive_strength" type="float" nodename="Blood_source_translator" output="emissive_strength_out" />
-    <input name="thickness" type="float" nodename="Blood_source_translator" output="thickness_out" />
-    <input name="attenuation_distance" type="float" nodename="Blood_source_translator" output="attenuation_distance_out" />
-    <input name="attenuation_color" type="color3" nodename="Blood_source_translator" output="attenuation_color_out" />
-    <input name="anisotropy_strength" type="float" nodename="Blood_source_translator" output="anisotropy_strength_out" />
-    <input name="anisotropy_rotation" type="float" nodename="Blood_source_translator" output="anisotropy_rotation_out" />
-    <input name="dispersion" type="float" nodename="Blood_source_translator" output="dispersion_out" />
+  <gltf_pbr name="Blood_gltf_pbr_SPB" type="surfaceshader">
+    <input name="base_color" type="color3" nodename="Blood_gltf_pbr_SPB_translator" output="base_color_out" />
+    <input name="metallic" type="float" nodename="Blood_gltf_pbr_SPB_translator" output="metallic_out" />
+    <input name="roughness" type="float" nodename="Blood_gltf_pbr_SPB_translator" output="roughness_out" />
+    <input name="transmission" type="float" nodename="Blood_gltf_pbr_SPB_translator" output="transmission_out" />
+    <input name="specular_color" type="color3" nodename="Blood_gltf_pbr_SPB_translator" output="specular_color_out" />
+    <input name="ior" type="float" nodename="Blood_gltf_pbr_SPB_translator" output="ior_out" />
+    <input name="iridescence_ior" type="float" nodename="Blood_gltf_pbr_SPB_translator" output="iridescence_ior_out" />
+    <input name="iridescence_thickness" type="float" nodename="Blood_gltf_pbr_SPB_translator" output="iridescence_thickness_out" />
   </gltf_pbr>
-  <physbased_pbr_surface_to_gltf_pbr name="Blood_source_translator" type="multioutput" nodedef="ND_physbased_pbr_surface_to_gltf_pbr">
-    <output name="base_color_out" type="color3" />
-    <output name="metallic_out" type="float" />
-    <output name="roughness_out" type="float" />
-    <output name="normal_out" type="vector3" />
-    <output name="tangent_out" type="vector3" />
-    <output name="occlusion_out" type="float" />
-    <output name="transmission_out" type="float" />
-    <output name="specular_out" type="float" />
-    <output name="specular_color_out" type="color3" />
-    <output name="ior_out" type="float" />
-    <output name="alpha_out" type="float" />
-    <output name="alpha_mode_out" type="integer" />
-    <output name="alpha_cutoff_out" type="float" />
-    <output name="iridescence_out" type="float" />
-    <output name="iridescence_ior_out" type="float" />
-    <output name="iridescence_thickness_out" type="float" />
-    <output name="sheen_color_out" type="color3" />
-    <output name="sheen_roughness_out" type="float" />
-    <output name="clearcoat_out" type="float" />
-    <output name="clearcoat_roughness_out" type="float" />
-    <output name="clearcoat_normal_out" type="vector3" />
-    <output name="emissive_out" type="color3" />
-    <output name="emissive_strength_out" type="float" />
-    <output name="thickness_out" type="float" />
-    <output name="attenuation_distance_out" type="float" />
-    <output name="attenuation_color_out" type="color3" />
-    <output name="anisotropy_strength_out" type="float" />
-    <output name="anisotropy_rotation_out" type="float" />
-    <output name="dispersion_out" type="float" />
+  <physbased_pbr_surface_to_gltf_pbr name="Blood_gltf_pbr_SPB_translator" type="multioutput" nodedef="ND_physbased_pbr_surface_to_gltf_pbr">
     <input name="name" type="string" value="Blood" />
     <input name="color" type="color3" value="0.64448, 0.003, 0.005" />
     <input name="metalness" type="float" value="0" />
@@ -84,5 +34,13 @@
     <input name="sources" type="string" value="https://en.wikipedia.org/wiki/Blood, https://en.wikipedia.org/wiki/Blood_red, https://refractiveindex.info/?shelf=other&amp;book=blood&amp;page=Liu, https://hypertextbook.com/facts/2004/MichaelShmukler.shtml, https://www.researchgate.net/figure/Color-chart-for-the-measurement-of-methemoglobin-The-color-chart-was-prepared-according_fig2_26884296, https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html, https://en.wikipedia.org/wiki/Hemorheology, https://www.frontiersin.org/articles/10.3389/fphys.2019.01329/full, https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table, https://wiki.anton-paar.com/en/whole-blood/, https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values" />
     <input name="tags" type="string" value="liquid" />
     <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.jpeg" />
+    <output name="base_color_out" type="color3" />
+    <output name="metallic_out" type="float" />
+    <output name="roughness_out" type="float" />
+    <output name="transmission_out" type="float" />
+    <output name="specular_color_out" type="color3" />
+    <output name="ior_out" type="float" />
+    <output name="iridescence_ior_out" type="float" />
+    <output name="iridescence_thickness_out" type="float" />
   </physbased_pbr_surface_to_gltf_pbr>
 </materialx>
