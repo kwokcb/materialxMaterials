@@ -443,7 +443,7 @@
   </surfacematerial>
   <!-- Generated shader: Lemon_OPBR_SHD_PBM -->
   <open_pbr_surface name="Lemon_OPBR_SHD_PBM" type="surfaceshader" uiname="Lemon" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lemon.jpeg">
-    <input name="base_color" type="color3" value="0.718,0.483,0" />
+    <input name="base_color" type="color3" value="0.617,0.366,0.045" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_ior" type="float" value="1.5" />
@@ -711,6 +711,17 @@
   <surfacematerial name="Platinum_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Platinum_OPBR_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Porcelain_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Porcelain_OPBR_SHD_PBM" type="surfaceshader" uiname="Porcelain" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/porcelain.jpeg">
+    <input name="base_color" type="color3" value="0.745,0.745,0.723" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Porcelain_OPBR_MAT_PBM -->
+  <surfacematerial name="Porcelain_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Porcelain_OPBR_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Potassium_OPBR_SHD_PBM -->
   <open_pbr_surface name="Potassium_OPBR_SHD_PBM" type="surfaceshader" uiname="Potassium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/potassium.jpeg">
     <input name="base_color" type="color3" value="0.983,0.956,0.906" />
@@ -921,6 +932,17 @@
   <!-- Generated material: Sodium_OPBR_MAT_PBM -->
   <surfacematerial name="Sodium_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Sodium_OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Spectralon_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Spectralon_OPBR_SHD_PBM" type="surfaceshader" uiname="Spectralon" uifolder="Manmade" doc="Spectralon is a fluoropolymer that has the highest diffuse reflectance of any known material or coating over the ultraviolet, visible, and near-infrared regions of the spectrum. It is the whitest substance available and reflects 99% of the light.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/spectralon.jpeg">
+    <input name="base_color" type="color3" value="0.99,0.99,0.99" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.99" />
+    <input name="specular_ior" type="float" value="1.35" />
+  </open_pbr_surface>
+  <!-- Generated material: Spectralon_OPBR_MAT_PBM -->
+  <surfacematerial name="Spectralon_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Spectralon_OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Stainless_Steel_OPBR_SHD_PBM -->
   <open_pbr_surface name="Stainless_Steel_OPBR_SHD_PBM" type="surfaceshader" uiname="Stainless Steel" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/stainless-steel.jpeg">

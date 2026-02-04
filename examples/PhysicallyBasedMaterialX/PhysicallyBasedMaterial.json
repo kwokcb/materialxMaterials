@@ -29,7 +29,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Al&page=Cheng",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Aluminium",
             "https://en.wikipedia.org/wiki/Density",
             "https://en.wikipedia.org/wiki/Mirror"
@@ -97,6 +97,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Be&page=Rakic-BB",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Beryllium&oldid=1295895956",
             "https://en.wikipedia.org/wiki/Density"
         ],
@@ -234,6 +235,7 @@
         "description": "Brass is an alloy of copper and zinc, with a bright and gold-like appearance. It is similar to bronze, another alloy containing copper that uses tin instead of zinc. Historically, the distinction between the two alloys has been less consistent and clear, and modern practice in museums and archaeology increasingly avoids both terms for historical objects in favor of the more general \"copper alloy\".",
         "sources": [
             "https://refractiveindex.info/?shelf=3d&book=metals&page=brass",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Brass",
             "https://en.wikipedia.org/wiki/Density"
         ],
@@ -373,6 +375,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Cs&page=Monin",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Caesium&oldid=1297091310"
         ],
         "tags": [
@@ -480,6 +483,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Cr&page=Sytchkova",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -519,6 +523,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Co&page=Werner-DFT",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/",
             "https://en.wikipedia.org/wiki/Density"
         ],
@@ -661,7 +666,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Cu&page=Johnson",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -804,7 +809,7 @@
         "description": "",
         "sources": [
             "https://www.researchgate.net/publication/225767258_Optical_properties_of_human_sclera_in_spectral_range_370-2500_nm",
-            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
+            "https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
             "https://vgl.ict.usc.edu/Data/DigitalEmily2/",
             "https://eisko.com/louise/"
         ],
@@ -876,6 +881,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Ge&page=Aspnes",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Germanium&oldid=1294309596"
         ],
         "tags": [
@@ -953,8 +959,8 @@
         ],
         "description": "",
         "sources": [
-            "https://refractiveindex.info/?shelf=main&book=Ag&page=Babar",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://refractiveindex.info/?shelf=main&book=Au&page=Babar",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -1133,6 +1139,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Ir&page=Schmitt-ALD",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Iridium&oldid=1296793846"
         ],
         "tags": [
@@ -1172,7 +1179,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=3d&book=metals&page=iron",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -1249,7 +1256,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Pb&page=Werner-DFT",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -1262,9 +1269,9 @@
     {
         "name": "Lemon",
         "color": [
-            0.718,
-            0.483,
-            0
+            0.617,
+            0.366,
+            0.045
         ],
         "metalness": 0,
         "roughness": 0.5,
@@ -1275,7 +1282,8 @@
         ],
         "description": "",
         "sources": [
-            "https://spectraldb.com/measurements/00453/"
+            "https://spectraldb.com/measurements/00453/",
+            "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/lemon/"
         ],
         "tags": [
             ""
@@ -1314,6 +1322,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Li&page=Rasigni",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Lithium&oldid=1297355131"
         ],
         "tags": [
@@ -1353,6 +1362,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Mg&page=Hagemann",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Magnesium&oldid=1297525267",
             "https://en.wikipedia.org/w/index.php?title=Density&oldid=1271894167"
         ],
@@ -1393,6 +1403,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Mn&page=Querry",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Manganese&oldid=1296594586"
         ],
         "tags": [
@@ -1468,7 +1479,7 @@
         "description": "Mercury is the only metallic element that is known to be liquid at standard conditions.",
         "sources": [
             "https://refractiveindex.info/?shelf=3d&book=metals&page=mercury",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density",
             "https://en.wikipedia.org/wiki/List_of_viscosities",
             "https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html",
@@ -1510,7 +1521,7 @@
         "sources": [
             "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html",
             "https://www.researchgate.net/publication/346758555_What_Is_the_Color_of_Milk_and_Dairy_Products_and_How_Is_It_Measured",
-            "http://dairy-technology.blogspot.com/2014/11/refractive-index.html",
+            "https://dairy-technology.blogspot.com/2014/11/refractive-index.html",
             "https://www.theengineer.co.uk/content/product/density-measurement-of-milk-and-dairy-products/",
             "https://hypertextbook.com/facts/2002/AliciaNoelleJones.shtml",
             "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
@@ -1580,6 +1591,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Mo&page=Werner-DFT",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Molybdenum&oldid=1288578240"
         ],
         "tags": [
@@ -1645,7 +1657,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Ni&page=Johnson",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -1712,6 +1724,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Pd&page=Palm",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Palladium&oldid=1296661941"
         ],
         "tags": [
@@ -2010,7 +2023,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Pt&page=Werner-DFT",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -2018,6 +2031,40 @@
         ],
         "reference": [
             "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/platinum.jpeg"
+        ]
+    },
+    {
+        "name": "Porcelain",
+        "color": [
+            0.745,
+            0.745,
+            0.723
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.5,
+        "density": 2400,
+        "densityRange": [
+            2000,
+            2500
+        ],
+        "description": "",
+        "category": [
+            "Manmade"
+        ],
+        "sources": [
+            "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/porcelain/",
+            "https://en.wikipedia.org/w/index.php?title=Vitreous_china&oldid=1291896907",
+            "https://en.wikipedia.org/w/index.php?title=Porcelain&oldid=1320984472",
+            "https://en.wikipedia.org/w/index.php?title=Ceramic&oldid=1326921651",
+            "https://www.engineeringtoolbox.com/ceramics-properties-d_1227.html"
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/porcelain.jpeg"
+        ],
+        "tags": [
+            "vitreous china",
+            "ceramic"
         ]
     },
     {
@@ -2050,6 +2097,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=K&page=Monin",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Potassium&oldid=1291714608"
         ],
         "tags": [
@@ -2116,6 +2164,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Rb&page=Monin",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Rubidium&oldid=1297114941"
         ],
         "tags": [
@@ -2197,7 +2246,7 @@
             "https://refractiveindex.info/?shelf=3d&book=crystals&page=sapphire",
             "https://www.gemsociety.org/article/table-refractive-index-double-refraction-gems/",
             "https://en.wikipedia.org/wiki/Sapphire",
-            "http://www.roditi.com/SingleCrystal/Sapphire/Properties.html"
+            "https://www.roditi.com/SingleCrystal/Sapphire/Properties.html"
         ],
         "tags": [
             "gem",
@@ -2237,6 +2286,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Si&page=Aspnes",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density",
             "https://en.wikipedia.org/wiki/Silicon"
         ],
@@ -2277,7 +2327,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Ag&page=Babar",
-            "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density",
             "https://en.wikipedia.org/wiki/Mirror"
         ],
@@ -2312,8 +2362,8 @@
         "sources": [
             "https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1",
             "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/",
-            "http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
-            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
+            "https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
+            "https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
             "https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf",
             "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html"
         ],
@@ -2349,8 +2399,8 @@
         "sources": [
             "https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1",
             "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/",
-            "http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
-            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
+            "https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
+            "https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
             "https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf",
             "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html"
         ],
@@ -2386,8 +2436,8 @@
         "sources": [
             "https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1",
             "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/",
-            "http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
-            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
+            "https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
+            "https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
             "https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf",
             "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html",
             "https://spectraldb.com/measurements/00490/",
@@ -2425,8 +2475,8 @@
         "sources": [
             "https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1",
             "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/",
-            "http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
-            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
+            "https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
+            "https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
             "https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf",
             "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html",
             "https://spectraldb.com/measurements/00408/"
@@ -2463,8 +2513,8 @@
         "sources": [
             "https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1",
             "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/",
-            "http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
-            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
+            "https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
+            "https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
             "https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf",
             "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html",
             "https://spectraldb.com/measurements/00396/"
@@ -2501,8 +2551,8 @@
         "sources": [
             "https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-17/issue-9/090901/Optical-properties-of-human-skin/10.1117/1.JBO.17.9.090901.full?SSO=1",
             "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3699319/",
-            "http://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
-            "http://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
+            "https://graphics.ucsd.edu/~henrik/papers/skin_bssrdf/skin_bssrdf.pdf",
+            "https://www.iryoku.com/downloads/Next-Generation-Character-Rendering-v6.pptx",
             "https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf",
             "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html",
             "https://spectraldb.com/measurements/00414/"
@@ -2619,6 +2669,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Na&page=Smith",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Sodium&oldid=1292971623"
         ],
         "tags": [
@@ -2626,6 +2677,32 @@
         ],
         "reference": [
             "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sodium.jpeg"
+        ]
+    },
+    {
+        "name": "Spectralon",
+        "color": [
+            0.99,
+            0.99,
+            0.99
+        ],
+        "metalness": 0,
+        "roughness": 0.99,
+        "ior": 1.35,
+        "density": 0,
+        "description": "Spectralon is a fluoropolymer that has the highest diffuse reflectance of any known material or coating over the ultraviolet, visible, and near-infrared regions of the spectrum. It is the whitest substance available and reflects 99% of the light.",
+        "category": [
+            "Manmade"
+        ],
+        "sources": [
+            "https://en.wikipedia.org/w/index.php?title=Spectralon&oldid=1267333247",
+            "https://www.labsphere.com/product/spectralon-diffuse-reflectance-material/"
+        ],
+        "reference": [
+            "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/spectralon.jpeg"
+        ],
+        "tags": [
+            ""
         ]
     },
     {
@@ -2662,6 +2739,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=3d&book=metals&page=stainless_steel",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/w/index.php?title=Stainless_steel&oldid=1274079682"
         ],
         "tags": [
@@ -2728,6 +2806,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Ti&page=Palm",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -2793,6 +2872,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=W&page=Werner-DFT",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -2832,6 +2912,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=V&page=Werner-DFT",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
@@ -2949,6 +3030,7 @@
         "description": "",
         "sources": [
             "https://refractiveindex.info/?shelf=main&book=Zn&page=Werner-DFT",
+            "https://arxiv.org/pdf/2512.23696#appendix.D",
             "https://en.wikipedia.org/wiki/Density"
         ],
         "tags": [
