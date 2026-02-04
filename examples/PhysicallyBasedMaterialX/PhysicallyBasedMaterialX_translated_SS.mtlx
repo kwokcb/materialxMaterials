@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
 <materialx version="1.39">
-  <!--Physically Based Materials from https://api.physicallybased.info -->
-  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
-  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
-  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <surfacematerial name="Aluminum_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Aluminum" />
   </surfacematerial>
@@ -4685,7 +4681,7 @@
     <output name="normal_out" type="vector3" />
     <output name="tangent_out" type="vector3" />
     <input name="name" type="string" value="MIT Black" />
-    <input name="color" type="color3" value="5e-05, 5e-05, 5e-05" />
+    <input name="color" type="color3" value="0.00005, 0.00005, 0.00005" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.99" />
     <input name="ior" type="float" value="1.5" />
@@ -6296,10 +6292,10 @@
     <input name="name" type="string" value="Potassium" />
     <input name="color" type="color3" value="0.983, 0.956, 0.906" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.0, 1.0, 0.994" />
+    <input name="specularColor" type="color3" value="1, 1, 0.994" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
-    <input name="complexIor" type="string" value="0.0, 3.37295, 0.041228, 1.56367, 0.220328, 2.05971" />
+    <input name="complexIor" type="string" value="0, 3.37295, 0.041228, 1.56367, 0.220328, 2.05971" />
     <input name="density" type="float" value="859" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />
@@ -6498,7 +6494,7 @@
     <input name="name" type="string" value="Rubidium" />
     <input name="color" type="color3" value="0.919, 0.859, 0.747" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.0, 0.999, 0.998" />
+    <input name="specularColor" type="color3" value="1, 0.999, 0.998" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
     <input name="complexIor" type="string" value="0.0391755, 1.22619, 0.101768, 1.27629, 0.205178, 1.13104" />
@@ -7001,7 +6997,7 @@
     <input name="name" type="string" value="Silver" />
     <input name="color" type="color3" value="0.991, 0.985, 0.974" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.0, 1.0, 0.991" />
+    <input name="specularColor" type="color3" value="1, 1, 0.991" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
     <input name="complexIor" type="string" value="0, 8.06675, 0.0626977, 3.62828, 0.382178, 3.80086" />
@@ -7912,10 +7908,10 @@
     <input name="name" type="string" value="Sodium" />
     <input name="color" type="color3" value="0.977, 0.962, 0.936" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.0, 1.0, 0.991" />
+    <input name="specularColor" type="color3" value="1, 1, 0.991" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
-    <input name="complexIor" type="string" value="0.0, 4.94428, 0.0669661, 2.3243, 0.325253, 2.89317" />
+    <input name="complexIor" type="string" value="0, 4.94428, 0.0669661, 2.3243, 0.325253, 2.89317" />
     <input name="density" type="float" value="969" />
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="" />

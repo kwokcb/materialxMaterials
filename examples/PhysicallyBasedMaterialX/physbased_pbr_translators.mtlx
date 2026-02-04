@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
 <materialx version="1.39">
-  <!--Physically Based Materials from https://api.physicallybased.info -->
-  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
-  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
-  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <nodedef name="ND_physbased_pbr_surface_to_gltf_pbr" node="physbased_pbr_surface_to_gltf_pbr" nodegroup="translation" doc="Translator from 'physbased_pbr_surface' to 'gltf_pbr'" source_version="1.0" source="physbased_pbr_surface" target_version="2.0.1" target="gltf_pbr">
     <!--Inputs (inputs from source 'physbased_pbr_surface')-->
     <input name="name" type="string" value="Aluminum" />
