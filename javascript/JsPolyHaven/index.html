@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poly Haven MaterialX Materials</title>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/download.png">
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/download.png">
     <!-- Bootstrap 5.3.2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -15,25 +17,31 @@
             cursor: pointer;
             height: 100%;
         }
+
         .material-card:hover {
             transform: scale(1.03);
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         }
+
         .material-img {
             height: 180px;
             object-fit: cover;
         }
+
         .loading-spinner {
             display: none;
         }
+
         .category-badge {
             margin-right: 5px;
             margin-bottom: 5px;
         }
+
         #materialPreview {
             max-height: 400px;
             object-fit: contain;
         }
+
         .map-badge {
             font-size: 0.8rem;
         }
@@ -44,8 +52,13 @@
         }
 
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -53,11 +66,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material.min.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img class="px-1" src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/download.png" width="48px" alt="MaterialX Materials Icon">
+                <img class="px-1"
+                    src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/download.png"
+                    width="48px" alt="MaterialX Materials Icon">
                 <span class="ms-2">Poly Haven MaterialX Materials</span>
             </a>
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -75,17 +91,17 @@
     <div class="container-fluid py-4">
         <div class="row mb-4">
             <div class="col-12">
-                
-                <div class="row g-3 align-items-center mb-3">
+
+                <div class="row g-3 align-items-center mb-2">
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-search"></i></span>
                             <input type="text" id="searchInput" class="form-control" placeholder="Search materials...">
-                            <button class="btn btn-primary" id="searchButton">Search</button>
+                            <button class="btn btn-sm btn-primary" id="searchButton">Search</button>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <select class="form-select" id="categoryFilter">
+                        <select class="form-select form-select-sm" id="categoryFilter">
                             <option value="">All Categories</option>
                         </select>
                     </div>
@@ -98,7 +114,7 @@
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="d-flex justify-content-center">
                     <div class="spinner-border loading-spinner text-primary" role="status" id="mainSpinner">
                         <span class="visually-hidden">Loading...</span>
@@ -106,12 +122,12 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row" id="materialsContainer">
             <!-- Materials will be loaded here -->
         </div>
     </div>
-    
+
     <!-- Material Preview Modal -->
     <div class="modal fade" id="materialModal" tabindex="-1" aria-labelledby="materialModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -120,49 +136,60 @@
                     <h5 class="modal-title" id="materialModalLabel">Material Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="font-size: 11px">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="" alt="Material Preview" class="img-fluid rounded mb-3" id="materialPreview">
-                            <div id="materialTags" class="mb-3"></div>
-                            <div id="materialCategories" class="mb-3"></div>
+                        <div class="col-md">
+                            <img src="" alt="Material Preview" class="img-fluid rounded mb-2" id="materialPreview">
+                            <div id="materialTags" class="mb-2"></div>
+                            <div id="materialCategories" class="mb-2"></div>
                         </div>
-                        <div class="col-md-6">
-                            <h4 id="materialTitle"></h4>
+                        <div class="col-md-7">
                             <p id="materialDescription"></p>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <label for="materialResolution" class="form-label">Image Resolution</label>
-                                <select class="form-select" id="materialResolution">
+                                <select class="form-select form-select-sm" id="materialResolution"                                    >
                                     <option value="1k" selected>1K</option>
                                     <option value="2k">2K </option>
                                     <option value="4k">4K</option>
                                     <option value="8k">8K</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <label class="form-label" style="display: none;">Maps Available</label>
                                 <div id="materialMaps" class="d-flex flex-wrap gap-2"></div>
                             </div>
-                            <div class="d-grid gap-2">
-                                <button class="btn btn-primary" id="downloadMaterial">
+                            <div class="d-grid gap-1">
+                                <button style="font-size: 11px;" class="btn btn-sm btn-primary" id="downloadMaterial">
                                     <i class="bi bi-download me-2"></i>Download Material
                                 </button>
-                                <button class="btn btn-outline-secondary" id="copyMaterialLink">
+                                <button style="font-size: 11px;" class="btn btn-sm btn-primary" id="copyMaterialLink">
                                     <i class="bi bi-link me-2"></i>Copy Material Link
                                 </button>
+                                <button style="font-size: 11px;" class="btn btn-sm btn-primary" id="previewMaterial">
+                                    <i class="bi bi-eye me-2"></i>Preview
+                                </button>
+                                <div class="row-sm p-0 m-0 g-0">
+                                    <!-- Viewer -->
+                                    <div class="col-sm p-0 m-0 g-0">
+                                        <iframe id="viewer" src="" class="p-0"
+                                            style="width: 100%; height: 480px; overflow: auto; border: none; display:none;"
+                                            frameborder="0" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>                            
                             </div>
                         </div>
-                        <div id="contentPreview" class="mt-3"></div>
+                        <div id="contentPreview" class="mt-1"></div>
                         <!-- <textarea id="mtlxEditor" style="display:none;"></textarea> -->
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" style="font-size: 11px" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Bootstrap and loader -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
@@ -170,4 +197,5 @@
     <script src="jsPolyHavenLoader.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>

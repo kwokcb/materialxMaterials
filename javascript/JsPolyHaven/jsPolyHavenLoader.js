@@ -187,6 +187,7 @@ class JsPolyHavenAPILoader {
             // 1. Download and add the main MaterialX file
             const mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
             zip.file(`${material.id}.mtlx`, mtlxContent);
+            console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx, ${mtlxContent}`);
 
             // 2. Download and add all included texture files
             const textureFiles = mtlxData.include || {};
@@ -208,6 +209,9 @@ class JsPolyHavenAPILoader {
 
                     if (path.toLowerCase().endsWith('.exr')) {
                         console.warn(`EXR file present which may not be supported by MaterialX texture loader: ${path}`);
+                    }
+                    else {
+                        console.log(`Added texture to ZIP: ${path}`);
                     }
                 } catch (error) {
                     console.error(`Error downloading texture ${path}:`, error);

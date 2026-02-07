@@ -5,6 +5,7 @@ let currentSelectedMaterial = null;
 let polyHavenAPI = null;
 let svgDataUrl = null;
 let codeMirrorEditor = null;
+const materialPackageCache = {};
 
 // DOM elements
 const materialsContainer = document.getElementById('materialsContainer');
@@ -15,6 +16,10 @@ const resolutionFilter = document.getElementById('resolutionFilter');
 const mainSpinner = document.getElementById('mainSpinner');
 const materialModal = new bootstrap.Modal(document.getElementById('materialModal'));
 
+// Target URL for the viewer page
+let targetURL = "https://kwokcb.github.io/MaterialXLab/javascript/shader_utilities/dist/index.html?viewerOnly=1";
+// Set for local testing
+//targetURL = "http://localhost:8010/javascript/shader_utilities/dist/index.html?viewerOnly=1";
 
  function setTheme(mode) {
     document.documentElement.setAttribute('data-bs-theme', mode);
@@ -64,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('downloadMaterial').addEventListener('click', downloadMaterial);
     document.getElementById('copyMaterialLink').addEventListener('click', copyMaterialLink);
     document.getElementById('materialResolution').addEventListener('change', updateMapsDisplay);
+    document.getElementById('previewMaterial').addEventListener('click', previewMaterial);
 
     // Initialize CodeMirror when modal opens
     const materialModalElement = document.getElementById('materialModal');
@@ -80,6 +86,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 lineWrapping: true
             });
     });
+
+    let viewer = document.getElementById('viewer');
+    viewer.src = targetURL;
+
+    materialModalElement.addEventListener('hidden.bs.modal', function () {
+        if (viewer) {
+            viewer.style.display = 'none';
+        }
+
+        // Clear the cache when the modal closes
+        for (const key in materialPackageCache) {
+            delete materialPackageCache[key];
+        }        
+    });
 });
 
 async function downloadMaterial() {
@@ -95,8 +115,15 @@ async function downloadMaterial() {
     downloadBtn.disabled = true;
 
     try {
+        const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
+        let zipBlob = materialPackageCache[cacheKey];
+        if (!zipBlob) {
+            zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
+            materialPackageCache[cacheKey] = zipBlob;
+        }
+
         // Create the MaterialX package using the API class
-        const zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
+        //const zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
 
         // Trigger download
         const url = URL.createObjectURL(zipBlob);
@@ -121,6 +148,75 @@ async function downloadMaterial() {
         downloadBtn.disabled = false;
     }
 }
+
+function waitForViewerReady(viewer) {
+    return new Promise((resolve) => {
+        function handler(event) {
+            try {
+                const data = JSON.parse(event.data);
+                if (data.type === 'viewer-ready') {
+                    window.removeEventListener('message', handler);
+                    resolve();
+                }
+            } catch (e) {
+                // Ignore non-JSON messages
+            }
+        }
+        window.addEventListener('message', handler);
+    });
+}
+
+async function previewMaterial() {
+    if (!currentSelectedMaterial || !polyHavenAPI) return;
+
+    let viewer = document.getElementById('viewer');
+    if (!viewer) {
+        console.info('Viewer not found !');
+    }
+
+    let previewButton = document.getElementById('previewMaterial')
+    let previousText = previewButton.textContent;
+    previewButton.textContent = 'Loading...';
+
+    const resolution = document.getElementById('materialResolution').value;
+    try {
+        const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
+        let zipBlob = materialPackageCache[cacheKey];
+        if (!zipBlob) {
+            zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
+            materialPackageCache[cacheKey] = zipBlob;
+        }
+        
+        // Create the MaterialX package using the API class
+        //const zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
+
+        // Convert Blob to ArrayBuffer
+        const arrayBuffer = await zipBlob.arrayBuffer();
+
+        // Post the ArrayBuffer to the target window (e.g., iframe or parent)
+        console.log('Posting preview data to viewer page...');
+        if (viewer && viewer.contentWindow) {
+            viewer.contentWindow.postMessage(arrayBuffer, targetURL);
+        }
+
+        // Wait for viewer-ready message.
+        // In case of failure, throw a timeout error.
+        let failed_messaage = false;
+        const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error("Timeout waiting for viewer-ready")), 5000));
+        await Promise.race([waitForViewerReady(viewer), timeoutPromise]).catch(error => {
+            throw error;
+        });        
+
+        viewer.style.display = 'block';
+
+    } catch (error) {
+        console.error('Error preparing preview:', error);
+        alert(`Failed to prepare preview: ${error.message}`);
+    }
+    previewButton.textContent = previousText;
+
+}
+
 
 // Load materials from Poly Haven API
 async function loadMaterials() {
@@ -208,13 +304,13 @@ function displayMaterials(materials) {
 
     materials.forEach(material => {
         const col = document.createElement('div');
-        col.className = 'col-md-4 col-lg-3 mb-4';
+        col.className = 'col-md-3 col-lg-2 mb-4';
 
         col.innerHTML = `
             <div class="card material-card" data-material-id="${material.id}">
                 <img src="${material.thumb_url}" class="card-img-top material-img" alt="${material.name}" onerror="this.src=${svgDataUrl}">
                 <div class="card-body">
-                    <h5 class="card-title">${material.name}</h5>
+                    <div class="card-title">${material.name}</div>
                     <div class="d-flex flex-wrap">
                         ${material.categories.map(cat => `<span class="badge bg-secondary category-badge">${cat}</span>`).join('')}
                     </div>
@@ -249,10 +345,10 @@ async function loadMaterialContent(materialId) {
         const previewContainer = document.getElementById('contentPreview');
         previewContainer.innerHTML = `
             <div class="mt-4">
-                <h5>MaterialX Document</h5>
+                <b>MaterialX Document</b>
                 <textarea id="mtlxEditor">${contentData.mtlxContent}</textarea>
-                <div class="mt-4">
-                    <h5>Textures</h5>
+                <div class="mt-2">
+                    <b>Textures</b>
                     <div id="textureGallery" class="row g-2"></div>
                 </div>
             </div>
@@ -330,7 +426,7 @@ async function showMaterialDetails(material) {
 
     // Set basic info
     document.getElementById('materialModalLabel').textContent = material.name;
-    document.getElementById('materialTitle').textContent = material.name;
+    //document.getElementById('materialTitle').textContent = material.name;
     document.getElementById('materialDescription').textContent = material.description;
     document.getElementById('materialPreview').src = material.thumb_url;
 
@@ -346,12 +442,13 @@ async function showMaterialDetails(material) {
     categoriesList = material.categories.map(cat =>
         `<span class="badge bg-secondary">${cat}</span>`
     ).join(' ');
-    categoriesContainer.innerHTML = '<span class="badge bg-dark">Cartegories</span> ' + categoriesList
+    categoriesContainer.innerHTML = '<span class="badge bg-dark">Categories</span> ' + categoriesList
+
 
     // Reset content preview section
-    document.getElementById('contentPreview').innerHTML = `
-        <div class="text-center py-4">
-            <button class="btn btn-primary" id="loadContentBtn">
+    document.getElementById('contentPreview').innerHTML = `    
+        <div class="text-center py-1">
+            <button style="font-size: 11px;" class="btn btn-primary" id="loadContentBtn">
                 <i class="bi bi-eye me-2"></i>Show Content
             </button>
         </div>
