@@ -29,8 +29,12 @@ class GPUOpenMaterialLoader():
         self.root_url = 'https://api.matlib.gpuopen.com/api'
         ### URL for the materials
         self.url = self.root_url + '/materials'
-        ### URL for the packages
+        ### URL for the package information
         self.package_url = self.root_url + '/packages'
+        ### URL for getting rendering information
+        self.render_url = self.root_url + '/renders'
+        ### List of title, preview url pairs for the materials
+        self.materialPreviews = None
         ### List of materials
         self.materials = None
         ### List of material names
@@ -40,12 +44,13 @@ class GPUOpenMaterialLoader():
         self.logger = logging.getLogger('GPUO')
         logging.basicConfig(level=logging.INFO)
 
-    def writePackageDataToFile(self, data, outputFolder, title, unzipFile=True) -> bool:
+    def writePackageDataToFile(self, data, outputFolder, title, url, unzipFile=True) -> bool:
         '''
         Write a package data to a file.
         @param data: The data to write.
         @param outputFolder: The output folder to write the file to.
         @param title: The title of the file.
+        @param url: The URL for the material preview image.
         @param unzipFile: If true, the file is unzipped to a folder with the same name 
         as the title.
         @return: True if the package was written.
@@ -65,13 +70,31 @@ class GPUOpenMaterialLoader():
                 with zipfile.ZipFile(data_io, 'r') as zip_ref:
                     zip_ref.extractall(unzipFolder)
 
+            # Write a url.txt file with url information for the material preview
+            urlFile = os.path.join(unzipFolder, 'url.txt')
+            with open(urlFile, 'w') as f:
+                f.write(url)
+
             self.logger.info(f'Unzipped to folder: "{unzipFolder}"')
 
-        else:            
+        else:
+            # Add the url.txt into the existing zip data
+            zip_buffer = io.BytesIO()
+            # Open the original zip data in append mode
+            with zipfile.ZipFile(io.BytesIO(data), 'a', zipfile.ZIP_DEFLATED) as zip_in:
+                # Copy all files to a new zip buffer
+                with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_out:
+                    for item in zip_in.infolist():
+                        zip_out.writestr(item, zip_in.read(item.filename))
+                    # Add url.txt
+                    zip_out.writestr('url.txt', url)
+            data = zip_buffer.getvalue()
+
             outputFile = os.path.join(outputFolder, f"{title}.zip")
             with open(outputFile, "wb") as f:
                 self.logger.info(f'Write package to file: "{outputFile}"')
                 f.write(data)
+
 
         return True
     
@@ -188,7 +211,9 @@ class GPUOpenMaterialLoader():
         data = requests.get(url).content
 
         title = jsonResult["title"]
-        return [data, title]
+
+        preview_url = self.getMaterialPreviewURL(title)
+        return [data, title, preview_url]
     
     def downloadPackageByExpression(self, searchExpr, packageId=0):
         '''
@@ -206,7 +231,7 @@ class GPUOpenMaterialLoader():
                 materialNumber = found['materialNumber']
                 matName = found['title']
                 self.logger.info(f'> Download material: {matName} List: {listNumber}. Index: {materialNumber}')
-                result = [data, title] = self.downloadPackage(listNumber, materialNumber, packageId)
+                result = [data, title, url] = self.downloadPackage(listNumber, materialNumber, packageId)
                 downloadList.append(result)        
         return downloadList
 
@@ -246,6 +271,63 @@ class GPUOpenMaterialLoader():
                 self.materialNames.append(material['title'])
 
         return self.materialNames
+    
+    def getMaterialPreviewURL(self, title) -> str:
+        '''
+        @breif Given the title of a material, return the URL for the material preview image.
+        @param title: The title of the material to get the preview URL for.
+        @return: The URL for the material preview image. Else empty string.
+        '''
+        url = ''
+        if (self.materialPreviews == None):
+            self.computeMaterialPreviews()
+        if (not self.materialPreviews):
+            return url
+        
+        for item in self.materialPreviews:
+            if item['title'] == title:
+                url = item['preview_url']
+                break
+        return url
+
+    def getMaterialPreviews(self, force = False) -> list | None:
+        if not self.materialPreviews or force:
+            self.computeMaterialPreviews()
+        return self.materialPreviews
+
+    def computeMaterialPreviews(self) -> list:
+        '''
+        @brief Get the material preview URLs for the materials loaded from the GPUOpen material database.
+        @return list of items of the form: { 'title': material_title, 'preview_url': url }
+        If no materials or renders are loaded, then an empty list is returned.
+        '''
+        self.materialPreviews = []
+        if (self.materials == None):
+            return []
+        if (self.renders == None):
+            return []
+        render_urls = self.renders["renders"]
+        
+        for materialList in self.materials:
+            for material in materialList['results']:
+                renders_order_list =  material['renders_order']
+                material_title = material['title']
+
+                if len(renders_order_list) > 0:
+                    #print('renders_order_list:', renders_order_list)
+                    render_lookup = renders_order_list[0]
+                    # Look for item in "renders" list with "id" == render_lookup
+                    for render in render_urls:
+                        #print('render id:', render['id'], 'render_lookup:', render_lookup   )
+                        if render['id'] == render_lookup:
+                            url = render['thumbnail_url']
+                            item = { 'title': material_title, 'preview_url': url }
+                            self.materialPreviews.append(item)
+                            #print(f'Found render for material: {item}')
+                            break
+                else:
+                    self.logger.info(f'No renderings specified for material: {material_title}')
+        return self.materialPreviews
 
     def getMaterials(self) -> list:
         '''
@@ -308,6 +390,71 @@ class GPUOpenMaterialLoader():
                 self.logger.info(f'Error: {response.status_code}, {response.text}')
 
         return self.materials    
+    
+    def getRenders(self) -> list:
+        '''
+        Get the rendering information returned from the GPUOpen material database.
+        Will loop based on the linked-list of render info stored in the database.
+        Currently the batch size requested is 100 render infos per batch.
+        @return: List of material lists
+        '''
+
+        self.renders = { "renders": [] }
+
+        url = self.render_url
+        headers = {
+            'accept': 'application/json'
+        }
+
+        # Get batches of materials. Start with the first 100.
+        # Can apply more filters to this as needed in the future.
+        # This will get every material in the database.        
+        params = {
+            'limit': 100,
+            'offset': 0
+        }
+        haveMoreMaterials = True
+        while (haveMoreMaterials):
+
+            response = requests.get(url, headers=headers, params=params)
+
+            if response.status_code == HTTPStatus.OK:
+                
+                raw_response = response.text
+        
+                # Split the response text assuming the JSON objects are concatenated
+                json_strings = raw_response.split('}{')    
+                #self.logger.info('Number of JSON strings:', len(json_strings))
+                json_result_string = json_strings[0]
+                jsonObject = json.loads(json_result_string)
+
+                # Extrac out the  "results": [] list
+                results_list = jsonObject['results']
+                for result in results_list:
+                    self.renders["renders"].append(result)
+
+                # Scan for next batch of materials
+                nextQuery = jsonObject['next']
+                if (nextQuery):
+                    # Get limit and offset from this: 'https://api.matlib.gpuopen.com/api/renders/?limit=100&offset=100"'
+                    # Split the string by '?'
+                    queryParts = nextQuery.split('?')
+                    # Split the string by '&'
+                    queryParts = queryParts[1].split('&')
+                    # Split the string by '='
+                    limitParts = queryParts[0].split('=')
+                    offsetParts = queryParts[1].split('=')
+                    params['limit'] = int(limitParts[1])
+                    params['offset'] = int(offsetParts[1])
+                    self.logger.info(f'Fetch set of render infos: limit: {params["limit"]} offset: {params["offset"]}')
+                else:
+                    haveMoreMaterials = False
+                    break
+                
+            else:
+                self.logger.info(f'Error: {response.status_code}, {response.text}')
+
+        return self.renders 
 
     def getMaterialsAsJsonString(self) -> list:
         '''
@@ -332,8 +479,8 @@ class GPUOpenMaterialLoader():
         rootDir = os.path.dirname(rootName)
         if not rootDir:
             rootDir = '.'
-        print('RootDir:', rootDir)
-        print('RootName:', rootName)
+        #print('RootDir:', rootDir)
+        #print('RootName:', rootName)
         for root, dirs, files in os.walk(rootDir):
             for file in files:
                 # Check that it ends with a number + ".json". e.g.
@@ -357,9 +504,45 @@ class GPUOpenMaterialLoader():
                 self.materials.append(data)
         return self.materials
 
+    def writeRenderFiles(self, folder, rootFileName) -> int:
+        '''
+        Write the render information to disk files.
+        @param folder: The folder to write the files to.
+        @param rootFileName: The root file name to use for the files.
+        @return: The number of files written.
+        '''
+        if (self.renders == None):
+            return 0
+
+        os.makedirs(folder, exist_ok=True)
+        # Write JSON to file
+        fileName = rootFileName + '_.json'
+        rendersFileName = os.path.join(folder, fileName)
+        self.logger.info(f'> Write render info to file: "{rendersFileName}"')
+        with open(rendersFileName, 'w') as f:
+            json.dump(self.renders, f, indent=4)
+
+    def writeMaterialPreviewFile(self, folder, rootFileName):
+        '''
+        Write the material preview information to disk files.
+        @param folder: The folder to write the files to.
+        @param rootFileName: The root file name to use for the files.
+        '''
+        if (self.materialPreviews == None):
+            return 0
+
+        os.makedirs(folder, exist_ok=True)
+        # Write JSON to file
+        fileName = rootFileName + '_.json'
+        previewsFileName = os.path.join(folder, fileName)
+        self.logger.info(f'> Write material preview info to file: "{previewsFileName}"')
+        with open(previewsFileName, 'w') as f:
+            json.dump(self.materialPreviews, f, indent=4)
+
+
     def writeMaterialFiles(self, folder, rootFileName) -> int:
         '''
-        Write the materials to a set of MaterialX files.
+        Write the materials to disk.
         @param folder: The folder to write the files to.
         @param rootFileName: The root file name to use for the files.
         @return: The number of files written.

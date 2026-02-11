@@ -1,23 +1,12 @@
-def reduce_bit_depth(img, bits=4):
-    """
-    @brief Reduce bit depth per channel for an image.
-    @param img Input image (uint8).
-    @param bits Number of bits to keep (1-8).
-    @return Image with reduced bit depth per channel.
-    """
-    shift = 8 - bits
-    return ((img >> shift) << shift).astype(np.uint8)
-
-import os
-import cv2
-import numpy as np
-import argparse
-
-## @file optimize_images.py
 #  @brief Batch optimize PNG images by resizing and/or reducing color precision using OpenCV.
 #
 #  This script allows batch processing of PNG images in a folder, supporting resizing by percentage 
 #  and color quantization. 
+#
+import os
+import cv2
+import numpy as np
+import argparse
 
 def quantize_image(img, k):
     """
@@ -34,6 +23,15 @@ def quantize_image(img, k):
     quantized = centers[labels.flatten()]
     return quantized.reshape(img.shape)
 
+def reduce_bit_depth(img, bits=4):
+    """
+    @brief Reduce bit depth per channel for an image.
+    @param img Input image (uint8).
+    @param bits Number of bits to keep (1-8).
+    @return Image with reduced bit depth per channel.
+    """
+    shift = 8 - bits
+    return ((img >> shift) << shift).astype(np.uint8)
 
 def process_image(path, out_dir, resize_pct, quantize_k, do_resize, do_quantize, do_bitdepth, bitdepth, to_webp, webp_quality):
     """

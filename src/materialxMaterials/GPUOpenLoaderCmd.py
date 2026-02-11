@@ -50,6 +50,9 @@ def GPUOpenLoaderCmd():
         # Download materials
         logger.info(f'> Download materials from GPUOpen')
         materials = loader.getMaterials()
+        # Download renders
+        renders = loader.getRenders()
+        loader.getMaterialPreviews()
     
     outputFolder = 'GPUOpenMaterialX'
     if opts.output:
@@ -64,6 +67,8 @@ def GPUOpenLoaderCmd():
     logger.info(f'Available number of materials: {materialCount}')
     if opts.saveMaterials:
         loader.writeMaterialFiles(outputFolder, 'GPUOpenMaterialX')
+        loader.writeRenderFiles(outputFolder, 'GPUOpenMaterialX_Renders')
+        loader.writeMaterialPreviewFile(outputFolder, 'GPUOpenMaterialX_Previews')
 
     # Create a test expression
     searchExpr = ''
@@ -78,8 +83,9 @@ def GPUOpenLoaderCmd():
         for dataItem in dataItems:
             data = dataItem[0]
             title = dataItem[1]
+            url = dataItem[2]
             logger.info(f'Write package data to file: {title}, Data size: {len(data)*toMB:.2f} MB')
-            loader.writePackageDataToFile(data, outputFolder, title, unzipFile=unzipFile)    
+            loader.writePackageDataToFile(data, outputFolder, title, url, unzipFile=unzipFile)    
 
     extractIndices = opts.extractIndices
     if len(extractIndices) > 0:
@@ -91,10 +97,10 @@ def GPUOpenLoaderCmd():
         materialList = int(indices[0])
         materialIndex = int(indices[1])
         materialPackage = int(indices[2])
-        [data, title] = loader.downloadPackage(materialList, materialIndex, materialPackage)
-        logger.info(f'> Download material: {title} List: {materialList}. Index: {materialIndex}. Package: {materialPackage}')
+        [data, title, url] = loader.downloadPackage(materialList, materialIndex, materialPackage)
+        logger.info(f'> Download material: {title} List: {materialList}. Index: {materialIndex}. Package: {materialPackage}. Preview URL:{url}')
         if data:
-            loader.writePackageDataToFile(data, outputFolder, title)    
+            loader.writePackageDataToFile(data, outputFolder, title, url)    
 
     if opts.materialNames:
         materialNamesFile = os.path.join(outputFolder, 'GPUOpenMaterialX_Names.json')
