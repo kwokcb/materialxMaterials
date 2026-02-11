@@ -23,6 +23,8 @@ src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_2.json
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_3.json
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_4.json
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_Names.json
+src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_Previews_.json
+src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_Renders_.json
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood.zip
 src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.mtlx
 src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png
@@ -40,6 +42,7 @@ src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indi
 src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_normal.png
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.mtlx
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png
+src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/url.txt
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/textures/Oliana_Blue_Painted_Wood_Mask.png
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/textures/Oliana_Blue_Painted_Wood_Normal.png
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/textures/Oliana_Blue_Painted_Wood_baseColor.png
