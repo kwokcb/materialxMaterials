@@ -17,6 +17,8 @@ def GPUOpenLoaderCmd():
                                      ' package will be extracted.')
     parser.add_argument('--materialNames', type=bool, default=None,
                         help='Return material names. Default is False')
+    parser.add_argument('--loadFromPackage', type=bool, default=None,
+                        help='Load materials from a package. Default is True. If false, materials will be downloaded.')
     parser.add_argument('--loadMaterials', type=str, default='', 
                         help='Folder to load materials from. All JSON files with post-fix _#.json are loaded. Default is false'
                         ' meaning to download materials')
@@ -38,21 +40,25 @@ def GPUOpenLoaderCmd():
     loader = gpuo.GPUOpenMaterialLoader()
     materials = None
 
-    if opts.loadMaterials:
-        filePaths = loader.getMaterialFileNames(opts.loadMaterials)
-        if len(filePaths) == 0:
-            logger.error(f'Error: No files found in folder: {opts.loadMaterials}')
-            sys.exit(1)
-
-        logger.info(f'> Load materials from files: {filePaths}')
-        materials = loader.readMaterialFiles(filePaths)
+    if opts.loadFromPackage:
+        logger.info(f'> Load materials from package')
+        materials = loader.readPackageFiles()
     else:
-        # Download materials
-        logger.info(f'> Download materials from GPUOpen')
-        materials = loader.getMaterials()
-        # Download renders
-        renders = loader.getRenders()
-        loader.getMaterialPreviews()
+        if opts.loadMaterials:
+            filePaths = loader.getMaterialFileNames(opts.loadMaterials)
+            if len(filePaths) == 0:
+                logger.error(f'Error: No files found in folder: {opts.loadMaterials}')
+                sys.exit(1)
+
+            logger.info(f'> Load materials from files: {filePaths}')
+            materials = loader.readMaterialFiles(filePaths)
+        else:
+            # Download materials
+            logger.info(f'> Download materials from GPUOpen')
+            materials = loader.getMaterials()
+            # Download renders
+            renders = loader.getRenders(force=True)
+            loader.getMaterialPreviews()
     
     outputFolder = 'GPUOpenMaterialX'
     if opts.output:
@@ -64,7 +70,9 @@ def GPUOpenLoaderCmd():
 
     materialNames = loader.getMaterialNames()
     materialCount = len(materialNames)
-    logger.info(f'Available number of materials: {materialCount}')
+    previewCount = len(loader.getMaterialPreviews())
+    rendersCount = len(loader.getRenders(force=False)['renders'])
+    logger.info(f'Have {materialCount} materials and {previewCount} previews, and {rendersCount} renders.')
     if opts.saveMaterials:
         loader.writeMaterialFiles(outputFolder, 'GPUOpenMaterialX')
         loader.writeRenderFiles(outputFolder, 'GPUOpenMaterialX_Renders')

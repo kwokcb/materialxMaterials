@@ -39,6 +39,8 @@ class GPUOpenMaterialLoader():
         self.materials = None
         ### List of material names
         self.materialNames = None
+        ### List of render information
+        self.renders = None
 
         ### Logger
         self.logger = logging.getLogger('GPUO')
@@ -391,13 +393,16 @@ class GPUOpenMaterialLoader():
 
         return self.materials    
     
-    def getRenders(self) -> list:
+    def getRenders(self, force=False) -> list:
         '''
         Get the rendering information returned from the GPUOpen material database.
         Will loop based on the linked-list of render info stored in the database.
         Currently the batch size requested is 100 render infos per batch.
+        @param force: If true, forces a re-download of the render information. Default is false.
         @return: List of material lists
         '''
+        if self.renders and not force:
+            return self.renders
 
         self.renders = { "renders": [] }
 
@@ -489,6 +494,59 @@ class GPUOpenMaterialLoader():
                     filePath = os.path.join(root, file)
                     filePaths.append(filePath)
         return filePaths
+
+    def readPackageFiles(self) -> None:
+        '''
+        @brief Read the material files from the "data/GPUOpenMaterialX" folder in the install Python package.
+        The files are expected to be named: 
+        - "GPUOpenMaterialX_#.json" for material files,
+        - "GPUOpenMaterialX_Previews_.json" for material preview information, and 
+        - "GPUOpenMaterialX_Names.json" for material names.
+        '''
+
+        self.materials = []
+        self.materialPreviews = []
+        self.materialNames = []        
+
+        # Read "data/GPUOpenMaterialX" files from install Python package
+        # Get package:
+        packageFolder = os.path.join(os.path.dirname(__file__), 'data/GPUOpenMaterialX')
+        for fileName in os.listdir(packageFolder):
+            filePath = os.path.join(packageFolder, fileName)
+            self.logger.debug(f'> SCAN package file: "{filePath}"')
+            # Check for files of this form: GPUOpenMaterialX_#.json
+            if re.match(r'GPUOpenMaterialX_\d+\.json', fileName):
+                self.logger.debug(f'> Read package file: "{filePath}"')
+                with open(filePath) as f:
+                    data = json.load(f)
+                    results = data['results']
+                    results_count = len(results)
+                    self.materials.append(data)		
+            elif fileName == 'GPUOpenMaterialX_Previews_.json':
+                self.logger.debug(f'> Read package file: "{filePath}"')
+                with open(filePath) as f:
+                    data = json.load(f)
+                    self.materialPreviews = data
+            #elif fileName == 'GPUOpenMaterialX_Names.json':
+            #    self.logger.debug(f'> Read package file: "{filePath}"')
+            #    with open(filePath) as f:
+            #        data = json.load(f)
+            #        self.materialNames = data
+            elif fileName == 'GPUOpenMaterialX_Renders_.json':
+                self.logger.debug(f'> Read package file: "{filePath}"')
+                with open(filePath) as f:
+                    data = json.load(f)
+                    self.renders = data
+
+        # Better to extract the names from materials vs reading from file
+        # which may be out of sync.
+        self.getMaterialNames()
+
+        self.logger.debug(f'Loaded {len(self.materials)} material files, '
+                         f'{len(self.materialPreviews)} material previews, and '
+                         f'{len(self.materialNames)} material names, '
+                         f'{len(self.renders)} render files from package.')
+
 
     def readMaterialFiles(self, fileNames) -> list:
         '''
