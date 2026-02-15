@@ -217,16 +217,17 @@ class GPUOpenMaterialLoader():
         preview_url = self.getMaterialPreviewURL(title)
         return [data, title, preview_url]
     
-    def downloadPackageByExpression(self, searchExpr, packageId=0):
+    def downloadPackageByExpression(self, searchExpr, exact_match=False, packageId=0):
         '''
         Download a package for a given material from the GPUOpen material database.
         @param searchExpr: The regular expression to match the material name.
+        @param exact_match: If true, the material name must match exactly. Default is false.
         @param packageId: The package ID to download.
         @return: A list of downloaded packages of the form:
         '''
         downloadList = []
 
-        foundList = self.findMaterialsByName(searchExpr)
+        foundList = self.findMaterialsByName(searchExpr, exact_match)
         if len(foundList) > 0:
             for found in foundList:
                 listNumber = found['listNumber']
@@ -237,10 +238,11 @@ class GPUOpenMaterialLoader():
                 downloadList.append(result)        
         return downloadList
 
-    def findMaterialsByName(self, materialName) -> list:
+    def findMaterialsByName(self, materialName, exact_match = False) -> list:
         '''
         Find materials by name.
         @param materialName: Regular expression to match the material name.
+        @param exact_match: If true, the material name must match exactly. Default is false.
         @return: A list of materials that match the regular expression of the form:
         [ { 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title } ]
         '''
@@ -252,8 +254,13 @@ class GPUOpenMaterialLoader():
         for materialList in self.materials:
             materialNumber = 0                
             for material in materialList['results']:
-                if re.match(materialName, material['title'], re.IGNORECASE):
-                    materialsList.append({ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': material['title'] })
+                if exact_match:
+                    if materialName.lower() == material['title'].lower():
+                        materialsList.append({ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': material['title'] })
+                        return materialsList                        
+                else:
+                    if re.match(materialName, material['title'], re.IGNORECASE):
+                        materialsList.append({ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': material['title'] })
                 materialNumber += 1
             listNumber += 1
 

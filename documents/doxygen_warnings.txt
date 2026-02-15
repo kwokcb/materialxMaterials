@@ -1,4 +1,4 @@
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:279: warning: Found unknown command '@breif'
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:286: warning: Found unknown command '@breif'
 /Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:167: warning: Member get_physlib() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
 /Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:172: warning: Member get_physlib_definition() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
 /Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:180: warning: Member get_physlib_category() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
@@ -47,7 +47,7 @@
   parameter 'source_bxdf'
   parameter 'target_bxdf'
   parameter 'node'
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:295: warning: Member getMaterialPreviews(self, force=False) (function) of class materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader is not documented.
+/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:302: warning: Member getMaterialPreviews(self, force=False) (function) of class materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader is not documented.
 /Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:570: warning: Member derive_translator_name_from_targets(self, str source, str target) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
 /Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:971: warning: Member add_copyright_comment(self, doc, shaderCategory, embedDate=False) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
 /Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1151: warning: Member create_working_document() (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
