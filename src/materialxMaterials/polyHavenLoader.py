@@ -181,6 +181,9 @@ class PolyHavenLoader:
                         ext = ".png"
                         # Update extension in the path to .png
                         path = str(Path(path).with_suffix(ext))
+
+                        # Replace .exr with .png in mtlx_string
+                        mtlx_string = mtlx_string.replace(str(Path(path).with_suffix(".exr")), path)
                     else:
                         self.logger.info(f"Download PNG texture equivalent for EXR from {texture_url} FAILED")
 
@@ -216,6 +219,10 @@ class PolyHavenLoader:
                                         png_bytes = tmp_png.read()
                                         png_name = f"{name}.png"
                                         texture_binaries.append((png_name, png_bytes))
+
+                                        # Replace .exr with .png in mtlx_string
+                                        mtlx_string = mtlx_string.replace(str(Path(path).with_suffix(".exr")), path)
+
                                         continue  # Skip adding the original EXR
                             else:
                                 self.logger.info("Failed to read EXR with OpenImageIO")
