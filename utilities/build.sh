@@ -13,9 +13,6 @@ python -m materialxMaterials physbased
 python -m materialxMaterials acg --saveMaterials True --output ambientCgMaterials/
 python -m materialxMaterials acg --loadMaterials ambientCgMaterials/ambientCG_materialsList.json --downloadMaterial "WoodFloor038" --output ambientCgMaterials/
 popd
-cd examples/PolyHaven
-python -m materialxMaterials polyhaven -id aerial_rocks_02 -x
-python -m materialxMaterials polyhaven -id aerial_beach_02 -x
 
 
 echo "Finished Updating Package Data"

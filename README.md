@@ -121,17 +121,18 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
     <td>
       <b>PolyHaven</b>
       <table>
+      <!-- https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/ -->
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_aerial_asphalt_1.png" width=256px%><br>
-            Ashphalt
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/aerial_asphalt_01_1k_materialx/aerial_asphalt_01_1k.png" width="256px"><br>
+            Ashphalt 1
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_polystrylene.png" width=256px><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/aerial_rocks_02_1k_materialx/aerial_rocks_02_1k.png" width="256px"><br>
             Polystyrene
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png" width=256px><br>
+            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/wood_trunk_wall_1k_materialx/wood_trunk_wall_1k.png" width="256px"><br>
             Wood Trunk Wall
           </td>
         </tr>
@@ -295,7 +296,7 @@ npm run [build/start]   # Build distribution or run the package
 
 <h3>Command Line Interfaces</h3>
 
-<h4>Python</h4>
+<h4>PhysicallyBased</h4>
 
 - Query all materials fom PhysicallyBased and convert them to all  support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
@@ -307,12 +308,15 @@ npm run [build/start]   # Build distribution or run the package
   ```sh
   materialxMaterials physbased
   ```
+<h4>GPUOpen</h4>
 
 - Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.
 
   ```sh
   materialxMaterials gpuopen --materialNames=1 --saveMaterials=1
   ```
+
+<h4>ambientCG</h4>
 
 - Download the materials list fom ambientCG: 
 
@@ -326,28 +330,50 @@ package where the images are 2K PNG files:
   ```sh
   materialxMaterials acg --downloadMaterial "WoodFloor038" --downloadResolution 2
   ```
-- Examine all texture assets on PolyHaven, and find all ones which have MaterialX resources. Does not download the asset.
+
+<h4>PolyHaven</h4>
+
+- Examine all texture assets on PolyHaven, and find all ones which have MaterialX resources. 
 
   ```sh
-  polyHavenLoaderCmd.py --fetch --download_id=""
+  polyHavenLoaderCmd.py -fe
   ```
 
-- Extract out a specific MateriaX asset with a given identifier.
+- The extraction can be filtered by identifier:
   ```sh
-  polyHavenLoaderCmd.py --fetch --download_id="aerial_asphalt_01"
+  polyHavenLoaderCmd.py -fe -id="aerial_asphalt_01"
   ```
-- Extract out the first 10 MaterialX assets.
+- or by count. In this case the first 10 assets with MaterialX resources will be extracted.
   ```sh
-  polyHavenLoaderCmd.py --fetch -c 10
+  polyHavenLoaderCmd.py -fe -c 10
   ```
 
-- Scan locally downloaded MaterialX asset information to download.
+Note that this does not download any of the content for each asset, but instead
+extract information into a file called `polyhaven_materialx_assets.json` for later usage.. The build process will include a file with this name under the <code>data</code> as part of the Python package. This avoids having to query the PolyHaven API repeatedly.
+
+- The user can either use a local version of this file by specifying the path the file as shown below, where an optional `--data_folder` argument can be used to specify the location of the file. 
 
   ```sh
-  python -m materialxMaterials polyhaven --load --download_id="aerial_asphalt_01"
+  python -m materialxMaterials polyhaven --load [--data-folder <myfolder location> -id="aerial_asphalt_01"
   ```
 
-<h5>NodeJS</h5>
+- If `--load` is not specified then the the packaged will be used by default. 
+
+  ```sh
+  python -m materialxMaterials polyhaven -id="aerial_asphalt_01"
+  ``` 
+
+Download options include:
+
+1. `-x` or `--extract` to extract the content of the package (MaterialX and images) into a folder. By default the package will be downloaded but not extracted.
+
+2. `-exr` or `--keep_exr` to keep the EXR files if they are included in the package. By default the equivalent PNG files are downloaded or EXR files are converted to PNG files. The latter requires the `OpenImageIO` package to be installed.
+    - Note that if EXR images are remapped then the MaterialX file references
+    are also remapped in the `.mtlx` file. 
+
+3. `-r` or `--download_resolution` to specify the resolution of the images to download. By default the lowest resolution images are downloaded. The user can specify "1k", "2k", "4k" or "8k".
+
+<h4>GPUOpen (NodeJS)</h4>
 
 The utility can be run from the `javascript\JsGPUOpenLoaderPackage` folder as follows:
 
