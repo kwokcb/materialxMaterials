@@ -5,8 +5,8 @@ echo "Finished Package Install"
 echo "Start Updating Package Data..."
 pushd .
 cd src/materialxMaterials
-python -m materialxMaterials polyhaven -fe
-python -m materialxMaterials polyhaven -l
+python -m materialxMaterials polyhaven -fe --data_folder data/PolyHavenMaterialX
+python -m materialxMaterials polyhaven -l --data_folder ./data/PolyHavenMaterialX -id polystyrene
 cd data
 python -m materialxMaterials gpuopen --loadFromPackage 1 --unzip True
 python -m materialxMaterials physbased

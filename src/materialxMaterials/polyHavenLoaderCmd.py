@@ -15,7 +15,7 @@ def PolyHavenLoaderCmd():
     @brief Command to fetch MaterialX assets from PolyHaven and download them.
     '''
     parser = argparse.ArgumentParser(description="Fetch MaterialX assets from PolyHaven")
-    parser.add_argument("-id", "--download_id", type=str, default="polystyrene", help="Filter ID to fetch MaterialX assets (e.g. 'polystyrene')")
+    parser.add_argument("-id", "--download_id", type=str, default="", help="Filter ID to fetch MaterialX assets (e.g. 'polystyrene')")
     parser.add_argument("-res", "--download_resolution", type=str, default="1k", help="Resolution of the MaterialX assets to download (e.g. '1k', '2k', '4k', '8k') ")
     parser.add_argument("-fe", "--fetch", action='store_true', help="Fetch and save the MaterialX assets to a file")
     parser.add_argument("-l", "--load", action='store_true', help="Load the MaterialX assets")
@@ -43,6 +43,7 @@ def PolyHavenLoaderCmd():
         logger.info(f"Fetching MaterialX assets to {fetch_location}...")
         materialx_assets, all_assets, filtered_polyhaven_assets = loader.fetch_materialx_assets(download_id=download_id, max_items=fetch_count)
         with open(fetch_location, "w") as f:
+            logger.info(f"- Saving MaterialX assets to {fetch_location}...")
             json.dump(materialx_assets, f, indent=4)
 
         # Write all_assets to JSON file:        
@@ -58,6 +59,9 @@ def PolyHavenLoaderCmd():
 
     elif load:
         load_location = Path(data_folder) / data_file
+        if not load_location.exists():
+            logger.info(f"No MaterialX assets found at {load_location}. Please run with --fetch to fetch assets first.")
+            return
         with open(load_location, "r") as f:
             logger.info(f"Loaded MaterialX assets from {load_location}")
             materialx_assets = json.load(f)
@@ -77,8 +81,8 @@ def PolyHavenLoaderCmd():
             loader.save_materialx_with_textures(id, mtlx_string, texture_binaries, data_folder)
         else:
             logger.info(f"No asset found with ID '{entry_id}' in the MaterialX assets.")
-    else:
-        logger.info("No operation specified.")
+    #else:
+    #    logger.info("No operation specified.")
 
 if __name__ == "__main__":
     PolyHavenLoaderCmd()
