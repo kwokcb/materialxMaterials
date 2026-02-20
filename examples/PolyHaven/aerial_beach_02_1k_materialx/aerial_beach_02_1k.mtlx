@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <materialx version="1.38">
-  <nodegraph name="NG_aerial_rocks_02">
+  <nodegraph name="NG_aerial_beach_02">
     <texcoord name="Texcoord" type="vector2">
       <input name="index" type="integer" value="0" />
     </texcoord>
     <image name="diff" type="color3">
-      <input name="file" type="filename" value="textures/aerial_rocks_02_diff_1k.jpg" colorspace="srgb_texture" />
+      <input name="file" type="filename" value="textures/aerial_beach_02_diff_1k.jpg" colorspace="srgb_texture" />
       <input name="default" type="color3" value="0.8, 0.6, 0.4" />
       <input name="texcoord" type="vector2" nodename="Texcoord" />
     </image>
     <image name="rough" type="float">
-      <input name="file" type="filename" value="textures/aerial_rocks_02_rough_1k.exr" />
+      <input name="file" type="filename" value="textures/aerial_beach_02_rough_1k.jpg" />
       <input name="default" type="float" value="0.3" />
       <input name="texcoord" type="vector2" nodename="Texcoord" />
     </image>
     <image name="normal" type="vector3">
-      <input name="file" type="filename" value="textures/aerial_rocks_02_nor_gl_1k.exr" />
+      <input name="file" type="filename" value="textures/aerial_beach_02_nor_gl_1k.png" />
       <input name="default" type="vector3" value="0.5, 0.5, 1" />
       <input name="texcoord" type="vector2" nodename="Texcoord" />
     </image>
@@ -29,7 +29,7 @@
       <input name="index" type="integer" value="0" />
     </tangent>
     <image name="disp" type="float">
-      <input name="file" type="filename" value="textures/aerial_rocks_02_disp_1k.png" />
+      <input name="file" type="filename" value="textures/aerial_beach_02_disp_1k.png" />
       <input name="default" type="float" value="0" />
       <input name="texcoord" type="vector2" nodename="Texcoord" />
     </image>
@@ -40,17 +40,17 @@
     <output name="output_disp_out" type="float" nodename="disp" />
   </nodegraph>
   <displacement name="Displacement" type="displacementshader">
-    <input name="displacement" type="float" output="output_disp_out" nodegraph="NG_aerial_rocks_02" />
+    <input name="displacement" type="float" output="output_disp_out" nodegraph="NG_aerial_beach_02" />
     <input name="scale" type="float" value="0.01" />
   </displacement>
-  <standard_surface name="SR_aerial_rocks_02" type="surfaceshader">
+  <standard_surface name="SR_aerial_beach_02" type="surfaceshader">
     <input name="base" type="float" value="1" />
-    <input name="base_color" type="color3" output="output_diff_out" nodegraph="NG_aerial_rocks_02" />
+    <input name="base_color" type="color3" output="output_diff_out" nodegraph="NG_aerial_beach_02" />
     <input name="diffuse_roughness" type="float" value="0" />
     <input name="metalness" type="float" value="0" />
     <input name="specular" type="float" value="1" />
     <input name="specular_color" type="color3" value="1, 1, 1" />
-    <input name="specular_roughness" type="float" output="output_rough_out" nodegraph="NG_aerial_rocks_02" />
+    <input name="specular_roughness" type="float" output="output_rough_out" nodegraph="NG_aerial_beach_02" />
     <input name="specular_IOR" type="float" value="1.5" />
     <input name="specular_anisotropy" type="float" value="0" />
     <input name="specular_rotation" type="float" value="0" />
@@ -71,11 +71,11 @@
     <input name="sheen_roughness" type="float" value="0.3" />
     <input name="emission" type="float" value="0" />
     <input name="emission_color" type="color3" value="1, 1, 1" />
-    <input name="normal" type="vector3" output="output_Normalmap_out" nodegraph="NG_aerial_rocks_02" />
-    <input name="tangent" type="vector3" output="output_Tangent_out" nodegraph="NG_aerial_rocks_02" />
+    <input name="normal" type="vector3" output="output_Normalmap_out" nodegraph="NG_aerial_beach_02" />
+    <input name="tangent" type="vector3" output="output_Tangent_out" nodegraph="NG_aerial_beach_02" />
   </standard_surface>
-  <surfacematerial name="aerial_rocks_02" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="SR_aerial_rocks_02" />
+  <surfacematerial name="aerial_beach_02" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SR_aerial_beach_02" />
     <input name="displacementshader" type="displacementshader" nodename="Displacement" />
   </surfacematerial>
 </materialx>

@@ -9,6 +9,7 @@ import logging
 import io
 import tempfile
 import os
+import MaterialX as mx
 
 HAVE_OPENIMAGEIO = False
 try:
@@ -107,7 +108,7 @@ class PolyHavenLoader:
                             #self.logger.info("Texture path:", path, "URL:", texture_url)
                             texture_struct[path] = texture_url
                     mtlx_url = n_k_mtlx.get("url")
-                    res_id = id + '___' + resolution_key
+                    res_id = id + '_' + resolution_key
                     if mtlx_url:
                         materialx_assets[res_id] = {
                             "url": mtlx_url,
@@ -165,27 +166,29 @@ class PolyHavenLoader:
             self.logger.info(f"Download MaterialX document {url}, length: {len(mtlx_string)} characters")
 
             texture_binaries = []
+            download_texture_names = []
             for path, texture_url in asset.get("texture_files", {}).items():
                 # Get texture files
                 ext = Path(path).suffix.lower()
                 texture_content = None
 
                 if ext == ".exr" and convert_exr_to_png:
-                    # Replace /exr and .exr with /png and .png in the URL to check if a PNG version is available    
+                    # Replace /exr and .exr with /png and .png in the URL to check if a PNG version is available  
+                    old_texture_url = texture_url  
                     texture_url = texture_url.replace("/exr/", "/png/").replace(".exr", ".png")
                     texture_resp = requests.get(texture_url, headers=self.HEADERS)
                     texture_resp.raise_for_status()            
                     texture_content = texture_resp.content
                     if texture_content:
-                        self.logger.info(f"Download PNG texture equivalent for EXR from {texture_url} SUCCESSFUL")
+                        self.logger.info(f"Download {texture_url} instead of {old_texture_url} SUCCESSFUL")
                         ext = ".png"
                         # Update extension in the path to .png
+                        old_path = path
                         path = str(Path(path).with_suffix(ext))
+                        self.logger.info(f"- Updating texture path from {old_path} to {path}")
 
-                        # Replace .exr with .png in mtlx_string
-                        mtlx_string = mtlx_string.replace(str(Path(path).with_suffix(".exr")), path)
                     else:
-                        self.logger.info(f"Download PNG texture equivalent for EXR from {texture_url} FAILED")
+                        self.logger.info(f"Download {texture_url} instead of {old_texture_url} FAILED")
 
                 if not texture_content:
                     self.logger.info(f"Download texture from {texture_url} ...")
@@ -220,9 +223,6 @@ class PolyHavenLoader:
                                         png_name = f"{name}.png"
                                         texture_binaries.append((png_name, png_bytes))
 
-                                        # Replace .exr with .png in mtlx_string
-                                        mtlx_string = mtlx_string.replace(str(Path(path).with_suffix(".exr")), path)
-
                                         continue  # Skip adding the original EXR
                             else:
                                 self.logger.info("Failed to read EXR with OpenImageIO")
@@ -231,6 +231,10 @@ class PolyHavenLoader:
                             if 'tmp_png' in locals():
                                 os.remove(tmp_png.name)
                     self.logger.info(f"  WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}")
+
+                # Get file name from path
+                download_texture_name = path.split('/')[-1]
+                download_texture_names.append(download_texture_name)
 
                 texture_binaries.append((path, texture_content))
 
@@ -245,11 +249,24 @@ class PolyHavenLoader:
                 clean_url = clean_url.split('?')[0].split('#')[0]
                 clean_url = clean_url.split('/')[-1]  # Get the last part of the URL
                 extension = Path(clean_url).suffix.lower()
-                texture_binaries.append((f"{id}_thumbnail.{extension}", thumbnail_resp.content))
+                texture_binaries.append((f"{id}_thumbnail{extension}", thumbnail_resp.content))
+
+            # Replace .exr with .png in mtlx_string
+            for name in download_texture_names:
+                extension = Path(name).suffix.lower()                
+                exr_name = name.replace(extension, ".exr")
+                # Replace exr_name with name in the mtlx_string
+                mtlx_string = mtlx_string.replace(exr_name, name)
+
+            before_mtlx_string = mtlx_string
+            mtlx_string = mtlx_string.replace(".exr", ".png")
+            if (before_mtlx_string != mtlx_string):
+                self.logger.info(f"Updated MaterialX string to reference PNG texture instead of EXR for {path}")
+                #self.logger.info(mtlx_string)
 
             return id, mtlx_string, texture_binaries
 
-    def save_materialx_with_textures(self, id, mtlx_string, texture_binaries, data_folder):
+    def save_materialx_with_textures(self, id, mtlx_string, texture_binaries, data_folder, extract_zip=False):
         '''
         Save MaterialX string and texture binaries to a zip file.
 
@@ -257,6 +274,7 @@ class PolyHavenLoader:
         @param mtlx_string The MaterialX string content.
         @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.
         @param data_folder Folder to save the zip file.
+        @param extract_zip If True, extract the zip file after saving zip.
         @return None
         '''
         # Create a zip file with MaterialX and textures
@@ -269,4 +287,11 @@ class PolyHavenLoader:
             for path, content in texture_binaries:
                 zipf.writestr(path, content)
         self.logger.info(f"Saved zip: {filename}")
+
+        # Save zip contents to folder
+        extract_folder = Path(data_folder) / f"{id}_materialx"
+        if extract_zip:
+            with zipfile.ZipFile(filename, "r") as zipf:
+                zipf.extractall(extract_folder)
+            self.logger.info(f"Extracted zip contents to folder: {extract_folder}")
 
