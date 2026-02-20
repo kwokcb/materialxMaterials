@@ -105,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
 async function downloadMaterial() {
     if (!currentSelectedMaterial || !polyHavenAPI) return;
 
+    console.log(`Preparing download for material: ${currentSelectedMaterial.name} (ID: ${currentSelectedMaterial.id})`);
+
     const resolution = document.getElementById('materialResolution').value;
     const materialName = currentSelectedMaterial.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
@@ -182,7 +184,9 @@ async function previewMaterial() {
     try {
         const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
         let zipBlob = materialPackageCache[cacheKey];
+        zipBlob = null;
         if (!zipBlob) {
+            console.log('------------------------------------------------ Create MaterialX package for preview (not cached) ------------------------------------------------');
             zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
             materialPackageCache[cacheKey] = zipBlob;
         }
@@ -343,10 +347,11 @@ async function loadMaterialContent(materialId) {
 
         // Create preview content
         const previewContainer = document.getElementById('contentPreview');
+        let mtlxContent = contentData.mtlxContent || '';
         previewContainer.innerHTML = `
             <div class="mt-4">
                 <b>MaterialX Document</b>
-                <textarea id="mtlxEditor">${contentData.mtlxContent}</textarea>
+                <textarea id="mtlxEditor">${mtlxContent}</textarea>
                 <div class="mt-2">
                     <b>Textures</b>
                     <div id="textureGallery" class="row g-2"></div>
@@ -378,6 +383,14 @@ async function loadMaterialContent(materialId) {
             const card = document.createElement('div');
             card.className = 'col-6 col-md-4 col-lg-3 mb-3';
 
+            // If textureURL ends with exr replace with png for preview
+            if (textureUrl.toLowerCase().endsWith('.exr')) {
+                console.log(`************** EXR file detected for preview, attempting to use PNG version: ${textureUrl}`);
+                textureUrl = textureUrl.replace(/\.exr$/i, '.png').replace(/\/exr\//i, '/png/');
+                textureName = textureName.replace(/\.exr$/i, '.png');
+                mtlxContent = mtlxContent.replace(textureName, textureName.replace(/\.exr$/i, '.png'));
+            }   
+
             card.innerHTML = `
                     <div class="card h-100">
                         <div class="ratio ratio-1x1 bg-light">
@@ -394,6 +407,11 @@ async function loadMaterialContent(materialId) {
                 `;
             return card;
         };
+
+        // Set mtlxContent to editor
+        if (codeMirrorEditor) {
+            codeMirrorEditor.setValue(mtlxContent);
+        }
 
         // Create gallery items
         for (const [path, fileData] of Object.entries(textureFiles)) {

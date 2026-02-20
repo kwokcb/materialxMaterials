@@ -135,6 +135,9 @@ class JsPolyHavenAPILoader {
             if (!response.ok) {
                 throw new Error(`Failed to download texture from ${url}`);
             }
+            else {
+                console.log(`>>>>>>>>>>>> Successfully downloaded texture from ${url}`);
+            }
 
             return await response.blob();
         } catch (error) {
@@ -185,14 +188,28 @@ class JsPolyHavenAPILoader {
             const zip = new JSZip();
 
             // 1. Download and add the main MaterialX file
-            const mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
-            zip.file(`${material.id}.mtlx`, mtlxContent);
-            console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx, ${mtlxContent}`);
+            let mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
 
             // 2. Download and add all included texture files
             const textureFiles = mtlxData.include || {};
             const texturePromises = Object.entries(textureFiles).map(async ([path, fileData]) => {
                 try {
+                    console.log(`Processing texture: ${path} from URL: ${fileData.url}`);
+
+                    let isEXR = path.toLowerCase().endsWith('.exr')
+                    // Try changing extension to .png.
+                    if (isEXR) {
+                        path = path.replace(/\.exr$/i, '.png');
+                        // Replace /exr/ with /png/
+                        fileData.url = fileData.url.replace(/\/exr\//i, '/png/');
+                        // Replace .exr with .png extension
+                        fileData.url = fileData.url.replace('.exr', '.png');
+                        // Replace .exr with .png in mtlxContent if present
+                        mtlxContent = mtlxContent.replace('.exr', '.png')
+
+                        console.log(`************** EXR file detected, attempting to download as PNG: ${fileData.url}`);
+                    }
+
                     const textureBlob = await this.downloadTexture(fileData.url);
                     
                     // Maintain the folder structure from the include paths
@@ -219,6 +236,9 @@ class JsPolyHavenAPILoader {
                     zip.file(path, `Failed to download: ${fileData.url}`);
                 }
             });
+
+            zip.file(`${material.id}.mtlx`, mtlxContent);
+            console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx, ${mtlxContent}`);
 
             // 3. Download and add thumbnail
             if (material.thumb_url) {
