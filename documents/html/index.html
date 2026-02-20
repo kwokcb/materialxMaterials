@@ -105,7 +105,7 @@ $(function(){initNavTree('index.html','',''); });
   <div class="headertitle"><div class="title">MaterialXMaterials </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2_users_2bernardkwok_2work_2materialx_materials_2_r_e_a_d_m_e"></a></p>
+<div class="textblock"><p><a class="anchor" id="md__d_1_2_work_2materialx_2materialx_materials_2_r_e_a_d_m_e"></a></p>
 <h2 class="bg-gradient rounded-2 p-0" style="display: flex; align-items: center; gap: 10px;"><img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/download.png" alt="MaterialX Materials Icon" class="px-1" width="48px" class="inline"/> <span>MaterialX Materials</span> </h2>
 <div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><h3>Introduction</h3>
 </div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded">This site hosts a set of libraries and utilities to query remote databases for materials which can either be mapped to MaterialX materials or are natively stored in that format.</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><b>Last Updated</b>: January, 2026 (1.39.5 in progress)</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><b>Supported Libraries</b></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><div style="display: flex; align-items: center;"> <img src="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg" alt="" width="64px" style="margin-right: 5px;" class="inline"/> <a href="https://physicallybased.info/">PhysicallyBased database</a> Material descriptions can be downloaded with additional utilities to create materials using either: Autodesk Standard Surface, OpenPBR, or glTF PBR shading model shaders. </div><p> <br  />
@@ -146,9 +146,9 @@ $(function(){initNavTree('index.html','',''); });
 </table>
 </td><td><b>PolyHaven</b> <table class="doxtable">
 <tr>
-<td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_aerial_asphalt_1.png" alt="" width="256px%" class="inline"/><br  />
- Ashphalt </td><td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_polystrylene.png" alt="" width="256px" class="inline"/><br  />
- Polystyrene </td><td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png" alt="" width="256px" class="inline"/><br  />
+<td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/aerial_asphalt_01_1k_materialx/aerial_asphalt_01_1k.png" alt="" width="256px" class="inline"/><br  />
+ Ashphalt 1 </td><td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/aerial_rocks_02_1k_materialx/aerial_rocks_02_1k.png" alt="" width="256px" class="inline"/><br  />
+ Polystyrene </td><td><img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/wood_trunk_wall_1k_materialx/wood_trunk_wall_1k.png" alt="" width="256px" class="inline"/><br  />
  Wood Trunk Wall </td></tr>
 </table>
 </td></tr>
@@ -228,34 +228,54 @@ $(function(){initNavTree('index.html','',''); });
 </div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded">The Javascript utilities require <span class="tt">Node.js</span> to be installed. From the package folders the following should be run:</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><div class="fragment"><div class="line">npm install             # Install dependent packages</div>
 <div class="line">npm run [build/start]   # Build distribution or run the package</div>
 </div><!-- fragment --></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><h3>Command Line Interfaces</h3>
-</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><h4>Python</h4>
+</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><h4>PhysicallyBased</h4>
 </div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><ul>
 <li><p class="startli">Query all materials fom PhysicallyBased and convert them to all support shading models. Save the material list and corresponding MaterialX files in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
 <div class="fragment"><div class="line">python physicallyBasedMaterialXCmd.py</div>
 </div><!-- fragment --><p> or</p>
 <div class="fragment"><div class="line">materialxMaterials physbased</div>
-</div><!-- fragment --></li>
+</div><!-- fragment --> <h4>GPUOpen</h4>
+</li>
 <li><p class="startli">Query all materials fom GPUOpen. Extract out a few material packages (zip). Save the material lists, material names and unzipped packages (MaterialX and images) in the default output location. The build will include this information Python package under the <code>data</code> folder.</p>
 <div class="fragment"><div class="line">materialxMaterials gpuopen --materialNames=1 --saveMaterials=1</div>
 </div><!-- fragment --></li>
+</ul>
+</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><h4>ambientCG</h4>
+</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><ul>
 <li><p class="startli">Download the materials list fom ambientCG:</p>
 <div class="fragment"><div class="line">materialxMaterials acg --saveMaterials True</div>
 </div><!-- fragment --></li>
 <li><p class="startli">Extract out a material package for the "WoodFloor038" material from ambientCG requesting the package where the images are 2K PNG files:</p>
 <div class="fragment"><div class="line">materialxMaterials acg --downloadMaterial &quot;WoodFloor038&quot; --downloadResolution 2</div>
 </div><!-- fragment --></li>
-<li><p class="startli">Examine all texture assets on PolyHaven, and find all ones which have MaterialX resources. Does not download the asset.</p>
-<div class="fragment"><div class="line">polyHavenLoaderCmd.py --fetch --download_id=&quot;&quot;</div>
+</ul>
+</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><h4>PolyHaven</h4>
+</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><ul>
+<li><p class="startli">Examine all texture assets on PolyHaven, and find all ones which have MaterialX resources.</p>
+<div class="fragment"><div class="line">polyHavenLoaderCmd.py -fe</div>
 </div><!-- fragment --></li>
-<li>Extract out a specific MateriaX asset with a given identifier. <div class="fragment"><div class="line">polyHavenLoaderCmd.py --fetch --download_id=&quot;aerial_asphalt_01&quot;</div>
+<li>The extraction can be filtered by identifier: <div class="fragment"><div class="line">polyHavenLoaderCmd.py -fe -id=&quot;aerial_asphalt_01&quot;</div>
 </div><!-- fragment --></li>
-<li>Extract out the first 10 MaterialX assets. <div class="fragment"><div class="line">polyHavenLoaderCmd.py --fetch -c 10</div>
-</div><!-- fragment --></li>
-<li><p class="startli">Scan locally downloaded MaterialX asset information to download.</p>
-<div class="fragment"><div class="line">python -m materialxMaterials polyhaven --load --download_id=&quot;aerial_asphalt_01&quot;</div>
+<li>or by count. In this case the first 10 assets with MaterialX resources will be extracted. <div class="fragment"><div class="line">polyHavenLoaderCmd.py -fe -c 10</div>
 </div><!-- fragment --></li>
 </ul>
-</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><h5>NodeJS</h5>
+</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded">Note that this does not download any of the content for each asset, but instead extract information into a file called <span class="tt">polyhaven_materialx_assets.json</span> for later usage.. The build process will include a file with this name under the <code>data</code> as part of the Python package. This avoids having to query the PolyHaven API repeatedly.</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><ul>
+<li><p class="startli">The user can either use a local version of this file by specifying the path the file as shown below, where an optional <span class="tt">--data_folder</span> argument can be used to specify the location of the file.</p>
+<div class="fragment"><div class="line">python -m materialxMaterials polyhaven --load [--data-folder &lt;myfolder location&gt; -id=&quot;aerial_asphalt_01&quot;</div>
+</div><!-- fragment --></li>
+<li><p class="startli">If <span class="tt">--load</span> is not specified then the the packaged will be used by default.</p>
+<div class="fragment"><div class="line">python -m materialxMaterials polyhaven -id=&quot;aerial_asphalt_01&quot;</div>
+</div><!-- fragment --></li>
+</ul>
+</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded">Download options include:</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><ol type="1">
+<li><span class="tt">-x</span> or <span class="tt">--extract</span> to extract the content of the package (MaterialX and images) into a folder. By default the package will be downloaded but not extracted.</li>
+<li><span class="tt">-exr</span> or <span class="tt">--keep_exr</span> to keep the EXR files if they are included in the package. By default the equivalent PNG files are downloaded or EXR files are converted to PNG files. The latter requires the <span class="tt">OpenImageIO</span> package to be installed.<ul>
+<li>Note that if EXR images are remapped then the MaterialX file references are also remapped in the <span class="tt">.mtlx</span> file.</li>
+</ul>
+</li>
+<li><span class="tt">-r</span> or <span class="tt">--download_resolution</span> to specify the resolution of the images to download. By default the lowest resolution images are downloaded. The user can specify "1k", "2k", "4k" or "8k".</li>
+</ol>
+</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><h4>GPUOpen (NodeJS)</h4>
 </div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"></div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded">The utility can be run from the <span class="tt">javascript\JsGPUOpenLoaderPackage</span> folder as follows:</div><div class="container-fluid p-2 rounded-4 border border-secondary border-rounded"><div class="fragment"><div class="line">npm start -- [&lt;arguments&gt;]</div>
 </div><!-- fragment --> or: <div class="fragment"><div class="line">node gpuOpenFetch.js [&lt;arguments&gt;]</div>
 </div><!-- fragment --> with the appropriate arguments. It supports the same options as the Python utility &ndash; namely material information, and package (zip) downloads. For the following 2 lines are equivalent to download a material called "Moss Green Solid Granite". <div class="fragment"><div class="line">node gpuOpenFetch.js  -n &quot;Moss Green Solid Granite&quot;</div>
