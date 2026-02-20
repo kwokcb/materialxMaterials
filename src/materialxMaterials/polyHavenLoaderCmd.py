@@ -21,6 +21,7 @@ def PolyHavenLoaderCmd():
     parser.add_argument("-l", "--load", action='store_true', help="Load the MaterialX assets")
     parser.add_argument("-df", "--data_folder", type=str, default="data/PolyHavenMaterialX", help="Data folder to save / load MaterialX assets")
     parser.add_argument("-c", "--count", type=int, default=None, help="Number of assets to fetch (default: 1)")
+    parser.add_argument('-exr', '--keep_exr', action='store_true', help="Keep EXR textures instead of converting to PNG (requires OpenImageIO)")
 
     args = parser.parse_args()
     data_file = "polyhaven_materialx_assets.json"
@@ -63,6 +64,8 @@ def PolyHavenLoaderCmd():
         #json_string = json.dumps(materialx_assets, indent=4)
         #logger.info(f"MaterialX assets: {json_string}")
 
+    keep_exr = args.keep_exr if args.keep_exr else False
+    convert_exr_to_png = not keep_exr
     if materialx_assets and download_id:
         # Find download entry by ID
         entry_id = download_id + '___' + resolution
@@ -70,7 +73,7 @@ def PolyHavenLoaderCmd():
         if entry:
             logger.info(f"Downloading asset with ID '{download_id}', resolution '{resolution}'")
             asset_list = {entry_id: entry, resolution: resolution}
-            id, mtlx_string, texture_binaries = loader.download_asset(asset_list)                
+            id, mtlx_string, texture_binaries = loader.download_asset(asset_list, convert_exr_to_png)                
             loader.save_materialx_with_textures(id, mtlx_string, texture_binaries, data_folder)
         else:
             logger.info(f"No asset found with ID '{entry_id}' in the MaterialX assets.")

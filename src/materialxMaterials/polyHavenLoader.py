@@ -6,6 +6,17 @@ import json
 from pathlib import Path
 import zipfile
 import logging
+import io
+import tempfile
+import os
+
+HAVE_OPENIMAGEIO = False
+try:
+    import OpenImageIO as oiio
+    import numpy as np
+    HAVE_OPENIMAGEIO = True
+except ImportError:
+    print("OpenImageIO or numpy not installed. EXR image conversion not supported.")    
 
 class PolyHavenLoader:
     """
@@ -130,11 +141,13 @@ class PolyHavenLoader:
 
         return materialx_assets, all_assets, filtered_polyhaven_assets
 
-    def download_asset(self, asset_list):
+    def download_asset(self, asset_list, convert_exr_to_png=True):
         '''
         Download MaterialX asset and its textures from PolyHaven.
 
         @param asset_list Dictionary of MaterialX assets with URLs and texture files.
+        @param convert_exr_to_png If True, attempt to use PNG images instead of EXR if available other attempt 
+        to convert using OpenImageIO if installed. Default is to use PNG if possible, and convert EXR to PNG if OpenImageIO is available.
         @return Tuple (id, mtlx_string, texture_binaries):
             - id: ID of the downloaded asset.
             - mtlx_string: The MaterialX document as a string.
@@ -154,16 +167,65 @@ class PolyHavenLoader:
             texture_binaries = []
             for path, texture_url in asset.get("texture_files", {}).items():
                 # Get texture files
-                self.logger.info(f"Download texture from {texture_url} ...")
-                texture_resp = requests.get(texture_url, headers=self.HEADERS)
-                texture_resp.raise_for_status()            
-
                 ext = Path(path).suffix.lower()
+                texture_content = None
+
+                if ext == ".exr" and convert_exr_to_png:
+                    # Replace /exr and .exr with /png and .png in the URL to check if a PNG version is available    
+                    texture_url = texture_url.replace("/exr/", "/png/").replace(".exr", ".png")
+                    texture_resp = requests.get(texture_url, headers=self.HEADERS)
+                    texture_resp.raise_for_status()            
+                    texture_content = texture_resp.content
+                    if texture_content:
+                        self.logger.info(f"Download PNG texture equivalent for EXR from {texture_url} SUCCESSFUL")
+                        ext = ".png"
+                        # Update extension in the path to .png
+                        path = str(Path(path).with_suffix(ext))
+                    else:
+                        self.logger.info(f"Download PNG texture equivalent for EXR from {texture_url} FAILED")
+
+                if not texture_content:
+                    self.logger.info(f"Download texture from {texture_url} ...")
+                    texture_resp = requests.get(texture_url, headers=self.HEADERS)
+                    texture_resp.raise_for_status()            
+                    texture_content = texture_resp.content
+
                 name = Path(path).stem
 
                 if ext == ".exr":
+                    if HAVE_OPENIMAGEIO and convert_exr_to_png:
+                        self.logger.info(f"Converting EXR to PNG for texture: {path}")
+                        # Write EXR bytes to a temporary file
+                        with tempfile.NamedTemporaryFile(suffix=".exr", delete=False) as tmp_exr:
+                            tmp_exr.write(texture_content)
+                            tmp_exr_path = tmp_exr.name
+                        try:
+                            inbuf = oiio.ImageInput.open(tmp_exr_path)
+                            if inbuf:
+                                spec = inbuf.spec()
+                                pixels = inbuf.read_image(format=oiio.UINT8)
+                                inbuf.close()
+                                # Write PNG to another temporary file
+                                with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp_png:
+                                    outbuf = oiio.ImageOutput.create(tmp_png.name)
+                                    if outbuf:
+                                        outbuf.open(tmp_png.name, spec)
+                                        outbuf.write_image(pixels)
+                                        outbuf.close()
+                                        tmp_png.seek(0)
+                                        png_bytes = tmp_png.read()
+                                        png_name = f"{name}.png"
+                                        texture_binaries.append((png_name, png_bytes))
+                                        continue  # Skip adding the original EXR
+                            else:
+                                self.logger.info("Failed to read EXR with OpenImageIO")
+                        finally:
+                            os.remove(tmp_exr_path)
+                            if 'tmp_png' in locals():
+                                os.remove(tmp_png.name)
                     self.logger.info(f"  WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}")
-                texture_binaries.append((path, texture_resp.content))
+
+                texture_binaries.append((path, texture_content))
 
             thumbnail_url = asset.get("thumbnail_url")
             if thumbnail_url:
