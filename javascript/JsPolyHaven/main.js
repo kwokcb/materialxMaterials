@@ -378,8 +378,11 @@ async function loadMaterialContent(materialId) {
         const textureFiles = contentData.textureFiles;
         const galleryContainer = document.getElementById('textureGallery');
         galleryContainer.innerHTML = '';
+        
+        let textureNames = [];
 
-        const createTextureCard = (textureName, textureUrl) => {
+        const createTextureCard = (textureName, textureUrl) => 
+        {
             const card = document.createElement('div');
             card.className = 'col-6 col-md-4 col-lg-3 mb-3';
 
@@ -387,9 +390,13 @@ async function loadMaterialContent(materialId) {
             if (textureUrl.toLowerCase().endsWith('.exr')) {
                 console.log(`************** EXR file detected for preview, attempting to use PNG version: ${textureUrl}`);
                 textureUrl = textureUrl.replace(/\.exr$/i, '.png').replace(/\/exr\//i, '/png/');
+                textureName_before = textureName;
+                console.log(`Replace ${textureName_before} with ${textureName} in MaterialX content for preview`);
                 textureName = textureName.replace(/\.exr$/i, '.png');
-                mtlxContent = mtlxContent.replace(textureName, textureName.replace(/\.exr$/i, '.png'));
+                mtlxContent = mtlxContent.replace(textureName_before, textureName);
             }   
+
+            textureNames.push(textureName);
 
             card.innerHTML = `
                     <div class="card h-100">
@@ -408,16 +415,28 @@ async function loadMaterialContent(materialId) {
             return card;
         };
 
-        // Set mtlxContent to editor
-        if (codeMirrorEditor) {
-            codeMirrorEditor.setValue(mtlxContent);
-        }
 
         // Create gallery items
         for (const [path, fileData] of Object.entries(textureFiles)) {
-            const textureName = path.split('/').pop();
-            const card = createTextureCard(textureName, fileData.url);
+            const textureURI = path.split('/').pop();
+            let card = createTextureCard(textureURI, fileData.url);
             galleryContainer.appendChild(card);
+        }
+
+        // Set mtlxContent to editor
+        if (codeMirrorEditor) {
+            // Patch bad MTLX references in original file
+            for (const textureName of textureNames) {
+                extenson = textureName.split('.').pop();
+                exrName = textureName.replace(`.${extenson}`, `.exr`);
+                if (mtlxContent.includes(exrName)) {
+                    console.log(`Replace ${exrName} with ${textureName} in MaterialX content for preview`);
+                    mtlxContent = mtlxContent.replace(exrName, textureName);
+                }
+            }
+
+            console.log('Setting MaterialX content in CodeMirror editor:', mtlxContent);
+            codeMirrorEditor.setValue(mtlxContent);
         }
 
     } catch (error) {
