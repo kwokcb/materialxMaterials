@@ -83,7 +83,7 @@ def PolyHavenLoaderCmd():
             logger.info(f"Downloading asset with ID '{download_id}', resolution '{resolution}'")
             asset_list = {entry_id: entry, resolution: resolution}
             id, mtlx_string, texture_binaries = loader.download_asset(asset_list, convert_exr_to_png)    
-            logger.info(mtlx_string)            
+            #logger.info(mtlx_string)            
             loader.save_materialx_with_textures(id, mtlx_string, texture_binaries, data_folder, extract_zip)
         else:
             logger.info(f"No asset found with ID '{entry_id}' in the MaterialX assets.")
