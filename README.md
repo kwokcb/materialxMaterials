@@ -124,15 +124,15 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
       <!-- https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/ -->
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/aerial_asphalt_01_1k_materialx/aerial_asphalt_01_1k.png" width="256px"><br>
+            <img src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/examples/PolyHaven/aerial_asphalt_01_1k_materialx/aerial_asphalt_01_1k.png" width="256px"><br>
             Ashphalt 1
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/aerial_rocks_02_1k_materialx/aerial_rocks_02_1k.png" width="256px"><br>
-            Polystyrene
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/examples/PolyHaven/aerial_rocks_02_1k_materialx/aerial_rocks_02_1k.png?raw=true" width="256px"><br>
+            Rocks 2
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/examples/PolyHaven/wood_trunk_wall_1k_materialx/wood_trunk_wall_1k.png" width="256px"><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/examples/PolyHaven/wood_trunk_wall_1k_materialx/wood_trunk_wall_1k.png?raw=true" width="256px"><br>
             Wood Trunk Wall
           </td>
         </tr>
