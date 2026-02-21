@@ -390,9 +390,9 @@ async function loadMaterialContent(materialId) {
             if (textureUrl.toLowerCase().endsWith('.exr')) {
                 console.log(`************** EXR file detected for preview, attempting to use PNG version: ${textureUrl}`);
                 textureUrl = textureUrl.replace(/\.exr$/i, '.png').replace(/\/exr\//i, '/png/');
-                textureName_before = textureName;
+                let textureName_before = textureName;
+                textureName = textureName_before.replace(/\.exr$/i, '.png');
                 console.log(`Replace ${textureName_before} with ${textureName} in MaterialX content for preview`);
-                textureName = textureName.replace(/\.exr$/i, '.png');
                 mtlxContent = mtlxContent.replace(textureName_before, textureName);
             }   
 
