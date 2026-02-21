@@ -184,9 +184,7 @@ async function previewMaterial() {
     try {
         const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
         let zipBlob = materialPackageCache[cacheKey];
-        zipBlob = null;
         if (!zipBlob) {
-            console.log('------------------------------------------------ Create MaterialX package for preview (not cached) ------------------------------------------------');
             zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
             materialPackageCache[cacheKey] = zipBlob;
         }
@@ -388,7 +386,7 @@ async function loadMaterialContent(materialId) {
 
             // If textureURL ends with exr replace with png for preview
             if (textureUrl.toLowerCase().endsWith('.exr')) {
-                console.log(`************** EXR file detected for preview, attempting to use PNG version: ${textureUrl}`);
+                console.log(`> EXR file detected for preview, attempting to use PNG version: ${textureUrl}`);
                 textureUrl = textureUrl.replace(/\.exr$/i, '.png').replace(/\/exr\//i, '/png/');
                 let textureName_before = textureName;
                 textureName = textureName_before.replace(/\.exr$/i, '.png');

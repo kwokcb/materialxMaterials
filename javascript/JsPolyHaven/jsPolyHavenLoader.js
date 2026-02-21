@@ -140,7 +140,7 @@ class JsPolyHavenAPILoader {
                 throw new Error(`Failed to download texture from ${url}`);
             }
             else {
-                console.log(`>>>>>>>>>>>> Successfully downloaded texture from ${url}`);
+                console.log(`>  Successfully downloaded texture from ${url}`);
             }
 
             return await response.blob();
@@ -183,7 +183,7 @@ class JsPolyHavenAPILoader {
             // Fetch MaterialX files data
             const filesData = await this.fetchMaterialFiles(material.id);
             const mtlxData = filesData.mtlx?.[resolution]?.mtlx;
-            console.log('+++++ createMaterialXPackage - fetched MaterialX data:', mtlxData);
+            console.log('> createMaterialXPackage - fetched MaterialX data:', mtlxData);
 
             if (!mtlxData) {
                 throw new Error(`No MaterialX files found for ${resolution} resolution`);
@@ -216,7 +216,7 @@ class JsPolyHavenAPILoader {
                         const previousMtlxContent = mtlxContent;
                         mtlxContent = previousMtlxContent.replace(prevPath, path);
 
-                        console.log(`************** EXR file detected. Path: ${prevPath} -> ${path}, URL: ${fileData.url}`);
+                        console.log(`EXR file detected. Path: ${prevPath} -> ${path}, URL: ${fileData.url}`);
                         if (previousMtlxContent !== mtlxContent) {
                             console.log(`Updated MaterialX content to replace .exr with .png for texture: ${path}`);
                         }
@@ -281,10 +281,13 @@ class JsPolyHavenAPILoader {
                 }
             }
 
+            // Add Materialx document to ZIP. 
+            // This must be done after texture processing which may
+            // modify the MTLX image references.
             zip.file(`${material.id}.mtlx`, mtlxContent);
-            console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx, ${mtlxContent}`);
+            console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx`); //, ${mtlxContent}`);
 
-            // Add README file
+            // Add README file, and thumbnail to root of ZIP
             zip.file("README.txt",
                 `Material: ${material.name}\n` +
                 `Resolution: ${resolution}\n` +
@@ -292,7 +295,6 @@ class JsPolyHavenAPILoader {
                 `Downloaded: ${new Date().toISOString()}\n\n` +
                 `Contains the following files:\n` +
                 `- ${material.id}.mtlx\n` +
-                //Object.keys(textureFiles).map(path => `- ${path}`).join('\n') +
                 (material.thumb_url ? `\n- ${material.id}_thumbnail.png` : '')
             );
 
