@@ -348,12 +348,12 @@ async function loadMaterialContent(materialId) {
         let mtlxContent = contentData.mtlxContent || '';
         previewContainer.innerHTML = `
             <div class="mt-4">
-                <b>MaterialX Document</b>
-                <textarea id="mtlxEditor">${mtlxContent}</textarea>
+                <b>Content</b>
                 <div class="mt-2">
                     <b>Textures</b>
                     <div id="textureGallery" class="row g-2"></div>
                 </div>
+                <textarea id="mtlxEditor">${mtlxContent}</textarea>
             </div>
         `;
 
