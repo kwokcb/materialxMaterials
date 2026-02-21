@@ -92,7 +92,9 @@ class JsPolyHavenAPILoader {
                 throw new Error(`Failed to fetch MaterialX data for ${materialId}`);
             }
 
-            return await response.json();
+            const result = await response.json();
+            console.log(`Fetched MaterialX files for ${materialId}:`, result);
+            return result;
         } catch (error) {
             console.error(`Error fetching material files for ${materialId}:`, error);
             throw error;
@@ -114,7 +116,9 @@ class JsPolyHavenAPILoader {
                 throw new Error('Failed to download MaterialX file');
             }
 
-            return await response.text();
+            const result = await response.text();
+            // Find 
+            return result;
         } catch (error) {
             console.error('Error downloading MaterialX content:', error);
             throw error;
@@ -134,6 +138,9 @@ class JsPolyHavenAPILoader {
 
             if (!response.ok) {
                 throw new Error(`Failed to download texture from ${url}`);
+            }
+            else {
+                console.log(`>  Successfully downloaded texture from ${url}`);
             }
 
             return await response.blob();
@@ -176,6 +183,7 @@ class JsPolyHavenAPILoader {
             // Fetch MaterialX files data
             const filesData = await this.fetchMaterialFiles(material.id);
             const mtlxData = filesData.mtlx?.[resolution]?.mtlx;
+            console.log('> createMaterialXPackage - fetched MaterialX data:', mtlxData);
 
             if (!mtlxData) {
                 throw new Error(`No MaterialX files found for ${resolution} resolution`);
@@ -185,14 +193,36 @@ class JsPolyHavenAPILoader {
             const zip = new JSZip();
 
             // 1. Download and add the main MaterialX file
-            const mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
-            zip.file(`${material.id}.mtlx`, mtlxContent);
-            console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx, ${mtlxContent}`);
+            let mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
 
             // 2. Download and add all included texture files
             const textureFiles = mtlxData.include || {};
+            let texturePaths = [];
+            
             const texturePromises = Object.entries(textureFiles).map(async ([path, fileData]) => {
                 try {
+                    console.log(`Processing texture: ${path} from URL: ${fileData.url}`);
+
+                    let isEXR = path.toLowerCase().endsWith('.exr')
+                    // Try changing extension to .png.
+                    if (isEXR) {
+                        const prevPath = path;
+                        path = path.replace(/\.exr$/i, '.png');
+                        // Replace /exr/ with /png/
+                        fileData.url = fileData.url.replace(/\/exr\//i, '/png/');
+                        // Replace .exr with .png extension
+                        fileData.url = fileData.url.replace('.exr', '.png');
+                        // Replace .exr with .png in mtlxContent if present
+                        const previousMtlxContent = mtlxContent;
+                        mtlxContent = previousMtlxContent.replace(prevPath, path);
+
+                        console.log(`EXR file detected. Path: ${prevPath} -> ${path}, URL: ${fileData.url}`);
+                        if (previousMtlxContent !== mtlxContent) {
+                            console.log(`Updated MaterialX content to replace .exr with .png for texture: ${path}`);
+                        }
+
+                    }
+
                     const textureBlob = await this.downloadTexture(fileData.url);
                     
                     // Maintain the folder structure from the include paths
@@ -211,8 +241,12 @@ class JsPolyHavenAPILoader {
                         console.warn(`EXR file present which may not be supported by MaterialX texture loader: ${path}`);
                     }
                     else {
-                        console.log(`Added texture to ZIP: ${path}`);
+                        console.log(`Added texture ${path} to ZIP from URL: ${fileData.url}`);
+                        zip.file(path, textureBlob);
                     }
+
+                    texturePaths.push(path);
+
                 } catch (error) {
                     console.error(`Error downloading texture ${path}:`, error);
                     // Add placeholder file if download fails
@@ -220,6 +254,7 @@ class JsPolyHavenAPILoader {
                 }
             });
 
+            
             // 3. Download and add thumbnail
             if (material.thumb_url) {
                 try {
@@ -236,7 +271,23 @@ class JsPolyHavenAPILoader {
             // Wait for all downloads to complete
             await Promise.all(texturePromises);
 
-            // Add README file
+            for (const textureName of texturePaths) {
+                // Patch bad MTLX references in original file
+                const extenson = textureName.split('.').pop();
+                const exrName = textureName.replace(`.${extenson}`, `.exr`);
+                if (mtlxContent.includes(exrName)) {
+                    console.log(`Replace ${exrName} with ${textureName} in MaterialX content for preview`);
+                    mtlxContent = mtlxContent.replace(exrName, textureName);
+                }
+            }
+
+            // Add Materialx document to ZIP. 
+            // This must be done after texture processing which may
+            // modify the MTLX image references.
+            zip.file(`${material.id}.mtlx`, mtlxContent);
+            console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx`); //, ${mtlxContent}`);
+
+            // Add README file, and thumbnail to root of ZIP
             zip.file("README.txt",
                 `Material: ${material.name}\n` +
                 `Resolution: ${resolution}\n` +
@@ -244,7 +295,6 @@ class JsPolyHavenAPILoader {
                 `Downloaded: ${new Date().toISOString()}\n\n` +
                 `Contains the following files:\n` +
                 `- ${material.id}.mtlx\n` +
-                Object.keys(textureFiles).map(path => `- ${path}`).join('\n') +
                 (material.thumb_url ? `\n- ${material.id}_thumbnail.png` : '')
             );
 
