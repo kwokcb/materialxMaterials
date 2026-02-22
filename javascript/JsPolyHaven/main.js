@@ -202,12 +202,7 @@ async function previewMaterial() {
         }
 
         // Wait for viewer-ready message.
-        // In case of failure, throw a timeout error.
-        let failed_messaage = false;
-        const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error("Timeout waiting for viewer-ready")), 5000));
-        await Promise.race([waitForViewerReady(viewer), timeoutPromise]).catch(error => {
-            throw error;
-        });        
+        await waitForViewerReady(viewer);
 
         viewer.style.display = 'block';
 
