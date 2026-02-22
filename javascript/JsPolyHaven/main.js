@@ -178,8 +178,8 @@ async function previewMaterial() {
     }
 
     let previewButton = document.getElementById('previewMaterial')
-    let previousText = previewButton.textContent;
-    previewButton.textContent = 'Loading...';
+    let previousHTML = previewButton.innerHTML;
+    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Loading...';
 
     const resolution = document.getElementById('materialResolution').value;
     try {
@@ -214,7 +214,7 @@ async function previewMaterial() {
         console.error('Error preparing preview:', error);
         alert(`Failed to prepare preview: ${error.message}`);
     }
-    previewButton.textContent = previousText;
+    previewButton.innerHTML = previousHTML;
 
 }
 
