@@ -6,6 +6,7 @@ let polyHavenAPI = null;
 let svgDataUrl = null;
 let codeMirrorEditor = null;
 const materialPackageCache = {};
+const materialContentCache = {};
 
 // DOM elements
 const materialsContainer = document.getElementById('materialsContainer');
@@ -185,12 +186,15 @@ async function previewMaterial() {
         const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
         let zipBlob = materialPackageCache[cacheKey];
         if (!zipBlob) {
+            // Reuse cached content if available
+            let contentData = materialContentCache[cacheKey];
+            if (!contentData) {
+                contentData = await polyHavenAPI.getMaterialContent(currentSelectedMaterial.id, resolution);
+                materialContentCache[cacheKey] = contentData;
+            }
             zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
             materialPackageCache[cacheKey] = zipBlob;
         }
-        
-        // Create the MaterialX package using the API class
-        //const zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
 
         // Convert Blob to ArrayBuffer
         const arrayBuffer = await zipBlob.arrayBuffer();
@@ -334,9 +338,12 @@ async function loadMaterialContent(materialId) {
 
     try {
         const resolution = document.getElementById('materialResolution').value;
-        
-        // Get material content using the API class
-        const contentData = await polyHavenAPI.getMaterialContent(materialId, resolution);
+        const cacheKey = `${materialId}_${resolution}`;
+        let contentData = materialContentCache[cacheKey];
+        if (!contentData) {
+            contentData = await polyHavenAPI.getMaterialContent(materialId, resolution);
+            materialContentCache[cacheKey] = contentData;
+        }
 
         // Create preview content
         const previewContainer = document.getElementById('contentPreview');
@@ -407,7 +414,6 @@ async function loadMaterialContent(materialId) {
                 `;
             return card;
         };
-
 
         // Create gallery items
         for (const [path, fileData] of Object.entries(textureFiles)) {
