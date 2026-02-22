@@ -309,7 +309,7 @@ function displayMaterials(materials) {
 
         col.innerHTML = `
             <div class="card material-card" data-material-id="${material.id}">
-                <img src="${material.thumb_url}" class="card-img-top material-img" alt="${material.name}" onerror="this.src=${svgDataUrl}">
+                <img src="${material.thumb_url}" class="card-img-top material-img" alt="${material.name}" loading="lazy" decoding="async" onerror="this.src=${svgDataUrl}">
                 <div class="card-body">
                     <div class="card-title">${material.name}</div>
                     <div class="d-flex flex-wrap">
@@ -504,6 +504,7 @@ async function showMaterialDetails(material) {
 
 // Update the maps display based on selected resolution
 function updateMapsDisplay() {
+    return;
     if (!currentSelectedMaterial) return;
 
     const resolution = document.getElementById('materialResolution').value;

@@ -12,6 +12,24 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
+        /* Resizable modal CSS */
+        /* .modal.show {
+            display: block !important;
+            align-items: unset !important;
+        }
+        .modal-dialog {
+            width: auto !important;
+            height: auto !important;
+            display: block !important;
+        }
+        .resizable-modal-content {
+            resize: both;
+            overflow: auto;
+            min-width: 400px;
+            min-height: 200px;
+            max-width: 90vw;
+            max-height: 90vh;
+        } */
         .material-card {
             transition: transform 0.2s;
             cursor: pointer;
@@ -73,6 +91,7 @@
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img class="px-1"
                     src="https://raw.githubusercontent.com/kwokcb/materialxMaterials/refs/heads/main/documents/images/download.png"
+                    loading="lazy" decoding="async"
                     width="48px" alt="MaterialX Materials Icon">
                 <span class="ms-2">Poly Haven MaterialX Materials</span>
             </a>
@@ -130,16 +149,16 @@
 
     <!-- Material Preview Modal -->
     <div class="modal fade" id="materialModal" tabindex="-1" aria-labelledby="materialModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
+        <div class="modal-dialog modal-lg" id="materialModalDialog">
+            <div class="modal-content resizable-modal-content">
+                <div class="modal-header" id="materialModalHeader">
                     <h5 class="modal-title" id="materialModalLabel">Material Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="font-size: 11px">
                     <div class="row">
                         <div class="col-md">
-                            <img src="" alt="Material Preview" class="img-fluid rounded mb-2" id="materialPreview">
+                            <img src="" alt="Material Preview" class="img-fluid rounded mb-2" id="materialPreview" loading="lazy" decoding="async">
                             <div id="materialTags" class="mb-2"></div>
                             <div id="materialCategories" class="mb-2"></div>
                         </div>
@@ -196,6 +215,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
     <script src="jsPolyHavenLoader.js"></script>
     <script src="main.js"></script>
+    <script>
+    // Make modal movable by dragging header
+    /* 
+    (function() {
+        const dialog = document.getElementById('materialModalDialog');
+        const header = document.getElementById('materialModalHeader');
+        let isDragging = false;
+        let startX, startY, startLeft, startTop;
+
+        header.style.cursor = 'move';
+
+        header.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            const rect = dialog.getBoundingClientRect();
+            startLeft = rect.left;
+            startTop = rect.top;
+            document.body.style.userSelect = 'none';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            dialog.style.position = 'fixed';
+            dialog.style.left = (startLeft + dx) + 'px';
+            dialog.style.top = (startTop + dy) + 'px';
+            dialog.style.margin = 0;
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            document.body.style.userSelect = '';
+        });
+
+        // Reset position when modal is closed
+        document.getElementById('materialModal').addEventListener('hidden.bs.modal', function() {
+            dialog.style.left = '';
+            dialog.style.top = '';
+            dialog.style.position = '';
+            dialog.style.margin = '';
+        });
+    })();
+    */
+    </script>
 </body>
 
 </html>
