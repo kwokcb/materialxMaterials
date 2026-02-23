@@ -75,7 +75,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize CodeMirror when modal opens
     const materialModalElement = document.getElementById('materialModal');
     materialModalElement.addEventListener('shown.bs.modal', function () {
-        if (codeMirrorEditor) return;
+        if (codeMirrorEditor) 
+        {
+            // Clear content
+            codeMirrorEditor.setValue('');
+            return;
+        }
 
         let editor = document.getElementById('mtlxEditor')
         if (editor)
@@ -86,6 +91,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 readOnly: true,
                 lineWrapping: true
             });
+
+        let textureGallery = document.getElementById('textureGallery');
+        if (textureGallery) {
+            // clear
+            console.info('Texture gallery container cleared !!!!!!!!');
+            textureGallery.innerHTML = '';
+        }
+        else {
+            console.info('Texture gallery container not found !!!!!!!!');
+        }
     });
 
     let viewer = document.getElementById('viewer');
@@ -100,6 +115,11 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const key in materialPackageCache) {
             delete materialPackageCache[key];
         }        
+
+        let contentPreview = document.getElementById('contentPreview');
+        if (contentPreview) {
+            contentPreview.style.display = 'none';
+        }   
     });
 });
 
@@ -199,22 +219,24 @@ async function previewMaterial() {
         // Convert Blob to ArrayBuffer
         const arrayBuffer = await zipBlob.arrayBuffer();
 
+        // Show viewer immediately, before posting message
+        viewer.style.display = 'block';
+
         // Post the ArrayBuffer to the target window (e.g., iframe or parent)
         console.log('Posting preview data to viewer page...');
         if (viewer && viewer.contentWindow) {
             viewer.contentWindow.postMessage(arrayBuffer, targetURL);
         }
 
-        // Wait for viewer-ready message.
+        // Wait for viewer-ready message after posting
         await waitForViewerReady(viewer);
-
-        viewer.style.display = 'block';
 
     } catch (error) {
         console.error('Error preparing preview:', error);
         alert(`Failed to prepare preview: ${error.message}`);
+    } finally {
+        previewButton.innerHTML = previousHTML;
     }
-    previewButton.innerHTML = previousHTML;
 
 }
 
@@ -331,48 +353,30 @@ async function loadMaterialContent(materialId) {
         return;
     }
 
+    // Show content preview section
+    let contentPreview = document.getElementById('contentPreview');
+    contentPreview.style.display = 'block';
+
     const loadBtn = document.getElementById('loadContentBtn');
     const originalText = loadBtn.innerHTML;
     loadBtn.innerHTML = '<i class="bi bi-arrow-clockwise spin me-2"></i>Loading...';
     loadBtn.disabled = true;
 
+    //const previewContainer = document.getElementById('contentPreview');
+
+    const resolution = document.getElementById('materialResolution').value;
+    const cacheKey = `${materialId}_${resolution}`;
+    let contentData = materialContentCache[cacheKey];
+
     try {
-        const resolution = document.getElementById('materialResolution').value;
-        const cacheKey = `${materialId}_${resolution}`;
-        let contentData = materialContentCache[cacheKey];
-        if (!contentData) {
+        if (!contentData) 
+        {
             contentData = await polyHavenAPI.getMaterialContent(materialId, resolution);
             materialContentCache[cacheKey] = contentData;
         }
-
+        
         // Create preview content
-        const previewContainer = document.getElementById('contentPreview');
         let mtlxContent = contentData.mtlxContent || '';
-        previewContainer.innerHTML = `
-            <div class="mt-4">
-                <b>Content</b>
-                <div class="mt-2">
-                    <b>Textures</b>
-                    <div id="textureGallery" class="row g-2"></div>
-                </div>
-                <textarea id="mtlxEditor">${mtlxContent}</textarea>
-            </div>
-        `;
-
-        // Initialize CodeMirror
-        if (codeMirrorEditor) {
-            codeMirrorEditor.toTextArea();
-        } 
-        let editor = document.getElementById('mtlxEditor');
-        if (editor) {
-            codeMirrorEditor = CodeMirror.fromTextArea(editor, {
-                mode: 'xml',
-                theme: 'material',
-                lineNumbers: true,
-                readOnly: true,
-                lineWrapping: true
-            });
-        }
 
         // Load texture gallery
         const textureFiles = contentData.textureFiles;
@@ -400,7 +404,7 @@ async function loadMaterialContent(materialId) {
 
             card.innerHTML = `
                     <div class="card h-100">
-                        <div class="ratio ratio-1x1 bg-light">
+                        <div class="ratio ratio-1x1">
                             <img src="${textureUrl}" 
                                 class="card-img-top object-fit-contain p-2"
                                 alt="${textureName}"
@@ -434,20 +438,23 @@ async function loadMaterialContent(materialId) {
                 }
             }
 
-            console.log('Setting MaterialX content in CodeMirror editor:', mtlxContent);
+            //console.log('Setting MaterialX content in CodeMirror editor:', mtlxContent);
             codeMirrorEditor.setValue(mtlxContent);
         }
 
+        loadBtn.innerHTML = originalText;
+        loadBtn.disabled = false;
+    
     } catch (error) {
         console.error('Error loading content:', error);
-        document.getElementById('contentPreview').innerHTML += `
+        previewContainer.innerHTML += `
             <div class="alert alert-danger mt-3">
                 Failed to load content: ${error.message}
             </div>
         `;
-    } finally {
         loadBtn.innerHTML = originalText;
         loadBtn.disabled = false;
+        return;
     }
 }
 
@@ -481,15 +488,6 @@ async function showMaterialDetails(material) {
     categoriesContainer.innerHTML = '<span class="badge bg-dark">Categories</span> ' + categoriesList
 
 
-    // Reset content preview section
-    document.getElementById('contentPreview').innerHTML = `    
-        <div class="text-center py-1">
-            <button style="font-size: 11px;" class="btn btn-primary" id="loadContentBtn">
-                <i class="bi bi-eye me-2"></i>Show Content
-            </button>
-        </div>
-    `;
-
     // Set up content loader button
     document.getElementById('loadContentBtn').addEventListener('click', async () => {
         await loadMaterialContent(material.id);
@@ -497,6 +495,15 @@ async function showMaterialDetails(material) {
 
     // Force 1K for downloads
     document.getElementById('materialResolution').value = '1k';
+
+    // Clear texture gallery and editor content
+    const galleryContainer = document.getElementById('textureGallery');
+    if (galleryContainer) {
+        galleryContainer.innerHTML = '';
+    }
+    if (codeMirrorEditor) {
+        codeMirrorEditor.setValue('');
+    }
 
     // Show modal
     materialModal.show();

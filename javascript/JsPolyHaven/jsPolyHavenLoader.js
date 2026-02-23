@@ -295,7 +295,8 @@ class JsPolyHavenAPILoader {
                 `Downloaded: ${new Date().toISOString()}\n\n` +
                 `Contains the following files:\n` +
                 `- ${material.id}.mtlx\n` +
-                (material.thumb_url ? `\n- ${material.id}_thumbnail.png` : '')
+                (material.thumb_url ? `- ${material.id}_thumbnail.png\n` : '') +
+                (texturePaths.length > 0 ? texturePaths.map(t => `- ${t}`).join('\n') + '\n' : '')
             );
 
             // Generate the ZIP file

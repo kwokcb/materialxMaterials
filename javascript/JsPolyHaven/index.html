@@ -198,7 +198,18 @@
                                 </div>                            
                             </div>
                         </div>
-                        <div id="contentPreview" class="mt-1"></div>
+                        <div class="text-center py-1">
+                            <button style="font-size: 11px;" class="btn btn-primary" id="loadContentBtn">
+                                <i class="bi bi-eye me-2"></i>Show Content
+                            </button>
+                        </div>
+                        <div id="contentPreview" class="mt-1" style="display:none;">
+                            <div class="mt-2 mb-2">
+                                <b>Textures</b>
+                                <div id="textureGallery" class="row g-2"></div>
+                            </div>
+                            <textarea id="mtlxEditor"></textarea>
+                        </div>
                         <!-- <textarea id="mtlxEditor" style="display:none;"></textarea> -->
                     </div>
                 </div>
