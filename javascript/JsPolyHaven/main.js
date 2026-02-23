@@ -388,7 +388,7 @@ async function loadMaterialContent(materialId) {
         const createTextureCard = (textureName, textureUrl) => 
         {
             const card = document.createElement('div');
-            card.className = 'col-6 col-md-4 col-lg-3 mb-3';
+            card.className = 'col-sm-3 col-md-3 col-lg-3 mb-2';
 
             // If textureURL ends with exr replace with png for preview
             if (textureUrl.toLowerCase().endsWith('.exr')) {
