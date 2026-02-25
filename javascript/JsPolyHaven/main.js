@@ -7,6 +7,7 @@ let svgDataUrl = null;
 let codeMirrorEditor = null;
 const materialPackageCache = {};
 const materialContentCache = {};
+let desiredTextureFormat = 'jpg';
 
 // DOM elements
 const materialsContainer = document.getElementById('materialsContainer');
@@ -29,6 +30,39 @@ let targetURL = "https://kwokcb.github.io/MaterialXLab/javascript/shader_utiliti
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function () {
+    // Parse desiredTextureFormat from URL query string
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlFormat = urlParams.get('desiredTextureFormat');
+    if (urlFormat) {
+        testFormat = urlFormat.toLowerCase();
+        // This appears to be all that PolyHaven supports for now
+        if (testFormat === 'jpg' || testFormat === 'png' || testFormat === 'exr') {
+            desiredTextureFormat = testFormat;
+            console.log('Texture format set from URL:', desiredTextureFormat);
+        }
+    }
+
+    // Add UI for selecting texture format
+    /* const formatSelector = document.createElement('select');
+    formatSelector.id = 'textureFormatSelector';
+    formatSelector.className = 'form-select mb-2';
+    ['jpg', 'png', 'tif', 'exr'].forEach(fmt => {
+        const option = document.createElement('option');
+        option.value = fmt;
+        option.textContent = fmt.toUpperCase();
+        if (fmt === desiredTextureFormat) option.selected = true;
+        formatSelector.appendChild(option);
+    });
+    formatSelector.addEventListener('change', function () {
+        desiredTextureFormat = this.value;
+        console.log('Texture format set to:', desiredTextureFormat);
+    });
+    // Insert selector at top of page (before materialsContainer)
+    const container = document.getElementById('materialsContainer');
+    if (container && container.parentNode) {
+        container.parentNode.insertBefore(formatSelector, container);
+    } */
+
     // Initialize the Poly Haven API
     polyHavenAPI = new JsPolyHavenAPILoader();
 
@@ -93,11 +127,11 @@ document.addEventListener('DOMContentLoaded', function () {
         let textureGallery = document.getElementById('textureGallery');
         if (textureGallery) {
             // clear
-            console.info('Texture gallery container cleared !!!!!!!!');
+            //console.info('Texture gallery container cleared.');
             textureGallery.innerHTML = '';
         }
         else {
-            console.info('Texture gallery container not found !!!!!!!!');
+            console.info('Texture gallery container not found');
         }
     });
 
@@ -213,7 +247,7 @@ async function previewMaterial() {
     // Reuse cached content if available
     let contentData = materialContentCache[cacheKey];
     if (!contentData) {
-        contentData = await polyHavenAPI.getMaterialContent(currentSelectedMaterial.id, resolution);
+        contentData = await polyHavenAPI.getMaterialContent(currentSelectedMaterial.id, resolution, desiredTextureFormat);
         materialContentCache[cacheKey] = contentData;
     }
    
@@ -232,7 +266,7 @@ async function previewMaterial() {
 
     // Set up a promise to wait for the viewer to signal it's ready
     const readyPromise = new Promise((resolve, reject) => {
-        const timeout = setTimeout(() => reject(new Error('Viewer ready timeout')), 10000);
+        const timeout = setTimeout(() => reject(new Error('Viewer timed out')), 30000);
         function handler(event) {
             try {
                 const data = JSON.parse(event.data);
@@ -400,7 +434,7 @@ async function loadMaterialContent(materialId) {
     try {
         if (!contentData) 
         {
-            contentData = await polyHavenAPI.getMaterialContent(materialId, resolution);
+            contentData = await polyHavenAPI.getMaterialContent(materialId, resolution, desiredTextureFormat);
             materialContentCache[cacheKey] = contentData;
         }
         
@@ -418,16 +452,6 @@ async function loadMaterialContent(materialId) {
         {
             const card = document.createElement('div');
             card.className = 'col-sm-3 col-md-3 col-lg-3 mb-2';
-
-            // If textureURL ends with exr replace with png for preview
-            if (textureUrl.toLowerCase().endsWith('.exr')) {
-                console.log(`> EXR file detected for preview, attempting to use PNG version: ${textureUrl}`);
-                textureUrl = textureUrl.replace(/\.exr$/i, '.png').replace(/\/exr\//i, '/png/');
-                let textureName_before = textureName;
-                textureName = textureName_before.replace(/\.exr$/i, '.png');
-                console.log(`Replace ${textureName_before} with ${textureName} in MaterialX content for preview`);
-                mtlxContent = mtlxContent.replace(textureName_before, textureName);
-            }   
 
             textureNames.push(textureName);
 
@@ -457,17 +481,6 @@ async function loadMaterialContent(materialId) {
 
         // Set mtlxContent to editor
         if (codeMirrorEditor) {
-            // Patch bad MTLX references in original file
-            for (const textureName of textureNames) {
-                extenson = textureName.split('.').pop();
-                exrName = textureName.replace(`.${extenson}`, `.exr`);
-                if (mtlxContent.includes(exrName)) {
-                    console.log(`Replace ${exrName} with ${textureName} in MaterialX content for preview`);
-                    mtlxContent = mtlxContent.replace(exrName, textureName);
-                }
-            }
-
-            //console.log('Setting MaterialX content in CodeMirror editor:', mtlxContent);
             codeMirrorEditor.setValue(mtlxContent);
         }
 

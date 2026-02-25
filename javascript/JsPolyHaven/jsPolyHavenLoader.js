@@ -236,23 +236,7 @@ class JsPolyHavenAPILoader {
             {
                 try {
                     console.log(`Processing texture: ${path} from URL: ${fileData.url}`);
-
-                    let isEXR = path.toLowerCase().endsWith('.exr');
-                    if (isEXR) {
-                        const prevPath = path;
-                        path = path.replace(/\.exr$/i, '.png');
-                        fileData.url = fileData.url.replace(/\/exr\//i, '/png/');
-                        fileData.url = fileData.url.replace('.exr', '.png');
-                        const previousMtlxContent = mtlxContent;
-                        mtlxContent = previousMtlxContent.replace(prevPath, path);
-                        console.log(`EXR file detected. Path: ${prevPath} -> ${path}, URL: ${fileData.url}`);
-                        if (previousMtlxContent !== mtlxContent) {
-                            console.log(`Updated MaterialX content to replace .exr with .png for texture: ${path}`);
-                        }
-                    }
-
                     const textureBlob = await this.downloadTexture(fileData.url);
-
                     texturePaths.push(path);
 
                     // Build the local path for the zip (preserving folder structure)
@@ -262,15 +246,17 @@ class JsPolyHavenAPILoader {
                     blobs[localPath] = await blobToUint8Array(textureBlob);
 
                 } catch (error) {
-                    console.error(`Error downloading texture ${path}:`, error);
-                    // Optionally add a placeholder or skip
+                    console.error(`Error downloading texture from URI ${path}:`, error);
+                    const pathParts = path.split('/');
+                    const localPath = pathParts.join('/');
+                    blobs[localPath] = fflate.strToU8(`Error downloading texture: ${error.message}`);
                 }
             });
             await downloadWithConcurrency(texturePromises, 3);
             
             for (const [localPath, blobData] of Object.entries(blobs)) {
                 zip[localPath] = blobData;
-                console.log(`Added texture to ZIP: ${localPath}`);
+                //console.log(`Added texture to ZIP: ${localPath}`);
             }
 
             // 3. Download and add thumbnail
@@ -280,7 +266,7 @@ class JsPolyHavenAPILoader {
                     const thumbUrl = new URL(material.thumb_url);
                     const thumbPath = thumbUrl.pathname.split('/').pop();
                     const thumbExt = thumbPath.split('.').pop();
-                    console.log('Add thumbnail to ZIP:', thumbPath);
+                    //console.log('Add thumbnail to ZIP:', thumbPath);
                     zip[`${material.id}_thumbnail.${thumbExt}`] = await blobToUint8Array(thumbBlob);
                 } catch (error) {
                     console.error('Error downloading thumbnail:', error);
@@ -290,25 +276,15 @@ class JsPolyHavenAPILoader {
             // Wait for all downloads to complete
             await Promise.all(texturePromises);
 
-            for (const textureName of texturePaths) {
-                // Patch bad MTLX references in original file
-                const extenson = textureName.split('.').pop();
-                const exrName = textureName.replace(`.${extenson}`, `.exr`);
-                if (mtlxContent.includes(exrName)) {
-                    console.log(`Replace ${exrName} with ${textureName} in MaterialX content for preview`);
-                    mtlxContent = mtlxContent.replace(exrName, textureName);
-                }
-            }
-
             // Add Materialx document to ZIP. 
             // This must be done after texture processing which may
             // modify the MTLX image references.
-            console.log(`Adding MaterialX file to ZIP: ${material.id}.mtlx`);
+            //console.log(`Adding MaterialX file to ZIP: ${material.id}.mtlx`);
             zip[`${material.id}.mtlx`] =  fflate.strToU8(mtlxContent);
-            console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx`); //, ${mtlxContent}`);
+            //console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx`); //, ${mtlxContent}`);
 
             // Add README file, and thumbnail to root of ZIP
-            console.log('Adding README.txt to ZIP with material metadata and file list');
+            //console.log('Adding README.txt to ZIP with material metadata and file list');
             zip["README.txt"] = fflate.strToU8(
                 `Material: ${material.name}\n` +
                 `Resolution: ${resolution}\n` +
@@ -316,26 +292,20 @@ class JsPolyHavenAPILoader {
                 `Downloaded: ${new Date().toISOString()}\n\n` +
                 `Contains the following files:\n` +
                 `- ${material.id}.mtlx\n` +
-                (material.thumb_url ? `- ${material.id}_thumbnail.png\n` : '') 
-                //(texturePaths.length > 0 ? texturePaths.map(t => `- ${t}`).join('\n') + '\n' : '')
+                (material.thumb_url ? `- ${material.id}_thumbnail.png\n` : '') +
+                (texturePaths.length > 0 ? texturePaths.map(t => `- ${t}`).join('\n') + '\n' : '')
             );
 
             for (const [k, v] of Object.entries(zip)) {
-                if (v === zip) {
-                    console.error("Circular reference detected in zip at key:", k);
-                }
-                else
-                {
-                    console.log(`ZIP entry: ${k}, size: ${v.length || v.size || 'unknown'}`);
-                }
+                console.log(`ZIP entry: ${k}, size: ${v.length || v.size || 'unknown'}`);
             }
 
              // Compress the ZIP file
-            console.log('Compressing ZIP file with fflate...');
+            //console.log('Compressing ZIP file with fflate...');
             const zipped = fflate.zipSync(zip);
 
             // Create a Blob from the zipped data
-            console.log('Creating Blob from zipped data...');
+            //console.log('Creating Blob from zipped data...');
             const blob = new Blob([zipped], { type: 'application/zip' });     
             
             console.log('MaterialX package created successfully:', blob);
@@ -351,9 +321,10 @@ class JsPolyHavenAPILoader {
      * Get MaterialX content and texture files for preview
      * @param materialId Material ID
      * @param resolution Resolution (1k, 2k, 4k, 8k)
+     * @param textureFormat Optional texture format to remap references to (e.g. 'png'). If empty, original formats are used.
      * @returns Object containing MaterialX content and texture files
      */
-    async getMaterialContent(materialId, resolution) {
+    async getMaterialContent(materialId, resolution, textureFormat = '') {
         try {
             const filesData = await this.fetchMaterialFiles(materialId);
             const mtlxData = filesData.mtlx?.[resolution]?.mtlx;
@@ -363,11 +334,57 @@ class JsPolyHavenAPILoader {
             }
 
             // Get MaterialX content
-            const mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
+            let mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
+
+            let textureFileData = mtlxData.include || {};
+
+            // Preprocess MTLX content and file data to remap texture references to .<textureFormat>.
+            if (textureFormat.length > 0) 
+            {
+                if (textureFileData && Object.keys(textureFileData).length > 0) {
+                    const textureExtension = "." + textureFormat.toLowerCase();
+
+                    for (const [path, fileData] of Object.entries(textureFileData)) {
+                        const baseName = path.replace(/\\/g, '/').split('/').pop().replace(/\.[^.]+$/, '');
+
+                        // Replace all references to baseName.<ext> with baseName.<textureFormat>
+                        const extRegex = new RegExp(baseName + '\\.[a-zA-Z0-9]+', 'g');
+                        console.log(`Remapping texture references in MTLX content for ${baseName}: ${extRegex}`);
+                        let prevMtlxContent = mtlxContent;
+                        mtlxContent = mtlxContent.replace(extRegex, baseName + textureExtension);
+                        if (prevMtlxContent == mtlxContent) {
+                            console.warn(`No references found in MTLX content for texture ${baseName}. There is a mismatch between the MTLX content and the texture file data !`);
+                        }
+
+                        // Remap path and url to .<textureFormat>
+                        let extension = path.split('.').pop().toLowerCase();
+                        if (extension !== textureFormat) {
+                            const prevPath = path;
+                            const newPath = path.replace(/\.[^.]+$/i, textureExtension);
+
+                            // Remap fileData as well
+                            fileData.url = fileData.url.replace(/\.[^.]+$/i, textureExtension);
+                            // Split the path and replace any extension folder with textureExtension
+                            const urlParts = fileData.url.split('/');
+                            const extFromPath = extension;
+                            fileData.url = urlParts.map(part => part.toLowerCase() === extFromPath ? textureFormat : part).join('/');
+
+                            delete textureFileData[path];
+                            textureFileData[newPath] = fileData;
+                            console.log(`>> Remapped texture path: ${prevPath} -> ${newPath}. File data: ${fileData.url}`);
+                        } else {
+                            console.log(`>> Texture path is already ${textureFormat}: ${path}. File data: ${fileData.url}`);
+                        }
+                    }
+
+                    //console.log('Final remapped MTLX content:', mtlxContent);
+                    //console.log('Final remapped texture file data:', textureFileData);
+                }
+            }
 
             return {
                 mtlxContent,
-                textureFiles: mtlxData.include || {}
+                textureFiles: textureFileData
             };
         } catch (error) {
             console.error('Error getting material content:', error);
