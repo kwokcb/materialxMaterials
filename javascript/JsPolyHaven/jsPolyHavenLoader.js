@@ -180,6 +180,19 @@ class JsPolyHavenAPILoader {
      */
     async createMaterialXPackage(material, resolution, preFetchedData = null) {
 
+        async function downloadWithConcurrency(tasks, concurrency = 3) {
+            const results = [];
+            const queue = tasks.slice();
+            async function worker() {
+                while (queue.length) {
+                    const task = queue.shift();
+                    results.push(await task());
+                }
+            }
+            await Promise.all(Array(concurrency).fill().map(worker));
+            return results;
+        }
+
         try {
             let filesData, mtlxData, mtlxContent, textureFiles;
             if (preFetchedData) {
@@ -213,7 +226,9 @@ class JsPolyHavenAPILoader {
             //const textureFiles = mtlxData.include || {};
             let texturePaths = [];
             
-            const texturePromises = Object.entries(textureFiles).map(async ([path, fileData]) => {
+            //const texturePromises = Object.entries(textureFiles).map(async ([path, fileData]) => {
+            const texturePromises = Object.entries(textureFiles).map(([path, fileData]) => async () => 
+            {
                 try {
                     console.log(`Processing texture: ${path} from URL: ${fileData.url}`);
 
@@ -267,7 +282,7 @@ class JsPolyHavenAPILoader {
                     zip.file(path, `Failed to download: ${fileData.url}`);
                 }
             });
-
+            await downloadWithConcurrency(texturePromises, 3);
             
             // 3. Download and add thumbnail
             if (material.thumb_url) {

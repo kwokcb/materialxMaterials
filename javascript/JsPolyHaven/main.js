@@ -349,13 +349,17 @@ function displayMaterials(materials) {
         return;
     }
 
+    const fragment = document.createDocumentFragment();
     materials.forEach(material => {
         const col = document.createElement('div');
         col.className = 'col-md-3 col-lg-2 mb-4';
 
+        let thumbUrl = material.thumb_url;
+        thumbUrl = thumbUrl.replace('512', '256');
+
         col.innerHTML = `
             <div class="card material-card" data-material-id="${material.id}">
-                <img src="${material.thumb_url}" class="card-img-top material-img" alt="${material.name}" loading="lazy" decoding="async" onerror="this.src=${svgDataUrl}">
+                <img src="${thumbUrl}" class="card-img-top material-img" alt="${material.name}" loading="lazy" decoding="async" onerror="this.src=${svgDataUrl}">
                 <div class="card-body">
                     <div class="card-title">${material.name}</div>
                     <div class="d-flex flex-wrap">
@@ -366,8 +370,9 @@ function displayMaterials(materials) {
         `;
 
         col.querySelector('.card').addEventListener('click', () => showMaterialDetails(material));
-        materialsContainer.appendChild(col);
+        fragment.appendChild(col);
     });
+    materialsContainer.appendChild(fragment);
 }
 
 // New function to load material content
@@ -492,7 +497,9 @@ async function showMaterialDetails(material) {
     document.getElementById('materialModalLabel').textContent = material.name;
     //document.getElementById('materialTitle').textContent = material.name;
     document.getElementById('materialDescription').textContent = material.description;
-    document.getElementById('materialPreview').src = material.thumb_url;
+    let thumbUrl = material.thumb_url;
+    //thumbUrl = thumbUrl.replace('512', '256');
+    document.getElementById('materialPreview').src = thumbUrl;
 
     // Set tags
     const tagsContainer = document.getElementById('materialTags');
