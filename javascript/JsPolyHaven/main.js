@@ -52,9 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
     </svg>`;
 
     // Convert to base64 data URL
-    // svgDataUrl = `data:image/svg+xml;base64,${btoa(svgString)}`;''
-    svgDataUrl = 'https://icons.getbootstrap.com/assets/icons/card-image.svg'
-
+    svgDataUrl = `data:image/svg+xml;base64,${btoa(svgString)}`;''
+    //svgDataUrl = 'https://icons.getbootstrap.com/assets/icons/card-image.svg'
 
     loadMaterials();
 
@@ -69,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modal buttons
     document.getElementById('downloadMaterial').addEventListener('click', downloadMaterial);
     document.getElementById('copyMaterialLink').addEventListener('click', copyMaterialLink);
-    document.getElementById('materialResolution').addEventListener('change', updateMapsDisplay);
     document.getElementById('previewMaterial').addEventListener('click', previewMaterial);
 
     // Initialize CodeMirror when modal opens
@@ -121,6 +119,13 @@ document.addEventListener('DOMContentLoaded', function () {
             contentPreview.style.display = 'none';
         }   
     });
+
+    document.getElementById('loadContentBtn').addEventListener('click', async () => {
+        if (currentSelectedMaterial) {
+            await loadMaterialContent(currentSelectedMaterial.id);
+        }
+    });
+
 });
 
 async function downloadMaterial() {
@@ -199,45 +204,64 @@ async function previewMaterial() {
 
     let previewButton = document.getElementById('previewMaterial')
     let previousHTML = previewButton.innerHTML;
-    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Loading...';
+    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Fetching Data...';
 
     const resolution = document.getElementById('materialResolution').value;
+
+    const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
+
+    // Reuse cached content if available
+    let contentData = materialContentCache[cacheKey];
+    if (!contentData) {
+        contentData = await polyHavenAPI.getMaterialContent(currentSelectedMaterial.id, resolution);
+        materialContentCache[cacheKey] = contentData;
+    }
+   
+
+    let zipBlob = materialPackageCache[cacheKey];
+    if (!zipBlob) {        
+        zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, 
+            resolution, contentData);
+        materialPackageCache[cacheKey] = zipBlob;
+    }
+
+    // Convert Blob to ArrayBuffer
+    const arrayBuffer = await zipBlob.arrayBuffer();
+
+    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Rendering...';
+
+    // Set up a promise to wait for the viewer to signal it's ready
+    const readyPromise = new Promise((resolve, reject) => {
+        const timeout = setTimeout(() => reject(new Error('Viewer ready timeout')), 10000);
+        function handler(event) {
+            try {
+                const data = JSON.parse(event.data);
+                if (data.type === 'viewer-ready') {
+                    clearTimeout(timeout);
+                    window.removeEventListener('message', handler);
+                    resolve();
+                }
+            } catch (e) {}
+        }
+        window.addEventListener('message', handler);
+    });      
+
+    // Post the ArrayBuffer to the target window (e.g., iframe or parent)
+    console.log('Posting preview data to viewer page...');
+    if (viewer && viewer.contentWindow) {
+        viewer.contentWindow.postMessage(arrayBuffer, targetURL);
+    }
+
     try {
-        const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
-        let zipBlob = materialPackageCache[cacheKey];
-        if (!zipBlob) {
-            // Reuse cached content if available
-            let contentData = materialContentCache[cacheKey];
-            if (!contentData) {
-                contentData = await polyHavenAPI.getMaterialContent(currentSelectedMaterial.id, resolution);
-                materialContentCache[cacheKey] = contentData;
-            }
-            zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
-            materialPackageCache[cacheKey] = zipBlob;
-        }
-
-        // Convert Blob to ArrayBuffer
-        const arrayBuffer = await zipBlob.arrayBuffer();
-
-        // Show viewer immediately, before posting message
+        // Wait for the viewer to signal it's ready before showing it
+        await readyPromise;
         viewer.style.display = 'block';
-
-        // Post the ArrayBuffer to the target window (e.g., iframe or parent)
-        console.log('Posting preview data to viewer page...');
-        if (viewer && viewer.contentWindow) {
-            viewer.contentWindow.postMessage(arrayBuffer, targetURL);
-        }
-
-        // Wait for viewer-ready message after posting
-        await waitForViewerReady(viewer);
-
     } catch (error) {
-        console.error('Error preparing preview:', error);
-        alert(`Failed to prepare preview: ${error.message}`);
+        alert('Preview viewer failed to load. Please try again.');
+        console.error(error);
     } finally {
         previewButton.innerHTML = previousHTML;
     }
-
 }
 
 
@@ -447,11 +471,8 @@ async function loadMaterialContent(materialId) {
     
     } catch (error) {
         console.error('Error loading content:', error);
-        previewContainer.innerHTML += `
-            <div class="alert alert-danger mt-3">
-                Failed to load content: ${error.message}
-            </div>
-        `;
+        const contentPreview = document.getElementById('contentPreview');
+        contentPreview.innerHTML += `<div class="alert alert-danger">Failed to load content: ${error.message}</div>`;
         loadBtn.innerHTML = originalText;
         loadBtn.disabled = false;
         return;
@@ -475,23 +496,23 @@ async function showMaterialDetails(material) {
 
     // Set tags
     const tagsContainer = document.getElementById('materialTags');
-    tagsList = material.tags.map(tag =>
+    const tagsList = material.tags.map(tag =>
         `<span class="badge bg-secondary">${tag}</span>`
     ).join(' ');
     tagsContainer.innerHTML = '<span class="badge bg-dark">Tags</span> ' + tagsList
 
     // Set categories
     const categoriesContainer = document.getElementById('materialCategories');
-    categoriesList = material.categories.map(cat =>
+    const categoriesList = material.categories.map(cat =>
         `<span class="badge bg-secondary">${cat}</span>`
     ).join(' ');
     categoriesContainer.innerHTML = '<span class="badge bg-dark">Categories</span> ' + categoriesList
 
 
     // Set up content loader button
-    document.getElementById('loadContentBtn').addEventListener('click', async () => {
-        await loadMaterialContent(material.id);
-    });
+    //document.getElementById('loadContentBtn').addEventListener('click', async () => {
+    //    await loadMaterialContent(material.id);
+    //});
 
     // Force 1K for downloads
     document.getElementById('materialResolution').value = '1k';
@@ -507,25 +528,6 @@ async function showMaterialDetails(material) {
 
     // Show modal
     materialModal.show();
-}
-
-// Update the maps display based on selected resolution
-function updateMapsDisplay() {
-    return;
-    if (!currentSelectedMaterial) return;
-
-    const resolution = document.getElementById('materialResolution').value;
-    const mapsContainer = document.getElementById('materialMaps');
-    mapsContainer.innerHTML = currentSelectedMaterial.maps;
-
-    /* for (const [mapType, available] of Object.entries(currentSelectedMaterial.maps)) {
-        if (available) {
-            const badge = document.createElement('span');
-            badge.className = 'badge bg-info text-dark map-badge';
-            badge.textContent = `${mapType} (${resolution})`;
-            mapsContainer.appendChild(badge);
-        }
-    } */
 }
 
 // Copy material link handler

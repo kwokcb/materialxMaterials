@@ -178,25 +178,39 @@ class JsPolyHavenAPILoader {
      * @param resolution Resolution (1k, 2k, 4k, 8k)
      * @returns ZIP file blob containing the complete package
      */
-    async createMaterialXPackage(material, resolution) {
+    async createMaterialXPackage(material, resolution, preFetchedData = null) {
+
         try {
+            let filesData, mtlxData, mtlxContent, textureFiles;
+            if (preFetchedData) {
+                mtlxContent = preFetchedData.mtlxContent;
+                textureFiles = preFetchedData.textureFiles;
+            } else {
+                filesData = await this.fetchMaterialFiles(material.id);
+                mtlxData = filesData.mtlx?.[resolution]?.mtlx;
+                if (!mtlxData) throw new Error(`No MaterialX files for ${resolution}`);
+                mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
+                textureFiles = mtlxData.include || {};
+            }
+
+
             // Fetch MaterialX files data
-            const filesData = await this.fetchMaterialFiles(material.id);
-            const mtlxData = filesData.mtlx?.[resolution]?.mtlx;
+            //const filesData = await this.fetchMaterialFiles(material.id);
+            //const mtlxData = filesData.mtlx?.[resolution]?.mtlx;
             console.log('> createMaterialXPackage - fetched MaterialX data:', mtlxData);
 
-            if (!mtlxData) {
-                throw new Error(`No MaterialX files found for ${resolution} resolution`);
-            }
+            //if (!mtlxData) {
+            //    throw new Error(`No MaterialX files found for ${resolution} resolution`);
+            //}
 
             // Create ZIP file
             const zip = new JSZip();
 
             // 1. Download and add the main MaterialX file
-            let mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
+            //let mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
 
             // 2. Download and add all included texture files
-            const textureFiles = mtlxData.include || {};
+            //const textureFiles = mtlxData.include || {};
             let texturePaths = [];
             
             const texturePromises = Object.entries(textureFiles).map(async ([path, fileData]) => {
@@ -242,7 +256,7 @@ class JsPolyHavenAPILoader {
                     }
                     else {
                         console.log(`Added texture ${path} to ZIP from URL: ${fileData.url}`);
-                        zip.file(path, textureBlob);
+                        //zip.file(path, textureBlob);
                     }
 
                     texturePaths.push(path);
