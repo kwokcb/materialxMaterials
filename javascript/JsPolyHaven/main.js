@@ -7,7 +7,7 @@ let svgDataUrl = null;
 let codeMirrorEditor = null;
 const materialPackageCache = {};
 const materialContentCache = {};
-let desiredTextureFormat = 'jpg';
+let desiredTextureFormat = 'png';
 
 // DOM elements
 const materialsContainer = document.getElementById('materialsContainer');
@@ -21,7 +21,7 @@ const materialModal = new bootstrap.Modal(document.getElementById('materialModal
 // Target URL for the viewer page
 let targetURL = "https://kwokcb.github.io/MaterialXLab/javascript/shader_utilities/dist/index.html?viewerOnly=1";
 // Set for local testing
-//targetURL = "http://localhost:8010/javascript/shader_utilities/dist/index.html?viewerOnly=1";
+//targetURL = "http://localhost:8000/javascript/shader_utilities/dist/index.html?viewerOnly=1";
 
  function setTheme(mode) {
     document.documentElement.setAttribute('data-bs-theme', mode);
@@ -30,6 +30,15 @@ let targetURL = "https://kwokcb.github.io/MaterialXLab/javascript/shader_utiliti
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Inject CSS for disabled-grid if not present
+    if (!document.getElementById('disabled-grid-style')) {
+        const style = document.createElement('style');
+        style.id = 'disabled-grid-style';
+        style.textContent = '.disabled-grid { pointer-events: none !important; opacity: 0.5 !important; filter: grayscale(0.5); transition: opacity 0.3s; }';
+        document.head.appendChild(style);
+    }
+
     // Parse desiredTextureFormat from URL query string
     const urlParams = new URLSearchParams(window.location.search);
     const urlFormat = urlParams.get('desiredTextureFormat');
@@ -89,6 +98,30 @@ document.addEventListener('DOMContentLoaded', function () {
     svgDataUrl = `data:image/svg+xml;base64,${btoa(svgString)}`;''
     //svgDataUrl = 'https://icons.getbootstrap.com/assets/icons/card-image.svg'
 
+
+    // Disable grid before any rendering
+    materialsContainer.classList.add('disabled-grid');
+
+    // Listen for "loaded" message from iframe to enable grid
+    // Using 'viewer-loaded' for now, but could use 'viewer-document-update' 
+    // if wanted to wait for the first material to be loaded in the viewer before enabling the grid.  
+    const messagetype = 'viewer-loaded'; 
+    let viewer = document.getElementById('viewer');
+    viewer.src = targetURL;
+    
+    function handleViewerReady(event) {
+        // Only accept messages from the correct iframe origin
+        try {
+            const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+            if (data && data.type === messagetype) {
+                console.log('>> Viewer loaed. Allow interaction with material grid.');
+                materialsContainer.classList.remove('disabled-grid');
+                window.removeEventListener('message', handleViewerReady);
+            }
+        } catch (e) {}
+    }
+    window.addEventListener('message', handleViewerReady);
+
     loadMaterials();
 
     // Event listeners
@@ -135,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    let viewer = document.getElementById('viewer');
+    //let viewer = document.getElementById('viewer');
     viewer.src = targetURL;
 
     materialModalElement.addEventListener('hidden.bs.modal', function () {
@@ -262,7 +295,6 @@ async function previewMaterial() {
     // Convert Blob to ArrayBuffer
     const arrayBuffer = await zipBlob.arrayBuffer();
 
-    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Rendering...';
 
     // Set up a promise to wait for the viewer to signal it's ready
     const readyPromise = new Promise((resolve, reject) => {
@@ -285,6 +317,8 @@ async function previewMaterial() {
     if (viewer && viewer.contentWindow) {
         viewer.contentWindow.postMessage(arrayBuffer, targetURL);
     }
+
+    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Rendering...';
 
     try {
         // Wait for the viewer to signal it's ready before showing it
@@ -370,6 +404,8 @@ function filterMaterials() {
 
 // Display materials in the grid
 function displayMaterials(materials) {
+
+    // Grid remains disabled until viewer is loaded
     materialsContainer.innerHTML = '';
 
     if (materials.length === 0) {
@@ -403,7 +439,9 @@ function displayMaterials(materials) {
             </div>
         `;
 
-        col.querySelector('.card').addEventListener('click', () => showMaterialDetails(material));
+        col.querySelector('.card').addEventListener('click', () => {
+            showMaterialDetails(material);
+        });
         fragment.appendChild(col);
     });
     materialsContainer.appendChild(fragment);
