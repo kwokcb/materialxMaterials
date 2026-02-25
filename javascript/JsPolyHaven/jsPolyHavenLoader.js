@@ -176,6 +176,7 @@ class JsPolyHavenAPILoader {
      * Create a complete MaterialX package with all textures
      * @param material Material object
      * @param resolution Resolution (1k, 2k, 4k, 8k)
+     * @param preFetchedData Data if already fetched.
      * @returns ZIP file blob containing the complete package
      */
     async createMaterialXPackage(material, resolution, preFetchedData = null) {
@@ -210,28 +211,16 @@ class JsPolyHavenAPILoader {
                 textureFiles = mtlxData.include || {};
             }
 
-
             // Fetch MaterialX files data
-            //const filesData = await this.fetchMaterialFiles(material.id);
-            //const mtlxData = filesData.mtlx?.[resolution]?.mtlx;
             console.log('> createMaterialXPackage - fetched MaterialX data:', mtlxData);
 
-            //if (!mtlxData) {
-            //    throw new Error(`No MaterialX files found for ${resolution} resolution`);
-            //}
-
-            // Zip contents
+            // Conatiner for Zip contents
             const zip = {} 
 
-            // 1. Download and add the main MaterialX file
-            //let mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
-
-            // 2. Download and add all included texture files
-            //const textureFiles = mtlxData.include || {};
+            // Download all referenced textures
             let texturePaths = [];
             let blobs = {};
             
-            //const texturePromises = Object.entries(textureFiles).map(async ([path, fileData]) => {
             const texturePromises = Object.entries(textureFiles).map(([path, fileData]) => async () => 
             {
                 try {
@@ -259,7 +248,7 @@ class JsPolyHavenAPILoader {
                 //console.log(`Added texture to ZIP: ${localPath}`);
             }
 
-            // 3. Download and add thumbnail
+            // Download and add thumbnail image
             if (material.thumb_url) {
                 try {
                     const thumbBlob = await this.downloadThumbnail(material.thumb_url);
@@ -277,13 +266,10 @@ class JsPolyHavenAPILoader {
             await Promise.all(texturePromises);
 
             // Add Materialx document to ZIP. 
-            // This must be done after texture processing which may
-            // modify the MTLX image references.
             //console.log(`Adding MaterialX file to ZIP: ${material.id}.mtlx`);
             zip[`${material.id}.mtlx`] =  fflate.strToU8(mtlxContent);
-            //console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx`); //, ${mtlxContent}`);
 
-            // Add README file, and thumbnail to root of ZIP
+            // Add README file to root of ZIP
             //console.log('Adding README.txt to ZIP with material metadata and file list');
             zip["README.txt"] = fflate.strToU8(
                 `Material: ${material.name}\n` +
