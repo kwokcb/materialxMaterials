@@ -140,7 +140,7 @@ class JsPolyHavenAPILoader {
                 throw new Error(`Failed to download texture from ${url}`);
             }
             else {
-                console.log(`>  Successfully downloaded texture from ${url}`);
+                //console.log(`>  Successfully downloaded texture from ${url}`);
             }
 
             return await response.blob();
@@ -193,6 +193,10 @@ class JsPolyHavenAPILoader {
             return results;
         }
 
+        async function blobToUint8Array(blob) {
+            return new Uint8Array(await blob.arrayBuffer());
+        }
+
         try {
             let filesData, mtlxData, mtlxContent, textureFiles;
             if (preFetchedData) {
@@ -216,8 +220,8 @@ class JsPolyHavenAPILoader {
             //    throw new Error(`No MaterialX files found for ${resolution} resolution`);
             //}
 
-            // Create ZIP file
-            const zip = new JSZip();
+            // Zip contents
+            const zip = {} 
 
             // 1. Download and add the main MaterialX file
             //let mtlxContent = await this.downloadMaterialXContent(mtlxData.url);
@@ -225,6 +229,7 @@ class JsPolyHavenAPILoader {
             // 2. Download and add all included texture files
             //const textureFiles = mtlxData.include || {};
             let texturePaths = [];
+            let blobs = {};
             
             //const texturePromises = Object.entries(textureFiles).map(async ([path, fileData]) => {
             const texturePromises = Object.entries(textureFiles).map(([path, fileData]) => async () => 
@@ -232,58 +237,42 @@ class JsPolyHavenAPILoader {
                 try {
                     console.log(`Processing texture: ${path} from URL: ${fileData.url}`);
 
-                    let isEXR = path.toLowerCase().endsWith('.exr')
-                    // Try changing extension to .png.
+                    let isEXR = path.toLowerCase().endsWith('.exr');
                     if (isEXR) {
                         const prevPath = path;
                         path = path.replace(/\.exr$/i, '.png');
-                        // Replace /exr/ with /png/
                         fileData.url = fileData.url.replace(/\/exr\//i, '/png/');
-                        // Replace .exr with .png extension
                         fileData.url = fileData.url.replace('.exr', '.png');
-                        // Replace .exr with .png in mtlxContent if present
                         const previousMtlxContent = mtlxContent;
                         mtlxContent = previousMtlxContent.replace(prevPath, path);
-
                         console.log(`EXR file detected. Path: ${prevPath} -> ${path}, URL: ${fileData.url}`);
                         if (previousMtlxContent !== mtlxContent) {
                             console.log(`Updated MaterialX content to replace .exr with .png for texture: ${path}`);
                         }
-
                     }
 
                     const textureBlob = await this.downloadTexture(fileData.url);
-                    
-                    // Maintain the folder structure from the include paths
-                    const pathParts = path.split('/');
-                    let currentFolder = zip;
-
-                    // Handle nested folder structure
-                    for (let i = 0; i < pathParts.length - 1; i++) {
-                        const folderName = pathParts[i];
-                        currentFolder = currentFolder.folder(folderName);
-                    }
-
-                    currentFolder.file(pathParts[pathParts.length - 1], textureBlob);
-
-                    if (path.toLowerCase().endsWith('.exr')) {
-                        console.warn(`EXR file present which may not be supported by MaterialX texture loader: ${path}`);
-                    }
-                    else {
-                        console.log(`Added texture ${path} to ZIP from URL: ${fileData.url}`);
-                        //zip.file(path, textureBlob);
-                    }
 
                     texturePaths.push(path);
 
+                    // Build the local path for the zip (preserving folder structure)
+                    const pathParts = path.split('/');
+                    const localPath = pathParts.join('/');
+
+                    blobs[localPath] = await blobToUint8Array(textureBlob);
+
                 } catch (error) {
                     console.error(`Error downloading texture ${path}:`, error);
-                    // Add placeholder file if download fails
-                    zip.file(path, `Failed to download: ${fileData.url}`);
+                    // Optionally add a placeholder or skip
                 }
             });
             await downloadWithConcurrency(texturePromises, 3);
             
+            for (const [localPath, blobData] of Object.entries(blobs)) {
+                zip[localPath] = blobData;
+                console.log(`Added texture to ZIP: ${localPath}`);
+            }
+
             // 3. Download and add thumbnail
             if (material.thumb_url) {
                 try {
@@ -291,7 +280,8 @@ class JsPolyHavenAPILoader {
                     const thumbUrl = new URL(material.thumb_url);
                     const thumbPath = thumbUrl.pathname.split('/').pop();
                     const thumbExt = thumbPath.split('.').pop();
-                    zip.file(`${material.id}_thumbnail.${thumbExt}`, thumbBlob);
+                    console.log('Add thumbnail to ZIP:', thumbPath);
+                    zip[`${material.id}_thumbnail.${thumbExt}`] = await blobToUint8Array(thumbBlob);
                 } catch (error) {
                     console.error('Error downloading thumbnail:', error);
                 }
@@ -313,23 +303,43 @@ class JsPolyHavenAPILoader {
             // Add Materialx document to ZIP. 
             // This must be done after texture processing which may
             // modify the MTLX image references.
-            zip.file(`${material.id}.mtlx`, mtlxContent);
+            console.log(`Adding MaterialX file to ZIP: ${material.id}.mtlx`);
+            zip[`${material.id}.mtlx`] =  fflate.strToU8(mtlxContent);
             console.log(`Added MaterialX file to ZIP: ${material.id}.mtlx`); //, ${mtlxContent}`);
 
             // Add README file, and thumbnail to root of ZIP
-            zip.file("README.txt",
+            console.log('Adding README.txt to ZIP with material metadata and file list');
+            zip["README.txt"] = fflate.strToU8(
                 `Material: ${material.name}\n` +
                 `Resolution: ${resolution}\n` +
                 `Source: https://polyhaven.com/a/${material.id}\n` +
                 `Downloaded: ${new Date().toISOString()}\n\n` +
                 `Contains the following files:\n` +
                 `- ${material.id}.mtlx\n` +
-                (material.thumb_url ? `- ${material.id}_thumbnail.png\n` : '') +
-                (texturePaths.length > 0 ? texturePaths.map(t => `- ${t}`).join('\n') + '\n' : '')
+                (material.thumb_url ? `- ${material.id}_thumbnail.png\n` : '') 
+                //(texturePaths.length > 0 ? texturePaths.map(t => `- ${t}`).join('\n') + '\n' : '')
             );
 
-            // Generate the ZIP file
-            return await zip.generateAsync({ type: 'blob' });
+            for (const [k, v] of Object.entries(zip)) {
+                if (v === zip) {
+                    console.error("Circular reference detected in zip at key:", k);
+                }
+                else
+                {
+                    console.log(`ZIP entry: ${k}, size: ${v.length || v.size || 'unknown'}`);
+                }
+            }
+
+             // Compress the ZIP file
+            console.log('Compressing ZIP file with fflate...');
+            const zipped = fflate.zipSync(zip);
+
+            // Create a Blob from the zipped data
+            console.log('Creating Blob from zipped data...');
+            const blob = new Blob([zipped], { type: 'application/zip' });     
+            
+            console.log('MaterialX package created successfully:', blob);
+            return blob;
 
         } catch (error) {
             console.error('Error creating MaterialX package:', error);
