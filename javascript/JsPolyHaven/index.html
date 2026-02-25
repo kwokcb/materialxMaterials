@@ -79,7 +79,9 @@
             }
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/fflate@0.7.3/umd/index.min.js"></script> -->  
+    <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.min.js"></script>
     <!-- Code mirror -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material.min.css">
@@ -142,7 +144,7 @@
             </div>
         </div>
 
-        <div class="row" id="materialsContainer">
+        <div class="row" id="materialsContainer" style="height: 512px; overflow-y: auto;">
             <!-- Materials will be loaded here -->
         </div>
     </div>

@@ -78,6 +78,8 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
         </tr>
       </table>
     </td>
+    </tr>
+    <tr>
     <td>
       <b>PhysicallyBased</b>
       <table>
@@ -118,6 +120,8 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
         </tr>
       </table>
     </td>
+    </tr>
+  <tr>
     <td>
       <b>PolyHaven</b>
       <table>

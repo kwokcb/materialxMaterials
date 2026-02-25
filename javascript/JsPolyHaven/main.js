@@ -7,6 +7,7 @@ let svgDataUrl = null;
 let codeMirrorEditor = null;
 const materialPackageCache = {};
 const materialContentCache = {};
+let desiredTextureFormat = 'png';
 
 // DOM elements
 const materialsContainer = document.getElementById('materialsContainer');
@@ -20,7 +21,7 @@ const materialModal = new bootstrap.Modal(document.getElementById('materialModal
 // Target URL for the viewer page
 let targetURL = "https://kwokcb.github.io/MaterialXLab/javascript/shader_utilities/dist/index.html?viewerOnly=1";
 // Set for local testing
-//targetURL = "http://localhost:8010/javascript/shader_utilities/dist/index.html?viewerOnly=1";
+//targetURL = "http://localhost:8000/javascript/shader_utilities/dist/index.html?viewerOnly=1";
 
  function setTheme(mode) {
     document.documentElement.setAttribute('data-bs-theme', mode);
@@ -29,6 +30,48 @@ let targetURL = "https://kwokcb.github.io/MaterialXLab/javascript/shader_utiliti
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Inject CSS for disabled-grid if not present
+    if (!document.getElementById('disabled-grid-style')) {
+        const style = document.createElement('style');
+        style.id = 'disabled-grid-style';
+        style.textContent = '.disabled-grid { pointer-events: none !important; opacity: 0.5 !important; filter: grayscale(0.5); transition: opacity 0.3s; }';
+        document.head.appendChild(style);
+    }
+
+    // Parse desiredTextureFormat from URL query string
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlFormat = urlParams.get('desiredTextureFormat');
+    if (urlFormat) {
+        testFormat = urlFormat.toLowerCase();
+        // This appears to be all that PolyHaven supports for now
+        if (testFormat === 'jpg' || testFormat === 'png' || testFormat === 'exr') {
+            desiredTextureFormat = testFormat;
+            console.log('Texture format set from URL:', desiredTextureFormat);
+        }
+    }
+
+    // Add UI for selecting texture format
+    /* const formatSelector = document.createElement('select');
+    formatSelector.id = 'textureFormatSelector';
+    formatSelector.className = 'form-select mb-2';
+    ['jpg', 'png', 'tif', 'exr'].forEach(fmt => {
+        const option = document.createElement('option');
+        option.value = fmt;
+        option.textContent = fmt.toUpperCase();
+        if (fmt === desiredTextureFormat) option.selected = true;
+        formatSelector.appendChild(option);
+    });
+    formatSelector.addEventListener('change', function () {
+        desiredTextureFormat = this.value;
+        console.log('Texture format set to:', desiredTextureFormat);
+    });
+    // Insert selector at top of page (before materialsContainer)
+    const container = document.getElementById('materialsContainer');
+    if (container && container.parentNode) {
+        container.parentNode.insertBefore(formatSelector, container);
+    } */
+
     // Initialize the Poly Haven API
     polyHavenAPI = new JsPolyHavenAPILoader();
 
@@ -52,9 +95,32 @@ document.addEventListener('DOMContentLoaded', function () {
     </svg>`;
 
     // Convert to base64 data URL
-    // svgDataUrl = `data:image/svg+xml;base64,${btoa(svgString)}`;''
-    svgDataUrl = 'https://icons.getbootstrap.com/assets/icons/card-image.svg'
+    svgDataUrl = `data:image/svg+xml;base64,${btoa(svgString)}`;''
+    //svgDataUrl = 'https://icons.getbootstrap.com/assets/icons/card-image.svg'
 
+
+    // Disable grid before any rendering
+    materialsContainer.classList.add('disabled-grid');
+
+    // Listen for "loaded" message from iframe to enable grid
+    // Using 'viewer-loaded' for now, but could use 'viewer-document-update' 
+    // if wanted to wait for the first material to be loaded in the viewer before enabling the grid.  
+    const messagetype = 'viewer-loaded'; 
+    let viewer = document.getElementById('viewer');
+    viewer.src = targetURL;
+    
+    function handleViewerReady(event) {
+        // Only accept messages from the correct iframe origin
+        try {
+            const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+            if (data && data.type === messagetype) {
+                console.log('>> Viewer loaed. Allow interaction with material grid.');
+                materialsContainer.classList.remove('disabled-grid');
+                window.removeEventListener('message', handleViewerReady);
+            }
+        } catch (e) {}
+    }
+    window.addEventListener('message', handleViewerReady);
 
     loadMaterials();
 
@@ -69,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modal buttons
     document.getElementById('downloadMaterial').addEventListener('click', downloadMaterial);
     document.getElementById('copyMaterialLink').addEventListener('click', copyMaterialLink);
-    document.getElementById('materialResolution').addEventListener('change', updateMapsDisplay);
     document.getElementById('previewMaterial').addEventListener('click', previewMaterial);
 
     // Initialize CodeMirror when modal opens
@@ -95,15 +160,15 @@ document.addEventListener('DOMContentLoaded', function () {
         let textureGallery = document.getElementById('textureGallery');
         if (textureGallery) {
             // clear
-            console.info('Texture gallery container cleared !!!!!!!!');
+            //console.info('Texture gallery container cleared.');
             textureGallery.innerHTML = '';
         }
         else {
-            console.info('Texture gallery container not found !!!!!!!!');
+            console.info('Texture gallery container not found');
         }
     });
 
-    let viewer = document.getElementById('viewer');
+    //let viewer = document.getElementById('viewer');
     viewer.src = targetURL;
 
     materialModalElement.addEventListener('hidden.bs.modal', function () {
@@ -121,6 +186,13 @@ document.addEventListener('DOMContentLoaded', function () {
             contentPreview.style.display = 'none';
         }   
     });
+
+    document.getElementById('loadContentBtn').addEventListener('click', async () => {
+        if (currentSelectedMaterial) {
+            await loadMaterialContent(currentSelectedMaterial.id);
+        }
+    });
+
 });
 
 async function downloadMaterial() {
@@ -199,45 +271,65 @@ async function previewMaterial() {
 
     let previewButton = document.getElementById('previewMaterial')
     let previousHTML = previewButton.innerHTML;
-    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Loading...';
+    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Fetching Data...';
 
     const resolution = document.getElementById('materialResolution').value;
+
+    const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
+
+    // Reuse cached content if available
+    let contentData = materialContentCache[cacheKey];
+    if (!contentData) {
+        contentData = await polyHavenAPI.getMaterialContent(currentSelectedMaterial.id, resolution, desiredTextureFormat);
+        materialContentCache[cacheKey] = contentData;
+    }
+   
+
+    let zipBlob = materialPackageCache[cacheKey];
+    if (!zipBlob) {        
+        zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, 
+            resolution, contentData);
+        materialPackageCache[cacheKey] = zipBlob;
+    }
+
+    // Convert Blob to ArrayBuffer
+    const arrayBuffer = await zipBlob.arrayBuffer();
+
+
+    // Set up a promise to wait for the viewer to signal it's ready
+    const readyPromise = new Promise((resolve, reject) => {
+        const timeout = setTimeout(() => reject(new Error('Viewer timed out')), 30000);
+        function handler(event) {
+            try {
+                const data = JSON.parse(event.data);
+                if (data.type === 'viewer-ready') {
+                    clearTimeout(timeout);
+                    window.removeEventListener('message', handler);
+                    resolve();
+                }
+            } catch (e) {}
+        }
+        window.addEventListener('message', handler);
+    });      
+
+    // Post the ArrayBuffer to the target window (e.g., iframe or parent)
+    console.log('Posting preview data to viewer page...');
+    if (viewer && viewer.contentWindow) {
+        viewer.contentWindow.postMessage(arrayBuffer, targetURL);
+    }
+
+    previewButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Rendering...';
+
     try {
-        const cacheKey = `${currentSelectedMaterial.id}_${resolution}`;
-        let zipBlob = materialPackageCache[cacheKey];
-        if (!zipBlob) {
-            // Reuse cached content if available
-            let contentData = materialContentCache[cacheKey];
-            if (!contentData) {
-                contentData = await polyHavenAPI.getMaterialContent(currentSelectedMaterial.id, resolution);
-                materialContentCache[cacheKey] = contentData;
-            }
-            zipBlob = await polyHavenAPI.createMaterialXPackage(currentSelectedMaterial, resolution);
-            materialPackageCache[cacheKey] = zipBlob;
-        }
-
-        // Convert Blob to ArrayBuffer
-        const arrayBuffer = await zipBlob.arrayBuffer();
-
-        // Show viewer immediately, before posting message
+        // Wait for the viewer to signal it's ready before showing it
+        await readyPromise;
         viewer.style.display = 'block';
-
-        // Post the ArrayBuffer to the target window (e.g., iframe or parent)
-        console.log('Posting preview data to viewer page...');
-        if (viewer && viewer.contentWindow) {
-            viewer.contentWindow.postMessage(arrayBuffer, targetURL);
-        }
-
-        // Wait for viewer-ready message after posting
-        await waitForViewerReady(viewer);
-
     } catch (error) {
-        console.error('Error preparing preview:', error);
-        alert(`Failed to prepare preview: ${error.message}`);
+        alert('Preview viewer failed to load. Please try again.');
+        console.error(error);
     } finally {
         previewButton.innerHTML = previousHTML;
     }
-
 }
 
 
@@ -312,6 +404,8 @@ function filterMaterials() {
 
 // Display materials in the grid
 function displayMaterials(materials) {
+
+    // Grid remains disabled until viewer is loaded
     materialsContainer.innerHTML = '';
 
     if (materials.length === 0) {
@@ -325,13 +419,17 @@ function displayMaterials(materials) {
         return;
     }
 
+    const fragment = document.createDocumentFragment();
     materials.forEach(material => {
         const col = document.createElement('div');
         col.className = 'col-md-3 col-lg-2 mb-4';
 
+        let thumbUrl = material.thumb_url;
+        thumbUrl = thumbUrl.replace('512', '256');
+
         col.innerHTML = `
             <div class="card material-card" data-material-id="${material.id}">
-                <img src="${material.thumb_url}" class="card-img-top material-img" alt="${material.name}" loading="lazy" decoding="async" onerror="this.src=${svgDataUrl}">
+                <img src="${thumbUrl}" class="card-img-top material-img" alt="${material.name}" loading="lazy" decoding="async" onerror="this.src=${svgDataUrl}">
                 <div class="card-body">
                     <div class="card-title">${material.name}</div>
                     <div class="d-flex flex-wrap">
@@ -341,9 +439,12 @@ function displayMaterials(materials) {
             </div>
         `;
 
-        col.querySelector('.card').addEventListener('click', () => showMaterialDetails(material));
-        materialsContainer.appendChild(col);
+        col.querySelector('.card').addEventListener('click', () => {
+            showMaterialDetails(material);
+        });
+        fragment.appendChild(col);
     });
+    materialsContainer.appendChild(fragment);
 }
 
 // New function to load material content
@@ -371,7 +472,7 @@ async function loadMaterialContent(materialId) {
     try {
         if (!contentData) 
         {
-            contentData = await polyHavenAPI.getMaterialContent(materialId, resolution);
+            contentData = await polyHavenAPI.getMaterialContent(materialId, resolution, desiredTextureFormat);
             materialContentCache[cacheKey] = contentData;
         }
         
@@ -389,16 +490,6 @@ async function loadMaterialContent(materialId) {
         {
             const card = document.createElement('div');
             card.className = 'col-sm-3 col-md-3 col-lg-3 mb-2';
-
-            // If textureURL ends with exr replace with png for preview
-            if (textureUrl.toLowerCase().endsWith('.exr')) {
-                console.log(`> EXR file detected for preview, attempting to use PNG version: ${textureUrl}`);
-                textureUrl = textureUrl.replace(/\.exr$/i, '.png').replace(/\/exr\//i, '/png/');
-                let textureName_before = textureName;
-                textureName = textureName_before.replace(/\.exr$/i, '.png');
-                console.log(`Replace ${textureName_before} with ${textureName} in MaterialX content for preview`);
-                mtlxContent = mtlxContent.replace(textureName_before, textureName);
-            }   
 
             textureNames.push(textureName);
 
@@ -428,17 +519,6 @@ async function loadMaterialContent(materialId) {
 
         // Set mtlxContent to editor
         if (codeMirrorEditor) {
-            // Patch bad MTLX references in original file
-            for (const textureName of textureNames) {
-                extenson = textureName.split('.').pop();
-                exrName = textureName.replace(`.${extenson}`, `.exr`);
-                if (mtlxContent.includes(exrName)) {
-                    console.log(`Replace ${exrName} with ${textureName} in MaterialX content for preview`);
-                    mtlxContent = mtlxContent.replace(exrName, textureName);
-                }
-            }
-
-            //console.log('Setting MaterialX content in CodeMirror editor:', mtlxContent);
             codeMirrorEditor.setValue(mtlxContent);
         }
 
@@ -447,11 +527,8 @@ async function loadMaterialContent(materialId) {
     
     } catch (error) {
         console.error('Error loading content:', error);
-        previewContainer.innerHTML += `
-            <div class="alert alert-danger mt-3">
-                Failed to load content: ${error.message}
-            </div>
-        `;
+        const contentPreview = document.getElementById('contentPreview');
+        contentPreview.innerHTML += `<div class="alert alert-danger">Failed to load content: ${error.message}</div>`;
         loadBtn.innerHTML = originalText;
         loadBtn.disabled = false;
         return;
@@ -471,27 +548,29 @@ async function showMaterialDetails(material) {
     document.getElementById('materialModalLabel').textContent = material.name;
     //document.getElementById('materialTitle').textContent = material.name;
     document.getElementById('materialDescription').textContent = material.description;
-    document.getElementById('materialPreview').src = material.thumb_url;
+    let thumbUrl = material.thumb_url;
+    //thumbUrl = thumbUrl.replace('512', '256');
+    document.getElementById('materialPreview').src = thumbUrl;
 
     // Set tags
     const tagsContainer = document.getElementById('materialTags');
-    tagsList = material.tags.map(tag =>
+    const tagsList = material.tags.map(tag =>
         `<span class="badge bg-secondary">${tag}</span>`
     ).join(' ');
     tagsContainer.innerHTML = '<span class="badge bg-dark">Tags</span> ' + tagsList
 
     // Set categories
     const categoriesContainer = document.getElementById('materialCategories');
-    categoriesList = material.categories.map(cat =>
+    const categoriesList = material.categories.map(cat =>
         `<span class="badge bg-secondary">${cat}</span>`
     ).join(' ');
     categoriesContainer.innerHTML = '<span class="badge bg-dark">Categories</span> ' + categoriesList
 
 
     // Set up content loader button
-    document.getElementById('loadContentBtn').addEventListener('click', async () => {
-        await loadMaterialContent(material.id);
-    });
+    //document.getElementById('loadContentBtn').addEventListener('click', async () => {
+    //    await loadMaterialContent(material.id);
+    //});
 
     // Force 1K for downloads
     document.getElementById('materialResolution').value = '1k';
@@ -507,25 +586,6 @@ async function showMaterialDetails(material) {
 
     // Show modal
     materialModal.show();
-}
-
-// Update the maps display based on selected resolution
-function updateMapsDisplay() {
-    return;
-    if (!currentSelectedMaterial) return;
-
-    const resolution = document.getElementById('materialResolution').value;
-    const mapsContainer = document.getElementById('materialMaps');
-    mapsContainer.innerHTML = currentSelectedMaterial.maps;
-
-    /* for (const [mapType, available] of Object.entries(currentSelectedMaterial.maps)) {
-        if (available) {
-            const badge = document.createElement('span');
-            badge.className = 'badge bg-info text-dark map-badge';
-            badge.textContent = `${mapType} (${resolution})`;
-            mapsContainer.appendChild(badge);
-        }
-    } */
 }
 
 // Copy material link handler
