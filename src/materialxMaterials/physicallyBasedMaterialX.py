@@ -35,7 +35,7 @@ class PhysicallyBasedMaterialLoader:
         ### Material names
         self.materialNames : list[str]= []
         ### Root URI for the PhysicallyBased site
-        self.uri = 'https://api.physicallybased.info/materials'
+        self.uri = 'https://api.physicallybased.info/v2/materials'
         ### MaterialX document used for conversion
         self.doc = None
         ### MaterialX module
@@ -214,7 +214,7 @@ class PhysicallyBasedMaterialLoader:
     def initializeInputRemapping(self): 
         ''' 
         @brief Initialize remapping keys for different shading models.
-        See: https://api.physicallybased.info/operations/get-materials
+        See: https://api.physicallybased.info/v2/#tag/materials/GET/materials
         for more information on material properties.
 
         The JSON file PhysicallyBasedToMtlxMappings.json which is part of the package
@@ -385,7 +385,7 @@ class PhysicallyBasedMaterialLoader:
         response = requests.get(url, headers=headers)
 
         if response.status_code == HTTPStatus.OK:
-            self.materials = response.json()
+            self.materials = response.json()["data"]
             for mat in self.materials:
                 self.materialNames.append(mat['name'])
 
@@ -503,7 +503,7 @@ class PhysicallyBasedMaterialLoader:
                     #    uifolder = str(value)
                     #value = None
                     pass
-                elif key in ['sources', 'reference', 'tags', 'group']:
+                elif key in ['images', 'references', 'tags', 'group']:
                     value = ''
 
                 input = ndef.addInput(key, input_type)
@@ -540,7 +540,7 @@ class PhysicallyBasedMaterialLoader:
                     input.setAttribute("uiname", uiname)
 
                     uifolder = 'Base'
-                    if key in ['description', 'sources', 'reference', 'tags']:
+                    if key in ['description', 'images', 'references', 'tags']:
                         uifolder = 'Metadata'
                     input.setAttribute("uifolder", uifolder)
 
@@ -1036,6 +1036,7 @@ class PhysicallyBasedMaterialLoader:
             shaderNode.setAttribute('uiname', uiName)
 
             folderString = ''
+            docString = ''
             if 'category' in mat:
                 folderString = mat['category'][0]
             if 'group' in mat:
@@ -1045,12 +1046,13 @@ class PhysicallyBasedMaterialLoader:
             if len(folderString) > 0:
                 shaderNode.setAttribute("uifolder", folderString)
 
-            docString = mat['description']            
-            refString = mat['reference']
+            if 'description' in mat:
+                docString = mat['description']            
+            refString = mat['images'][1]["300"]
             if len(refString) > 0:
                 if len(docString) > 0:
                     docString += '. '
-                docString += 'Reference: ' + refString[0]
+                docString += 'Reference: ' + refString
             if len(docString) > 0:
                 shaderNode.setDocString(docString)
             
@@ -1066,7 +1068,7 @@ class PhysicallyBasedMaterialLoader:
             shaderInput.setAttribute(self.MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName())
             
             # Keys to skip.
-            skipKeys = ['name', "density", "category", "description", "sources", "tags", "reference"]
+            skipKeys = ['name', "density", "category", "description", "images", "tags", "references"]
 
             metallness = None
             roughness = None
@@ -1083,7 +1085,7 @@ class PhysicallyBasedMaterialLoader:
                     if key == 'transmission':
                         transmission = value
                     if key == 'color':
-                        color = value
+                        color = value[0]["color"]
 
                     if key in remapKeys:
                         key = remapKeys[key]
