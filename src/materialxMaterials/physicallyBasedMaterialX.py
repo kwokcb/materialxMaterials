@@ -35,7 +35,7 @@ class PhysicallyBasedMaterialLoader:
         ### Material names
         self.materialNames : list[str]= []
         ### Root URI for the PhysicallyBased site
-        self.uri = 'https://api.physicallybased.info/materials'
+        self.uri = 'https://api.physicallybased.info/v2/materials'
         ### MaterialX document used for conversion
         self.doc = None
         ### MaterialX module
@@ -214,7 +214,7 @@ class PhysicallyBasedMaterialLoader:
     def initializeInputRemapping(self): 
         ''' 
         @brief Initialize remapping keys for different shading models.
-        See: https://api.physicallybased.info/operations/get-materials
+        See: https://api.physicallybased.info/v2/#tag/materials/GET/materials
         for more information on material properties.
 
         The JSON file PhysicallyBasedToMtlxMappings.json which is part of the package
@@ -385,7 +385,7 @@ class PhysicallyBasedMaterialLoader:
         response = requests.get(url, headers=headers)
 
         if response.status_code == HTTPStatus.OK:
-            self.materials = response.json()
+            self.materials = response.json()["data"]
             for mat in self.materials:
                 self.materialNames.append(mat['name'])
 
@@ -503,7 +503,7 @@ class PhysicallyBasedMaterialLoader:
                     #    uifolder = str(value)
                     #value = None
                     pass
-                elif key in ['sources', 'reference', 'tags', 'group']:
+                elif key in ['images', 'references', 'tags', 'group']:
                     value = ''
 
                 input = ndef.addInput(key, input_type)
@@ -540,7 +540,7 @@ class PhysicallyBasedMaterialLoader:
                     input.setAttribute("uiname", uiname)
 
                     uifolder = 'Base'
-                    if key in ['description', 'sources', 'reference', 'tags']:
+                    if key in ['description', 'images', 'references', 'tags']:
                         uifolder = 'Metadata'
                     input.setAttribute("uifolder", uifolder)
 
@@ -981,6 +981,21 @@ class PhysicallyBasedMaterialLoader:
             dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
             self.addComment(doc, f'  Generated on: {dt_string} ')  
 
+    def remap_color_space(self, pb_colorspace) -> str:
+        '''
+        @brief Remap a color space name use in Physically Based to the name used in MaterialX
+        @param pb_colorspace The color space name used in Physically Based
+        @return The remapped color space name used in MaterialX
+        '''
+        map = {}
+        map['srgb-linear'] = 'srgb_texture'
+        map['acescg'] = 'acescg'
+        # Add more as needed
+        if pb_colorspace in map:
+            return map[pb_colorspace]
+        # Return nothing as we don't know how to map.
+        return ''
+
     def convertToMaterialX(self, materialNames = [], shaderCategory='standard_surface',
                            remapKeys = {}, shaderPreFix ='') -> mx.Document:
         '''
@@ -1036,6 +1051,7 @@ class PhysicallyBasedMaterialLoader:
             shaderNode.setAttribute('uiname', uiName)
 
             folderString = ''
+            docString = ''
             if 'category' in mat:
                 folderString = mat['category'][0]
             if 'group' in mat:
@@ -1045,12 +1061,13 @@ class PhysicallyBasedMaterialLoader:
             if len(folderString) > 0:
                 shaderNode.setAttribute("uifolder", folderString)
 
-            docString = mat['description']            
-            refString = mat['reference']
+            if 'description' in mat:
+                docString = mat['description']            
+            refString = mat['images'][1]["300"]
             if len(refString) > 0:
                 if len(docString) > 0:
                     docString += '. '
-                docString += 'Reference: ' + refString[0]
+                docString += 'Reference: ' + refString
             if len(docString) > 0:
                 shaderNode.setDocString(docString)
             
@@ -1066,24 +1083,51 @@ class PhysicallyBasedMaterialLoader:
             shaderInput.setAttribute(self.MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName())
             
             # Keys to skip.
-            skipKeys = ['name', "density", "category", "description", "sources", "tags", "reference"]
+            skipKeys = ['name', "density", "category", "description", "images", "tags", "references"]
 
             metallness = None
             roughness = None
             color = None
             transmission = None
+            color_entry_color = 0
+            color_entry_specular = 0
+            colorspace = ''
+            input_doc = ''
+
             for key, value in mat.items():
                 
                 if (key not in skipKeys):
                     # Keep track of these for possible transmission color remapping
                     if key == 'metalness':
                         metallness = value
-                    if key == 'roughness':
+                    elif key == 'roughness':
                         roughness = value
-                    if key == 'transmission':
+                    elif key == 'transmission':
                         transmission = value
-                    if key == 'color':
-                        color = value
+
+                    # color can have different entries for different color spaces
+                    # As we can only write one, we just choose the first for now.
+                    elif key == 'color':
+                        color = value[color_entry_color]["color"]
+                        colorspace = value[color_entry_color]["colorSpace"] if "colorSpace" in value[color_entry_color] else None
+                        if colorspace:
+                            colorspace = self.remap_color_space(colorspace)
+                        value = color
+
+                    # specular color can have different formats as well
+                    # as different colorspaces per format. For now
+                    # just choose one format and one color space.
+                    elif key == 'specularColor':
+                        if len(value) > 0:
+                            format_entry = value[color_entry_specular]
+                            color_entry = format_entry["color"][color_entry_color]
+                            color = color_entry["color"]
+                            value = color
+                            if "format" in format_entry:
+                                format_string = "Format: "
+                                for format in format_entry["format"]:
+                                    format_string += format + " "
+                                input_doc = format_string.strip()
 
                     if key in remapKeys:
                         key = remapKeys[key]
@@ -1096,6 +1140,11 @@ class PhysicallyBasedMaterialLoader:
                         elif isinstance(value, (int, float)):
                             value = str(value)
                         input.setValueString(value)
+                        if colorspace:
+                            #print('>>> Set color space for key:', key, 'to:', colorspace)
+                            input.setAttribute('colorspace', colorspace)
+                        if len(input_doc) > 0:
+                            input.setDocString(input_doc)
                     else:
                         self.logger.debug('Skip unsupported key: ' + key)
 
@@ -1109,6 +1158,8 @@ class PhysicallyBasedMaterialLoader:
                             self.logger.debug(f'Set transmission color {key}: {color}')
                             value = ','.join([str(x) for x in color])                        
                             input.setValueString(value)
+                            if colorspace:
+                                input.setAttribute('colorspace', colorspace)
 
         return self.doc
     
