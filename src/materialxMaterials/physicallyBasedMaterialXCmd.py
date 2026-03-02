@@ -211,10 +211,13 @@ def physicallBasedMaterialXCmd():
                 logger.info(f'> Generate MaterialX for shading model: {shadingModel}')
                 matdoc = loader.convertToMaterialX([], shadingModel, {}, prefix)
                 valid, errors = loader.validateMaterialXDocument(matdoc)
-                if valid:
-                    fileName = os.path.join(outputDir, f'PhysicallyBasedMaterialX_{prefix}.mtlx')
-                    loader.writeMaterialXToFile(fileName)
-                    logger.info(f'> Write: {fileName}')
+                if not valid:
+                    logger.error(f'> Error validating MaterialX document for shading model: {shadingModel}')
+                    logger.error(errors)
+
+                fileName = os.path.join(outputDir, f'PhysicallyBasedMaterialX_{prefix}.mtlx')
+                loader.writeMaterialXToFile(fileName)
+                logger.info(f'> Write: {fileName}')
     
         else:
             for shadingModel, prefix in zip(shadingModels, shadingModelPrefixes):
@@ -224,10 +227,13 @@ def physicallBasedMaterialXCmd():
                     matdoc = loader.convertToMaterialX(materialFilter, shadingModel, {}, prefix)
                     if matdoc is not None:
                         valid, errors = loader.validateMaterialXDocument(matdoc)
-                        if valid:
-                            fileName = os.path.join(outputDir, f'PB_{prefix}_{mat}.mtlx')
-                            loader.writeMaterialXToFile(fileName)
-                            logger.info(f'> Write: {fileName}')
+                        if not valid:                            
+                            logger.error(f'> Error validating MaterialX document for material: {mat} shading model: {shadingModel}')
+                            logger.error(errors)
+
+                        fileName = os.path.join(outputDir, f'PB_{prefix}_{mat}.mtlx')
+                        loader.writeMaterialXToFile(fileName)
+                        logger.info(f'> Write: {fileName}')
 
     else:
         logger.info('Could not retrieve PhysicallyBased Materials')
