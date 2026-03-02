@@ -988,7 +988,7 @@ class PhysicallyBasedMaterialLoader:
         @return The remapped color space name used in MaterialX
         '''
         map = {}
-        map['srgb-linear'] = 'srgb_texture'
+        map['srgb-linear'] = 'srgb_texture' # or is this lin_rec709 ?
         map['acescg'] = 'acescg'
         # Add more as needed
         if pb_colorspace in map:
