@@ -64,6 +64,10 @@ class PhysicallyBasedMaterialLoader:
         self.remapMap = {}
         ### Default remapping file (part of installed package)
         self.remapFile = 'PhysicallyBasedMaterialX/PhysicallyBasedToMtlxMappings.json'
+        ### Color space to use for writing colors. Default is 'srgb-linear' which remaps to 'link_rec709'
+        self.desired_color_space = 'srgb-linear'
+        ### Explicit write out linear colorspace (lin_rect709). Default flase
+        self.write_linear_colorspace = False
 
         if not mx_module:
             self.logger.critical(f'> {self._getMethodName()}: MaterialX module not specified.')
@@ -84,6 +88,22 @@ class PhysicallyBasedMaterialLoader:
 
         # Initialize Physically Based MaterialX definitions, materials, remappings, and translators
         self.initialize_definitions_and_materials()
+
+    def set_write_linear_colorspace(self, write_linear : bool):
+        '''
+        @brief Set the flag to write out linear colorspace (lin_rec709) for srgb-linear color space.
+        @param write_linear True to write out linear colorspace, otherwise False.
+        @return None
+        '''
+        self.write_linear_colorspace = write_linear 
+
+    def set_desired_color_space(self, color_space : str):
+        '''
+        @brief Set the desired color space to use for writing colors. Default is 'srgb-linear' which remaps to 'link_rec709'.
+        @param color_space The desired color space to use for writing colors.
+        @return None
+        '''
+        self.desired_color_space = color_space
 
     def initialize_definitions_and_materials(self, materials_file : str = ''):
         '''
@@ -981,20 +1001,46 @@ class PhysicallyBasedMaterialLoader:
             dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
             self.addComment(doc, f'  Generated on: {dt_string} ')  
 
-    def remap_color_space(self, pb_colorspace) -> str:
+    def remap_color_space(self, pb_colorspace, ) -> str:
         '''
         @brief Remap a color space name use in Physically Based to the name used in MaterialX
         @param pb_colorspace The color space name used in Physically Based
         @return The remapped color space name used in MaterialX
         '''
         map = {}
-        map['srgb-linear'] = 'srgb_texture' # or is this lin_rec709 ?
+         # This is the same between V1 and V2 except now explicitly set.
+        map['srgb-linear'] = 'lin_rec709' if self.write_linear_colorspace else ''        
         map['acescg'] = 'acescg'
         # Add more as needed
         if pb_colorspace in map:
             return map[pb_colorspace]
-        # Return nothing as we don't know how to map.
+        # Return nothing as we don't know how to map which is equivalent to linear.
         return ''
+
+    def get_color_entry_index(self, color_block):
+        '''
+        @brief Find entry where colorSpace == colorspace.
+        If not found use the first entry
+            [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": []
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": []
+                }
+            ]        
+        '''
+        entry_index = 0
+        for entry in color_block:
+            if 'colorSpace' in entry:
+                #print('test color space:', entry['colorSpace'], 'desired:', self.desired_color_space)
+                if entry['colorSpace'] == self.desired_color_space:
+                    return entry_index
+            entry_index += 1
+
+        return 0
 
     def convertToMaterialX(self, materialNames = [], shaderCategory='standard_surface',
                            remapKeys = {}, shaderPreFix ='') -> mx.Document:
@@ -1089,7 +1135,6 @@ class PhysicallyBasedMaterialLoader:
             roughness = None
             color = None
             transmission = None
-            color_entry_color = 0          
             # Assume specular color uses Gulbrandsen (standard surface, usdpreview, disney). For OpenPBR 
             # and glTF PBR use the F82. Note: <artistic_ior> MTLX node usage entails using Gulbrandsen
             # This could be scanned for but makes it too implementation dependent.
@@ -1115,9 +1160,9 @@ class PhysicallyBasedMaterialLoader:
                     elif key == 'transmission':
                         transmission = value
 
-                    # color can have different entries for different color spaces
-                    # As we can only write one, we just choose the first for now.
+                    # Get color based on desired color space
                     elif key == 'color':
+                        color_entry_color = self.get_color_entry_index(value)
                         color = value[color_entry_color]["color"]
                         colorspace = value[color_entry_color]["colorSpace"] if "colorSpace" in value[color_entry_color] else None
                         if colorspace:
@@ -1143,7 +1188,9 @@ class PhysicallyBasedMaterialLoader:
                             for format_entry in value:
                                 if "format" in format_entry and color_entry_specular in format_entry["format"]:
                                     # Pull of "color" entry for the desired colorspace for the format entry
+                                    color_entry_color = self.get_color_entry_index(format_entry["color"])
                                     color_entry = format_entry["color"][color_entry_color]
+
                                     # Get the color and colorspace values
                                     color = color_entry["color"]
                                     colorspace = color_entry["colorSpace"] if "colorSpace" in color_entry else ''
