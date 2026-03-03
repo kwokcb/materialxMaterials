@@ -11,23 +11,22 @@
     <input name="metalness" type="float" value="0.0" />
     <input name="specularColor" type="color3" value="1,1,1" />
     <input name="roughness" type="float" value="0.0" />
-    <input name="ior" type="float" value="0.0" />
-    <input name="complexIor" type="string" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
+    <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.728978, 0.588215, 0.78354], 'k': [6.45971, 5.19646, 4.37746]}, {'colorSpace': 'acescg', 'n': [0.73826, 0.58846, 0.401312], 'k': [5.76125, 5.26448, 4.35851]}" />
     <input name="density" type="float" value="0.0" />
     <input name="category" type="string" value="Metal" />
-    <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="" />
     <input name="tags" type="string" value="" />
-    <input name="reference" type="string" value="" />
+    <input name="references" type="string" value="" />
+    <input name="images" type="string" value="" />
+    <input name="description" type="string" value="Aluminum can be colorized by a process called anodization. It creates a layer of aluminum oxide by supplying different voltages which results in different thickness. Unlike titanium, aluminum doesn't get vivid colors from anodization so dyes are used to color it further." />
+    <input name="ior" type="float" value="0.0" />
     <input name="transmission" type="float" value="0.0" />
     <input name="transmissionDepth" type="float" value="0.0" />
     <input name="transmissionDispersion" type="float" value="0.0" />
-    <input name="viscosity" type="float" value="0.0" />
+    <input name="viscosity" type="vector3" value="0.0, 0.0, 0.0" />
     <input name="surfaceTension" type="float" value="0.0" />
-    <input name="densityRange" type="vector2" value="0.0, 0.0" />
     <input name="acousticAbsorption" type="string" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
     <input name="subsurfaceRadius" type="vector3" value="0.0, 0.0, 0.0" />
-    <input name="thinFilmThickness" type="float" value="0.0" />
+    <input name="thinFilmThickness" type="vector3" value="0.0, 0.0, 0.0" />
     <input name="thinFilmIor" type="float" value="0.0" />
     <input name="group" type="string" value="" />
     <!--Outputs (inputs from target 'gltf_pbr' with '_out' suffix)-->
@@ -118,7 +117,7 @@
     </dot>
     <!--Routing source input: 'thinFilmThickness' to target input: 'iridescence_thickness'-->
     <dot name="iridescence_thickness" type="color3">
-      <input name="in" type="float" interfacename="thinFilmThickness" />
+      <input name="in" type="vector3" interfacename="thinFilmThickness" />
     </dot>
     <!--Routing source input: 'thinFilmIor' to target input: 'iridescence_ior'-->
     <dot name="iridescence_ior" type="color3">
@@ -132,23 +131,22 @@
     <input name="metalness" type="float" value="0.0" />
     <input name="specularColor" type="color3" value="1,1,1" />
     <input name="roughness" type="float" value="0.0" />
-    <input name="ior" type="float" value="0.0" />
-    <input name="complexIor" type="string" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
+    <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.728978, 0.588215, 0.78354], 'k': [6.45971, 5.19646, 4.37746]}, {'colorSpace': 'acescg', 'n': [0.73826, 0.58846, 0.401312], 'k': [5.76125, 5.26448, 4.35851]}" />
     <input name="density" type="float" value="0.0" />
     <input name="category" type="string" value="Metal" />
-    <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="" />
     <input name="tags" type="string" value="" />
-    <input name="reference" type="string" value="" />
+    <input name="references" type="string" value="" />
+    <input name="images" type="string" value="" />
+    <input name="description" type="string" value="Aluminum can be colorized by a process called anodization. It creates a layer of aluminum oxide by supplying different voltages which results in different thickness. Unlike titanium, aluminum doesn't get vivid colors from anodization so dyes are used to color it further." />
+    <input name="ior" type="float" value="0.0" />
     <input name="transmission" type="float" value="0.0" />
     <input name="transmissionDepth" type="float" value="0.0" />
     <input name="transmissionDispersion" type="float" value="0.0" />
-    <input name="viscosity" type="float" value="0.0" />
+    <input name="viscosity" type="vector3" value="0.0, 0.0, 0.0" />
     <input name="surfaceTension" type="float" value="0.0" />
-    <input name="densityRange" type="vector2" value="0.0, 0.0" />
     <input name="acousticAbsorption" type="string" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
     <input name="subsurfaceRadius" type="vector3" value="0.0, 0.0, 0.0" />
-    <input name="thinFilmThickness" type="float" value="0.0" />
+    <input name="thinFilmThickness" type="vector3" value="0.0, 0.0, 0.0" />
     <input name="thinFilmIor" type="float" value="0.0" />
     <input name="group" type="string" value="" />
     <!--Outputs (inputs from target 'open_pbr_surface' with '_out' suffix)-->
@@ -271,7 +269,7 @@
     </dot>
     <!--Routing source input: 'thinFilmThickness' to target input: 'thin_film_thickness'-->
     <dot name="thin_film_thickness" type="color3">
-      <input name="in" type="float" interfacename="thinFilmThickness" />
+      <input name="in" type="vector3" interfacename="thinFilmThickness" />
     </dot>
     <!--Routing source input: 'thinFilmIor' to target input: 'thin_film_ior'-->
     <dot name="thin_film_ior" type="color3">
@@ -285,23 +283,22 @@
     <input name="metalness" type="float" value="0.0" />
     <input name="specularColor" type="color3" value="1,1,1" />
     <input name="roughness" type="float" value="0.0" />
-    <input name="ior" type="float" value="0.0" />
-    <input name="complexIor" type="string" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
+    <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.728978, 0.588215, 0.78354], 'k': [6.45971, 5.19646, 4.37746]}, {'colorSpace': 'acescg', 'n': [0.73826, 0.58846, 0.401312], 'k': [5.76125, 5.26448, 4.35851]}" />
     <input name="density" type="float" value="0.0" />
     <input name="category" type="string" value="Metal" />
-    <input name="description" type="string" value="" />
-    <input name="sources" type="string" value="" />
     <input name="tags" type="string" value="" />
-    <input name="reference" type="string" value="" />
+    <input name="references" type="string" value="" />
+    <input name="images" type="string" value="" />
+    <input name="description" type="string" value="Aluminum can be colorized by a process called anodization. It creates a layer of aluminum oxide by supplying different voltages which results in different thickness. Unlike titanium, aluminum doesn't get vivid colors from anodization so dyes are used to color it further." />
+    <input name="ior" type="float" value="0.0" />
     <input name="transmission" type="float" value="0.0" />
     <input name="transmissionDepth" type="float" value="0.0" />
     <input name="transmissionDispersion" type="float" value="0.0" />
-    <input name="viscosity" type="float" value="0.0" />
+    <input name="viscosity" type="vector3" value="0.0, 0.0, 0.0" />
     <input name="surfaceTension" type="float" value="0.0" />
-    <input name="densityRange" type="vector2" value="0.0, 0.0" />
     <input name="acousticAbsorption" type="string" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
     <input name="subsurfaceRadius" type="vector3" value="0.0, 0.0, 0.0" />
-    <input name="thinFilmThickness" type="float" value="0.0" />
+    <input name="thinFilmThickness" type="vector3" value="0.0, 0.0, 0.0" />
     <input name="thinFilmIor" type="float" value="0.0" />
     <input name="group" type="string" value="" />
     <!--Outputs (inputs from target 'standard_surface' with '_out' suffix)-->
@@ -426,7 +423,7 @@
     </dot>
     <!--Routing source input: 'thinFilmThickness' to target input: 'thin_film_thickness'-->
     <dot name="thin_film_thickness" type="color3">
-      <input name="in" type="float" interfacename="thinFilmThickness" />
+      <input name="in" type="vector3" interfacename="thinFilmThickness" />
     </dot>
     <!--Routing source input: 'thinFilmIor' to target input: 'thin_film_IOR'-->
     <dot name="thin_film_IOR" type="color3">

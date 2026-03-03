@@ -151,6 +151,7 @@ def physicallBasedMaterialXCmd():
                 output_path = os.path.join(outputDir, output_file_name)                
                 logger.info('> Write translator file:' + output_path)
                 mx.writeToXmlFile(translators_doc, mx.FilePath(output_path))
+                logger.info(f'> Write translator file: {output_path}')
 
             # Get doc with all required definitions: stdlib, PhysicallyBased definition, and translator definitions
             stdlib = loader.get_definitions()
@@ -201,6 +202,7 @@ def physicallBasedMaterialXCmd():
                                         #logger.info(f'> Generate material {mat_name} for shading model: {shadingModel}')
                                         fileName = os.path.join(matDir, f'PB_{prefix}_{mat}.mtlx')
                                         loader.writeMaterialXToFile(fileName, matdoc)
+                                        logger.info(f'> Write: {fileName}')
                                         
                     logger.info(f'> Converted {len(converted)} materials for shading model: {shadingModel}')
 
