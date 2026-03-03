@@ -1089,13 +1089,23 @@ class PhysicallyBasedMaterialLoader:
             roughness = None
             color = None
             transmission = None
-            color_entry_color = 0
-            color_entry_specular = 0
-            colorspace = ''
-            input_doc = ''
+            color_entry_color = 0          
+            # Assume specular color uses Gulbrandsen (standard surface, usdpreview, disney). For OpenPBR 
+            # and glTF PBR use the F82. Note: <artistic_ior> MTLX node usage entails using Gulbrandsen
+            # This could be scanned for but makes it too implementation dependent.
+            color_entry_specular = "Gulbrandsen" 
+            if shaderCategory in ['open_pbr_surface', 'gltf_pbr']:
+                color_entry_specular = "F82"
+            
+            # Used to track "color" input's colorspace for possible
+            # remapping to transmission color if needed.
+            transmission_colorspace = ''
 
             for key, value in mat.items():
                 
+                colorspace = ''
+                input_doc = ''
+
                 if (key not in skipKeys):
                     # Keep track of these for possible transmission color remapping
                     if key == 'metalness':
@@ -1113,21 +1123,40 @@ class PhysicallyBasedMaterialLoader:
                         if colorspace:
                             colorspace = self.remap_color_space(colorspace)
                         value = color
+                        transmission_colorspace = colorspace
 
-                    # specular color can have different formats as well
-                    # as different colorspaces per format. For now
-                    # just choose one format and one color space.
+                    # Specular color format is chosen above based on shader category.
+                    # Again we only choose one format and one color space.
+                    #
+                    # Expected format is:
+                    #
+                    # "specularColor": [
+                    # {
+                    #       "format": [ 
+                    #           "Gulbrandsen"
+                    #       ],
+                    #       "color": [ // per colorspace list
+                    #        ]
                     elif key == 'specularColor':
                         if len(value) > 0:
-                            format_entry = value[color_entry_specular]
-                            color_entry = format_entry["color"][color_entry_color]
-                            color = color_entry["color"]
-                            value = color
-                            if "format" in format_entry:
-                                format_string = "Format: "
-                                for format in format_entry["format"]:
-                                    format_string += format + " "
-                                input_doc = format_string.strip()
+                            # Scan each value and find the one where "format" == color_entry_specular
+                            for format_entry in value:
+                                if "format" in format_entry and color_entry_specular in format_entry["format"]:
+                                    # Pull of "color" entry for the desired colorspace for the format entry
+                                    color_entry = format_entry["color"][color_entry_color]
+                                    # Get the color and colorspace values
+                                    color = color_entry["color"]
+                                    colorspace = color_entry["colorSpace"] if "colorSpace" in color_entry else ''
+                                    if colorspace:
+                                        colorspace = self.remap_color_space(colorspace)
+                                    # Add format as doc string for the input
+                                    format_string = "Format: "
+                                    for format in format_entry["format"]:
+                                        format_string += format + " "
+                                    input_doc = format_string.strip()
+                                    
+                                    value = color
+                                    break
 
                     if key in remapKeys:
                         key = remapKeys[key]
@@ -1155,11 +1184,11 @@ class PhysicallyBasedMaterialLoader:
                         key = remapKeys['transmission_color']
                         input = shaderNode.addInputFromNodeDef(key)
                         if input:
-                            self.logger.debug(f'Set transmission color {key}: {color}')
-                            value = ','.join([str(x) for x in color])                        
+                            value = ','.join([str(x) for x in color])
                             input.setValueString(value)
-                            if colorspace:
-                                input.setAttribute('colorspace', colorspace)
+                            if transmission_colorspace:
+                                input.setAttribute('colorspace', transmission_colorspace)
+                            self.logger.debug(f'Set transmission color {key}: {color}, colorspace: {transmission_colorspace}')
 
         return self.doc
     
