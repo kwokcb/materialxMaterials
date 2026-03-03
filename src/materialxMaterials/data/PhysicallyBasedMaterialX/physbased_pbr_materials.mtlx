@@ -6,9 +6,9 @@
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <physbased_pbr_surface name="Aluminum" type="surfaceshader" uiname="Aluminum">
     <input name="name" type="string" value="Aluminum" />
-    <input name="color" type="color3" value="0.916, 0.923, 0.924" />
+    <input name="color" type="color3" value="0.916, 0.923, 0.924" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.989, 0.989, 0.972" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.989, 0.989, 0.972" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.728978, 0.588215, 0.78354], 'k': [6.45971, 5.19646, 4.37746]}, {'colorSpace': 'acescg', 'n': [0.73826, 0.58846, 0.401312], 'k': [5.76125, 5.26448, 4.35851]}" />
     <input name="category" type="string" value="Metal" />
@@ -21,9 +21,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Aluminum__Anodized_Red_" type="surfaceshader" doc="Aluminum can be colorized by a process called anodization. It creates a layer of aluminum oxide by supplying different voltages which results in different thickness. Unlike titanium, aluminum doesn't get vivid colors from anodization so dyes are used to color it further." uiname="Aluminum (Anodized Red)">
     <input name="name" type="string" value="Aluminum (Anodized Red)" />
-    <input name="color" type="color3" value="0.6, 0.0, 0.0" />
+    <input name="color" type="color3" value="0.6, 0.0, 0.0" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.989, 0.989, 0.972" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.989, 0.989, 0.972" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0.3" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.728978, 0.588215, 0.78354], 'k': [6.45971, 5.19646, 4.37746]}, {'colorSpace': 'acescg', 'n': [0.73826, 0.58846, 0.401312], 'k': [5.76125, 5.26448, 4.35851]}" />
     <input name="category" type="string" value="Metal" />
@@ -37,7 +37,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Amber" type="surfaceshader" uiname="Amber">
     <input name="name" type="string" value="Amber" />
-    <input name="color" type="color3" value="0.83, 0.288, 0.036" />
+    <input name="color" type="color3" value="0.83, 0.288, 0.036" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
@@ -51,7 +51,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Asphalt__Fresh_" type="surfaceshader" doc="Asphalt consists of crushed stone, gravel, and sand, bound together with bitumen." uiname="Asphalt (Fresh)">
     <input name="name" type="string" value="Asphalt (Fresh)" />
-    <input name="color" type="color3" value="0.0429, 0.0414, 0.0401" />
+    <input name="color" type="color3" value="0.0429, 0.0414, 0.0401" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.6" />
@@ -66,7 +66,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Banana" type="surfaceshader" uiname="Banana">
     <input name="name" type="string" value="Banana" />
-    <input name="color" type="color3" value="0.634, 0.532, 0.111" />
+    <input name="color" type="color3" value="0.634, 0.532, 0.111" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
@@ -79,9 +79,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Beryllium" type="surfaceshader" uiname="Beryllium">
     <input name="name" type="string" value="Beryllium" />
-    <input name="color" type="color3" value="0.539, 0.533, 0.534" />
+    <input name="color" type="color3" value="0.539, 0.533, 0.534" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.549, 0.503, 0.364" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.549, 0.503, 0.364" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [3.21038, 3.32907, 3.77105], 'k': [3.29815, 3.11669, 2.66995]}, {'colorSpace': 'acescg', 'n': [3.36492, 3.30825, 3.09051], 'k': [3.16402, 3.13463, 3.12791]}" />
     <input name="category" type="string" value="Metal" />
@@ -93,7 +93,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Blackboard" type="surfaceshader" uiname="Blackboard">
     <input name="name" type="string" value="Blackboard" />
-    <input name="color" type="color3" value="0.039, 0.039, 0.039" />
+    <input name="color" type="color3" value="0.039, 0.039, 0.039" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
@@ -106,7 +106,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Blood" type="surfaceshader" doc="The color of blood depends on its oxygen level. When there is plenty of oxygen, the color is a brighter red. The reason is because of a protein called hemoglobin, which carries the oxygen in your blood. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark." uiname="Blood">
     <input name="name" type="string" value="Blood" />
-    <input name="color" type="color3" value="0.644, 0.003, 0.005" />
+    <input name="color" type="color3" value="0.644, 0.003, 0.005" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.35" />
@@ -125,7 +125,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Bone" type="surfaceshader" uiname="Bone">
     <input name="name" type="string" value="Bone" />
-    <input name="color" type="color3" value="0.793, 0.793, 0.664" />
+    <input name="color" type="color3" value="0.793, 0.793, 0.664" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
@@ -139,9 +139,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Brass" type="surfaceshader" doc="Brass is an alloy of copper and zinc, with a bright and gold-like appearance. It is similar to bronze, another alloy containing copper that uses tin instead of zinc. Historically, the distinction between the two alloys has been less consistent and clear, and modern practice in museums and archaeology increasingly avoids both terms for historical objects in favor of the more general &quot;copper alloy&quot;." uiname="Brass">
     <input name="name" type="string" value="Brass" />
-    <input name="color" type="color3" value="0.91, 0.778, 0.423" />
+    <input name="color" type="color3" value="0.91, 0.778, 0.423" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.995, 0.974, 0.747" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.995, 0.974, 0.747" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.341048, 0.53349, 1.42749], 'k': [4.14088, 2.67993, 1.87543]}, {'colorSpace': 'acescg', 'n': [0.473454, 0.521254, 1.0339], 'k': [3.16368, 2.69584, 1.92658]}" />
     <input name="category" type="string" value="Metal" />
@@ -154,7 +154,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Brick" type="surfaceshader" uiname="Brick">
     <input name="name" type="string" value="Brick" />
-    <input name="color" type="color3" value="0.262, 0.095, 0.061" />
+    <input name="color" type="color3" value="0.262, 0.095, 0.061" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
@@ -168,7 +168,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Car_Paint" type="surfaceshader" doc="Modern car paints are nearly always an acrylic polyurethane &quot;enamel&quot; with a pigmented basecoat and a clear topcoat. It may be described as &quot;acrylic&quot;, &quot;acrylic enamel&quot;, &quot;urethane&quot;, etc. and the clearcoat in particular may be described as a lacquer. The size of the metal flakes in metallic paints is typically between 100 to 400 microns in diameter. Modern automobile paint is applied in several layers, with a total thickness of around 100 μm (0.1mm)." uiname="Car Paint">
     <input name="name" type="string" value="Car Paint" />
-    <input name="color" type="color3" value="0.1, 0.1, 0.1" />
+    <input name="color" type="color3" value="0.1, 0.1, 0.1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
@@ -183,7 +183,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Carrot" type="surfaceshader" uiname="Carrot">
     <input name="name" type="string" value="Carrot" />
-    <input name="color" type="color3" value="0.713, 0.17, 0.026" />
+    <input name="color" type="color3" value="0.713, 0.17, 0.026" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
@@ -196,9 +196,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Cesium" type="surfaceshader" uiname="Cesium">
     <input name="name" type="string" value="Cesium" />
-    <input name="color" type="color3" value="0.718, 0.554, 0.237" />
+    <input name="color" type="color3" value="0.718, 0.554, 0.237" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.997, 1.002, 1.073" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.997, 1.002, 1.073" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.204334, 0.272018, 0.449252], 'k': [1.19256, 0.906033, 0.517209]}, {'colorSpace': 'acescg', 'n': [0.247616, 0.26693, 0.382321], 'k': [1.06956, 0.91021, 0.519484]}" />
     <input name="category" type="string" value="Metal" />
@@ -211,7 +211,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Charcoal" type="surfaceshader" uiname="Charcoal">
     <input name="name" type="string" value="Charcoal" />
-    <input name="color" type="color3" value="0.02, 0.02, 0.02" />
+    <input name="color" type="color3" value="0.02, 0.02, 0.02" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
@@ -224,7 +224,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Chocolate" type="surfaceshader" uiname="Chocolate">
     <input name="name" type="string" value="Chocolate" />
-    <input name="color" type="color3" value="0.162, 0.091, 0.06" />
+    <input name="color" type="color3" value="0.162, 0.091, 0.06" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
@@ -238,9 +238,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Chromium" type="surfaceshader" uiname="Chromium">
     <input name="name" type="string" value="Chromium" />
-    <input name="color" type="color3" value="0.654, 0.685, 0.701" />
+    <input name="color" type="color3" value="0.654, 0.685, 0.701" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.591, 0.675, 0.703" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.591, 0.675, 0.703" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [4.19382, 3.53806, 2.91521], 'k': [4.85545, 4.89986, 4.25568]}, {'colorSpace': 'acescg', 'n': [3.99955, 3.5489, 2.40724], 'k': [4.78865, 4.90046, 4.50602]}" />
     <input name="category" type="string" value="Metal" />
@@ -253,9 +253,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Cobalt" type="surfaceshader" uiname="Cobalt">
     <input name="name" type="string" value="Cobalt" />
-    <input name="color" type="color3" value="0.699, 0.704, 0.671" />
+    <input name="color" type="color3" value="0.699, 0.704, 0.671" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.731, 0.775, 0.715" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.731, 0.775, 0.715" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [3.33754, 2.6841, 2.57555], 'k': [5.27723, 4.73548, 3.81892]}, {'colorSpace': 'acescg', 'n': [3.14981, 2.70481, 2.06112], 'k': [4.96614, 4.76092, 4.00685]}" />
     <input name="category" type="string" value="Metal" />
@@ -267,7 +267,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Coffee" type="surfaceshader" uiname="Coffee">
     <input name="name" type="string" value="Coffee" />
-    <input name="color" type="color3" value="0.447, 0.133, 0.034" />
+    <input name="color" type="color3" value="0.447, 0.133, 0.034" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.34" />
@@ -284,7 +284,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Concrete" type="surfaceshader" uiname="Concrete">
     <input name="name" type="string" value="Concrete" />
-    <input name="color" type="color3" value="0.51, 0.51, 0.51" />
+    <input name="color" type="color3" value="0.51, 0.51, 0.51" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
@@ -298,7 +298,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Cooking_Oil" type="surfaceshader" uiname="Cooking Oil">
     <input name="name" type="string" value="Cooking Oil" />
-    <input name="color" type="color3" value="0.737911, 0.687, 0.091" />
+    <input name="color" type="color3" value="0.737911, 0.687, 0.091" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.47" />
@@ -313,9 +313,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Copper" type="surfaceshader" uiname="Copper">
     <input name="name" type="string" value="Copper" />
-    <input name="color" type="color3" value="0.932, 0.623, 0.522" />
+    <input name="color" type="color3" value="0.932, 0.623, 0.522" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.999, 0.9, 0.744" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.999, 0.9, 0.744" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.133762, 1.05661, 1.68637], 'k': [3.10615, 2.63095, 2.42655]}, {'colorSpace': 'acescg', 'n': [0.4946, 0.974095, 1.23853], 'k': [2.87217, 2.65208, 2.41041]}" />
     <input name="category" type="string" value="Metal" />
@@ -327,7 +327,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Diamond" type="surfaceshader" uiname="Diamond">
     <input name="name" type="string" value="Diamond" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="2.4168" />
@@ -343,7 +343,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Egg_Shell" type="surfaceshader" doc="White hen egg from grocery store." uiname="Egg Shell">
     <input name="name" type="string" value="Egg Shell" />
-    <input name="color" type="color3" value="0.61, 0.624, 0.631" />
+    <input name="color" type="color3" value="0.61, 0.624, 0.631" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
@@ -357,7 +357,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Eye__Cornea_" type="surfaceshader" uiname="Eye (Cornea)">
     <input name="name" type="string" value="Eye (Cornea)" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.376" />
@@ -371,7 +371,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Eye__Lens_" type="surfaceshader" doc="The refractive index of human lens varies from approximately 1.406 in the central layers down to 1.386 in less dense layers of the lens. This index gradient enhances the optical power of the lens." uiname="Eye (Lens)">
     <input name="name" type="string" value="Eye (Lens)" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.386" />
@@ -386,7 +386,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Eye__Sclera_" type="surfaceshader" uiname="Eye (Sclera)">
     <input name="name" type="string" value="Eye (Sclera)" />
-    <input name="color" type="color3" value="0.652, 0.5, 0.394" />
+    <input name="color" type="color3" value="0.652, 0.5, 0.394" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.4" />
@@ -400,7 +400,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Gasoline" type="surfaceshader" uiname="Gasoline">
     <input name="name" type="string" value="Gasoline" />
-    <input name="color" type="color3" value="1, 0.97, 0.617" />
+    <input name="color" type="color3" value="1, 0.97, 0.617" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.427" />
@@ -415,9 +415,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Germanium" type="surfaceshader" uiname="Germanium">
     <input name="name" type="string" value="Germanium" />
-    <input name="color" type="color3" value="0.5, 0.517, 0.465" />
+    <input name="color" type="color3" value="0.5, 0.517, 0.465" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.068, 0.179, 0.002" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.068, 0.179, 0.002" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [5.63391, 5.06611, 4.81402], 'k': [1.44383, 2.25088, 0.279501]}, {'colorSpace': 'acescg', 'n': [5.51092, 5.07691, 4.11938], 'k': [1.431, 2.22993, 2.23401]}" />
     <input name="category" type="string" value="Metal" />
@@ -429,7 +429,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Glass" type="surfaceshader" uiname="Glass">
     <input name="name" type="string" value="Glass" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.52" />
@@ -445,9 +445,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Gold" type="surfaceshader" uiname="Gold">
     <input name="name" type="string" value="Gold" />
-    <input name="color" type="color3" value="1.059, 0.773, 0.307" />
+    <input name="color" type="color3" value="1.059, 0.773, 0.307" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.001, 0.985, 0.523" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="1.001, 0.985, 0.523" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0, 0.351563, 1.85894], 'k': [6.59401, 2.08143, 1.49631]}, {'colorSpace': 'acescg', 'n': [0.190506, 0.330771, 1.35292], 'k': [3.04413, 2.11776, 1.76193]}" />
     <input name="category" type="string" value="Metal" />
@@ -459,7 +459,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Grass" type="surfaceshader" uiname="Grass">
     <input name="name" type="string" value="Grass" />
-    <input name="color" type="color3" value="0.105, 0.133, 0.041" />
+    <input name="color" type="color3" value="0.105, 0.133, 0.041" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
@@ -472,7 +472,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Gray_Card" type="surfaceshader" doc="In photography and computer graphics, middle gray is a tone that is perceptually about halfway between black and white on a lightness scale. Light meters and cameras are often calibrated using an 18% gray card or a color reference card such as a ColorChecker. It is typically defined as 18% reflectance in visible light." uiname="Gray Card">
     <input name="name" type="string" value="Gray Card" />
-    <input name="color" type="color3" value="0.18, 0.18, 0.18" />
+    <input name="color" type="color3" value="0.18, 0.18, 0.18" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
@@ -487,7 +487,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Honey__Liquid_" type="surfaceshader" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose." uiname="Honey (Liquid)">
     <input name="name" type="string" value="Honey (Liquid)" />
-    <input name="color" type="color3" value="0.831, 0.571, 0.037" />
+    <input name="color" type="color3" value="0.831, 0.571, 0.037" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.504" />
@@ -502,7 +502,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Honey__Crystallized_" type="surfaceshader" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose." uiname="Honey (Crystallized)">
     <input name="name" type="string" value="Honey (Crystallized)" />
-    <input name="color" type="color3" value="0.449, 0.319, 0.011" />
+    <input name="color" type="color3" value="0.449, 0.319, 0.011" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.3" />
     <input name="ior" type="float" value="1.504" />
@@ -517,7 +517,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Ice" type="surfaceshader" uiname="Ice">
     <input name="name" type="string" value="Ice" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.3098" />
@@ -532,9 +532,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Iridium" type="surfaceshader" uiname="Iridium">
     <input name="name" type="string" value="Iridium" />
-    <input name="color" type="color3" value="0.745, 0.734, 0.704" />
+    <input name="color" type="color3" value="0.745, 0.734, 0.704" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.818, 0.81, 0.727" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.818, 0.81, 0.727" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [2.79209, 2.56343, 2.7216], 'k': [5.68877, 5.0549, 4.20215]}, {'colorSpace': 'acescg', 'n': [2.78993, 2.56186, 2.14497], 'k': [5.33631, 5.08541, 4.42262]}" />
     <input name="category" type="string" value="Metal" />
@@ -546,9 +546,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Iron" type="surfaceshader" uiname="Iron">
     <input name="name" type="string" value="Iron" />
-    <input name="color" type="color3" value="0.53, 0.513, 0.494" />
+    <input name="color" type="color3" value="0.53, 0.513, 0.494" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.612, 0.541, 0.422" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.612, 0.541, 0.422" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [2.73466, 2.94186, 3.15654], 'k': [3.14869, 2.92718, 2.46012]}, {'colorSpace': 'acescg', 'n': [2.90278, 2.91315, 2.59243], 'k': [3.01558, 2.94418, 2.77805]}" />
     <input name="category" type="string" value="Metal" />
@@ -560,7 +560,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Ketchup" type="surfaceshader" uiname="Ketchup">
     <input name="name" type="string" value="Ketchup" />
-    <input name="color" type="color3" value="0.164, 0.006, 0.002" />
+    <input name="color" type="color3" value="0.164, 0.006, 0.002" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.1" />
     <input name="ior" type="float" value="1.3" />
@@ -575,9 +575,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Lead" type="surfaceshader" uiname="Lead">
     <input name="name" type="string" value="Lead" />
-    <input name="color" type="color3" value="0.626, 0.64, 0.693" />
+    <input name="color" type="color3" value="0.626, 0.64, 0.693" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.717, 0.717, 0.696" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.717, 0.717, 0.696" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [2.71051, 2.68791, 2.9091], 'k': [4.04246, 4.01366, 4.17426]}, {'colorSpace': 'acescg', 'n': [2.79703, 2.6736, 2.31165], 'k': [4.01182, 4.02443, 4.29506]}" />
     <input name="category" type="string" value="Metal" />
@@ -589,7 +589,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Lemon" type="surfaceshader" uiname="Lemon">
     <input name="name" type="string" value="Lemon" />
-    <input name="color" type="color3" value="0.617, 0.366, 0.045" />
+    <input name="color" type="color3" value="0.617, 0.366, 0.045" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
@@ -602,9 +602,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Lithium" type="surfaceshader" uiname="Lithium">
     <input name="name" type="string" value="Lithium" />
-    <input name="color" type="color3" value="0.916, 0.89, 0.807" />
+    <input name="color" type="color3" value="0.916, 0.89, 0.807" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.998, 0.995, 0.975" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.998, 0.995, 0.975" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.141612, 0.215656, 0.481854], 'k': [2.7434, 2.48258, 2.35726]}, {'colorSpace': 'acescg', 'n': [0.214498, 0.207691, 0.236271], 'k': [2.70456, 2.46885, 1.92343]}" />
     <input name="category" type="string" value="Metal" />
@@ -616,9 +616,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Magnesium" type="surfaceshader" uiname="Magnesium">
     <input name="name" type="string" value="Magnesium" />
-    <input name="color" type="color3" value="0.956, 0.953, 0.95" />
+    <input name="color" type="color3" value="0.956, 0.953, 0.95" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.998, 0.996, 0.983" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.998, 0.996, 0.983" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.286425, 0.322265, 0.594764], 'k': [6.75553, 4.94909, 4.25174]}, {'colorSpace': 'acescg', 'n': [0.365942, 0.31319, 0.224454], 'k': [5.53795, 5.01834, 4.09048]}" />
     <input name="category" type="string" value="Metal" />
@@ -630,9 +630,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Manganese" type="surfaceshader" uiname="Manganese">
     <input name="name" type="string" value="Manganese" />
-    <input name="color" type="color3" value="0.606, 0.592, 0.573" />
+    <input name="color" type="color3" value="0.606, 0.592, 0.573" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.757, 0.761, 0.715" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.757, 0.761, 0.715" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [2.22147, 2.02055, 2.03472], 'k': [3.60175, 3.25337, 2.862]}, {'colorSpace': 'acescg', 'n': [2.21105, 2.01942, 1.61898], 'k': [3.43301, 3.27, 2.90038]}" />
     <input name="category" type="string" value="Metal" />
@@ -644,7 +644,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Marble" type="surfaceshader" uiname="Marble">
     <input name="name" type="string" value="Marble" />
-    <input name="color" type="color3" value="0.83, 0.791, 0.753" />
+    <input name="color" type="color3" value="0.83, 0.791, 0.753" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
@@ -659,9 +659,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Mercury" type="surfaceshader" doc="Mercury is the only metallic element that is known to be liquid at standard conditions." uiname="Mercury">
     <input name="name" type="string" value="Mercury" />
-    <input name="color" type="color3" value="0.781, 0.78, 0.778" />
+    <input name="color" type="color3" value="0.781, 0.78, 0.778" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.901, 0.91, 0.89" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.901, 0.91, 0.89" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [1.86932, 1.53811, 1.4963], 'k': [5.36989, 4.60484, 3.92685]}, {'colorSpace': 'acescg', 'n': [1.80044, 1.54346, 1.0878], 'k': [5.00001, 4.64158, 3.91158]}" />
     <input name="surfaceTension" type="float" value="487" />
@@ -676,7 +676,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Milk" type="surfaceshader" doc="Cow's milk" uiname="Milk">
     <input name="name" type="string" value="Milk" />
-    <input name="color" type="color3" value="0.815, 0.813, 0.682" />
+    <input name="color" type="color3" value="0.815, 0.813, 0.682" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.348" />
@@ -693,7 +693,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="MIT_Black" type="surfaceshader" uiname="MIT Black">
     <input name="name" type="string" value="MIT Black" />
-    <input name="color" type="color3" value="5e-05, 5e-05, 5e-05" />
+    <input name="color" type="color3" value="5e-05, 5e-05, 5e-05" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.99" />
     <input name="ior" type="float" value="1.5" />
@@ -706,9 +706,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Molybdenum" type="surfaceshader" uiname="Molybdenum">
     <input name="name" type="string" value="Molybdenum" />
-    <input name="color" type="color3" value="0.589, 0.612, 0.594" />
+    <input name="color" type="color3" value="0.589, 0.612, 0.594" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.495, 0.505, 0.383" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.495, 0.505, 0.383" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [4.13827, 4.14866, 4.27845], 'k': [3.90428, 4.00545, 3.21018]}, {'colorSpace': 'acescg', 'n': [4.25384, 4.12785, 3.55369], 'k': [3.82381, 4.00138, 3.80316]}" />
     <input name="category" type="string" value="Metal" />
@@ -720,7 +720,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Musou_Black" type="surfaceshader" doc="Musou Black is one of the darkest paints available. Darker materials can be achieved by using carbon nanotube technology, such as the “MIT Black” material." uiname="Musou Black">
     <input name="name" type="string" value="Musou Black" />
-    <input name="color" type="color3" value="0.006, 0.006, 0.006" />
+    <input name="color" type="color3" value="0.006, 0.006, 0.006" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
@@ -734,9 +734,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Nickel" type="surfaceshader" uiname="Nickel">
     <input name="name" type="string" value="Nickel" />
-    <input name="color" type="color3" value="0.697, 0.641, 0.563" />
+    <input name="color" type="color3" value="0.697, 0.641, 0.563" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.855, 0.805, 0.675" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.855, 0.805, 0.675" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [1.8644, 1.92207, 2.22915], 'k': [4.21007, 3.57008, 2.87501]}, {'colorSpace': 'acescg', 'n': [1.96219, 1.90668, 1.74737], 'k': [3.89684, 3.59684, 2.98191]}" />
     <input name="category" type="string" value="Metal" />
@@ -748,7 +748,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Office_Paper" type="surfaceshader" doc="Office paper contains optical brightening additives that absorb light in the ultraviolet and violet region (usually 340-370 nm), and re-emit light in the blue region (typically 420-470 nm) by fluorescence." uiname="Office Paper">
     <input name="name" type="string" value="Office Paper" />
-    <input name="color" type="color3" value="0.794, 0.834, 0.884" />
+    <input name="color" type="color3" value="0.794, 0.834, 0.884" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.8" />
     <input name="ior" type="float" value="1.5" />
@@ -762,9 +762,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Palladium" type="surfaceshader" uiname="Palladium">
     <input name="name" type="string" value="Palladium" />
-    <input name="color" type="color3" value="0.734, 0.7036, 0.662" />
+    <input name="color" type="color3" value="0.734, 0.7036, 0.662" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.874, 0.854, 0.779" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.874, 0.854, 0.779" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [1.88141, 1.79976, 2.00737], 'k': [4.66959, 4.03631, 3.43839]}, {'colorSpace': 'acescg', 'n': [1.92412, 1.79229, 1.53501], 'k': [4.35994, 4.06362, 3.47822]}" />
     <input name="category" type="string" value="Metal" />
@@ -776,7 +776,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Pearl" type="surfaceshader" doc="The akoya pearl is a saltwater cultured pearl from the akoya oyster. Akoya are considered to be the classic pearl used for necklaces and other pearl jewelry. Nacre is the material of which pearls are composed and consists of aragonite crystal layers separated by conchiolin, a protein secreted by mollusk shells. The thickness of these layers determines the color of reflection from the nacre. The transmission interference color is complementary to the reflection interference color." uiname="Pearl">
     <input name="name" type="string" value="Pearl" />
-    <input name="color" type="color3" value="0.8, 0.75, 0.7" />
+    <input name="color" type="color3" value="0.8, 0.75, 0.7" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.35" />
     <input name="ior" type="float" value="1.68" />
@@ -793,7 +793,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Petroleum" type="surfaceshader" doc="The viscosity of crude oil is sensitive to temperature." uiname="Petroleum">
     <input name="name" type="string" value="Petroleum" />
-    <input name="color" type="color3" value="0.03, 0.027, 0.024" />
+    <input name="color" type="color3" value="0.03, 0.027, 0.024" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
@@ -810,7 +810,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Plastic__Acrylic_" type="surfaceshader" uiname="Plastic (Acrylic)">
     <input name="name" type="string" value="Plastic (Acrylic)" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.4905" />
@@ -826,7 +826,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Plastic__PC_" type="surfaceshader" uiname="Plastic (PC)">
     <input name="name" type="string" value="Plastic (PC)" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5848" />
@@ -842,7 +842,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Plastic__PET_" type="surfaceshader" uiname="Plastic (PET)">
     <input name="name" type="string" value="Plastic (PET)" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.575" />
@@ -857,7 +857,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Plastic__PP_" type="surfaceshader" uiname="Plastic (PP)">
     <input name="name" type="string" value="Plastic (PP)" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.492" />
@@ -872,7 +872,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Plastic__PUR_" type="surfaceshader" doc="Modern car paints are nearly always an acrylic polyurethane &quot;enamel&quot; with a pigmented basecoat and a clear topcoat. It may be described as &quot;acrylic&quot;, &quot;acrylic enamel&quot;, &quot;urethane&quot;, etc. and the clearcoat in particular may be described as a lacquer." uiname="Plastic (PUR)">
     <input name="name" type="string" value="Plastic (PUR)" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.6" />
@@ -888,7 +888,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Plastic__PVC_" type="surfaceshader" uiname="Plastic (PVC)">
     <input name="name" type="string" value="Plastic (PVC)" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.542" />
@@ -903,9 +903,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Platinum" type="surfaceshader" uiname="Platinum">
     <input name="name" type="string" value="Platinum" />
-    <input name="color" type="color3" value="0.765, 0.73, 0.676" />
+    <input name="color" type="color3" value="0.765, 0.73, 0.676" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.873, 0.85, 0.747" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.873, 0.85, 0.747" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [2.17679, 2.02616, 2.34437], 'k': [5.44798, 4.54881, 3.74446]}, {'colorSpace': 'acescg', 'n': [2.19707, 2.02224, 1.80496], 'k': [4.98395, 4.58862, 3.87107]}" />
     <input name="category" type="string" value="Metal" />
@@ -917,7 +917,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Polystyrene__Foam_" type="surfaceshader" uiname="Polystyrene (Foam)">
     <input name="name" type="string" value="Polystyrene (Foam)" />
-    <input name="color" type="color3" value="0.8393, 0.8384, 0.841" />
+    <input name="color" type="color3" value="0.8393, 0.8384, 0.841" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.6" />
@@ -931,7 +931,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Porcelain" type="surfaceshader" uiname="Porcelain">
     <input name="name" type="string" value="Porcelain" />
-    <input name="color" type="color3" value="0.745, 0.745, 0.723" />
+    <input name="color" type="color3" value="0.745, 0.745, 0.723" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
@@ -945,9 +945,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Potassium" type="surfaceshader" uiname="Potassium">
     <input name="name" type="string" value="Potassium" />
-    <input name="color" type="color3" value="0.983, 0.956, 0.906" />
+    <input name="color" type="color3" value="0.983, 0.956, 0.906" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.0, 1.0, 0.994" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="1.0, 1.0, 0.994" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.0, 0.041228, 0.220328], 'k': [3.37295, 1.56367, 2.05971]}, {'colorSpace': 'acescg', 'n': [0.026298, 0.0349856, 0.0473681], 'k': [1.59507, 1.47657, 1.04672]}" />
     <input name="category" type="string" value="Metal" />
@@ -959,7 +959,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Quartz" type="surfaceshader" uiname="Quartz">
     <input name="name" type="string" value="Quartz" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.54" />
@@ -974,9 +974,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Rubidium" type="surfaceshader" uiname="Rubidium">
     <input name="name" type="string" value="Rubidium" />
-    <input name="color" type="color3" value="0.919, 0.859, 0.747" />
+    <input name="color" type="color3" value="0.919, 0.859, 0.747" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.0, 0.999, 0.998" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="1.0, 0.999, 0.998" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.0391755, 0.101768, 0.205178], 'k': [1.22619, 1.27629, 1.13104]}, {'colorSpace': 'acescg', 'n': [0.0830927, 0.0956511, 0.111367], 'k': [1.37965, 1.25123, 0.807355]}" />
     <input name="category" type="string" value="Metal" />
@@ -988,7 +988,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Salt" type="surfaceshader" uiname="Salt">
     <input name="name" type="string" value="Salt" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.2" />
     <input name="ior" type="float" value="1.5441" />
@@ -1004,7 +1004,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Sand" type="surfaceshader" uiname="Sand">
     <input name="name" type="string" value="Sand" />
-    <input name="color" type="color3" value="0.44, 0.386, 0.23074" />
+    <input name="color" type="color3" value="0.44, 0.386, 0.23074" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
@@ -1018,7 +1018,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Sapphire" type="surfaceshader" uiname="Sapphire">
     <input name="name" type="string" value="Sapphire" />
-    <input name="color" type="color3" value="0.67, 0.764, 0.855" />
+    <input name="color" type="color3" value="0.67, 0.764, 0.855" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.7682" />
@@ -1034,9 +1034,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Silicon" type="surfaceshader" uiname="Silicon">
     <input name="name" type="string" value="Silicon" />
-    <input name="color" type="color3" value="0.345, 0.369, 0.426" />
+    <input name="color" type="color3" value="0.345, 0.369, 0.426" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.081, 0, 0.004" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.081, 0, 0.004" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [3.65156, 4.08561, 4.36337], 'k': [0.972551, 0, 0]}, {'colorSpace': 'acescg', 'n': [3.96501, 4.08831, 4.64341], 'k': [0.100296, 0, 0.202839]}" />
     <input name="category" type="string" value="Metal" />
@@ -1048,9 +1048,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Silver" type="surfaceshader" uiname="Silver">
     <input name="name" type="string" value="Silver" />
-    <input name="color" type="color3" value="0.991, 0.985, 0.974" />
+    <input name="color" type="color3" value="0.991, 0.985, 0.974" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.0, 1.0, 0.991" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="1.0, 1.0, 0.991" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0, 0.0626977, 0.382178], 'k': [8.06675, 3.62828, 3.80086]}, {'colorSpace': 'acescg', 'n': [0.0485451, 0.0511628, 0.0515574], 'k': [3.90854, 3.56812, 2.69761]}" />
     <input name="category" type="string" value="Metal" />
@@ -1063,7 +1063,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Skin_I" type="surfaceshader" uiname="Skin I">
     <input name="name" type="string" value="Skin I" />
-    <input name="color" type="color3" value="0.847, 0.638, 0.552" />
+    <input name="color" type="color3" value="0.847, 0.638, 0.552" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
@@ -1079,7 +1079,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Skin_II" type="surfaceshader" uiname="Skin II">
     <input name="name" type="string" value="Skin II" />
-    <input name="color" type="color3" value="0.799, 0.485, 0.347" />
+    <input name="color" type="color3" value="0.799, 0.485, 0.347" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
@@ -1095,7 +1095,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Skin_III" type="surfaceshader" uiname="Skin III">
     <input name="name" type="string" value="Skin III" />
-    <input name="color" type="color3" value="0.623, 0.433, 0.343" />
+    <input name="color" type="color3" value="0.623, 0.433, 0.343" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
@@ -1111,7 +1111,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Skin_IV" type="surfaceshader" uiname="Skin IV">
     <input name="name" type="string" value="Skin IV" />
-    <input name="color" type="color3" value="0.436, 0.227, 0.131" />
+    <input name="color" type="color3" value="0.436, 0.227, 0.131" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
@@ -1127,7 +1127,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Skin_V" type="surfaceshader" uiname="Skin V">
     <input name="name" type="string" value="Skin V" />
-    <input name="color" type="color3" value="0.283, 0.148, 0.079" />
+    <input name="color" type="color3" value="0.283, 0.148, 0.079" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
@@ -1143,7 +1143,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Skin_VI" type="surfaceshader" uiname="Skin VI">
     <input name="name" type="string" value="Skin VI" />
-    <input name="color" type="color3" value="0.09, 0.05, 0.02" />
+    <input name="color" type="color3" value="0.09, 0.05, 0.02" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />
@@ -1159,7 +1159,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Snow" type="surfaceshader" uiname="Snow">
     <input name="name" type="string" value="Snow" />
-    <input name="color" type="color3" value="0.85, 0.85, 0.85" />
+    <input name="color" type="color3" value="0.85, 0.85, 0.85" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.3098" />
@@ -1175,7 +1175,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Soap_Bubble" type="surfaceshader" doc="The colors of a soap bubble are the result of an interaction between the light reflected from the front and back surfaces of the soap film, a phenomenon known as thin-film interference. The thickness of a soap bubble can range between 10 nm and 1000 nm. It's thinner at the top due to gravity." uiname="Soap Bubble">
     <input name="name" type="string" value="Soap Bubble" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1" />
@@ -1191,9 +1191,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Sodium" type="surfaceshader" uiname="Sodium">
     <input name="name" type="string" value="Sodium" />
-    <input name="color" type="color3" value="0.977, 0.962, 0.936" />
+    <input name="color" type="color3" value="0.977, 0.962, 0.936" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="1.0, 1.0, 0.991" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="1.0, 1.0, 0.991" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [0.0, 0.0669661, 0.325253], 'k': [4.94428, 2.3243, 2.89317]}, {'colorSpace': 'acescg', 'n': [0.0525806, 0.058413, 0.0664729], 'k': [2.43603, 2.25156, 1.80989]}" />
     <input name="category" type="string" value="Metal" />
@@ -1205,7 +1205,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Spectralon" type="surfaceshader" doc="Spectralon is a fluoropolymer that has the highest diffuse reflectance of any known material or coating over the ultraviolet, visible, and near-infrared regions of the spectrum. It is the whitest substance available and reflects 99% of the light." uiname="Spectralon">
     <input name="name" type="string" value="Spectralon" />
-    <input name="color" type="color3" value="0.99, 0.99, 0.99" />
+    <input name="color" type="color3" value="0.99, 0.99, 0.99" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.99" />
     <input name="ior" type="float" value="1.35" />
@@ -1219,9 +1219,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Stainless_Steel" type="surfaceshader" uiname="Stainless Steel">
     <input name="name" type="string" value="Stainless Steel" />
-    <input name="color" type="color3" value="0.669, 0.639, 0.598" />
+    <input name="color" type="color3" value="0.669, 0.639, 0.598" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.804, 0.791, 0.714" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.804, 0.791, 0.714" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [2.22981, 2.04109, 2.15682], 'k': [4.21948, 3.64081, 3.07445]}, {'colorSpace': 'acescg', 'n': [2.22853, 2.0391, 1.69998], 'k': [3.93696, 3.66755, 3.14717]}" />
     <input name="category" type="string" value="Metal" />
@@ -1233,7 +1233,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Tire" type="surfaceshader" doc="Car tire." uiname="Tire">
     <input name="name" type="string" value="Tire" />
-    <input name="color" type="color3" value="0.023, 0.023, 0.023" />
+    <input name="color" type="color3" value="0.023, 0.023, 0.023" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.7" />
     <input name="ior" type="float" value="1.5" />
@@ -1248,9 +1248,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Titanium" type="surfaceshader" uiname="Titanium">
     <input name="name" type="string" value="Titanium" />
-    <input name="color" type="color3" value="0.441, 0.4, 0.361" />
+    <input name="color" type="color3" value="0.441, 0.4, 0.361" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.67, 0.641, 0.52" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.67, 0.641, 0.52" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [1.9345, 1.86761, 2.05863], 'k': [2.33987, 2.05312, 1.74518]}, {'colorSpace': 'acescg', 'n': [1.9732, 1.86443, 1.70307], 'k': [2.20459, 2.06955, 1.86062]}" />
     <input name="category" type="string" value="Metal" />
@@ -1262,9 +1262,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Titanium__Anodized_" type="surfaceshader" doc="Titanium can be colorized by a process called anodization. It creates a layer of titanium dioxide by supplying different voltages which results in different thickness and color. Additional colors can be achieved by adding dyes." uiname="Titanium (Anodized)">
     <input name="name" type="string" value="Titanium (Anodized)" />
-    <input name="color" type="color3" value="0.441, 0.4, 0.361" />
+    <input name="color" type="color3" value="0.441, 0.4, 0.361" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.67, 0.641, 0.52" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.67, 0.641, 0.52" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [1.9345, 1.86761, 2.05863], 'k': [2.33987, 2.05312, 1.74518]}, {'colorSpace': 'acescg', 'n': [1.9732, 1.86443, 1.70307], 'k': [2.20459, 2.06955, 1.86062]}" />
     <input name="thinFilmIor" type="float" value="2.488" />
@@ -1278,7 +1278,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Toner__Black_" type="surfaceshader" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0." uiname="Toner (Black)">
     <input name="name" type="string" value="Toner (Black)" />
-    <input name="color" type="color3" value="0.05, 0.05, 0.05" />
+    <input name="color" type="color3" value="0.05, 0.05, 0.05" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.5" />
@@ -1292,9 +1292,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Tungsten" type="surfaceshader" uiname="Tungsten">
     <input name="name" type="string" value="Tungsten" />
-    <input name="color" type="color3" value="0.537, 0.536, 0.519" />
+    <input name="color" type="color3" value="0.537, 0.536, 0.519" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.45, 0.409, 0.193" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.45, 0.409, 0.193" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [3.8332, 3.92528, 4.53149], 'k': [3.26472, 3.0739, 2.0965]}, {'colorSpace': 'acescg', 'n': [3.99552, 3.90702, 3.74628], 'k': [3.07855, 3.09281, 2.96596]}" />
     <input name="category" type="string" value="Metal" />
@@ -1306,9 +1306,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Vanadium" type="surfaceshader" uiname="Vanadium">
     <input name="name" type="string" value="Vanadium" />
-    <input name="color" type="color3" value="0.534, 0.526, 0.546" />
+    <input name="color" type="color3" value="0.534, 0.526, 0.546" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.474, 0.426, 0.175" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.474, 0.426, 0.175" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [3.6507, 3.72723, 4.94609], 'k': [3.25065, 3.00712, 2.17896]}, {'colorSpace': 'acescg', 'n': [3.82676, 3.7184, 4.02213], 'k': [3.06828, 3.03516, 3.16271]}" />
     <input name="category" type="string" value="Metal" />
@@ -1320,7 +1320,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Water" type="surfaceshader" doc="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color." uiname="Water">
     <input name="name" type="string" value="Water" />
-    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.3325" />
@@ -1338,7 +1338,7 @@
   </surfacematerial>
   <physbased_pbr_surface name="Whiteboard" type="surfaceshader" uiname="Whiteboard">
     <input name="name" type="string" value="Whiteboard" />
-    <input name="color" type="color3" value="0.869, 0.867, 0.771" />
+    <input name="color" type="color3" value="0.869, 0.867, 0.771" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
@@ -1351,9 +1351,9 @@
   </surfacematerial>
   <physbased_pbr_surface name="Zinc" type="surfaceshader" uiname="Zinc">
     <input name="name" type="string" value="Zinc" />
-    <input name="color" type="color3" value="0.808, 0.844, 0.865" />
+    <input name="color" type="color3" value="0.808, 0.844, 0.865" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specularColor" type="color3" value="0.854, 0.922, 0.923" doc="Format: Gulbrandsen" />
+    <input name="specularColor" type="color3" value="0.854, 0.922, 0.923" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="roughness" type="float" value="0" />
     <input name="complexIor" type="string" value="{'colorSpace': 'srgb-linear', 'n': [3.15207, 1.89133, 1.48736], 'k': [7.39342, 6.28678, 4.92701]}, {'colorSpace': 'acescg', 'n': [2.67412, 1.94336, 1.0947], 'k': [6.83926, 6.36293, 5.21239]}" />
     <input name="category" type="string" value="Metal" />

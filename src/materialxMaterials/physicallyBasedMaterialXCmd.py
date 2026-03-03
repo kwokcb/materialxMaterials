@@ -46,7 +46,6 @@ def physicallBasedMaterialXCmd():
     parser.add_argument('-rr', '--readRemapping', type=str, default='', help='Read remapping from PhysicallyBased to MaterialX. Default is empty')
     parser.add_argument('-nd', '--createNodeDef', type=bool, default=False, help='Create NodeDef for Physically Based Material inputs. Default is False')
     parser.add_argument('-cs', '--colorspace', type=str, default='', help='Write colors using this color space. Default is to use srgb-linear = lin_rec709. Options incllude: srgb-linear, acescg')
-    parser.add_argument('-wc', '--writeLinearColorspace', type=bool, default=False, help='Write out linear colorspace (lin_rec709) for srgb-linear color space. Default is False')
     opts = parser.parse_args()
 
     outputDir = 'PhysicallyBasedMaterialX'
@@ -89,8 +88,6 @@ def physicallBasedMaterialXCmd():
     # Create loader and get PhysicallyBasedMaterials
     # Uses default remapping.
     loader = pbmx.PhysicallyBasedMaterialLoader(mx, None, material_file)
-    if opts.writeLinearColorspace:
-        loader.set_write_linear_colorspace(True)
     if opts.colorspace:
         loader.set_desired_color_space(opts.colorspace)
 

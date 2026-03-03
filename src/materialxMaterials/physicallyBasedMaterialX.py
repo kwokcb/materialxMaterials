@@ -66,8 +66,6 @@ class PhysicallyBasedMaterialLoader:
         self.remapFile = 'PhysicallyBasedMaterialX/PhysicallyBasedToMtlxMappings.json'
         ### Color space to use for writing colors. Default is 'srgb-linear' which remaps to 'link_rec709'
         self.desired_color_space = 'srgb-linear'
-        ### Explicit write out default colorspace based on shading model. Default false.
-        self.write_default_colorspace = False
 
         if not mx_module:
             self.logger.critical(f'> {self._getMethodName()}: MaterialX module not specified.')
@@ -88,14 +86,6 @@ class PhysicallyBasedMaterialLoader:
 
         # Initialize Physically Based MaterialX definitions, materials, remappings, and translators
         self.initialize_definitions_and_materials()
-
-    def set_write_default_colorspace(self, write_default : bool):
-        '''
-        @brief Set the flag to write out default colorspace for a given shading model.
-        @param write_linear True to write out default colorspace, otherwise False.
-        @return None
-        '''
-        self.write_default_colorspace = write_default 
 
     def set_desired_color_space(self, color_space : str):
         '''
