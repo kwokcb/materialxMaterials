@@ -30,7 +30,6 @@ def physicallBasedMaterialXCmd():
     logger = logging.getLogger('PB_CMD')
     logging.basicConfig(level=logging.INFO)
 
-    # TODO: Add arguments for shading model, and output directory using argparse
     parser = argparse.ArgumentParser(description='Convert Physically Based Materials to MaterialX')
     parser.add_argument('-m', '--shadingModel', type=str, default='', help='Shading models to use for conversion. '
                         ' If not specified then all will be used. '
@@ -45,7 +44,12 @@ def physicallBasedMaterialXCmd():
     parser.add_argument('-wr', '--writeRemapping', type=bool, default=False, help='Write remapping from PhysicallyBased to MaterialX. Default is False')
     parser.add_argument('-rr', '--readRemapping', type=str, default='', help='Read remapping from PhysicallyBased to MaterialX. Default is empty')
     parser.add_argument('-nd', '--createNodeDef', type=bool, default=False, help='Create NodeDef for Physically Based Material inputs. Default is False')
-    parser.add_argument('-cs', '--colorspace', type=str, default='', help='Write colors using this color space. Default is to use srgb-linear = lin_rec709. Options incllude: srgb-linear, acescg')
+
+    # V2_TODO : Expose this argument when all materials support all colorspaces.
+    support_colorspaces = False
+    if support_colorspaces:
+        parser.add_argument('-cs', '--colorspace', type=str, default='', help='Write colors using this color space. Default is to use srgb-linear = lin_rec709. Options incllude: srgb-linear, acescg')
+    
     opts = parser.parse_args()
 
     outputDir = 'PhysicallyBasedMaterialX'
@@ -88,7 +92,7 @@ def physicallBasedMaterialXCmd():
     # Create loader and get PhysicallyBasedMaterials
     # Uses default remapping.
     loader = pbmx.PhysicallyBasedMaterialLoader(mx, None, material_file)
-    if opts.colorspace:
+    if support_colorspaces and opts.colorspace:
         loader.set_desired_color_space(opts.colorspace)
 
     readRemapping = opts.readRemapping
@@ -220,7 +224,7 @@ def physicallBasedMaterialXCmd():
                     logger.error(f'> Error validating MaterialX document for shading model: {shadingModel}')
                     logger.error(errors)
 
-                if opts.colorspace:
+                if support_colorspaces and opts.colorspace:
                     prefix = prefix + '_' + opts.colorspace
                 fileName = os.path.join(outputDir, f'PhysicallyBasedMaterialX_{prefix}.mtlx')
                 loader.writeMaterialXToFile(fileName)
@@ -238,7 +242,7 @@ def physicallBasedMaterialXCmd():
                             logger.error(f'> Error validating MaterialX document for material: {mat} shading model: {shadingModel}')
                             logger.error(errors)
 
-                        if opts.colorspace:
+                        if support_colorspaces and opts.colorspace:
                             prefix = prefix + '_' + opts.colorspace
                         fileName = os.path.join(outputDir, f'PB_{prefix}_{mat}.mtlx')
                         loader.writeMaterialXToFile(fileName)
