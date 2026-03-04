@@ -35,7 +35,7 @@ class PhysicallyBasedMaterialLoader:
         ### Material names
         self.materialNames : list[str]= []
         ### Root URI for the PhysicallyBased site
-        self.uri = 'https://api.physicallybased.info/materials'
+        self.uri = 'https://api.physicallybased.info/v2/materials'
         ### MaterialX document used for conversion
         self.doc = None
         ### MaterialX module
@@ -64,6 +64,8 @@ class PhysicallyBasedMaterialLoader:
         self.remapMap = {}
         ### Default remapping file (part of installed package)
         self.remapFile = 'PhysicallyBasedMaterialX/PhysicallyBasedToMtlxMappings.json'
+        ### Color space to use for writing colors. Default is 'srgb-linear' which remaps to 'link_rec709'
+        self.desired_color_space = 'srgb-linear'
 
         if not mx_module:
             self.logger.critical(f'> {self._getMethodName()}: MaterialX module not specified.')
@@ -84,6 +86,14 @@ class PhysicallyBasedMaterialLoader:
 
         # Initialize Physically Based MaterialX definitions, materials, remappings, and translators
         self.initialize_definitions_and_materials()
+
+    def set_desired_color_space(self, color_space : str):
+        '''
+        @brief Set the desired color space to use for writing colors. Default is 'srgb-linear' which remaps to 'link_rec709'.
+        @param color_space The desired color space to use for writing colors.
+        @return None
+        '''
+        self.desired_color_space = color_space
 
     def initialize_definitions_and_materials(self, materials_file : str = ''):
         '''
@@ -214,7 +224,7 @@ class PhysicallyBasedMaterialLoader:
     def initializeInputRemapping(self): 
         ''' 
         @brief Initialize remapping keys for different shading models.
-        See: https://api.physicallybased.info/operations/get-materials
+        See: https://api.physicallybased.info/v2/#tag/materials/GET/materials
         for more information on material properties.
 
         The JSON file PhysicallyBasedToMtlxMappings.json which is part of the package
@@ -385,7 +395,7 @@ class PhysicallyBasedMaterialLoader:
         response = requests.get(url, headers=headers)
 
         if response.status_code == HTTPStatus.OK:
-            self.materials = response.json()
+            self.materials = response.json()["data"]
             for mat in self.materials:
                 self.materialNames.append(mat['name'])
 
@@ -503,7 +513,7 @@ class PhysicallyBasedMaterialLoader:
                     #    uifolder = str(value)
                     #value = None
                     pass
-                elif key in ['sources', 'reference', 'tags', 'group']:
+                elif key in ['images', 'references', 'tags', 'group']:
                     value = ''
 
                 input = ndef.addInput(key, input_type)
@@ -540,7 +550,7 @@ class PhysicallyBasedMaterialLoader:
                     input.setAttribute("uiname", uiname)
 
                     uifolder = 'Base'
-                    if key in ['description', 'sources', 'reference', 'tags']:
+                    if key in ['description', 'images', 'references', 'tags']:
                         uifolder = 'Metadata'
                     input.setAttribute("uifolder", uifolder)
 
@@ -839,16 +849,40 @@ class PhysicallyBasedMaterialLoader:
                     new_name = doc_mat.createValidChildName(str(value))
                     shaderNode.setName(new_name)
 
+                colorspace = ''
+                input_doc = ''
+
+                if key in ['viscosity', 'density', 'thinFilmThickness']:
+                    # These are not defined as the same type fo all materials. TBD what to do.
+                    continue
+
                 input = shaderNode.addInputFromNodeDef(key)
                 if value is not None:
+
+                    if key == 'color':
+                        result = self.extract_color(value)
+                        color = result[0]
+                        colorspace = result[1]
+                        value = color
+
+                    elif key == 'specularColor':
+                        result = self.extract_specular_color(value, self.physlib_category)
+                        color = result[0]
+                        colorspace = result[1]                        
+                        input_doc = result[2]
+                        value = color
+
                     if isinstance(value, list):
-                        # Split list into array
+                        # TBD what to do if data does not match type....
                         value_list = [str(x) for x in value]
-                        # Check if values are numbers
-                        #is_number_list = all(isinstance(x, (int, float)) for x in value)
-                        #if is_number_list:
                         value = ', '.join(value_list)
+
                     input.setValueString(str(value))     
+
+                    if colorspace:
+                        input.setColorSpace(colorspace)
+                    if input_doc:
+                        input.setDocString(input_doc)
 
                     # Add doc string
                     doc_string = ''
@@ -981,6 +1015,113 @@ class PhysicallyBasedMaterialLoader:
             dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
             self.addComment(doc, f'  Generated on: {dt_string} ')  
 
+    def remap_color_space(self, pb_colorspace) -> str:
+        '''
+        @brief Remap a color space name use in Physically Based to the name used in MaterialX
+        @param pb_colorspace The color space name used in Physically Based
+        @return The remapped color space name used in MaterialX
+        '''
+        map = {}
+        
+        map['srgb-linear'] = 'lin_rec709' 
+        map['acescg'] = 'acescg'        
+
+        # Add more as needed
+        if pb_colorspace in map:
+            return map[pb_colorspace]
+        # Return nothing as we don't know how to map which is equivalent to linear.
+        return ''
+
+    def get_color_entry_index(self, color_block):
+        '''
+        @brief Find entry where colorSpace == colorspace.
+        If not found use the first entry
+            [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": []
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": []
+                }
+            ]        
+        '''
+        entry_index = 0
+        for entry in color_block:
+            if 'colorSpace' in entry:
+                #print('test color space:', entry['colorSpace'], 'desired:', self.desired_color_space)
+                if entry['colorSpace'] == self.desired_color_space:
+                    return entry_index
+            entry_index += 1
+
+        return 0
+
+    def extract_color(self, value) -> list:
+        '''
+        @brief Extract the color and colorspace from the value list based on the format entry.
+        @param value The value list to extract the color from
+        @return A list [color, colorspace] 
+        '''
+        color_entry_color = self.get_color_entry_index(value)
+        color = value[color_entry_color]["color"]
+        colorspace = value[color_entry_color]["colorSpace"] if "colorSpace" in value[color_entry_color] else ''
+        if colorspace:
+            colorspace = self.remap_color_space(colorspace)
+        #value = color
+        return [color, colorspace]        
+
+    def extract_specular_color(self, value, shaderCategory) -> list:
+        '''
+        @brief Extract the specular color from the value list based on the format entry. 
+        @detail Expected format is:
+        
+         "specularColor": [
+         {
+               "format": [ 
+                   "Gulbrandsen"
+               ],
+               "color": [ // per colorspace list
+                ]
+        @param value The value list to extract the specular color from
+        @return A list [color, colorspace, input_doc].
+        '''
+        # Assume specular color uses Gulbrandsen (standard surface, usdpreview, disney). For OpenPBR 
+        # and glTF PBR use the F82. Note: <artistic_ior> MTLX node usage entails using Gulbrandsen
+        # This could be scanned for but makes it too implementation dependent.
+        color_entry_specular = "Gulbrandsen" 
+        if shaderCategory in ['open_pbr_surface', 'gltf_pbr']:
+            color_entry_specular = "F82"
+
+        color = None
+        colorspace = ''
+        input_doc = ''
+
+        if len(value) > 0:
+            # Scan each value and find the one where "format" == color_entry_specular
+            for format_entry in value:
+                if "format" in format_entry and color_entry_specular in format_entry["format"]:
+                    # Pull of "color" entry for the desired colorspace for the format entry
+                    color_entry_color = self.get_color_entry_index(format_entry["color"])
+                    color_entry = format_entry["color"][color_entry_color]
+
+                    # Get the color and colorspace values
+                    color = color_entry["color"]
+                    colorspace = color_entry["colorSpace"] if "colorSpace" in color_entry else ''
+                    if colorspace:
+                        colorspace = self.remap_color_space(colorspace)
+                    # Add format as doc string for the input
+                    format_string = "Format: "
+                    for format in format_entry["format"]:
+                        format_string += format + " "
+                    input_doc = format_string.strip()
+                    
+                    value = color
+                    break
+            
+        return [color, colorspace, input_doc]
+
+
     def convertToMaterialX(self, materialNames = [], shaderCategory='standard_surface',
                            remapKeys = {}, shaderPreFix ='') -> mx.Document:
         '''
@@ -1036,6 +1177,7 @@ class PhysicallyBasedMaterialLoader:
             shaderNode.setAttribute('uiname', uiName)
 
             folderString = ''
+            docString = ''
             if 'category' in mat:
                 folderString = mat['category'][0]
             if 'group' in mat:
@@ -1045,12 +1187,13 @@ class PhysicallyBasedMaterialLoader:
             if len(folderString) > 0:
                 shaderNode.setAttribute("uifolder", folderString)
 
-            docString = mat['description']            
-            refString = mat['reference']
+            if 'description' in mat:
+                docString = mat['description']            
+            refString = mat['images'][1]["300"]
             if len(refString) > 0:
                 if len(docString) > 0:
                     docString += '. '
-                docString += 'Reference: ' + refString[0]
+                docString += 'Reference: ' + refString
             if len(docString) > 0:
                 shaderNode.setDocString(docString)
             
@@ -1066,24 +1209,48 @@ class PhysicallyBasedMaterialLoader:
             shaderInput.setAttribute(self.MTLX_NODE_NAME_ATTRIBUTE, shaderNode.getName())
             
             # Keys to skip.
-            skipKeys = ['name', "density", "category", "description", "sources", "tags", "reference"]
+            skipKeys = ['name', "density", "category", "description", "images", "tags", "references"]
 
             metallness = None
             roughness = None
             color = None
             transmission = None
+            
+            # Used to track "color" input's colorspace for possible
+            # remapping to transmission color if needed.
+            transmission_colorspace = ''
+
             for key, value in mat.items():
                 
+                colorspace = ''
+                input_doc = ''
+
                 if (key not in skipKeys):
                     # Keep track of these for possible transmission color remapping
                     if key == 'metalness':
                         metallness = value
-                    if key == 'roughness':
+                    elif key == 'roughness':
                         roughness = value
-                    if key == 'transmission':
+                    elif key == 'transmission':
                         transmission = value
-                    if key == 'color':
-                        color = value
+
+                    # Get color based on desired color space
+                    elif key == 'color':
+                        result = self.extract_color(value)
+                        color = result[0]
+                        colorspace = result[1]
+                        value = color
+                        transmission_colorspace = colorspace
+
+                    # Specular color format is chosen above based on shader category.
+                    # Again we only choose one format and one color space.
+                    #
+                    elif key == 'specularColor':
+                        result = self.extract_specular_color(value, shaderCategory)
+                        color = result[0]
+                        colorspace = result[1]
+                        input_doc = result[2]
+                        value = color
 
                     if key in remapKeys:
                         key = remapKeys[key]
@@ -1091,11 +1258,16 @@ class PhysicallyBasedMaterialLoader:
                     if input:
                         # Convert number vector to string
                         if isinstance(value, list):
-                            value = ','.join([str(x) for x in value])                        
+                            value = ', '.join([str(x) for x in value])                        
                         # Convert number to string:
                         elif isinstance(value, (int, float)):
                             value = str(value)
                         input.setValueString(value)
+                        if colorspace:
+                            #print('>>> Set color space for key:', key, 'to:', colorspace)
+                            input.setAttribute('colorspace', colorspace)
+                        if len(input_doc) > 0:
+                            input.setDocString(input_doc)
                     else:
                         self.logger.debug('Skip unsupported key: ' + key)
 
@@ -1106,9 +1278,11 @@ class PhysicallyBasedMaterialLoader:
                         key = remapKeys['transmission_color']
                         input = shaderNode.addInputFromNodeDef(key)
                         if input:
-                            self.logger.debug(f'Set transmission color {key}: {color}')
-                            value = ','.join([str(x) for x in color])                        
+                            value = ','.join([str(x) for x in color])
                             input.setValueString(value)
+                            if transmission_colorspace:
+                                input.setAttribute('colorspace', transmission_colorspace)
+                            self.logger.debug(f'Set transmission color {key}: {color}, colorspace: {transmission_colorspace}')
 
         return self.doc
     
