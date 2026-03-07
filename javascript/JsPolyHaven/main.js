@@ -19,7 +19,7 @@ const mainSpinner = document.getElementById('mainSpinner');
 const materialModal = new bootstrap.Modal(document.getElementById('materialModal'));
 
 // Target URL for the viewer page
-let targetURL = "https://kwokcb.github.io/MaterialXLab/javascript/shader_utilities/dist/index.html?viewerOnly=1";
+let targetURL = "https://kwokcb.github.io/MaterialXLab/javascript/shader_utilities/dist/index.html?viewerOnly=1&geom=Geometry/sphere.glb";
 // Set for local testing
 //targetURL = "http://localhost:8000/javascript/shader_utilities/dist/index.html?viewerOnly=1";
 
