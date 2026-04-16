@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['physicallybased_0',['PhysicallyBased',['../md__s_i_t_e___s_u_m_m_a_r_y.html#autotoc_md3',1,'']]],
+  ['poly_20haven_1',['&lt;span class=&quot;tt&quot;&gt;Poly Haven&lt;/span&gt;',['../md__s_i_t_e___s_u_m_m_a_r_y.html#autotoc_md4',1,'']]]
+];

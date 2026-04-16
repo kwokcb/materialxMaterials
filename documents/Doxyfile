@@ -1030,7 +1030,8 @@ INPUT                  = ../src/materialxMaterials \
                          ../javascript \
                          ../javascript/JsGPUOpenLoaderPackage \
                          ../javascript/JsPolyHaven \
-                         ../README.md
+                         ../README.md \
+                         ./SITE_SUMMARY.md
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
