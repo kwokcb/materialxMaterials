@@ -29,24 +29,24 @@ def ambientCgLoaderCmd():
     
     # Save download information for all materials or a specific one
     # based on asset identifier 
-    parser.add_argument('--saveMaterials', type=bool, default=None, 
+    parser.add_argument('-sms', '--saveMaterials', type=bool, default=None, 
                         help='Save material lists. Default is None.'
                         ' Has no effect if --loadMaterials is set')    
-    parser.add_argument('--saveMaterial', type=str, default='', 
+    parser.add_argument('-sm', '--saveMaterial', type=str, default='', 
                         help='Save material download information in JSON format')
 
     # Asset download options
-    parser.add_argument('--downloadMaterial', type=str, default='', 
+    parser.add_argument('-m', '--downloadMaterial', type=str, default='', 
                         help='Download zip package for a materials which match a given string. Default is a sample material')
-    parser.add_argument('--downloadmageFormat', type=str, default='PNG', 
+    parser.add_argument('-f', '--downloadmageFormat', type=str, default='PNG', 
                         help='Download image format. Valid values include PNG and JPEG. Default is PNG')
-    parser.add_argument('--downloadResolution', type=str, default='1', 
+    parser.add_argument('-r', '--downloadResolution', type=str, default='1', 
                         help='Download image resulution. Valid values include 1,2,4,8 to indicate 1K to 8K.')
 
     # Download full database iformation for material assets
-    parser.add_argument('--downloadDatabase', type=bool, default=None, 
+    parser.add_argument('-dd', '--downloadDatabase', type=bool, default=None, 
                         help='Download information database')
-    parser.add_argument('--saveDatabase', type=str, default='ambientCG_database.json', 
+    parser.add_argument('-sd', '--saveDatabase', type=str, default='ambientCG_database.json', 
                         help='Save information database')
 
     # Output options
@@ -87,7 +87,7 @@ def ambientCgLoaderCmd():
         if len(materialName) > 0:
             result = loader.findMaterial(materialName)
             if result:
-                fileName = loader.downloadMaterialAsset(materialName) #, opts.downloadmageFormat, opts.downloadResolution)
+                fileName = loader.downloadMaterialAsset(materialName, opts.downloadmageFormat, opts.downloadResolution)
                 if len(fileName) > 0:
                     loader.writeDownloadedMaterialToFile(outputFolder)
             else:

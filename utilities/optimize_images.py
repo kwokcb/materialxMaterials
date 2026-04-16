@@ -100,7 +100,7 @@ def main():
     print(f'Processing folder: {input_folder}')
     processed_count = 0
     for fname in os.listdir(input_folder):
-        if fname.lower().endswith(".png"):
+        if fname.lower().endswith(".jpg") or fname.lower().endswith(".jpeg") or fname.lower().endswith(".png"):
             print(f"Processing: {fname}")
             in_path = os.path.join(input_folder, fname)
             process_image(in_path, output_folder, resize_pct, quantize_k, do_resize, do_quantize, do_bitdepth, bitdepth, to_webp, webp_quality)
