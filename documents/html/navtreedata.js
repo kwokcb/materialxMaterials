@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "MaterialXMaterials", "index.html", [
+    [ "Supported MaterialX Sites", "md__s_i_t_e___s_u_m_m_a_r_y.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [
@@ -50,7 +51,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "____init_____8py_source.html",
-"classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a9234b66dabe72170e0a47f61722e9761"
+"classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
