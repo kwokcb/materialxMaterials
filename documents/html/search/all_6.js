@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fetch_5fmaterialx_5fassets_0',['fetch_materialx_assets',['../classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html#aabfef3ca674414d9d47dafe8acf6b816',1,'materialxMaterials::polyHavenLoader::PolyHavenLoader']]],
+  ['fetch_5fmaterialx_5fassets_0',['fetch_materialx_assets',['../classmaterialx_materials_1_1poly_haven_loader_1_1_poly_haven_loader.html#af8d88c1785ee3e265c267d0e5fd8d896',1,'materialxMaterials::polyHavenLoader::PolyHavenLoader']]],
   ['fetchmaterialfiles_1',['fetchMaterialFiles',['../class_js_poly_haven_a_p_i_loader.html#acd608bf9be05a42ab35cd0a816b48f0f',1,'JsPolyHavenAPILoader']]],
   ['fetchmaterials_2',['fetchMaterials',['../class_js_poly_haven_a_p_i_loader.html#a76e7a3605e6fe8d54c98f5e88e223b7d',1,'JsPolyHavenAPILoader']]],
   ['find_5fall_5fbxdf_3',['find_all_bxdf',['../classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a791647eb2a0bc1a2b6e01a14b31e44f1',1,'materialxMaterials::physicallyBasedMaterialX::PhysicallyBasedMaterialLoader']]],
