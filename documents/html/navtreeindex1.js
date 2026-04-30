@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a71bebfce2b7f831211d00d48eb948e75":[2,0,0,2,0,41],
+"classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7":[1,0,0,4,0,4],
 "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7":[2,0,0,2,0,4],
 "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a791647eb2a0bc1a2b6e01a14b31e44f1":[1,0,0,4,0,11],
 "classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a791647eb2a0bc1a2b6e01a14b31e44f1":[2,0,0,2,0,11],

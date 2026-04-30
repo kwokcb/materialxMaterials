@@ -333,13 +333,6 @@
                 "publisher": "WUXI SEATHER TECHNOLOGY CO., LTD.",
                 "url": "https://seathertechnology.com/anodizing-process-for-aluminum-benefits-applications/",
                 "accessed": "2026-02-07"
-            },
-            {
-                "title": "Anodized Aluminum Colors: Process, Performance & Design",
-                "author": "Hayes, C.",
-                "publisher": "TZR",
-                "url": "https://www.tzrmetal.com/anodized-aluminum-colors/",
-                "accessed": "2026-02-07"
             }
         ],
         "images": [
@@ -505,6 +498,94 @@
                 "format": "avif",
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/banana.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/banana.avif"
+            }
+        ]
+    },
+    {
+        "name": "Beer (Pale Lager)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.889,
+                    0.775,
+                    0.558
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.1149,
+                        0.2491,
+                        0.5779
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.003,
+                        0.005,
+                        0.006
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.917,
+                        0.956,
+                        0.982
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/beer-pale-lager.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/beer-pale-lager.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/beer-pale-lager.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/beer-pale-lager.avif"
             }
         ]
     },
@@ -702,14 +783,14 @@
         ]
     },
     {
-        "name": "Blood",
+        "name": "Blood (Deoxygenated)",
         "color": [
             {
                 "colorSpace": "srgb-linear",
                 "color": [
-                    0.644,
-                    0.003,
-                    0.005
+                    0.415,
+                    0.0,
+                    0.0
                 ]
             }
         ],
@@ -719,6 +800,38 @@
         "transmission": 1,
         "transmissionDepth": 0.08,
         "transmissionDispersion": 54,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        40.7,
+                        259.9,
+                        91.2
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        901.2,
+                        864.5,
+                        1220.8
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.9869,
+                        0.9886,
+                        0.9896
+                    ]
+                }
+            ]
+        },
         "density": [
             1060
         ],
@@ -731,7 +844,7 @@
         "category": [
             "Human"
         ],
-        "description": "The color of blood depends on its oxygen level. When there is plenty of oxygen, the color is a brighter red. The reason is because of a protein called hemoglobin, which carries the oxygen in your blood. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark.",
+        "description": "The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red.",
         "tags": [
             "liquid"
         ],
@@ -769,6 +882,17 @@
                 "author": "Polyanskiy, M. N.",
                 "url": "https://refractiveindex.info/?shelf=other&book=blood&page=Liu",
                 "accessed": "2025-07-22"
+            },
+            {
+                "title": "A Literature Review And Novel Theoretical Approach On The Optical Properties Of Whole Blood",
+                "author": "Bosschaart, N., Edelman, G. J., Aalders, M. C. G., van Leeuwen, T. G., & Faber, D. J.",
+                "url": "https://link.springer.com/article/10.1007/s10103-013-1446-7",
+                "publisher": "Lasers in Medical Science",
+                "volume": "29",
+                "issue": "2",
+                "pages": "453--479",
+                "year": "2014",
+                "doi": "https://doi.org/10.1007/s10103-013-1446-7"
             },
             {
                 "title": "Density of Blood",
@@ -821,13 +945,186 @@
         "images": [
             {
                 "format": "jpeg",
-                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood.jpeg",
-                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.jpeg"
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-deoxygenated.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood-deoxygenated.jpeg"
             },
             {
                 "format": "avif",
-                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood.avif",
-                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.avif"
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-deoxygenated.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood-deoxygenated.avif"
+            }
+        ]
+    },
+    {
+        "name": "Blood (Oxygenated)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.644,
+                    0.003,
+                    0.005
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.35,
+        "transmission": 1,
+        "transmissionDepth": 0.08,
+        "transmissionDispersion": 54,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        8.8,
+                        238.6,
+                        189.7
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        880.9,
+                        714.9,
+                        817.4
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.986,
+                        0.9874,
+                        0.989
+                    ]
+                }
+            ]
+        },
+        "density": [
+            1060
+        ],
+        "viscosity": [
+            2.35,
+            4,
+            2.78
+        ],
+        "surfaceTension": 56,
+        "category": [
+            "Human"
+        ],
+        "description": "The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red.",
+        "tags": [
+            "liquid"
+        ],
+        "references": [
+            {
+                "title": "Blood",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Blood&oldid=1264714220",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2025-01-11"
+            },
+            {
+                "title": "Blood Red",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Blood_red&oldid=1217643853",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2025-01-25"
+            },
+            {
+                "title": "Hemorheology",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Hemorheology&oldid=1229971521",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2025-01-25"
+            },
+            {
+                "title": "Surface tension",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Surface_tension&oldid=1304099149#Values",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2025-08-30"
+            },
+            {
+                "title": "Refractive index database",
+                "author": "Polyanskiy, M. N.",
+                "url": "https://refractiveindex.info/?shelf=other&book=blood&page=Liu",
+                "accessed": "2025-07-22"
+            },
+            {
+                "title": "A Literature Review And Novel Theoretical Approach On The Optical Properties Of Whole Blood",
+                "author": "Bosschaart, N., Edelman, G. J., Aalders, M. C. G., van Leeuwen, T. G., & Faber, D. J.",
+                "url": "https://link.springer.com/article/10.1007/s10103-013-1446-7",
+                "publisher": "Lasers in Medical Science",
+                "volume": "29",
+                "issue": "2",
+                "pages": "453--479",
+                "year": "2014",
+                "doi": "https://doi.org/10.1007/s10103-013-1446-7"
+            },
+            {
+                "title": "Density of Blood",
+                "author": "Shmukler, M., Elert, G. (Ed.)",
+                "url": "https://hypertextbook.com/facts/2004/MichaelShmukler.shtml",
+                "publisher": "The Physics Factbook",
+                "accessed": "2025-01-26"
+            },
+            {
+                "title": "A Simple Quantitative Bedside Test to Determine Methemoglobin",
+                "author": "Shihana, F., Dissanayake, D. M., Buckley, N. A. & Dawson, A. H.",
+                "url": "https://www.annemergmed.com/article/S0196-0644(09)01281-5/fulltext",
+                "publisher": "Annals of emergency medicine",
+                "volume": "55",
+                "issue": "2",
+                "pages": "184--189",
+                "year": "2009",
+                "doi": "https://doi.org/10.1016/j.annemergmed.2009.07.022"
+            },
+            {
+                "title": "Liquids - Dynamic Viscosities",
+                "url": "https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html",
+                "publisher": "The Engineering ToolBox",
+                "accessed": "2025-01-26"
+            },
+            {
+                "title": "Blood Rheology: Key Parameters, Impact on Blood Flow, Role in Sickle Cell Disease and Effects of Exercise",
+                "author": "Nader, E., Skinner, S., Romana, M., Fort, R., Lemonne, N., Guillot, N., ... & Connes, P.",
+                "url": "https://www.frontiersin.org/articles/10.3389/fphys.2019.01329/full",
+                "publisher": "Frontiers in physiology",
+                "volume": "10",
+                "pages": "1329",
+                "year": "2019",
+                "doi": "https://doi.org/10.3389/fphys.2019.01329"
+            },
+            {
+                "title": "Hybrido Viscosity Table",
+                "author": "RealFlow 10 Documentation",
+                "publisher": "Next Limit Technologies",
+                "url": "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
+                "accessed": "2025-01-26"
+            },
+            {
+                "title": "Viscosity of Whole Blood",
+                "url": "https://wiki.anton-paar.com/en/whole-blood/",
+                "publisher": "Anton Paar GmbH",
+                "accessed": "2025-01-26"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-oxygenated.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood-oxygenated.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-oxygenated.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood-oxygenated.avif"
             }
         ]
     },
@@ -1122,6 +1419,10 @@
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/brick.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brick.avif"
             }
+        ],
+        "tags": [
+            "acoustics",
+            "audio"
         ]
     },
     {
@@ -1206,6 +1507,73 @@
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/car-paint.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/car-paint.avif"
             }
+        ]
+    },
+    {
+        "name": "Cardboard",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.351,
+                    0.208,
+                    0.11
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.5,
+        "density": [
+            700
+        ],
+        "category": [
+            "Manmade"
+        ],
+        "description": "The material commonly referred to as \"cardboard\" is more specifically named \"corrugated fiberboard\".",
+        "references": [
+            {
+                "title": "Spectrophotometer Measurement",
+                "author": "Palmqvist, A.",
+                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/cardboard/",
+                "publisher": "Physically Based Database",
+                "accessed": "2026-03-07"
+            },
+            {
+                "title": "Cardboard",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Cardboard&oldid=1337511096",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2026-03-07"
+            },
+            {
+                "title": "Corrugated Fiberboard",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Corrugated_fiberboard&oldid=1333020802",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2026-03-07"
+            },
+            {
+                "title": "Solids - Densities ",
+                "url": "https://www.engineeringtoolbox.com/density-solids-d_1265.html",
+                "publisher": "The Engineering ToolBox",
+                "accessed": "2026-03-07"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cardboard.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cardboard.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cardboard.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cardboard.avif"
+            }
+        ],
+        "tags": [
+            "corrugated fiberboard"
         ]
     },
     {
@@ -1824,6 +2192,38 @@
         "transmission": 1,
         "transmissionDepth": 0.1,
         "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        47.9838,
+                        65.7512,
+                        88.4925
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        77.826,
+                        81.305,
+                        85.388
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.907,
+                        0.896,
+                        0.88
+                    ]
+                }
+            ]
+        },
         "density": [
             1020
         ],
@@ -1833,9 +2233,6 @@
         "category": [
             "Liquid"
         ],
-        "tags": [
-            "sss"
-        ],
         "references": [
             {
                 "title": "Photo Reference",
@@ -1843,6 +2240,17 @@
                 "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/coffee/",
                 "publisher": "Physically Based Database",
                 "accessed": "2025-01-26"
+            },
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
             },
             {
                 "title": "Espresso Coffee: The Science of Quality",
@@ -1863,6 +2271,94 @@
                 "format": "avif",
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/coffee.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/coffee.avif"
+            }
+        ]
+    },
+    {
+        "name": "Cola",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.358,
+                    0.186,
+                    0.085
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1.0,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        1.0014,
+                        1.6503,
+                        2.468
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.025,
+                        0.03,
+                        0.0
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.965,
+                        0.972,
+                        1.0
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cola.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cola.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cola.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cola.avif"
             }
         ]
     },
@@ -1940,6 +2436,10 @@
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/concrete.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/concrete.avif"
             }
+        ],
+        "tags": [
+            "acoustics",
+            "audio"
         ]
     },
     {
@@ -2181,6 +2681,140 @@
         ]
     },
     {
+        "name": "Cream",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.976,
+                    0.9,
+                    0.725
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.348,
+        "subsurfaceRadius": [
+            1.503,
+            0.466,
+            0.254
+        ],
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.002,
+                        0.028,
+                        0.163
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        73.8,
+                        54.7,
+                        31.5
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
+        "density": [
+            1010,
+            1020,
+            1012
+        ],
+        "viscosity": [
+            20
+        ],
+        "surfaceTension": 40,
+        "category": [
+            "Liquid"
+        ],
+        "tags": [
+            "sss"
+        ],
+        "references": [
+            {
+                "title": "A Practical Model for Subsurface Light Transport",
+                "author": "Jensen, H. W., Marschner, S. R., Levoy, M. & Hanrahan, P.",
+                "url": "https://dl.acm.org/doi/10.1145/383259.383319",
+                "publisher": "Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques",
+                "pages": "515",
+                "year": "2001",
+                "doi": "https://doi.org/10.1145/383259.383319"
+            },
+            {
+                "title": "On Reflectometric Measurement of a Refractive Index of Milk",
+                "author": "J\u00e4\u00e4skel\u00e4inen, A.J., Peiponen, K.-E. & R\u00e4ty, J. A.",
+                "url": "https://www.sciencedirect.com/science/article/pii/S0022030201744499",
+                "publisher": "Journal of Dairy Science",
+                "volume": "84",
+                "issue": "1",
+                "pages": "42",
+                "year": "2001",
+                "doi": "https://doi.org/10.3168/jds.S0022-0302(01)74449-9"
+            },
+            {
+                "title": "Dairy Science and Technology eBook",
+                "author": "Goff, D. H., Hill, A. & Ferrer, M. A.",
+                "url": "https://books.lib.uoguelph.ca/dairyscienceandtechnologyebook/chapter/physical-properties-of-milk/",
+                "publisher": "University of Guelph",
+                "accessed": "2025-02-02"
+            },
+            {
+                "title": "Density of Milk",
+                "author": "Jones, A. N., Elert, G. (Ed.)",
+                "url": "https://hypertextbook.com/facts/2002/AliciaNoelleJones.shtml",
+                "publisher": "The Physics Factbook",
+                "accessed": "2025-02-02"
+            },
+            {
+                "title": "Hybrido Viscosity Table",
+                "author": "RealFlow 10 Documentation",
+                "publisher": "Next Limit Technologies",
+                "url": "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
+                "accessed": "2025-01-26"
+            },
+            {
+                "title": "A Note on the Surface Tension of Homogenized Cream",
+                "author": "Webb, B. H.",
+                "url": "https://www.journalofdairyscience.org/article/S0022-0302(59)90760-X/pdf",
+                "publisher": "Journal of Dairy Science",
+                "volume": "16",
+                "issue": "4",
+                "pages": "369--373",
+                "year": "1933",
+                "doi": "https://doi.org/10.3168/jds.S0022-0302(33)93351-2"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cream.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cream.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cream.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cream.avif"
+            }
+        ]
+    },
+    {
         "name": "Diamond",
         "color": [
             {
@@ -2242,7 +2876,55 @@
         ]
     },
     {
-        "name": "Egg Shell",
+        "name": "Egg Shell (Brown)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.493,
+                    0.248,
+                    0.123
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0.9,
+        "ior": 1.5,
+        "category": [
+            "Organic"
+        ],
+        "description": "Brown hen egg from grocery store.",
+        "references": [
+            {
+                "title": "Spectrophotometer Measurement",
+                "author": "Palmqvist, A.",
+                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/egg-shell-brown/",
+                "publisher": "Physically Based Database",
+                "accessed": "2026-03-07"
+            },
+            {
+                "title": "Eggs as Food",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Eggs_as_food&oldid=1271500408#Shell",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2025-01-26"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-brown.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell-brown.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-brown.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell-brown.avif"
+            }
+        ]
+    },
+    {
+        "name": "Egg Shell (White)",
         "color": [
             {
                 "colorSpace": "srgb-linear",
@@ -2264,7 +2946,7 @@
             {
                 "title": "Spectrophotometer Measurement",
                 "author": "Palmqvist, A.",
-                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/egg-shell/",
+                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/egg-shell-white/",
                 "publisher": "Physically Based Database",
                 "accessed": "2025-01-26"
             },
@@ -2279,13 +2961,13 @@
         "images": [
             {
                 "format": "jpeg",
-                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell.jpeg",
-                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell.jpeg"
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-white.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell-white.jpeg"
             },
             {
                 "format": "avif",
-                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell.avif",
-                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell.avif"
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-white.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell-white.avif"
             }
         ]
     },
@@ -2677,14 +3359,14 @@
         ]
     },
     {
-        "name": "Glass",
+        "name": "Glass (Borosilicate)",
         "color": [
             {
                 "colorSpace": "srgb-linear",
                 "color": [
-                    1,
-                    1,
-                    1
+                    0.988,
+                    0.992,
+                    0.985
                 ]
             }
         ],
@@ -2692,9 +3374,48 @@
         "roughness": 0,
         "ior": 1.52,
         "transmission": 1,
+        "transmissionDepth": 50,
         "transmissionDispersion": 64,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.00237,
+                        0.0018,
+                        0.00301
+                    ]
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": [
+                        0.00221,
+                        0.00186,
+                        0.00286
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
         "density": [
-            2500
+            2230
         ],
         "acousticAbsorption": [
             0.04,
@@ -2704,6 +3425,138 @@
             0.02,
             0.02
         ],
+        "description": "Borosilicate glass has numerous advantages over regular soda-lime glass, including having a higher clarity (transparency). Borosilicate is generally slightly more expensive than soda-lime glass.",
+        "category": [
+            "Crystal"
+        ],
+        "references": [
+            {
+                "title": "Refractive index database",
+                "author": "Polyanskiy, M. N.",
+                "url": "https://refractiveindex.info/?shelf=3d&book=glass&page=BK7",
+                "accessed": "2026-03-30"
+            },
+            {
+                "title": "Crown glass (optics)",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Crown_glass_(optics)&oldid=1300145385",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2026-03-30"
+            },
+            {
+                "title": "Borosilicate glass",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Borosilicate_glass&oldid=1340784510",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2026-03-30"
+            },
+            {
+                "title": "Density",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Density&oldid=1271894167",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2025-01-26"
+            },
+            {
+                "title": "Absorption coefficients of common building materials and finishes",
+                "author": "JCW Acoustic Supplies",
+                "url": "https://www.acoustic-supplies.com/absorption-coefficient-chart/",
+                "accessed": "2025-01-26"
+            },
+            {
+                "title": "Absorption Coefficients",
+                "author": "Acoustic Materials & Technologies Ltd.",
+                "url": "https://www.acoustic.ua/st/web_absorption_data_eng.pdf",
+                "accessed": "2025-01-26"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-borosilicate.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass-borosilicate.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-borosilicate.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass-borosilicate.avif"
+            }
+        ],
+        "tags": [
+            "acoustics",
+            "audio",
+            "crown",
+            "bk7"
+        ]
+    },
+    {
+        "name": "Glass (Soda-lime)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.984,
+                    0.995,
+                    0.995
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.52,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 64,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.13941,
+                        0.04527,
+                        0.05334
+                    ]
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": [
+                        0.10337,
+                        0.05197,
+                        0.05422
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
+        "density": [
+            2520
+        ],
+        "acousticAbsorption": [
+            0.04,
+            0.04,
+            0.03,
+            0.03,
+            0.02,
+            0.02
+        ],
+        "description": "Soda-lime glass is the most prevelant type of glass made, and accounts for about 90% of manufactured glass. It's used for windowpanes and glass containers (bottles and jars) for beverages, food, and some commodity items.",
         "category": [
             "Crystal"
         ],
@@ -2744,14 +3597,18 @@
         "images": [
             {
                 "format": "jpeg",
-                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass.jpeg",
-                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass.jpeg"
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-soda-lime.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass-soda-lime.jpeg"
             },
             {
                 "format": "avif",
-                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass.avif",
-                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass.avif"
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-soda-lime.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass-soda-lime.avif"
             }
+        ],
+        "tags": [
+            "acoustics",
+            "audio"
         ]
     },
     {
@@ -3137,7 +3994,7 @@
             15000
         ],
         "category": [
-            "Liquid"
+            "Organic"
         ],
         "description": "Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose.",
         "references": [
@@ -3209,29 +4066,80 @@
             {
                 "colorSpace": "srgb-linear",
                 "color": [
-                    1,
-                    1,
-                    1
+                    0.973,
+                    0.995,
+                    1.0
                 ]
             }
         ],
         "metalness": 0,
-        "roughness": 0.5,
+        "roughness": 0,
         "ior": 1.3098,
         "transmission": 1,
+        "transmissionDepth": 100,
         "transmissionDispersion": 64.87,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.002075,
+                        0.000416,
+                        0.0
+                    ]
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": [
+                        0.001411,
+                        0.000526,
+                        5e-05
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
         "density": [
             917
         ],
+        "acousticAbsorption": [
+            0.008,
+            0.008,
+            0.013,
+            0.015,
+            0.02,
+            0.025
+        ],
         "category": [
             "Crystal"
+        ],
+        "tags": [
+            "acoustics",
+            "audio"
         ],
         "references": [
             {
                 "title": "Refractive index database",
                 "author": "Polyanskiy, M. N.",
-                "url": "https://refractiveindex.info/?shelf=3d&book=crystals&page=ice",
-                "accessed": "2025-01-26"
+                "url": "https://refractiveindex.info/?shelf=main&book=H2O&page=Warren-2008",
+                "accessed": "2026-04-21"
             },
             {
                 "title": "Refractive index database",
@@ -3244,6 +4152,12 @@
                 "author": "Wikipedia contributors",
                 "url": "https://en.wikipedia.org/w/index.php?title=Density&oldid=1271894167",
                 "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2025-01-26"
+            },
+            {
+                "title": "Absorption coefficients of common building materials and finishes",
+                "author": "JCW Acoustic Supplies",
+                "url": "https://www.acoustic-supplies.com/absorption-coefficient-chart/",
                 "accessed": "2025-01-26"
             },
             {
@@ -3555,6 +4469,446 @@
         ]
     },
     {
+        "name": "Juice (Apple)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.856,
+                    0.765,
+                    0.569
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.1296,
+                        0.2374,
+                        0.5218
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.026,
+                        0.031,
+                        0.041
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.947,
+                        0.949,
+                        0.945
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-apple.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-apple.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-apple.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-apple.avif"
+            }
+        ]
+    },
+    {
+        "name": "Juice (Cranberry)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.661,
+                    0.381,
+                    0.28
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.3944,
+                        0.9422,
+                        1.2426
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.02,
+                        0.024,
+                        0.03
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.947,
+                        0.951,
+                        0.974
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-cranberry.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-cranberry.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-cranberry.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-cranberry.avif"
+            }
+        ]
+    },
+    {
+        "name": "Juice (Grape)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.348,
+                    0.091,
+                    0.053
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        1.0404,
+                        2.3958,
+                        2.9325
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.014,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.961,
+                        1.0,
+                        1.0
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-grape.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-grape.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-grape.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-grape.avif"
+            }
+        ]
+    },
+    {
+        "name": "Juice (Ruby Grapefruit)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.09,
+                    0.034,
+                    0.016
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.8587,
+                        1.8314,
+                        2.5262
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        1.55,
+                        1.539,
+                        1.599
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.929,
+                        0.929,
+                        0.931
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-ruby-grapefruit.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-ruby-grapefruit.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-ruby-grapefruit.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-ruby-grapefruit.avif"
+            }
+        ]
+    },
+    {
+        "name": "Juice (White Grapefruit)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.973,
+                    0.966,
+                    0.93
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.138,
+                        0.1883,
+                        0.5678
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        5.05,
+                        5.274,
+                        7.528
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.54,
+                        0.545,
+                        0.565
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-white-grapefruit.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-white-grapefruit.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-white-grapefruit.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-white-grapefruit.avif"
+            }
+        ]
+    },
+    {
         "name": "Ketchup",
         "color": [
             {
@@ -3574,6 +4928,38 @@
             0.058,
             0.039
         ],
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.61,
+                        9.7,
+                        14.5
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        1.8,
+                        0.7,
+                        0.3
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
         "density": [
             1055,
             1165,
@@ -4280,14 +5666,56 @@
             0.557,
             0.395
         ],
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.021,
+                        0.041,
+                        0.071
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        21.9,
+                        26.2,
+                        30.0
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
         "density": [
             2700
+        ],
+        "acousticAbsorption": [
+            0.01,
+            0.01,
+            0.01,
+            0.01,
+            0.02,
+            0.02
         ],
         "category": [
             "Crystal"
         ],
         "tags": [
-            "sss"
+            "sss",
+            "acoustics",
+            "audio"
         ],
         "references": [
             {
@@ -4311,6 +5739,13 @@
                 "url": "https://www.engineeringtoolbox.com/mineral-density-d_1555.html",
                 "publisher": "The Engineering ToolBox",
                 "accessed": "2025-01-26"
+            },
+            {
+                "title": "Absorption (acoustics)",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Absorption_(acoustics)&oldid=1351206086",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2026-04-26"
             },
             {
                 "title": "Study of physical and mechanical properties for some of Eastern Desert dimension marble and granite utilized in building decoration",
@@ -4525,6 +5960,38 @@
             1.044,
             0.35
         ],
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.014,
+                        0.025,
+                        0.142
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        7.0,
+                        12.2,
+                        19.0
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
         "density": [
             1026,
             1035,
@@ -4583,7 +6050,7 @@
             {
                 "title": "Density of Milk",
                 "author": "Jones, A. N., Elert, G. (Ed.)",
-                "url": "https://hypertextbook.com/facts/2004/MichaelShmukler.shtml",
+                "url": "https://hypertextbook.com/facts/2002/AliciaNoelleJones.shtml",
                 "publisher": "The Physics Factbook",
                 "accessed": "2025-02-02"
             },
@@ -5047,6 +6514,46 @@
                 "format": "avif",
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/office-paper.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/office-paper.avif"
+            }
+        ]
+    },
+    {
+        "name": "Orange",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.615,
+                    0.205,
+                    0.01
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.5,
+        "category": [
+            "Organic"
+        ],
+        "references": [
+            {
+                "title": "Spectrophotometer Measurement",
+                "author": "Palmqvist, A.",
+                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/orange/",
+                "publisher": "Physically Based Database",
+                "accessed": "2026-03-07"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/orange.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/orange.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/orange.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/orange.avif"
             }
         ]
     },
@@ -5637,6 +7144,10 @@
         "roughness": 0,
         "ior": 1.6,
         "transmission": 1,
+        "density": [
+            1050,
+            1250
+        ],
         "category": [
             "Plastic"
         ],
@@ -5649,6 +7160,13 @@
             "polyurethane"
         ],
         "references": [
+            {
+                "title": "Polyurethane",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Polyurethane&oldid=1344512232",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2026-03-23"
+            },
             {
                 "title": "Automotive Paint",
                 "author": "Wikipedia contributors",
@@ -5918,6 +7436,13 @@
                 "author": "Jakubiec, J. A.",
                 "url": "https://spectraldb.com/measurements/00090/",
                 "accessed": "2026-02-02"
+            },
+            {
+                "title": "Spectrophotometer Measurement",
+                "author": "Palmqvist, A.",
+                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/polystyrene/",
+                "publisher": "Physically Based Database",
+                "accessed": "2026-03-07"
             },
             {
                 "title": "Polystyrene",
@@ -7473,7 +8998,9 @@
             "Crystal"
         ],
         "tags": [
-            "ice"
+            "ice",
+            "acoustics",
+            "audio"
         ],
         "references": [
             {
@@ -7923,6 +9450,80 @@
         ]
     },
     {
+        "name": "Terracotta",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.555,
+                    0.212,
+                    0.11
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0.8,
+        "ior": 1.5,
+        "density": [
+            1800,
+            2200,
+            2000
+        ],
+        "category": [
+            "Manmade"
+        ],
+        "tags": [
+            "clay"
+        ],
+        "references": [
+            {
+                "title": "Spectrophotometer Measurement",
+                "author": "Palmqvist, A.",
+                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/terracotta/",
+                "publisher": "Physically Based Database",
+                "accessed": "2026-03-08"
+            },
+            {
+                "title": "Terracotta",
+                "author": "Wikipedia contributors",
+                "url": "https://en.wikipedia.org/w/index.php?title=Terracotta&oldid=1334206131",
+                "publisher": "Wikipedia, The Free Encyclopedia",
+                "accessed": "2026-03-08"
+            },
+            {
+                "title": "Technical Specifications - Darwen Terracotta",
+                "url": "https://www.darwenterracotta.com/technical-specifications",
+                "publisher": "Darwen Terracotta Limited",
+                "accessed": "2026-03-08"
+            },
+            {
+                "title": "All About Terracotta - Aurora Pots",
+                "author": "Tran, A.",
+                "url": "https://aurorapots.com/blogs/news/all-about-terracotta",
+                "publisher": "Aurora Pots",
+                "accessed": "2026-03-08"
+            },
+            {
+                "title": "Technicial Data of Terracotta Facade Panels",
+                "url": "https://www.terracotta-panel.com/technicial-data-of-terracotta-facade-panels/",
+                "publisher": "LOPO Terracotta Facade Panels Manufacturer Corporation",
+                "accessed": "2026-03-08"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/terracotta.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/terracotta.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/terracotta.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/terracotta.avif"
+            }
+        ]
+    },
+    {
         "name": "Tire",
         "color": [
             {
@@ -7954,7 +9555,7 @@
                 "accessed": "2025-01-25"
             },
             {
-                "title": "Stainless Steel",
+                "title": "Tire",
                 "author": "Wikipedia contributors",
                 "url": "https://en.wikipedia.org/w/index.php?title=Tire&oldid=1274266449",
                 "publisher": "Wikipedia, The Free Encyclopedia",
@@ -8324,6 +9925,57 @@
         ]
     },
     {
+        "name": "Toilet Paper",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.83,
+                    0.835,
+                    0.784
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0.9,
+        "ior": 1.5,
+        "density": [
+            20,
+            70,
+            50
+        ],
+        "category": [
+            "Manmade"
+        ],
+        "references": [
+            {
+                "title": "Spectrophotometer Measurement",
+                "author": "Palmqvist, A.",
+                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/toilet-paper/",
+                "publisher": "Physically Based Database",
+                "accessed": "2026-03-08"
+            },
+            {
+                "title": "Why Is Paper Density Very Important for Tissue Paper?",
+                "url": "https://www.yuanhuapaper.com/why-is-paper-density-very-important-for-tissue-paper/",
+                "publisher": "YuanhuaPaper",
+                "accessed": "2026-03-08"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toilet-paper.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toilet-paper.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toilet-paper.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toilet-paper.avif"
+            }
+        ]
+    },
+    {
         "name": "Toner (Black)",
         "color": [
             {
@@ -8368,6 +10020,85 @@
                 "format": "avif",
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toner-black.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toner-black.avif"
+            }
+        ]
+    },
+    {
+        "name": "Toothpaste",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.9325,
+                    0.9369,
+                    0.9286
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.5,
+        "density": [
+            1300,
+            1500,
+            1400
+        ],
+        "viscosity": [
+            50000
+        ],
+        "category": [
+            "Manmade"
+        ],
+        "references": [
+            {
+                "title": "Spectrophotometer Measurement",
+                "author": "Palmqvist, A.",
+                "url": "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/toothpaste/",
+                "publisher": "Physically Based Database",
+                "accessed": "2026-03-08"
+            },
+            {
+                "title": "How Much Is A Pea-Sized Amount? A Study Of Dentifrice Dosing By Parents In Three Countries",
+                "author": "Creeth, J., Bosma, M. L., & Govier, K.",
+                "publisher": "International Dental Journal",
+                "doi": "https://doi.org/10.1111/idj.12076",
+                "year": "2013",
+                "issue": "0020-6539",
+                "volume": "63",
+                "pages": "25--30",
+                "url": "https://www.sciencedirect.com/science/article/pii/S0020653920337060",
+                "accessed": "2026-03-08"
+            },
+            {
+                "title": "Toothpaste Abrasion and Abrasive Particle Content: Correlating High-Resolution Profilometric Analysis with Relative Dentin Abrasivity (RDA)",
+                "author": "Enax, J., Meyer, F., Schulze zur Wiesche, E., Fuhrmann, I. C., & Fabritius, H.-O.",
+                "publisher": "Dentistry Journal",
+                "doi": "https://doi.org/10.3390/dj11030079",
+                "year": "2023",
+                "issue": "3",
+                "volume": "11",
+                "pages": "79",
+                "url": "https://www.mdpi.com/2304-6767/11/3/79",
+                "accessed": "2026-03-08"
+            },
+            {
+                "title": "Hybrido Viscosity Table",
+                "author": "RealFlow 10 Documentation",
+                "publisher": "Next Limit Technologies",
+                "url": "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
+                "accessed": "2026-03-08"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toothpaste.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toothpaste.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toothpaste.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toothpaste.avif"
             }
         ]
     },
@@ -8657,9 +10388,9 @@
             {
                 "colorSpace": "srgb-linear",
                 "color": [
-                    1,
-                    1,
-                    1
+                    0.969,
+                    0.996,
+                    0.997
                 ]
             }
         ],
@@ -8667,7 +10398,46 @@
         "roughness": 0,
         "ior": 1.3325,
         "transmission": 1,
+        "transmissionDepth": 100,
         "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.00297,
+                        0.00045,
+                        0.00017
+                    ]
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": [
+                        0.00198,
+                        0.00062,
+                        0.00026
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "colorSpace": "acescg",
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ]
+        },
         "density": [
             958,
             1000,
@@ -8688,13 +10458,19 @@
         "category": [
             "Liquid"
         ],
-        "description": "While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color.",
+        "description": "While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases beyond 50 cm. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color.",
         "references": [
             {
                 "title": "Refractive index database",
                 "author": "Polyanskiy, M. N.",
                 "url": "https://refractiveindex.info/?shelf=main&book=H2O&page=Daimon-21.5C",
                 "accessed": "2025-01-26"
+            },
+            {
+                "title": "Refractive index database",
+                "author": "Polyanskiy, M. N.",
+                "url": "https://refractiveindex.info/?shelf=main&book=H2O&page=Hale",
+                "accessed": "2026-04-21"
             },
             {
                 "title": "Density",
@@ -8790,6 +10566,10 @@
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/water.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/water.avif"
             }
+        ],
+        "tags": [
+            "acoustics",
+            "audio"
         ]
     },
     {
@@ -8835,6 +10615,182 @@
                 "format": "avif",
                 "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/whiteboard.avif",
                 "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/whiteboard.avif"
+            }
+        ]
+    },
+    {
+        "name": "Wine (Red)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.31,
+                    0.081,
+                    0.053
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        1.1632,
+                        2.5191,
+                        2.9434
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.008,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.974,
+                        1.0,
+                        1.0
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-red.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/wine-red.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-red.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/wine-red.avif"
+            }
+        ]
+    },
+    {
+        "name": "Wine (White)",
+        "color": [
+            {
+                "colorSpace": "srgb-linear",
+                "color": [
+                    0.896,
+                    0.885,
+                    0.783
+                ]
+            }
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDepth": 1,
+        "transmissionDispersion": 55.78,
+        "volumeCoefficients": {
+            "absorption": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.1078,
+                        0.1186,
+                        0.24
+                    ]
+                }
+            ],
+            "scattering": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.002,
+                        0.003,
+                        0.005
+                    ]
+                }
+            ],
+            "anisotropy": [
+                {
+                    "colorSpace": "srgb-linear",
+                    "color": [
+                        0.914,
+                        0.958,
+                        0.975
+                    ]
+                }
+            ]
+        },
+        "density": [
+            958,
+            1000,
+            1000
+        ],
+        "viscosity": [
+            1.002
+        ],
+        "surfaceTension": 72,
+        "category": [
+            "Liquid"
+        ],
+        "references": [
+            {
+                "title": "Acquiring Scattering Properties Of Participating Media By Dilution",
+                "author": "Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., & Jensen, H. W.",
+                "publisher": "Association for Computing Machinery",
+                "url": "https://dl.acm.org/doi/10.1145/1141911.1141986",
+                "volume": "25",
+                "issue": "3",
+                "pages": "1003--1012",
+                "year": "2006",
+                "doi": "https://doi.org/10.1145/1141911.1141986"
+            }
+        ],
+        "images": [
+            {
+                "format": "jpeg",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-white.jpeg",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/wine-white.jpeg"
+            },
+            {
+                "format": "avif",
+                "300": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-white.avif",
+                "600": "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/wine-white.avif"
             }
         ]
     },

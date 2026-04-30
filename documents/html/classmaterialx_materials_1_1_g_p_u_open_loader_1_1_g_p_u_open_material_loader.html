@@ -117,6 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a98ccf5069c74cb98e113137c4c11d572"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a package data to a file.  <br /></td></tr>
 <tr class="memitem:a61d16733c41af4d6fe1330d407f66cc3" id="r_a61d16733c41af4d6fe1330d407f66cc3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a61d16733c41af4d6fe1330d407f66cc3">convertPilImageToBase64</a> (self, image)</td></tr>
 <tr class="memdesc:a61d16733c41af4d6fe1330d407f66cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a PIL image to a Base64 string.  <br /></td></tr>
+<tr class="memitem:afb85edcc01ed63f8fd1b8a741cf89e75" id="r_afb85edcc01ed63f8fd1b8a741cf89e75"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afb85edcc01ed63f8fd1b8a741cf89e75">check_usdz_image_restrictions</a> (self, zip_data, pilImage)</td></tr>
+<tr class="memdesc:afb85edcc01ed63f8fd1b8a741cf89e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that the images in the zip file meet the USDZ format restrictions.  <br /></td></tr>
 <tr class="memitem:a9868e4fb69f84012a19957c624e0c1dc" id="r_a9868e4fb69f84012a19957c624e0c1dc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9868e4fb69f84012a19957c624e0c1dc">extractPackageData</a> (self, data, pilImage)</td></tr>
 <tr class="memdesc:a9868e4fb69f84012a19957c624e0c1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the package data from a zip file.  <br /></td></tr>
 <tr class="memitem:a78bd0830e40c7ed0f19a3f6792a79b49" id="r_a78bd0830e40c7ed0f19a3f6792a79b49"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a78bd0830e40c7ed0f19a3f6792a79b49">downloadPackage</a> (self, listNumber, materialNumber, packageId=0)</td></tr>
@@ -227,6 +229,85 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="afb85edcc01ed63f8fd1b8a741cf89e75" name="afb85edcc01ed63f8fd1b8a741cf89e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb85edcc01ed63f8fd1b8a741cf89e75">&#9670;&#160;</a></span>check_usdz_image_restrictions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader.check_usdz_image_restrictions </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>zip_data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>pilImage</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check that the images in the zip file meet the USDZ format restrictions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">zip_data</td><td>The binary data of the zip file. </td></tr>
+    <tr><td class="paramname">pilImage</td><td>The PIL image module. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: A list of issues found with the images. If the list is empty, then no issues were found. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00129">129</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>    <span class="keyword">def </span>check_usdz_image_restrictions(self, zip_data, pilImage):</div>
+<div class="line"><span class="lineno">  130</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  131</span><span class="stringliteral">        Check that the images in the zip file meet the USDZ format restrictions.</span></div>
+<div class="line"><span class="lineno">  132</span><span class="stringliteral">        @param zip_data: The binary data of the zip file.</span></div>
+<div class="line"><span class="lineno">  133</span><span class="stringliteral">        @param pilImage: The PIL image module.  </span></div>
+<div class="line"><span class="lineno">  134</span><span class="stringliteral">        @return: A list of issues found with the images. If the list is empty, then no issues were found.</span></div>
+<div class="line"><span class="lineno">  135</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  136</span>        ZIP_COMPRESSION_NAMES = {</div>
+<div class="line"><span class="lineno">  137</span>            zipfile.ZIP_STORED: <span class="stringliteral">&quot;ZIP_STORED&quot;</span>,</div>
+<div class="line"><span class="lineno">  138</span>            zipfile.ZIP_DEFLATED: <span class="stringliteral">&quot;ZIP_DEFLATED&quot;</span>,</div>
+<div class="line"><span class="lineno">  139</span>            zipfile.ZIP_BZIP2: <span class="stringliteral">&quot;ZIP_BZIP2&quot;</span>,</div>
+<div class="line"><span class="lineno">  140</span>            zipfile.ZIP_LZMA: <span class="stringliteral">&quot;ZIP_LZMA&quot;</span></div>
+<div class="line"><span class="lineno">  141</span>        }        </div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>        issues = []</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keyword">with</span> zipfile.ZipFile(io.BytesIO(zip_data), <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> zf:</div>
+<div class="line"><span class="lineno">  145</span>            <span class="keywordflow">for</span> info <span class="keywordflow">in</span> zf.infolist():</div>
+<div class="line"><span class="lineno">  146</span>                <span class="comment"># 1. Check uncompressed</span></div>
+<div class="line"><span class="lineno">  147</span>                <span class="keywordflow">if</span> info.compress_type != zipfile.ZIP_STORED:</div>
+<div class="line"><span class="lineno">  148</span>                    compression_name = ZIP_COMPRESSION_NAMES.get(info.compress_type, str(info.compress_type))                    </div>
+<div class="line"><span class="lineno">  149</span>                    issues.append(f<span class="stringliteral">&quot;{info.filename} is not uncompressed (ZIP_STORED). {compression_name} found.&quot;</span>)</div>
+<div class="line"><span class="lineno">  150</span>                <span class="comment"># 2. Check image format</span></div>
+<div class="line"><span class="lineno">  151</span>                <span class="keywordflow">if</span> info.filename.lower().endswith((<span class="stringliteral">&#39;.png&#39;</span>, <span class="stringliteral">&#39;.jpg&#39;</span>, <span class="stringliteral">&#39;.jpeg&#39;</span>)):</div>
+<div class="line"><span class="lineno">  152</span>                    img_data = zf.read(info.filename)</div>
+<div class="line"><span class="lineno">  153</span>                    <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno">  154</span>                        img = pilImage.open(io.BytesIO(img_data))</div>
+<div class="line"><span class="lineno">  155</span>                        <span class="keywordflow">if</span> img.format <span class="keywordflow">not</span> <span class="keywordflow">in</span> (<span class="stringliteral">&#39;PNG&#39;</span>, <span class="stringliteral">&#39;JPEG&#39;</span>):</div>
+<div class="line"><span class="lineno">  156</span>                            issues.append(f<span class="stringliteral">&quot;{info.filename} is not PNG or JPEG&quot;</span>)</div>
+<div class="line"><span class="lineno">  157</span>                        <span class="keywordflow">if</span> img.format == <span class="stringliteral">&#39;PNG&#39;</span>:</div>
+<div class="line"><span class="lineno">  158</span>                            <span class="keywordflow">if</span> img.info.get(<span class="stringliteral">&#39;interlace&#39;</span>, 0) != 0:</div>
+<div class="line"><span class="lineno">  159</span>                                issues.append(f<span class="stringliteral">&quot;{info.filename} is interlaced PNG (not allowed)&quot;</span>)</div>
+<div class="line"><span class="lineno">  160</span>                            <span class="keywordflow">if</span> img.mode <span class="keywordflow">not</span> <span class="keywordflow">in</span> (<span class="stringliteral">&#39;L&#39;</span>, <span class="stringliteral">&#39;LA&#39;</span>, <span class="stringliteral">&#39;RGB&#39;</span>, <span class="stringliteral">&#39;RGBA&#39;</span>):</div>
+<div class="line"><span class="lineno">  161</span>                                issues.append(f<span class="stringliteral">&quot;{info.filename} PNG mode {img.mode} not allowed&quot;</span>)</div>
+<div class="line"><span class="lineno">  162</span>                        <span class="keywordflow">if</span> img.format == <span class="stringliteral">&#39;JPEG&#39;</span>:</div>
+<div class="line"><span class="lineno">  163</span>                            <span class="keywordflow">if</span> img.info.get(<span class="stringliteral">&#39;progressive&#39;</span>, 0) != 0:</div>
+<div class="line"><span class="lineno">  164</span>                                issues.append(f<span class="stringliteral">&quot;{info.filename} is progressive JPEG (not allowed)&quot;</span>)</div>
+<div class="line"><span class="lineno">  165</span>                    <span class="keywordflow">except</span> Exception <span class="keyword">as</span> e:</div>
+<div class="line"><span class="lineno">  166</span>                        issues.append(f<span class="stringliteral">&quot;{info.filename} could not be opened as image: {e}&quot;</span>)</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">return</span> issues</div>
+<div class="line"><span class="lineno">  168</span>    </div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="aaa5746f16c918be2caa622a1da374a6c" name="aaa5746f16c918be2caa622a1da374a6c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa5746f16c918be2caa622a1da374a6c">&#9670;&#160;</a></span>computeMaterialPreviews()</h2>
 
@@ -245,41 +326,41 @@ Public Attributes</h2></td></tr>
 <p>Get the material preview URLs for the materials loaded from the GPUOpen material database. </p>
 <dl class="section return"><dt>Returns</dt><dd>list of items of the form: { 'title': material_title, 'preview_url': url } If no materials or renders are loaded, then an empty list is returned. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00307">307</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  307</span>    <span class="keyword">def </span>computeMaterialPreviews(self) -&gt; list:</div>
-<div class="line"><span class="lineno">  308</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  309</span><span class="stringliteral">        @brief Get the material preview URLs for the materials loaded from the GPUOpen material database.</span></div>
-<div class="line"><span class="lineno">  310</span><span class="stringliteral">        @return list of items of the form: { &#39;title&#39;: material_title, &#39;preview_url&#39;: url }</span></div>
-<div class="line"><span class="lineno">  311</span><span class="stringliteral">        If no materials or renders are loaded, then an empty list is returned.</span></div>
-<div class="line"><span class="lineno">  312</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  313</span>        self.materialPreviews = []</div>
-<div class="line"><span class="lineno">  314</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  315</span>            <span class="keywordflow">return</span> []</div>
-<div class="line"><span class="lineno">  316</span>        <span class="keywordflow">if</span> (self.renders == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  317</span>            <span class="keywordflow">return</span> []</div>
-<div class="line"><span class="lineno">  318</span>        render_urls = self.renders[<span class="stringliteral">&quot;renders&quot;</span>]</div>
-<div class="line"><span class="lineno">  319</span>        </div>
-<div class="line"><span class="lineno">  320</span>        <span class="keywordflow">for</span> materialList <span class="keywordflow">in</span> self.materials:</div>
-<div class="line"><span class="lineno">  321</span>            <span class="keywordflow">for</span> material <span class="keywordflow">in</span> materialList[<span class="stringliteral">&#39;results&#39;</span>]:</div>
-<div class="line"><span class="lineno">  322</span>                renders_order_list =  material[<span class="stringliteral">&#39;renders_order&#39;</span>]</div>
-<div class="line"><span class="lineno">  323</span>                material_title = material[<span class="stringliteral">&#39;title&#39;</span>]</div>
-<div class="line"><span class="lineno">  324</span> </div>
-<div class="line"><span class="lineno">  325</span>                <span class="keywordflow">if</span> len(renders_order_list) &gt; 0:</div>
-<div class="line"><span class="lineno">  326</span>                    <span class="comment">#print(&#39;renders_order_list:&#39;, renders_order_list)</span></div>
-<div class="line"><span class="lineno">  327</span>                    render_lookup = renders_order_list[0]</div>
-<div class="line"><span class="lineno">  328</span>                    <span class="comment"># Look for item in &quot;renders&quot; list with &quot;id&quot; == render_lookup</span></div>
-<div class="line"><span class="lineno">  329</span>                    <span class="keywordflow">for</span> render <span class="keywordflow">in</span> render_urls:</div>
-<div class="line"><span class="lineno">  330</span>                        <span class="comment">#print(&#39;render id:&#39;, render[&#39;id&#39;], &#39;render_lookup:&#39;, render_lookup   )</span></div>
-<div class="line"><span class="lineno">  331</span>                        <span class="keywordflow">if</span> render[<span class="stringliteral">&#39;id&#39;</span>] == render_lookup:</div>
-<div class="line"><span class="lineno">  332</span>                            url = render[<span class="stringliteral">&#39;thumbnail_url&#39;</span>]</div>
-<div class="line"><span class="lineno">  333</span>                            item = { <span class="stringliteral">&#39;title&#39;</span>: material_title, <span class="stringliteral">&#39;preview_url&#39;</span>: url }</div>
-<div class="line"><span class="lineno">  334</span>                            self.materialPreviews.append(item)</div>
-<div class="line"><span class="lineno">  335</span>                            <span class="comment">#print(f&#39;Found render for material: {item}&#39;)</span></div>
-<div class="line"><span class="lineno">  336</span>                            <span class="keywordflow">break</span></div>
-<div class="line"><span class="lineno">  337</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  338</span>                    self.logger.info(f<span class="stringliteral">&#39;No renderings specified for material: {material_title}&#39;</span>)</div>
-<div class="line"><span class="lineno">  339</span>        <span class="keywordflow">return</span> self.materialPreviews</div>
-<div class="line"><span class="lineno">  340</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00347">347</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>    <span class="keyword">def </span>computeMaterialPreviews(self) -&gt; list:</div>
+<div class="line"><span class="lineno">  348</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  349</span><span class="stringliteral">        @brief Get the material preview URLs for the materials loaded from the GPUOpen material database.</span></div>
+<div class="line"><span class="lineno">  350</span><span class="stringliteral">        @return list of items of the form: { &#39;title&#39;: material_title, &#39;preview_url&#39;: url }</span></div>
+<div class="line"><span class="lineno">  351</span><span class="stringliteral">        If no materials or renders are loaded, then an empty list is returned.</span></div>
+<div class="line"><span class="lineno">  352</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  353</span>        self.materialPreviews = []</div>
+<div class="line"><span class="lineno">  354</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  355</span>            <span class="keywordflow">return</span> []</div>
+<div class="line"><span class="lineno">  356</span>        <span class="keywordflow">if</span> (self.renders == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  357</span>            <span class="keywordflow">return</span> []</div>
+<div class="line"><span class="lineno">  358</span>        render_urls = self.renders[<span class="stringliteral">&quot;renders&quot;</span>]</div>
+<div class="line"><span class="lineno">  359</span>        </div>
+<div class="line"><span class="lineno">  360</span>        <span class="keywordflow">for</span> materialList <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">  361</span>            <span class="keywordflow">for</span> material <span class="keywordflow">in</span> materialList[<span class="stringliteral">&#39;results&#39;</span>]:</div>
+<div class="line"><span class="lineno">  362</span>                renders_order_list =  material[<span class="stringliteral">&#39;renders_order&#39;</span>]</div>
+<div class="line"><span class="lineno">  363</span>                material_title = material[<span class="stringliteral">&#39;title&#39;</span>]</div>
+<div class="line"><span class="lineno">  364</span> </div>
+<div class="line"><span class="lineno">  365</span>                <span class="keywordflow">if</span> len(renders_order_list) &gt; 0:</div>
+<div class="line"><span class="lineno">  366</span>                    <span class="comment">#print(&#39;renders_order_list:&#39;, renders_order_list)</span></div>
+<div class="line"><span class="lineno">  367</span>                    render_lookup = renders_order_list[0]</div>
+<div class="line"><span class="lineno">  368</span>                    <span class="comment"># Look for item in &quot;renders&quot; list with &quot;id&quot; == render_lookup</span></div>
+<div class="line"><span class="lineno">  369</span>                    <span class="keywordflow">for</span> render <span class="keywordflow">in</span> render_urls:</div>
+<div class="line"><span class="lineno">  370</span>                        <span class="comment">#print(&#39;render id:&#39;, render[&#39;id&#39;], &#39;render_lookup:&#39;, render_lookup   )</span></div>
+<div class="line"><span class="lineno">  371</span>                        <span class="keywordflow">if</span> render[<span class="stringliteral">&#39;id&#39;</span>] == render_lookup:</div>
+<div class="line"><span class="lineno">  372</span>                            url = render[<span class="stringliteral">&#39;thumbnail_url&#39;</span>]</div>
+<div class="line"><span class="lineno">  373</span>                            item = { <span class="stringliteral">&#39;title&#39;</span>: material_title, <span class="stringliteral">&#39;preview_url&#39;</span>: url }</div>
+<div class="line"><span class="lineno">  374</span>                            self.materialPreviews.append(item)</div>
+<div class="line"><span class="lineno">  375</span>                            <span class="comment">#print(f&#39;Found render for material: {item}&#39;)</span></div>
+<div class="line"><span class="lineno">  376</span>                            <span class="keywordflow">break</span></div>
+<div class="line"><span class="lineno">  377</span>                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  378</span>                    self.logger.info(f<span class="stringliteral">&#39;No renderings specified for material: {material_title}&#39;</span>)</div>
+<div class="line"><span class="lineno">  379</span>        <span class="keywordflow">return</span> self.materialPreviews</div>
+<div class="line"><span class="lineno">  380</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -380,63 +461,63 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00164">164</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>    <span class="keyword">def </span>downloadPackage(self, listNumber, materialNumber, packageId=0):</div>
-<div class="line"><span class="lineno">  165</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  166</span><span class="stringliteral">        Download a package for a given material from the GPUOpen material database.</span></div>
-<div class="line"><span class="lineno">  167</span><span class="stringliteral">        @param listNumber: The list number of the material to download.</span></div>
-<div class="line"><span class="lineno">  168</span><span class="stringliteral">        @param materialNumber: The material number to download.</span></div>
-<div class="line"><span class="lineno">  169</span><span class="stringliteral">        @param packageId: The package ID to download. </span></div>
-<div class="line"><span class="lineno">  170</span><span class="stringliteral">            Packages are numbered starting at 0. Default is 0.</span></div>
-<div class="line"><span class="lineno">  171</span><span class="stringliteral">        with index 0 containing the smallest package (smallest resolution referenced textures).</span></div>
-<div class="line"><span class="lineno">  172</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">if</span> self.materials == <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.materials) == 0:</div>
-<div class="line"><span class="lineno">  174</span>            self.logger.info(<span class="stringliteral">&#39;No material loaded.&#39;</span>)</div>
-<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
-<div class="line"><span class="lineno">  176</span> </div>
-<div class="line"><span class="lineno">  177</span>        json_data = self.materials[listNumber]</div>
-<div class="line"><span class="lineno">  178</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> json_data:</div>
-<div class="line"><span class="lineno">  179</span>            self.logger.info(f<span class="stringliteral">&#39;No material for list {listNumber}.&#39;</span>)</div>
-<div class="line"><span class="lineno">  180</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
-<div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>        jsonResults = <span class="keywordtype">None</span> </div>
-<div class="line"><span class="lineno">  183</span>        jsonResult = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">if</span> <span class="stringliteral">&quot;results&quot;</span> <span class="keywordflow">in</span> json_data:</div>
-<div class="line"><span class="lineno">  185</span>            jsonResults = json_data[<span class="stringliteral">&quot;results&quot;</span>]</div>
-<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">if</span> len(jsonResults) &lt;= materialNumber:</div>
-<div class="line"><span class="lineno">  187</span>                self.logger.info(f<span class="stringliteral">&#39;No material for index {materialNumber}.&#39;</span>)</div>
-<div class="line"><span class="lineno">  188</span>                <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
-<div class="line"><span class="lineno">  189</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  190</span>                jsonResult = jsonResults[materialNumber]</div>
-<div class="line"><span class="lineno">  191</span>            </div>
-<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> jsonResult:</div>
-<div class="line"><span class="lineno">  193</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
-<div class="line"><span class="lineno">  194</span>        </div>
-<div class="line"><span class="lineno">  195</span>        <span class="comment"># Get the package ID</span></div>
-<div class="line"><span class="lineno">  196</span>        jsonPackages = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  197</span>        <span class="keywordflow">if</span> <span class="stringliteral">&quot;packages&quot;</span> <span class="keywordflow">in</span> jsonResult:</div>
-<div class="line"><span class="lineno">  198</span>            jsonPackages = jsonResult[<span class="stringliteral">&quot;packages&quot;</span>]</div>
-<div class="line"><span class="lineno">  199</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> jsonPackages:</div>
-<div class="line"><span class="lineno">  200</span>            self.logger.info(f<span class="stringliteral">&#39;No packages for material {materialNumber}.&#39;</span>)</div>
-<div class="line"><span class="lineno">  201</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
-<div class="line"><span class="lineno">  202</span> </div>
-<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">if</span> len(jsonPackages) &lt;= packageId:</div>
-<div class="line"><span class="lineno">  204</span>            self.logger.info(f<span class="stringliteral">&#39;No package for index {packageId}.&#39;</span>)</div>
-<div class="line"><span class="lineno">  205</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
-<div class="line"><span class="lineno">  206</span>        package_id = jsonPackages[packageId]</div>
-<div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> package_id:</div>
-<div class="line"><span class="lineno">  209</span>            self.logger.info(f<span class="stringliteral">&#39;No package for index {packageId}.&#39;</span>)</div>
-<div class="line"><span class="lineno">  210</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
-<div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>        url = f<span class="stringliteral">&quot;{self.package_url}/{package_id}/download&quot;</span></div>
-<div class="line"><span class="lineno">  213</span>        data = requests.get(url).content</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>        title = jsonResult[<span class="stringliteral">&quot;title&quot;</span>]</div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00204">204</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>    <span class="keyword">def </span>downloadPackage(self, listNumber, materialNumber, packageId=0):</div>
+<div class="line"><span class="lineno">  205</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  206</span><span class="stringliteral">        Download a package for a given material from the GPUOpen material database.</span></div>
+<div class="line"><span class="lineno">  207</span><span class="stringliteral">        @param listNumber: The list number of the material to download.</span></div>
+<div class="line"><span class="lineno">  208</span><span class="stringliteral">        @param materialNumber: The material number to download.</span></div>
+<div class="line"><span class="lineno">  209</span><span class="stringliteral">        @param packageId: The package ID to download. </span></div>
+<div class="line"><span class="lineno">  210</span><span class="stringliteral">            Packages are numbered starting at 0. Default is 0.</span></div>
+<div class="line"><span class="lineno">  211</span><span class="stringliteral">        with index 0 containing the smallest package (smallest resolution referenced textures).</span></div>
+<div class="line"><span class="lineno">  212</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  213</span>        <span class="keywordflow">if</span> self.materials == <span class="keywordtype">None</span> <span class="keywordflow">or</span> len(self.materials) == 0:</div>
+<div class="line"><span class="lineno">  214</span>            self.logger.info(<span class="stringliteral">&#39;No material loaded.&#39;</span>)</div>
+<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
 <div class="line"><span class="lineno">  216</span> </div>
-<div class="line"><span class="lineno">  217</span>        preview_url = self.getMaterialPreviewURL(title)</div>
-<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">return</span> [data, title, preview_url]</div>
-<div class="line"><span class="lineno">  219</span>    </div>
+<div class="line"><span class="lineno">  217</span>        json_data = self.materials[listNumber]</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> json_data:</div>
+<div class="line"><span class="lineno">  219</span>            self.logger.info(f<span class="stringliteral">&#39;No material for list {listNumber}.&#39;</span>)</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>        jsonResults = <span class="keywordtype">None</span> </div>
+<div class="line"><span class="lineno">  223</span>        jsonResult = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  224</span>        <span class="keywordflow">if</span> <span class="stringliteral">&quot;results&quot;</span> <span class="keywordflow">in</span> json_data:</div>
+<div class="line"><span class="lineno">  225</span>            jsonResults = json_data[<span class="stringliteral">&quot;results&quot;</span>]</div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">if</span> len(jsonResults) &lt;= materialNumber:</div>
+<div class="line"><span class="lineno">  227</span>                self.logger.info(f<span class="stringliteral">&#39;No material for index {materialNumber}.&#39;</span>)</div>
+<div class="line"><span class="lineno">  228</span>                <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
+<div class="line"><span class="lineno">  229</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  230</span>                jsonResult = jsonResults[materialNumber]</div>
+<div class="line"><span class="lineno">  231</span>            </div>
+<div class="line"><span class="lineno">  232</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> jsonResult:</div>
+<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
+<div class="line"><span class="lineno">  234</span>        </div>
+<div class="line"><span class="lineno">  235</span>        <span class="comment"># Get the package ID</span></div>
+<div class="line"><span class="lineno">  236</span>        jsonPackages = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  237</span>        <span class="keywordflow">if</span> <span class="stringliteral">&quot;packages&quot;</span> <span class="keywordflow">in</span> jsonResult:</div>
+<div class="line"><span class="lineno">  238</span>            jsonPackages = jsonResult[<span class="stringliteral">&quot;packages&quot;</span>]</div>
+<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> jsonPackages:</div>
+<div class="line"><span class="lineno">  240</span>            self.logger.info(f<span class="stringliteral">&#39;No packages for material {materialNumber}.&#39;</span>)</div>
+<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>        <span class="keywordflow">if</span> len(jsonPackages) &lt;= packageId:</div>
+<div class="line"><span class="lineno">  244</span>            self.logger.info(f<span class="stringliteral">&#39;No package for index {packageId}.&#39;</span>)</div>
+<div class="line"><span class="lineno">  245</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
+<div class="line"><span class="lineno">  246</span>        package_id = jsonPackages[packageId]</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> package_id:</div>
+<div class="line"><span class="lineno">  249</span>            self.logger.info(f<span class="stringliteral">&#39;No package for index {packageId}.&#39;</span>)</div>
+<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">return</span> [<span class="keywordtype">None</span>, <span class="keywordtype">None</span>]</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>        url = f<span class="stringliteral">&quot;{self.package_url}/{package_id}/download&quot;</span></div>
+<div class="line"><span class="lineno">  253</span>        data = requests.get(url).content</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>        title = jsonResult[<span class="stringliteral">&quot;title&quot;</span>]</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>        preview_url = self.getMaterialPreviewURL(title)</div>
+<div class="line"><span class="lineno">  258</span>        <span class="keywordflow">return</span> [data, title, preview_url]</div>
+<div class="line"><span class="lineno">  259</span>    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -480,28 +561,28 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>: A list of downloaded packages of the form: </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00220">220</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>    <span class="keyword">def </span>downloadPackageByExpression(self, searchExpr, exact_match=False, packageId=0):</div>
-<div class="line"><span class="lineno">  221</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  222</span><span class="stringliteral">        Download a package for a given material from the GPUOpen material database.</span></div>
-<div class="line"><span class="lineno">  223</span><span class="stringliteral">        @param searchExpr: The regular expression to match the material name.</span></div>
-<div class="line"><span class="lineno">  224</span><span class="stringliteral">        @param exact_match: If true, the material name must match exactly. Default is false.</span></div>
-<div class="line"><span class="lineno">  225</span><span class="stringliteral">        @param packageId: The package ID to download.</span></div>
-<div class="line"><span class="lineno">  226</span><span class="stringliteral">        @return: A list of downloaded packages of the form:</span></div>
-<div class="line"><span class="lineno">  227</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  228</span>        downloadList = []</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>        foundList = self.findMaterialsByName(searchExpr, exact_match)</div>
-<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">if</span> len(foundList) &gt; 0:</div>
-<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">for</span> found <span class="keywordflow">in</span> foundList:</div>
-<div class="line"><span class="lineno">  233</span>                listNumber = found[<span class="stringliteral">&#39;listNumber&#39;</span>]</div>
-<div class="line"><span class="lineno">  234</span>                materialNumber = found[<span class="stringliteral">&#39;materialNumber&#39;</span>]</div>
-<div class="line"><span class="lineno">  235</span>                matName = found[<span class="stringliteral">&#39;title&#39;</span>]</div>
-<div class="line"><span class="lineno">  236</span>                self.logger.info(f<span class="stringliteral">&#39;&gt; Download material: {matName} List: {listNumber}. Index: {materialNumber}&#39;</span>)</div>
-<div class="line"><span class="lineno">  237</span>                result = [data, title, url] = self.downloadPackage(listNumber, materialNumber, packageId)</div>
-<div class="line"><span class="lineno">  238</span>                downloadList.append(result)        </div>
-<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">return</span> downloadList</div>
-<div class="line"><span class="lineno">  240</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00260">260</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  260</span>    <span class="keyword">def </span>downloadPackageByExpression(self, searchExpr, exact_match=False, packageId=0):</div>
+<div class="line"><span class="lineno">  261</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  262</span><span class="stringliteral">        Download a package for a given material from the GPUOpen material database.</span></div>
+<div class="line"><span class="lineno">  263</span><span class="stringliteral">        @param searchExpr: The regular expression to match the material name.</span></div>
+<div class="line"><span class="lineno">  264</span><span class="stringliteral">        @param exact_match: If true, the material name must match exactly. Default is false.</span></div>
+<div class="line"><span class="lineno">  265</span><span class="stringliteral">        @param packageId: The package ID to download.</span></div>
+<div class="line"><span class="lineno">  266</span><span class="stringliteral">        @return: A list of downloaded packages of the form:</span></div>
+<div class="line"><span class="lineno">  267</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  268</span>        downloadList = []</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>        foundList = self.findMaterialsByName(searchExpr, exact_match)</div>
+<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">if</span> len(foundList) &gt; 0:</div>
+<div class="line"><span class="lineno">  272</span>            <span class="keywordflow">for</span> found <span class="keywordflow">in</span> foundList:</div>
+<div class="line"><span class="lineno">  273</span>                listNumber = found[<span class="stringliteral">&#39;listNumber&#39;</span>]</div>
+<div class="line"><span class="lineno">  274</span>                materialNumber = found[<span class="stringliteral">&#39;materialNumber&#39;</span>]</div>
+<div class="line"><span class="lineno">  275</span>                matName = found[<span class="stringliteral">&#39;title&#39;</span>]</div>
+<div class="line"><span class="lineno">  276</span>                self.logger.info(f<span class="stringliteral">&#39;&gt; Download material: {matName} List: {listNumber}. Index: {materialNumber}&#39;</span>)</div>
+<div class="line"><span class="lineno">  277</span>                result = [data, title, url] = self.downloadPackage(listNumber, materialNumber, packageId)</div>
+<div class="line"><span class="lineno">  278</span>                downloadList.append(result)        </div>
+<div class="line"><span class="lineno">  279</span>        <span class="keywordflow">return</span> downloadList</div>
+<div class="line"><span class="lineno">  280</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -539,42 +620,42 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>: A list of extracted data of the form: [ { 'file_name': file_name, 'data': data, 'type': type } ] </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00129">129</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  129</span>    <span class="keyword">def </span>extractPackageData(self, data, pilImage):</div>
-<div class="line"><span class="lineno">  130</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  131</span><span class="stringliteral">        Extract the package data from a zip file.</span></div>
-<div class="line"><span class="lineno">  132</span><span class="stringliteral">        @param data: The data to extract.</span></div>
-<div class="line"><span class="lineno">  133</span><span class="stringliteral">        @param pilImage: The PIL image module.</span></div>
-<div class="line"><span class="lineno">  134</span><span class="stringliteral">        @return: A list of extracted data of the form:</span></div>
-<div class="line"><span class="lineno">  135</span><span class="stringliteral">        [ { &#39;file_name&#39;: file_name, &#39;data&#39;: data, &#39;type&#39;: type } ]</span></div>
-<div class="line"><span class="lineno">  136</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> pilImage:</div>
-<div class="line"><span class="lineno">  138</span>            pilImage = PILImage</div>
-<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> pilImage:</div>
-<div class="line"><span class="lineno">  140</span>            self.logger.debug(<span class="stringliteral">&#39;Pillow (PIL) image module provided. Image data will not be extracted.&#39;</span>)</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>        zip_object = io.BytesIO(data)</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>        extracted_data_list = []</div>
-<div class="line"><span class="lineno">  145</span>        <span class="keyword">with</span> zipfile.ZipFile(zip_object, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> zip_file:</div>
-<div class="line"><span class="lineno">  146</span>            <span class="comment"># Iterate through the files in the zip archive</span></div>
-<div class="line"><span class="lineno">  147</span>            <span class="keywordflow">for</span> file_name <span class="keywordflow">in</span> zip_file.namelist():</div>
-<div class="line"><span class="lineno">  148</span>                <span class="comment"># Extract each file into memory</span></div>
-<div class="line"><span class="lineno">  149</span>                extracted_data = zip_file.read(file_name)</div>
-<div class="line"><span class="lineno">  150</span>                <span class="keywordflow">if</span> file_name.endswith(<span class="stringliteral">&#39;.mtlx&#39;</span>):</div>
-<div class="line"><span class="lineno">  151</span>                    mtlx_string = extracted_data.decode(<span class="stringliteral">&#39;utf-8&#39;</span>)</div>
-<div class="line"><span class="lineno">  152</span>                    extracted_data_list.append( {<span class="stringliteral">&#39;file_name&#39;</span>: file_name, <span class="stringliteral">&#39;data&#39;</span>: mtlx_string, <span class="stringliteral">&#39;type&#39;</span>: <span class="stringliteral">&#39;mtlx&#39;</span>} )</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>                <span class="comment"># If the data is a image, create a image in Python</span></div>
-<div class="line"><span class="lineno">  155</span>                <span class="keywordflow">elif</span> file_name.endswith(<span class="stringliteral">&#39;.png&#39;</span>):</div>
-<div class="line"><span class="lineno">  156</span>                    <span class="keywordflow">if</span> pilImage:</div>
-<div class="line"><span class="lineno">  157</span>                        image = pilImage.open(io.BytesIO(extracted_data))        </div>
-<div class="line"><span class="lineno">  158</span>                    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  159</span>                        image = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  160</span>                    extracted_data_list.append( {<span class="stringliteral">&#39;file_name&#39;</span>: file_name, <span class="stringliteral">&#39;data&#39;</span>: image, <span class="stringliteral">&#39;type&#39;</span>: <span class="stringliteral">&#39;image&#39;</span>} )</div>
-<div class="line"><span class="lineno">  161</span> </div>
-<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">return</span> extracted_data_list</div>
-<div class="line"><span class="lineno">  163</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00169">169</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  169</span>    <span class="keyword">def </span>extractPackageData(self, data, pilImage):</div>
+<div class="line"><span class="lineno">  170</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  171</span><span class="stringliteral">        Extract the package data from a zip file.</span></div>
+<div class="line"><span class="lineno">  172</span><span class="stringliteral">        @param data: The data to extract.</span></div>
+<div class="line"><span class="lineno">  173</span><span class="stringliteral">        @param pilImage: The PIL image module.</span></div>
+<div class="line"><span class="lineno">  174</span><span class="stringliteral">        @return: A list of extracted data of the form:</span></div>
+<div class="line"><span class="lineno">  175</span><span class="stringliteral">        [ { &#39;file_name&#39;: file_name, &#39;data&#39;: data, &#39;type&#39;: type } ]</span></div>
+<div class="line"><span class="lineno">  176</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> pilImage:</div>
+<div class="line"><span class="lineno">  178</span>            pilImage = PILImage</div>
+<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> pilImage:</div>
+<div class="line"><span class="lineno">  180</span>            self.logger.debug(<span class="stringliteral">&#39;Pillow (PIL) image module provided. Image data will not be extracted.&#39;</span>)</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>        zip_object = io.BytesIO(data)</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>        extracted_data_list = []</div>
+<div class="line"><span class="lineno">  185</span>        <span class="keyword">with</span> zipfile.ZipFile(zip_object, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> zip_file:</div>
+<div class="line"><span class="lineno">  186</span>            <span class="comment"># Iterate through the files in the zip archive</span></div>
+<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">for</span> file_name <span class="keywordflow">in</span> zip_file.namelist():</div>
+<div class="line"><span class="lineno">  188</span>                <span class="comment"># Extract each file into memory</span></div>
+<div class="line"><span class="lineno">  189</span>                extracted_data = zip_file.read(file_name)</div>
+<div class="line"><span class="lineno">  190</span>                <span class="keywordflow">if</span> file_name.endswith(<span class="stringliteral">&#39;.mtlx&#39;</span>):</div>
+<div class="line"><span class="lineno">  191</span>                    mtlx_string = extracted_data.decode(<span class="stringliteral">&#39;utf-8&#39;</span>)</div>
+<div class="line"><span class="lineno">  192</span>                    extracted_data_list.append( {<span class="stringliteral">&#39;file_name&#39;</span>: file_name, <span class="stringliteral">&#39;data&#39;</span>: mtlx_string, <span class="stringliteral">&#39;type&#39;</span>: <span class="stringliteral">&#39;mtlx&#39;</span>} )</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>                <span class="comment"># If the data is a image, create a image in Python</span></div>
+<div class="line"><span class="lineno">  195</span>                <span class="keywordflow">elif</span> file_name.endswith(<span class="stringliteral">&#39;.png&#39;</span>):</div>
+<div class="line"><span class="lineno">  196</span>                    <span class="keywordflow">if</span> pilImage:</div>
+<div class="line"><span class="lineno">  197</span>                        image = pilImage.open(io.BytesIO(extracted_data))        </div>
+<div class="line"><span class="lineno">  198</span>                    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  199</span>                        image = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  200</span>                    extracted_data_list.append( {<span class="stringliteral">&#39;file_name&#39;</span>: file_name, <span class="stringliteral">&#39;data&#39;</span>: image, <span class="stringliteral">&#39;type&#39;</span>: <span class="stringliteral">&#39;image&#39;</span>} )</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">return</span> extracted_data_list</div>
+<div class="line"><span class="lineno">  203</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -612,35 +693,35 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>: A list of materials that match the regular expression of the form: [ { 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title } ] </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00241">241</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  241</span>    <span class="keyword">def </span>findMaterialsByName(self, materialName, exact_match = False) -&gt; list:</div>
-<div class="line"><span class="lineno">  242</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  243</span><span class="stringliteral">        Find materials by name.</span></div>
-<div class="line"><span class="lineno">  244</span><span class="stringliteral">        @param materialName: Regular expression to match the material name.</span></div>
-<div class="line"><span class="lineno">  245</span><span class="stringliteral">        @param exact_match: If true, the material name must match exactly. Default is false.</span></div>
-<div class="line"><span class="lineno">  246</span><span class="stringliteral">        @return: A list of materials that match the regular expression of the form:</span></div>
-<div class="line"><span class="lineno">  247</span><span class="stringliteral">        [ { &#39;listNumber&#39;: listNumber, &#39;materialNumber&#39;: materialNumber, &#39;title&#39;: title } ]</span></div>
-<div class="line"><span class="lineno">  248</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">return</span> []</div>
-<div class="line"><span class="lineno">  251</span> </div>
-<div class="line"><span class="lineno">  252</span>        materialsList = []</div>
-<div class="line"><span class="lineno">  253</span>        listNumber = 0</div>
-<div class="line"><span class="lineno">  254</span>        <span class="keywordflow">for</span> materialList <span class="keywordflow">in</span> self.materials:</div>
-<div class="line"><span class="lineno">  255</span>            materialNumber = 0                </div>
-<div class="line"><span class="lineno">  256</span>            <span class="keywordflow">for</span> material <span class="keywordflow">in</span> materialList[<span class="stringliteral">&#39;results&#39;</span>]:</div>
-<div class="line"><span class="lineno">  257</span>                <span class="keywordflow">if</span> exact_match:</div>
-<div class="line"><span class="lineno">  258</span>                    <span class="keywordflow">if</span> materialName.lower() == material[<span class="stringliteral">&#39;title&#39;</span>].lower():</div>
-<div class="line"><span class="lineno">  259</span>                        materialsList.append({ <span class="stringliteral">&#39;listNumber&#39;</span>: listNumber, <span class="stringliteral">&#39;materialNumber&#39;</span>: materialNumber, <span class="stringliteral">&#39;title&#39;</span>: material[<span class="stringliteral">&#39;title&#39;</span>] })</div>
-<div class="line"><span class="lineno">  260</span>                        <span class="keywordflow">return</span> materialsList                        </div>
-<div class="line"><span class="lineno">  261</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  262</span>                    <span class="keywordflow">if</span> re.match(materialName, material[<span class="stringliteral">&#39;title&#39;</span>], re.IGNORECASE):</div>
-<div class="line"><span class="lineno">  263</span>                        materialsList.append({ <span class="stringliteral">&#39;listNumber&#39;</span>: listNumber, <span class="stringliteral">&#39;materialNumber&#39;</span>: materialNumber, <span class="stringliteral">&#39;title&#39;</span>: material[<span class="stringliteral">&#39;title&#39;</span>] })</div>
-<div class="line"><span class="lineno">  264</span>                materialNumber += 1</div>
-<div class="line"><span class="lineno">  265</span>            listNumber += 1</div>
-<div class="line"><span class="lineno">  266</span> </div>
-<div class="line"><span class="lineno">  267</span>        <span class="keywordflow">return</span> materialsList</div>
-<div class="line"><span class="lineno">  268</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00281">281</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  281</span>    <span class="keyword">def </span>findMaterialsByName(self, materialName, exact_match = False) -&gt; list:</div>
+<div class="line"><span class="lineno">  282</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  283</span><span class="stringliteral">        Find materials by name.</span></div>
+<div class="line"><span class="lineno">  284</span><span class="stringliteral">        @param materialName: Regular expression to match the material name.</span></div>
+<div class="line"><span class="lineno">  285</span><span class="stringliteral">        @param exact_match: If true, the material name must match exactly. Default is false.</span></div>
+<div class="line"><span class="lineno">  286</span><span class="stringliteral">        @return: A list of materials that match the regular expression of the form:</span></div>
+<div class="line"><span class="lineno">  287</span><span class="stringliteral">        [ { &#39;listNumber&#39;: listNumber, &#39;materialNumber&#39;: materialNumber, &#39;title&#39;: title } ]</span></div>
+<div class="line"><span class="lineno">  288</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  289</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  290</span>            <span class="keywordflow">return</span> []</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>        materialsList = []</div>
+<div class="line"><span class="lineno">  293</span>        listNumber = 0</div>
+<div class="line"><span class="lineno">  294</span>        <span class="keywordflow">for</span> materialList <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">  295</span>            materialNumber = 0                </div>
+<div class="line"><span class="lineno">  296</span>            <span class="keywordflow">for</span> material <span class="keywordflow">in</span> materialList[<span class="stringliteral">&#39;results&#39;</span>]:</div>
+<div class="line"><span class="lineno">  297</span>                <span class="keywordflow">if</span> exact_match:</div>
+<div class="line"><span class="lineno">  298</span>                    <span class="keywordflow">if</span> materialName.lower() == material[<span class="stringliteral">&#39;title&#39;</span>].lower():</div>
+<div class="line"><span class="lineno">  299</span>                        materialsList.append({ <span class="stringliteral">&#39;listNumber&#39;</span>: listNumber, <span class="stringliteral">&#39;materialNumber&#39;</span>: materialNumber, <span class="stringliteral">&#39;title&#39;</span>: material[<span class="stringliteral">&#39;title&#39;</span>] })</div>
+<div class="line"><span class="lineno">  300</span>                        <span class="keywordflow">return</span> materialsList                        </div>
+<div class="line"><span class="lineno">  301</span>                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  302</span>                    <span class="keywordflow">if</span> re.match(materialName, material[<span class="stringliteral">&#39;title&#39;</span>], re.IGNORECASE):</div>
+<div class="line"><span class="lineno">  303</span>                        materialsList.append({ <span class="stringliteral">&#39;listNumber&#39;</span>: listNumber, <span class="stringliteral">&#39;materialNumber&#39;</span>: materialNumber, <span class="stringliteral">&#39;title&#39;</span>: material[<span class="stringliteral">&#39;title&#39;</span>] })</div>
+<div class="line"><span class="lineno">  304</span>                materialNumber += 1</div>
+<div class="line"><span class="lineno">  305</span>            listNumber += 1</div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>        <span class="keywordflow">return</span> materialsList</div>
+<div class="line"><span class="lineno">  308</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -671,28 +752,28 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00484">484</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  484</span>    <span class="keyword">def </span>getMaterialFileNames(self, rootName) -&gt; list:</div>
-<div class="line"><span class="lineno">  485</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  486</span><span class="stringliteral">        Get list of material file names based on root file name.</span></div>
-<div class="line"><span class="lineno">  487</span><span class="stringliteral">        @param rootName: The root name of the files to load. The files are assumed to be named: rootName_#.json</span></div>
-<div class="line"><span class="lineno">  488</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  489</span>        filePaths = []</div>
-<div class="line"><span class="lineno">  490</span>        rootName = os.path.basename(rootName)</div>
-<div class="line"><span class="lineno">  491</span>        rootDir = os.path.dirname(rootName)</div>
-<div class="line"><span class="lineno">  492</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> rootDir:</div>
-<div class="line"><span class="lineno">  493</span>            rootDir = <span class="stringliteral">&#39;.&#39;</span></div>
-<div class="line"><span class="lineno">  494</span>        <span class="comment">#print(&#39;RootDir:&#39;, rootDir)</span></div>
-<div class="line"><span class="lineno">  495</span>        <span class="comment">#print(&#39;RootName:&#39;, rootName)</span></div>
-<div class="line"><span class="lineno">  496</span>        <span class="keywordflow">for</span> root, dirs, files <span class="keywordflow">in</span> os.walk(rootDir):</div>
-<div class="line"><span class="lineno">  497</span>            <span class="keywordflow">for</span> file <span class="keywordflow">in</span> files:</div>
-<div class="line"><span class="lineno">  498</span>                <span class="comment"># Check that it ends with a number + &quot;.json&quot;. e.g.</span></div>
-<div class="line"><span class="lineno">  499</span>                <span class="comment"># &quot;GPUOpenMaterialX_0.json&quot;</span></div>
-<div class="line"><span class="lineno">  500</span>                <span class="keywordflow">if</span> file.startswith(rootName) <span class="keywordflow">and</span> file.endswith(<span class="stringliteral">&#39;.json&#39;</span>) <span class="keywordflow">and</span> file[len(rootName):-5].isdigit():</div>
-<div class="line"><span class="lineno">  501</span>                    filePath = os.path.join(root, file)</div>
-<div class="line"><span class="lineno">  502</span>                    filePaths.append(filePath)</div>
-<div class="line"><span class="lineno">  503</span>        <span class="keywordflow">return</span> filePaths</div>
-<div class="line"><span class="lineno">  504</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00524">524</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  524</span>    <span class="keyword">def </span>getMaterialFileNames(self, rootName) -&gt; list:</div>
+<div class="line"><span class="lineno">  525</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  526</span><span class="stringliteral">        Get list of material file names based on root file name.</span></div>
+<div class="line"><span class="lineno">  527</span><span class="stringliteral">        @param rootName: The root name of the files to load. The files are assumed to be named: rootName_#.json</span></div>
+<div class="line"><span class="lineno">  528</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  529</span>        filePaths = []</div>
+<div class="line"><span class="lineno">  530</span>        rootName = os.path.basename(rootName)</div>
+<div class="line"><span class="lineno">  531</span>        rootDir = os.path.dirname(rootName)</div>
+<div class="line"><span class="lineno">  532</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> rootDir:</div>
+<div class="line"><span class="lineno">  533</span>            rootDir = <span class="stringliteral">&#39;.&#39;</span></div>
+<div class="line"><span class="lineno">  534</span>        <span class="comment">#print(&#39;RootDir:&#39;, rootDir)</span></div>
+<div class="line"><span class="lineno">  535</span>        <span class="comment">#print(&#39;RootName:&#39;, rootName)</span></div>
+<div class="line"><span class="lineno">  536</span>        <span class="keywordflow">for</span> root, dirs, files <span class="keywordflow">in</span> os.walk(rootDir):</div>
+<div class="line"><span class="lineno">  537</span>            <span class="keywordflow">for</span> file <span class="keywordflow">in</span> files:</div>
+<div class="line"><span class="lineno">  538</span>                <span class="comment"># Check that it ends with a number + &quot;.json&quot;. e.g.</span></div>
+<div class="line"><span class="lineno">  539</span>                <span class="comment"># &quot;GPUOpenMaterialX_0.json&quot;</span></div>
+<div class="line"><span class="lineno">  540</span>                <span class="keywordflow">if</span> file.startswith(rootName) <span class="keywordflow">and</span> file.endswith(<span class="stringliteral">&#39;.json&#39;</span>) <span class="keywordflow">and</span> file[len(rootName):-5].isdigit():</div>
+<div class="line"><span class="lineno">  541</span>                    filePath = os.path.join(root, file)</div>
+<div class="line"><span class="lineno">  542</span>                    filePaths.append(filePath)</div>
+<div class="line"><span class="lineno">  543</span>        <span class="keywordflow">return</span> filePaths</div>
+<div class="line"><span class="lineno">  544</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -714,22 +795,22 @@ Public Attributes</h2></td></tr>
 <p>Update the material names from the material lists. </p>
 <dl class="section return"><dt>Returns</dt><dd>: List of material names. If no materials are loaded, then an empty list is returned. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00269">269</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  269</span>    <span class="keyword">def </span>getMaterialNames(self) -&gt; list:</div>
-<div class="line"><span class="lineno">  270</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  271</span><span class="stringliteral">        Update the material names from the material lists.</span></div>
-<div class="line"><span class="lineno">  272</span><span class="stringliteral">        @return: List of material names. If no materials are loaded, then an empty list is returned.</span></div>
-<div class="line"><span class="lineno">  273</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  274</span>        self.materialNames = []        </div>
-<div class="line"><span class="lineno">  275</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  276</span>            <span class="keywordflow">return</span> []</div>
-<div class="line"><span class="lineno">  277</span> </div>
-<div class="line"><span class="lineno">  278</span>        <span class="keywordflow">for</span> materialList <span class="keywordflow">in</span> self.materials:</div>
-<div class="line"><span class="lineno">  279</span>            <span class="keywordflow">for</span> material <span class="keywordflow">in</span> materialList[<span class="stringliteral">&#39;results&#39;</span>]:</div>
-<div class="line"><span class="lineno">  280</span>                self.materialNames.append(material[<span class="stringliteral">&#39;title&#39;</span>])</div>
-<div class="line"><span class="lineno">  281</span> </div>
-<div class="line"><span class="lineno">  282</span>        <span class="keywordflow">return</span> self.materialNames</div>
-<div class="line"><span class="lineno">  283</span>    </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00309">309</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  309</span>    <span class="keyword">def </span>getMaterialNames(self) -&gt; list:</div>
+<div class="line"><span class="lineno">  310</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  311</span><span class="stringliteral">        Update the material names from the material lists.</span></div>
+<div class="line"><span class="lineno">  312</span><span class="stringliteral">        @return: List of material names. If no materials are loaded, then an empty list is returned.</span></div>
+<div class="line"><span class="lineno">  313</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  314</span>        self.materialNames = []        </div>
+<div class="line"><span class="lineno">  315</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  316</span>            <span class="keywordflow">return</span> []</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>        <span class="keywordflow">for</span> materialList <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">  319</span>            <span class="keywordflow">for</span> material <span class="keywordflow">in</span> materialList[<span class="stringliteral">&#39;results&#39;</span>]:</div>
+<div class="line"><span class="lineno">  320</span>                self.materialNames.append(material[<span class="stringliteral">&#39;title&#39;</span>])</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>        <span class="keywordflow">return</span> self.materialNames</div>
+<div class="line"><span class="lineno">  323</span>    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -752,12 +833,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00302">302</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  302</span>    <span class="keyword">def </span>getMaterialPreviews(self, force = False) -&gt; list | None:</div>
-<div class="line"><span class="lineno">  303</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.materialPreviews <span class="keywordflow">or</span> force:</div>
-<div class="line"><span class="lineno">  304</span>            self.computeMaterialPreviews()</div>
-<div class="line"><span class="lineno">  305</span>        <span class="keywordflow">return</span> self.materialPreviews</div>
-<div class="line"><span class="lineno">  306</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00342">342</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  342</span>    <span class="keyword">def </span>getMaterialPreviews(self, force = False) -&gt; list | None:</div>
+<div class="line"><span class="lineno">  343</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.materialPreviews <span class="keywordflow">or</span> force:</div>
+<div class="line"><span class="lineno">  344</span>            self.computeMaterialPreviews()</div>
+<div class="line"><span class="lineno">  345</span>        <span class="keywordflow">return</span> self.materialPreviews</div>
+<div class="line"><span class="lineno">  346</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -789,25 +870,25 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>: The URL for the material preview image. Else empty string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00284">284</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  284</span>    <span class="keyword">def </span>getMaterialPreviewURL(self, title) -&gt; str:</div>
-<div class="line"><span class="lineno">  285</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  286</span><span class="stringliteral">        @breif Given the title of a material, return the URL for the material preview image.</span></div>
-<div class="line"><span class="lineno">  287</span><span class="stringliteral">        @param title: The title of the material to get the preview URL for.</span></div>
-<div class="line"><span class="lineno">  288</span><span class="stringliteral">        @return: The URL for the material preview image. Else empty string.</span></div>
-<div class="line"><span class="lineno">  289</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  290</span>        url = <span class="stringliteral">&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  291</span>        <span class="keywordflow">if</span> (self.materialPreviews == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  292</span>            self.computeMaterialPreviews()</div>
-<div class="line"><span class="lineno">  293</span>        <span class="keywordflow">if</span> (<span class="keywordflow">not</span> self.materialPreviews):</div>
-<div class="line"><span class="lineno">  294</span>            <span class="keywordflow">return</span> url</div>
-<div class="line"><span class="lineno">  295</span>        </div>
-<div class="line"><span class="lineno">  296</span>        <span class="keywordflow">for</span> item <span class="keywordflow">in</span> self.materialPreviews:</div>
-<div class="line"><span class="lineno">  297</span>            <span class="keywordflow">if</span> item[<span class="stringliteral">&#39;title&#39;</span>] == title:</div>
-<div class="line"><span class="lineno">  298</span>                url = item[<span class="stringliteral">&#39;preview_url&#39;</span>]</div>
-<div class="line"><span class="lineno">  299</span>                <span class="keywordflow">break</span></div>
-<div class="line"><span class="lineno">  300</span>        <span class="keywordflow">return</span> url</div>
-<div class="line"><span class="lineno">  301</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00324">324</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  324</span>    <span class="keyword">def </span>getMaterialPreviewURL(self, title) -&gt; str:</div>
+<div class="line"><span class="lineno">  325</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  326</span><span class="stringliteral">        @breif Given the title of a material, return the URL for the material preview image.</span></div>
+<div class="line"><span class="lineno">  327</span><span class="stringliteral">        @param title: The title of the material to get the preview URL for.</span></div>
+<div class="line"><span class="lineno">  328</span><span class="stringliteral">        @return: The URL for the material preview image. Else empty string.</span></div>
+<div class="line"><span class="lineno">  329</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  330</span>        url = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  331</span>        <span class="keywordflow">if</span> (self.materialPreviews == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  332</span>            self.computeMaterialPreviews()</div>
+<div class="line"><span class="lineno">  333</span>        <span class="keywordflow">if</span> (<span class="keywordflow">not</span> self.materialPreviews):</div>
+<div class="line"><span class="lineno">  334</span>            <span class="keywordflow">return</span> url</div>
+<div class="line"><span class="lineno">  335</span>        </div>
+<div class="line"><span class="lineno">  336</span>        <span class="keywordflow">for</span> item <span class="keywordflow">in</span> self.materialPreviews:</div>
+<div class="line"><span class="lineno">  337</span>            <span class="keywordflow">if</span> item[<span class="stringliteral">&#39;title&#39;</span>] == title:</div>
+<div class="line"><span class="lineno">  338</span>                url = item[<span class="stringliteral">&#39;preview_url&#39;</span>]</div>
+<div class="line"><span class="lineno">  339</span>                <span class="keywordflow">break</span></div>
+<div class="line"><span class="lineno">  340</span>        <span class="keywordflow">return</span> url</div>
+<div class="line"><span class="lineno">  341</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -829,69 +910,69 @@ Public Attributes</h2></td></tr>
 <p>Get the materials returned from the GPUOpen material database. </p>
 <p>Will loop based on the linked-list of materials stored in the database. Currently the batch size requested is 100 materials per batch. </p><dl class="section return"><dt>Returns</dt><dd>: List of material lists </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00341">341</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  341</span>    <span class="keyword">def </span>getMaterials(self) -&gt; list:</div>
-<div class="line"><span class="lineno">  342</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  343</span><span class="stringliteral">        Get the materials returned from the GPUOpen material database.</span></div>
-<div class="line"><span class="lineno">  344</span><span class="stringliteral">        Will loop based on the linked-list of materials stored in the database.</span></div>
-<div class="line"><span class="lineno">  345</span><span class="stringliteral">        Currently the batch size requested is 100 materials per batch.</span></div>
-<div class="line"><span class="lineno">  346</span><span class="stringliteral">        @return: List of material lists</span></div>
-<div class="line"><span class="lineno">  347</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  348</span> </div>
-<div class="line"><span class="lineno">  349</span>        self.materials = []</div>
-<div class="line"><span class="lineno">  350</span>        self.materialNames = []</div>
-<div class="line"><span class="lineno">  351</span> </div>
-<div class="line"><span class="lineno">  352</span>        url = self.url</div>
-<div class="line"><span class="lineno">  353</span>        headers = {</div>
-<div class="line"><span class="lineno">  354</span>            <span class="stringliteral">&#39;accept&#39;</span>: <span class="stringliteral">&#39;application/json&#39;</span></div>
-<div class="line"><span class="lineno">  355</span>        }</div>
-<div class="line"><span class="lineno">  356</span> </div>
-<div class="line"><span class="lineno">  357</span>        <span class="comment"># Get batches of materials. Start with the first 100.</span></div>
-<div class="line"><span class="lineno">  358</span>        <span class="comment"># Can apply more filters to this as needed in the future.</span></div>
-<div class="line"><span class="lineno">  359</span>        <span class="comment"># This will get every material in the database.        </span></div>
-<div class="line"><span class="lineno">  360</span>        params = {</div>
-<div class="line"><span class="lineno">  361</span>            <span class="stringliteral">&#39;limit&#39;</span>: 100,</div>
-<div class="line"><span class="lineno">  362</span>            <span class="stringliteral">&#39;offset&#39;</span>: 0</div>
-<div class="line"><span class="lineno">  363</span>        }</div>
-<div class="line"><span class="lineno">  364</span>        haveMoreMaterials = <span class="keyword">True</span></div>
-<div class="line"><span class="lineno">  365</span>        <span class="keywordflow">while</span> (haveMoreMaterials):</div>
-<div class="line"><span class="lineno">  366</span> </div>
-<div class="line"><span class="lineno">  367</span>            response = requests.get(url, headers=headers, params=params)</div>
-<div class="line"><span class="lineno">  368</span> </div>
-<div class="line"><span class="lineno">  369</span>            <span class="keywordflow">if</span> response.status_code == HTTPStatus.OK:</div>
-<div class="line"><span class="lineno">  370</span>                </div>
-<div class="line"><span class="lineno">  371</span>                raw_response = response.text</div>
-<div class="line"><span class="lineno">  372</span>        </div>
-<div class="line"><span class="lineno">  373</span>                <span class="comment"># Split the response text assuming the JSON objects are concatenated</span></div>
-<div class="line"><span class="lineno">  374</span>                json_strings = raw_response.split(<span class="stringliteral">&#39;}{&#39;</span>)    </div>
-<div class="line"><span class="lineno">  375</span>                <span class="comment">#self.logger.info(&#39;Number of JSON strings:&#39;, len(json_strings))</span></div>
-<div class="line"><span class="lineno">  376</span>                json_result_string = json_strings[0]</div>
-<div class="line"><span class="lineno">  377</span>                jsonObject = json.loads(json_result_string)</div>
-<div class="line"><span class="lineno">  378</span>                self.materials.append(jsonObject)</div>
-<div class="line"><span class="lineno">  379</span> </div>
-<div class="line"><span class="lineno">  380</span>                <span class="comment"># Scan for next batch of materials</span></div>
-<div class="line"><span class="lineno">  381</span>                nextQuery = jsonObject[<span class="stringliteral">&#39;next&#39;</span>]</div>
-<div class="line"><span class="lineno">  382</span>                <span class="keywordflow">if</span> (nextQuery):</div>
-<div class="line"><span class="lineno">  383</span>                    <span class="comment"># Get limit and offset from this: &#39;https://api.matlib.gpuopen.com/api/materials/?limit=100&amp;offset=100&quot;&#39;</span></div>
-<div class="line"><span class="lineno">  384</span>                    <span class="comment"># Split the string by &#39;?&#39;</span></div>
-<div class="line"><span class="lineno">  385</span>                    queryParts = nextQuery.split(<span class="stringliteral">&#39;?&#39;</span>)</div>
-<div class="line"><span class="lineno">  386</span>                    <span class="comment"># Split the string by &#39;&amp;&#39;</span></div>
-<div class="line"><span class="lineno">  387</span>                    queryParts = queryParts[1].split(<span class="stringliteral">&#39;&amp;&#39;</span>)</div>
-<div class="line"><span class="lineno">  388</span>                    <span class="comment"># Split the string by &#39;=&#39;</span></div>
-<div class="line"><span class="lineno">  389</span>                    limitParts = queryParts[0].split(<span class="stringliteral">&#39;=&#39;</span>)</div>
-<div class="line"><span class="lineno">  390</span>                    offsetParts = queryParts[1].split(<span class="stringliteral">&#39;=&#39;</span>)</div>
-<div class="line"><span class="lineno">  391</span>                    params[<span class="stringliteral">&#39;limit&#39;</span>] = int(limitParts[1])</div>
-<div class="line"><span class="lineno">  392</span>                    params[<span class="stringliteral">&#39;offset&#39;</span>] = int(offsetParts[1])</div>
-<div class="line"><span class="lineno">  393</span>                    self.logger.info(f<span class="stringliteral">&#39;Fetch set of materials: limit: {params[&quot;limit&quot;]} offset: {params[&quot;offset&quot;]}&#39;</span>)</div>
-<div class="line"><span class="lineno">  394</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  395</span>                    haveMoreMaterials = <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  396</span>                    <span class="keywordflow">break</span></div>
-<div class="line"><span class="lineno">  397</span>                </div>
-<div class="line"><span class="lineno">  398</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  399</span>                self.logger.info(f<span class="stringliteral">&#39;Error: {response.status_code}, {response.text}&#39;</span>)</div>
-<div class="line"><span class="lineno">  400</span> </div>
-<div class="line"><span class="lineno">  401</span>        <span class="keywordflow">return</span> self.materials    </div>
-<div class="line"><span class="lineno">  402</span>    </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00381">381</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  381</span>    <span class="keyword">def </span>getMaterials(self) -&gt; list:</div>
+<div class="line"><span class="lineno">  382</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  383</span><span class="stringliteral">        Get the materials returned from the GPUOpen material database.</span></div>
+<div class="line"><span class="lineno">  384</span><span class="stringliteral">        Will loop based on the linked-list of materials stored in the database.</span></div>
+<div class="line"><span class="lineno">  385</span><span class="stringliteral">        Currently the batch size requested is 100 materials per batch.</span></div>
+<div class="line"><span class="lineno">  386</span><span class="stringliteral">        @return: List of material lists</span></div>
+<div class="line"><span class="lineno">  387</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  388</span> </div>
+<div class="line"><span class="lineno">  389</span>        self.materials = []</div>
+<div class="line"><span class="lineno">  390</span>        self.materialNames = []</div>
+<div class="line"><span class="lineno">  391</span> </div>
+<div class="line"><span class="lineno">  392</span>        url = self.url</div>
+<div class="line"><span class="lineno">  393</span>        headers = {</div>
+<div class="line"><span class="lineno">  394</span>            <span class="stringliteral">&#39;accept&#39;</span>: <span class="stringliteral">&#39;application/json&#39;</span></div>
+<div class="line"><span class="lineno">  395</span>        }</div>
+<div class="line"><span class="lineno">  396</span> </div>
+<div class="line"><span class="lineno">  397</span>        <span class="comment"># Get batches of materials. Start with the first 100.</span></div>
+<div class="line"><span class="lineno">  398</span>        <span class="comment"># Can apply more filters to this as needed in the future.</span></div>
+<div class="line"><span class="lineno">  399</span>        <span class="comment"># This will get every material in the database.        </span></div>
+<div class="line"><span class="lineno">  400</span>        params = {</div>
+<div class="line"><span class="lineno">  401</span>            <span class="stringliteral">&#39;limit&#39;</span>: 100,</div>
+<div class="line"><span class="lineno">  402</span>            <span class="stringliteral">&#39;offset&#39;</span>: 0</div>
+<div class="line"><span class="lineno">  403</span>        }</div>
+<div class="line"><span class="lineno">  404</span>        haveMoreMaterials = <span class="keyword">True</span></div>
+<div class="line"><span class="lineno">  405</span>        <span class="keywordflow">while</span> (haveMoreMaterials):</div>
+<div class="line"><span class="lineno">  406</span> </div>
+<div class="line"><span class="lineno">  407</span>            response = requests.get(url, headers=headers, params=params)</div>
+<div class="line"><span class="lineno">  408</span> </div>
+<div class="line"><span class="lineno">  409</span>            <span class="keywordflow">if</span> response.status_code == HTTPStatus.OK:</div>
+<div class="line"><span class="lineno">  410</span>                </div>
+<div class="line"><span class="lineno">  411</span>                raw_response = response.text</div>
+<div class="line"><span class="lineno">  412</span>        </div>
+<div class="line"><span class="lineno">  413</span>                <span class="comment"># Split the response text assuming the JSON objects are concatenated</span></div>
+<div class="line"><span class="lineno">  414</span>                json_strings = raw_response.split(<span class="stringliteral">&#39;}{&#39;</span>)    </div>
+<div class="line"><span class="lineno">  415</span>                <span class="comment">#self.logger.info(&#39;Number of JSON strings:&#39;, len(json_strings))</span></div>
+<div class="line"><span class="lineno">  416</span>                json_result_string = json_strings[0]</div>
+<div class="line"><span class="lineno">  417</span>                jsonObject = json.loads(json_result_string)</div>
+<div class="line"><span class="lineno">  418</span>                self.materials.append(jsonObject)</div>
+<div class="line"><span class="lineno">  419</span> </div>
+<div class="line"><span class="lineno">  420</span>                <span class="comment"># Scan for next batch of materials</span></div>
+<div class="line"><span class="lineno">  421</span>                nextQuery = jsonObject[<span class="stringliteral">&#39;next&#39;</span>]</div>
+<div class="line"><span class="lineno">  422</span>                <span class="keywordflow">if</span> (nextQuery):</div>
+<div class="line"><span class="lineno">  423</span>                    <span class="comment"># Get limit and offset from this: &#39;https://api.matlib.gpuopen.com/api/materials/?limit=100&amp;offset=100&quot;&#39;</span></div>
+<div class="line"><span class="lineno">  424</span>                    <span class="comment"># Split the string by &#39;?&#39;</span></div>
+<div class="line"><span class="lineno">  425</span>                    queryParts = nextQuery.split(<span class="stringliteral">&#39;?&#39;</span>)</div>
+<div class="line"><span class="lineno">  426</span>                    <span class="comment"># Split the string by &#39;&amp;&#39;</span></div>
+<div class="line"><span class="lineno">  427</span>                    queryParts = queryParts[1].split(<span class="stringliteral">&#39;&amp;&#39;</span>)</div>
+<div class="line"><span class="lineno">  428</span>                    <span class="comment"># Split the string by &#39;=&#39;</span></div>
+<div class="line"><span class="lineno">  429</span>                    limitParts = queryParts[0].split(<span class="stringliteral">&#39;=&#39;</span>)</div>
+<div class="line"><span class="lineno">  430</span>                    offsetParts = queryParts[1].split(<span class="stringliteral">&#39;=&#39;</span>)</div>
+<div class="line"><span class="lineno">  431</span>                    params[<span class="stringliteral">&#39;limit&#39;</span>] = int(limitParts[1])</div>
+<div class="line"><span class="lineno">  432</span>                    params[<span class="stringliteral">&#39;offset&#39;</span>] = int(offsetParts[1])</div>
+<div class="line"><span class="lineno">  433</span>                    self.logger.info(f<span class="stringliteral">&#39;Fetch set of materials: limit: {params[&quot;limit&quot;]} offset: {params[&quot;offset&quot;]}&#39;</span>)</div>
+<div class="line"><span class="lineno">  434</span>                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  435</span>                    haveMoreMaterials = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  436</span>                    <span class="keywordflow">break</span></div>
+<div class="line"><span class="lineno">  437</span>                </div>
+<div class="line"><span class="lineno">  438</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  439</span>                self.logger.info(f<span class="stringliteral">&#39;Error: {response.status_code}, {response.text}&#39;</span>)</div>
+<div class="line"><span class="lineno">  440</span> </div>
+<div class="line"><span class="lineno">  441</span>        <span class="keywordflow">return</span> self.materials    </div>
+<div class="line"><span class="lineno">  442</span>    </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -913,20 +994,20 @@ Public Attributes</h2></td></tr>
 <p>Get the JSON strings for the materials. </p>
 <dl class="section return"><dt>Returns</dt><dd>: List of JSON strings for the materials. One string per material batch. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00471">471</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  471</span>    <span class="keyword">def </span>getMaterialsAsJsonString(self) -&gt; list:</div>
-<div class="line"><span class="lineno">  472</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  473</span><span class="stringliteral">        Get the JSON strings for the materials</span></div>
-<div class="line"><span class="lineno">  474</span><span class="stringliteral">        @return: List of JSON strings for the materials. One string per material batch.</span></div>
-<div class="line"><span class="lineno">  475</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  476</span>        results : list = []</div>
-<div class="line"><span class="lineno">  477</span> </div>
-<div class="line"><span class="lineno">  478</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  479</span>            <span class="keywordflow">return</span> results</div>
-<div class="line"><span class="lineno">  480</span>        <span class="keywordflow">for</span> material <span class="keywordflow">in</span> self.materials:</div>
-<div class="line"><span class="lineno">  481</span>            results.append(json.dumps(material, indent=4, sort_keys=<span class="keyword">True</span>))</div>
-<div class="line"><span class="lineno">  482</span>        <span class="keywordflow">return</span> results</div>
-<div class="line"><span class="lineno">  483</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00511">511</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  511</span>    <span class="keyword">def </span>getMaterialsAsJsonString(self) -&gt; list:</div>
+<div class="line"><span class="lineno">  512</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  513</span><span class="stringliteral">        Get the JSON strings for the materials</span></div>
+<div class="line"><span class="lineno">  514</span><span class="stringliteral">        @return: List of JSON strings for the materials. One string per material batch.</span></div>
+<div class="line"><span class="lineno">  515</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  516</span>        results : list = []</div>
+<div class="line"><span class="lineno">  517</span> </div>
+<div class="line"><span class="lineno">  518</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  519</span>            <span class="keywordflow">return</span> results</div>
+<div class="line"><span class="lineno">  520</span>        <span class="keywordflow">for</span> material <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">  521</span>            results.append(json.dumps(material, indent=4, sort_keys=<span class="keyword">True</span>))</div>
+<div class="line"><span class="lineno">  522</span>        <span class="keywordflow">return</span> results</div>
+<div class="line"><span class="lineno">  523</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -958,75 +1039,75 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>: List of material lists </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00403">403</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  403</span>    <span class="keyword">def </span>getRenders(self, force=False) -&gt; list:</div>
-<div class="line"><span class="lineno">  404</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  405</span><span class="stringliteral">        Get the rendering information returned from the GPUOpen material database.</span></div>
-<div class="line"><span class="lineno">  406</span><span class="stringliteral">        Will loop based on the linked-list of render info stored in the database.</span></div>
-<div class="line"><span class="lineno">  407</span><span class="stringliteral">        Currently the batch size requested is 100 render infos per batch.</span></div>
-<div class="line"><span class="lineno">  408</span><span class="stringliteral">        @param force: If true, forces a re-download of the render information. Default is false.</span></div>
-<div class="line"><span class="lineno">  409</span><span class="stringliteral">        @return: List of material lists</span></div>
-<div class="line"><span class="lineno">  410</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  411</span>        <span class="keywordflow">if</span> self.renders <span class="keywordflow">and</span> <span class="keywordflow">not</span> force:</div>
-<div class="line"><span class="lineno">  412</span>            <span class="keywordflow">return</span> self.renders</div>
-<div class="line"><span class="lineno">  413</span> </div>
-<div class="line"><span class="lineno">  414</span>        self.renders = { <span class="stringliteral">&quot;renders&quot;</span>: [] }</div>
-<div class="line"><span class="lineno">  415</span> </div>
-<div class="line"><span class="lineno">  416</span>        url = self.render_url</div>
-<div class="line"><span class="lineno">  417</span>        headers = {</div>
-<div class="line"><span class="lineno">  418</span>            <span class="stringliteral">&#39;accept&#39;</span>: <span class="stringliteral">&#39;application/json&#39;</span></div>
-<div class="line"><span class="lineno">  419</span>        }</div>
-<div class="line"><span class="lineno">  420</span> </div>
-<div class="line"><span class="lineno">  421</span>        <span class="comment"># Get batches of materials. Start with the first 100.</span></div>
-<div class="line"><span class="lineno">  422</span>        <span class="comment"># Can apply more filters to this as needed in the future.</span></div>
-<div class="line"><span class="lineno">  423</span>        <span class="comment"># This will get every material in the database.        </span></div>
-<div class="line"><span class="lineno">  424</span>        params = {</div>
-<div class="line"><span class="lineno">  425</span>            <span class="stringliteral">&#39;limit&#39;</span>: 100,</div>
-<div class="line"><span class="lineno">  426</span>            <span class="stringliteral">&#39;offset&#39;</span>: 0</div>
-<div class="line"><span class="lineno">  427</span>        }</div>
-<div class="line"><span class="lineno">  428</span>        haveMoreMaterials = <span class="keyword">True</span></div>
-<div class="line"><span class="lineno">  429</span>        <span class="keywordflow">while</span> (haveMoreMaterials):</div>
-<div class="line"><span class="lineno">  430</span> </div>
-<div class="line"><span class="lineno">  431</span>            response = requests.get(url, headers=headers, params=params)</div>
-<div class="line"><span class="lineno">  432</span> </div>
-<div class="line"><span class="lineno">  433</span>            <span class="keywordflow">if</span> response.status_code == HTTPStatus.OK:</div>
-<div class="line"><span class="lineno">  434</span>                </div>
-<div class="line"><span class="lineno">  435</span>                raw_response = response.text</div>
-<div class="line"><span class="lineno">  436</span>        </div>
-<div class="line"><span class="lineno">  437</span>                <span class="comment"># Split the response text assuming the JSON objects are concatenated</span></div>
-<div class="line"><span class="lineno">  438</span>                json_strings = raw_response.split(<span class="stringliteral">&#39;}{&#39;</span>)    </div>
-<div class="line"><span class="lineno">  439</span>                <span class="comment">#self.logger.info(&#39;Number of JSON strings:&#39;, len(json_strings))</span></div>
-<div class="line"><span class="lineno">  440</span>                json_result_string = json_strings[0]</div>
-<div class="line"><span class="lineno">  441</span>                jsonObject = json.loads(json_result_string)</div>
-<div class="line"><span class="lineno">  442</span> </div>
-<div class="line"><span class="lineno">  443</span>                <span class="comment"># Extrac out the  &quot;results&quot;: [] list</span></div>
-<div class="line"><span class="lineno">  444</span>                results_list = jsonObject[<span class="stringliteral">&#39;results&#39;</span>]</div>
-<div class="line"><span class="lineno">  445</span>                <span class="keywordflow">for</span> result <span class="keywordflow">in</span> results_list:</div>
-<div class="line"><span class="lineno">  446</span>                    self.renders[<span class="stringliteral">&quot;renders&quot;</span>].append(result)</div>
-<div class="line"><span class="lineno">  447</span> </div>
-<div class="line"><span class="lineno">  448</span>                <span class="comment"># Scan for next batch of materials</span></div>
-<div class="line"><span class="lineno">  449</span>                nextQuery = jsonObject[<span class="stringliteral">&#39;next&#39;</span>]</div>
-<div class="line"><span class="lineno">  450</span>                <span class="keywordflow">if</span> (nextQuery):</div>
-<div class="line"><span class="lineno">  451</span>                    <span class="comment"># Get limit and offset from this: &#39;https://api.matlib.gpuopen.com/api/renders/?limit=100&amp;offset=100&quot;&#39;</span></div>
-<div class="line"><span class="lineno">  452</span>                    <span class="comment"># Split the string by &#39;?&#39;</span></div>
-<div class="line"><span class="lineno">  453</span>                    queryParts = nextQuery.split(<span class="stringliteral">&#39;?&#39;</span>)</div>
-<div class="line"><span class="lineno">  454</span>                    <span class="comment"># Split the string by &#39;&amp;&#39;</span></div>
-<div class="line"><span class="lineno">  455</span>                    queryParts = queryParts[1].split(<span class="stringliteral">&#39;&amp;&#39;</span>)</div>
-<div class="line"><span class="lineno">  456</span>                    <span class="comment"># Split the string by &#39;=&#39;</span></div>
-<div class="line"><span class="lineno">  457</span>                    limitParts = queryParts[0].split(<span class="stringliteral">&#39;=&#39;</span>)</div>
-<div class="line"><span class="lineno">  458</span>                    offsetParts = queryParts[1].split(<span class="stringliteral">&#39;=&#39;</span>)</div>
-<div class="line"><span class="lineno">  459</span>                    params[<span class="stringliteral">&#39;limit&#39;</span>] = int(limitParts[1])</div>
-<div class="line"><span class="lineno">  460</span>                    params[<span class="stringliteral">&#39;offset&#39;</span>] = int(offsetParts[1])</div>
-<div class="line"><span class="lineno">  461</span>                    self.logger.info(f<span class="stringliteral">&#39;Fetch set of render infos: limit: {params[&quot;limit&quot;]} offset: {params[&quot;offset&quot;]}&#39;</span>)</div>
-<div class="line"><span class="lineno">  462</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  463</span>                    haveMoreMaterials = <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  464</span>                    <span class="keywordflow">break</span></div>
-<div class="line"><span class="lineno">  465</span>                </div>
-<div class="line"><span class="lineno">  466</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  467</span>                self.logger.info(f<span class="stringliteral">&#39;Error: {response.status_code}, {response.text}&#39;</span>)</div>
-<div class="line"><span class="lineno">  468</span> </div>
-<div class="line"><span class="lineno">  469</span>        <span class="keywordflow">return</span> self.renders </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00443">443</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  443</span>    <span class="keyword">def </span>getRenders(self, force=False) -&gt; list:</div>
+<div class="line"><span class="lineno">  444</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  445</span><span class="stringliteral">        Get the rendering information returned from the GPUOpen material database.</span></div>
+<div class="line"><span class="lineno">  446</span><span class="stringliteral">        Will loop based on the linked-list of render info stored in the database.</span></div>
+<div class="line"><span class="lineno">  447</span><span class="stringliteral">        Currently the batch size requested is 100 render infos per batch.</span></div>
+<div class="line"><span class="lineno">  448</span><span class="stringliteral">        @param force: If true, forces a re-download of the render information. Default is false.</span></div>
+<div class="line"><span class="lineno">  449</span><span class="stringliteral">        @return: List of material lists</span></div>
+<div class="line"><span class="lineno">  450</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  451</span>        <span class="keywordflow">if</span> self.renders <span class="keywordflow">and</span> <span class="keywordflow">not</span> force:</div>
+<div class="line"><span class="lineno">  452</span>            <span class="keywordflow">return</span> self.renders</div>
+<div class="line"><span class="lineno">  453</span> </div>
+<div class="line"><span class="lineno">  454</span>        self.renders = { <span class="stringliteral">&quot;renders&quot;</span>: [] }</div>
+<div class="line"><span class="lineno">  455</span> </div>
+<div class="line"><span class="lineno">  456</span>        url = self.render_url</div>
+<div class="line"><span class="lineno">  457</span>        headers = {</div>
+<div class="line"><span class="lineno">  458</span>            <span class="stringliteral">&#39;accept&#39;</span>: <span class="stringliteral">&#39;application/json&#39;</span></div>
+<div class="line"><span class="lineno">  459</span>        }</div>
+<div class="line"><span class="lineno">  460</span> </div>
+<div class="line"><span class="lineno">  461</span>        <span class="comment"># Get batches of materials. Start with the first 100.</span></div>
+<div class="line"><span class="lineno">  462</span>        <span class="comment"># Can apply more filters to this as needed in the future.</span></div>
+<div class="line"><span class="lineno">  463</span>        <span class="comment"># This will get every material in the database.        </span></div>
+<div class="line"><span class="lineno">  464</span>        params = {</div>
+<div class="line"><span class="lineno">  465</span>            <span class="stringliteral">&#39;limit&#39;</span>: 100,</div>
+<div class="line"><span class="lineno">  466</span>            <span class="stringliteral">&#39;offset&#39;</span>: 0</div>
+<div class="line"><span class="lineno">  467</span>        }</div>
+<div class="line"><span class="lineno">  468</span>        haveMoreMaterials = <span class="keyword">True</span></div>
+<div class="line"><span class="lineno">  469</span>        <span class="keywordflow">while</span> (haveMoreMaterials):</div>
 <div class="line"><span class="lineno">  470</span> </div>
+<div class="line"><span class="lineno">  471</span>            response = requests.get(url, headers=headers, params=params)</div>
+<div class="line"><span class="lineno">  472</span> </div>
+<div class="line"><span class="lineno">  473</span>            <span class="keywordflow">if</span> response.status_code == HTTPStatus.OK:</div>
+<div class="line"><span class="lineno">  474</span>                </div>
+<div class="line"><span class="lineno">  475</span>                raw_response = response.text</div>
+<div class="line"><span class="lineno">  476</span>        </div>
+<div class="line"><span class="lineno">  477</span>                <span class="comment"># Split the response text assuming the JSON objects are concatenated</span></div>
+<div class="line"><span class="lineno">  478</span>                json_strings = raw_response.split(<span class="stringliteral">&#39;}{&#39;</span>)    </div>
+<div class="line"><span class="lineno">  479</span>                <span class="comment">#self.logger.info(&#39;Number of JSON strings:&#39;, len(json_strings))</span></div>
+<div class="line"><span class="lineno">  480</span>                json_result_string = json_strings[0]</div>
+<div class="line"><span class="lineno">  481</span>                jsonObject = json.loads(json_result_string)</div>
+<div class="line"><span class="lineno">  482</span> </div>
+<div class="line"><span class="lineno">  483</span>                <span class="comment"># Extrac out the  &quot;results&quot;: [] list</span></div>
+<div class="line"><span class="lineno">  484</span>                results_list = jsonObject[<span class="stringliteral">&#39;results&#39;</span>]</div>
+<div class="line"><span class="lineno">  485</span>                <span class="keywordflow">for</span> result <span class="keywordflow">in</span> results_list:</div>
+<div class="line"><span class="lineno">  486</span>                    self.renders[<span class="stringliteral">&quot;renders&quot;</span>].append(result)</div>
+<div class="line"><span class="lineno">  487</span> </div>
+<div class="line"><span class="lineno">  488</span>                <span class="comment"># Scan for next batch of materials</span></div>
+<div class="line"><span class="lineno">  489</span>                nextQuery = jsonObject[<span class="stringliteral">&#39;next&#39;</span>]</div>
+<div class="line"><span class="lineno">  490</span>                <span class="keywordflow">if</span> (nextQuery):</div>
+<div class="line"><span class="lineno">  491</span>                    <span class="comment"># Get limit and offset from this: &#39;https://api.matlib.gpuopen.com/api/renders/?limit=100&amp;offset=100&quot;&#39;</span></div>
+<div class="line"><span class="lineno">  492</span>                    <span class="comment"># Split the string by &#39;?&#39;</span></div>
+<div class="line"><span class="lineno">  493</span>                    queryParts = nextQuery.split(<span class="stringliteral">&#39;?&#39;</span>)</div>
+<div class="line"><span class="lineno">  494</span>                    <span class="comment"># Split the string by &#39;&amp;&#39;</span></div>
+<div class="line"><span class="lineno">  495</span>                    queryParts = queryParts[1].split(<span class="stringliteral">&#39;&amp;&#39;</span>)</div>
+<div class="line"><span class="lineno">  496</span>                    <span class="comment"># Split the string by &#39;=&#39;</span></div>
+<div class="line"><span class="lineno">  497</span>                    limitParts = queryParts[0].split(<span class="stringliteral">&#39;=&#39;</span>)</div>
+<div class="line"><span class="lineno">  498</span>                    offsetParts = queryParts[1].split(<span class="stringliteral">&#39;=&#39;</span>)</div>
+<div class="line"><span class="lineno">  499</span>                    params[<span class="stringliteral">&#39;limit&#39;</span>] = int(limitParts[1])</div>
+<div class="line"><span class="lineno">  500</span>                    params[<span class="stringliteral">&#39;offset&#39;</span>] = int(offsetParts[1])</div>
+<div class="line"><span class="lineno">  501</span>                    self.logger.info(f<span class="stringliteral">&#39;Fetch set of render infos: limit: {params[&quot;limit&quot;]} offset: {params[&quot;offset&quot;]}&#39;</span>)</div>
+<div class="line"><span class="lineno">  502</span>                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  503</span>                    haveMoreMaterials = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  504</span>                    <span class="keywordflow">break</span></div>
+<div class="line"><span class="lineno">  505</span>                </div>
+<div class="line"><span class="lineno">  506</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  507</span>                self.logger.info(f<span class="stringliteral">&#39;Error: {response.status_code}, {response.text}&#39;</span>)</div>
+<div class="line"><span class="lineno">  508</span> </div>
+<div class="line"><span class="lineno">  509</span>        <span class="keywordflow">return</span> self.renders </div>
+<div class="line"><span class="lineno">  510</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1051,21 +1132,21 @@ Public Attributes</h2></td></tr>
 
 <p>Load the materials from a set of JSON files downloaded from the GPUOpen material database. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00558">558</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  558</span>    <span class="keyword">def </span>readMaterialFiles(self, fileNames) -&gt; list:</div>
-<div class="line"><span class="lineno">  559</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  560</span><span class="stringliteral">        Load the materials from a set of JSON files downloaded from</span></div>
-<div class="line"><span class="lineno">  561</span><span class="stringliteral">        the GPUOpen material database.</span></div>
-<div class="line"><span class="lineno">  562</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  563</span>        self.materials = []</div>
-<div class="line"><span class="lineno">  564</span>        <span class="keywordflow">for</span> fileName <span class="keywordflow">in</span> fileNames:</div>
-<div class="line"><span class="lineno">  565</span>            <span class="keyword">with</span> open(fileName) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  566</span>                data = json.load(f)</div>
-<div class="line"><span class="lineno">  567</span>                results = data[<span class="stringliteral">&#39;results&#39;</span>]</div>
-<div class="line"><span class="lineno">  568</span>                results_count = len(results)</div>
-<div class="line"><span class="lineno">  569</span>                self.materials.append(data)</div>
-<div class="line"><span class="lineno">  570</span>        <span class="keywordflow">return</span> self.materials</div>
-<div class="line"><span class="lineno">  571</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00598">598</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  598</span>    <span class="keyword">def </span>readMaterialFiles(self, fileNames) -&gt; list:</div>
+<div class="line"><span class="lineno">  599</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  600</span><span class="stringliteral">        Load the materials from a set of JSON files downloaded from</span></div>
+<div class="line"><span class="lineno">  601</span><span class="stringliteral">        the GPUOpen material database.</span></div>
+<div class="line"><span class="lineno">  602</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  603</span>        self.materials = []</div>
+<div class="line"><span class="lineno">  604</span>        <span class="keywordflow">for</span> fileName <span class="keywordflow">in</span> fileNames:</div>
+<div class="line"><span class="lineno">  605</span>            <span class="keyword">with</span> open(fileName) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  606</span>                data = json.load(f)</div>
+<div class="line"><span class="lineno">  607</span>                results = data[<span class="stringliteral">&#39;results&#39;</span>]</div>
+<div class="line"><span class="lineno">  608</span>                results_count = len(results)</div>
+<div class="line"><span class="lineno">  609</span>                self.materials.append(data)</div>
+<div class="line"><span class="lineno">  610</span>        <span class="keywordflow">return</span> self.materials</div>
+<div class="line"><span class="lineno">  611</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1091,60 +1172,60 @@ Public Attributes</h2></td></tr>
 <li>"GPUOpenMaterialX_Names.json" for material names. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00505">505</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  505</span>    <span class="keyword">def </span>readPackageFiles(self) -&gt; None:</div>
-<div class="line"><span class="lineno">  506</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  507</span><span class="stringliteral">        @brief Read the material files from the &quot;data/GPUOpenMaterialX&quot; folder in the install Python package.</span></div>
-<div class="line"><span class="lineno">  508</span><span class="stringliteral">        The files are expected to be named: </span></div>
-<div class="line"><span class="lineno">  509</span><span class="stringliteral">        - &quot;GPUOpenMaterialX_#.json&quot; for material files,</span></div>
-<div class="line"><span class="lineno">  510</span><span class="stringliteral">        - &quot;GPUOpenMaterialX_Previews_.json&quot; for material preview information, and </span></div>
-<div class="line"><span class="lineno">  511</span><span class="stringliteral">        - &quot;GPUOpenMaterialX_Names.json&quot; for material names.</span></div>
-<div class="line"><span class="lineno">  512</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  513</span> </div>
-<div class="line"><span class="lineno">  514</span>        self.materials = []</div>
-<div class="line"><span class="lineno">  515</span>        self.materialPreviews = []</div>
-<div class="line"><span class="lineno">  516</span>        self.materialNames = []        </div>
-<div class="line"><span class="lineno">  517</span> </div>
-<div class="line"><span class="lineno">  518</span>        <span class="comment"># Read &quot;data/GPUOpenMaterialX&quot; files from install Python package</span></div>
-<div class="line"><span class="lineno">  519</span>        <span class="comment"># Get package:</span></div>
-<div class="line"><span class="lineno">  520</span>        packageFolder = os.path.join(os.path.dirname(__file__), <span class="stringliteral">&#39;data/GPUOpenMaterialX&#39;</span>)</div>
-<div class="line"><span class="lineno">  521</span>        <span class="keywordflow">for</span> fileName <span class="keywordflow">in</span> os.listdir(packageFolder):</div>
-<div class="line"><span class="lineno">  522</span>            filePath = os.path.join(packageFolder, fileName)</div>
-<div class="line"><span class="lineno">  523</span>            self.logger.debug(f<span class="stringliteral">&#39;&gt; SCAN package file: &quot;{filePath}&quot;&#39;</span>)</div>
-<div class="line"><span class="lineno">  524</span>            <span class="comment"># Check for files of this form: GPUOpenMaterialX_#.json</span></div>
-<div class="line"><span class="lineno">  525</span>            <span class="keywordflow">if</span> re.match(<span class="stringliteral">r&#39;GPUOpenMaterialX_\d+\.json&#39;</span>, fileName):</div>
-<div class="line"><span class="lineno">  526</span>                self.logger.debug(f<span class="stringliteral">&#39;&gt; Read package file: &quot;{filePath}&quot;&#39;</span>)</div>
-<div class="line"><span class="lineno">  527</span>                <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  528</span>                    data = json.load(f)</div>
-<div class="line"><span class="lineno">  529</span>                    results = data[<span class="stringliteral">&#39;results&#39;</span>]</div>
-<div class="line"><span class="lineno">  530</span>                    results_count = len(results)</div>
-<div class="line"><span class="lineno">  531</span>                    self.materials.append(data)     </div>
-<div class="line"><span class="lineno">  532</span>            <span class="keywordflow">elif</span> fileName == <span class="stringliteral">&#39;GPUOpenMaterialX_Previews_.json&#39;</span>:</div>
-<div class="line"><span class="lineno">  533</span>                self.logger.debug(f<span class="stringliteral">&#39;&gt; Read package file: &quot;{filePath}&quot;&#39;</span>)</div>
-<div class="line"><span class="lineno">  534</span>                <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  535</span>                    data = json.load(f)</div>
-<div class="line"><span class="lineno">  536</span>                    self.materialPreviews = data</div>
-<div class="line"><span class="lineno">  537</span>            <span class="comment">#elif fileName == &#39;GPUOpenMaterialX_Names.json&#39;:</span></div>
-<div class="line"><span class="lineno">  538</span>            <span class="comment">#    self.logger.debug(f&#39;&gt; Read package file: &quot;{filePath}&quot;&#39;)</span></div>
-<div class="line"><span class="lineno">  539</span>            <span class="comment">#    with open(filePath) as f:</span></div>
-<div class="line"><span class="lineno">  540</span>            <span class="comment">#        data = json.load(f)</span></div>
-<div class="line"><span class="lineno">  541</span>            <span class="comment">#        self.materialNames = data</span></div>
-<div class="line"><span class="lineno">  542</span>            <span class="keywordflow">elif</span> fileName == <span class="stringliteral">&#39;GPUOpenMaterialX_Renders_.json&#39;</span>:</div>
-<div class="line"><span class="lineno">  543</span>                self.logger.debug(f<span class="stringliteral">&#39;&gt; Read package file: &quot;{filePath}&quot;&#39;</span>)</div>
-<div class="line"><span class="lineno">  544</span>                <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  545</span>                    data = json.load(f)</div>
-<div class="line"><span class="lineno">  546</span>                    self.renders = data</div>
-<div class="line"><span class="lineno">  547</span> </div>
-<div class="line"><span class="lineno">  548</span>        <span class="comment"># Better to extract the names from materials vs reading from file</span></div>
-<div class="line"><span class="lineno">  549</span>        <span class="comment"># which may be out of sync.</span></div>
-<div class="line"><span class="lineno">  550</span>        self.getMaterialNames()</div>
-<div class="line"><span class="lineno">  551</span> </div>
-<div class="line"><span class="lineno">  552</span>        self.logger.debug(f<span class="stringliteral">&#39;Loaded {len(self.materials)} material files, &#39;</span></div>
-<div class="line"><span class="lineno">  553</span>                         f<span class="stringliteral">&#39;{len(self.materialPreviews)} material previews, and &#39;</span></div>
-<div class="line"><span class="lineno">  554</span>                         f<span class="stringliteral">&#39;{len(self.materialNames)} material names, &#39;</span></div>
-<div class="line"><span class="lineno">  555</span>                         f<span class="stringliteral">&#39;{len(self.renders)} render files from package.&#39;</span>)</div>
-<div class="line"><span class="lineno">  556</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00545">545</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  545</span>    <span class="keyword">def </span>readPackageFiles(self) -&gt; None:</div>
+<div class="line"><span class="lineno">  546</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  547</span><span class="stringliteral">        @brief Read the material files from the &quot;data/GPUOpenMaterialX&quot; folder in the install Python package.</span></div>
+<div class="line"><span class="lineno">  548</span><span class="stringliteral">        The files are expected to be named: </span></div>
+<div class="line"><span class="lineno">  549</span><span class="stringliteral">        - &quot;GPUOpenMaterialX_#.json&quot; for material files,</span></div>
+<div class="line"><span class="lineno">  550</span><span class="stringliteral">        - &quot;GPUOpenMaterialX_Previews_.json&quot; for material preview information, and </span></div>
+<div class="line"><span class="lineno">  551</span><span class="stringliteral">        - &quot;GPUOpenMaterialX_Names.json&quot; for material names.</span></div>
+<div class="line"><span class="lineno">  552</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  553</span> </div>
+<div class="line"><span class="lineno">  554</span>        self.materials = []</div>
+<div class="line"><span class="lineno">  555</span>        self.materialPreviews = []</div>
+<div class="line"><span class="lineno">  556</span>        self.materialNames = []        </div>
 <div class="line"><span class="lineno">  557</span> </div>
+<div class="line"><span class="lineno">  558</span>        <span class="comment"># Read &quot;data/GPUOpenMaterialX&quot; files from install Python package</span></div>
+<div class="line"><span class="lineno">  559</span>        <span class="comment"># Get package:</span></div>
+<div class="line"><span class="lineno">  560</span>        packageFolder = os.path.join(os.path.dirname(__file__), <span class="stringliteral">&#39;data/GPUOpenMaterialX&#39;</span>)</div>
+<div class="line"><span class="lineno">  561</span>        <span class="keywordflow">for</span> fileName <span class="keywordflow">in</span> os.listdir(packageFolder):</div>
+<div class="line"><span class="lineno">  562</span>            filePath = os.path.join(packageFolder, fileName)</div>
+<div class="line"><span class="lineno">  563</span>            self.logger.debug(f<span class="stringliteral">&#39;&gt; SCAN package file: &quot;{filePath}&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">  564</span>            <span class="comment"># Check for files of this form: GPUOpenMaterialX_#.json</span></div>
+<div class="line"><span class="lineno">  565</span>            <span class="keywordflow">if</span> re.match(<span class="stringliteral">r&#39;GPUOpenMaterialX_\d+\.json&#39;</span>, fileName):</div>
+<div class="line"><span class="lineno">  566</span>                self.logger.debug(f<span class="stringliteral">&#39;&gt; Read package file: &quot;{filePath}&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">  567</span>                <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  568</span>                    data = json.load(f)</div>
+<div class="line"><span class="lineno">  569</span>                    results = data[<span class="stringliteral">&#39;results&#39;</span>]</div>
+<div class="line"><span class="lineno">  570</span>                    results_count = len(results)</div>
+<div class="line"><span class="lineno">  571</span>                    self.materials.append(data)     </div>
+<div class="line"><span class="lineno">  572</span>            <span class="keywordflow">elif</span> fileName == <span class="stringliteral">&#39;GPUOpenMaterialX_Previews_.json&#39;</span>:</div>
+<div class="line"><span class="lineno">  573</span>                self.logger.debug(f<span class="stringliteral">&#39;&gt; Read package file: &quot;{filePath}&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">  574</span>                <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  575</span>                    data = json.load(f)</div>
+<div class="line"><span class="lineno">  576</span>                    self.materialPreviews = data</div>
+<div class="line"><span class="lineno">  577</span>            <span class="comment">#elif fileName == &#39;GPUOpenMaterialX_Names.json&#39;:</span></div>
+<div class="line"><span class="lineno">  578</span>            <span class="comment">#    self.logger.debug(f&#39;&gt; Read package file: &quot;{filePath}&quot;&#39;)</span></div>
+<div class="line"><span class="lineno">  579</span>            <span class="comment">#    with open(filePath) as f:</span></div>
+<div class="line"><span class="lineno">  580</span>            <span class="comment">#        data = json.load(f)</span></div>
+<div class="line"><span class="lineno">  581</span>            <span class="comment">#        self.materialNames = data</span></div>
+<div class="line"><span class="lineno">  582</span>            <span class="keywordflow">elif</span> fileName == <span class="stringliteral">&#39;GPUOpenMaterialX_Renders_.json&#39;</span>:</div>
+<div class="line"><span class="lineno">  583</span>                self.logger.debug(f<span class="stringliteral">&#39;&gt; Read package file: &quot;{filePath}&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">  584</span>                <span class="keyword">with</span> open(filePath) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  585</span>                    data = json.load(f)</div>
+<div class="line"><span class="lineno">  586</span>                    self.renders = data</div>
+<div class="line"><span class="lineno">  587</span> </div>
+<div class="line"><span class="lineno">  588</span>        <span class="comment"># Better to extract the names from materials vs reading from file</span></div>
+<div class="line"><span class="lineno">  589</span>        <span class="comment"># which may be out of sync.</span></div>
+<div class="line"><span class="lineno">  590</span>        self.getMaterialNames()</div>
+<div class="line"><span class="lineno">  591</span> </div>
+<div class="line"><span class="lineno">  592</span>        self.logger.debug(f<span class="stringliteral">&#39;Loaded {len(self.materials)} material files, &#39;</span></div>
+<div class="line"><span class="lineno">  593</span>                         f<span class="stringliteral">&#39;{len(self.materialPreviews)} material previews, and &#39;</span></div>
+<div class="line"><span class="lineno">  594</span>                         f<span class="stringliteral">&#39;{len(self.materialNames)} material names, &#39;</span></div>
+<div class="line"><span class="lineno">  595</span>                         f<span class="stringliteral">&#39;{len(self.renders)} render files from package.&#39;</span>)</div>
+<div class="line"><span class="lineno">  596</span> </div>
+<div class="line"><span class="lineno">  597</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1182,31 +1263,31 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>: The number of files written. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00608">608</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  608</span>    <span class="keyword">def </span>writeMaterialFiles(self, folder, rootFileName) -&gt; int:</div>
-<div class="line"><span class="lineno">  609</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  610</span><span class="stringliteral">        Write the materials to disk.</span></div>
-<div class="line"><span class="lineno">  611</span><span class="stringliteral">        @param folder: The folder to write the files to.</span></div>
-<div class="line"><span class="lineno">  612</span><span class="stringliteral">        @param rootFileName: The root file name to use for the files.</span></div>
-<div class="line"><span class="lineno">  613</span><span class="stringliteral">        @return: The number of files written.</span></div>
-<div class="line"><span class="lineno">  614</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  615</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  616</span>            <span class="keywordflow">return</span> 0</div>
-<div class="line"><span class="lineno">  617</span> </div>
-<div class="line"><span class="lineno">  618</span>        i = 0    </div>
-<div class="line"><span class="lineno">  619</span>        <span class="keywordflow">if</span> (len(self.materials) &gt; 0):</div>
-<div class="line"><span class="lineno">  620</span>            os.makedirs(folder, exist_ok=<span class="keyword">True</span>)</div>
-<div class="line"><span class="lineno">  621</span>            <span class="keywordflow">for</span> material <span class="keywordflow">in</span> self.materials:</div>
-<div class="line"><span class="lineno">  622</span>                <span class="comment"># Write JSON to file</span></div>
-<div class="line"><span class="lineno">  623</span>                fileName = rootFileName + <span class="stringliteral">&#39;_&#39;</span> + str(i) + <span class="stringliteral">&#39;.json&#39;</span></div>
-<div class="line"><span class="lineno">  624</span>                materialFileName = os.path.join(folder, fileName)</div>
-<div class="line"><span class="lineno">  625</span>                self.logger.info(f<span class="stringliteral">&#39;&gt; Write material to file: &quot;{materialFileName}&quot;&#39;</span>)</div>
-<div class="line"><span class="lineno">  626</span>                <span class="keyword">with</span> open(materialFileName, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  627</span>                    json.dump(material, f, indent=4, sort_keys=<span class="keyword">True</span>)</div>
-<div class="line"><span class="lineno">  628</span>                i += 1                    </div>
-<div class="line"><span class="lineno">  629</span> </div>
-<div class="line"><span class="lineno">  630</span>        <span class="keywordflow">return</span> i</div>
-<div class="line"><span class="lineno">  631</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00648">648</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  648</span>    <span class="keyword">def </span>writeMaterialFiles(self, folder, rootFileName) -&gt; int:</div>
+<div class="line"><span class="lineno">  649</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  650</span><span class="stringliteral">        Write the materials to disk.</span></div>
+<div class="line"><span class="lineno">  651</span><span class="stringliteral">        @param folder: The folder to write the files to.</span></div>
+<div class="line"><span class="lineno">  652</span><span class="stringliteral">        @param rootFileName: The root file name to use for the files.</span></div>
+<div class="line"><span class="lineno">  653</span><span class="stringliteral">        @return: The number of files written.</span></div>
+<div class="line"><span class="lineno">  654</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  655</span>        <span class="keywordflow">if</span> (self.materials == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  656</span>            <span class="keywordflow">return</span> 0</div>
+<div class="line"><span class="lineno">  657</span> </div>
+<div class="line"><span class="lineno">  658</span>        i = 0    </div>
+<div class="line"><span class="lineno">  659</span>        <span class="keywordflow">if</span> (len(self.materials) &gt; 0):</div>
+<div class="line"><span class="lineno">  660</span>            os.makedirs(folder, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">  661</span>            <span class="keywordflow">for</span> material <span class="keywordflow">in</span> self.materials:</div>
+<div class="line"><span class="lineno">  662</span>                <span class="comment"># Write JSON to file</span></div>
+<div class="line"><span class="lineno">  663</span>                fileName = rootFileName + <span class="stringliteral">&#39;_&#39;</span> + str(i) + <span class="stringliteral">&#39;.json&#39;</span></div>
+<div class="line"><span class="lineno">  664</span>                materialFileName = os.path.join(folder, fileName)</div>
+<div class="line"><span class="lineno">  665</span>                self.logger.info(f<span class="stringliteral">&#39;&gt; Write material to file: &quot;{materialFileName}&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">  666</span>                <span class="keyword">with</span> open(materialFileName, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  667</span>                    json.dump(material, f, indent=4, sort_keys=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">  668</span>                i += 1                    </div>
+<div class="line"><span class="lineno">  669</span> </div>
+<div class="line"><span class="lineno">  670</span>        <span class="keywordflow">return</span> i</div>
+<div class="line"><span class="lineno">  671</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1243,18 +1324,18 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00632">632</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  632</span>    <span class="keyword">def </span>writeMaterialNamesToFile(self, fileName, sort=True):</div>
-<div class="line"><span class="lineno">  633</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  634</span><span class="stringliteral">        Write sorted list of the material names to a file in JSON format</span></div>
-<div class="line"><span class="lineno">  635</span><span class="stringliteral">        @param fileName: The file name to write the material names to.</span></div>
-<div class="line"><span class="lineno">  636</span><span class="stringliteral">        @param sort: If true, sort the material names.        </span></div>
-<div class="line"><span class="lineno">  637</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  638</span>        <span class="keywordflow">if</span> (self.materialNames == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  639</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  640</span> </div>
-<div class="line"><span class="lineno">  641</span>        <span class="keyword">with</span> open(fileName, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  642</span>            json.dump(self.materialNames, f, indent=2, sort_keys=sort)</div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00672">672</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  672</span>    <span class="keyword">def </span>writeMaterialNamesToFile(self, fileName, sort=True):</div>
+<div class="line"><span class="lineno">  673</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  674</span><span class="stringliteral">        Write sorted list of the material names to a file in JSON format</span></div>
+<div class="line"><span class="lineno">  675</span><span class="stringliteral">        @param fileName: The file name to write the material names to.</span></div>
+<div class="line"><span class="lineno">  676</span><span class="stringliteral">        @param sort: If true, sort the material names.        </span></div>
+<div class="line"><span class="lineno">  677</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  678</span>        <span class="keywordflow">if</span> (self.materialNames == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  679</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">  680</span> </div>
+<div class="line"><span class="lineno">  681</span>        <span class="keyword">with</span> open(fileName, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  682</span>            json.dump(self.materialNames, f, indent=2, sort_keys=sort)</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1291,25 +1372,25 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00590">590</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  590</span>    <span class="keyword">def </span>writeMaterialPreviewFile(self, folder, rootFileName):</div>
-<div class="line"><span class="lineno">  591</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  592</span><span class="stringliteral">        Write the material preview information to disk files.</span></div>
-<div class="line"><span class="lineno">  593</span><span class="stringliteral">        @param folder: The folder to write the files to.</span></div>
-<div class="line"><span class="lineno">  594</span><span class="stringliteral">        @param rootFileName: The root file name to use for the files.</span></div>
-<div class="line"><span class="lineno">  595</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  596</span>        <span class="keywordflow">if</span> (self.materialPreviews == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  597</span>            <span class="keywordflow">return</span> 0</div>
-<div class="line"><span class="lineno">  598</span> </div>
-<div class="line"><span class="lineno">  599</span>        os.makedirs(folder, exist_ok=<span class="keyword">True</span>)</div>
-<div class="line"><span class="lineno">  600</span>        <span class="comment"># Write JSON to file</span></div>
-<div class="line"><span class="lineno">  601</span>        fileName = rootFileName + <span class="stringliteral">&#39;_.json&#39;</span></div>
-<div class="line"><span class="lineno">  602</span>        previewsFileName = os.path.join(folder, fileName)</div>
-<div class="line"><span class="lineno">  603</span>        self.logger.info(f<span class="stringliteral">&#39;&gt; Write material preview info to file: &quot;{previewsFileName}&quot;&#39;</span>)</div>
-<div class="line"><span class="lineno">  604</span>        <span class="keyword">with</span> open(previewsFileName, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  605</span>            json.dump(self.materialPreviews, f, indent=4)</div>
-<div class="line"><span class="lineno">  606</span> </div>
-<div class="line"><span class="lineno">  607</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00630">630</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  630</span>    <span class="keyword">def </span>writeMaterialPreviewFile(self, folder, rootFileName):</div>
+<div class="line"><span class="lineno">  631</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  632</span><span class="stringliteral">        Write the material preview information to disk files.</span></div>
+<div class="line"><span class="lineno">  633</span><span class="stringliteral">        @param folder: The folder to write the files to.</span></div>
+<div class="line"><span class="lineno">  634</span><span class="stringliteral">        @param rootFileName: The root file name to use for the files.</span></div>
+<div class="line"><span class="lineno">  635</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  636</span>        <span class="keywordflow">if</span> (self.materialPreviews == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  637</span>            <span class="keywordflow">return</span> 0</div>
+<div class="line"><span class="lineno">  638</span> </div>
+<div class="line"><span class="lineno">  639</span>        os.makedirs(folder, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">  640</span>        <span class="comment"># Write JSON to file</span></div>
+<div class="line"><span class="lineno">  641</span>        fileName = rootFileName + <span class="stringliteral">&#39;_.json&#39;</span></div>
+<div class="line"><span class="lineno">  642</span>        previewsFileName = os.path.join(folder, fileName)</div>
+<div class="line"><span class="lineno">  643</span>        self.logger.info(f<span class="stringliteral">&#39;&gt; Write material preview info to file: &quot;{previewsFileName}&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">  644</span>        <span class="keyword">with</span> open(previewsFileName, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  645</span>            json.dump(self.materialPreviews, f, indent=4)</div>
+<div class="line"><span class="lineno">  646</span> </div>
+<div class="line"><span class="lineno">  647</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1457,25 +1538,25 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>: The number of files written. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00572">572</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  572</span>    <span class="keyword">def </span>writeRenderFiles(self, folder, rootFileName) -&gt; int:</div>
-<div class="line"><span class="lineno">  573</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  574</span><span class="stringliteral">        Write the render information to disk files.</span></div>
-<div class="line"><span class="lineno">  575</span><span class="stringliteral">        @param folder: The folder to write the files to.</span></div>
-<div class="line"><span class="lineno">  576</span><span class="stringliteral">        @param rootFileName: The root file name to use for the files.</span></div>
-<div class="line"><span class="lineno">  577</span><span class="stringliteral">        @return: The number of files written.</span></div>
-<div class="line"><span class="lineno">  578</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  579</span>        <span class="keywordflow">if</span> (self.renders == <span class="keywordtype">None</span>):</div>
-<div class="line"><span class="lineno">  580</span>            <span class="keywordflow">return</span> 0</div>
-<div class="line"><span class="lineno">  581</span> </div>
-<div class="line"><span class="lineno">  582</span>        os.makedirs(folder, exist_ok=<span class="keyword">True</span>)</div>
-<div class="line"><span class="lineno">  583</span>        <span class="comment"># Write JSON to file</span></div>
-<div class="line"><span class="lineno">  584</span>        fileName = rootFileName + <span class="stringliteral">&#39;_.json&#39;</span></div>
-<div class="line"><span class="lineno">  585</span>        rendersFileName = os.path.join(folder, fileName)</div>
-<div class="line"><span class="lineno">  586</span>        self.logger.info(f<span class="stringliteral">&#39;&gt; Write render info to file: &quot;{rendersFileName}&quot;&#39;</span>)</div>
-<div class="line"><span class="lineno">  587</span>        <span class="keyword">with</span> open(rendersFileName, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">  588</span>            json.dump(self.renders, f, indent=4)</div>
-<div class="line"><span class="lineno">  589</span> </div>
+<p class="definition">Definition at line <a class="el" href="_g_p_u_open_loader_8py_source.html#l00612">612</a> of file <a class="el" href="_g_p_u_open_loader_8py_source.html">GPUOpenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  612</span>    <span class="keyword">def </span>writeRenderFiles(self, folder, rootFileName) -&gt; int:</div>
+<div class="line"><span class="lineno">  613</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  614</span><span class="stringliteral">        Write the render information to disk files.</span></div>
+<div class="line"><span class="lineno">  615</span><span class="stringliteral">        @param folder: The folder to write the files to.</span></div>
+<div class="line"><span class="lineno">  616</span><span class="stringliteral">        @param rootFileName: The root file name to use for the files.</span></div>
+<div class="line"><span class="lineno">  617</span><span class="stringliteral">        @return: The number of files written.</span></div>
+<div class="line"><span class="lineno">  618</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  619</span>        <span class="keywordflow">if</span> (self.renders == <span class="keywordtype">None</span>):</div>
+<div class="line"><span class="lineno">  620</span>            <span class="keywordflow">return</span> 0</div>
+<div class="line"><span class="lineno">  621</span> </div>
+<div class="line"><span class="lineno">  622</span>        os.makedirs(folder, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">  623</span>        <span class="comment"># Write JSON to file</span></div>
+<div class="line"><span class="lineno">  624</span>        fileName = rootFileName + <span class="stringliteral">&#39;_.json&#39;</span></div>
+<div class="line"><span class="lineno">  625</span>        rendersFileName = os.path.join(folder, fileName)</div>
+<div class="line"><span class="lineno">  626</span>        self.logger.info(f<span class="stringliteral">&#39;&gt; Write render info to file: &quot;{rendersFileName}&quot;&#39;</span>)</div>
+<div class="line"><span class="lineno">  627</span>        <span class="keyword">with</span> open(rendersFileName, <span class="stringliteral">&#39;w&#39;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  628</span>            json.dump(self.renders, f, indent=4)</div>
+<div class="line"><span class="lineno">  629</span> </div>
 </div><!-- fragment -->
 </div>
 </div>

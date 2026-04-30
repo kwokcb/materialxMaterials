@@ -133,7 +133,7 @@ $(function(){initNavTree('_g_p_u_open_loader_cmd_8py_source.html','',''); });
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    parser.add_argument(<span class="stringliteral">&#39;--saveMaterials&#39;</span>, type=bool, default=<span class="keywordtype">None</span>, </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                        help=<span class="stringliteral">&#39;Save material lists. Default is None.&#39;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                        <span class="stringliteral">&#39; Has no effect if --loadMaterials is set&#39;</span>)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    parser.add_argument(<span class="stringliteral">&#39;--extractExpression&#39;</span>, type=str, default=<span class="stringliteral">&#39;Oliana Blue Painted Wood&#39;</span>, </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    parser.add_argument(<span class="stringliteral">&#39;--extractExpression&#39;</span>, type=str, default=<span class="stringliteral">&#39;&#39;</span>, </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                        help=<span class="stringliteral">&#39;Extract out a package for a materials which match a given expression. Default is a sample material&#39;</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                        )</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    parser.add_argument(<span class="stringliteral">&#39;--extractIndices&#39;</span>, type=str, default=<span class="stringliteral">&#39;&#39;</span>, </div>
@@ -191,32 +191,32 @@ $(function(){initNavTree('_g_p_u_open_loader_cmd_8py_source.html','',''); });
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span> opts.extractExpression:</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        searchExpr = opts.extractExpression</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> len(searchExpr) == 0:</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        logger.info(f<span class="stringliteral">&#39;&gt; No search expression given.&#39;</span>)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">else</span>:    </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        dataItems = loader.downloadPackageByExpression(searchExpr, 0)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        toMB = 1.0 / (1024.0 * 1024.0)</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        unzipFile = opts.unzip <span class="keywordflow">if</span> opts.unzip <span class="keywordflow">else</span> <span class="keyword">False</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">for</span> dataItem <span class="keywordflow">in</span> dataItems:</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            data = dataItem[0]</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            title = dataItem[1]</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            url = dataItem[2]</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            logger.info(f<span class="stringliteral">&#39;Write package data to file: {title}, Data size: {len(data)*toMB:.2f} MB&#39;</span>)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            loader.writePackageDataToFile(data, outputFolder, title, url, unzipFile=unzipFile)    </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    extractIndices = opts.extractIndices</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> len(extractIndices) &gt; 0:</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        indices = extractIndices.split(<span class="stringliteral">&#39;,&#39;</span>)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">if</span> len(indices) != 3:</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            logger.error(f<span class="stringliteral">&#39;Error: Invalid indices given: {extractIndices}&#39;</span>)</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            sys.exit(1)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        materialList = int(indices[0])</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        materialIndex = int(indices[1])</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        materialPackage = int(indices[2])</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        [data, title, url] = loader.downloadPackage(materialList, materialIndex, materialPackage)</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        logger.info(f<span class="stringliteral">&#39;&gt; Download material: {title} List: {materialList}. Index: {materialIndex}. Package: {materialPackage}. Preview URL:{url}&#39;</span>)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">if</span> data:</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            loader.writePackageDataToFile(data, outputFolder, title, url)    </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span> opts.extractExpression:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            logger.info(f<span class="stringliteral">&#39;&gt; No search expression given.&#39;</span>)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">else</span>:    </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        dataItems = loader.downloadPackageByExpression(searchExpr, 0)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        toMB = 1.0 / (1024.0 * 1024.0)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        unzipFile = opts.unzip <span class="keywordflow">if</span> opts.unzip <span class="keywordflow">else</span> <span class="keyword">False</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">for</span> dataItem <span class="keywordflow">in</span> dataItems:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            data = dataItem[0]</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            title = dataItem[1]</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            url = dataItem[2]</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            logger.info(f<span class="stringliteral">&#39;Write package data to file: {title}, Data size: {len(data)*toMB:.2f} MB&#39;</span>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            loader.writePackageDataToFile(data, outputFolder, title, url, unzipFile=unzipFile)    </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    extractIndices = opts.extractIndices</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> len(extractIndices) &gt; 0:</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        indices = extractIndices.split(<span class="stringliteral">&#39;,&#39;</span>)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">if</span> len(indices) != 3:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            logger.error(f<span class="stringliteral">&#39;Error: Invalid indices given: {extractIndices}&#39;</span>)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            materialList = int(indices[0])</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            materialIndex = int(indices[1])</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            materialPackage = int(indices[2])</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            [data, title, url] = loader.downloadPackage(materialList, materialIndex, materialPackage)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            logger.info(f<span class="stringliteral">&#39;&gt; Download material: {title} List: {materialList}. Index: {materialIndex}. Package: {materialPackage}. Preview URL:{url}&#39;</span>)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">if</span> data:</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                loader.writePackageDataToFile(data, outputFolder, title, url)    </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> opts.materialNames:</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        materialNamesFile = os.path.join(outputFolder, <span class="stringliteral">&#39;GPUOpenMaterialX_Names.json&#39;</span>)</div>

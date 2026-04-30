@@ -11,6 +11,7 @@ def main() -> int:
         return 1
     if sys.argv[1] == '-h' or sys.argv[1] == '--help':
         print('Usage: python -m materialxMaterials <command> [options] where command is gpuopen, physbased, acg (AmbientCG), or polyhaven')
+        return 0
 
     # Check if the command is valid
     cmdArgs = sys.argv[1:]
@@ -25,15 +26,16 @@ def main() -> int:
     else:
         print('Unknown command specified:', cmdArgs[0])
         return 1
-    
-    # Build the command
-    cmd = ' '.join(cmdArgs)
+
     packageLocation = os.path.dirname(__file__)
     python_exec = sys.executable
-    cmd = python_exec + ' ' + packageLocation + '/' + cmd
+    script_path = os.path.join(packageLocation, cmdArgs[0])
+    
+    cmd = [python_exec, script_path] + cmdArgs[1:]
+    print('Running command:', ' '.join(cmd))
 
     # Run the command
-    return subprocess.call(cmd, shell=True)
+    return subprocess.call(cmd, shell=False)
 
 if __name__ == '__main__':
     sys.exit(main())

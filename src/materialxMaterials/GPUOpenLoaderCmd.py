@@ -25,7 +25,7 @@ def GPUOpenLoaderCmd():
     parser.add_argument('--saveMaterials', type=bool, default=None, 
                         help='Save material lists. Default is None.'
                         ' Has no effect if --loadMaterials is set')
-    parser.add_argument('--extractExpression', type=str, default='Oliana Blue Painted Wood', 
+    parser.add_argument('--extractExpression', type=str, default='', 
                         help='Extract out a package for a materials which match a given expression. Default is a sample material'
                         )
     parser.add_argument('--extractIndices', type=str, default='', 
@@ -83,7 +83,8 @@ def GPUOpenLoaderCmd():
     if opts.extractExpression:
         searchExpr = opts.extractExpression
     if len(searchExpr) == 0:
-        logger.info(f'> No search expression given.')
+        if opts.extractExpression:
+            logger.info(f'> No search expression given.')
     else:    
         dataItems = loader.downloadPackageByExpression(searchExpr, 0)
         toMB = 1.0 / (1024.0 * 1024.0)
@@ -100,15 +101,14 @@ def GPUOpenLoaderCmd():
         indices = extractIndices.split(',')
         if len(indices) != 3:
             logger.error(f'Error: Invalid indices given: {extractIndices}')
-            sys.exit(1)
-
-        materialList = int(indices[0])
-        materialIndex = int(indices[1])
-        materialPackage = int(indices[2])
-        [data, title, url] = loader.downloadPackage(materialList, materialIndex, materialPackage)
-        logger.info(f'> Download material: {title} List: {materialList}. Index: {materialIndex}. Package: {materialPackage}. Preview URL:{url}')
-        if data:
-            loader.writePackageDataToFile(data, outputFolder, title, url)    
+        else:
+            materialList = int(indices[0])
+            materialIndex = int(indices[1])
+            materialPackage = int(indices[2])
+            [data, title, url] = loader.downloadPackage(materialList, materialIndex, materialPackage)
+            logger.info(f'> Download material: {title} List: {materialList}. Index: {materialIndex}. Package: {materialPackage}. Preview URL:{url}')
+            if data:
+                loader.writePackageDataToFile(data, outputFolder, title, url)    
 
     if opts.materialNames:
         materialNamesFile = os.path.join(outputFolder, 'GPUOpenMaterialX_Names.json')

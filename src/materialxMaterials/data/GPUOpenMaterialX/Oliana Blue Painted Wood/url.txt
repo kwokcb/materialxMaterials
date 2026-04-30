@@ -1,1 +1,0 @@
-https://api.matlib.gpuopen.com/api/renders/cb7aa6bc-9b5e-4d5a-814b-dc5591bd56e6/download_thumbnail/

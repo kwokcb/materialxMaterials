@@ -154,137 +154,145 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   24</span>    parser.add_argument(<span class="stringliteral">&quot;-c&quot;</span>, <span class="stringliteral">&quot;--count&quot;</span>, type=int, default=<span class="keywordtype">None</span>, help=<span class="stringliteral">&quot;Number of assets to fetch (default: 1)&quot;</span>)</div>
 <div class="line"><span class="lineno">   25</span>    parser.add_argument(<span class="stringliteral">&#39;-exr&#39;</span>, <span class="stringliteral">&#39;--keep_exr&#39;</span>, action=<span class="stringliteral">&#39;store_true&#39;</span>, help=<span class="stringliteral">&quot;Keep EXR textures instead of converting to PNG (requires OpenImageIO)&quot;</span>)</div>
 <div class="line"><span class="lineno">   26</span>    parser.add_argument(<span class="stringliteral">&#39;-x&#39;</span>, <span class="stringliteral">&#39;--extract_zip&#39;</span>, action=<span class="stringliteral">&#39;store_true&#39;</span>, help=<span class="stringliteral">&quot;Extract downloaded ZIP files&quot;</span>)</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    args = parser.parse_args()</div>
-<div class="line"><span class="lineno">   29</span>    download_type = args.download_type.lower()</div>
-<div class="line"><span class="lineno">   30</span>    all_data_file = <span class="stringliteral">&#39;polyhaven_assets.json&#39;</span></div>
-<div class="line"><span class="lineno">   31</span>    filtered_data_file = <span class="stringliteral">&#39;filtered_polyhaven_assets.json&#39;</span></div>
-<div class="line"><span class="lineno">   32</span>    blend_data_file = <span class="stringliteral">&quot;polyhaven_blender_assets.json&quot;</span></div>
-<div class="line"><span class="lineno">   33</span>    gltf_data_file = <span class="stringliteral">&quot;polyhaven_gltf_assets.json&quot;</span></div>
-<div class="line"><span class="lineno">   34</span>    mtlx_data_file = <span class="stringliteral">&quot;polyhaven_materialx_assets.json&quot;</span></div>
-<div class="line"><span class="lineno">   35</span>    fetch = args.fetch</div>
-<div class="line"><span class="lineno">   36</span>    download_id = args.download_id</div>
-<div class="line"><span class="lineno">   37</span>    resolution = args.download_resolution</div>
-<div class="line"><span class="lineno">   38</span>    load = args.load <span class="keywordflow">or</span> args.download_id != <span class="stringliteral">&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   39</span>    data_folder = args.data_folder</div>
-<div class="line"><span class="lineno">   40</span>    </div>
-<div class="line"><span class="lineno">   41</span>    loader = polyHavenLoader.PolyHavenLoader()</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    materialx_assets = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">   44</span>    blend_assets = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">   45</span>    gltf_assets = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> fetch:</div>
-<div class="line"><span class="lineno">   48</span>        fetch_count = args.count</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">if</span> fetch_count <span class="keywordflow">and</span> fetch_count &lt; 1:</div>
-<div class="line"><span class="lineno">   50</span>            fetch_count = 1</div>
-<div class="line"><span class="lineno">   51</span>        materialx_assets, all_assets, \</div>
-<div class="line"><span class="lineno">   52</span>            filtered_polyhaven_assets, blender_assets, gltf_assets = \</div>
-<div class="line"><span class="lineno">   53</span>            loader.fetch_materialx_assets(max_items=fetch_count, download_id=download_id, download_type=args.download_type)</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>        <span class="comment"># Write all_assets to JSON file:        </span></div>
-<div class="line"><span class="lineno">   56</span>        all_location = Path(data_folder) / all_data_file</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keyword">with</span> open(all_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   58</span>            json.dump(all_assets, f, indent=4)</div>
-<div class="line"><span class="lineno">   59</span>            logger.info(f<span class="stringliteral">&quot;Saved all assets to {all_location}&quot;</span>)</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>        <span class="comment"># Write filtered_polyhaven_assets to JSON file:</span></div>
-<div class="line"><span class="lineno">   62</span>        filtered_location = Path(data_folder) / filtered_data_file</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keyword">with</span> open(filtered_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   64</span>            json.dump(filtered_polyhaven_assets, f, indent=4)</div>
-<div class="line"><span class="lineno">   65</span>            logger.info(f<span class="stringliteral">&quot;Saved MaterialX assets to {filtered_location}&quot;</span>)</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>        <span class="comment"># Write filtered MTLX, BLENDER, and GLTF assets to JSON files:</span></div>
-<div class="line"><span class="lineno">   68</span>        mtlx_fetch_location = Path(data_folder) / mtlx_data_file</div>
-<div class="line"><span class="lineno">   69</span>        <span class="keyword">with</span> open(mtlx_fetch_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   70</span>            logger.info(f<span class="stringliteral">&quot;- Saving MaterialX assets to {mtlx_fetch_location}...&quot;</span>)</div>
-<div class="line"><span class="lineno">   71</span>            json.dump(materialx_assets, f, indent=4)</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>        blender_location = Path(data_folder) / blend_data_file</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keyword">with</span> open(blender_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   75</span>            json.dump(blender_assets, f, indent=4)</div>
-<div class="line"><span class="lineno">   76</span>            logger.info(f<span class="stringliteral">&quot;Saved Blender assets to {blender_location}&quot;</span>)</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>        gltf_location = Path(data_folder) / gltf_data_file</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keyword">with</span> open(gltf_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   80</span>            json.dump(gltf_assets, f, indent=4)</div>
-<div class="line"><span class="lineno">   81</span>            logger.info(f<span class="stringliteral">&quot;Saved glTF assets to {gltf_location}&quot;</span>)</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">elif</span> load:</div>
-<div class="line"><span class="lineno">   84</span>        file_list = [mtlx_data_file, blend_data_file, gltf_data_file]</div>
-<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">for</span> data_file <span class="keywordflow">in</span> file_list:</div>
-<div class="line"><span class="lineno">   86</span>            load_location = Path(data_folder) / data_file</div>
-<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> load_location.exists():</div>
-<div class="line"><span class="lineno">   88</span>                load_location = Path(__file__).parent / <span class="stringliteral">&quot;data&quot;</span> / <span class="stringliteral">&quot;PolyHavenMaterialX&quot;</span> / data_file</div>
-<div class="line"><span class="lineno">   89</span>                <span class="keywordflow">if</span> <span class="keywordflow">not</span> load_location.exists():</div>
-<div class="line"><span class="lineno">   90</span>                    logger.info(f<span class="stringliteral">&quot;Assets not found at {load_location}. Please run with --fetch to fetch assets first.&quot;</span>)</div>
-<div class="line"><span class="lineno">   91</span>                    <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">   92</span>            </div>
-<div class="line"><span class="lineno">   93</span>            <span class="keyword">with</span> open(load_location, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> f:</div>
-<div class="line"><span class="lineno">   94</span>                logger.info(f<span class="stringliteral">&quot;Loaded assets from {load_location}&quot;</span>)</div>
-<div class="line"><span class="lineno">   95</span>                <span class="keywordflow">if</span> data_file == mtlx_data_file:</div>
-<div class="line"><span class="lineno">   96</span>                    materialx_assets = json.load(f) </div>
-<div class="line"><span class="lineno">   97</span>                <span class="keywordflow">elif</span> data_file == blend_data_file:</div>
-<div class="line"><span class="lineno">   98</span>                    blend_assets = json.load(f)</div>
-<div class="line"><span class="lineno">   99</span>                <span class="keywordflow">elif</span> data_file == gltf_data_file:</div>
-<div class="line"><span class="lineno">  100</span>                    gltf_assets = json.load(f)</div>
-<div class="line"><span class="lineno">  101</span>            <span class="comment">#json_string = json.dumps(materialx_assets, indent=4)</span></div>
-<div class="line"><span class="lineno">  102</span>            <span class="comment">#logger.info(f&quot;MaterialX assets: {json_string}&quot;)</span></div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>    keep_exr = args.keep_exr <span class="keywordflow">if</span> args.keep_exr <span class="keywordflow">else</span> <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> args.download_type.lower() <span class="keywordflow">in</span> [<span class="stringliteral">&#39;blend&#39;</span>]:</div>
-<div class="line"><span class="lineno">  106</span>        keep_exr = <span class="keyword">True</span></div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    convert_exr_to_png = <span class="keywordflow">not</span> keep_exr</div>
-<div class="line"><span class="lineno">  109</span>    extract_zip = args.extract_zip <span class="keywordflow">if</span> args.extract_zip <span class="keywordflow">else</span> <span class="keyword">False</span></div>
-<div class="line"><span class="lineno">  110</span>    </div>
-<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span> args.download_type.lower() == <span class="stringliteral">&#39;mtlx&#39;</span>:</div>
-<div class="line"><span class="lineno">  112</span>        <span class="comment"># Download asset. For now only supporting MTLX download.</span></div>
-<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">if</span> materialx_assets <span class="keywordflow">and</span> download_id:</div>
-<div class="line"><span class="lineno">  114</span>            <span class="comment"># Find download entry by ID</span></div>
-<div class="line"><span class="lineno">  115</span>            entry_id = download_id + <span class="stringliteral">&#39;_&#39;</span> + resolution</div>
-<div class="line"><span class="lineno">  116</span>            entry = materialx_assets.get(entry_id)</div>
-<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">if</span> entry:</div>
-<div class="line"><span class="lineno">  118</span>                logger.info(f<span class="stringliteral">&quot;Downloading asset with ID &#39;{download_id}&#39;, resolution &#39;{resolution}&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">  119</span>                asset_list = {entry_id: entry, resolution: resolution}</div>
-<div class="line"><span class="lineno">  120</span>                id, mtlx_string, texture_binaries = loader.download_mtlx_asset(asset_list, convert_exr_to_png)    </div>
-<div class="line"><span class="lineno">  121</span>                <span class="comment">#logger.info(mtlx_string)            </span></div>
-<div class="line"><span class="lineno">  122</span>                loader.save_materialx_with_textures(id, mtlx_string, texture_binaries, data_folder, extract_zip)</div>
-<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  124</span>                logger.info(f<span class="stringliteral">&quot;No asset found with ID &#39;{entry_id}&#39; in the MaterialX assets.&quot;</span>)</div>
-<div class="line"><span class="lineno">  125</span>        <span class="comment">#else:</span></div>
-<div class="line"><span class="lineno">  126</span>        <span class="comment">#    logger.info(&quot;No operation specified.&quot;)</span></div>
-<div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">elif</span> args.download_type.lower() == <span class="stringliteral">&#39;blend&#39;</span>:</div>
-<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">if</span> blend_assets <span class="keywordflow">and</span> download_id:</div>
-<div class="line"><span class="lineno">  130</span>            <span class="comment"># Find download entry by ID</span></div>
-<div class="line"><span class="lineno">  131</span>            entry_id = download_id + <span class="stringliteral">&#39;_&#39;</span> + resolution</div>
-<div class="line"><span class="lineno">  132</span>            entry = blend_assets.get(entry_id)</div>
-<div class="line"><span class="lineno">  133</span>            <span class="keywordflow">if</span> entry:</div>
-<div class="line"><span class="lineno">  134</span>                logger.info(f<span class="stringliteral">&quot;Downloading Blender asset with ID &#39;{download_id}&#39;, resolution &#39;{resolution}&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">  135</span>                asset_list = {entry_id: entry, resolution: resolution}</div>
-<div class="line"><span class="lineno">  136</span>                id, blend_binary, texture_binaries = loader.download_blender_asset(asset_list)    </div>
-<div class="line"><span class="lineno">  137</span>                loader.save_blender_with_textures(id, blend_binary, texture_binaries, data_folder, extract_zip)</div>
-<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  139</span>                logger.info(f<span class="stringliteral">&quot;No asset found with ID &#39;{entry_id}&#39; in the MaterialX assets.&quot;</span>)</div>
-<div class="line"><span class="lineno">  140</span>        <span class="comment">#else:</span></div>
-<div class="line"><span class="lineno">  141</span>        <span class="comment">#    logger.info(&quot;No operation specified.&quot;)</span></div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">elif</span> args.download_type.lower() == <span class="stringliteral">&#39;gltf&#39;</span>:</div>
-<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">if</span> gltf_assets <span class="keywordflow">and</span> download_id:</div>
-<div class="line"><span class="lineno">  145</span>            <span class="comment"># Find download entry by ID</span></div>
-<div class="line"><span class="lineno">  146</span>            entry_id = download_id + <span class="stringliteral">&#39;_&#39;</span> + resolution</div>
-<div class="line"><span class="lineno">  147</span>            entry = gltf_assets.get(entry_id)</div>
-<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">if</span> entry:</div>
-<div class="line"><span class="lineno">  149</span>                logger.info(f<span class="stringliteral">&quot;Downloading glTF asset with ID &#39;{download_id}&#39;, resolution &#39;{resolution}&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">  150</span>                asset_list = {entry_id: entry, resolution: resolution}</div>
-<div class="line"><span class="lineno">  151</span>                id, gltf_ascii, texture_binaries = loader.download_gltf_asset(asset_list)    </div>
-<div class="line"><span class="lineno">  152</span>                loader.save_gltf_with_textures(id, gltf_ascii, texture_binaries, data_folder, extract_zip)</div>
-<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  154</span>                logger.info(f<span class="stringliteral">&quot;No asset found with ID &#39;{entry_id}&#39; in the MaterialX assets.&quot;</span>)</div>
-<div class="line"><span class="lineno">  155</span>        <span class="comment">#else:</span></div>
-<div class="line"><span class="lineno">  156</span>        <span class="comment">#    logger.info(&quot;No operation specified.&quot;)</span></div>
-<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">   27</span>    parser.add_argument(<span class="stringliteral">&#39;-sf&#39;</span>, <span class="stringliteral">&#39;--save_filtered&#39;</span>, action=<span class="stringliteral">&#39;store_true&#39;</span>, help=<span class="stringliteral">&quot;Save filtered MaterialX assets to a file&quot;</span>)</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    args = parser.parse_args()</div>
+<div class="line"><span class="lineno">   30</span>    download_type = args.download_type.lower()</div>
+<div class="line"><span class="lineno">   31</span>    all_data_file = <span class="stringliteral">&#39;polyhaven_assets.json&#39;</span></div>
+<div class="line"><span class="lineno">   32</span>    filtered_data_file = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> args.save_filtered:</div>
+<div class="line"><span class="lineno">   34</span>        filtered_data_file = <span class="stringliteral">&#39;filtered_polyhaven_assets.json&#39;</span></div>
+<div class="line"><span class="lineno">   35</span>    blend_data_file = <span class="stringliteral">&quot;polyhaven_blender_assets.json&quot;</span></div>
+<div class="line"><span class="lineno">   36</span>    gltf_data_file = <span class="stringliteral">&quot;polyhaven_gltf_assets.json&quot;</span></div>
+<div class="line"><span class="lineno">   37</span>    mtlx_data_file = <span class="stringliteral">&quot;polyhaven_materialx_assets.json&quot;</span></div>
+<div class="line"><span class="lineno">   38</span>    fetch = args.fetch</div>
+<div class="line"><span class="lineno">   39</span>    download_id = args.download_id</div>
+<div class="line"><span class="lineno">   40</span>    resolution = args.download_resolution</div>
+<div class="line"><span class="lineno">   41</span>    load = args.load <span class="keywordflow">or</span> args.download_id != <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   42</span>    data_folder = args.data_folder</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment"># Create data folder if it doesn&#39;t exist</span></div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> data_folder:</div>
+<div class="line"><span class="lineno">   46</span>        Path(data_folder).mkdir(parents=<span class="keyword">True</span>, exist_ok=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">   47</span>    </div>
+<div class="line"><span class="lineno">   48</span>    loader = polyHavenLoader.PolyHavenLoader()</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    materialx_assets = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">   51</span>    blend_assets = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">   52</span>    gltf_assets = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> fetch:</div>
+<div class="line"><span class="lineno">   55</span>        fetch_count = args.count</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> fetch_count <span class="keywordflow">and</span> fetch_count &lt; 1:</div>
+<div class="line"><span class="lineno">   57</span>            fetch_count = 1</div>
+<div class="line"><span class="lineno">   58</span>        materialx_assets, all_assets, \</div>
+<div class="line"><span class="lineno">   59</span>            filtered_polyhaven_assets, blender_assets, gltf_assets = \</div>
+<div class="line"><span class="lineno">   60</span>            loader.fetch_materialx_assets(max_items=fetch_count, download_id=download_id, download_type=args.download_type)</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>        <span class="comment"># Write all_assets to JSON file:        </span></div>
+<div class="line"><span class="lineno">   63</span>        all_location = Path(data_folder) / all_data_file</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keyword">with</span> open(all_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   65</span>            json.dump(all_assets, f, indent=4)</div>
+<div class="line"><span class="lineno">   66</span>            logger.info(f<span class="stringliteral">&quot;Saved all assets to {all_location}&quot;</span>)</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>        <span class="comment"># Write filtered_polyhaven_assets to JSON file:</span></div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">if</span> filtered_data_file:</div>
+<div class="line"><span class="lineno">   70</span>            filtered_location = Path(data_folder) / filtered_data_file</div>
+<div class="line"><span class="lineno">   71</span>            <span class="keyword">with</span> open(filtered_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   72</span>                json.dump(filtered_polyhaven_assets, f, indent=4)</div>
+<div class="line"><span class="lineno">   73</span>                logger.info(f<span class="stringliteral">&quot;Saved MaterialX assets to {filtered_location}&quot;</span>)</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>        <span class="comment"># Write filtered MTLX, BLENDER, and GLTF assets to JSON files:</span></div>
+<div class="line"><span class="lineno">   76</span>        mtlx_fetch_location = Path(data_folder) / mtlx_data_file</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keyword">with</span> open(mtlx_fetch_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   78</span>            logger.info(f<span class="stringliteral">&quot;- Saving MaterialX assets to {mtlx_fetch_location}...&quot;</span>)</div>
+<div class="line"><span class="lineno">   79</span>            json.dump(materialx_assets, f, indent=4)</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>        blender_location = Path(data_folder) / blend_data_file</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keyword">with</span> open(blender_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   83</span>            json.dump(blender_assets, f, indent=4)</div>
+<div class="line"><span class="lineno">   84</span>            logger.info(f<span class="stringliteral">&quot;Saved Blender assets to {blender_location}&quot;</span>)</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        gltf_location = Path(data_folder) / gltf_data_file</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keyword">with</span> open(gltf_location, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">   88</span>            json.dump(gltf_assets, f, indent=4)</div>
+<div class="line"><span class="lineno">   89</span>            logger.info(f<span class="stringliteral">&quot;Saved glTF assets to {gltf_location}&quot;</span>)</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">elif</span> load:</div>
+<div class="line"><span class="lineno">   92</span>        file_list = [mtlx_data_file, blend_data_file, gltf_data_file]</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">for</span> data_file <span class="keywordflow">in</span> file_list:</div>
+<div class="line"><span class="lineno">   94</span>            load_location = Path(data_folder) / data_file</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> load_location.exists():</div>
+<div class="line"><span class="lineno">   96</span>                load_location = Path(__file__).parent / <span class="stringliteral">&quot;data&quot;</span> / <span class="stringliteral">&quot;PolyHavenMaterialX&quot;</span> / data_file</div>
+<div class="line"><span class="lineno">   97</span>                <span class="keywordflow">if</span> <span class="keywordflow">not</span> load_location.exists():</div>
+<div class="line"><span class="lineno">   98</span>                    logger.info(f<span class="stringliteral">&quot;Assets not found at {load_location}. Please run with --fetch to fetch assets first.&quot;</span>)</div>
+<div class="line"><span class="lineno">   99</span>                    <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">  100</span>            </div>
+<div class="line"><span class="lineno">  101</span>            <span class="keyword">with</span> open(load_location, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> f:</div>
+<div class="line"><span class="lineno">  102</span>                logger.info(f<span class="stringliteral">&quot;Loaded assets from {load_location}&quot;</span>)</div>
+<div class="line"><span class="lineno">  103</span>                <span class="keywordflow">if</span> data_file == mtlx_data_file:</div>
+<div class="line"><span class="lineno">  104</span>                    materialx_assets = json.load(f) </div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">elif</span> data_file == blend_data_file:</div>
+<div class="line"><span class="lineno">  106</span>                    blend_assets = json.load(f)</div>
+<div class="line"><span class="lineno">  107</span>                <span class="keywordflow">elif</span> data_file == gltf_data_file:</div>
+<div class="line"><span class="lineno">  108</span>                    gltf_assets = json.load(f)</div>
+<div class="line"><span class="lineno">  109</span>            <span class="comment">#json_string = json.dumps(materialx_assets, indent=4)</span></div>
+<div class="line"><span class="lineno">  110</span>            <span class="comment">#logger.info(f&quot;MaterialX assets: {json_string}&quot;)</span></div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    keep_exr = args.keep_exr <span class="keywordflow">if</span> args.keep_exr <span class="keywordflow">else</span> <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span> args.download_type.lower() <span class="keywordflow">in</span> [<span class="stringliteral">&#39;blend&#39;</span>]:</div>
+<div class="line"><span class="lineno">  114</span>        keep_exr = <span class="keyword">True</span></div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    convert_exr_to_png = <span class="keywordflow">not</span> keep_exr</div>
+<div class="line"><span class="lineno">  117</span>    extract_zip = args.extract_zip <span class="keywordflow">if</span> args.extract_zip <span class="keywordflow">else</span> <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">  118</span>    </div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> args.download_type.lower() == <span class="stringliteral">&#39;mtlx&#39;</span>:</div>
+<div class="line"><span class="lineno">  120</span>        <span class="comment"># Download asset. For now only supporting MTLX download.</span></div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> materialx_assets <span class="keywordflow">and</span> download_id:</div>
+<div class="line"><span class="lineno">  122</span>            <span class="comment"># Find download entry by ID</span></div>
+<div class="line"><span class="lineno">  123</span>            entry_id = download_id + <span class="stringliteral">&#39;_&#39;</span> + resolution</div>
+<div class="line"><span class="lineno">  124</span>            entry = materialx_assets.get(entry_id)</div>
+<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">if</span> entry:</div>
+<div class="line"><span class="lineno">  126</span>                logger.info(f<span class="stringliteral">&quot;Downloading asset with ID &#39;{download_id}&#39;, resolution &#39;{resolution}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">  127</span>                asset_list = {entry_id: entry, resolution: resolution}</div>
+<div class="line"><span class="lineno">  128</span>                id, mtlx_string, texture_binaries = loader.download_mtlx_asset(asset_list, convert_exr_to_png)    </div>
+<div class="line"><span class="lineno">  129</span>                <span class="comment">#logger.info(mtlx_string)            </span></div>
+<div class="line"><span class="lineno">  130</span>                loader.save_materialx_with_textures(id, mtlx_string, texture_binaries, data_folder, extract_zip)</div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  132</span>                logger.info(f<span class="stringliteral">&quot;No asset found with ID &#39;{entry_id}&#39; in the MaterialX assets.&quot;</span>)</div>
+<div class="line"><span class="lineno">  133</span>        <span class="comment">#else:</span></div>
+<div class="line"><span class="lineno">  134</span>        <span class="comment">#    logger.info(&quot;No operation specified.&quot;)</span></div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">elif</span> args.download_type.lower() == <span class="stringliteral">&#39;blend&#39;</span>:</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">if</span> blend_assets <span class="keywordflow">and</span> download_id:</div>
+<div class="line"><span class="lineno">  138</span>            <span class="comment"># Find download entry by ID</span></div>
+<div class="line"><span class="lineno">  139</span>            entry_id = download_id + <span class="stringliteral">&#39;_&#39;</span> + resolution</div>
+<div class="line"><span class="lineno">  140</span>            entry = blend_assets.get(entry_id)</div>
+<div class="line"><span class="lineno">  141</span>            <span class="keywordflow">if</span> entry:</div>
+<div class="line"><span class="lineno">  142</span>                logger.info(f<span class="stringliteral">&quot;Downloading Blender asset with ID &#39;{download_id}&#39;, resolution &#39;{resolution}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">  143</span>                asset_list = {entry_id: entry, resolution: resolution}</div>
+<div class="line"><span class="lineno">  144</span>                id, blend_binary, texture_binaries = loader.download_blender_asset(asset_list)    </div>
+<div class="line"><span class="lineno">  145</span>                loader.save_blender_with_textures(id, blend_binary, texture_binaries, data_folder, extract_zip)</div>
+<div class="line"><span class="lineno">  146</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  147</span>                logger.info(f<span class="stringliteral">&quot;No asset found with ID &#39;{entry_id}&#39; in the MaterialX assets.&quot;</span>)</div>
+<div class="line"><span class="lineno">  148</span>        <span class="comment">#else:</span></div>
+<div class="line"><span class="lineno">  149</span>        <span class="comment">#    logger.info(&quot;No operation specified.&quot;)</span></div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">elif</span> args.download_type.lower() == <span class="stringliteral">&#39;gltf&#39;</span>:</div>
+<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">if</span> gltf_assets <span class="keywordflow">and</span> download_id:</div>
+<div class="line"><span class="lineno">  153</span>            <span class="comment"># Find download entry by ID</span></div>
+<div class="line"><span class="lineno">  154</span>            entry_id = download_id + <span class="stringliteral">&#39;_&#39;</span> + resolution</div>
+<div class="line"><span class="lineno">  155</span>            entry = gltf_assets.get(entry_id)</div>
+<div class="line"><span class="lineno">  156</span>            <span class="keywordflow">if</span> entry:</div>
+<div class="line"><span class="lineno">  157</span>                logger.info(f<span class="stringliteral">&quot;Downloading glTF asset with ID &#39;{download_id}&#39;, resolution &#39;{resolution}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">  158</span>                asset_list = {entry_id: entry, resolution: resolution}</div>
+<div class="line"><span class="lineno">  159</span>                id, gltf_ascii, texture_binaries = loader.download_gltf_asset(asset_list)    </div>
+<div class="line"><span class="lineno">  160</span>                loader.save_gltf_with_textures(id, gltf_ascii, texture_binaries, data_folder, extract_zip)</div>
+<div class="line"><span class="lineno">  161</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  162</span>                logger.info(f<span class="stringliteral">&quot;No asset found with ID &#39;{entry_id}&#39; in the MaterialX assets.&quot;</span>)</div>
+<div class="line"><span class="lineno">  163</span>        <span class="comment">#else:</span></div>
+<div class="line"><span class="lineno">  164</span>        <span class="comment">#    logger.info(&quot;No operation specified.&quot;)</span></div>
+<div class="line"><span class="lineno">  165</span> </div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -221,50 +221,50 @@ Public Attributes</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00254">254</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  254</span>    <span class="keyword">def </span>download_blender_asset(self, asset_list):</div>
-<div class="line"><span class="lineno">  255</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  256</span><span class="stringliteral">        Download Blender asset from PolyHaven.</span></div>
-<div class="line"><span class="lineno">  257</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">  258</span><span class="stringliteral">        @param asset_list Dictionary of Blender assets with URLs and texture files.</span></div>
-<div class="line"><span class="lineno">  259</span><span class="stringliteral">        @return Tuple (id, blend_binary, texture_binaries):</span></div>
-<div class="line"><span class="lineno">  260</span><span class="stringliteral">            - id: ID of the downloaded asset.</span></div>
-<div class="line"><span class="lineno">  261</span><span class="stringliteral">            - blend_binary: The Blender file as binary content.</span></div>
-<div class="line"><span class="lineno">  262</span><span class="stringliteral">            - texture_binaries: List of tuples (path, binary content) for textures and thumbnails.</span></div>
-<div class="line"><span class="lineno">  263</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  264</span>        <span class="keywordflow">for</span> id, asset <span class="keywordflow">in</span> asset_list.items():</div>
-<div class="line"><span class="lineno">  265</span>            url = asset.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  266</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url:</div>
-<div class="line"><span class="lineno">  267</span>                self.logger.info(f<span class="stringliteral">&quot;No Blender URL found for &#39;{id}&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">  268</span>                <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  269</span> </div>
-<div class="line"><span class="lineno">  270</span>            resp = requests.get(url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  271</span>            resp.raise_for_status()</div>
-<div class="line"><span class="lineno">  272</span>            blend_binary = resp.content</div>
-<div class="line"><span class="lineno">  273</span>            self.logger.info(f<span class="stringliteral">&quot;Download Blender file {url}, size: {len(blend_binary)} bytes&quot;</span>)   </div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00259">259</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  259</span>    <span class="keyword">def </span>download_blender_asset(self, asset_list):</div>
+<div class="line"><span class="lineno">  260</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  261</span><span class="stringliteral">        Download Blender asset from PolyHaven.</span></div>
+<div class="line"><span class="lineno">  262</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  263</span><span class="stringliteral">        @param asset_list Dictionary of Blender assets with URLs and texture files.</span></div>
+<div class="line"><span class="lineno">  264</span><span class="stringliteral">        @return Tuple (id, blend_binary, texture_binaries):</span></div>
+<div class="line"><span class="lineno">  265</span><span class="stringliteral">            - id: ID of the downloaded asset.</span></div>
+<div class="line"><span class="lineno">  266</span><span class="stringliteral">            - blend_binary: The Blender file as binary content.</span></div>
+<div class="line"><span class="lineno">  267</span><span class="stringliteral">            - texture_binaries: List of tuples (path, binary content) for textures and thumbnails.</span></div>
+<div class="line"><span class="lineno">  268</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  269</span>        <span class="keywordflow">for</span> id, asset <span class="keywordflow">in</span> asset_list.items():</div>
+<div class="line"><span class="lineno">  270</span>            url = asset.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  271</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url:</div>
+<div class="line"><span class="lineno">  272</span>                self.logger.info(f<span class="stringliteral">&quot;No Blender URL found for &#39;{id}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">  273</span>                <span class="keywordflow">continue</span></div>
 <div class="line"><span class="lineno">  274</span> </div>
-<div class="line"><span class="lineno">  275</span>            texture_binaries = []</div>
-<div class="line"><span class="lineno">  276</span>            <span class="keywordflow">for</span> path, texture_url <span class="keywordflow">in</span> asset.get(<span class="stringliteral">&quot;texture_files&quot;</span>, {}).items():</div>
-<div class="line"><span class="lineno">  277</span>                self.logger.info(f<span class="stringliteral">&quot;Download texture from {texture_url} ...&quot;</span>)</div>
-<div class="line"><span class="lineno">  278</span>                texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  279</span>                texture_resp.raise_for_status()            </div>
-<div class="line"><span class="lineno">  280</span>                texture_content = texture_resp.content</div>
-<div class="line"><span class="lineno">  281</span>                texture_binaries.append((path, texture_content))</div>
-<div class="line"><span class="lineno">  282</span> </div>
-<div class="line"><span class="lineno">  283</span>            thumbnail_url = asset.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
-<div class="line"><span class="lineno">  284</span>            <span class="keywordflow">if</span> thumbnail_url:</div>
-<div class="line"><span class="lineno">  285</span>                self.logger.info(f<span class="stringliteral">&quot;Download thumbnail from {thumbnail_url} ...&quot;</span>)                </div>
-<div class="line"><span class="lineno">  286</span>                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  287</span>                thumbnail_resp.raise_for_status()</div>
-<div class="line"><span class="lineno">  288</span>                </div>
-<div class="line"><span class="lineno">  289</span>                clean_url = thumbnail_url</div>
-<div class="line"><span class="lineno">  290</span>                <span class="comment"># Strip any ? or # from the URL</span></div>
-<div class="line"><span class="lineno">  291</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;?&#39;</span>)[0].split(<span class="stringliteral">&#39;#&#39;</span>)[0]</div>
-<div class="line"><span class="lineno">  292</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]  <span class="comment"># Get the last part of the URL</span></div>
-<div class="line"><span class="lineno">  293</span>                extension = Path(clean_url).suffix.lower()</div>
-<div class="line"><span class="lineno">  294</span>                texture_binaries.append((f<span class="stringliteral">&quot;{id}_thumbnail{extension}&quot;</span>, thumbnail_resp.content))</div>
-<div class="line"><span class="lineno">  295</span>            <span class="keywordflow">return</span> id, blend_binary, texture_binaries                </div>
-<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  275</span>            resp = requests.get(url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  276</span>            resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  277</span>            blend_binary = resp.content</div>
+<div class="line"><span class="lineno">  278</span>            self.logger.info(f<span class="stringliteral">&quot;Download Blender file {url}, size: {len(blend_binary)} bytes&quot;</span>)   </div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>            texture_binaries = []</div>
+<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">for</span> path, texture_url <span class="keywordflow">in</span> asset.get(<span class="stringliteral">&quot;texture_files&quot;</span>, {}).items():</div>
+<div class="line"><span class="lineno">  282</span>                self.logger.info(f<span class="stringliteral">&quot;Download texture from {texture_url} ...&quot;</span>)</div>
+<div class="line"><span class="lineno">  283</span>                texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  284</span>                texture_resp.raise_for_status()            </div>
+<div class="line"><span class="lineno">  285</span>                texture_content = texture_resp.content</div>
+<div class="line"><span class="lineno">  286</span>                texture_binaries.append((path, texture_content))</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>            thumbnail_url = asset.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
+<div class="line"><span class="lineno">  289</span>            <span class="keywordflow">if</span> thumbnail_url:</div>
+<div class="line"><span class="lineno">  290</span>                self.logger.info(f<span class="stringliteral">&quot;Download thumbnail from {thumbnail_url} ...&quot;</span>)                </div>
+<div class="line"><span class="lineno">  291</span>                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  292</span>                thumbnail_resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  293</span>                </div>
+<div class="line"><span class="lineno">  294</span>                clean_url = thumbnail_url</div>
+<div class="line"><span class="lineno">  295</span>                <span class="comment"># Strip any ? or # from the URL</span></div>
+<div class="line"><span class="lineno">  296</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;?&#39;</span>)[0].split(<span class="stringliteral">&#39;#&#39;</span>)[0]</div>
+<div class="line"><span class="lineno">  297</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]  <span class="comment"># Get the last part of the URL</span></div>
+<div class="line"><span class="lineno">  298</span>                extension = Path(clean_url).suffix.lower()</div>
+<div class="line"><span class="lineno">  299</span>                texture_binaries.append((f<span class="stringliteral">&quot;{id}_thumbnail{extension}&quot;</span>, thumbnail_resp.content))</div>
+<div class="line"><span class="lineno">  300</span>            <span class="keywordflow">return</span> id, blend_binary, texture_binaries                </div>
+<div class="line"><span class="lineno">  301</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,57 +301,57 @@ Public Attributes</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00204">204</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span>    <span class="keyword">def </span>download_gltf_asset(self, asset_list):</div>
-<div class="line"><span class="lineno">  205</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  206</span><span class="stringliteral">        Download glTF asset from PolyHaven.</span></div>
-<div class="line"><span class="lineno">  207</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">  208</span><span class="stringliteral">        @param asset_list Dictionary of glTF assets with URLs and texture files.</span></div>
-<div class="line"><span class="lineno">  209</span><span class="stringliteral">        @return Tuple (id, gltf_ascii, texture_binaries):</span></div>
-<div class="line"><span class="lineno">  210</span><span class="stringliteral">            - id: ID of the downloaded asset.</span></div>
-<div class="line"><span class="lineno">  211</span><span class="stringliteral">            - gltf_ascii: The glTF file as ASCII string.</span></div>
-<div class="line"><span class="lineno">  212</span><span class="stringliteral">            - texture_binaries: List of tuples (path, binary content) for textures and thumbnails</span></div>
-<div class="line"><span class="lineno">  213</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">for</span> id, asset <span class="keywordflow">in</span> asset_list.items():</div>
-<div class="line"><span class="lineno">  215</span>            url = asset.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  216</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url:</div>
-<div class="line"><span class="lineno">  217</span>                self.logger.info(f<span class="stringliteral">&quot;No glTF URL found for &#39;{id}&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">  218</span>                <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  219</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url.endswith(<span class="stringliteral">&quot;.gltf&quot;</span>) <span class="keywordflow">and</span> <span class="keywordflow">not</span> url.endswith(<span class="stringliteral">&quot;.glb&quot;</span>):</div>
-<div class="line"><span class="lineno">  220</span>                self.logger.info(f<span class="stringliteral">&quot;Invalid glTF URL for &#39;{id}&#39;: {url}&quot;</span>)</div>
-<div class="line"><span class="lineno">  221</span>                <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  222</span> </div>
-<div class="line"><span class="lineno">  223</span>            resp = requests.get(url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  224</span>            resp.raise_for_status()</div>
-<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">if</span> url.endswith(<span class="stringliteral">&quot;.glb&quot;</span>):</div>
-<div class="line"><span class="lineno">  226</span>                self.logger.info(f<span class="stringliteral">&quot;Downloaded glTF binary file {url}, size: {len(resp.content)} bytes&quot;</span>)</div>
-<div class="line"><span class="lineno">  227</span>                gltf_content = resp.content</div>
-<div class="line"><span class="lineno">  228</span>            <span class="keywordflow">elif</span> url.endswith(<span class="stringliteral">&quot;.gltf&quot;</span>):</div>
-<div class="line"><span class="lineno">  229</span>                gltf_content = resp.text</div>
-<div class="line"><span class="lineno">  230</span>                self.logger.info(f<span class="stringliteral">&quot;Download glTF file {url}, length: {len(gltf_content)} characters&quot;</span>)   </div>
-<div class="line"><span class="lineno">  231</span> </div>
-<div class="line"><span class="lineno">  232</span>            texture_binaries = []</div>
-<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">for</span> path, texture_url <span class="keywordflow">in</span> asset.get(<span class="stringliteral">&quot;texture_files&quot;</span>, {}).items():</div>
-<div class="line"><span class="lineno">  234</span>                self.logger.info(f<span class="stringliteral">&quot;Download texture from {texture_url} ...&quot;</span>)</div>
-<div class="line"><span class="lineno">  235</span>                texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  236</span>                texture_resp.raise_for_status()            </div>
-<div class="line"><span class="lineno">  237</span>                texture_content = texture_resp.content</div>
-<div class="line"><span class="lineno">  238</span>                texture_binaries.append((path, texture_content))</div>
-<div class="line"><span class="lineno">  239</span> </div>
-<div class="line"><span class="lineno">  240</span>            thumbnail_url = asset.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
-<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">if</span> thumbnail_url:</div>
-<div class="line"><span class="lineno">  242</span>                self.logger.info(f<span class="stringliteral">&quot;Download thumbnail from {thumbnail_url} ...&quot;</span>)                </div>
-<div class="line"><span class="lineno">  243</span>                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  244</span>                thumbnail_resp.raise_for_status()</div>
-<div class="line"><span class="lineno">  245</span>                </div>
-<div class="line"><span class="lineno">  246</span>                clean_url = thumbnail_url</div>
-<div class="line"><span class="lineno">  247</span>                <span class="comment"># Strip any ? or # from the URL</span></div>
-<div class="line"><span class="lineno">  248</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;?&#39;</span>)[0].split(<span class="stringliteral">&#39;#&#39;</span>)[0]</div>
-<div class="line"><span class="lineno">  249</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]  <span class="comment"># Get the last part of the URL</span></div>
-<div class="line"><span class="lineno">  250</span>                extension = Path(clean_url).suffix.lower()</div>
-<div class="line"><span class="lineno">  251</span>                texture_binaries.append((f<span class="stringliteral">&quot;{id}_thumbnail{extension}&quot;</span>, thumbnail_resp.content))</div>
-<div class="line"><span class="lineno">  252</span>            <span class="keywordflow">return</span> id, gltf_content, texture_binaries</div>
-<div class="line"><span class="lineno">  253</span> </div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00209">209</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>    <span class="keyword">def </span>download_gltf_asset(self, asset_list):</div>
+<div class="line"><span class="lineno">  210</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  211</span><span class="stringliteral">        Download glTF asset from PolyHaven.</span></div>
+<div class="line"><span class="lineno">  212</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  213</span><span class="stringliteral">        @param asset_list Dictionary of glTF assets with URLs and texture files.</span></div>
+<div class="line"><span class="lineno">  214</span><span class="stringliteral">        @return Tuple (id, gltf_ascii, texture_binaries):</span></div>
+<div class="line"><span class="lineno">  215</span><span class="stringliteral">            - id: ID of the downloaded asset.</span></div>
+<div class="line"><span class="lineno">  216</span><span class="stringliteral">            - gltf_ascii: The glTF file as ASCII string.</span></div>
+<div class="line"><span class="lineno">  217</span><span class="stringliteral">            - texture_binaries: List of tuples (path, binary content) for textures and thumbnails</span></div>
+<div class="line"><span class="lineno">  218</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">for</span> id, asset <span class="keywordflow">in</span> asset_list.items():</div>
+<div class="line"><span class="lineno">  220</span>            url = asset.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url:</div>
+<div class="line"><span class="lineno">  222</span>                self.logger.info(f<span class="stringliteral">&quot;No glTF URL found for &#39;{id}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">  223</span>                <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">  224</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url.endswith(<span class="stringliteral">&quot;.gltf&quot;</span>) <span class="keywordflow">and</span> <span class="keywordflow">not</span> url.endswith(<span class="stringliteral">&quot;.glb&quot;</span>):</div>
+<div class="line"><span class="lineno">  225</span>                self.logger.info(f<span class="stringliteral">&quot;Invalid glTF URL for &#39;{id}&#39;: {url}&quot;</span>)</div>
+<div class="line"><span class="lineno">  226</span>                <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>            resp = requests.get(url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  229</span>            resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">if</span> url.endswith(<span class="stringliteral">&quot;.glb&quot;</span>):</div>
+<div class="line"><span class="lineno">  231</span>                self.logger.info(f<span class="stringliteral">&quot;Downloaded glTF binary file {url}, size: {len(resp.content)} bytes&quot;</span>)</div>
+<div class="line"><span class="lineno">  232</span>                gltf_content = resp.content</div>
+<div class="line"><span class="lineno">  233</span>            <span class="keywordflow">elif</span> url.endswith(<span class="stringliteral">&quot;.gltf&quot;</span>):</div>
+<div class="line"><span class="lineno">  234</span>                gltf_content = resp.text</div>
+<div class="line"><span class="lineno">  235</span>                self.logger.info(f<span class="stringliteral">&quot;Download glTF file {url}, length: {len(gltf_content)} characters&quot;</span>)   </div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>            texture_binaries = []</div>
+<div class="line"><span class="lineno">  238</span>            <span class="keywordflow">for</span> path, texture_url <span class="keywordflow">in</span> asset.get(<span class="stringliteral">&quot;texture_files&quot;</span>, {}).items():</div>
+<div class="line"><span class="lineno">  239</span>                self.logger.info(f<span class="stringliteral">&quot;Download texture from {texture_url} ...&quot;</span>)</div>
+<div class="line"><span class="lineno">  240</span>                texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  241</span>                texture_resp.raise_for_status()            </div>
+<div class="line"><span class="lineno">  242</span>                texture_content = texture_resp.content</div>
+<div class="line"><span class="lineno">  243</span>                texture_binaries.append((path, texture_content))</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>            thumbnail_url = asset.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
+<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">if</span> thumbnail_url:</div>
+<div class="line"><span class="lineno">  247</span>                self.logger.info(f<span class="stringliteral">&quot;Download thumbnail from {thumbnail_url} ...&quot;</span>)                </div>
+<div class="line"><span class="lineno">  248</span>                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  249</span>                thumbnail_resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  250</span>                </div>
+<div class="line"><span class="lineno">  251</span>                clean_url = thumbnail_url</div>
+<div class="line"><span class="lineno">  252</span>                <span class="comment"># Strip any ? or # from the URL</span></div>
+<div class="line"><span class="lineno">  253</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;?&#39;</span>)[0].split(<span class="stringliteral">&#39;#&#39;</span>)[0]</div>
+<div class="line"><span class="lineno">  254</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]  <span class="comment"># Get the last part of the URL</span></div>
+<div class="line"><span class="lineno">  255</span>                extension = Path(clean_url).suffix.lower()</div>
+<div class="line"><span class="lineno">  256</span>                texture_binaries.append((f<span class="stringliteral">&quot;{id}_thumbnail{extension}&quot;</span>, thumbnail_resp.content))</div>
+<div class="line"><span class="lineno">  257</span>            <span class="keywordflow">return</span> id, gltf_content, texture_binaries</div>
+<div class="line"><span class="lineno">  258</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -394,131 +394,131 @@ Public Attributes</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00297">297</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  297</span>    <span class="keyword">def </span>download_mtlx_asset(self, asset_list, convert_exr_to_png=True):</div>
-<div class="line"><span class="lineno">  298</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  299</span><span class="stringliteral">        Download MaterialX asset and its textures from PolyHaven.</span></div>
-<div class="line"><span class="lineno">  300</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">  301</span><span class="stringliteral">        @param asset_list Dictionary of MaterialX assets with URLs and texture files.</span></div>
-<div class="line"><span class="lineno">  302</span><span class="stringliteral">        @param convert_exr_to_png If True, attempt to use PNG images instead of EXR if available other attempt </span></div>
-<div class="line"><span class="lineno">  303</span><span class="stringliteral">        to convert using OpenImageIO if installed. Default is to use PNG if possible, and convert EXR to PNG if OpenImageIO is available.</span></div>
-<div class="line"><span class="lineno">  304</span><span class="stringliteral">        @return Tuple (id, mtlx_string, texture_binaries):</span></div>
-<div class="line"><span class="lineno">  305</span><span class="stringliteral">            - id: ID of the downloaded asset.</span></div>
-<div class="line"><span class="lineno">  306</span><span class="stringliteral">            - mtlx_string: The MaterialX document as a string.</span></div>
-<div class="line"><span class="lineno">  307</span><span class="stringliteral">            - texture_binaries: List of tuples (path, binary content) for textures and thumbnails.</span></div>
-<div class="line"><span class="lineno">  308</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  309</span>        <span class="keywordflow">for</span> id, asset <span class="keywordflow">in</span> asset_list.items():</div>
-<div class="line"><span class="lineno">  310</span>            url = asset.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  311</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url:</div>
-<div class="line"><span class="lineno">  312</span>                self.logger.info(f<span class="stringliteral">&quot;No MaterialX URL found for &#39;{id}&#39;&quot;</span>)</div>
-<div class="line"><span class="lineno">  313</span>                <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  314</span> </div>
-<div class="line"><span class="lineno">  315</span>            resp = requests.get(url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  316</span>            resp.raise_for_status()</div>
-<div class="line"><span class="lineno">  317</span>            mtlx_string = resp.text</div>
-<div class="line"><span class="lineno">  318</span>            self.logger.info(f<span class="stringliteral">&quot;Download MaterialX document {url}, length: {len(mtlx_string)} characters&quot;</span>)</div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00302">302</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  302</span>    <span class="keyword">def </span>download_mtlx_asset(self, asset_list, convert_exr_to_png=True):</div>
+<div class="line"><span class="lineno">  303</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  304</span><span class="stringliteral">        Download MaterialX asset and its textures from PolyHaven.</span></div>
+<div class="line"><span class="lineno">  305</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  306</span><span class="stringliteral">        @param asset_list Dictionary of MaterialX assets with URLs and texture files.</span></div>
+<div class="line"><span class="lineno">  307</span><span class="stringliteral">        @param convert_exr_to_png If True, attempt to use PNG images instead of EXR if available other attempt </span></div>
+<div class="line"><span class="lineno">  308</span><span class="stringliteral">        to convert using OpenImageIO if installed. Default is to use PNG if possible, and convert EXR to PNG if OpenImageIO is available.</span></div>
+<div class="line"><span class="lineno">  309</span><span class="stringliteral">        @return Tuple (id, mtlx_string, texture_binaries):</span></div>
+<div class="line"><span class="lineno">  310</span><span class="stringliteral">            - id: ID of the downloaded asset.</span></div>
+<div class="line"><span class="lineno">  311</span><span class="stringliteral">            - mtlx_string: The MaterialX document as a string.</span></div>
+<div class="line"><span class="lineno">  312</span><span class="stringliteral">            - texture_binaries: List of tuples (path, binary content) for textures and thumbnails.</span></div>
+<div class="line"><span class="lineno">  313</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  314</span>        <span class="keywordflow">for</span> id, asset <span class="keywordflow">in</span> asset_list.items():</div>
+<div class="line"><span class="lineno">  315</span>            url = asset.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  316</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> url:</div>
+<div class="line"><span class="lineno">  317</span>                self.logger.info(f<span class="stringliteral">&quot;No MaterialX URL found for &#39;{id}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">  318</span>                <span class="keywordflow">continue</span></div>
 <div class="line"><span class="lineno">  319</span> </div>
-<div class="line"><span class="lineno">  320</span>            texture_binaries = []</div>
-<div class="line"><span class="lineno">  321</span>            download_texture_names = []</div>
-<div class="line"><span class="lineno">  322</span>            <span class="keywordflow">for</span> path, texture_url <span class="keywordflow">in</span> asset.get(<span class="stringliteral">&quot;texture_files&quot;</span>, {}).items():</div>
-<div class="line"><span class="lineno">  323</span>                <span class="comment"># Get texture files</span></div>
-<div class="line"><span class="lineno">  324</span>                ext = Path(path).suffix.lower()</div>
-<div class="line"><span class="lineno">  325</span>                texture_content = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">  326</span> </div>
-<div class="line"><span class="lineno">  327</span>                <span class="keywordflow">if</span> ext == <span class="stringliteral">&quot;.exr&quot;</span> <span class="keywordflow">and</span> convert_exr_to_png:</div>
-<div class="line"><span class="lineno">  328</span>                    <span class="comment"># Replace /exr and .exr with /png and .png in the URL to check if a PNG version is available  </span></div>
-<div class="line"><span class="lineno">  329</span>                    old_texture_url = texture_url  </div>
-<div class="line"><span class="lineno">  330</span>                    texture_url = texture_url.replace(<span class="stringliteral">&quot;/exr/&quot;</span>, <span class="stringliteral">&quot;/png/&quot;</span>).replace(<span class="stringliteral">&quot;.exr&quot;</span>, <span class="stringliteral">&quot;.png&quot;</span>)</div>
-<div class="line"><span class="lineno">  331</span>                    texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  332</span>                    texture_resp.raise_for_status()            </div>
-<div class="line"><span class="lineno">  333</span>                    texture_content = texture_resp.content</div>
-<div class="line"><span class="lineno">  334</span>                    <span class="keywordflow">if</span> texture_content:</div>
-<div class="line"><span class="lineno">  335</span>                        self.logger.info(f<span class="stringliteral">&quot;Download {texture_url} instead of {old_texture_url} SUCCESSFUL&quot;</span>)</div>
-<div class="line"><span class="lineno">  336</span>                        ext = <span class="stringliteral">&quot;.png&quot;</span></div>
-<div class="line"><span class="lineno">  337</span>                        <span class="comment"># Update extension in the path to .png</span></div>
-<div class="line"><span class="lineno">  338</span>                        old_path = path</div>
-<div class="line"><span class="lineno">  339</span>                        path = str(Path(path).with_suffix(ext))</div>
-<div class="line"><span class="lineno">  340</span>                        self.logger.info(f<span class="stringliteral">&quot;- Updating texture path from {old_path} to {path}&quot;</span>)</div>
-<div class="line"><span class="lineno">  341</span> </div>
-<div class="line"><span class="lineno">  342</span>                    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  343</span>                        self.logger.info(f<span class="stringliteral">&quot;Download {texture_url} instead of {old_texture_url} FAILED&quot;</span>)</div>
-<div class="line"><span class="lineno">  344</span> </div>
-<div class="line"><span class="lineno">  345</span>                <span class="keywordflow">if</span> <span class="keywordflow">not</span> texture_content:</div>
-<div class="line"><span class="lineno">  346</span>                    self.logger.info(f<span class="stringliteral">&quot;Download texture from {texture_url} ...&quot;</span>)</div>
-<div class="line"><span class="lineno">  347</span>                    texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  348</span>                    texture_resp.raise_for_status()            </div>
-<div class="line"><span class="lineno">  349</span>                    texture_content = texture_resp.content</div>
-<div class="line"><span class="lineno">  350</span> </div>
-<div class="line"><span class="lineno">  351</span>                name = Path(path).stem</div>
-<div class="line"><span class="lineno">  352</span> </div>
-<div class="line"><span class="lineno">  353</span>                <span class="keywordflow">if</span> ext == <span class="stringliteral">&quot;.exr&quot;</span>:</div>
-<div class="line"><span class="lineno">  354</span>                    <span class="keywordflow">if</span> HAVE_OPENIMAGEIO <span class="keywordflow">and</span> convert_exr_to_png:</div>
-<div class="line"><span class="lineno">  355</span>                        self.logger.info(f<span class="stringliteral">&quot;Converting EXR to PNG for texture: {path}&quot;</span>)</div>
-<div class="line"><span class="lineno">  356</span>                        <span class="comment"># Write EXR bytes to a temporary file</span></div>
-<div class="line"><span class="lineno">  357</span>                        <span class="keyword">with</span> tempfile.NamedTemporaryFile(suffix=<span class="stringliteral">&quot;.exr&quot;</span>, delete=<span class="keyword">False</span>) <span class="keyword">as</span> tmp_exr:</div>
-<div class="line"><span class="lineno">  358</span>                            tmp_exr.write(texture_content)</div>
-<div class="line"><span class="lineno">  359</span>                            tmp_exr_path = tmp_exr.name</div>
-<div class="line"><span class="lineno">  360</span>                        <span class="keywordflow">try</span>:</div>
-<div class="line"><span class="lineno">  361</span>                            inbuf = oiio.ImageInput.open(tmp_exr_path)</div>
-<div class="line"><span class="lineno">  362</span>                            <span class="keywordflow">if</span> inbuf:</div>
-<div class="line"><span class="lineno">  363</span>                                spec = inbuf.spec()</div>
-<div class="line"><span class="lineno">  364</span>                                pixels = inbuf.read_image(format=oiio.UINT8)</div>
-<div class="line"><span class="lineno">  365</span>                                inbuf.close()</div>
-<div class="line"><span class="lineno">  366</span>                                <span class="comment"># Write PNG to another temporary file</span></div>
-<div class="line"><span class="lineno">  367</span>                                <span class="keyword">with</span> tempfile.NamedTemporaryFile(suffix=<span class="stringliteral">&quot;.png&quot;</span>, delete=<span class="keyword">False</span>) <span class="keyword">as</span> tmp_png:</div>
-<div class="line"><span class="lineno">  368</span>                                    outbuf = oiio.ImageOutput.create(tmp_png.name)</div>
-<div class="line"><span class="lineno">  369</span>                                    <span class="keywordflow">if</span> outbuf:</div>
-<div class="line"><span class="lineno">  370</span>                                        outbuf.open(tmp_png.name, spec)</div>
-<div class="line"><span class="lineno">  371</span>                                        outbuf.write_image(pixels)</div>
-<div class="line"><span class="lineno">  372</span>                                        outbuf.close()</div>
-<div class="line"><span class="lineno">  373</span>                                        tmp_png.seek(0)</div>
-<div class="line"><span class="lineno">  374</span>                                        png_bytes = tmp_png.read()</div>
-<div class="line"><span class="lineno">  375</span>                                        png_name = f<span class="stringliteral">&quot;{name}.png&quot;</span></div>
-<div class="line"><span class="lineno">  376</span>                                        texture_binaries.append((png_name, png_bytes))</div>
-<div class="line"><span class="lineno">  377</span> </div>
-<div class="line"><span class="lineno">  378</span>                                        <span class="keywordflow">continue</span>  <span class="comment"># Skip adding the original EXR</span></div>
-<div class="line"><span class="lineno">  379</span>                            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  380</span>                                self.logger.info(<span class="stringliteral">&quot;Failed to read EXR with OpenImageIO&quot;</span>)</div>
-<div class="line"><span class="lineno">  381</span>                        <span class="keywordflow">finally</span>:</div>
-<div class="line"><span class="lineno">  382</span>                            os.remove(tmp_exr_path)</div>
-<div class="line"><span class="lineno">  383</span>                            <span class="keywordflow">if</span> <span class="stringliteral">&#39;tmp_png&#39;</span> <span class="keywordflow">in</span> locals():</div>
-<div class="line"><span class="lineno">  384</span>                                os.remove(tmp_png.name)</div>
-<div class="line"><span class="lineno">  385</span>                    self.logger.info(f<span class="stringliteral">&quot;  WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}&quot;</span>)</div>
-<div class="line"><span class="lineno">  386</span> </div>
-<div class="line"><span class="lineno">  387</span>                <span class="comment"># Get file name from path</span></div>
-<div class="line"><span class="lineno">  388</span>                download_texture_name = path.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]</div>
-<div class="line"><span class="lineno">  389</span>                download_texture_names.append(download_texture_name)</div>
-<div class="line"><span class="lineno">  390</span> </div>
-<div class="line"><span class="lineno">  391</span>                texture_binaries.append((path, texture_content))</div>
-<div class="line"><span class="lineno">  392</span> </div>
-<div class="line"><span class="lineno">  393</span>            thumbnail_url = asset.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
-<div class="line"><span class="lineno">  394</span>            <span class="keywordflow">if</span> thumbnail_url:</div>
-<div class="line"><span class="lineno">  395</span>                self.logger.info(f<span class="stringliteral">&quot;Download thumbnail from {thumbnail_url} ...&quot;</span>)                </div>
-<div class="line"><span class="lineno">  396</span>                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">  397</span>                thumbnail_resp.raise_for_status()</div>
-<div class="line"><span class="lineno">  398</span>                </div>
-<div class="line"><span class="lineno">  399</span>                clean_url = thumbnail_url</div>
-<div class="line"><span class="lineno">  400</span>                <span class="comment"># Strip any ? or # from the URL</span></div>
-<div class="line"><span class="lineno">  401</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;?&#39;</span>)[0].split(<span class="stringliteral">&#39;#&#39;</span>)[0]</div>
-<div class="line"><span class="lineno">  402</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]  <span class="comment"># Get the last part of the URL</span></div>
-<div class="line"><span class="lineno">  403</span>                extension = Path(clean_url).suffix.lower()</div>
-<div class="line"><span class="lineno">  404</span>                texture_binaries.append((f<span class="stringliteral">&quot;{id}_thumbnail{extension}&quot;</span>, thumbnail_resp.content))</div>
-<div class="line"><span class="lineno">  405</span> </div>
-<div class="line"><span class="lineno">  406</span>            <span class="comment"># Replace .exr with .png in mtlx_string</span></div>
-<div class="line"><span class="lineno">  407</span>            <span class="keywordflow">for</span> name <span class="keywordflow">in</span> download_texture_names:</div>
-<div class="line"><span class="lineno">  408</span>                extension = Path(name).suffix.lower()                </div>
-<div class="line"><span class="lineno">  409</span>                exr_name = name.replace(extension, <span class="stringliteral">&quot;.exr&quot;</span>)</div>
-<div class="line"><span class="lineno">  410</span>                <span class="comment"># Replace exr_name with name in the mtlx_string</span></div>
-<div class="line"><span class="lineno">  411</span>                mtlx_string = mtlx_string.replace(exr_name, name)</div>
-<div class="line"><span class="lineno">  412</span> </div>
-<div class="line"><span class="lineno">  413</span>            before_mtlx_string = mtlx_string</div>
-<div class="line"><span class="lineno">  414</span>            mtlx_string = mtlx_string.replace(<span class="stringliteral">&quot;.exr&quot;</span>, <span class="stringliteral">&quot;.png&quot;</span>)</div>
-<div class="line"><span class="lineno">  415</span>            <span class="keywordflow">if</span> (before_mtlx_string != mtlx_string):</div>
-<div class="line"><span class="lineno">  416</span>                self.logger.info(f<span class="stringliteral">&quot;Updated MaterialX string to reference PNG texture instead of EXR for {path}&quot;</span>)</div>
-<div class="line"><span class="lineno">  417</span>                <span class="comment">#self.logger.info(mtlx_string)</span></div>
-<div class="line"><span class="lineno">  418</span> </div>
-<div class="line"><span class="lineno">  419</span>            <span class="keywordflow">return</span> id, mtlx_string, texture_binaries</div>
-<div class="line"><span class="lineno">  420</span> </div>
+<div class="line"><span class="lineno">  320</span>            resp = requests.get(url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  321</span>            resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  322</span>            mtlx_string = resp.text</div>
+<div class="line"><span class="lineno">  323</span>            self.logger.info(f<span class="stringliteral">&quot;Download MaterialX document {url}, length: {len(mtlx_string)} characters&quot;</span>)</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>            texture_binaries = []</div>
+<div class="line"><span class="lineno">  326</span>            download_texture_names = []</div>
+<div class="line"><span class="lineno">  327</span>            <span class="keywordflow">for</span> path, texture_url <span class="keywordflow">in</span> asset.get(<span class="stringliteral">&quot;texture_files&quot;</span>, {}).items():</div>
+<div class="line"><span class="lineno">  328</span>                <span class="comment"># Get texture files</span></div>
+<div class="line"><span class="lineno">  329</span>                ext = Path(path).suffix.lower()</div>
+<div class="line"><span class="lineno">  330</span>                texture_content = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>                <span class="keywordflow">if</span> ext == <span class="stringliteral">&quot;.exr&quot;</span> <span class="keywordflow">and</span> convert_exr_to_png:</div>
+<div class="line"><span class="lineno">  333</span>                    <span class="comment"># Replace /exr and .exr with /png and .png in the URL to check if a PNG version is available  </span></div>
+<div class="line"><span class="lineno">  334</span>                    old_texture_url = texture_url  </div>
+<div class="line"><span class="lineno">  335</span>                    texture_url = texture_url.replace(<span class="stringliteral">&quot;/exr/&quot;</span>, <span class="stringliteral">&quot;/png/&quot;</span>).replace(<span class="stringliteral">&quot;.exr&quot;</span>, <span class="stringliteral">&quot;.png&quot;</span>)</div>
+<div class="line"><span class="lineno">  336</span>                    texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  337</span>                    texture_resp.raise_for_status()            </div>
+<div class="line"><span class="lineno">  338</span>                    texture_content = texture_resp.content</div>
+<div class="line"><span class="lineno">  339</span>                    <span class="keywordflow">if</span> texture_content:</div>
+<div class="line"><span class="lineno">  340</span>                        self.logger.info(f<span class="stringliteral">&quot;Download {texture_url} instead of {old_texture_url} SUCCESSFUL&quot;</span>)</div>
+<div class="line"><span class="lineno">  341</span>                        ext = <span class="stringliteral">&quot;.png&quot;</span></div>
+<div class="line"><span class="lineno">  342</span>                        <span class="comment"># Update extension in the path to .png</span></div>
+<div class="line"><span class="lineno">  343</span>                        old_path = path</div>
+<div class="line"><span class="lineno">  344</span>                        path = str(Path(path).with_suffix(ext))</div>
+<div class="line"><span class="lineno">  345</span>                        self.logger.info(f<span class="stringliteral">&quot;- Updating texture path from {old_path} to {path}&quot;</span>)</div>
+<div class="line"><span class="lineno">  346</span> </div>
+<div class="line"><span class="lineno">  347</span>                    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  348</span>                        self.logger.info(f<span class="stringliteral">&quot;Download {texture_url} instead of {old_texture_url} FAILED&quot;</span>)</div>
+<div class="line"><span class="lineno">  349</span> </div>
+<div class="line"><span class="lineno">  350</span>                <span class="keywordflow">if</span> <span class="keywordflow">not</span> texture_content:</div>
+<div class="line"><span class="lineno">  351</span>                    self.logger.info(f<span class="stringliteral">&quot;Download texture from {texture_url} ...&quot;</span>)</div>
+<div class="line"><span class="lineno">  352</span>                    texture_resp = requests.get(texture_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  353</span>                    texture_resp.raise_for_status()            </div>
+<div class="line"><span class="lineno">  354</span>                    texture_content = texture_resp.content</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>                name = Path(path).stem</div>
+<div class="line"><span class="lineno">  357</span> </div>
+<div class="line"><span class="lineno">  358</span>                <span class="keywordflow">if</span> ext == <span class="stringliteral">&quot;.exr&quot;</span>:</div>
+<div class="line"><span class="lineno">  359</span>                    <span class="keywordflow">if</span> HAVE_OPENIMAGEIO <span class="keywordflow">and</span> convert_exr_to_png:</div>
+<div class="line"><span class="lineno">  360</span>                        self.logger.info(f<span class="stringliteral">&quot;Converting EXR to PNG for texture: {path}&quot;</span>)</div>
+<div class="line"><span class="lineno">  361</span>                        <span class="comment"># Write EXR bytes to a temporary file</span></div>
+<div class="line"><span class="lineno">  362</span>                        <span class="keyword">with</span> tempfile.NamedTemporaryFile(suffix=<span class="stringliteral">&quot;.exr&quot;</span>, delete=<span class="keyword">False</span>) <span class="keyword">as</span> tmp_exr:</div>
+<div class="line"><span class="lineno">  363</span>                            tmp_exr.write(texture_content)</div>
+<div class="line"><span class="lineno">  364</span>                            tmp_exr_path = tmp_exr.name</div>
+<div class="line"><span class="lineno">  365</span>                        <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno">  366</span>                            inbuf = oiio.ImageInput.open(tmp_exr_path)</div>
+<div class="line"><span class="lineno">  367</span>                            <span class="keywordflow">if</span> inbuf:</div>
+<div class="line"><span class="lineno">  368</span>                                spec = inbuf.spec()</div>
+<div class="line"><span class="lineno">  369</span>                                pixels = inbuf.read_image(format=oiio.UINT8)</div>
+<div class="line"><span class="lineno">  370</span>                                inbuf.close()</div>
+<div class="line"><span class="lineno">  371</span>                                <span class="comment"># Write PNG to another temporary file</span></div>
+<div class="line"><span class="lineno">  372</span>                                <span class="keyword">with</span> tempfile.NamedTemporaryFile(suffix=<span class="stringliteral">&quot;.png&quot;</span>, delete=<span class="keyword">False</span>) <span class="keyword">as</span> tmp_png:</div>
+<div class="line"><span class="lineno">  373</span>                                    outbuf = oiio.ImageOutput.create(tmp_png.name)</div>
+<div class="line"><span class="lineno">  374</span>                                    <span class="keywordflow">if</span> outbuf:</div>
+<div class="line"><span class="lineno">  375</span>                                        outbuf.open(tmp_png.name, spec)</div>
+<div class="line"><span class="lineno">  376</span>                                        outbuf.write_image(pixels)</div>
+<div class="line"><span class="lineno">  377</span>                                        outbuf.close()</div>
+<div class="line"><span class="lineno">  378</span>                                        tmp_png.seek(0)</div>
+<div class="line"><span class="lineno">  379</span>                                        png_bytes = tmp_png.read()</div>
+<div class="line"><span class="lineno">  380</span>                                        png_name = f<span class="stringliteral">&quot;{name}.png&quot;</span></div>
+<div class="line"><span class="lineno">  381</span>                                        texture_binaries.append((png_name, png_bytes))</div>
+<div class="line"><span class="lineno">  382</span> </div>
+<div class="line"><span class="lineno">  383</span>                                        <span class="keywordflow">continue</span>  <span class="comment"># Skip adding the original EXR</span></div>
+<div class="line"><span class="lineno">  384</span>                            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  385</span>                                self.logger.info(<span class="stringliteral">&quot;Failed to read EXR with OpenImageIO&quot;</span>)</div>
+<div class="line"><span class="lineno">  386</span>                        <span class="keywordflow">finally</span>:</div>
+<div class="line"><span class="lineno">  387</span>                            os.remove(tmp_exr_path)</div>
+<div class="line"><span class="lineno">  388</span>                            <span class="keywordflow">if</span> <span class="stringliteral">&#39;tmp_png&#39;</span> <span class="keywordflow">in</span> locals():</div>
+<div class="line"><span class="lineno">  389</span>                                os.remove(tmp_png.name)</div>
+<div class="line"><span class="lineno">  390</span>                    self.logger.info(f<span class="stringliteral">&quot;  WARNING: EXR file present which may not be supported by MaterialX texture loader: {path}&quot;</span>)</div>
+<div class="line"><span class="lineno">  391</span> </div>
+<div class="line"><span class="lineno">  392</span>                <span class="comment"># Get file name from path</span></div>
+<div class="line"><span class="lineno">  393</span>                download_texture_name = path.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]</div>
+<div class="line"><span class="lineno">  394</span>                download_texture_names.append(download_texture_name)</div>
+<div class="line"><span class="lineno">  395</span> </div>
+<div class="line"><span class="lineno">  396</span>                texture_binaries.append((path, texture_content))</div>
+<div class="line"><span class="lineno">  397</span> </div>
+<div class="line"><span class="lineno">  398</span>            thumbnail_url = asset.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
+<div class="line"><span class="lineno">  399</span>            <span class="keywordflow">if</span> thumbnail_url:</div>
+<div class="line"><span class="lineno">  400</span>                self.logger.info(f<span class="stringliteral">&quot;Download thumbnail from {thumbnail_url} ...&quot;</span>)                </div>
+<div class="line"><span class="lineno">  401</span>                thumbnail_resp = requests.get(thumbnail_url, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  402</span>                thumbnail_resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  403</span>                </div>
+<div class="line"><span class="lineno">  404</span>                clean_url = thumbnail_url</div>
+<div class="line"><span class="lineno">  405</span>                <span class="comment"># Strip any ? or # from the URL</span></div>
+<div class="line"><span class="lineno">  406</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;?&#39;</span>)[0].split(<span class="stringliteral">&#39;#&#39;</span>)[0]</div>
+<div class="line"><span class="lineno">  407</span>                clean_url = clean_url.split(<span class="stringliteral">&#39;/&#39;</span>)[-1]  <span class="comment"># Get the last part of the URL</span></div>
+<div class="line"><span class="lineno">  408</span>                extension = Path(clean_url).suffix.lower()</div>
+<div class="line"><span class="lineno">  409</span>                texture_binaries.append((f<span class="stringliteral">&quot;{id}_thumbnail{extension}&quot;</span>, thumbnail_resp.content))</div>
+<div class="line"><span class="lineno">  410</span> </div>
+<div class="line"><span class="lineno">  411</span>            <span class="comment"># Replace .exr with .png in mtlx_string</span></div>
+<div class="line"><span class="lineno">  412</span>            <span class="keywordflow">for</span> name <span class="keywordflow">in</span> download_texture_names:</div>
+<div class="line"><span class="lineno">  413</span>                extension = Path(name).suffix.lower()                </div>
+<div class="line"><span class="lineno">  414</span>                exr_name = name.replace(extension, <span class="stringliteral">&quot;.exr&quot;</span>)</div>
+<div class="line"><span class="lineno">  415</span>                <span class="comment"># Replace exr_name with name in the mtlx_string</span></div>
+<div class="line"><span class="lineno">  416</span>                mtlx_string = mtlx_string.replace(exr_name, name)</div>
+<div class="line"><span class="lineno">  417</span> </div>
+<div class="line"><span class="lineno">  418</span>            before_mtlx_string = mtlx_string</div>
+<div class="line"><span class="lineno">  419</span>            mtlx_string = mtlx_string.replace(<span class="stringliteral">&quot;.exr&quot;</span>, <span class="stringliteral">&quot;.png&quot;</span>)</div>
+<div class="line"><span class="lineno">  420</span>            <span class="keywordflow">if</span> (before_mtlx_string != mtlx_string):</div>
+<div class="line"><span class="lineno">  421</span>                self.logger.info(f<span class="stringliteral">&quot;Updated MaterialX string to reference PNG texture instead of EXR for {path}&quot;</span>)</div>
+<div class="line"><span class="lineno">  422</span>                <span class="comment">#self.logger.info(mtlx_string)</span></div>
+<div class="line"><span class="lineno">  423</span> </div>
+<div class="line"><span class="lineno">  424</span>            <span class="keywordflow">return</span> id, mtlx_string, texture_binaries</div>
+<div class="line"><span class="lineno">  425</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -608,122 +608,127 @@ Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   85</span>        item_count = 0</div>
 <div class="line"><span class="lineno">   86</span>        <span class="keywordflow">for</span> id, data <span class="keywordflow">in</span> all_assets.items():</div>
 <div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">if</span> download_id <span class="keywordflow">and</span> id != download_id:</div>
-<div class="line"><span class="lineno">   89</span>                <span class="comment">#self.logger.info(f&quot;Skipping asset id: &#39;{id}&#39; (not matching {download_id})&quot;)</span></div>
-<div class="line"><span class="lineno">   90</span>                <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">   88</span>            found_gltf = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">   89</span>            found_blend = <span class="keyword">False</span></div>
+<div class="line"><span class="lineno">   90</span>            found_mtlx = <span class="keyword">False</span></div>
 <div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>            <span class="comment"># Get the thumbnail</span></div>
-<div class="line"><span class="lineno">   93</span>            thumbnail_url = data.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>            resp = requests.get(f<span class="stringliteral">&quot;{self.FILES_API}/{id}&quot;</span>, headers=self.HEADERS)</div>
-<div class="line"><span class="lineno">   96</span>            resp.raise_for_status()</div>
-<div class="line"><span class="lineno">   97</span>            files_data = resp.json()</div>
-<div class="line"><span class="lineno">   98</span>            <span class="comment">#json_string = json.dumps(files_data, indent=4)</span></div>
-<div class="line"><span class="lineno">   99</span>            <span class="comment">#print(f&quot;Files data for asset &#39;{id}&#39;: {json_string}&quot;)</span></div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>            blend_files = files_data.get(self.BLEND_KEY, [])</div>
-<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">if</span> blend_files:</div>
-<div class="line"><span class="lineno">  103</span>                self.logger.info(f<span class="stringliteral">&quot;Found Blender files for &#39;{id}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">if</span> download_id <span class="keywordflow">and</span> id != download_id:</div>
+<div class="line"><span class="lineno">   93</span>                <span class="comment">#self.logger.info(f&quot;Skipping asset id: &#39;{id}&#39; (not matching {download_id})&quot;)</span></div>
+<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>            <span class="comment"># Get the thumbnail</span></div>
+<div class="line"><span class="lineno">   97</span>            thumbnail_url = data.get(<span class="stringliteral">&quot;thumbnail_url&quot;</span>)</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>            resp = requests.get(f<span class="stringliteral">&quot;{self.FILES_API}/{id}&quot;</span>, headers=self.HEADERS)</div>
+<div class="line"><span class="lineno">  100</span>            resp.raise_for_status()</div>
+<div class="line"><span class="lineno">  101</span>            files_data = resp.json()</div>
+<div class="line"><span class="lineno">  102</span>            <span class="comment">#json_string = json.dumps(files_data, indent=4)</span></div>
+<div class="line"><span class="lineno">  103</span>            <span class="comment">#print(f&quot;Files data for asset &#39;{id}&#39;: {json_string}&quot;)</span></div>
 <div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">for</span> resolution_key <span class="keywordflow">in</span> resolutions.keys():</div>
-<div class="line"><span class="lineno">  106</span>                    res = blend_files.get(resolution_key, <span class="keywordtype">None</span>)</div>
-<div class="line"><span class="lineno">  107</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> res:</div>
-<div class="line"><span class="lineno">  108</span>                        <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>                    n_k_mtlx = res.get(self.BLEND_KEY)</div>
-<div class="line"><span class="lineno">  111</span>                    texture_struct = {}</div>
-<div class="line"><span class="lineno">  112</span>                    <span class="keywordflow">if</span> n_k_mtlx:</div>
-<div class="line"><span class="lineno">  113</span>                        include_files = n_k_mtlx.get(<span class="stringliteral">&quot;include&quot;</span>, {})</div>
-<div class="line"><span class="lineno">  114</span>                        <span class="keywordflow">for</span> path, data <span class="keywordflow">in</span> include_files.items():</div>
-<div class="line"><span class="lineno">  115</span>                            texture_url = data.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  116</span>                            texture_struct[path] = texture_url</div>
-<div class="line"><span class="lineno">  117</span>                    url = n_k_mtlx.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  118</span>                    res_id = id + <span class="stringliteral">&#39;_&#39;</span> + resolution_key</div>
-<div class="line"><span class="lineno">  119</span>                    <span class="keywordflow">if</span> url:</div>
-<div class="line"><span class="lineno">  120</span>                        blender_assets[res_id] = {</div>
-<div class="line"><span class="lineno">  121</span>                            <span class="stringliteral">&quot;url&quot;</span>: url,</div>
-<div class="line"><span class="lineno">  122</span>                            <span class="stringliteral">&quot;texture_files&quot;</span>: texture_struct,</div>
-<div class="line"><span class="lineno">  123</span>                            <span class="stringliteral">&quot;thumbnail_url&quot;</span>: thumbnail_url</div>
-<div class="line"><span class="lineno">  124</span>                        }                </div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>                <span class="keywordflow">if</span> download_id == id <span class="keywordflow">and</span> download_type == self.BLEND_KEY:</div>
-<div class="line"><span class="lineno">  127</span>                    <span class="keywordflow">break</span></div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>            gltf_files = files_data.get(self.GLTF_KEY, [])</div>
-<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">if</span> gltf_files:</div>
-<div class="line"><span class="lineno">  131</span>                self.logger.info(f<span class="stringliteral">&quot;Found glTF files for &#39;{id}&#39;&quot;</span>)</div>
+<div class="line"><span class="lineno">  105</span>            blend_files = files_data.get(self.BLEND_KEY, [])</div>
+<div class="line"><span class="lineno">  106</span>            <span class="keywordflow">if</span> blend_files:</div>
+<div class="line"><span class="lineno">  107</span>                found_blend = <span class="keyword">True</span></div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>                <span class="keywordflow">for</span> resolution_key <span class="keywordflow">in</span> resolutions.keys():</div>
+<div class="line"><span class="lineno">  110</span>                    res = blend_files.get(resolution_key, <span class="keywordtype">None</span>)</div>
+<div class="line"><span class="lineno">  111</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> res:</div>
+<div class="line"><span class="lineno">  112</span>                        <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>                    n_k_mtlx = res.get(self.BLEND_KEY)</div>
+<div class="line"><span class="lineno">  115</span>                    texture_struct = {}</div>
+<div class="line"><span class="lineno">  116</span>                    <span class="keywordflow">if</span> n_k_mtlx:</div>
+<div class="line"><span class="lineno">  117</span>                        include_files = n_k_mtlx.get(<span class="stringliteral">&quot;include&quot;</span>, {})</div>
+<div class="line"><span class="lineno">  118</span>                        <span class="keywordflow">for</span> path, data <span class="keywordflow">in</span> include_files.items():</div>
+<div class="line"><span class="lineno">  119</span>                            texture_url = data.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  120</span>                            texture_struct[path] = texture_url</div>
+<div class="line"><span class="lineno">  121</span>                    url = n_k_mtlx.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  122</span>                    res_id = id + <span class="stringliteral">&#39;_&#39;</span> + resolution_key</div>
+<div class="line"><span class="lineno">  123</span>                    <span class="keywordflow">if</span> url:</div>
+<div class="line"><span class="lineno">  124</span>                        blender_assets[res_id] = {</div>
+<div class="line"><span class="lineno">  125</span>                            <span class="stringliteral">&quot;url&quot;</span>: url,</div>
+<div class="line"><span class="lineno">  126</span>                            <span class="stringliteral">&quot;texture_files&quot;</span>: texture_struct,</div>
+<div class="line"><span class="lineno">  127</span>                            <span class="stringliteral">&quot;thumbnail_url&quot;</span>: thumbnail_url</div>
+<div class="line"><span class="lineno">  128</span>                        }                </div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>                <span class="keywordflow">if</span> download_id == id <span class="keywordflow">and</span> download_type == self.BLEND_KEY:</div>
+<div class="line"><span class="lineno">  131</span>                    <span class="keywordflow">break</span></div>
 <div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>                <span class="keywordflow">for</span> resolution_key <span class="keywordflow">in</span> resolutions.keys():</div>
-<div class="line"><span class="lineno">  134</span>                    res = gltf_files.get(resolution_key, <span class="keywordtype">None</span>)</div>
-<div class="line"><span class="lineno">  135</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> res:</div>
-<div class="line"><span class="lineno">  136</span>                        <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>                    n_k_mtlx = res.get(self.GLTF_KEY)</div>
-<div class="line"><span class="lineno">  139</span>                    texture_struct = {}</div>
-<div class="line"><span class="lineno">  140</span>                    <span class="keywordflow">if</span> n_k_mtlx:</div>
-<div class="line"><span class="lineno">  141</span>                        include_files = n_k_mtlx.get(<span class="stringliteral">&quot;include&quot;</span>, {})</div>
-<div class="line"><span class="lineno">  142</span>                        <span class="keywordflow">for</span> path, data <span class="keywordflow">in</span> include_files.items():</div>
-<div class="line"><span class="lineno">  143</span>                            texture_url = data.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  144</span>                            texture_struct[path] = texture_url</div>
-<div class="line"><span class="lineno">  145</span>                    url = n_k_mtlx.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  146</span>                    res_id = id + <span class="stringliteral">&#39;_&#39;</span> + resolution_key</div>
-<div class="line"><span class="lineno">  147</span>                    <span class="keywordflow">if</span> url:</div>
-<div class="line"><span class="lineno">  148</span>                        gltf_assets[res_id] = {</div>
-<div class="line"><span class="lineno">  149</span>                            <span class="stringliteral">&quot;url&quot;</span>: url,</div>
-<div class="line"><span class="lineno">  150</span>                            <span class="stringliteral">&quot;texture_files&quot;</span>: texture_struct,</div>
-<div class="line"><span class="lineno">  151</span>                            <span class="stringliteral">&quot;thumbnail_url&quot;</span>: thumbnail_url</div>
-<div class="line"><span class="lineno">  152</span>                        }      </div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>                <span class="comment"># Halt if download_id is specified and matches the current asset ID and download type</span></div>
-<div class="line"><span class="lineno">  155</span>                <span class="keywordflow">if</span> download_id == id <span class="keywordflow">and</span> download_type == self.GLTF_KEY:</div>
-<div class="line"><span class="lineno">  156</span>                    <span class="keywordflow">break</span></div>
+<div class="line"><span class="lineno">  133</span>            gltf_files = files_data.get(self.GLTF_KEY, [])</div>
+<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">if</span> gltf_files:</div>
+<div class="line"><span class="lineno">  135</span>                found_gltf = <span class="keyword">True</span></div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>                <span class="keywordflow">for</span> resolution_key <span class="keywordflow">in</span> resolutions.keys():</div>
+<div class="line"><span class="lineno">  138</span>                    res = gltf_files.get(resolution_key, <span class="keywordtype">None</span>)</div>
+<div class="line"><span class="lineno">  139</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> res:</div>
+<div class="line"><span class="lineno">  140</span>                        <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>                    n_k_mtlx = res.get(self.GLTF_KEY)</div>
+<div class="line"><span class="lineno">  143</span>                    texture_struct = {}</div>
+<div class="line"><span class="lineno">  144</span>                    <span class="keywordflow">if</span> n_k_mtlx:</div>
+<div class="line"><span class="lineno">  145</span>                        include_files = n_k_mtlx.get(<span class="stringliteral">&quot;include&quot;</span>, {})</div>
+<div class="line"><span class="lineno">  146</span>                        <span class="keywordflow">for</span> path, data <span class="keywordflow">in</span> include_files.items():</div>
+<div class="line"><span class="lineno">  147</span>                            texture_url = data.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  148</span>                            texture_struct[path] = texture_url</div>
+<div class="line"><span class="lineno">  149</span>                    url = n_k_mtlx.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  150</span>                    res_id = id + <span class="stringliteral">&#39;_&#39;</span> + resolution_key</div>
+<div class="line"><span class="lineno">  151</span>                    <span class="keywordflow">if</span> url:</div>
+<div class="line"><span class="lineno">  152</span>                        gltf_assets[res_id] = {</div>
+<div class="line"><span class="lineno">  153</span>                            <span class="stringliteral">&quot;url&quot;</span>: url,</div>
+<div class="line"><span class="lineno">  154</span>                            <span class="stringliteral">&quot;texture_files&quot;</span>: texture_struct,</div>
+<div class="line"><span class="lineno">  155</span>                            <span class="stringliteral">&quot;thumbnail_url&quot;</span>: thumbnail_url</div>
+<div class="line"><span class="lineno">  156</span>                        }      </div>
 <div class="line"><span class="lineno">  157</span> </div>
-<div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>            <span class="comment"># Remove all keys other than &quot;mtlx&quot;</span></div>
-<div class="line"><span class="lineno">  160</span>            <span class="comment">#files_data = {k: v for k, v in files_data.items() if k == &quot;mtlx&quot;}            </span></div>
-<div class="line"><span class="lineno">  161</span>            mtlx_files = files_data.get(self.MTLX_KEY, [])</div>
-<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">if</span> mtlx_files:</div>
-<div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>                self.logger.info(f<span class="stringliteral">&quot;Found MaterialX data for &#39;{id}&#39;&quot;</span>) </div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>                <span class="keywordflow">for</span> resolution_key <span class="keywordflow">in</span> resolutions.keys():</div>
-<div class="line"><span class="lineno">  167</span>                    res = mtlx_files.get(resolution_key, <span class="keywordtype">None</span>)</div>
-<div class="line"><span class="lineno">  168</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> res:</div>
-<div class="line"><span class="lineno">  169</span>                        <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>                    n_k_mtlx = res.get(self.MTLX_KEY)</div>
-<div class="line"><span class="lineno">  172</span>                    texture_struct = {}</div>
-<div class="line"><span class="lineno">  173</span>                    <span class="keywordflow">if</span> n_k_mtlx:</div>
-<div class="line"><span class="lineno">  174</span>                        include_files = n_k_mtlx.get(<span class="stringliteral">&quot;include&quot;</span>, {})</div>
-<div class="line"><span class="lineno">  175</span>                        <span class="keywordflow">for</span> path, data <span class="keywordflow">in</span> include_files.items():</div>
-<div class="line"><span class="lineno">  176</span>                            texture_url = data.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  177</span>                            texture_struct[path] = texture_url</div>
-<div class="line"><span class="lineno">  178</span>                    mtlx_url = n_k_mtlx.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
-<div class="line"><span class="lineno">  179</span>                    res_id = id + <span class="stringliteral">&#39;_&#39;</span> + resolution_key</div>
-<div class="line"><span class="lineno">  180</span>                    <span class="keywordflow">if</span> mtlx_url:</div>
-<div class="line"><span class="lineno">  181</span>                        materialx_assets[res_id] = {</div>
-<div class="line"><span class="lineno">  182</span>                            <span class="stringliteral">&quot;url&quot;</span>: mtlx_url,</div>
-<div class="line"><span class="lineno">  183</span>                            <span class="stringliteral">&quot;texture_files&quot;</span>: texture_struct,</div>
-<div class="line"><span class="lineno">  184</span>                            <span class="stringliteral">&quot;thumbnail_url&quot;</span>: thumbnail_url</div>
-<div class="line"><span class="lineno">  185</span>                        }</div>
-<div class="line"><span class="lineno">  186</span> </div>
-<div class="line"><span class="lineno">  187</span>            filtered_polyhaven_assets[id] = files_data</div>
-<div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>            <span class="comment"># Halt if download_id is specified and matches the current asset ID and download type</span></div>
-<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">if</span> download_id == id <span class="keywordflow">and</span> download_type == self.MTLX_KEY:</div>
-<div class="line"><span class="lineno">  191</span>                <span class="keywordflow">break</span></div>
-<div class="line"><span class="lineno">  192</span> </div>
-<div class="line"><span class="lineno">  193</span>            <span class="comment"># Halt if max_items is specified and reached</span></div>
-<div class="line"><span class="lineno">  194</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> download_id <span class="keywordflow">and</span> max_items:</div>
-<div class="line"><span class="lineno">  195</span>                item_count += 1</div>
-<div class="line"><span class="lineno">  196</span>                <span class="keywordflow">if</span> item_count &gt;= max_items:</div>
-<div class="line"><span class="lineno">  197</span>                    <span class="keywordflow">break</span>            </div>
-<div class="line"><span class="lineno">  198</span> </div>
-<div class="line"><span class="lineno">  199</span>            <span class="comment">#if &quot;materialx&quot; in formats:</span></div>
-<div class="line"><span class="lineno">  200</span>            <span class="comment">#    materialx_assets[slug] = formats[&quot;materialx&quot;]</span></div>
-<div class="line"><span class="lineno">  201</span> </div>
-<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">return</span> materialx_assets, all_assets, filtered_polyhaven_assets, blender_assets, gltf_assets</div>
+<div class="line"><span class="lineno">  158</span>                <span class="comment"># Halt if download_id is specified and matches the current asset ID and download type</span></div>
+<div class="line"><span class="lineno">  159</span>                <span class="keywordflow">if</span> download_id == id <span class="keywordflow">and</span> download_type == self.GLTF_KEY:</div>
+<div class="line"><span class="lineno">  160</span>                    <span class="keywordflow">break</span></div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>            <span class="comment"># Remove all keys other than &quot;mtlx&quot;</span></div>
+<div class="line"><span class="lineno">  164</span>            <span class="comment">#files_data = {k: v for k, v in files_data.items() if k == &quot;mtlx&quot;}            </span></div>
+<div class="line"><span class="lineno">  165</span>            mtlx_files = files_data.get(self.MTLX_KEY, [])</div>
+<div class="line"><span class="lineno">  166</span>            <span class="keywordflow">if</span> mtlx_files:</div>
+<div class="line"><span class="lineno">  167</span>                found_mtlx = <span class="keyword">True</span></div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>                <span class="keywordflow">for</span> resolution_key <span class="keywordflow">in</span> resolutions.keys():</div>
+<div class="line"><span class="lineno">  170</span>                    res = mtlx_files.get(resolution_key, <span class="keywordtype">None</span>)</div>
+<div class="line"><span class="lineno">  171</span>                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> res:</div>
+<div class="line"><span class="lineno">  172</span>                        <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>                    n_k_mtlx = res.get(self.MTLX_KEY)</div>
+<div class="line"><span class="lineno">  175</span>                    texture_struct = {}</div>
+<div class="line"><span class="lineno">  176</span>                    <span class="keywordflow">if</span> n_k_mtlx:</div>
+<div class="line"><span class="lineno">  177</span>                        include_files = n_k_mtlx.get(<span class="stringliteral">&quot;include&quot;</span>, {})</div>
+<div class="line"><span class="lineno">  178</span>                        <span class="keywordflow">for</span> path, data <span class="keywordflow">in</span> include_files.items():</div>
+<div class="line"><span class="lineno">  179</span>                            texture_url = data.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  180</span>                            texture_struct[path] = texture_url</div>
+<div class="line"><span class="lineno">  181</span>                    mtlx_url = n_k_mtlx.get(<span class="stringliteral">&quot;url&quot;</span>)</div>
+<div class="line"><span class="lineno">  182</span>                    res_id = id + <span class="stringliteral">&#39;_&#39;</span> + resolution_key</div>
+<div class="line"><span class="lineno">  183</span>                    <span class="keywordflow">if</span> mtlx_url:</div>
+<div class="line"><span class="lineno">  184</span>                        materialx_assets[res_id] = {</div>
+<div class="line"><span class="lineno">  185</span>                            <span class="stringliteral">&quot;url&quot;</span>: mtlx_url,</div>
+<div class="line"><span class="lineno">  186</span>                            <span class="stringliteral">&quot;texture_files&quot;</span>: texture_struct,</div>
+<div class="line"><span class="lineno">  187</span>                            <span class="stringliteral">&quot;thumbnail_url&quot;</span>: thumbnail_url</div>
+<div class="line"><span class="lineno">  188</span>                        }</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>            filtered_polyhaven_assets[id] = files_data</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>            self.logger.info(f<span class="stringliteral">&quot;Id: &#39;{id}&#39; has blender: {found_blend}, glTF: {found_gltf}, mtlx: {found_mtlx}&quot;</span>)</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>            <span class="comment"># Halt if download_id is specified and matches the current asset ID and download type</span></div>
+<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">if</span> download_id == id <span class="keywordflow">and</span> download_type == self.MTLX_KEY:</div>
+<div class="line"><span class="lineno">  196</span>                <span class="keywordflow">break</span></div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>            <span class="comment"># Halt if max_items is specified and reached</span></div>
+<div class="line"><span class="lineno">  199</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> download_id <span class="keywordflow">and</span> max_items:</div>
+<div class="line"><span class="lineno">  200</span>                item_count += 1</div>
+<div class="line"><span class="lineno">  201</span>                <span class="keywordflow">if</span> item_count &gt;= max_items:</div>
+<div class="line"><span class="lineno">  202</span>                    <span class="keywordflow">break</span>            </div>
 <div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>            <span class="comment">#if &quot;materialx&quot; in formats:</span></div>
+<div class="line"><span class="lineno">  205</span>            <span class="comment">#    materialx_assets[slug] = formats[&quot;materialx&quot;]</span></div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">return</span> materialx_assets, all_assets, filtered_polyhaven_assets, blender_assets, gltf_assets</div>
+<div class="line"><span class="lineno">  208</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -779,36 +784,36 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00421">421</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  421</span>    <span class="keyword">def </span>save_blender_with_textures(self, id, blend_binary, texture_binaries, data_folder, extract_zip=False):</div>
-<div class="line"><span class="lineno">  422</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  423</span><span class="stringliteral">        Save Blender file and texture binaries to a zip file.</span></div>
-<div class="line"><span class="lineno">  424</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">  425</span><span class="stringliteral">        @param id The ID of the Blender asset.</span></div>
-<div class="line"><span class="lineno">  426</span><span class="stringliteral">        @param blend_binary The Blender file as binary content.</span></div>
-<div class="line"><span class="lineno">  427</span><span class="stringliteral">        @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.</span></div>
-<div class="line"><span class="lineno">  428</span><span class="stringliteral">        @param data_folder Folder to save the zip file.</span></div>
-<div class="line"><span class="lineno">  429</span><span class="stringliteral">        @param extract_zip If True, extract the zip file after saving zip.</span></div>
-<div class="line"><span class="lineno">  430</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">  431</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  432</span>        <span class="comment"># Create a zip file with Blender file and textures</span></div>
-<div class="line"><span class="lineno">  433</span>        filename = f<span class="stringliteral">&quot;{id}_blender.zip&quot;</span></div>
-<div class="line"><span class="lineno">  434</span>        filename = Path(data_folder) / filename</div>
-<div class="line"><span class="lineno">  435</span>        <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> zipf:</div>
-<div class="line"><span class="lineno">  436</span>            <span class="comment"># Write Blender file</span></div>
-<div class="line"><span class="lineno">  437</span>            zipf.writestr(f<span class="stringliteral">&quot;{id}.blend&quot;</span>, blend_binary)</div>
-<div class="line"><span class="lineno">  438</span>            <span class="comment"># Write texture files</span></div>
-<div class="line"><span class="lineno">  439</span>            <span class="keywordflow">for</span> path, content <span class="keywordflow">in</span> texture_binaries:</div>
-<div class="line"><span class="lineno">  440</span>                zipf.writestr(path, content)</div>
-<div class="line"><span class="lineno">  441</span>        self.logger.info(f<span class="stringliteral">&quot;Saved zip: {filename}&quot;</span>)</div>
-<div class="line"><span class="lineno">  442</span> </div>
-<div class="line"><span class="lineno">  443</span>        <span class="comment"># Save zip contents to folder</span></div>
-<div class="line"><span class="lineno">  444</span>        extract_folder = Path(data_folder) / f<span class="stringliteral">&quot;{id}_blender&quot;</span></div>
-<div class="line"><span class="lineno">  445</span>        <span class="keywordflow">if</span> extract_zip:</div>
-<div class="line"><span class="lineno">  446</span>            <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> zipf:</div>
-<div class="line"><span class="lineno">  447</span>                zipf.extractall(extract_folder)</div>
-<div class="line"><span class="lineno">  448</span>            self.logger.info(f<span class="stringliteral">&quot;Extracted zip contents to folder: {extract_folder}&quot;</span>)</div>
-<div class="line"><span class="lineno">  449</span> </div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00426">426</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  426</span>    <span class="keyword">def </span>save_blender_with_textures(self, id, blend_binary, texture_binaries, data_folder, extract_zip=False):</div>
+<div class="line"><span class="lineno">  427</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  428</span><span class="stringliteral">        Save Blender file and texture binaries to a zip file.</span></div>
+<div class="line"><span class="lineno">  429</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  430</span><span class="stringliteral">        @param id The ID of the Blender asset.</span></div>
+<div class="line"><span class="lineno">  431</span><span class="stringliteral">        @param blend_binary The Blender file as binary content.</span></div>
+<div class="line"><span class="lineno">  432</span><span class="stringliteral">        @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.</span></div>
+<div class="line"><span class="lineno">  433</span><span class="stringliteral">        @param data_folder Folder to save the zip file.</span></div>
+<div class="line"><span class="lineno">  434</span><span class="stringliteral">        @param extract_zip If True, extract the zip file after saving zip.</span></div>
+<div class="line"><span class="lineno">  435</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  436</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  437</span>        <span class="comment"># Create a zip file with Blender file and textures</span></div>
+<div class="line"><span class="lineno">  438</span>        filename = f<span class="stringliteral">&quot;{id}_blender.zip&quot;</span></div>
+<div class="line"><span class="lineno">  439</span>        filename = Path(data_folder) / filename</div>
+<div class="line"><span class="lineno">  440</span>        <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> zipf:</div>
+<div class="line"><span class="lineno">  441</span>            <span class="comment"># Write Blender file</span></div>
+<div class="line"><span class="lineno">  442</span>            zipf.writestr(f<span class="stringliteral">&quot;{id}.blend&quot;</span>, blend_binary)</div>
+<div class="line"><span class="lineno">  443</span>            <span class="comment"># Write texture files</span></div>
+<div class="line"><span class="lineno">  444</span>            <span class="keywordflow">for</span> path, content <span class="keywordflow">in</span> texture_binaries:</div>
+<div class="line"><span class="lineno">  445</span>                zipf.writestr(path, content)</div>
+<div class="line"><span class="lineno">  446</span>        self.logger.info(f<span class="stringliteral">&quot;Saved zip: {filename}&quot;</span>)</div>
+<div class="line"><span class="lineno">  447</span> </div>
+<div class="line"><span class="lineno">  448</span>        <span class="comment"># Save zip contents to folder</span></div>
+<div class="line"><span class="lineno">  449</span>        extract_folder = Path(data_folder) / f<span class="stringliteral">&quot;{id}_blender&quot;</span></div>
+<div class="line"><span class="lineno">  450</span>        <span class="keywordflow">if</span> extract_zip:</div>
+<div class="line"><span class="lineno">  451</span>            <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> zipf:</div>
+<div class="line"><span class="lineno">  452</span>                zipf.extractall(extract_folder)</div>
+<div class="line"><span class="lineno">  453</span>            self.logger.info(f<span class="stringliteral">&quot;Extracted zip contents to folder: {extract_folder}&quot;</span>)</div>
+<div class="line"><span class="lineno">  454</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -864,36 +869,36 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00450">450</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  450</span>    <span class="keyword">def </span>save_gltf_with_textures(self, id, gltf_ascii, texture_binaries, data_folder, extract_zip=False):</div>
-<div class="line"><span class="lineno">  451</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  452</span><span class="stringliteral">        Save glTF file and texture binaries to a zip file.</span></div>
-<div class="line"><span class="lineno">  453</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">  454</span><span class="stringliteral">        @param id The ID of the glTF asset.</span></div>
-<div class="line"><span class="lineno">  455</span><span class="stringliteral">        @param gltf_ascii The glTF file as ASCII string.</span></div>
-<div class="line"><span class="lineno">  456</span><span class="stringliteral">        @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.</span></div>
-<div class="line"><span class="lineno">  457</span><span class="stringliteral">        @param data_folder Folder to save the zip file.</span></div>
-<div class="line"><span class="lineno">  458</span><span class="stringliteral">        @param extract_zip If True, extract the zip file after saving zip.</span></div>
-<div class="line"><span class="lineno">  459</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">  460</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  461</span>        <span class="comment"># Create a zip file with glTF file and textures</span></div>
-<div class="line"><span class="lineno">  462</span>        filename = f<span class="stringliteral">&quot;{id}_gltf.zip&quot;</span></div>
-<div class="line"><span class="lineno">  463</span>        filename = Path(data_folder) / filename</div>
-<div class="line"><span class="lineno">  464</span>        <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> zipf:</div>
-<div class="line"><span class="lineno">  465</span>            <span class="comment"># Write glTF file</span></div>
-<div class="line"><span class="lineno">  466</span>            zipf.writestr(f<span class="stringliteral">&quot;{id}.gltf&quot;</span>, gltf_ascii)</div>
-<div class="line"><span class="lineno">  467</span>            <span class="comment"># Write texture files</span></div>
-<div class="line"><span class="lineno">  468</span>            <span class="keywordflow">for</span> path, content <span class="keywordflow">in</span> texture_binaries:</div>
-<div class="line"><span class="lineno">  469</span>                zipf.writestr(path, content)</div>
-<div class="line"><span class="lineno">  470</span>        self.logger.info(f<span class="stringliteral">&quot;Saved zip: {filename}&quot;</span>)</div>
-<div class="line"><span class="lineno">  471</span> </div>
-<div class="line"><span class="lineno">  472</span>        <span class="comment"># Save zip contents to folder</span></div>
-<div class="line"><span class="lineno">  473</span>        extract_folder = Path(data_folder) / f<span class="stringliteral">&quot;{id}_gltf&quot;</span></div>
-<div class="line"><span class="lineno">  474</span>        <span class="keywordflow">if</span> extract_zip:</div>
-<div class="line"><span class="lineno">  475</span>            <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> zipf:</div>
-<div class="line"><span class="lineno">  476</span>                zipf.extractall(extract_folder)</div>
-<div class="line"><span class="lineno">  477</span>            self.logger.info(f<span class="stringliteral">&quot;Extracted zip contents to folder: {extract_folder}&quot;</span>)</div>
-<div class="line"><span class="lineno">  478</span> </div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00455">455</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  455</span>    <span class="keyword">def </span>save_gltf_with_textures(self, id, gltf_ascii, texture_binaries, data_folder, extract_zip=False):</div>
+<div class="line"><span class="lineno">  456</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  457</span><span class="stringliteral">        Save glTF file and texture binaries to a zip file.</span></div>
+<div class="line"><span class="lineno">  458</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  459</span><span class="stringliteral">        @param id The ID of the glTF asset.</span></div>
+<div class="line"><span class="lineno">  460</span><span class="stringliteral">        @param gltf_ascii The glTF file as ASCII string.</span></div>
+<div class="line"><span class="lineno">  461</span><span class="stringliteral">        @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.</span></div>
+<div class="line"><span class="lineno">  462</span><span class="stringliteral">        @param data_folder Folder to save the zip file.</span></div>
+<div class="line"><span class="lineno">  463</span><span class="stringliteral">        @param extract_zip If True, extract the zip file after saving zip.</span></div>
+<div class="line"><span class="lineno">  464</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  465</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  466</span>        <span class="comment"># Create a zip file with glTF file and textures</span></div>
+<div class="line"><span class="lineno">  467</span>        filename = f<span class="stringliteral">&quot;{id}_gltf.zip&quot;</span></div>
+<div class="line"><span class="lineno">  468</span>        filename = Path(data_folder) / filename</div>
+<div class="line"><span class="lineno">  469</span>        <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> zipf:</div>
+<div class="line"><span class="lineno">  470</span>            <span class="comment"># Write glTF file</span></div>
+<div class="line"><span class="lineno">  471</span>            zipf.writestr(f<span class="stringliteral">&quot;{id}.gltf&quot;</span>, gltf_ascii)</div>
+<div class="line"><span class="lineno">  472</span>            <span class="comment"># Write texture files</span></div>
+<div class="line"><span class="lineno">  473</span>            <span class="keywordflow">for</span> path, content <span class="keywordflow">in</span> texture_binaries:</div>
+<div class="line"><span class="lineno">  474</span>                zipf.writestr(path, content)</div>
+<div class="line"><span class="lineno">  475</span>        self.logger.info(f<span class="stringliteral">&quot;Saved zip: {filename}&quot;</span>)</div>
+<div class="line"><span class="lineno">  476</span> </div>
+<div class="line"><span class="lineno">  477</span>        <span class="comment"># Save zip contents to folder</span></div>
+<div class="line"><span class="lineno">  478</span>        extract_folder = Path(data_folder) / f<span class="stringliteral">&quot;{id}_gltf&quot;</span></div>
+<div class="line"><span class="lineno">  479</span>        <span class="keywordflow">if</span> extract_zip:</div>
+<div class="line"><span class="lineno">  480</span>            <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> zipf:</div>
+<div class="line"><span class="lineno">  481</span>                zipf.extractall(extract_folder)</div>
+<div class="line"><span class="lineno">  482</span>            self.logger.info(f<span class="stringliteral">&quot;Extracted zip contents to folder: {extract_folder}&quot;</span>)</div>
+<div class="line"><span class="lineno">  483</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -949,36 +954,36 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00479">479</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  479</span>    <span class="keyword">def </span>save_materialx_with_textures(self, id, mtlx_string, texture_binaries, data_folder, extract_zip=False):</div>
-<div class="line"><span class="lineno">  480</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  481</span><span class="stringliteral">        Save MaterialX string and texture binaries to a zip file.</span></div>
-<div class="line"><span class="lineno">  482</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">  483</span><span class="stringliteral">        @param id The ID of the MaterialX asset.</span></div>
-<div class="line"><span class="lineno">  484</span><span class="stringliteral">        @param mtlx_string The MaterialX string content.</span></div>
-<div class="line"><span class="lineno">  485</span><span class="stringliteral">        @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.</span></div>
-<div class="line"><span class="lineno">  486</span><span class="stringliteral">        @param data_folder Folder to save the zip file.</span></div>
-<div class="line"><span class="lineno">  487</span><span class="stringliteral">        @param extract_zip If True, extract the zip file after saving zip.</span></div>
-<div class="line"><span class="lineno">  488</span><span class="stringliteral">        @return None</span></div>
-<div class="line"><span class="lineno">  489</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
-<div class="line"><span class="lineno">  490</span>        <span class="comment"># Create a zip file with MaterialX and textures</span></div>
-<div class="line"><span class="lineno">  491</span>        filename = f<span class="stringliteral">&quot;{id}_materialx.zip&quot;</span></div>
-<div class="line"><span class="lineno">  492</span>        filename = Path(data_folder) / filename</div>
-<div class="line"><span class="lineno">  493</span>        <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> zipf:</div>
-<div class="line"><span class="lineno">  494</span>            <span class="comment"># Write MaterialX file</span></div>
-<div class="line"><span class="lineno">  495</span>            zipf.writestr(f<span class="stringliteral">&quot;{id}.mtlx&quot;</span>, mtlx_string)</div>
-<div class="line"><span class="lineno">  496</span>            <span class="comment"># Write texture files</span></div>
-<div class="line"><span class="lineno">  497</span>            <span class="keywordflow">for</span> path, content <span class="keywordflow">in</span> texture_binaries:</div>
-<div class="line"><span class="lineno">  498</span>                zipf.writestr(path, content)</div>
-<div class="line"><span class="lineno">  499</span>        self.logger.info(f<span class="stringliteral">&quot;Saved zip: {filename}&quot;</span>)</div>
-<div class="line"><span class="lineno">  500</span> </div>
-<div class="line"><span class="lineno">  501</span>        <span class="comment"># Save zip contents to folder</span></div>
-<div class="line"><span class="lineno">  502</span>        extract_folder = Path(data_folder) / f<span class="stringliteral">&quot;{id}_materialx&quot;</span></div>
-<div class="line"><span class="lineno">  503</span>        <span class="keywordflow">if</span> extract_zip:</div>
-<div class="line"><span class="lineno">  504</span>            <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> zipf:</div>
-<div class="line"><span class="lineno">  505</span>                zipf.extractall(extract_folder)</div>
-<div class="line"><span class="lineno">  506</span>            self.logger.info(f<span class="stringliteral">&quot;Extracted zip contents to folder: {extract_folder}&quot;</span>)</div>
-<div class="line"><span class="lineno">  507</span> </div>
+<p class="definition">Definition at line <a class="el" href="poly_haven_loader_8py_source.html#l00484">484</a> of file <a class="el" href="poly_haven_loader_8py_source.html">polyHavenLoader.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  484</span>    <span class="keyword">def </span>save_materialx_with_textures(self, id, mtlx_string, texture_binaries, data_folder, extract_zip=False):</div>
+<div class="line"><span class="lineno">  485</span>        <span class="stringliteral">&#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  486</span><span class="stringliteral">        Save MaterialX string and texture binaries to a zip file.</span></div>
+<div class="line"><span class="lineno">  487</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  488</span><span class="stringliteral">        @param id The ID of the MaterialX asset.</span></div>
+<div class="line"><span class="lineno">  489</span><span class="stringliteral">        @param mtlx_string The MaterialX string content.</span></div>
+<div class="line"><span class="lineno">  490</span><span class="stringliteral">        @param texture_binaries List of tuples (path, binary content) for textures and thumbnails.</span></div>
+<div class="line"><span class="lineno">  491</span><span class="stringliteral">        @param data_folder Folder to save the zip file.</span></div>
+<div class="line"><span class="lineno">  492</span><span class="stringliteral">        @param extract_zip If True, extract the zip file after saving zip.</span></div>
+<div class="line"><span class="lineno">  493</span><span class="stringliteral">        @return None</span></div>
+<div class="line"><span class="lineno">  494</span><span class="stringliteral">        &#39;&#39;&#39;</span></div>
+<div class="line"><span class="lineno">  495</span>        <span class="comment"># Create a zip file with MaterialX and textures</span></div>
+<div class="line"><span class="lineno">  496</span>        filename = f<span class="stringliteral">&quot;{id}_materialx.zip&quot;</span></div>
+<div class="line"><span class="lineno">  497</span>        filename = Path(data_folder) / filename</div>
+<div class="line"><span class="lineno">  498</span>        <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;w&quot;</span>) <span class="keyword">as</span> zipf:</div>
+<div class="line"><span class="lineno">  499</span>            <span class="comment"># Write MaterialX file</span></div>
+<div class="line"><span class="lineno">  500</span>            zipf.writestr(f<span class="stringliteral">&quot;{id}.mtlx&quot;</span>, mtlx_string)</div>
+<div class="line"><span class="lineno">  501</span>            <span class="comment"># Write texture files</span></div>
+<div class="line"><span class="lineno">  502</span>            <span class="keywordflow">for</span> path, content <span class="keywordflow">in</span> texture_binaries:</div>
+<div class="line"><span class="lineno">  503</span>                zipf.writestr(path, content)</div>
+<div class="line"><span class="lineno">  504</span>        self.logger.info(f<span class="stringliteral">&quot;Saved zip: {filename}&quot;</span>)</div>
+<div class="line"><span class="lineno">  505</span> </div>
+<div class="line"><span class="lineno">  506</span>        <span class="comment"># Save zip contents to folder</span></div>
+<div class="line"><span class="lineno">  507</span>        extract_folder = Path(data_folder) / f<span class="stringliteral">&quot;{id}_materialx&quot;</span></div>
+<div class="line"><span class="lineno">  508</span>        <span class="keywordflow">if</span> extract_zip:</div>
+<div class="line"><span class="lineno">  509</span>            <span class="keyword">with</span> zipfile.ZipFile(filename, <span class="stringliteral">&quot;r&quot;</span>) <span class="keyword">as</span> zipf:</div>
+<div class="line"><span class="lineno">  510</span>                zipf.extractall(extract_folder)</div>
+<div class="line"><span class="lineno">  511</span>            self.logger.info(f<span class="stringliteral">&quot;Extracted zip contents to folder: {extract_folder}&quot;</span>)</div>
+<div class="line"><span class="lineno">  512</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
