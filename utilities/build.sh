@@ -3,16 +3,28 @@ pip install .
 echo "Finished Package Install"
 
 echo "Start Updating Package Data..."
-pushd .
-cd src/materialxMaterials
-python -m materialxMaterials polyhaven -fe --data_folder data/PolyHavenMaterialX
-python -m materialxMaterials polyhaven -l --data_folder ./data/PolyHavenMaterialX -id polystyrene -x
-cd data
-python -m materialxMaterials gpuopen --loadFromPackage 1 --unzip True
-python -m materialxMaterials physbased
-python -m materialxMaterials acg --saveMaterials True --output ambientCgMaterials/
-python -m materialxMaterials acg --loadMaterials ambientCgMaterials/ambientCG_materialsList.json --downloadMaterial "WoodFloor038" --output ambientCgMaterials/
-popd
 
+echo Download material information from GPUOpen
+echo -------------------------------------------------
+python -m materialxMaterials gpuopen --output src/materialxMaterials/data/GPUOpenMaterialX/ --materialNames 1 --saveMaterials 1
+echo -------------------------------------------------
+
+echo Download material information from PolyHaven
+echo -------------------------------------------------
+python -m materialxMaterials polyhaven -fe --data_folder src/materialxMaterials/data/PolyHavenMaterialX
+echo -------------------------------------------------
+
+echo Download material information from PhysicallyBased
+echo -------------------------------------------------
+python -m materialxMaterials physbased -nd 1 -wr 1 -o src/materialxMaterials/data/PhysicallyBasedMaterialX/
+echo -------------------------------------------------
+
+echo Download material information from AmbientCG
+echo -------------------------------------------------
+python -m materialxMaterials acg --saveMaterials True --output src/materialxMaterials/data/ambientCgMaterials/ -dd 1
+echo -------------------------------------------------
 
 echo "Finished Updating Package Data"
+
+
+

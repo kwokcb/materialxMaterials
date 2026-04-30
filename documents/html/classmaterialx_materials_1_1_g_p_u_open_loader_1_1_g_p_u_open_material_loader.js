@@ -1,6 +1,7 @@
 var classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader =
 [
     [ "__init__", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#aecaec686dd6501b881d5b831433071c6", null ],
+    [ "check_usdz_image_restrictions", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#afb85edcc01ed63f8fd1b8a741cf89e75", null ],
     [ "computeMaterialPreviews", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#aaa5746f16c918be2caa622a1da374a6c", null ],
     [ "convertPilImageToBase64", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a61d16733c41af4d6fe1330d407f66cc3", null ],
     [ "downloadPackage", "classmaterialx_materials_1_1_g_p_u_open_loader_1_1_g_p_u_open_material_loader.html#a78bd0830e40c7ed0f19a3f6792a79b49", null ],

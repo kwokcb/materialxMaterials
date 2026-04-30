@@ -85,6 +85,10 @@ class PolyHavenLoader:
         item_count = 0
         for id, data in all_assets.items():
 
+            found_gltf = False
+            found_blend = False
+            found_mtlx = False
+
             if download_id and id != download_id:
                 #self.logger.info(f"Skipping asset id: '{id}' (not matching {download_id})")
                 continue
@@ -100,7 +104,7 @@ class PolyHavenLoader:
 
             blend_files = files_data.get(self.BLEND_KEY, [])
             if blend_files:
-                self.logger.info(f"Found Blender files for '{id}'")
+                found_blend = True
 
                 for resolution_key in resolutions.keys():
                     res = blend_files.get(resolution_key, None)
@@ -128,7 +132,7 @@ class PolyHavenLoader:
 
             gltf_files = files_data.get(self.GLTF_KEY, [])
             if gltf_files:
-                self.logger.info(f"Found glTF files for '{id}'")
+                found_gltf = True
 
                 for resolution_key in resolutions.keys():
                     res = gltf_files.get(resolution_key, None)
@@ -160,8 +164,7 @@ class PolyHavenLoader:
             #files_data = {k: v for k, v in files_data.items() if k == "mtlx"}            
             mtlx_files = files_data.get(self.MTLX_KEY, [])
             if mtlx_files:
-
-                self.logger.info(f"Found MaterialX data for '{id}'") 
+                found_mtlx = True
 
                 for resolution_key in resolutions.keys():
                     res = mtlx_files.get(resolution_key, None)
@@ -185,6 +188,8 @@ class PolyHavenLoader:
                         }
 
             filtered_polyhaven_assets[id] = files_data
+
+            self.logger.info(f"Id: '{id}' has blender: {found_blend}, glTF: {found_gltf}, mtlx: {found_mtlx}")
 
             # Halt if download_id is specified and matches the current asset ID and download type
             if download_id == id and download_type == self.MTLX_KEY:

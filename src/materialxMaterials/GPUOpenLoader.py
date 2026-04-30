@@ -126,6 +126,46 @@ class GPUOpenMaterialLoader():
 
         return base64_encoded_data    
     
+    def check_usdz_image_restrictions(self, zip_data, pilImage):
+        '''
+        Check that the images in the zip file meet the USDZ format restrictions.
+        @param zip_data: The binary data of the zip file.
+        @param pilImage: The PIL image module.  
+        @return: A list of issues found with the images. If the list is empty, then no issues were found.
+        '''
+        ZIP_COMPRESSION_NAMES = {
+            zipfile.ZIP_STORED: "ZIP_STORED",
+            zipfile.ZIP_DEFLATED: "ZIP_DEFLATED",
+            zipfile.ZIP_BZIP2: "ZIP_BZIP2",
+            zipfile.ZIP_LZMA: "ZIP_LZMA"
+        }        
+
+        issues = []
+        with zipfile.ZipFile(io.BytesIO(zip_data), 'r') as zf:
+            for info in zf.infolist():
+                # 1. Check uncompressed
+                if info.compress_type != zipfile.ZIP_STORED:
+                    compression_name = ZIP_COMPRESSION_NAMES.get(info.compress_type, str(info.compress_type))                    
+                    issues.append(f"{info.filename} is not uncompressed (ZIP_STORED). {compression_name} found.")
+                # 2. Check image format
+                if info.filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+                    img_data = zf.read(info.filename)
+                    try:
+                        img = pilImage.open(io.BytesIO(img_data))
+                        if img.format not in ('PNG', 'JPEG'):
+                            issues.append(f"{info.filename} is not PNG or JPEG")
+                        if img.format == 'PNG':
+                            if img.info.get('interlace', 0) != 0:
+                                issues.append(f"{info.filename} is interlaced PNG (not allowed)")
+                            if img.mode not in ('L', 'LA', 'RGB', 'RGBA'):
+                                issues.append(f"{info.filename} PNG mode {img.mode} not allowed")
+                        if img.format == 'JPEG':
+                            if img.info.get('progressive', 0) != 0:
+                                issues.append(f"{info.filename} is progressive JPEG (not allowed)")
+                    except Exception as e:
+                        issues.append(f"{info.filename} could not be opened as image: {e}")
+        return issues
+    
     def extractPackageData(self, data, pilImage):
         '''
         Extract the package data from a zip file.

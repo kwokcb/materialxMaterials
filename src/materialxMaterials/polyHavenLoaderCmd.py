@@ -24,11 +24,14 @@ def PolyHavenLoaderCmd():
     parser.add_argument("-c", "--count", type=int, default=None, help="Number of assets to fetch (default: 1)")
     parser.add_argument('-exr', '--keep_exr', action='store_true', help="Keep EXR textures instead of converting to PNG (requires OpenImageIO)")
     parser.add_argument('-x', '--extract_zip', action='store_true', help="Extract downloaded ZIP files")
+    parser.add_argument('-sf', '--save_filtered', action='store_true', help="Save filtered MaterialX assets to a file")
 
     args = parser.parse_args()
     download_type = args.download_type.lower()
     all_data_file = 'polyhaven_assets.json'
-    filtered_data_file = 'filtered_polyhaven_assets.json'
+    filtered_data_file = ''
+    if args.save_filtered:
+        filtered_data_file = 'filtered_polyhaven_assets.json'
     blend_data_file = "polyhaven_blender_assets.json"
     gltf_data_file = "polyhaven_gltf_assets.json"
     mtlx_data_file = "polyhaven_materialx_assets.json"
@@ -37,6 +40,10 @@ def PolyHavenLoaderCmd():
     resolution = args.download_resolution
     load = args.load or args.download_id != ""
     data_folder = args.data_folder
+
+    # Create data folder if it doesn't exist
+    if data_folder:
+        Path(data_folder).mkdir(parents=True, exist_ok=True)
     
     loader = polyHavenLoader.PolyHavenLoader()
 
@@ -59,10 +66,11 @@ def PolyHavenLoaderCmd():
             logger.info(f"Saved all assets to {all_location}")
 
         # Write filtered_polyhaven_assets to JSON file:
-        filtered_location = Path(data_folder) / filtered_data_file
-        with open(filtered_location, "w") as f:
-            json.dump(filtered_polyhaven_assets, f, indent=4)
-            logger.info(f"Saved MaterialX assets to {filtered_location}")
+        if filtered_data_file:
+            filtered_location = Path(data_folder) / filtered_data_file
+            with open(filtered_location, "w") as f:
+                json.dump(filtered_polyhaven_assets, f, indent=4)
+                logger.info(f"Saved MaterialX assets to {filtered_location}")
 
         # Write filtered MTLX, BLENDER, and GLTF assets to JSON files:
         mtlx_fetch_location = Path(data_folder) / mtlx_data_file

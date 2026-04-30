@@ -505,6 +505,7 @@ This will pull down the dependent Python packages as needed.
 Build scripts can be found in the `utilities` folder.
 
 - `build.sh` will install the package and run package commands to update package data.
+- `build_download.sh` will use the installed pack to download sample materials.
 - `buildDocs.sh` will prepare documents and run Doxygen to build API docs.
 - `build_examples.sh` will download material examples and optionally render them. `PhysicallyBased` rendering requires `MaterialXView` to be installed.
 

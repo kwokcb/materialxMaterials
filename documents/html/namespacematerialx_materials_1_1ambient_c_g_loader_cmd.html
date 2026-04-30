@@ -190,49 +190,54 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> opts.output:</div>
 <div class="line"><span class="lineno">   62</span>        outputFolder = opts.output</div>
 <div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(outputFolder):</div>
-<div class="line"><span class="lineno">   64</span>        logger.error(f<span class="stringliteral">&#39;Output directory does not exist: {outputFolder}&#39;</span>)</div>
-<div class="line"><span class="lineno">   65</span>        sys.exit(1)</div>
-<div class="line"><span class="lineno">   66</span>    </div>
-<div class="line"><span class="lineno">   67</span>    <span class="comment"># Get materials list which contains download information</span></div>
-<div class="line"><span class="lineno">   68</span>    loadMaterials = opts.loadMaterials</div>
-<div class="line"><span class="lineno">   69</span>    downloadMaterials = opts.downloadMaterials <span class="keywordflow">or</span> opts.saveMaterials</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> loadMaterials <span class="keywordflow">or</span> downloadMaterials:</div>
-<div class="line"><span class="lineno">   71</span>        materialsList = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">if</span> len(loadMaterials) &gt; 0:</div>
-<div class="line"><span class="lineno">   73</span>            materialsList = loader.loadMaterialsList(loadMaterials)</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">elif</span> downloadMaterials:</div>
-<div class="line"><span class="lineno">   75</span>            materialsList = loader.downloadMaterialsList()</div>
-<div class="line"><span class="lineno">   76</span>            <span class="comment"># Save materials list if specified. Only do so for download case</span></div>
-<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">if</span> opts.saveMaterials:</div>
-<div class="line"><span class="lineno">   78</span>                loader.writeMaterialList(materialsList, os.path.join(outputFolder,<span class="stringliteral">&#39;ambientCG_materialsList.json&#39;</span>))</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>        <span class="comment"># Check if the list of materials is asked to be returned</span></div>
-<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">if</span> opts.materialNames:</div>
-<div class="line"><span class="lineno">   82</span>            materialNames = loader.getMaterialNames()</div>
-<div class="line"><span class="lineno">   83</span>            print(f<span class="stringliteral">&#39;{materialNames}&#39;</span>)        </div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>        <span class="comment"># Check if a material asset is specified to downloaded  </span></div>
-<div class="line"><span class="lineno">   86</span>        materialName = opts.downloadMaterial</div>
-<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">if</span> len(materialName) &gt; 0:</div>
-<div class="line"><span class="lineno">   88</span>            result = loader.findMaterial(materialName)</div>
-<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span> result:</div>
-<div class="line"><span class="lineno">   90</span>                fileName = loader.downloadMaterialAsset(materialName, opts.downloadmageFormat, opts.downloadResolution)</div>
-<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">if</span> len(fileName) &gt; 0:</div>
-<div class="line"><span class="lineno">   92</span>                    loader.writeDownloadedMaterialToFile(outputFolder)</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   94</span>                print(f<span class="stringliteral">&#39;Material not found: {materialName}&#39;</span>)      </div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>    <span class="comment"># Check if material database is specified for download</span></div>
-<div class="line"><span class="lineno">   97</span>    databaseFileName = opts.saveDatabase</div>
-<div class="line"><span class="lineno">   98</span>    haveDatabaseFileName = len(databaseFileName) &gt; 0</div>
-<div class="line"><span class="lineno">   99</span>    downloadDatabase = opts.downloadDatabase <span class="keywordflow">and</span> haveDatabaseFileName</div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> downloadDatabase:</div>
-<div class="line"><span class="lineno">  101</span>        print(<span class="stringliteral">&#39;download database&#39;</span>)</div>
-<div class="line"><span class="lineno">  102</span>        loader.downloadAssetDatabase()        </div>
-<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">if</span> haveDatabaseFileName:</div>
-<div class="line"><span class="lineno">  104</span>            path = os.path.join(outputFolder, databaseFileName)</div>
-<div class="line"><span class="lineno">  105</span>            loader.writeDatabaseToFile(path)    </div>
-<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">   64</span>        <span class="comment"># Create output folder if it doesn&#39;t exist</span></div>
+<div class="line"><span class="lineno">   65</span>        logger.info(f<span class="stringliteral">&#39;Creating output folder: {outputFolder}&#39;</span>)</div>
+<div class="line"><span class="lineno">   66</span>        os.makedirs(outputFolder)        </div>
+<div class="line"><span class="lineno">   67</span>    </div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment"># Get materials list which contains download information</span></div>
+<div class="line"><span class="lineno">   69</span>    loadMaterials = opts.loadMaterials</div>
+<div class="line"><span class="lineno">   70</span>    downloadMaterials = opts.downloadMaterials <span class="keywordflow">or</span> opts.saveMaterials</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> loadMaterials <span class="keywordflow">or</span> downloadMaterials:</div>
+<div class="line"><span class="lineno">   72</span>        materialsList = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> len(loadMaterials) &gt; 0:</div>
+<div class="line"><span class="lineno">   74</span>            materialsList = loader.loadMaterialsList(loadMaterials)</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">elif</span> downloadMaterials:</div>
+<div class="line"><span class="lineno">   76</span>            materialsList = loader.downloadMaterialsList()</div>
+<div class="line"><span class="lineno">   77</span>            <span class="comment"># Save materials list if specified. Only do so for download case</span></div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">if</span> opts.saveMaterials:</div>
+<div class="line"><span class="lineno">   79</span>                output_path = os.path.join(outputFolder,<span class="stringliteral">&#39;ambientCG_materialsList.json&#39;</span>)</div>
+<div class="line"><span class="lineno">   80</span>                logger.info(f<span class="stringliteral">&#39;Saving materials list to {output_path}&#39;</span>)</div>
+<div class="line"><span class="lineno">   81</span>                loader.writeMaterialList(materialsList, output_path)</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>        <span class="comment"># Check if the list of materials is asked to be returned</span></div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">if</span> opts.materialNames:</div>
+<div class="line"><span class="lineno">   85</span>            materialNames = loader.getMaterialNames()</div>
+<div class="line"><span class="lineno">   86</span>            print(f<span class="stringliteral">&#39;{materialNames}&#39;</span>)        </div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>        <span class="comment"># Check if a material asset is specified to downloaded  </span></div>
+<div class="line"><span class="lineno">   89</span>        materialName = opts.downloadMaterial</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">if</span> len(materialName) &gt; 0:</div>
+<div class="line"><span class="lineno">   91</span>            result = loader.findMaterial(materialName)</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">if</span> result:</div>
+<div class="line"><span class="lineno">   93</span>                fileName = loader.downloadMaterialAsset(materialName, opts.downloadmageFormat, opts.downloadResolution)</div>
+<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">if</span> len(fileName) &gt; 0:</div>
+<div class="line"><span class="lineno">   95</span>                    loader.writeDownloadedMaterialToFile(outputFolder)</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   97</span>                logger.info(f<span class="stringliteral">&#39;Material not found: {materialName}&#39;</span>)      </div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    <span class="comment"># Check if material database is specified for download</span></div>
+<div class="line"><span class="lineno">  100</span>    databaseFileName = opts.saveDatabase</div>
+<div class="line"><span class="lineno">  101</span>    haveDatabaseFileName = len(databaseFileName) &gt; 0</div>
+<div class="line"><span class="lineno">  102</span>    downloadDatabase = opts.downloadDatabase <span class="keywordflow">and</span> haveDatabaseFileName</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> downloadDatabase:</div>
+<div class="line"><span class="lineno">  104</span>        loader.downloadAssetDatabase()        </div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span> haveDatabaseFileName:</div>
+<div class="line"><span class="lineno">  106</span>            logger.info(f<span class="stringliteral">&#39;Download database: {databaseFileName}&#39;</span>)</div>
+<div class="line"><span class="lineno">  107</span>            path = os.path.join(outputFolder, databaseFileName)</div>
+<div class="line"><span class="lineno">  108</span>            loader.writeDatabaseToFile(path)    </div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  110</span>        logger.info(<span class="stringliteral">&#39;No database download requested or no output file name specified. Skipping database download.&#39;</span>)</div>
+<div class="line"><span class="lineno">  111</span> </div>
 </div><!-- fragment -->
 </div>
 </div>

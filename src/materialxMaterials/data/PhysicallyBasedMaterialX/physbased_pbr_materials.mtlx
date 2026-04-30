@@ -29,7 +29,7 @@
     <input name="category" type="string" value="Metal" />
     <input name="description" type="string" value="Aluminum can be colorized by a process called anodization. It creates a layer of aluminum oxide by supplying different voltages which results in different thickness. Unlike titanium, aluminum doesn't get vivid colors from anodization so dyes are used to color it further." />
     <input name="tags" type="string" value="aluminium" />
-    <input name="references" type="string" value="{'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=Al&amp;page=Cheng', 'accessed': '2025-06-26'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=Al2O3&amp;page=Hagemann', 'accessed': '2026-02-07'}, {'title': 'OpenPBR: Novel Features and Implementation Details', 'author': 'Portsmouth, J., Kutz, P., &amp; Hill, S.', 'doi': 'https://doi.org/10.48550/arXiv.2512.23696', 'year': '2025', 'url': 'https://arxiv.org/pdf/2512.23696#appendix.D', 'accessed': '2025-12-30'}, {'title': 'Aluminium', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Aluminium&amp;oldid=1271633189', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Mirror', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Mirror&amp;oldid=1268984936', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Aluminium oxide', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Aluminium_oxide&amp;oldid=1336992644', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-02-07'}, {'title': 'Anodizing', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Anodizing&amp;oldid=1334964855#Aluminium', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-02-07'}, {'title': 'Anodizing Color Chart', 'author': 'Ruan, B.', 'publisher': 'Beska LLC', 'url': 'https://www.beskamold.com/anodizing-color-chart/', 'accessed': '2026-02-07'}, {'title': 'What Is the Anodizing Process for Aluminum and Why Is It Used', 'publisher': 'WUXI SEATHER TECHNOLOGY CO., LTD.', 'url': 'https://seathertechnology.com/anodizing-process-for-aluminum-benefits-applications/', 'accessed': '2026-02-07'}, {'title': 'Anodized Aluminum Colors: Process, Performance &amp; Design', 'author': 'Hayes, C.', 'publisher': 'TZR', 'url': 'https://www.tzrmetal.com/anodized-aluminum-colors/', 'accessed': '2026-02-07'}" />
+    <input name="references" type="string" value="{'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=Al&amp;page=Cheng', 'accessed': '2025-06-26'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=Al2O3&amp;page=Hagemann', 'accessed': '2026-02-07'}, {'title': 'OpenPBR: Novel Features and Implementation Details', 'author': 'Portsmouth, J., Kutz, P., &amp; Hill, S.', 'doi': 'https://doi.org/10.48550/arXiv.2512.23696', 'year': '2025', 'url': 'https://arxiv.org/pdf/2512.23696#appendix.D', 'accessed': '2025-12-30'}, {'title': 'Aluminium', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Aluminium&amp;oldid=1271633189', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Mirror', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Mirror&amp;oldid=1268984936', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Aluminium oxide', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Aluminium_oxide&amp;oldid=1336992644', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-02-07'}, {'title': 'Anodizing', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Anodizing&amp;oldid=1334964855#Aluminium', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-02-07'}, {'title': 'Anodizing Color Chart', 'author': 'Ruan, B.', 'publisher': 'Beska LLC', 'url': 'https://www.beskamold.com/anodizing-color-chart/', 'accessed': '2026-02-07'}, {'title': 'What Is the Anodizing Process for Aluminum and Why Is It Used', 'publisher': 'WUXI SEATHER TECHNOLOGY CO., LTD.', 'url': 'https://seathertechnology.com/anodizing-process-for-aluminum-benefits-applications/', 'accessed': '2026-02-07'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/aluminum-anodized-red.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum-anodized-red.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/aluminum-anodized-red.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum-anodized-red.avif'}" />
   </physbased_pbr_surface>
   <surfacematerial name="Aluminum__Anodized_Red__MAT_PBM" type="material">
@@ -77,6 +77,24 @@
   <surfacematerial name="Banana_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Banana" />
   </surfacematerial>
+  <physbased_pbr_surface name="Beer__Pale_Lager_" type="surfaceshader" uiname="Beer (Pale Lager)">
+    <input name="name" type="string" value="Beer (Pale Lager)" />
+    <input name="color" type="color3" value="0.889, 0.775, 0.558" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.1149, 0.2491, 0.5779]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.003, 0.005, 0.006]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.917, 0.956, 0.982]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/beer-pale-lager.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/beer-pale-lager.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/beer-pale-lager.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/beer-pale-lager.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Beer__Pale_Lager__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Beer__Pale_Lager_" />
+  </surfacematerial>
   <physbased_pbr_surface name="Beryllium" type="surfaceshader" uiname="Beryllium">
     <input name="name" type="string" value="Beryllium" />
     <input name="color" type="color3" value="0.539, 0.533, 0.534" colorspace="lin_rec709" />
@@ -104,8 +122,28 @@
   <surfacematerial name="Blackboard_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Blackboard" />
   </surfacematerial>
-  <physbased_pbr_surface name="Blood" type="surfaceshader" doc="The color of blood depends on its oxygen level. When there is plenty of oxygen, the color is a brighter red. The reason is because of a protein called hemoglobin, which carries the oxygen in your blood. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark." uiname="Blood">
-    <input name="name" type="string" value="Blood" />
+  <physbased_pbr_surface name="Blood__Deoxygenated_" type="surfaceshader" doc="The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red." uiname="Blood (Deoxygenated)">
+    <input name="name" type="string" value="Blood (Deoxygenated)" />
+    <input name="color" type="color3" value="0.415, 0.0, 0.0" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.35" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="0.08" />
+    <input name="transmissionDispersion" type="float" value="54" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [40.7, 259.9, 91.2]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [901.2, 864.5, 1220.8]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.9869, 0.9886, 0.9896]}]}" />
+    <input name="surfaceTension" type="float" value="56" />
+    <input name="category" type="string" value="Human" />
+    <input name="description" type="string" value="The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red." />
+    <input name="tags" type="string" value="liquid" />
+    <input name="references" type="string" value="{'title': 'Blood', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Blood&amp;oldid=1264714220', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-11'}, {'title': 'Blood Red', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Blood_red&amp;oldid=1217643853', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Hemorheology', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Hemorheology&amp;oldid=1229971521', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Surface tension', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-08-30'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=other&amp;book=blood&amp;page=Liu', 'accessed': '2025-07-22'}, {'title': 'A Literature Review And Novel Theoretical Approach On The Optical Properties Of Whole Blood', 'author': 'Bosschaart, N., Edelman, G. J., Aalders, M. C. G., van Leeuwen, T. G., &amp; Faber, D. J.', 'url': 'https://link.springer.com/article/10.1007/s10103-013-1446-7', 'publisher': 'Lasers in Medical Science', 'volume': '29', 'issue': '2', 'pages': '453--479', 'year': '2014', 'doi': 'https://doi.org/10.1007/s10103-013-1446-7'}, {'title': 'Density of Blood', 'author': 'Shmukler, M., Elert, G. (Ed.)', 'url': 'https://hypertextbook.com/facts/2004/MichaelShmukler.shtml', 'publisher': 'The Physics Factbook', 'accessed': '2025-01-26'}, {'title': 'A Simple Quantitative Bedside Test to Determine Methemoglobin', 'author': 'Shihana, F., Dissanayake, D. M., Buckley, N. A. &amp; Dawson, A. H.', 'url': 'https://www.annemergmed.com/article/S0196-0644(09)01281-5/fulltext', 'publisher': 'Annals of emergency medicine', 'volume': '55', 'issue': '2', 'pages': '184--189', 'year': '2009', 'doi': 'https://doi.org/10.1016/j.annemergmed.2009.07.022'}, {'title': 'Liquids - Dynamic Viscosities', 'url': 'https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2025-01-26'}, {'title': 'Blood Rheology: Key Parameters, Impact on Blood Flow, Role in Sickle Cell Disease and Effects of Exercise', 'author': 'Nader, E., Skinner, S., Romana, M., Fort, R., Lemonne, N., Guillot, N., ... &amp; Connes, P.', 'url': 'https://www.frontiersin.org/articles/10.3389/fphys.2019.01329/full', 'publisher': 'Frontiers in physiology', 'volume': '10', 'pages': '1329', 'year': '2019', 'doi': 'https://doi.org/10.3389/fphys.2019.01329'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'Viscosity of Whole Blood', 'url': 'https://wiki.anton-paar.com/en/whole-blood/', 'publisher': 'Anton Paar GmbH', 'accessed': '2025-01-26'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-deoxygenated.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood-deoxygenated.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-deoxygenated.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood-deoxygenated.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Blood__Deoxygenated__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Blood__Deoxygenated_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Blood__Oxygenated_" type="surfaceshader" doc="The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red." uiname="Blood (Oxygenated)">
+    <input name="name" type="string" value="Blood (Oxygenated)" />
     <input name="color" type="color3" value="0.644, 0.003, 0.005" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
@@ -113,15 +151,16 @@
     <input name="transmission" type="float" value="1" />
     <input name="transmissionDepth" type="float" value="0.08" />
     <input name="transmissionDispersion" type="float" value="54" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [8.8, 238.6, 189.7]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [880.9, 714.9, 817.4]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.986, 0.9874, 0.989]}]}" />
     <input name="surfaceTension" type="float" value="56" />
     <input name="category" type="string" value="Human" />
-    <input name="description" type="string" value="The color of blood depends on its oxygen level. When there is plenty of oxygen, the color is a brighter red. The reason is because of a protein called hemoglobin, which carries the oxygen in your blood. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark." />
+    <input name="description" type="string" value="The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red." />
     <input name="tags" type="string" value="liquid" />
-    <input name="references" type="string" value="{'title': 'Blood', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Blood&amp;oldid=1264714220', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-11'}, {'title': 'Blood Red', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Blood_red&amp;oldid=1217643853', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Hemorheology', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Hemorheology&amp;oldid=1229971521', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Surface tension', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-08-30'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=other&amp;book=blood&amp;page=Liu', 'accessed': '2025-07-22'}, {'title': 'Density of Blood', 'author': 'Shmukler, M., Elert, G. (Ed.)', 'url': 'https://hypertextbook.com/facts/2004/MichaelShmukler.shtml', 'publisher': 'The Physics Factbook', 'accessed': '2025-01-26'}, {'title': 'A Simple Quantitative Bedside Test to Determine Methemoglobin', 'author': 'Shihana, F., Dissanayake, D. M., Buckley, N. A. &amp; Dawson, A. H.', 'url': 'https://www.annemergmed.com/article/S0196-0644(09)01281-5/fulltext', 'publisher': 'Annals of emergency medicine', 'volume': '55', 'issue': '2', 'pages': '184--189', 'year': '2009', 'doi': 'https://doi.org/10.1016/j.annemergmed.2009.07.022'}, {'title': 'Liquids - Dynamic Viscosities', 'url': 'https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2025-01-26'}, {'title': 'Blood Rheology: Key Parameters, Impact on Blood Flow, Role in Sickle Cell Disease and Effects of Exercise', 'author': 'Nader, E., Skinner, S., Romana, M., Fort, R., Lemonne, N., Guillot, N., ... &amp; Connes, P.', 'url': 'https://www.frontiersin.org/articles/10.3389/fphys.2019.01329/full', 'publisher': 'Frontiers in physiology', 'volume': '10', 'pages': '1329', 'year': '2019', 'doi': 'https://doi.org/10.3389/fphys.2019.01329'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'Viscosity of Whole Blood', 'url': 'https://wiki.anton-paar.com/en/whole-blood/', 'publisher': 'Anton Paar GmbH', 'accessed': '2025-01-26'}" />
-    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.avif'}" />
+    <input name="references" type="string" value="{'title': 'Blood', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Blood&amp;oldid=1264714220', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-11'}, {'title': 'Blood Red', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Blood_red&amp;oldid=1217643853', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Hemorheology', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Hemorheology&amp;oldid=1229971521', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Surface tension', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-08-30'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=other&amp;book=blood&amp;page=Liu', 'accessed': '2025-07-22'}, {'title': 'A Literature Review And Novel Theoretical Approach On The Optical Properties Of Whole Blood', 'author': 'Bosschaart, N., Edelman, G. J., Aalders, M. C. G., van Leeuwen, T. G., &amp; Faber, D. J.', 'url': 'https://link.springer.com/article/10.1007/s10103-013-1446-7', 'publisher': 'Lasers in Medical Science', 'volume': '29', 'issue': '2', 'pages': '453--479', 'year': '2014', 'doi': 'https://doi.org/10.1007/s10103-013-1446-7'}, {'title': 'Density of Blood', 'author': 'Shmukler, M., Elert, G. (Ed.)', 'url': 'https://hypertextbook.com/facts/2004/MichaelShmukler.shtml', 'publisher': 'The Physics Factbook', 'accessed': '2025-01-26'}, {'title': 'A Simple Quantitative Bedside Test to Determine Methemoglobin', 'author': 'Shihana, F., Dissanayake, D. M., Buckley, N. A. &amp; Dawson, A. H.', 'url': 'https://www.annemergmed.com/article/S0196-0644(09)01281-5/fulltext', 'publisher': 'Annals of emergency medicine', 'volume': '55', 'issue': '2', 'pages': '184--189', 'year': '2009', 'doi': 'https://doi.org/10.1016/j.annemergmed.2009.07.022'}, {'title': 'Liquids - Dynamic Viscosities', 'url': 'https://www.engineeringtoolbox.com/absolute-viscosity-liquids-d_1259.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2025-01-26'}, {'title': 'Blood Rheology: Key Parameters, Impact on Blood Flow, Role in Sickle Cell Disease and Effects of Exercise', 'author': 'Nader, E., Skinner, S., Romana, M., Fort, R., Lemonne, N., Guillot, N., ... &amp; Connes, P.', 'url': 'https://www.frontiersin.org/articles/10.3389/fphys.2019.01329/full', 'publisher': 'Frontiers in physiology', 'volume': '10', 'pages': '1329', 'year': '2019', 'doi': 'https://doi.org/10.3389/fphys.2019.01329'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'Viscosity of Whole Blood', 'url': 'https://wiki.anton-paar.com/en/whole-blood/', 'publisher': 'Anton Paar GmbH', 'accessed': '2025-01-26'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-oxygenated.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood-oxygenated.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-oxygenated.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood-oxygenated.avif'}" />
   </physbased_pbr_surface>
-  <surfacematerial name="Blood_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Blood" />
+  <surfacematerial name="Blood__Oxygenated__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Blood__Oxygenated_" />
   </surfacematerial>
   <physbased_pbr_surface name="Bone" type="surfaceshader" uiname="Bone">
     <input name="name" type="string" value="Bone" />
@@ -162,6 +201,7 @@
     <input name="category" type="string" value="Manmade" />
     <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/brick/', 'publisher': 'Physically Based Database', 'accessed': '2025-01-26'}, {'title': 'Brick', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Brick&amp;oldid=1270653991', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Absorption (acoustics)', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Absorption_(acoustics)&amp;oldid=1261130500', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Absorption coefficients of common building materials and finishes', 'author': 'JCW Acoustic Supplies', 'url': 'https://www.acoustic-supplies.com/absorption-coefficient-chart/', 'accessed': '2025-01-26'}, {'title': 'Absorption Coefficients', 'author': 'Acoustic Materials &amp; Technologies Ltd.', 'url': 'https://www.acoustic.ua/st/web_absorption_data_eng.pdf', 'accessed': '2025-01-26'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/brick.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brick.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/brick.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brick.avif'}" />
+    <input name="tags" type="string" value="acoustics, audio" />
   </physbased_pbr_surface>
   <surfacematerial name="Brick_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Brick" />
@@ -180,6 +220,21 @@
   </physbased_pbr_surface>
   <surfacematerial name="Car_Paint_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Car_Paint" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Cardboard" type="surfaceshader" doc="The material commonly referred to as &quot;cardboard&quot; is more specifically named &quot;corrugated fiberboard&quot;." uiname="Cardboard">
+    <input name="name" type="string" value="Cardboard" />
+    <input name="color" type="color3" value="0.351, 0.208, 0.11" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="category" type="string" value="Manmade" />
+    <input name="description" type="string" value="The material commonly referred to as &quot;cardboard&quot; is more specifically named &quot;corrugated fiberboard&quot;." />
+    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/cardboard/', 'publisher': 'Physically Based Database', 'accessed': '2026-03-07'}, {'title': 'Cardboard', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Cardboard&amp;oldid=1337511096', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-03-07'}, {'title': 'Corrugated Fiberboard', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Corrugated_fiberboard&amp;oldid=1333020802', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-03-07'}, {'title': 'Solids - Densities ', 'url': 'https://www.engineeringtoolbox.com/density-solids-d_1265.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2026-03-07'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cardboard.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cardboard.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cardboard.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cardboard.avif'}" />
+    <input name="tags" type="string" value="corrugated fiberboard" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Cardboard_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cardboard" />
   </surfacematerial>
   <physbased_pbr_surface name="Carrot" type="surfaceshader" uiname="Carrot">
     <input name="name" type="string" value="Carrot" />
@@ -274,13 +329,31 @@
     <input name="transmission" type="float" value="1" />
     <input name="transmissionDepth" type="float" value="0.1" />
     <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [47.9838, 65.7512, 88.4925]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [77.826, 81.305, 85.388]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.907, 0.896, 0.88]}]}" />
     <input name="category" type="string" value="Liquid" />
-    <input name="tags" type="string" value="sss" />
-    <input name="references" type="string" value="{'title': 'Photo Reference', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/coffee/', 'publisher': 'Physically Based Database', 'accessed': '2025-01-26'}, {'title': 'Espresso Coffee: The Science of Quality', 'author': 'Viani, R., &amp; Illy, A.', 'url': 'https://books.google.com/books?id=cptQBAAAQBAJ&amp;lpg=PP1', 'publisher': 'Elsevier', 'pages': '292', 'year': '2005'}" />
+    <input name="references" type="string" value="{'title': 'Photo Reference', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/coffee/', 'publisher': 'Physically Based Database', 'accessed': '2025-01-26'}, {'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}, {'title': 'Espresso Coffee: The Science of Quality', 'author': 'Viani, R., &amp; Illy, A.', 'url': 'https://books.google.com/books?id=cptQBAAAQBAJ&amp;lpg=PP1', 'publisher': 'Elsevier', 'pages': '292', 'year': '2005'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/coffee.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/coffee.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/coffee.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/coffee.avif'}" />
   </physbased_pbr_surface>
   <surfacematerial name="Coffee_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Coffee" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Cola" type="surfaceshader" uiname="Cola">
+    <input name="name" type="string" value="Cola" />
+    <input name="color" type="color3" value="0.358, 0.186, 0.085" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1.0" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [1.0014, 1.6503, 2.468]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.025, 0.03, 0.0]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.965, 0.972, 1.0]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cola.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cola.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cola.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cola.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Cola_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cola" />
   </surfacematerial>
   <physbased_pbr_surface name="Concrete" type="surfaceshader" uiname="Concrete">
     <input name="name" type="string" value="Concrete" />
@@ -292,6 +365,7 @@
     <input name="category" type="string" value="Manmade" />
     <input name="references" type="string" value="{'title': 'Feeding a Physically Based Shading Model', 'author': 'Lagarde, S.', 'url': 'https://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/', 'accessed': '2025-01-26'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Absorption (acoustics)', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Absorption_(acoustics)&amp;oldid=1261130500', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Absorption coefficients of common building materials and finishes', 'author': 'JCW Acoustic Supplies', 'url': 'https://www.acoustic-supplies.com/absorption-coefficient-chart/', 'accessed': '2025-01-26'}, {'title': 'Absorption Coefficients', 'author': 'Acoustic Materials &amp; Technologies Ltd.', 'url': 'https://www.acoustic.ua/st/web_absorption_data_eng.pdf', 'accessed': '2025-01-26'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/concrete.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/concrete.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/concrete.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/concrete.avif'}" />
+    <input name="tags" type="string" value="acoustics, audio" />
   </physbased_pbr_surface>
   <surfacematerial name="Concrete_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Concrete" />
@@ -325,6 +399,23 @@
   <surfacematerial name="Copper_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Copper" />
   </surfacematerial>
+  <physbased_pbr_surface name="Cream" type="surfaceshader" uiname="Cream">
+    <input name="name" type="string" value="Cream" />
+    <input name="color" type="color3" value="0.976, 0.9, 0.725" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.348" />
+    <input name="subsurfaceRadius" type="vector3" value="1.503, 0.466, 0.254" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.002, 0.028, 0.163]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [73.8, 54.7, 31.5]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.0, 0.0, 0.0]}]}" />
+    <input name="surfaceTension" type="float" value="40" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="tags" type="string" value="sss" />
+    <input name="references" type="string" value="{'title': 'A Practical Model for Subsurface Light Transport', 'author': 'Jensen, H. W., Marschner, S. R., Levoy, M. &amp; Hanrahan, P.', 'url': 'https://dl.acm.org/doi/10.1145/383259.383319', 'publisher': 'Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques', 'pages': '515', 'year': '2001', 'doi': 'https://doi.org/10.1145/383259.383319'}, {'title': 'On Reflectometric Measurement of a Refractive Index of Milk', 'author': 'Jääskeläinen, A.J., Peiponen, K.-E. &amp; Räty, J. A.', 'url': 'https://www.sciencedirect.com/science/article/pii/S0022030201744499', 'publisher': 'Journal of Dairy Science', 'volume': '84', 'issue': '1', 'pages': '42', 'year': '2001', 'doi': 'https://doi.org/10.3168/jds.S0022-0302(01)74449-9'}, {'title': 'Dairy Science and Technology eBook', 'author': 'Goff, D. H., Hill, A. &amp; Ferrer, M. A.', 'url': 'https://books.lib.uoguelph.ca/dairyscienceandtechnologyebook/chapter/physical-properties-of-milk/', 'publisher': 'University of Guelph', 'accessed': '2025-02-02'}, {'title': 'Density of Milk', 'author': 'Jones, A. N., Elert, G. (Ed.)', 'url': 'https://hypertextbook.com/facts/2002/AliciaNoelleJones.shtml', 'publisher': 'The Physics Factbook', 'accessed': '2025-02-02'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'A Note on the Surface Tension of Homogenized Cream', 'author': 'Webb, B. H.', 'url': 'https://www.journalofdairyscience.org/article/S0022-0302(59)90760-X/pdf', 'publisher': 'Journal of Dairy Science', 'volume': '16', 'issue': '4', 'pages': '369--373', 'year': '1933', 'doi': 'https://doi.org/10.3168/jds.S0022-0302(33)93351-2'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cream.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cream.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cream.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cream.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Cream_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cream" />
+  </surfacematerial>
   <physbased_pbr_surface name="Diamond" type="surfaceshader" uiname="Diamond">
     <input name="name" type="string" value="Diamond" />
     <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
@@ -341,19 +432,33 @@
   <surfacematerial name="Diamond_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Diamond" />
   </surfacematerial>
-  <physbased_pbr_surface name="Egg_Shell" type="surfaceshader" doc="White hen egg from grocery store." uiname="Egg Shell">
-    <input name="name" type="string" value="Egg Shell" />
+  <physbased_pbr_surface name="Egg_Shell__Brown_" type="surfaceshader" doc="Brown hen egg from grocery store." uiname="Egg Shell (Brown)">
+    <input name="name" type="string" value="Egg Shell (Brown)" />
+    <input name="color" type="color3" value="0.493, 0.248, 0.123" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0.9" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="category" type="string" value="Organic" />
+    <input name="description" type="string" value="Brown hen egg from grocery store." />
+    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/egg-shell-brown/', 'publisher': 'Physically Based Database', 'accessed': '2026-03-07'}, {'title': 'Eggs as Food', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Eggs_as_food&amp;oldid=1271500408#Shell', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-brown.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell-brown.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-brown.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell-brown.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Egg_Shell__Brown__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Egg_Shell__Brown_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Egg_Shell__White_" type="surfaceshader" doc="White hen egg from grocery store." uiname="Egg Shell (White)">
+    <input name="name" type="string" value="Egg Shell (White)" />
     <input name="color" type="color3" value="0.61, 0.624, 0.631" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />
     <input name="category" type="string" value="Organic" />
     <input name="description" type="string" value="White hen egg from grocery store." />
-    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/egg-shell/', 'publisher': 'Physically Based Database', 'accessed': '2025-01-26'}, {'title': 'Eggs as Food', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Eggs_as_food&amp;oldid=1271500408#Shell', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}" />
-    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell.avif'}" />
+    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/egg-shell-white/', 'publisher': 'Physically Based Database', 'accessed': '2025-01-26'}, {'title': 'Eggs as Food', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Eggs_as_food&amp;oldid=1271500408#Shell', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-white.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell-white.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-white.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/egg-shell-white.avif'}" />
   </physbased_pbr_surface>
-  <surfacematerial name="Egg_Shell_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Egg_Shell" />
+  <surfacematerial name="Egg_Shell__White__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Egg_Shell__White_" />
   </surfacematerial>
   <physbased_pbr_surface name="Eye__Cornea_" type="surfaceshader" uiname="Eye (Cornea)">
     <input name="name" type="string" value="Eye (Cornea)" />
@@ -427,21 +532,45 @@
   <surfacematerial name="Germanium_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Germanium" />
   </surfacematerial>
-  <physbased_pbr_surface name="Glass" type="surfaceshader" uiname="Glass">
-    <input name="name" type="string" value="Glass" />
-    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
+  <physbased_pbr_surface name="Glass__Borosilicate_" type="surfaceshader" doc="Borosilicate glass has numerous advantages over regular soda-lime glass, including having a higher clarity (transparency). Borosilicate is generally slightly more expensive than soda-lime glass." uiname="Glass (Borosilicate)">
+    <input name="name" type="string" value="Glass (Borosilicate)" />
+    <input name="color" type="color3" value="0.988, 0.992, 0.985" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.52" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="50" />
     <input name="transmissionDispersion" type="float" value="64" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.00237, 0.0018, 0.00301]}, {'colorSpace': 'acescg', 'color': [0.00221, 0.00186, 0.00286]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.0, 0.0, 0.0]}, {'colorSpace': 'acescg', 'color': [0.0, 0.0, 0.0]}]}" />
     <input name="acousticAbsorption" type="string" value="0.04, 0.04, 0.03, 0.03, 0.02, 0.02" />
+    <input name="description" type="string" value="Borosilicate glass has numerous advantages over regular soda-lime glass, including having a higher clarity (transparency). Borosilicate is generally slightly more expensive than soda-lime glass." />
+    <input name="category" type="string" value="Crystal" />
+    <input name="references" type="string" value="{'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=3d&amp;book=glass&amp;page=BK7', 'accessed': '2026-03-30'}, {'title': 'Crown glass (optics)', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Crown_glass_(optics)&amp;oldid=1300145385', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-03-30'}, {'title': 'Borosilicate glass', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Borosilicate_glass&amp;oldid=1340784510', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-03-30'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Absorption coefficients of common building materials and finishes', 'author': 'JCW Acoustic Supplies', 'url': 'https://www.acoustic-supplies.com/absorption-coefficient-chart/', 'accessed': '2025-01-26'}, {'title': 'Absorption Coefficients', 'author': 'Acoustic Materials &amp; Technologies Ltd.', 'url': 'https://www.acoustic.ua/st/web_absorption_data_eng.pdf', 'accessed': '2025-01-26'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-borosilicate.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass-borosilicate.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-borosilicate.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass-borosilicate.avif'}" />
+    <input name="tags" type="string" value="acoustics, audio, crown, bk7" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Glass__Borosilicate__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Glass__Borosilicate_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Glass__Soda_lime_" type="surfaceshader" doc="Soda-lime glass is the most prevelant type of glass made, and accounts for about 90% of manufactured glass. It's used for windowpanes and glass containers (bottles and jars) for beverages, food, and some commodity items." uiname="Glass (Soda-lime)">
+    <input name="name" type="string" value="Glass (Soda-lime)" />
+    <input name="color" type="color3" value="0.984, 0.995, 0.995" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.52" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="64" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.13941, 0.04527, 0.05334]}, {'colorSpace': 'acescg', 'color': [0.10337, 0.05197, 0.05422]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.0, 0.0, 0.0]}, {'colorSpace': 'acescg', 'color': [0.0, 0.0, 0.0]}]}" />
+    <input name="acousticAbsorption" type="string" value="0.04, 0.04, 0.03, 0.03, 0.02, 0.02" />
+    <input name="description" type="string" value="Soda-lime glass is the most prevelant type of glass made, and accounts for about 90% of manufactured glass. It's used for windowpanes and glass containers (bottles and jars) for beverages, food, and some commodity items." />
     <input name="category" type="string" value="Crystal" />
     <input name="references" type="string" value="{'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=3d&amp;book=glass&amp;page=soda-lime-clear', 'accessed': '2025-01-26'}, {'title': 'Soda-lime Glass', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Soda%E2%80%93lime_glass&amp;oldid=1262726109', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Absorption coefficients of common building materials and finishes', 'author': 'JCW Acoustic Supplies', 'url': 'https://www.acoustic-supplies.com/absorption-coefficient-chart/', 'accessed': '2025-01-26'}, {'title': 'Absorption Coefficients', 'author': 'Acoustic Materials &amp; Technologies Ltd.', 'url': 'https://www.acoustic.ua/st/web_absorption_data_eng.pdf', 'accessed': '2025-01-26'}" />
-    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass.avif'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-soda-lime.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass-soda-lime.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-soda-lime.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass-soda-lime.avif'}" />
+    <input name="tags" type="string" value="acoustics, audio" />
   </physbased_pbr_surface>
-  <surfacematerial name="Glass_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Glass" />
+  <surfacematerial name="Glass__Soda_lime__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Glass__Soda_lime_" />
   </surfacematerial>
   <physbased_pbr_surface name="Gold" type="surfaceshader" uiname="Gold">
     <input name="name" type="string" value="Gold" />
@@ -507,7 +636,7 @@
     <input name="roughness" type="float" value="0.3" />
     <input name="ior" type="float" value="1.504" />
     <input name="subsurfaceRadius" type="vector3" value="0.2, 0.2, 0.2" />
-    <input name="category" type="string" value="Liquid" />
+    <input name="category" type="string" value="Organic" />
     <input name="description" type="string" value="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose." />
     <input name="references" type="string" value="{'title': 'Honey', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Honey&amp;oldid=1271742958', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'List of Viscosities', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=List_of_viscosities&amp;oldid=1256671906', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'The Color of Honey', 'url': 'https://carolinahoneybees.com/the-color-of-honey/', 'publisher': 'Carolina Honeybees', 'accessed': '2025-01-26'}, {'title': 'Chemical and Functional Properties of Food Saccharides', 'author': 'Tomasik, P. (Ed.)', 'url': 'https://www.taylorfrancis.com/books/mono/10.1201/9780203495728/chemical-functional-properties-food-saccharides-piotr-tomasik', 'publisher': 'CRC Press', 'pages': '74 ', 'year': '2003', 'doi': 'https://doi.org/10.1201/9780203495728'}, {'title': 'Viscosity of Flower Honey (Blended)', 'url': 'https://wiki.anton-paar.com/en/flower-honey-blended/', 'publisher': 'Anton Paar GmbH', 'accessed': '2025-01-26'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'Viscosity - Absolute (Dynamic) vs. Kinematic ', 'url': 'https://www.engineeringtoolbox.com/dynamic-absolute-kinematic-viscosity-d_412.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2025-01-26'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/honey-crystallized.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey-crystallized.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/honey-crystallized.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey-crystallized.avif'}" />
@@ -517,14 +646,18 @@
   </surfacematerial>
   <physbased_pbr_surface name="Ice" type="surfaceshader" uiname="Ice">
     <input name="name" type="string" value="Ice" />
-    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
+    <input name="color" type="color3" value="0.973, 0.995, 1.0" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
-    <input name="roughness" type="float" value="0.5" />
+    <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.3098" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="100" />
     <input name="transmissionDispersion" type="float" value="64.87" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.002075, 0.000416, 0.0]}, {'colorSpace': 'acescg', 'color': [0.001411, 0.000526, 5e-05]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.0, 0.0, 0.0]}, {'colorSpace': 'acescg', 'color': [0.0, 0.0, 0.0]}]}" />
+    <input name="acousticAbsorption" type="string" value="0.008, 0.008, 0.013, 0.015, 0.02, 0.025" />
     <input name="category" type="string" value="Crystal" />
-    <input name="references" type="string" value="{'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=3d&amp;book=crystals&amp;page=ice', 'accessed': '2025-01-26'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=H2O&amp;page=Kofman-150K', 'accessed': '2025-01-26'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Optical Properties of Water and Ice', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Optical_properties_of_water_and_ice&amp;oldid=1272826057', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}" />
+    <input name="tags" type="string" value="acoustics, audio" />
+    <input name="references" type="string" value="{'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=H2O&amp;page=Warren-2008', 'accessed': '2026-04-21'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=H2O&amp;page=Kofman-150K', 'accessed': '2025-01-26'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Absorption coefficients of common building materials and finishes', 'author': 'JCW Acoustic Supplies', 'url': 'https://www.acoustic-supplies.com/absorption-coefficient-chart/', 'accessed': '2025-01-26'}, {'title': 'Optical Properties of Water and Ice', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Optical_properties_of_water_and_ice&amp;oldid=1272826057', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/ice.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ice.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/ice.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ice.avif'}" />
   </physbased_pbr_surface>
   <surfacematerial name="Ice_MAT_PBM" type="material">
@@ -558,6 +691,96 @@
   <surfacematerial name="Iron_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Iron" />
   </surfacematerial>
+  <physbased_pbr_surface name="Juice__Apple_" type="surfaceshader" uiname="Juice (Apple)">
+    <input name="name" type="string" value="Juice (Apple)" />
+    <input name="color" type="color3" value="0.856, 0.765, 0.569" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.1296, 0.2374, 0.5218]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.026, 0.031, 0.041]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.947, 0.949, 0.945]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-apple.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-apple.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-apple.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-apple.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Juice__Apple__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Apple_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Juice__Cranberry_" type="surfaceshader" uiname="Juice (Cranberry)">
+    <input name="name" type="string" value="Juice (Cranberry)" />
+    <input name="color" type="color3" value="0.661, 0.381, 0.28" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.3944, 0.9422, 1.2426]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.02, 0.024, 0.03]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.947, 0.951, 0.974]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-cranberry.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-cranberry.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-cranberry.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-cranberry.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Juice__Cranberry__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Cranberry_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Juice__Grape_" type="surfaceshader" uiname="Juice (Grape)">
+    <input name="name" type="string" value="Juice (Grape)" />
+    <input name="color" type="color3" value="0.348, 0.091, 0.053" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [1.0404, 2.3958, 2.9325]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.014, 0.0, 0.0]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.961, 1.0, 1.0]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-grape.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-grape.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-grape.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-grape.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Juice__Grape__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Grape_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Juice__Ruby_Grapefruit_" type="surfaceshader" uiname="Juice (Ruby Grapefruit)">
+    <input name="name" type="string" value="Juice (Ruby Grapefruit)" />
+    <input name="color" type="color3" value="0.09, 0.034, 0.016" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.8587, 1.8314, 2.5262]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [1.55, 1.539, 1.599]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.929, 0.929, 0.931]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-ruby-grapefruit.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-ruby-grapefruit.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-ruby-grapefruit.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-ruby-grapefruit.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Juice__Ruby_Grapefruit__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Ruby_Grapefruit_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Juice__White_Grapefruit_" type="surfaceshader" uiname="Juice (White Grapefruit)">
+    <input name="name" type="string" value="Juice (White Grapefruit)" />
+    <input name="color" type="color3" value="0.973, 0.966, 0.93" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.138, 0.1883, 0.5678]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [5.05, 5.274, 7.528]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.54, 0.545, 0.565]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-white-grapefruit.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-white-grapefruit.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-white-grapefruit.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/juice-white-grapefruit.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Juice__White_Grapefruit__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__White_Grapefruit_" />
+  </surfacematerial>
   <physbased_pbr_surface name="Ketchup" type="surfaceshader" uiname="Ketchup">
     <input name="name" type="string" value="Ketchup" />
     <input name="color" type="color3" value="0.164, 0.006, 0.002" colorspace="lin_rec709" />
@@ -565,6 +788,7 @@
     <input name="roughness" type="float" value="0.1" />
     <input name="ior" type="float" value="1.3" />
     <input name="subsurfaceRadius" type="vector3" value="0.476, 0.058, 0.039" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.61, 9.7, 14.5]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [1.8, 0.7, 0.3]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.0, 0.0, 0.0]}]}" />
     <input name="category" type="string" value="Organic" />
     <input name="tags" type="string" value="liquid, sss" />
     <input name="references" type="string" value="{'title': 'A Practical Model for Subsurface Light Transport', 'author': 'Jensen, H. W., Marschner, S. R., Levoy, M. &amp; Hanrahan, P.', 'url': 'https://dl.acm.org/doi/10.1145/383259.383319', 'publisher': 'Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques', 'pages': '515', 'year': '2001', 'doi': 'https://doi.org/10.1145/383259.383319'}, {'title': 'Rheological Properties of Tomato Ketchup', 'author': 'Kumbár, V., Ondruší\xadková, S., Nedomová, Š.', 'url': 'https://potravinarstvo.com/journal1/index.php/potravinarstvo/article/view/1161', 'publisher': 'Potravinarstvo Slovak Journal of Food Sciences', 'volume': '13', 'issue': '1', 'pages': '730--734', 'year': '2019', 'doi': 'https://doi.org/10.5219/1161'}, {'title': 'List of Viscosities', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=List_of_viscosities&amp;oldid=1256671906', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}" />
@@ -649,9 +873,11 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />
     <input name="subsurfaceRadius" type="vector3" value="0.851, 0.557, 0.395" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.021, 0.041, 0.071]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [21.9, 26.2, 30.0]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.0, 0.0, 0.0]}]}" />
+    <input name="acousticAbsorption" type="string" value="0.01, 0.01, 0.01, 0.01, 0.02, 0.02" />
     <input name="category" type="string" value="Crystal" />
-    <input name="tags" type="string" value="sss" />
-    <input name="references" type="string" value="{'title': 'A Practical Model for Subsurface Light Transport', 'author': 'Jensen, H. W., Marschner, S. R., Levoy, M. &amp; Hanrahan, P.', 'url': 'https://dl.acm.org/doi/10.1145/383259.383319', 'publisher': 'Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques', 'pages': '515', 'year': '2001', 'doi': 'https://doi.org/10.1145/383259.383319'}, {'title': 'Marble', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Marble&amp;oldid=1273167009', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Minerals - Densities ', 'url': 'https://www.engineeringtoolbox.com/mineral-density-d_1555.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2025-01-26'}, {'title': 'Study of physical and mechanical properties for some of Eastern Desert dimension marble and granite utilized in building decoration', 'author': 'Wahab, G. M. A., Gouda, M. &amp; Ibrahim, G.', 'url': 'https://www.sciencedirect.com/science/article/pii/S2090447919300826', 'publisher': 'Ain Shams Engineering Journal', 'volume': '10', 'issue': '4', 'pages': '907--915', 'year': '2019', 'doi': 'https://doi.org/10.1016/j.asej.2019.07.003'}" />
+    <input name="tags" type="string" value="sss, acoustics, audio" />
+    <input name="references" type="string" value="{'title': 'A Practical Model for Subsurface Light Transport', 'author': 'Jensen, H. W., Marschner, S. R., Levoy, M. &amp; Hanrahan, P.', 'url': 'https://dl.acm.org/doi/10.1145/383259.383319', 'publisher': 'Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques', 'pages': '515', 'year': '2001', 'doi': 'https://doi.org/10.1145/383259.383319'}, {'title': 'Marble', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Marble&amp;oldid=1273167009', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Minerals - Densities ', 'url': 'https://www.engineeringtoolbox.com/mineral-density-d_1555.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2025-01-26'}, {'title': 'Absorption (acoustics)', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Absorption_(acoustics)&amp;oldid=1351206086', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-04-26'}, {'title': 'Study of physical and mechanical properties for some of Eastern Desert dimension marble and granite utilized in building decoration', 'author': 'Wahab, G. M. A., Gouda, M. &amp; Ibrahim, G.', 'url': 'https://www.sciencedirect.com/science/article/pii/S2090447919300826', 'publisher': 'Ain Shams Engineering Journal', 'volume': '10', 'issue': '4', 'pages': '907--915', 'year': '2019', 'doi': 'https://doi.org/10.1016/j.asej.2019.07.003'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/marble.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/marble.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/marble.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/marble.avif'}" />
   </physbased_pbr_surface>
   <surfacematerial name="Marble_MAT_PBM" type="material">
@@ -681,11 +907,12 @@
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.348" />
     <input name="subsurfaceRadius" type="vector3" value="1.842, 1.044, 0.35" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.014, 0.025, 0.142]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [7.0, 12.2, 19.0]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.0, 0.0, 0.0]}]}" />
     <input name="surfaceTension" type="float" value="48" />
     <input name="category" type="string" value="Liquid" />
     <input name="description" type="string" value="Cow's milk" />
     <input name="tags" type="string" value="sss" />
-    <input name="references" type="string" value="{'title': 'A Practical Model for Subsurface Light Transport', 'author': 'Jensen, H. W., Marschner, S. R., Levoy, M. &amp; Hanrahan, P.', 'url': 'https://dl.acm.org/doi/10.1145/383259.383319', 'publisher': 'Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques', 'pages': '515', 'year': '2001', 'doi': 'https://doi.org/10.1145/383259.383319'}, {'title': 'What Is the Color of Milk and Dairy Products and How Is It Measured?', 'author': 'Milovanovic, B., Djekic, I., Miocinovic, J., Djordjevic, V., Lorenzo, J. M., Barba, F. J., Mörlein, D. &amp; Tomasevic, I.', 'url': 'https://www.mdpi.com/2304-8158/9/11/1629', 'publisher': 'Foods', 'volume': '9', 'issue': '11', 'pages': '1629', 'year': '2020', 'doi': 'https://doi.org/10.3390/foods9111629'}, {'title': 'On Reflectometric Measurement of a Refractive Index of Milk', 'author': 'Jääskeläinen, A.J., Peiponen, K.-E. &amp; Räty, J. A.', 'url': 'https://www.sciencedirect.com/science/article/pii/S0022030201744499', 'publisher': 'Journal of Dairy Science', 'volume': '84', 'issue': '1', 'pages': '42', 'year': '2001', 'doi': 'https://doi.org/10.3168/jds.S0022-0302(01)74449-9'}, {'title': 'Dairy Science and Technology eBook', 'author': 'Goff, D. H., Hill, A. &amp; Ferrer, M. A.', 'url': 'https://books.lib.uoguelph.ca/dairyscienceandtechnologyebook/chapter/physical-properties-of-milk/', 'publisher': 'University of Guelph', 'accessed': '2025-02-02'}, {'title': 'Density of Milk', 'author': 'Jones, A. N., Elert, G. (Ed.)', 'url': 'https://hypertextbook.com/facts/2004/MichaelShmukler.shtml', 'publisher': 'The Physics Factbook', 'accessed': '2025-02-02'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'List of Viscosities', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=List_of_viscosities&amp;oldid=1256671906', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'The Surface Tension of Milk. A Review1, 2', 'author': 'Whitnah, C.H.', 'url': 'https://www.journalofdairyscience.org/article/S0022-0302(59)90760-X/pdf', 'publisher': 'Journal of Dairy Science', 'volume': '42', 'issue': '9', 'pages': '1437--1449', 'year': '1959', 'doi': 'https://doi.org/10.3168/jds.S0022-0302(59)90760-X'}" />
+    <input name="references" type="string" value="{'title': 'A Practical Model for Subsurface Light Transport', 'author': 'Jensen, H. W., Marschner, S. R., Levoy, M. &amp; Hanrahan, P.', 'url': 'https://dl.acm.org/doi/10.1145/383259.383319', 'publisher': 'Proceedings of the 28th Annual Conference on Computer Graphics and Interactive Techniques', 'pages': '515', 'year': '2001', 'doi': 'https://doi.org/10.1145/383259.383319'}, {'title': 'What Is the Color of Milk and Dairy Products and How Is It Measured?', 'author': 'Milovanovic, B., Djekic, I., Miocinovic, J., Djordjevic, V., Lorenzo, J. M., Barba, F. J., Mörlein, D. &amp; Tomasevic, I.', 'url': 'https://www.mdpi.com/2304-8158/9/11/1629', 'publisher': 'Foods', 'volume': '9', 'issue': '11', 'pages': '1629', 'year': '2020', 'doi': 'https://doi.org/10.3390/foods9111629'}, {'title': 'On Reflectometric Measurement of a Refractive Index of Milk', 'author': 'Jääskeläinen, A.J., Peiponen, K.-E. &amp; Räty, J. A.', 'url': 'https://www.sciencedirect.com/science/article/pii/S0022030201744499', 'publisher': 'Journal of Dairy Science', 'volume': '84', 'issue': '1', 'pages': '42', 'year': '2001', 'doi': 'https://doi.org/10.3168/jds.S0022-0302(01)74449-9'}, {'title': 'Dairy Science and Technology eBook', 'author': 'Goff, D. H., Hill, A. &amp; Ferrer, M. A.', 'url': 'https://books.lib.uoguelph.ca/dairyscienceandtechnologyebook/chapter/physical-properties-of-milk/', 'publisher': 'University of Guelph', 'accessed': '2025-02-02'}, {'title': 'Density of Milk', 'author': 'Jones, A. N., Elert, G. (Ed.)', 'url': 'https://hypertextbook.com/facts/2002/AliciaNoelleJones.shtml', 'publisher': 'The Physics Factbook', 'accessed': '2025-02-02'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'List of Viscosities', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=List_of_viscosities&amp;oldid=1256671906', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'The Surface Tension of Milk. A Review1, 2', 'author': 'Whitnah, C.H.', 'url': 'https://www.journalofdairyscience.org/article/S0022-0302(59)90760-X/pdf', 'publisher': 'Journal of Dairy Science', 'volume': '42', 'issue': '9', 'pages': '1437--1449', 'year': '1959', 'doi': 'https://doi.org/10.3168/jds.S0022-0302(59)90760-X'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/milk.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/milk.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/milk.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/milk.avif'}" />
   </physbased_pbr_surface>
   <surfacematerial name="Milk_MAT_PBM" type="material">
@@ -759,6 +986,19 @@
   </physbased_pbr_surface>
   <surfacematerial name="Office_Paper_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Office_Paper" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Orange" type="surfaceshader" uiname="Orange">
+    <input name="name" type="string" value="Orange" />
+    <input name="color" type="color3" value="0.615, 0.205, 0.01" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0.5" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="category" type="string" value="Organic" />
+    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/orange/', 'publisher': 'Physically Based Database', 'accessed': '2026-03-07'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/orange.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/orange.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/orange.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/orange.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Orange_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Orange" />
   </surfacematerial>
   <physbased_pbr_surface name="Palladium" type="surfaceshader" uiname="Palladium">
     <input name="name" type="string" value="Palladium" />
@@ -880,7 +1120,7 @@
     <input name="category" type="string" value="Plastic" />
     <input name="description" type="string" value="Modern car paints are nearly always an acrylic polyurethane &quot;enamel&quot; with a pigmented basecoat and a clear topcoat. It may be described as &quot;acrylic&quot;, &quot;acrylic enamel&quot;, &quot;urethane&quot;, etc. and the clearcoat in particular may be described as a lacquer." />
     <input name="tags" type="string" value="acrylic, coat, car paint, lacquer, polyurethane" />
-    <input name="references" type="string" value="{'title': 'Automotive Paint', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Automotive_paint&amp;oldid=1270250557', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Lacquer', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Lacquer&amp;oldid=1269195190#Acrylic_lacquers', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Brdf and Gloss Computation of Polyurethane Coatings from Roughness Measurements: Modelling and Experimental Validation', 'author': 'Wittmann, B., Montmitonnet, P., Burr, A., Gauthier, C., Agassant, J-F, &amp; Casoli, A.', 'url': 'https://www.sciencedirect.com/science/article/abs/pii/S0300944021001181', 'publisher': 'Progress in Organic Coatings', 'volume': '156', 'issue': '106247', 'year': '2021', 'doi': 'https://doi.org/10.1016/j.porgcoat.2021.106247'}, {'title': 'High Refractive Index Aqueous Polyurethane Dispersion Coating Compositions', 'author': 'Iwazumi, M., Schneider, A.', 'url': 'https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2011163461', 'publisher': 'SDC TECHNOLOGIES, INC.', 'year': '2011'}" />
+    <input name="references" type="string" value="{'title': 'Polyurethane', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Polyurethane&amp;oldid=1344512232', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-03-23'}, {'title': 'Automotive Paint', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Automotive_paint&amp;oldid=1270250557', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Lacquer', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Lacquer&amp;oldid=1269195190#Acrylic_lacquers', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-25'}, {'title': 'Brdf and Gloss Computation of Polyurethane Coatings from Roughness Measurements: Modelling and Experimental Validation', 'author': 'Wittmann, B., Montmitonnet, P., Burr, A., Gauthier, C., Agassant, J-F, &amp; Casoli, A.', 'url': 'https://www.sciencedirect.com/science/article/abs/pii/S0300944021001181', 'publisher': 'Progress in Organic Coatings', 'volume': '156', 'issue': '106247', 'year': '2021', 'doi': 'https://doi.org/10.1016/j.porgcoat.2021.106247'}, {'title': 'High Refractive Index Aqueous Polyurethane Dispersion Coating Compositions', 'author': 'Iwazumi, M., Schneider, A.', 'url': 'https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2011163461', 'publisher': 'SDC TECHNOLOGIES, INC.', 'year': '2011'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/plastic-pur.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pur.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/plastic-pur.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pur.avif'}" />
   </physbased_pbr_surface>
   <surfacematerial name="Plastic__PUR__MAT_PBM" type="material">
@@ -922,7 +1162,7 @@
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.6" />
     <input name="category" type="string" value="Manmade" />
-    <input name="references" type="string" value="{'title': 'Spectral Materials Database', 'author': 'Jakubiec, J. A.', 'url': 'https://spectraldb.com/measurements/00090/', 'accessed': '2026-02-02'}, {'title': 'Polystyrene', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Polystyrene&amp;oldid=1334078817', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-02-02'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=organic&amp;book=polystyrene&amp;page=Zhang', 'accessed': '2026-02-02'}, {'title': 'Extruded Polystyrene Foams with Enhanced Insulation and Mechanical Properties by a Benzene-Trisamide-Based Additive', 'author': 'Aksit, M., Zhao, C., Klose, B., Kreger, K., Schmidt, H.-W., &amp; Altstädt, V.', 'url': 'https://www.mdpi.com/2073-4360/11/2/268', 'doi': 'https://doi.org/10.3390/polym11020268', 'publisher': 'Polymers', 'issue': '2', 'volume': '11', 'pages': '268', 'year': '2019'}" />
+    <input name="references" type="string" value="{'title': 'Spectral Materials Database', 'author': 'Jakubiec, J. A.', 'url': 'https://spectraldb.com/measurements/00090/', 'accessed': '2026-02-02'}, {'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/polystyrene/', 'publisher': 'Physically Based Database', 'accessed': '2026-03-07'}, {'title': 'Polystyrene', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Polystyrene&amp;oldid=1334078817', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-02-02'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=organic&amp;book=polystyrene&amp;page=Zhang', 'accessed': '2026-02-02'}, {'title': 'Extruded Polystyrene Foams with Enhanced Insulation and Mechanical Properties by a Benzene-Trisamide-Based Additive', 'author': 'Aksit, M., Zhao, C., Klose, B., Kreger, K., Schmidt, H.-W., &amp; Altstädt, V.', 'url': 'https://www.mdpi.com/2073-4360/11/2/268', 'doi': 'https://doi.org/10.3390/polym11020268', 'publisher': 'Polymers', 'issue': '2', 'volume': '11', 'pages': '268', 'year': '2019'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/polystyrene-foam.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/polystyrene-foam.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/polystyrene-foam.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/polystyrene-foam.avif'}" />
     <input name="tags" type="string" value="styrofoam" />
   </physbased_pbr_surface>
@@ -1166,7 +1406,7 @@
     <input name="subsurfaceRadius" type="vector3" value="0.2, 0.2, 1" />
     <input name="acousticAbsorption" type="string" value="0.45, 0.75, 0.9, 0.95, 0.95, 0.95" />
     <input name="category" type="string" value="Crystal" />
-    <input name="tags" type="string" value="ice" />
+    <input name="tags" type="string" value="ice, acoustics, audio" />
     <input name="references" type="string" value="{'title': 'Feeding a Physically Based Shading Model', 'author': 'Lagarde, S.', 'url': 'https://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/', 'accessed': '2025-01-26'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=3d&amp;book=crystals&amp;page=ice', 'accessed': '2025-02-05'}, {'title': 'Sound Absorption of Snow', 'author': 'KAYE, G. W. C., &amp; EVANS, E. J.', 'url': 'https://www.nature.com/articles/143080a0', 'publisher': 'Nature', 'volume': '143', 'pages': '80', 'year': '1939', 'doi': 'https://doi.org/10.1038/143080a0'}, {'title': 'Sound Absorption of Snow', 'author': 'Maysenhölder, W., Schneebeli, M., Zhou, X., Zhang, T., &amp; Heggli, M.', 'url': 'https://publica.fraunhofer.de/handle/publica/217278', 'publisher': 'IBP-Mitteilung', 'year': '2008', 'doi': 'https://doi.org/10.24406/publica-fhg-217278'}, {'title': 'Microstructure and Sound Absorption of Snow', 'author': 'Maysenhölder, W., Heggli, M., Zhou, X., Zhang, T., Frei, E., &amp; Schneebeli, M.', 'url': 'https://www.sciencedirect.com/science/article/abs/pii/S0165232X12000900', 'publisher': 'Cold Regions Science and Technology', 'volume': '83-84', 'pages': '3--12', 'year': '2012', 'doi': 'https://doi.org/10.1016/j.coldregions.2012.05.001'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/snow.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/snow.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/snow.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/snow.avif'}" />
   </physbased_pbr_surface>
@@ -1231,6 +1471,20 @@
   <surfacematerial name="Stainless_Steel_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Stainless_Steel" />
   </surfacematerial>
+  <physbased_pbr_surface name="Terracotta" type="surfaceshader" uiname="Terracotta">
+    <input name="name" type="string" value="Terracotta" />
+    <input name="color" type="color3" value="0.555, 0.212, 0.11" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0.8" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="category" type="string" value="Manmade" />
+    <input name="tags" type="string" value="clay" />
+    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/terracotta/', 'publisher': 'Physically Based Database', 'accessed': '2026-03-08'}, {'title': 'Terracotta', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Terracotta&amp;oldid=1334206131', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2026-03-08'}, {'title': 'Technical Specifications - Darwen Terracotta', 'url': 'https://www.darwenterracotta.com/technical-specifications', 'publisher': 'Darwen Terracotta Limited', 'accessed': '2026-03-08'}, {'title': 'All About Terracotta - Aurora Pots', 'author': 'Tran, A.', 'url': 'https://aurorapots.com/blogs/news/all-about-terracotta', 'publisher': 'Aurora Pots', 'accessed': '2026-03-08'}, {'title': 'Technicial Data of Terracotta Facade Panels', 'url': 'https://www.terracotta-panel.com/technicial-data-of-terracotta-facade-panels/', 'publisher': 'LOPO Terracotta Facade Panels Manufacturer Corporation', 'accessed': '2026-03-08'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/terracotta.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/terracotta.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/terracotta.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/terracotta.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Terracotta_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Terracotta" />
+  </surfacematerial>
   <physbased_pbr_surface name="Tire" type="surfaceshader" doc="Car tire." uiname="Tire">
     <input name="name" type="string" value="Tire" />
     <input name="color" type="color3" value="0.023, 0.023, 0.023" colorspace="lin_rec709" />
@@ -1240,7 +1494,7 @@
     <input name="category" type="string" value="Manmade" />
     <input name="description" type="string" value="Car tire." />
     <input name="tags" type="string" value="tyre, rubber" />
-    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/tire/', 'publisher': 'Physically Based Database', 'accessed': '2025-01-25'}, {'title': 'Stainless Steel', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Tire&amp;oldid=1274266449', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-02-05'}" />
+    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/tire/', 'publisher': 'Physically Based Database', 'accessed': '2025-01-25'}, {'title': 'Tire', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Tire&amp;oldid=1274266449', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-02-05'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/tire.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tire.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/tire.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tire.avif'}" />
   </physbased_pbr_surface>
   <surfacematerial name="Tire_MAT_PBM" type="material">
@@ -1276,6 +1530,19 @@
   <surfacematerial name="Titanium__Anodized__MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Titanium__Anodized_" />
   </surfacematerial>
+  <physbased_pbr_surface name="Toilet_Paper" type="surfaceshader" uiname="Toilet Paper">
+    <input name="name" type="string" value="Toilet Paper" />
+    <input name="color" type="color3" value="0.83, 0.835, 0.784" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0.9" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="category" type="string" value="Manmade" />
+    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/toilet-paper/', 'publisher': 'Physically Based Database', 'accessed': '2026-03-08'}, {'title': 'Why Is Paper Density Very Important for Tissue Paper?', 'url': 'https://www.yuanhuapaper.com/why-is-paper-density-very-important-for-tissue-paper/', 'publisher': 'YuanhuaPaper', 'accessed': '2026-03-08'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toilet-paper.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toilet-paper.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toilet-paper.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toilet-paper.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Toilet_Paper_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Toilet_Paper" />
+  </surfacematerial>
   <physbased_pbr_surface name="Toner__Black_" type="surfaceshader" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0." uiname="Toner (Black)">
     <input name="name" type="string" value="Toner (Black)" />
     <input name="color" type="color3" value="0.05, 0.05, 0.05" colorspace="lin_rec709" />
@@ -1289,6 +1556,19 @@
   </physbased_pbr_surface>
   <surfacematerial name="Toner__Black__MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Toner__Black_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Toothpaste" type="surfaceshader" uiname="Toothpaste">
+    <input name="name" type="string" value="Toothpaste" />
+    <input name="color" type="color3" value="0.9325, 0.9369, 0.9286" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="category" type="string" value="Manmade" />
+    <input name="references" type="string" value="{'title': 'Spectrophotometer Measurement', 'author': 'Palmqvist, A.', 'url': 'https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/toothpaste/', 'publisher': 'Physically Based Database', 'accessed': '2026-03-08'}, {'title': 'How Much Is A Pea-Sized Amount? A Study Of Dentifrice Dosing By Parents In Three Countries', 'author': 'Creeth, J., Bosma, M. L., &amp; Govier, K.', 'publisher': 'International Dental Journal', 'doi': 'https://doi.org/10.1111/idj.12076', 'year': '2013', 'issue': '0020-6539', 'volume': '63', 'pages': '25--30', 'url': 'https://www.sciencedirect.com/science/article/pii/S0020653920337060', 'accessed': '2026-03-08'}, {'title': 'Toothpaste Abrasion and Abrasive Particle Content: Correlating High-Resolution Profilometric Analysis with Relative Dentin Abrasivity (RDA)', 'author': 'Enax, J., Meyer, F., Schulze zur Wiesche, E., Fuhrmann, I. C., &amp; Fabritius, H.-O.', 'publisher': 'Dentistry Journal', 'doi': 'https://doi.org/10.3390/dj11030079', 'year': '2023', 'issue': '3', 'volume': '11', 'pages': '79', 'url': 'https://www.mdpi.com/2304-6767/11/3/79', 'accessed': '2026-03-08'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2026-03-08'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toothpaste.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toothpaste.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toothpaste.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toothpaste.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Toothpaste_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Toothpaste" />
   </surfacematerial>
   <physbased_pbr_surface name="Tungsten" type="surfaceshader" uiname="Tungsten">
     <input name="name" type="string" value="Tungsten" />
@@ -1318,20 +1598,23 @@
   <surfacematerial name="Vanadium_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Vanadium" />
   </surfacematerial>
-  <physbased_pbr_surface name="Water" type="surfaceshader" doc="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color." uiname="Water">
+  <physbased_pbr_surface name="Water" type="surfaceshader" doc="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases beyond 50 cm. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color." uiname="Water">
     <input name="name" type="string" value="Water" />
-    <input name="color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
+    <input name="color" type="color3" value="0.969, 0.996, 0.997" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.3325" />
     <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="100" />
     <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.00297, 0.00045, 0.00017]}, {'colorSpace': 'acescg', 'color': [0.00198, 0.00062, 0.00026]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.0, 0.0, 0.0]}, {'colorSpace': 'acescg', 'color': [0.0, 0.0, 0.0]}]}" />
     <input name="surfaceTension" type="float" value="72" />
     <input name="acousticAbsorption" type="string" value="0.008, 0.008, 0.013, 0.015, 0.02, 0.025" />
     <input name="category" type="string" value="Liquid" />
-    <input name="description" type="string" value="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color." />
-    <input name="references" type="string" value="{'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=H2O&amp;page=Daimon-21.5C', 'accessed': '2025-01-26'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Properties of Water', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Properties_of_water&amp;oldid=1274819143', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-02-10'}, {'title': 'Color of Water', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Color_of_water&amp;oldid=1273446338', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-02-10'}, {'title': 'List of Viscosities', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=List_of_viscosities&amp;oldid=1256671906', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Surface tension', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-08-30'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'Water - Dynamic (Absolute) and Kinematic Viscosity vs. Temperature and Pressure ', 'url': 'https://www.engineeringtoolbox.com/water-dynamic-kinematic-viscosity-d_596.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2025-01-26'}, {'title': 'Absorption coefficients of common building materials and finishes', 'author': 'JCW Acoustic Supplies', 'url': 'https://www.acoustic-supplies.com/absorption-coefficient-chart/', 'accessed': '2025-01-26'}, {'title': 'Compendium of Materials for Noise Control', 'author': 'Hedeen, R. A.', 'url': 'https://www.cdc.gov/niosh/docs/80-116/', 'pages': '55', 'year': '1980', 'doi': 'https://doi.org/10.26616/NIOSHPUB80116', 'accessed': '2025-02-10'}, {'title': 'Zoom Lens Design Using Liquid Lens for Laparoscope', 'author': 'Seungwan, L., Minseog, C., Eunsung, L., Kyu-Dong, J., Jong-hyeon, C., &amp; Woonbae, K.', 'url': 'https://opg.optica.org/oe/abstract.cfm?URI=oe-21-2-1751', 'publisher': 'Optics Express', 'volume': '21', 'issue': '2', 'pages': '1751--1761', 'year': '2013', 'doi': 'https://doi.org/10.1364/OE.21.001751'}, {'title': 'The Optical Properties of Water', 'author': 'Mobley, C. D.', 'url': 'http://data.moby.mlml.sjsu.edu/mobyuncert/self_shading/docs/chapter43_optical_society_of_america_handbook_of_optics_i.pdf', 'publisher': 'Handbook of optics', 'pages': '43', 'year': '1995'}" />
+    <input name="description" type="string" value="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases beyond 50 cm. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color." />
+    <input name="references" type="string" value="{'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=H2O&amp;page=Daimon-21.5C', 'accessed': '2025-01-26'}, {'title': 'Refractive index database', 'author': 'Polyanskiy, M. N.', 'url': 'https://refractiveindex.info/?shelf=main&amp;book=H2O&amp;page=Hale', 'accessed': '2026-04-21'}, {'title': 'Density', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Density&amp;oldid=1271894167', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Properties of Water', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Properties_of_water&amp;oldid=1274819143', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-02-10'}, {'title': 'Color of Water', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Color_of_water&amp;oldid=1273446338', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-02-10'}, {'title': 'List of Viscosities', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=List_of_viscosities&amp;oldid=1256671906', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-01-26'}, {'title': 'Surface tension', 'author': 'Wikipedia contributors', 'url': 'https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values', 'publisher': 'Wikipedia, The Free Encyclopedia', 'accessed': '2025-08-30'}, {'title': 'Hybrido Viscosity Table', 'author': 'RealFlow 10 Documentation', 'publisher': 'Next Limit Technologies', 'url': 'https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table', 'accessed': '2025-01-26'}, {'title': 'Water - Dynamic (Absolute) and Kinematic Viscosity vs. Temperature and Pressure ', 'url': 'https://www.engineeringtoolbox.com/water-dynamic-kinematic-viscosity-d_596.html', 'publisher': 'The Engineering ToolBox', 'accessed': '2025-01-26'}, {'title': 'Absorption coefficients of common building materials and finishes', 'author': 'JCW Acoustic Supplies', 'url': 'https://www.acoustic-supplies.com/absorption-coefficient-chart/', 'accessed': '2025-01-26'}, {'title': 'Compendium of Materials for Noise Control', 'author': 'Hedeen, R. A.', 'url': 'https://www.cdc.gov/niosh/docs/80-116/', 'pages': '55', 'year': '1980', 'doi': 'https://doi.org/10.26616/NIOSHPUB80116', 'accessed': '2025-02-10'}, {'title': 'Zoom Lens Design Using Liquid Lens for Laparoscope', 'author': 'Seungwan, L., Minseog, C., Eunsung, L., Kyu-Dong, J., Jong-hyeon, C., &amp; Woonbae, K.', 'url': 'https://opg.optica.org/oe/abstract.cfm?URI=oe-21-2-1751', 'publisher': 'Optics Express', 'volume': '21', 'issue': '2', 'pages': '1751--1761', 'year': '2013', 'doi': 'https://doi.org/10.1364/OE.21.001751'}, {'title': 'The Optical Properties of Water', 'author': 'Mobley, C. D.', 'url': 'http://data.moby.mlml.sjsu.edu/mobyuncert/self_shading/docs/chapter43_optical_society_of_america_handbook_of_optics_i.pdf', 'publisher': 'Handbook of optics', 'pages': '43', 'year': '1995'}" />
     <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/water.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/water.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/water.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/water.avif'}" />
+    <input name="tags" type="string" value="acoustics, audio" />
   </physbased_pbr_surface>
   <surfacematerial name="Water_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Water" />
@@ -1348,6 +1631,42 @@
   </physbased_pbr_surface>
   <surfacematerial name="Whiteboard_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Whiteboard" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Wine__Red_" type="surfaceshader" uiname="Wine (Red)">
+    <input name="name" type="string" value="Wine (Red)" />
+    <input name="color" type="color3" value="0.31, 0.081, 0.053" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [1.1632, 2.5191, 2.9434]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.008, 0.0, 0.0]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.974, 1.0, 1.0]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-red.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/wine-red.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-red.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/wine-red.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Wine__Red__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Wine__Red_" />
+  </surfacematerial>
+  <physbased_pbr_surface name="Wine__White_" type="surfaceshader" uiname="Wine (White)">
+    <input name="name" type="string" value="Wine (White)" />
+    <input name="color" type="color3" value="0.896, 0.885, 0.783" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDepth" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="volumeCoefficients" type="string" value="{'absorption': [{'colorSpace': 'srgb-linear', 'color': [0.1078, 0.1186, 0.24]}], 'scattering': [{'colorSpace': 'srgb-linear', 'color': [0.002, 0.003, 0.005]}], 'anisotropy': [{'colorSpace': 'srgb-linear', 'color': [0.914, 0.958, 0.975]}]}" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="references" type="string" value="{'title': 'Acquiring Scattering Properties Of Participating Media By Dilution', 'author': 'Narasimhan, S. G., Gupta, M., Donner, C., Ramamoorthi, R., Nayar, S. K., &amp; Jensen, H. W.', 'publisher': 'Association for Computing Machinery', 'url': 'https://dl.acm.org/doi/10.1145/1141911.1141986', 'volume': '25', 'issue': '3', 'pages': '1003--1012', 'year': '2006', 'doi': 'https://doi.org/10.1145/1141911.1141986'}" />
+    <input name="images" type="string" value="{'format': 'jpeg', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-white.jpeg', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/wine-white.jpeg'}, {'format': 'avif', '300': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-white.avif', '600': 'https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/wine-white.avif'}" />
+  </physbased_pbr_surface>
+  <surfacematerial name="Wine__White__MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Wine__White_" />
   </surfacematerial>
   <physbased_pbr_surface name="Zinc" type="surfaceshader" uiname="Zinc">
     <input name="name" type="string" value="Zinc" />

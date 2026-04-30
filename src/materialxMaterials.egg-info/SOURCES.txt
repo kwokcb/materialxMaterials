@@ -11,12 +11,6 @@ src/materialxMaterials/physicallyBasedMaterialX.py
 src/materialxMaterials/physicallyBasedMaterialXCmd.py
 src/materialxMaterials/polyHavenLoader.py
 src/materialxMaterials/polyHavenLoaderCmd.py
-src/materialxMaterials.egg-info/PKG-INFO
-src/materialxMaterials.egg-info/SOURCES.txt
-src/materialxMaterials.egg-info/dependency_links.txt
-src/materialxMaterials.egg-info/entry_points.txt
-src/materialxMaterials.egg-info/requires.txt
-src/materialxMaterials.egg-info/top_level.txt
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_0.json
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_1.json
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_2.json
@@ -25,30 +19,9 @@ src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_4.json
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_Names.json
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_Previews_.json
 src/materialxMaterials/data/GPUOpenMaterialX/GPUOpenMaterialX_Renders_.json
-src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood.zip
-src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.mtlx
 src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/Emerald_Peaks_Wallpaper.png
-src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/textures/Emerald_Peaks_Wallpaper_ORM.png
-src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/textures/Emerald_Peaks_Wallpaper_basecolor.png
-src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/textures/Emerald_Peaks_Wallpaper_height.png
-src/materialxMaterials/data/GPUOpenMaterialX/Emerald Peaks Wallpaper/textures/Emerald_Peaks_Wallpaper_normal.png
-src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.mtlx
 src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/Indigo_Palm_Wallpaper.png
-src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_Normal.png
-src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_ORM.png
-src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_baseColor.png
-src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_basecolor.png
-src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_height.png
-src/materialxMaterials/data/GPUOpenMaterialX/Indigo Palm Wallpaper/textures/Indigo_Palm_Wallpaper_normal.png
-src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.mtlx
 src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/Oliana_Blue_Painted_Wood.png
-src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/url.txt
-src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/textures/Oliana_Blue_Painted_Wood_Mask.png
-src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/textures/Oliana_Blue_Painted_Wood_Normal.png
-src/materialxMaterials/data/GPUOpenMaterialX/Oliana Blue Painted Wood/textures/Oliana_Blue_Painted_Wood_baseColor.png
-src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png
-src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png
-src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png
 src/materialxMaterials/data/PhysicallyBasedMaterialX/PhysicallyBasedMaterial.json
 src/materialxMaterials/data/PhysicallyBasedMaterialX/PhysicallyBasedMaterialX_GLTF.mtlx
 src/materialxMaterials/data/PhysicallyBasedMaterialX/PhysicallyBasedMaterialX_OPBR.mtlx
@@ -57,69 +30,16 @@ src/materialxMaterials/data/PhysicallyBasedMaterialX/PhysicallyBasedMaterialX_tr
 src/materialxMaterials/data/PhysicallyBasedMaterialX/PhysicallyBasedMaterialX_translated_OPBR.mtlx
 src/materialxMaterials/data/PhysicallyBasedMaterialX/PhysicallyBasedMaterialX_translated_SS.mtlx
 src/materialxMaterials/data/PhysicallyBasedMaterialX/PhysicallyBasedToMtlxMappings.json
-src/materialxMaterials/data/PhysicallyBasedMaterialX/Skin.png
 src/materialxMaterials/data/PhysicallyBasedMaterialX/physbased_pbr.mtlx
 src/materialxMaterials/data/PhysicallyBasedMaterialX/physbased_pbr_materials.mtlx
 src/materialxMaterials/data/PhysicallyBasedMaterialX/physbased_pbr_translators.mtlx
 src/materialxMaterials/data/PolyHavenMaterialX/filtered_polyhaven_assets.json
-src/materialxMaterials/data/PolyHavenMaterialX/polyhave_wood_trunk_wall.png
-src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_aerial_asphalt_1.png
 src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_assets.json
 src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_blender_assets.json
 src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_gltf_assets.json
 src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_materialx_assets.json
-src/materialxMaterials/data/PolyHavenMaterialX/polyhaven_polystrylene.png
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_blender.zip
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf.zip
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_materialx.zip
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_blender/polystyrene_1k.blend
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_blender/polystyrene_1k_thumbnail.png
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_blender/textures/polystyrene_diff_1k.jpg
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_blender/textures/polystyrene_disp_1k.png
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_blender/textures/polystyrene_nor_gl_1k.exr
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_blender/textures/polystyrene_rough_1k.exr
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/polystyrene.bin
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/polystyrene_1k.gltf
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/polystyrene_1k_thumbnail.png
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/textures/polystyrene_diff_1k.jpg
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/textures/polystyrene_disp_1k.png
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/textures/polystyrene_nor_gl_1k.exr
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/textures/polystyrene_nor_gl_1k.jpg
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/textures/polystyrene_rough_1k.exr
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_gltf/textures/polystyrene_rough_1k.jpg
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_materialx/polystyrene_1k.mtlx
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_materialx/polystyrene_1k_thumbnail.png
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_materialx/textures/polystyrene_diff_1k.jpg
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_materialx/textures/polystyrene_disp_1k.png
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_materialx/textures/polystyrene_nor_gl_1k.png
-src/materialxMaterials/data/PolyHavenMaterialX/polystyrene_1k_materialx/textures/polystyrene_rough_1k.png
-src/materialxMaterials/data/ambientCgMaterials/Metal053C_1K-PNG.png
-src/materialxMaterials/data/ambientCgMaterials/PavingStones142_1K-PNG.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.zip
 src/materialxMaterials/data/ambientCgMaterials/ambientCG_database.json
 src/materialxMaterials/data/ambientCgMaterials/ambientCG_materialsList.json
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038_1K-PNG.mtlx
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038_1K-PNG.usdc
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_AmbientOcclusion.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Color.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Displacement.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_NormalDX.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_NormalGL.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/WoodFloor038_1K-PNG_Roughness.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG/x.usda
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG.blend
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG.mtlx
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG.tres
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG.usdc
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG_AmbientOcclusion.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG_Color.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG_Displacement.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG_NormalDX.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG_NormalGL.png
-src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG 2/WoodFloor038_1K-PNG_Roughness.png
 src/materialxmaterials.egg-info/PKG-INFO
 src/materialxmaterials.egg-info/SOURCES.txt
 src/materialxmaterials.egg-info/dependency_links.txt

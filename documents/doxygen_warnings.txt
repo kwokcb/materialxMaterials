@@ -1,15 +1,15 @@
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:286: warning: Found unknown command '@breif'
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:167: warning: Member get_physlib() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:172: warning: Member get_physlib_definition() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:180: warning: Member get_physlib_category() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:185: warning: Member get_physlib_definition_name() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:190: warning: Member get_physlib_implementation_name() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:195: warning: Member get_physlib_materials() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:200: warning: Member get_definitions() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:215: warning: Member map_keys_to_definition(mat, ndef) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:279: warning: Member find_all_bxdf(doc) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:292: warning: Member derive_translator_name_from_targets(source, target) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:462: warning: Member add_copyright_comment(doc, shaderCategory, embedDate=false) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:326: warning: Found unknown command '@breif'
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:167: warning: Member get_physlib() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:172: warning: Member get_physlib_definition() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:180: warning: Member get_physlib_category() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:185: warning: Member get_physlib_definition_name() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:190: warning: Member get_physlib_implementation_name() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:195: warning: Member get_physlib_materials() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:200: warning: Member get_definitions() (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:215: warning: Member map_keys_to_definition(mat, ndef) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:279: warning: Member find_all_bxdf(doc) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:292: warning: Member derive_translator_name_from_targets(source, target) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/javascript/JsMaterialXPhysicallyBased.js:462: warning: Member add_copyright_comment(doc, shaderCategory, embedDate=false) (function) of class JsPhysicallyBasedMaterialLoader is not documented.
 <create_all_translators>:1: warning: argument 'object' of command @param is not found in the argument list of JsPhysicallyBasedMaterialLoader::create_all_translators(definitions, output_doc=null)
 <create_all_translators>:1: warning: The following parameters of JsPhysicallyBasedMaterialLoader::create_all_translators(definitions, output_doc=null) are not documented:
   parameter 'definitions'
@@ -47,47 +47,47 @@
   parameter 'source_bxdf'
   parameter 'target_bxdf'
   parameter 'node'
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:302: warning: Member getMaterialPreviews(self, force=False) (function) of class materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:567: warning: Member derive_translator_name_from_targets(self, str source, str target) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:998: warning: Member add_copyright_comment(self, doc, shaderCategory, embedDate=False) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1318: warning: Member create_working_document() (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:24: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.__init__(self, mx_module, Optional[mx.Document] mx_stdlib=None, str materials_file='') is not documented:
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/GPUOpenLoader.py:342: warning: Member getMaterialPreviews(self, force=False) (function) of class materialxMaterials.GPUOpenLoader.GPUOpenMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:580: warning: Member derive_translator_name_from_targets(self, str source, str target) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1005: warning: Member add_copyright_comment(self, doc, shaderCategory, embedDate=False) (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1325: warning: Member create_working_document() (function) of class materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:24: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.__init__(self, mx_module, Optional[mx.Document] mx_stdlib=None, str materials_file='') is not documented:
   parameter 'materials_file'
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:753: warning: Unsupported xml/html tag <nodegraph> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:754: warning: Unsupported xml/html tag <oren_nayar_diffuse_bsdf> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:755: warning: Unsupported xml/html tag <output> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:756: warning: Unsupported xml/html tag <input> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:757: warning: Unsupported xml/html tag <input> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:758: warning: Unsupported xml/html tag </oren_nayar_diffuse_bsdf> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:760: warning: Unsupported xml/html tag <surface> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:761: warning: Unsupported xml/html tag <input> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:762: warning: Unsupported xml/html tag </surface> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:764: warning: Unsupported xml/html tag <output> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:765: warning: Unsupported xml/html tag </nodegraph> found
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1070: warning: Found unknown command '@detail'
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1070: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.extract_specular_color(self, value, shaderCategory) is not documented:
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:766: warning: Unsupported xml/html tag <nodegraph> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:767: warning: Unsupported xml/html tag <oren_nayar_diffuse_bsdf> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:768: warning: Unsupported xml/html tag <output> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:769: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:770: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:771: warning: Unsupported xml/html tag </oren_nayar_diffuse_bsdf> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:773: warning: Unsupported xml/html tag <surface> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:774: warning: Unsupported xml/html tag <input> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:775: warning: Unsupported xml/html tag </surface> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:777: warning: Unsupported xml/html tag <output> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:778: warning: Unsupported xml/html tag </nodegraph> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1077: warning: Found unknown command '@detail'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1077: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.extract_specular_color(self, value, shaderCategory) is not documented:
   parameter 'shaderCategory'
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:913: warning: Found unknown command '@detail'
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1285: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.writeMaterialXToFile(self, filename, doc=None) is not documented:
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:920: warning: Found unknown command '@detail'
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/physicallyBasedMaterialX.py:1292: warning: The following parameter of materialxMaterials.physicallyBasedMaterialX.PhysicallyBasedMaterialLoader.writeMaterialXToFile(self, filename, doc=None) is not documented:
   parameter 'doc'
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:14: warning: Member HAVE_OPENIMAGEIO (variable) of namespace materialxMaterials.polyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:32: warning: Member BASE_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:33: warning: Member ASSET_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:34: warning: Member INFO_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:35: warning: Member FILES_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:36: warning: Member HEADERS (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:41: warning: Member MTLX_KEY (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:42: warning: Member GLTF_KEY (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:43: warning: Member BLEND_KEY (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:45: warning: Member logger (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:10: warning: Member logger (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
-/Users/bernardkwok/work/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:11: warning: Member level (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
-/Users/bernardkwok/work/materialxMaterials/README.md:202: warning: Unexpected html tag <table> found within <a href=...> context
-/Users/bernardkwok/work/materialxMaterials/README.md:203: warning: Unexpected html tag <tr> found within <a href=...> context
-/Users/bernardkwok/work/materialxMaterials/README.md:204: warning: Unexpected html tag <td> found within <a href=...> context
-/Users/bernardkwok/work/materialxMaterials/README.md:204: warning: Unexpected html tag </td> found within <a href=...> context
-/Users/bernardkwok/work/materialxMaterials/README.md:207: warning: Unexpected html tag </tr> found within <a href=...> context
-/Users/bernardkwok/work/materialxMaterials/README.md:208: warning: Unexpected html tag </table> found within <a href=...> context
-/Users/bernardkwok/work/materialxMaterials/README.md:215: warning: expected <td>, <th> or <tr> tag but found </td> instead!
-/Users/bernardkwok/work/materialxMaterials/README.md:249: warning: Unsupported xml/html tag <iframe> found
-/Users/bernardkwok/work/materialxMaterials/README.md:250: warning: Unsupported xml/html tag </iframe> found
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:14: warning: Member HAVE_OPENIMAGEIO (variable) of namespace materialxMaterials.polyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:32: warning: Member BASE_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:33: warning: Member ASSET_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:34: warning: Member INFO_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:35: warning: Member FILES_API (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:36: warning: Member HEADERS (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:41: warning: Member MTLX_KEY (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:42: warning: Member GLTF_KEY (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:43: warning: Member BLEND_KEY (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoader.py:45: warning: Member logger (variable) of class materialxMaterials.polyHavenLoader.PolyHavenLoader is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:10: warning: Member logger (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
+D:/Work/materialx/materialxMaterials/src/materialxMaterials/polyHavenLoaderCmd.py:11: warning: Member level (variable) of namespace materialxMaterials.polyHavenLoaderCmd is not documented.
+D:/Work/materialx/materialxMaterials/README.md:202: warning: Unexpected html tag <table> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:203: warning: Unexpected html tag <tr> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:204: warning: Unexpected html tag <td> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:204: warning: Unexpected html tag </td> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:207: warning: Unexpected html tag </tr> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:208: warning: Unexpected html tag </table> found within <a href=...> context
+D:/Work/materialx/materialxMaterials/README.md:215: warning: expected <td>, <th> or <tr> tag but found </td> instead!
+D:/Work/materialx/materialxMaterials/README.md:249: warning: Unsupported xml/html tag <iframe> found
+D:/Work/materialx/materialxMaterials/README.md:250: warning: Unsupported xml/html tag </iframe> found

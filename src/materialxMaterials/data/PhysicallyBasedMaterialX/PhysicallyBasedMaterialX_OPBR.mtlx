@@ -62,6 +62,20 @@
   <surfacematerial name="Banana_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Banana_OPBR_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Beer__Pale_Lager__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Beer__Pale_Lager__OPBR_SHD_PBM" type="surfaceshader" uiname="Beer (Pale Lager)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/beer-pale-lager.avif">
+    <input name="base_color" type="color3" value="0.889, 0.775, 0.558" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.889,0.775,0.558" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Beer__Pale_Lager__OPBR_MAT_PBM -->
+  <surfacematerial name="Beer__Pale_Lager__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Beer__Pale_Lager__OPBR_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Beryllium_OPBR_SHD_PBM -->
   <open_pbr_surface name="Beryllium_OPBR_SHD_PBM" type="surfaceshader" uiname="Beryllium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/beryllium.avif">
     <input name="base_color" type="color3" value="0.539, 0.533, 0.534" colorspace="lin_rec709" />
@@ -84,8 +98,22 @@
   <surfacematerial name="Blackboard_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Blackboard_OPBR_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: Blood_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Blood_OPBR_SHD_PBM" type="surfaceshader" uiname="Blood" uifolder="Human" doc="The color of blood depends on its oxygen level. When there is plenty of oxygen, the color is a brighter red. The reason is because of a protein called hemoglobin, which carries the oxygen in your blood. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood.avif">
+  <!-- Generated shader: Blood__Deoxygenated__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Blood__Deoxygenated__OPBR_SHD_PBM" type="surfaceshader" uiname="Blood (Deoxygenated)" uifolder="Human" doc="The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-deoxygenated.avif">
+    <input name="base_color" type="color3" value="0.415, 0.0, 0.0" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.35" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="54" />
+    <input name="transmission_color" type="color3" value="0.415,0.0,0.0" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Blood__Deoxygenated__OPBR_MAT_PBM -->
+  <surfacematerial name="Blood__Deoxygenated__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Blood__Deoxygenated__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Blood__Oxygenated__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Blood__Oxygenated__OPBR_SHD_PBM" type="surfaceshader" uiname="Blood (Oxygenated)" uifolder="Human" doc="The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-oxygenated.avif">
     <input name="base_color" type="color3" value="0.644, 0.003, 0.005" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
@@ -94,9 +122,9 @@
     <input name="transmission_dispersion_abbe_number" type="float" value="54" />
     <input name="transmission_color" type="color3" value="0.644,0.003,0.005" colorspace="lin_rec709" />
   </open_pbr_surface>
-  <!-- Generated material: Blood_OPBR_MAT_PBM -->
-  <surfacematerial name="Blood_OPBR_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Blood_OPBR_SHD_PBM" />
+  <!-- Generated material: Blood__Oxygenated__OPBR_MAT_PBM -->
+  <surfacematerial name="Blood__Oxygenated__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Blood__Oxygenated__OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Bone_OPBR_SHD_PBM -->
   <open_pbr_surface name="Bone_OPBR_SHD_PBM" type="surfaceshader" uiname="Bone" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/bone.avif">
@@ -141,6 +169,17 @@
   <!-- Generated material: Car_Paint_OPBR_MAT_PBM -->
   <surfacematerial name="Car_Paint_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Car_Paint_OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Cardboard_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Cardboard_OPBR_SHD_PBM" type="surfaceshader" uiname="Cardboard" uifolder="Manmade" doc="The material commonly referred to as &quot;cardboard&quot; is more specifically named &quot;corrugated fiberboard&quot;.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cardboard.avif">
+    <input name="base_color" type="color3" value="0.351, 0.208, 0.11" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Cardboard_OPBR_MAT_PBM -->
+  <surfacematerial name="Cardboard_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cardboard_OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Carrot_OPBR_SHD_PBM -->
   <open_pbr_surface name="Carrot_OPBR_SHD_PBM" type="surfaceshader" uiname="Carrot" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/carrot.avif">
@@ -223,6 +262,20 @@
   <surfacematerial name="Coffee_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Coffee_OPBR_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Cola_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Cola_OPBR_SHD_PBM" type="surfaceshader" uiname="Cola" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cola.avif">
+    <input name="base_color" type="color3" value="0.358, 0.186, 0.085" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.358,0.186,0.085" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Cola_OPBR_MAT_PBM -->
+  <surfacematerial name="Cola_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cola_OPBR_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Concrete_OPBR_SHD_PBM -->
   <open_pbr_surface name="Concrete_OPBR_SHD_PBM" type="surfaceshader" uiname="Concrete" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/concrete.avif">
     <input name="base_color" type="color3" value="0.51, 0.51, 0.51" colorspace="lin_rec709" />
@@ -258,6 +311,18 @@
   <surfacematerial name="Copper_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Copper_OPBR_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Cream_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Cream_OPBR_SHD_PBM" type="surfaceshader" uiname="Cream" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cream.avif">
+    <input name="base_color" type="color3" value="0.976, 0.9, 0.725" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.348" />
+    <input name="subsurface_radius" type="float" value="1.503, 0.466, 0.254" />
+  </open_pbr_surface>
+  <!-- Generated material: Cream_OPBR_MAT_PBM -->
+  <surfacematerial name="Cream_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cream_OPBR_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Diamond_OPBR_SHD_PBM -->
   <open_pbr_surface name="Diamond_OPBR_SHD_PBM" type="surfaceshader" uiname="Diamond" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/diamond.avif">
     <input name="base_color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
@@ -272,16 +337,27 @@
   <surfacematerial name="Diamond_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Diamond_OPBR_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: Egg_Shell_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Egg_Shell_OPBR_SHD_PBM" type="surfaceshader" uiname="Egg Shell" uifolder="Organic" doc="White hen egg from grocery store.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell.avif">
+  <!-- Generated shader: Egg_Shell__Brown__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Egg_Shell__Brown__OPBR_SHD_PBM" type="surfaceshader" uiname="Egg Shell (Brown)" uifolder="Organic" doc="Brown hen egg from grocery store.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-brown.avif">
+    <input name="base_color" type="color3" value="0.493, 0.248, 0.123" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.9" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Egg_Shell__Brown__OPBR_MAT_PBM -->
+  <surfacematerial name="Egg_Shell__Brown__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Egg_Shell__Brown__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Egg_Shell__White__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Egg_Shell__White__OPBR_SHD_PBM" type="surfaceshader" uiname="Egg Shell (White)" uifolder="Organic" doc="White hen egg from grocery store.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/egg-shell-white.avif">
     <input name="base_color" type="color3" value="0.61, 0.624, 0.631" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.9" />
     <input name="specular_ior" type="float" value="1.5" />
   </open_pbr_surface>
-  <!-- Generated material: Egg_Shell_OPBR_MAT_PBM -->
-  <surfacematerial name="Egg_Shell_OPBR_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Egg_Shell_OPBR_SHD_PBM" />
+  <!-- Generated material: Egg_Shell__White__OPBR_MAT_PBM -->
+  <surfacematerial name="Egg_Shell__White__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Egg_Shell__White__OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Eye__Cornea__OPBR_SHD_PBM -->
   <open_pbr_surface name="Eye__Cornea__OPBR_SHD_PBM" type="surfaceshader" uiname="Eye (Cornea)" uifolder="Human" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/eye-cornea.avif">
@@ -345,19 +421,33 @@
   <surfacematerial name="Germanium_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Germanium_OPBR_SHD_PBM" />
   </surfacematerial>
-  <!-- Generated shader: Glass_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Glass_OPBR_SHD_PBM" type="surfaceshader" uiname="Glass" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass.avif">
-    <input name="base_color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
+  <!-- Generated shader: Glass__Borosilicate__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Glass__Borosilicate__OPBR_SHD_PBM" type="surfaceshader" uiname="Glass (Borosilicate)" uifolder="Crystal" doc="Borosilicate glass has numerous advantages over regular soda-lime glass, including having a higher clarity (transparency). Borosilicate is generally slightly more expensive than soda-lime glass.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-borosilicate.avif">
+    <input name="base_color" type="color3" value="0.988, 0.992, 0.985" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_ior" type="float" value="1.52" />
     <input name="transmission_weight" type="float" value="1" />
     <input name="transmission_dispersion_abbe_number" type="float" value="64" />
-    <input name="transmission_color" type="color3" value="1,1,1" colorspace="lin_rec709" />
+    <input name="transmission_color" type="color3" value="0.988,0.992,0.985" colorspace="lin_rec709" />
   </open_pbr_surface>
-  <!-- Generated material: Glass_OPBR_MAT_PBM -->
-  <surfacematerial name="Glass_OPBR_MAT_PBM" type="material">
-    <input name="surfaceshader" type="surfaceshader" nodename="Glass_OPBR_SHD_PBM" />
+  <!-- Generated material: Glass__Borosilicate__OPBR_MAT_PBM -->
+  <surfacematerial name="Glass__Borosilicate__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Glass__Borosilicate__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Glass__Soda_lime__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Glass__Soda_lime__OPBR_SHD_PBM" type="surfaceshader" uiname="Glass (Soda-lime)" uifolder="Crystal" doc="Soda-lime glass is the most prevelant type of glass made, and accounts for about 90% of manufactured glass. It's used for windowpanes and glass containers (bottles and jars) for beverages, food, and some commodity items.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-soda-lime.avif">
+    <input name="base_color" type="color3" value="0.984, 0.995, 0.995" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.52" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="64" />
+    <input name="transmission_color" type="color3" value="0.984,0.995,0.995" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Glass__Soda_lime__OPBR_MAT_PBM -->
+  <surfacematerial name="Glass__Soda_lime__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Glass__Soda_lime__OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Gold_OPBR_SHD_PBM -->
   <open_pbr_surface name="Gold_OPBR_SHD_PBM" type="surfaceshader" uiname="Gold" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/gold.avif">
@@ -406,7 +496,7 @@
     <input name="surfaceshader" type="surfaceshader" nodename="Honey__Liquid__OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Honey__Crystallized__OPBR_SHD_PBM -->
-  <open_pbr_surface name="Honey__Crystallized__OPBR_SHD_PBM" type="surfaceshader" uiname="Honey (Crystallized)" uifolder="Liquid" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/honey-crystallized.avif">
+  <open_pbr_surface name="Honey__Crystallized__OPBR_SHD_PBM" type="surfaceshader" uiname="Honey (Crystallized)" uifolder="Organic" doc="Variations in its water content alter its refractive index. Typically, the refractive index for honey ranges from 1.504 at 13% water content to 1.474 at 25%. Fresh honey is liquid and clear but with time it crystallizes and becomes thicker and less clear. The crystallization depends on temperature and the ratio of glucose and fructose.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/honey-crystallized.avif">
     <input name="base_color" type="color3" value="0.449, 0.319, 0.011" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.3" />
@@ -419,12 +509,13 @@
   </surfacematerial>
   <!-- Generated shader: Ice_OPBR_SHD_PBM -->
   <open_pbr_surface name="Ice_OPBR_SHD_PBM" type="surfaceshader" uiname="Ice" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/ice.avif">
-    <input name="base_color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
+    <input name="base_color" type="color3" value="0.973, 0.995, 1.0" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
-    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_roughness" type="float" value="0" />
     <input name="specular_ior" type="float" value="1.3098" />
     <input name="transmission_weight" type="float" value="1" />
     <input name="transmission_dispersion_abbe_number" type="float" value="64.87" />
+    <input name="transmission_color" type="color3" value="0.973,0.995,1.0" colorspace="lin_rec709" />
   </open_pbr_surface>
   <!-- Generated material: Ice_OPBR_MAT_PBM -->
   <surfacematerial name="Ice_OPBR_MAT_PBM" type="material">
@@ -451,6 +542,76 @@
   <!-- Generated material: Iron_OPBR_MAT_PBM -->
   <surfacematerial name="Iron_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Iron_OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Juice__Apple__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Juice__Apple__OPBR_SHD_PBM" type="surfaceshader" uiname="Juice (Apple)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-apple.avif">
+    <input name="base_color" type="color3" value="0.856, 0.765, 0.569" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.856,0.765,0.569" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Juice__Apple__OPBR_MAT_PBM -->
+  <surfacematerial name="Juice__Apple__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Apple__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Juice__Cranberry__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Juice__Cranberry__OPBR_SHD_PBM" type="surfaceshader" uiname="Juice (Cranberry)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-cranberry.avif">
+    <input name="base_color" type="color3" value="0.661, 0.381, 0.28" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.661,0.381,0.28" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Juice__Cranberry__OPBR_MAT_PBM -->
+  <surfacematerial name="Juice__Cranberry__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Cranberry__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Juice__Grape__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Juice__Grape__OPBR_SHD_PBM" type="surfaceshader" uiname="Juice (Grape)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-grape.avif">
+    <input name="base_color" type="color3" value="0.348, 0.091, 0.053" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.348,0.091,0.053" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Juice__Grape__OPBR_MAT_PBM -->
+  <surfacematerial name="Juice__Grape__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Grape__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Juice__Ruby_Grapefruit__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Juice__Ruby_Grapefruit__OPBR_SHD_PBM" type="surfaceshader" uiname="Juice (Ruby Grapefruit)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-ruby-grapefruit.avif">
+    <input name="base_color" type="color3" value="0.09, 0.034, 0.016" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.09,0.034,0.016" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Juice__Ruby_Grapefruit__OPBR_MAT_PBM -->
+  <surfacematerial name="Juice__Ruby_Grapefruit__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Ruby_Grapefruit__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Juice__White_Grapefruit__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Juice__White_Grapefruit__OPBR_SHD_PBM" type="surfaceshader" uiname="Juice (White Grapefruit)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-white-grapefruit.avif">
+    <input name="base_color" type="color3" value="0.973, 0.966, 0.93" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.973,0.966,0.93" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Juice__White_Grapefruit__OPBR_MAT_PBM -->
+  <surfacematerial name="Juice__White_Grapefruit__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__White_Grapefruit__OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Ketchup_OPBR_SHD_PBM -->
   <open_pbr_surface name="Ketchup_OPBR_SHD_PBM" type="surfaceshader" uiname="Ketchup" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/ketchup.avif">
@@ -608,6 +769,17 @@
   <!-- Generated material: Office_Paper_OPBR_MAT_PBM -->
   <surfacematerial name="Office_Paper_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Office_Paper_OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Orange_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Orange_OPBR_SHD_PBM" type="surfaceshader" uiname="Orange" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/orange.avif">
+    <input name="base_color" type="color3" value="0.615, 0.205, 0.01" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Orange_OPBR_MAT_PBM -->
+  <surfacematerial name="Orange_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Orange_OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Palladium_OPBR_SHD_PBM -->
   <open_pbr_surface name="Palladium_OPBR_SHD_PBM" type="surfaceshader" uiname="Palladium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/palladium.avif">
@@ -987,6 +1159,17 @@
   <surfacematerial name="Stainless_Steel_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Stainless_Steel_OPBR_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Terracotta_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Terracotta_OPBR_SHD_PBM" type="surfaceshader" uiname="Terracotta" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/terracotta.avif">
+    <input name="base_color" type="color3" value="0.555, 0.212, 0.11" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.8" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Terracotta_OPBR_MAT_PBM -->
+  <surfacematerial name="Terracotta_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Terracotta_OPBR_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Tire_OPBR_SHD_PBM -->
   <open_pbr_surface name="Tire_OPBR_SHD_PBM" type="surfaceshader" uiname="Tire" uifolder="Manmade" doc="Car tire.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/tire.avif">
     <input name="base_color" type="color3" value="0.023, 0.023, 0.023" colorspace="lin_rec709" />
@@ -1022,6 +1205,17 @@
   <surfacematerial name="Titanium__Anodized__OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Titanium__Anodized__OPBR_SHD_PBM" />
   </surfacematerial>
+  <!-- Generated shader: Toilet_Paper_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Toilet_Paper_OPBR_SHD_PBM" type="surfaceshader" uiname="Toilet Paper" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toilet-paper.avif">
+    <input name="base_color" type="color3" value="0.83, 0.835, 0.784" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.9" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Toilet_Paper_OPBR_MAT_PBM -->
+  <surfacematerial name="Toilet_Paper_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Toilet_Paper_OPBR_SHD_PBM" />
+  </surfacematerial>
   <!-- Generated shader: Toner__Black__OPBR_SHD_PBM -->
   <open_pbr_surface name="Toner__Black__OPBR_SHD_PBM" type="surfaceshader" uiname="Toner (Black)" uifolder="Manmade" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toner-black.avif">
     <input name="base_color" type="color3" value="0.05, 0.05, 0.05" colorspace="lin_rec709" />
@@ -1032,6 +1226,17 @@
   <!-- Generated material: Toner__Black__OPBR_MAT_PBM -->
   <surfacematerial name="Toner__Black__OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Toner__Black__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Toothpaste_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Toothpaste_OPBR_SHD_PBM" type="surfaceshader" uiname="Toothpaste" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toothpaste.avif">
+    <input name="base_color" type="color3" value="0.9325, 0.9369, 0.9286" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.5" />
+  </open_pbr_surface>
+  <!-- Generated material: Toothpaste_OPBR_MAT_PBM -->
+  <surfacematerial name="Toothpaste_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Toothpaste_OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Tungsten_OPBR_SHD_PBM -->
   <open_pbr_surface name="Tungsten_OPBR_SHD_PBM" type="surfaceshader" uiname="Tungsten" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/tungsten.avif">
@@ -1056,14 +1261,14 @@
     <input name="surfaceshader" type="surfaceshader" nodename="Vanadium_OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Water_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Water_OPBR_SHD_PBM" type="surfaceshader" uiname="Water" uifolder="Liquid" doc="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/water.avif">
-    <input name="base_color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
+  <open_pbr_surface name="Water_OPBR_SHD_PBM" type="surfaceshader" uiname="Water" uifolder="Liquid" doc="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases beyond 50 cm. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/water.avif">
+    <input name="base_color" type="color3" value="0.969, 0.996, 0.997" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_ior" type="float" value="1.3325" />
     <input name="transmission_weight" type="float" value="1" />
     <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
-    <input name="transmission_color" type="color3" value="1,1,1" colorspace="lin_rec709" />
+    <input name="transmission_color" type="color3" value="0.969,0.996,0.997" colorspace="lin_rec709" />
   </open_pbr_surface>
   <!-- Generated material: Water_OPBR_MAT_PBM -->
   <surfacematerial name="Water_OPBR_MAT_PBM" type="material">
@@ -1079,6 +1284,34 @@
   <!-- Generated material: Whiteboard_OPBR_MAT_PBM -->
   <surfacematerial name="Whiteboard_OPBR_MAT_PBM" type="material">
     <input name="surfaceshader" type="surfaceshader" nodename="Whiteboard_OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Wine__Red__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Wine__Red__OPBR_SHD_PBM" type="surfaceshader" uiname="Wine (Red)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-red.avif">
+    <input name="base_color" type="color3" value="0.31, 0.081, 0.053" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.31,0.081,0.053" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Wine__Red__OPBR_MAT_PBM -->
+  <surfacematerial name="Wine__Red__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Wine__Red__OPBR_SHD_PBM" />
+  </surfacematerial>
+  <!-- Generated shader: Wine__White__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Wine__White__OPBR_SHD_PBM" type="surfaceshader" uiname="Wine (White)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-white.avif">
+    <input name="base_color" type="color3" value="0.896, 0.885, 0.783" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.896,0.885,0.783" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Wine__White__OPBR_MAT_PBM -->
+  <surfacematerial name="Wine__White__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Wine__White__OPBR_SHD_PBM" />
   </surfacematerial>
   <!-- Generated shader: Zinc_OPBR_SHD_PBM -->
   <open_pbr_surface name="Zinc_OPBR_SHD_PBM" type="surfaceshader" uiname="Zinc" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/zinc.avif">

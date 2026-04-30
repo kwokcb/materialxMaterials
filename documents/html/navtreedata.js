@@ -51,7 +51,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "____init_____8py_source.html",
-"classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a761fb96e854016db0502cee510c02ef7"
+"classmaterialx_materials_1_1physically_based_material_x_1_1_physically_based_material_loader.html#a71bebfce2b7f831211d00d48eb948e75"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

@@ -61,8 +61,9 @@ def ambientCgLoaderCmd():
     if opts.output:
         outputFolder = opts.output
     if not os.path.exists(outputFolder):
-        logger.error(f'Output directory does not exist: {outputFolder}')
-        sys.exit(1)
+        # Create output folder if it doesn't exist
+        logger.info(f'Creating output folder: {outputFolder}')
+        os.makedirs(outputFolder)        
     
     # Get materials list which contains download information
     loadMaterials = opts.loadMaterials
@@ -75,7 +76,9 @@ def ambientCgLoaderCmd():
             materialsList = loader.downloadMaterialsList()
             # Save materials list if specified. Only do so for download case
             if opts.saveMaterials:
-                loader.writeMaterialList(materialsList, os.path.join(outputFolder,'ambientCG_materialsList.json'))
+                output_path = os.path.join(outputFolder,'ambientCG_materialsList.json')
+                logger.info(f'Saving materials list to {output_path}')
+                loader.writeMaterialList(materialsList, output_path)
 
         # Check if the list of materials is asked to be returned
         if opts.materialNames:
@@ -91,18 +94,20 @@ def ambientCgLoaderCmd():
                 if len(fileName) > 0:
                     loader.writeDownloadedMaterialToFile(outputFolder)
             else:
-                print(f'Material not found: {materialName}')      
+                logger.info(f'Material not found: {materialName}')      
 
     # Check if material database is specified for download
     databaseFileName = opts.saveDatabase
     haveDatabaseFileName = len(databaseFileName) > 0
     downloadDatabase = opts.downloadDatabase and haveDatabaseFileName
     if downloadDatabase:
-        print('download database')
         loader.downloadAssetDatabase()        
         if haveDatabaseFileName:
+            logger.info(f'Download database: {databaseFileName}')
             path = os.path.join(outputFolder, databaseFileName)
             loader.writeDatabaseToFile(path)    
+    else:
+        logger.info('No database download requested or no output file name specified. Skipping database download.')
 
 if __name__ == '__main__':
     ambientCgLoaderCmd()

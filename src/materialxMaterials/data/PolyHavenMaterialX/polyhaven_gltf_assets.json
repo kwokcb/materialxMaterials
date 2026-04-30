@@ -13543,6 +13543,46 @@
         },
         "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/jogging_melange.png?width=256&height=256"
     },
+    "jolcham_oak_bark_01_1k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/1k/jolcham_oak_bark_01/jolcham_oak_bark_01_1k.gltf",
+        "texture_files": {
+            "textures/jolcham_oak_bark_01_nor_gl_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/jolcham_oak_bark_01/jolcham_oak_bark_01_nor_gl_1k.jpg",
+            "textures/jolcham_oak_bark_01_diff_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/jolcham_oak_bark_01/jolcham_oak_bark_01_diff_1k.jpg",
+            "textures/jolcham_oak_bark_01_arm_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/jolcham_oak_bark_01/jolcham_oak_bark_01_arm_1k.jpg",
+            "jolcham_oak_bark_01.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/jolcham_oak_bark_01/jolcham_oak_bark_01.bin"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/jolcham_oak_bark_01.png?width=256&height=256"
+    },
+    "jolcham_oak_bark_01_2k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/jolcham_oak_bark_01/jolcham_oak_bark_01_2k.gltf",
+        "texture_files": {
+            "textures/jolcham_oak_bark_01_nor_gl_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/jolcham_oak_bark_01/jolcham_oak_bark_01_nor_gl_2k.jpg",
+            "textures/jolcham_oak_bark_01_diff_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/jolcham_oak_bark_01/jolcham_oak_bark_01_diff_2k.jpg",
+            "textures/jolcham_oak_bark_01_arm_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/jolcham_oak_bark_01/jolcham_oak_bark_01_arm_2k.jpg",
+            "jolcham_oak_bark_01.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/jolcham_oak_bark_01/jolcham_oak_bark_01.bin"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/jolcham_oak_bark_01.png?width=256&height=256"
+    },
+    "jolcham_oak_bark_01_4k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/4k/jolcham_oak_bark_01/jolcham_oak_bark_01_4k.gltf",
+        "texture_files": {
+            "textures/jolcham_oak_bark_01_nor_gl_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/jolcham_oak_bark_01/jolcham_oak_bark_01_nor_gl_4k.jpg",
+            "textures/jolcham_oak_bark_01_diff_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/jolcham_oak_bark_01/jolcham_oak_bark_01_diff_4k.jpg",
+            "textures/jolcham_oak_bark_01_arm_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/jolcham_oak_bark_01/jolcham_oak_bark_01_arm_4k.jpg",
+            "jolcham_oak_bark_01.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/jolcham_oak_bark_01/jolcham_oak_bark_01.bin"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/jolcham_oak_bark_01.png?width=256&height=256"
+    },
+    "jolcham_oak_bark_01_8k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/jolcham_oak_bark_01/jolcham_oak_bark_01_8k.gltf",
+        "texture_files": {
+            "textures/jolcham_oak_bark_01_nor_gl_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/jolcham_oak_bark_01/jolcham_oak_bark_01_nor_gl_8k.jpg",
+            "textures/jolcham_oak_bark_01_diff_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/jolcham_oak_bark_01/jolcham_oak_bark_01_diff_8k.jpg",
+            "textures/jolcham_oak_bark_01_arm_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/jolcham_oak_bark_01/jolcham_oak_bark_01_arm_8k.jpg",
+            "jolcham_oak_bark_01.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/jolcham_oak_bark_01/jolcham_oak_bark_01.bin"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/jolcham_oak_bark_01.png?width=256&height=256"
+    },
     "kitchen_wood_1k": {
         "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/1k/kitchen_wood/kitchen_wood_1k.gltf",
         "texture_files": {
@@ -29270,6 +29310,46 @@
             "wood_table_worn.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/wood_table_worn/wood_table_worn.bin"
         },
         "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wood_table_worn.png?width=256&height=256"
+    },
+    "wood_textured_concrete_1k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/1k/wood_textured_concrete/wood_textured_concrete_1k.gltf",
+        "texture_files": {
+            "textures/wood_textured_concrete_nor_gl_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_textured_concrete/wood_textured_concrete_nor_gl_1k.jpg",
+            "textures/wood_textured_concrete_diff_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_textured_concrete/wood_textured_concrete_diff_1k.jpg",
+            "textures/wood_textured_concrete_arm_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_textured_concrete/wood_textured_concrete_arm_1k.jpg",
+            "wood_textured_concrete.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/wood_textured_concrete/wood_textured_concrete.bin"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wood_textured_concrete.png?width=256&height=256"
+    },
+    "wood_textured_concrete_2k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/2k/wood_textured_concrete/wood_textured_concrete_2k.gltf",
+        "texture_files": {
+            "textures/wood_textured_concrete_nor_gl_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/wood_textured_concrete/wood_textured_concrete_nor_gl_2k.jpg",
+            "textures/wood_textured_concrete_diff_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/wood_textured_concrete/wood_textured_concrete_diff_2k.jpg",
+            "textures/wood_textured_concrete_arm_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/wood_textured_concrete/wood_textured_concrete_arm_2k.jpg",
+            "wood_textured_concrete.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/wood_textured_concrete/wood_textured_concrete.bin"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wood_textured_concrete.png?width=256&height=256"
+    },
+    "wood_textured_concrete_4k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/4k/wood_textured_concrete/wood_textured_concrete_4k.gltf",
+        "texture_files": {
+            "textures/wood_textured_concrete_nor_gl_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/wood_textured_concrete/wood_textured_concrete_nor_gl_4k.jpg",
+            "textures/wood_textured_concrete_diff_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/wood_textured_concrete/wood_textured_concrete_diff_4k.jpg",
+            "textures/wood_textured_concrete_arm_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/wood_textured_concrete/wood_textured_concrete_arm_4k.jpg",
+            "wood_textured_concrete.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/wood_textured_concrete/wood_textured_concrete.bin"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wood_textured_concrete.png?width=256&height=256"
+    },
+    "wood_textured_concrete_8k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/wood_textured_concrete/wood_textured_concrete_8k.gltf",
+        "texture_files": {
+            "textures/wood_textured_concrete_nor_gl_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/wood_textured_concrete/wood_textured_concrete_nor_gl_8k.jpg",
+            "textures/wood_textured_concrete_diff_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/wood_textured_concrete/wood_textured_concrete_diff_8k.jpg",
+            "textures/wood_textured_concrete_arm_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/wood_textured_concrete/wood_textured_concrete_arm_8k.jpg",
+            "wood_textured_concrete.bin": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/wood_textured_concrete/wood_textured_concrete.bin"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wood_textured_concrete.png?width=256&height=256"
     },
     "wood_trunk_wall_1k": {
         "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/1k/wood_trunk_wall/wood_trunk_wall_1k.gltf",
