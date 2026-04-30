@@ -1575,17 +1575,17 @@ This is a sample "Wood" material asset downloaded from ambientCG.
 
 The asset entry is as follows (at time of writing): 
 - The MaterialX file and resources can directly be loaded into any application / integration that can accept MaterialX file. 
-- The image was rendered using the MaterialXView application.
+- The image was loaded as a ZIP and rendered using the <a href="https://kwokcb.github.io/MaterialXLab/javascript/shader_editor/dist/index_out.html">MaterialXLab Graph Editor</a>
 - The include `usdc` file is not shown here, but the extracted text version using `usdcat` is:
 
 <table class="container-fluid" id="table_container">
 <tr class="row">
-<th class="col-sm-6">MaterialXView Image
+<th class="col-sm-6">MaterialXLab Graph Editor 
 <th class="col-sm-6">MaterialX Asset (zip contents)
 </tr>  
 <tr class="row">
 <td class="col-sm-6">
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/documents/images/ambientCG_Wood_Zip_LabEditor.png" width=100%>
+<img src="https://kwokcb.github.io/materialxMaterials/documents/images/ambientCG_Wood_Zip_LabEditor.png" width=100%>
 <td class="col-sm-6">
 
 <p>
