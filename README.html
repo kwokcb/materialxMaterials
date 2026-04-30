@@ -346,7 +346,7 @@ code {
 	font-size: inherit;
 }
 
-/* Page Break : use <div class="page"/> to insert page break
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
 -------------------------------------------------------- */
 .page {
 	page-break-after: always;
@@ -437,15 +437,15 @@ Each currently has <code>Python</code> and / or <code>Javascript</code> implemen
       <table>
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/PhysicallyBasedMaterialX/Ketchup.png?raw=true" width=256px><br>
             Ketchup
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/PhysicallyBasedMaterialX/Cooking_Oil.png?raw=true" width=256px><br>
             Cooking Oil
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/PhysicallyBasedMaterialX/Brass.png?raw=true" width=256px><br>
             Brass
           </td>
         </tr>
@@ -458,15 +458,15 @@ Each currently has <code>Python</code> and / or <code>Javascript</code> implemen
       <table>
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/Metal053C_1K-PNG.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/ambientCgMaterials/Metal053C_1K-PNG.png?raw=true" width=256px><br>
             Metal (53)
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/PavingStones142_1K-PNG.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/ambientCgMaterials/PavingStones142_1K-PNG.png?raw=true" width=256px><br>
             Paving Stones (142)
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/ambientCgMaterials/WoodFloor038_1K-PNG.png?raw=true" width=256px><br>
             Wood Floor (38)
           </td>
         </tr>
@@ -599,6 +599,7 @@ graphing / diagramming </p>
 <p>Build scripts can be found in the <code>utilities</code> folder.</p>
 <ul>
 <li><code>build.sh</code> will install the package and run package commands to update package data.</li>
+<li><code>build_download.sh</code> will use the installed pack to download sample materials.</li>
 <li><code>buildDocs.sh</code> will prepare documents and run Doxygen to build API docs.</li>
 <li><code>build_examples.sh</code> will download material examples and optionally render them. <code>PhysicallyBased</code> rendering requires <code>MaterialXView</code> to be installed.</li>
 </ul>
@@ -638,7 +639,7 @@ npm run [build/start]   # Build distribution or run the package
 <li>
 <p>Extract out a material package for the &quot;WoodFloor038&quot; material from ambientCG requesting the<br>
 package where the images are 2K PNG files:</p>
-<pre class="hljs"><code><div>materialxMaterials acg --downloadMaterial <span class="hljs-string">"WoodFloor038"</span> --downloadResolution 2
+<pre class="hljs"><code><div>materialxMaterials acg --downloadMaterial <span class="hljs-string">&quot;WoodFloor038&quot;</span> --downloadResolution 2
 </div></code></pre>
 </li>
 </ul>
@@ -651,7 +652,7 @@ package where the images are 2K PNG files:</p>
 </li>
 <li>
 <p>The extraction can be filtered by identifier:</p>
-<pre class="hljs"><code><div>polyHavenLoaderCmd.py -fe -id=<span class="hljs-string">"aerial_asphalt_01"</span>
+<pre class="hljs"><code><div>polyHavenLoaderCmd.py -fe -<span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;aerial_asphalt_01&quot;</span>
 </div></code></pre>
 </li>
 <li>
@@ -665,12 +666,12 @@ extract information into a file called <code>polyhaven_materialx_assets.json</co
 <ul>
 <li>
 <p>The user can either use a local version of this file by specifying the path the file as shown below, where an optional <code>--data_folder</code> argument can be used to specify the location of the file.</p>
-<pre class="hljs"><code><div>python -m materialxMaterials polyhaven --load [--data-folder &lt;myfolder location&gt; -id=<span class="hljs-string">"aerial_asphalt_01"</span>
+<pre class="hljs"><code><div>python -m materialxMaterials polyhaven --load [--data-folder &lt;myfolder location&gt; -<span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;aerial_asphalt_01&quot;</span>
 </div></code></pre>
 </li>
 <li>
 <p>If <code>--load</code> is not specified then the the packaged will be used by default.</p>
-<pre class="hljs"><code><div>python -m materialxMaterials polyhaven -id=<span class="hljs-string">"aerial_asphalt_01"</span>
+<pre class="hljs"><code><div>python -m materialxMaterials polyhaven -<span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;aerial_asphalt_01&quot;</span>
 </div></code></pre>
 </li>
 </ul>
