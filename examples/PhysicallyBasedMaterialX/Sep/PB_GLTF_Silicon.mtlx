@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <surfacematerial name="Silicon_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Silicon_gltf_pbr_SPB" />
+  </surfacematerial>
+  <gltf_pbr name="Silicon_gltf_pbr_SPB" type="surfaceshader">
+    <input name="base_color" type="color3" nodename="Silicon_gltf_pbr_SPB_translator" output="base_color_out" />
+    <input name="metallic" type="float" nodename="Silicon_gltf_pbr_SPB_translator" output="metallic_out" />
+    <input name="roughness" type="float" nodename="Silicon_gltf_pbr_SPB_translator" output="roughness_out" />
+    <input name="transmission" type="float" nodename="Silicon_gltf_pbr_SPB_translator" output="transmission_out" />
+    <input name="specular_color" type="color3" nodename="Silicon_gltf_pbr_SPB_translator" output="specular_color_out" />
+    <input name="ior" type="float" nodename="Silicon_gltf_pbr_SPB_translator" output="ior_out" />
+    <input name="iridescence_ior" type="float" nodename="Silicon_gltf_pbr_SPB_translator" output="iridescence_ior_out" />
+    <input name="iridescence_thickness" type="float" nodename="Silicon_gltf_pbr_SPB_translator" output="iridescence_thickness_out" />
+  </gltf_pbr>
+  <physbased_pbr_surface_to_gltf_pbr name="Silicon_gltf_pbr_SPB_translator" type="multioutput" nodedef="ND_physbased_pbr_surface_to_gltf_pbr">
+    <input name="name" type="string" value="Silicon" />
+    <input name="color" type="color3" value="0.345, 0.369, 0.426" />
+    <input name="metalness" type="float" value="1" />
+    <input name="specularColor" type="color3" value="0.081, 0, 0.004" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="complexIor" type="string" value="3.65156, 0.972551, 4.08561, 0, 4.36337, 0" />
+    <input name="density" type="float" value="2330" />
+    <input name="category" type="string" value="Metal" />
+    <input name="description" type="string" value="" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Si&amp;page=Aspnes, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Silicon" />
+    <input name="tags" type="string" value="" />
+    <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silicon.jpeg" />
+    <output name="base_color_out" type="color3" />
+    <output name="metallic_out" type="float" />
+    <output name="roughness_out" type="float" />
+    <output name="transmission_out" type="float" />
+    <output name="specular_color_out" type="color3" />
+    <output name="ior_out" type="float" />
+    <output name="iridescence_ior_out" type="float" />
+    <output name="iridescence_thickness_out" type="float" />
+  </physbased_pbr_surface_to_gltf_pbr>
+</materialx>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: gltf_pbr -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Coffee_GLTF_SHD_PBM -->
+  <gltf_pbr name="Coffee_GLTF_SHD_PBM" type="surfaceshader" uiname="Coffee" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/coffee.jpeg">
+    <input name="base_color" type="color3" value="0.447,0.133,0.034" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.34" />
+    <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="0.447,0.133,0.034" />
+  </gltf_pbr>
+  <!-- Generated material: Coffee_GLTF_MAT_PBM -->
+  <surfacematerial name="Coffee_GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Coffee_GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>

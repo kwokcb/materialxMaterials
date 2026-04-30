@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <surfacematerial name="Silver_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Silver_standard_surface_SPB" />
+  </surfacematerial>
+  <standard_surface name="Silver_standard_surface_SPB" type="surfaceshader">
+    <input name="base_color" type="color3" nodename="Silver_standard_surface_SPB_translator" output="base_color_out" />
+    <input name="metalness" type="float" nodename="Silver_standard_surface_SPB_translator" output="metalness_out" />
+    <input name="specular_color" type="color3" nodename="Silver_standard_surface_SPB_translator" output="specular_color_out" />
+    <input name="specular_roughness" type="float" nodename="Silver_standard_surface_SPB_translator" output="specular_roughness_out" />
+    <input name="specular_IOR" type="float" nodename="Silver_standard_surface_SPB_translator" output="specular_IOR_out" />
+    <input name="transmission" type="float" nodename="Silver_standard_surface_SPB_translator" output="transmission_out" />
+    <input name="transmission_dispersion" type="float" nodename="Silver_standard_surface_SPB_translator" output="transmission_dispersion_out" />
+    <input name="subsurface_radius" type="color3" nodename="Silver_standard_surface_SPB_translator" output="subsurface_radius_out" />
+    <input name="thin_film_thickness" type="float" nodename="Silver_standard_surface_SPB_translator" output="thin_film_thickness_out" />
+    <input name="thin_film_IOR" type="float" nodename="Silver_standard_surface_SPB_translator" output="thin_film_IOR_out" />
+  </standard_surface>
+  <physbased_pbr_surface_to_standard_surface name="Silver_standard_surface_SPB_translator" type="multioutput" nodedef="ND_physbased_pbr_surface_to_standard_surface">
+    <input name="name" type="string" value="Silver" />
+    <input name="color" type="color3" value="0.991, 0.985, 0.974" />
+    <input name="metalness" type="float" value="1" />
+    <input name="specularColor" type="color3" value="1.0, 1.0, 0.991" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.5" />
+    <input name="complexIor" type="string" value="0, 8.06675, 0.0626977, 3.62828, 0.382178, 3.80086" />
+    <input name="density" type="float" value="10500" />
+    <input name="category" type="string" value="Metal" />
+    <input name="description" type="string" value="" />
+    <input name="sources" type="string" value="https://refractiveindex.info/?shelf=main&amp;book=Ag&amp;page=Babar, https://arxiv.org/pdf/2512.23696#appendix.D, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Mirror" />
+    <input name="tags" type="string" value="mirror" />
+    <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silver.jpeg" />
+    <output name="base_color_out" type="color3" />
+    <output name="metalness_out" type="float" />
+    <output name="specular_color_out" type="color3" />
+    <output name="specular_roughness_out" type="float" />
+    <output name="specular_IOR_out" type="float" />
+    <output name="transmission_out" type="float" />
+    <output name="transmission_dispersion_out" type="float" />
+    <output name="subsurface_radius_out" type="color3" />
+    <output name="thin_film_thickness_out" type="float" />
+    <output name="thin_film_IOR_out" type="float" />
+  </physbased_pbr_surface_to_standard_surface>
+</materialx>

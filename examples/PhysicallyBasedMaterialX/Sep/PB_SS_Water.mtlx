@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <surfacematerial name="Water_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Water_standard_surface_SPB" />
+  </surfacematerial>
+  <standard_surface name="Water_standard_surface_SPB" type="surfaceshader">
+    <input name="base_color" type="color3" nodename="Water_standard_surface_SPB_translator" output="base_color_out" />
+    <input name="metalness" type="float" nodename="Water_standard_surface_SPB_translator" output="metalness_out" />
+    <input name="specular_color" type="color3" nodename="Water_standard_surface_SPB_translator" output="specular_color_out" />
+    <input name="specular_roughness" type="float" nodename="Water_standard_surface_SPB_translator" output="specular_roughness_out" />
+    <input name="specular_IOR" type="float" nodename="Water_standard_surface_SPB_translator" output="specular_IOR_out" />
+    <input name="transmission" type="float" nodename="Water_standard_surface_SPB_translator" output="transmission_out" />
+    <input name="transmission_dispersion" type="float" nodename="Water_standard_surface_SPB_translator" output="transmission_dispersion_out" />
+    <input name="subsurface_radius" type="color3" nodename="Water_standard_surface_SPB_translator" output="subsurface_radius_out" />
+    <input name="thin_film_thickness" type="float" nodename="Water_standard_surface_SPB_translator" output="thin_film_thickness_out" />
+    <input name="thin_film_IOR" type="float" nodename="Water_standard_surface_SPB_translator" output="thin_film_IOR_out" />
+  </standard_surface>
+  <physbased_pbr_surface_to_standard_surface name="Water_standard_surface_SPB_translator" type="multioutput" nodedef="ND_physbased_pbr_surface_to_standard_surface">
+    <input name="name" type="string" value="Water" />
+    <input name="color" type="color3" value="1, 1, 1" />
+    <input name="metalness" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmissionDispersion" type="float" value="55.78" />
+    <input name="density" type="float" value="1000" />
+    <input name="densityRange" type="vector2" value="958, 1000" />
+    <input name="viscosity" type="float" value="1.002" />
+    <input name="surfaceTension" type="float" value="72" />
+    <input name="acousticAbsorption" type="string" value="0.008, 0.008, 0.013, 0.015, 0.02, 0.025" />
+    <input name="category" type="string" value="Liquid" />
+    <input name="description" type="string" value="While relatively small quantities of water appear to be colorless, pure water has a slight blue color that becomes deeper as the thickness of the observed sample increases. The hue of water is an intrinsic property and is caused by selective absorption and scattering of white light. Dissolved elements or suspended impurities may give water a different color." />
+    <input name="sources" type="string" value="https://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/, https://refractiveindex.info/?shelf=3d&amp;book=liquids&amp;page=water, https://refractiveindex.info/?shelf=main&amp;book=H2O&amp;page=Daimon-21.5C, https://en.wikipedia.org/wiki/Density, https://en.wikipedia.org/wiki/Properties_of_water#Density_of_water_and_ice, https://en.wikipedia.org/wiki/Color_of_water, https://www.acoustic-supplies.com/absorption-coefficient-chart/, https://www.cdc.gov/niosh/docs/80-116/, https://www.engineeringtoolbox.com/water-dynamic-kinematic-viscosity-d_596.html, https://en.wikipedia.org/wiki/List_of_viscosities, https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table, https://www.researchgate.net/journal/Optics-Express-1094-4087/publication/235415649_Zoom_lens_design_using_liquid_lens_for_laparoscope/links/6609e54d10ca86798731ef50/Zoom-lens-design-using-liquid-lens-for-laparoscope.pdf, https://en.wikipedia.org/w/index.php?title=Surface_tension&amp;oldid=1304099149#Values" />
+    <input name="tags" type="string" value="" />
+    <input name="reference" type="string" value="https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/water.jpeg" />
+    <output name="base_color_out" type="color3" />
+    <output name="metalness_out" type="float" />
+    <output name="specular_color_out" type="color3" />
+    <output name="specular_roughness_out" type="float" />
+    <output name="specular_IOR_out" type="float" />
+    <output name="transmission_out" type="float" />
+    <output name="transmission_dispersion_out" type="float" />
+    <output name="subsurface_radius_out" type="color3" />
+    <output name="thin_film_thickness_out" type="float" />
+    <output name="thin_film_IOR_out" type="float" />
+  </physbased_pbr_surface_to_standard_surface>
+</materialx>

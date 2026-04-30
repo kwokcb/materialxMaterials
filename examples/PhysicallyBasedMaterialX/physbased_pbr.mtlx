@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <nodegraph name="NG_PhysicallyBasedMaterial" nodedef="ND_PhysicallyBasedMaterial">
+    <oren_nayar_diffuse_bsdf name="oren_nayar_diffuse_bsdf" type="BSDF">
+      <input name="color" type="color3" interfacename="color" />
+      <input name="roughness" type="float" interfacename="roughness" />
+      <output name="out" type="BSDF" />
+    </oren_nayar_diffuse_bsdf>
+    <surface name="surface" type="surfaceshader">
+      <input name="bsdf" type="BSDF" out="out" nodename="oren_nayar_diffuse_bsdf" />
+    </surface>
+    <output name="out" type="surfaceshader" nodename="surface" />
+  </nodegraph>
+  <nodedef name="ND_PhysicallyBasedMaterial" node="physbased_pbr_surface" nodegroup="pbr" doc="Node definitions for PhysicallyBased Material" version="1.0" isdefaultversion="true">
+    <output name="out" type="surfaceshader" />
+    <input name="name" type="string" value="Aluminum" uiname="Name" uifolder="Base" />
+    <input name="color" type="color3" value="1,1,1" uiname="Color" uifolder="Base" />
+    <input name="metalness" type="float" value="0.0" uiname="Metalness" uifolder="Base" />
+    <input name="specularColor" type="color3" value="1,1,1" uiname="Specular Color" uifolder="Base" />
+    <input name="roughness" type="float" value="0.0" uiname="Roughness" uifolder="Base" />
+    <input name="ior" type="float" value="0.0" uiname="Ior" uifolder="Base" />
+    <input name="complexIor" type="string" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" uiname="Complex Ior" uifolder="Base" />
+    <input name="density" type="float" value="0.0" uiname="Density" uifolder="Base" />
+    <input name="category" type="string" value="Metal" uiname="Category" uifolder="Base" />
+    <input name="description" type="string" value="" uiname="Description" uifolder="Metadata" />
+    <input name="sources" type="string" value="" uiname="Sources" uifolder="Metadata" />
+    <input name="tags" type="string" value="" uiname="Tags" uifolder="Metadata" />
+    <input name="reference" type="string" value="" uiname="Reference" uifolder="Metadata" />
+    <input name="transmission" type="float" value="0.0" uiname="Transmission" uifolder="Base" />
+    <input name="transmissionDepth" type="float" value="0.0" uiname="Transmission Depth" uifolder="Base" />
+    <input name="transmissionDispersion" type="float" value="0.0" uiname="Transmission Dispersion" uifolder="Base" />
+    <input name="viscosity" type="float" value="0.0" uiname="Viscosity" uifolder="Base" />
+    <input name="surfaceTension" type="float" value="0.0" uiname="Surface Tension" uifolder="Base" />
+    <input name="densityRange" type="vector2" value="0.0, 0.0" uiname="Density Range" uifolder="Base" />
+    <input name="acousticAbsorption" type="string" value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0" uiname="Acoustic Absorption" uifolder="Base" />
+    <input name="subsurfaceRadius" type="vector3" value="0.0, 0.0, 0.0" uiname="Subsurface Radius" uifolder="Base" />
+    <input name="thinFilmThickness" type="float" value="0.0" uiname="Thin Film Thickness" uifolder="Base" />
+    <input name="thinFilmIor" type="float" value="0.0" uiname="Thin Film Ior" uifolder="Base" />
+    <input name="group" type="string" value="" uiname="Group" uifolder="Base" />
+  </nodedef>
+</materialx>

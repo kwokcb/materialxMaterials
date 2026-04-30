@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: standard_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Titanium_SS_SHD_PBM -->
+  <standard_surface name="Titanium_SS_SHD_PBM" type="surfaceshader" uiname="Titanium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/titanium.jpeg">
+    <input name="base_color" type="color3" value="0.441,0.4,0.361" />
+    <input name="metalness" type="float" value="1" />
+    <input name="specular_color" type="color3" value="0.67,0.641,0.52" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.5" />
+  </standard_surface>
+  <!-- Generated material: Titanium_SS_MAT_PBM -->
+  <surfacematerial name="Titanium_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Titanium_SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: standard_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Sodium_SS_SHD_PBM -->
+  <standard_surface name="Sodium_SS_SHD_PBM" type="surfaceshader" uiname="Sodium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sodium.jpeg">
+    <input name="base_color" type="color3" value="0.977,0.962,0.936" />
+    <input name="metalness" type="float" value="1" />
+    <input name="specular_color" type="color3" value="1.0,1.0,0.991" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.5" />
+  </standard_surface>
+  <!-- Generated material: Sodium_SS_MAT_PBM -->
+  <surfacematerial name="Sodium_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Sodium_SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

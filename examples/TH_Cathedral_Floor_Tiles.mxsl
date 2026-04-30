@@ -1,0 +1,18 @@
+// MaterialX SLX content generated via QuiltiX plugin
+//  Materialx version: 1.39.3
+//  SLX version: 0.5.2b0
+vector2 node_texcoord_vector2_6 = texcoord(index=0);
+float uv = 2.0;
+vector2 node_multiply_5 = node_texcoord_vector2_6 * uv;
+color3 node_image_color3_0 = image(file="textures/TH_Cathedral_Floor_Tiles_baseColor.png", layer="", default=color3(0.0, 0.0, 0.0), texcoord=node_multiply_5, uaddressmode="periodic", vaddressmode="periodic", filtertype="linear", framerange="", frameoffset=0, frameendaction="constant");
+float RoughnessHigh = 0.853;
+float RoughnessLow = 0.037;
+vector3 node_image_vector3_8 = image(file="textures/TH_Cathedral_Floor_Tiles_roughness.png", layer="", default=vector3(0.0, 0.0, 0.0), texcoord=node_multiply_5, uaddressmode="periodic", vaddressmode="periodic", filtertype="linear", framerange="", frameoffset=0, frameendaction="constant");
+float node_extract_7 = node_image_vector3_8[1];
+float node_mix_1 = mix(fg=RoughnessHigh, bg=RoughnessLow, mix=node_extract_7);
+vector3 onthefly_2 = normal(space="world");
+vector3 node_image_vector3_9 = image(file="textures/TH_Cathedral_Floor_Tiles_normal.png", layer="", default=vector3(0.0, 0.0, 0.0), texcoord=node_multiply_5, uaddressmode="periodic", vaddressmode="periodic", filtertype="linear", framerange="", frameoffset=0, frameendaction="constant");
+vector3 node_normalmap = normalmap(in=node_image_vector3_9, scale=1.0);
+vector3 onthefly_4 = tangent(space="world", index=0);
+surfaceshader SR_TH_Cathedral_Floor_Tiles = standard_surface(base=0.8, base_color=node_image_color3_0, diffuse_roughness=0.0, metalness=0.0, specular=1.0, specular_color=color3(1.0, 1.0, 1.0), specular_roughness=node_mix_1, specular_IOR=1.5, specular_anisotropy=0.0, specular_rotation=0.0, transmission=0.0, transmission_color=color3(1.0, 1.0, 1.0), transmission_depth=0.0, transmission_scatter=color3(0.0, 0.0, 0.0), transmission_scatter_anisotropy=0.0, transmission_dispersion=0.0, transmission_extra_roughness=0.0, subsurface=0.0, subsurface_color=color3(1.0, 1.0, 1.0), subsurface_radius=color3(1.0, 1.0, 1.0), subsurface_scale=1.0, subsurface_anisotropy=0.0, sheen=0.0, sheen_color=color3(1.0, 1.0, 1.0), sheen_roughness=0.3, coat=0.0, coat_color=color3(1.0, 1.0, 1.0), coat_roughness=0.1, coat_anisotropy=0.0, coat_rotation=0.0, coat_IOR=1.5, coat_normal=onthefly_2, coat_affect_color=0.0, coat_affect_roughness=0.0, thin_film_thickness=0.0, thin_film_IOR=1.5, emission=0.0, emission_color=color3(1.0, 1.0, 1.0), opacity=color3(1.0, 1.0, 1.0), thin_walled=False, normal=node_normalmap, tangent=onthefly_4);
+material TH_Cathedral_Floor_Tiles = surfacematerial(surfaceshader=SR_TH_Cathedral_Floor_Tiles);
