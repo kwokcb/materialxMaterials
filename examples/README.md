@@ -1585,7 +1585,7 @@ The asset entry is as follows (at time of writing):
 </tr>  
 <tr class="row">
 <td class="col-sm-6">
-<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials\data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=100%>
+<img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/documents/images/ambientCG_Wood_Zip_LabEditor.png" width=100%>
 <td class="col-sm-6">
 
 <p>
