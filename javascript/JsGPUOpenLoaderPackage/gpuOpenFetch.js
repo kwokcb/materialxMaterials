@@ -5,6 +5,9 @@
  *  npm start -- <arguments> 
  * or
  *  node gpuOpenFetch.js <arguments>
+ * or globally after installing the package:
+ *  npm install -g .
+ *  gpuOpenFetch <arguments>
  */
 
 const fs = require('fs');
@@ -93,6 +96,15 @@ async function downloadMaterialByExpression(expression = '', packageIndex = 0) {
         for (const dataItem of dataItems) 
         {
             const [data, title] = dataItem;
+            if (!data) {
+                console.error('Error downloading material:', title);
+                continue;
+            }
+            if (!title) {
+                console.error('Error downloading material: No title provided for expression:', expression);
+                continue;
+            }
+            console.log(`Fetched material ${title} package (${data.byteLength} bytes) for expression: ${expression}`);
             let filename = title.replace(/[^a-z0-9]/gi, '_') + '.zip';
             fs.writeFileSync(filename, Buffer.from(data));    
             console.log(`Wrote material ${title} package (${data.byteLength} bytes) to: ${filename}`);
@@ -126,19 +138,19 @@ const argv = yargs(hideBin(process.argv))
         alias: 'i',
         type: 'number',
         description: 'Index of the material in the list',
-        default: 0
+        default: -1
     })
     .option('packageIndex', {
         alias: 'p',
         type: 'number',
         description: 'Index of the package to download',
-        default: 0
+        default: -1
     })
     .option('getInfo', {
         alias: 'g',
         type: 'boolean',
         description: 'Flag to call getMaterialInformation',
-        default: true
+        default: false
     })
     .option('outputFilename', {
         alias: 'o',
@@ -149,24 +161,22 @@ const argv = yargs(hideBin(process.argv))
     .help()
     .argv;
 
-//console.log(argv)
-
 // Check if we are fetching material information or downloading a package
-let materialName = argv.materialName
-console.log('Material name:', argv.materialName)
-if (argv.materialName.length > 0) {
-    console.log('------------- Look for material:', argv.materialName);
-    downloadMaterialByExpression(argv.materialName, argv.packageIndex);
+if (argv.getInfo) 
+{
+    console.log('> Fetching material information --');
+    getMaterialInformation(argv.batchSize, argv.outputFilename);
+} 
+else if (argv.materialName.length > 0) {
+    let materialName = argv.materialName
+    console.log('> Fetch materials matching expression:', argv.materialName);
+    downloadMaterialByExpression(argv.materialName, 0);
+}
+else if (argv.materialIndex >= 0 && argv.packageIndex >= 0)
+{
+    console.log('> Fetching material matching list index:', argv.materialList, ' material index:', argv.materialIndex, ' package index:', argv.packageIndex);
+    downloadMaterial(argv.materialList, argv.materialIndex, argv.packageIndex);
 }
 else {
-    if (argv.getInfo) 
-    {
-        console.log('-- Fetching material information --');
-        getMaterialInformation(argv.batchSize, argv.outputFilename);
-    } 
-    else 
-    {
-        console.log('-- Fetching material --');
-        downloadMaterial(argv.materialList, argv.materialIndex, argv.packageIndex);
-    }
+    console.log('> No action specifieid to perform. Use --help for usage information.');
 }
