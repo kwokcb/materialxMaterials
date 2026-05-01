@@ -65,11 +65,11 @@ async function downloadMaterial(listNumber=0, materialNumber=0, packageId = 0) {
         await getMaterialInformation(100, "");
         let [data, title] = await materialLoader.downloadPackage(listNumber, materialNumber, packageId)
         if (!data) {
-            console.error('Error downloading material:', title);
+            console.error('Error. Could not find material for list,material,package: ', listNumber, materialNumber, packageId);
             return;
         }
 
-        let filename = title.replace(/[^a-z0-9]/gi, '_') + '.zip';
+        let filename = title.replace(/[^a-z0-9]/gi, '_') + '_' + packageId + '.zip';
         fs.writeFileSync(filename, Buffer.from(data));    
         console.log(`Wrote material ${title} package (${data.byteLength} bytes) to: ${filename}`);
         return ;        
@@ -93,6 +93,11 @@ async function downloadMaterialByExpression(expression = '', packageIndex = 0) {
             return;
         }
 
+        if (dataItems.length === 0) {
+            console.error('No materials found matching expression:', expression);
+            return;
+        }
+
         for (const dataItem of dataItems) 
         {
             const [data, title] = dataItem;
@@ -105,7 +110,7 @@ async function downloadMaterialByExpression(expression = '', packageIndex = 0) {
                 continue;
             }
             console.log(`Fetched material ${title} package (${data.byteLength} bytes) for expression: ${expression}`);
-            let filename = title.replace(/[^a-z0-9]/gi, '_') + '.zip';
+            let filename = title.replace(/[^a-z0-9]/gi, '_') + '_' + packageIndex + '.zip';
             fs.writeFileSync(filename, Buffer.from(data));    
             console.log(`Wrote material ${title} package (${data.byteLength} bytes) to: ${filename}`);
         }
@@ -144,7 +149,7 @@ const argv = yargs(hideBin(process.argv))
         alias: 'p',
         type: 'number',
         description: 'Index of the package to download',
-        default: -1
+        default: 0
     })
     .option('getInfo', {
         alias: 'g',
@@ -161,6 +166,8 @@ const argv = yargs(hideBin(process.argv))
     .help()
     .argv;
 
+packageIndex = argv.packageIndex >= 0 ? argv.packageIndex : 0;
+
 // Check if we are fetching material information or downloading a package
 if (argv.getInfo) 
 {
@@ -170,12 +177,12 @@ if (argv.getInfo)
 else if (argv.materialName.length > 0) {
     let materialName = argv.materialName
     console.log('> Fetch materials matching expression:', argv.materialName);
-    downloadMaterialByExpression(argv.materialName, 0);
+    downloadMaterialByExpression(argv.materialName, packageIndex);
 }
-else if (argv.materialIndex >= 0 && argv.packageIndex >= 0)
+else if (argv.materialIndex >= 0)
 {
-    console.log('> Fetching material matching list index:', argv.materialList, ' material index:', argv.materialIndex, ' package index:', argv.packageIndex);
-    downloadMaterial(argv.materialList, argv.materialIndex, argv.packageIndex);
+    console.log('> Fetching material matching list index:', argv.materialList, ' material index:', argv.materialIndex, ' package index:', packageIndex);
+    downloadMaterial(argv.materialList, argv.materialIndex, packageIndex);
 }
 else {
     console.log('> No action specifieid to perform. Use --help for usage information.');

@@ -78,7 +78,7 @@ class JsGPUOpenMaterialLoader {
         {
             try {
 
-                console.log('Fetch materials from url:', url)
+                console.log('- Fetch material infoormation from url:', url)
 
                 const response = await fetch(url);
 
