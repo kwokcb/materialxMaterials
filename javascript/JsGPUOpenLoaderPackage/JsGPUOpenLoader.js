@@ -78,7 +78,7 @@ class JsGPUOpenMaterialLoader {
         {
             try {
 
-                console.log('Fetch materials from url:', url)
+                console.log('- Fetch material infoormation from url:', url)
 
                 const response = await fetch(url);
 
@@ -126,11 +126,13 @@ class JsGPUOpenMaterialLoader {
      */
     async downloadPackage(listNumber, materialNumber, packageId = 0) {
         if (this.materials === null || this.materials.length === 0) {
+            console.error('No materials available. Please fetch materials first.');
             return [null, null];
         }
 
         const jsonData = this.materials[listNumber];
         if (!jsonData) {
+            console.error('Invalid list number:', listNumber);
             return [null, null];
         }
 
@@ -139,6 +141,7 @@ class JsGPUOpenMaterialLoader {
         if ('results' in jsonData) {
             jsonResults = jsonData['results'];
             if (jsonResults.length <= materialNumber) {
+                console.error('Invalid material number:', materialNumber);
                 return [null, null];
             } else {
                 jsonResult = jsonResults[materialNumber];
@@ -146,6 +149,7 @@ class JsGPUOpenMaterialLoader {
         }
 
         if (!jsonResult) {
+            console.error('Material not found for list number:', listNumber, ' material number:', materialNumber);
             return [null, null];
         }
 
@@ -154,15 +158,18 @@ class JsGPUOpenMaterialLoader {
             jsonPackages = jsonResult['packages'];
         }
         if (!jsonPackages) {
+            console.error('No packages found for material:', jsonResult['title']);
             return [null, null];
         }
 
         if (jsonPackages.length <= packageId) {
+            console.error('Invalid package ID:', packageId, ' for material:', jsonResult['title']);
             return [null, null];
         }
         const packageIdValue = jsonPackages[packageId];
 
         if (!packageIdValue) {
+            console.error('Package ID not found for material:', jsonResult['title'], ' package index:', packageId);
             return [null, null];
         }
 
@@ -176,9 +183,9 @@ class JsGPUOpenMaterialLoader {
     }
 
     /**
-     * Find materials by name.
+     * @brief Find materials by name.
      * @param materialName Regular expression to match the material name.
-     * @return A list of materials that match the regular expression of the form:
+     * @return List of materials that match the regular expression of the form:
      * [{ 'listNumber': listNumber, 'materialNumber': materialNumber, 'title': title }]
      */
     findMaterialsByName(materialName) 
