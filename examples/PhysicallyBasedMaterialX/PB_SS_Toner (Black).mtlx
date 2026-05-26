@@ -6,8 +6,8 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Toner__Black__SS_SHD_PBM -->
-  <standard_surface name="Toner__Black__SS_SHD_PBM" type="surfaceshader" uiname="Toner (Black)" uifolder="Manmade" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/toner-black.jpeg">
-    <input name="base_color" type="color3" value="0.05,0.05,0.05" />
+  <standard_surface name="Toner__Black__SS_SHD_PBM" type="surfaceshader" uiname="Toner (Black)" uifolder="Manmade" doc="Black toner printed on office paper with linear sRGB values of 0, 0, 0.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/toner-black.avif">
+    <input name="base_color" type="color3" value="0.05, 0.05, 0.05" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_IOR" type="float" value="1.5" />

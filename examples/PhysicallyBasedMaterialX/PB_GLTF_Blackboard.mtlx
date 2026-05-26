@@ -6,8 +6,8 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Blackboard_GLTF_SHD_PBM -->
-  <gltf_pbr name="Blackboard_GLTF_SHD_PBM" type="surfaceshader" uiname="Blackboard" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blackboard.jpeg">
-    <input name="base_color" type="color3" value="0.039,0.039,0.039" />
+  <gltf_pbr name="Blackboard_GLTF_SHD_PBM" type="surfaceshader" uiname="Blackboard" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blackboard.avif">
+    <input name="base_color" type="color3" value="0.039, 0.039, 0.039" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />

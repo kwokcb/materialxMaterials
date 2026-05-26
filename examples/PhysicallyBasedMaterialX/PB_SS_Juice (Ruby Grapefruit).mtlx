@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: standard_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Juice__Ruby_Grapefruit__SS_SHD_PBM -->
+  <standard_surface name="Juice__Ruby_Grapefruit__SS_SHD_PBM" type="surfaceshader" uiname="Juice (Ruby Grapefruit)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/juice-ruby-grapefruit.avif">
+    <input name="base_color" type="color3" value="0.09, 0.034, 0.016" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmission_dispersion" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.09,0.034,0.016" colorspace="lin_rec709" />
+  </standard_surface>
+  <!-- Generated material: Juice__Ruby_Grapefruit__SS_MAT_PBM -->
+  <surfacematerial name="Juice__Ruby_Grapefruit__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Juice__Ruby_Grapefruit__SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: standard_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Blood__Oxygenated__SS_SHD_PBM -->
+  <standard_surface name="Blood__Oxygenated__SS_SHD_PBM" type="surfaceshader" uiname="Blood (Oxygenated)" uifolder="Human" doc="The color of blood depends on its oxygen level. When hemoglobin has a full oxygen load, it has a bright red color, and when it's deoxygenated it's a darker red. For example, arterial and capillary blood is bright, and venous blood is dark. Upon exposure to air, deoxygenated blood quickly oxygenates and turns a brighter shade of red.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blood-oxygenated.avif">
+    <input name="base_color" type="color3" value="0.644, 0.003, 0.005" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.35" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmission_dispersion" type="float" value="54" />
+    <input name="transmission_color" type="color3" value="0.644,0.003,0.005" colorspace="lin_rec709" />
+  </standard_surface>
+  <!-- Generated material: Blood__Oxygenated__SS_MAT_PBM -->
+  <surfacematerial name="Blood__Oxygenated__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Blood__Oxygenated__SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

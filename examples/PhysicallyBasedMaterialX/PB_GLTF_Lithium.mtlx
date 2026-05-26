@@ -6,12 +6,11 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Lithium_GLTF_SHD_PBM -->
-  <gltf_pbr name="Lithium_GLTF_SHD_PBM" type="surfaceshader" uiname="Lithium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lithium.jpeg">
-    <input name="base_color" type="color3" value="0.916,0.89,0.807" />
+  <gltf_pbr name="Lithium_GLTF_SHD_PBM" type="surfaceshader" uiname="Lithium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/lithium.avif">
+    <input name="base_color" type="color3" value="0.916, 0.89, 0.807" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.998,0.995,0.975" />
+    <input name="specular_color" type="color3" value="0.985, 0.998, 1.027" colorspace="lin_rec709" doc="Format: F82" />
     <input name="roughness" type="float" value="0" />
-    <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
   <!-- Generated material: Lithium_GLTF_MAT_PBM -->
   <surfacematerial name="Lithium_GLTF_MAT_PBM" type="material">

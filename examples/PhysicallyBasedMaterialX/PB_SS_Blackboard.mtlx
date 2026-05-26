@@ -6,8 +6,8 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Blackboard_SS_SHD_PBM -->
-  <standard_surface name="Blackboard_SS_SHD_PBM" type="surfaceshader" uiname="Blackboard" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blackboard.jpeg">
-    <input name="base_color" type="color3" value="0.039,0.039,0.039" />
+  <standard_surface name="Blackboard_SS_SHD_PBM" type="surfaceshader" uiname="Blackboard" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/blackboard.avif">
+    <input name="base_color" type="color3" value="0.039, 0.039, 0.039" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.9" />
     <input name="specular_IOR" type="float" value="1.5" />

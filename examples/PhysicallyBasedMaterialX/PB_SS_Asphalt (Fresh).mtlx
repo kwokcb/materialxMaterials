@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: standard_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Asphalt__Fresh__SS_SHD_PBM -->
+  <standard_surface name="Asphalt__Fresh__SS_SHD_PBM" type="surfaceshader" uiname="Asphalt (Fresh)" uifolder="Manmade" doc="Asphalt consists of crushed stone, gravel, and sand, bound together with bitumen.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/asphalt-fresh.avif">
+    <input name="base_color" type="color3" value="0.0429, 0.0414, 0.0401" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.5" />
+    <input name="specular_IOR" type="float" value="1.6" />
+  </standard_surface>
+  <!-- Generated material: Asphalt__Fresh__SS_MAT_PBM -->
+  <surfacematerial name="Asphalt__Fresh__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Asphalt__Fresh__SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

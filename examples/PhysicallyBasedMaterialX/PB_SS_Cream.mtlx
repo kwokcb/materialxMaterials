@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: standard_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Cream_SS_SHD_PBM -->
+  <standard_surface name="Cream_SS_SHD_PBM" type="surfaceshader" uiname="Cream" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/cream.avif">
+    <input name="base_color" type="color3" value="0.976, 0.9, 0.725" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.348" />
+    <input name="subsurface_radius" type="color3" value="1.503, 0.466, 0.254" />
+  </standard_surface>
+  <!-- Generated material: Cream_SS_MAT_PBM -->
+  <surfacematerial name="Cream_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Cream_SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

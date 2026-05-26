@@ -6,12 +6,11 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Zinc_SS_SHD_PBM -->
-  <standard_surface name="Zinc_SS_SHD_PBM" type="surfaceshader" uiname="Zinc" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/zinc.jpeg">
-    <input name="base_color" type="color3" value="0.808,0.844,0.865" />
+  <standard_surface name="Zinc_SS_SHD_PBM" type="surfaceshader" uiname="Zinc" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/zinc.avif">
+    <input name="base_color" type="color3" value="0.808, 0.844, 0.865" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.854,0.922,0.923" />
+    <input name="specular_color" type="color3" value="0.854, 0.922, 0.923" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_IOR" type="float" value="1.5" />
   </standard_surface>
   <!-- Generated material: Zinc_SS_MAT_PBM -->
   <surfacematerial name="Zinc_SS_MAT_PBM" type="material">

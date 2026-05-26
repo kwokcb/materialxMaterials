@@ -6,12 +6,11 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Iron_GLTF_SHD_PBM -->
-  <gltf_pbr name="Iron_GLTF_SHD_PBM" type="surfaceshader" uiname="Iron" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/iron.jpeg">
-    <input name="base_color" type="color3" value="0.53,0.513,0.494" />
+  <gltf_pbr name="Iron_GLTF_SHD_PBM" type="surfaceshader" uiname="Iron" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/iron.avif">
+    <input name="base_color" type="color3" value="0.53, 0.513, 0.494" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.612,0.541,0.422" />
+    <input name="specular_color" type="color3" value="0.765, 0.767, 0.802" colorspace="lin_rec709" doc="Format: F82" />
     <input name="roughness" type="float" value="0" />
-    <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
   <!-- Generated material: Iron_GLTF_MAT_PBM -->
   <surfacematerial name="Iron_GLTF_MAT_PBM" type="material">

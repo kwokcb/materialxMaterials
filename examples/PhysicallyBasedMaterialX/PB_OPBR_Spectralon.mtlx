@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: open_pbr_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Spectralon_OPBR_SHD_PBM -->
+  <open_pbr_surface name="Spectralon_OPBR_SHD_PBM" type="surfaceshader" uiname="Spectralon" uifolder="Manmade" doc="Spectralon is a fluoropolymer that has the highest diffuse reflectance of any known material or coating over the ultraviolet, visible, and near-infrared regions of the spectrum. It is the whitest substance available and reflects 99% of the light.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/spectralon.avif">
+    <input name="base_color" type="color3" value="0.99, 0.99, 0.99" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0.99" />
+    <input name="specular_ior" type="float" value="1.35" />
+  </open_pbr_surface>
+  <!-- Generated material: Spectralon_OPBR_MAT_PBM -->
+  <surfacematerial name="Spectralon_OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Spectralon_OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

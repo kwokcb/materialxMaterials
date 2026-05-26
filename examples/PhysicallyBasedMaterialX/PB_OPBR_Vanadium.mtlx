@@ -6,12 +6,11 @@
   <!--  Target Shading Model: open_pbr_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Vanadium_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Vanadium_OPBR_SHD_PBM" type="surfaceshader" uiname="Vanadium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/vanadium.jpeg">
-    <input name="base_color" type="color3" value="0.534,0.526,0.546" />
+  <open_pbr_surface name="Vanadium_OPBR_SHD_PBM" type="surfaceshader" uiname="Vanadium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/vanadium.avif">
+    <input name="base_color" type="color3" value="0.534, 0.526, 0.546" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.474,0.426,0.175" />
+    <input name="specular_color" type="color3" value="0.705, 0.715, 0.695" colorspace="lin_rec709" doc="Format: F82" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_ior" type="float" value="1.5" />
   </open_pbr_surface>
   <!-- Generated material: Vanadium_OPBR_MAT_PBM -->
   <surfacematerial name="Vanadium_OPBR_MAT_PBM" type="material">

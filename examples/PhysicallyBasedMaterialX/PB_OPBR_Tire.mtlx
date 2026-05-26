@@ -6,8 +6,8 @@
   <!--  Target Shading Model: open_pbr_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Tire_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Tire_OPBR_SHD_PBM" type="surfaceshader" uiname="Tire" uifolder="Manmade" doc="Car tire.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tire.jpeg">
-    <input name="base_color" type="color3" value="0.023,0.023,0.023" />
+  <open_pbr_surface name="Tire_OPBR_SHD_PBM" type="surfaceshader" uiname="Tire" uifolder="Manmade" doc="Car tire.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/tire.avif">
+    <input name="base_color" type="color3" value="0.023, 0.023, 0.023" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.7" />
     <input name="specular_ior" type="float" value="1.5" />

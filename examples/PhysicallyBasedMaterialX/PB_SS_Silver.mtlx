@@ -6,12 +6,11 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Silver_SS_SHD_PBM -->
-  <standard_surface name="Silver_SS_SHD_PBM" type="surfaceshader" uiname="Silver" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silver.jpeg">
-    <input name="base_color" type="color3" value="0.991,0.985,0.974" />
+  <standard_surface name="Silver_SS_SHD_PBM" type="surfaceshader" uiname="Silver" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/silver.avif">
+    <input name="base_color" type="color3" value="0.991, 0.985, 0.974" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="1.0,1.0,0.991" />
+    <input name="specular_color" type="color3" value="1.0, 1.0, 0.991" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_IOR" type="float" value="1.5" />
   </standard_surface>
   <!-- Generated material: Silver_SS_MAT_PBM -->
   <surfacematerial name="Silver_SS_MAT_PBM" type="material">

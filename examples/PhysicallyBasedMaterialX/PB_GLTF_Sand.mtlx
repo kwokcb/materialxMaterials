@@ -6,8 +6,8 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Sand_GLTF_SHD_PBM -->
-  <gltf_pbr name="Sand_GLTF_SHD_PBM" type="surfaceshader" uiname="Sand" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sand.jpeg">
-    <input name="base_color" type="color3" value="0.44,0.386,0.23074" />
+  <gltf_pbr name="Sand_GLTF_SHD_PBM" type="surfaceshader" uiname="Sand" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/sand.avif">
+    <input name="base_color" type="color3" value="0.44, 0.386, 0.23074" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />

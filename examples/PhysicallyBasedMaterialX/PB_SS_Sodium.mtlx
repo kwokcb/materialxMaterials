@@ -6,12 +6,11 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Sodium_SS_SHD_PBM -->
-  <standard_surface name="Sodium_SS_SHD_PBM" type="surfaceshader" uiname="Sodium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sodium.jpeg">
-    <input name="base_color" type="color3" value="0.977,0.962,0.936" />
+  <standard_surface name="Sodium_SS_SHD_PBM" type="surfaceshader" uiname="Sodium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/sodium.avif">
+    <input name="base_color" type="color3" value="0.977, 0.962, 0.936" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="1.0,1.0,0.991" />
+    <input name="specular_color" type="color3" value="1.0, 1.0, 0.991" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_IOR" type="float" value="1.5" />
   </standard_surface>
   <!-- Generated material: Sodium_SS_MAT_PBM -->
   <surfacematerial name="Sodium_SS_MAT_PBM" type="material">

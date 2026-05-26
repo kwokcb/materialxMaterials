@@ -6,12 +6,12 @@
   <!--  Target Shading Model: open_pbr_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Chocolate_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Chocolate_OPBR_SHD_PBM" type="surfaceshader" uiname="Chocolate" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chocolate.jpeg">
-    <input name="base_color" type="color3" value="0.162,0.091,0.06" />
+  <open_pbr_surface name="Chocolate_OPBR_SHD_PBM" type="surfaceshader" uiname="Chocolate" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/chocolate.avif">
+    <input name="base_color" type="color3" value="0.162, 0.091, 0.06" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_ior" type="float" value="1.5" />
-    <input name="subsurface_radius" type="float" value="0.1,0.05,0.025" />
+    <input name="subsurface_radius" type="float" value="0.1, 0.05, 0.025" />
   </open_pbr_surface>
   <!-- Generated material: Chocolate_OPBR_MAT_PBM -->
   <surfacematerial name="Chocolate_OPBR_MAT_PBM" type="material">

@@ -6,12 +6,11 @@
   <!--  Target Shading Model: open_pbr_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Chromium_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Chromium_OPBR_SHD_PBM" type="surfaceshader" uiname="Chromium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chromium.jpeg">
-    <input name="base_color" type="color3" value="0.654,0.685,0.701" />
+  <open_pbr_surface name="Chromium_OPBR_SHD_PBM" type="surfaceshader" uiname="Chromium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/chromium.avif">
+    <input name="base_color" type="color3" value="0.654, 0.685, 0.701" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.591,0.675,0.703" />
+    <input name="specular_color" type="color3" value="0.688, 0.728, 0.798" colorspace="lin_rec709" doc="Format: F82" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_ior" type="float" value="1.5" />
   </open_pbr_surface>
   <!-- Generated material: Chromium_OPBR_MAT_PBM -->
   <surfacematerial name="Chromium_OPBR_MAT_PBM" type="material">

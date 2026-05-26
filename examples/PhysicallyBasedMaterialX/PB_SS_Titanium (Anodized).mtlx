@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: standard_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Titanium__Anodized__SS_SHD_PBM -->
+  <standard_surface name="Titanium__Anodized__SS_SHD_PBM" type="surfaceshader" uiname="Titanium (Anodized)" uifolder="Metal" doc="Titanium can be colorized by a process called anodization. It creates a layer of titanium dioxide by supplying different voltages which results in different thickness and color. Additional colors can be achieved by adding dyes.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/titanium-anodized.avif">
+    <input name="base_color" type="color3" value="0.441, 0.4, 0.361" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="1" />
+    <input name="specular_color" type="color3" value="0.67, 0.641, 0.52" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="thin_film_IOR" type="float" value="2.488" />
+    <input name="thin_film_thickness" type="float" value="20, 300" />
+  </standard_surface>
+  <!-- Generated material: Titanium__Anodized__SS_MAT_PBM -->
+  <surfacematerial name="Titanium__Anodized__SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Titanium__Anodized__SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

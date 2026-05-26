@@ -6,8 +6,8 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Skin_II_GLTF_SHD_PBM -->
-  <gltf_pbr name="Skin_II_GLTF_SHD_PBM" type="surfaceshader" uiname="Skin II" uifolder="Human/Skin" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-ii.jpeg">
-    <input name="base_color" type="color3" value="0.799,0.485,0.347" />
+  <gltf_pbr name="Skin_II_GLTF_SHD_PBM" type="surfaceshader" uiname="Skin II" uifolder="Human/Skin" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/skin-ii.avif">
+    <input name="base_color" type="color3" value="0.799, 0.485, 0.347" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.5" />
     <input name="ior" type="float" value="1.4" />

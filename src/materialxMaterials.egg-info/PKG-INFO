@@ -305,15 +305,15 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
       <table>
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Ketchup.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/PhysicallyBasedMaterialX/Ketchup.png?raw=true" width=256px><br>
             Ketchup
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Cooking_Oil.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/PhysicallyBasedMaterialX/Cooking_Oil.png?raw=true" width=256px><br>
             Cooking Oil
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/PhysicallyBasedMaterialX/Brass.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/PhysicallyBasedMaterialX/Brass.png?raw=true" width=256px><br>
             Brass
           </td>
         </tr>
@@ -326,15 +326,15 @@ See the <a href="https://kwokcb.github.io/materialxMaterials/examples/index.html
       <table>
         <tr>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/Metal053C_1K-PNG.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/ambientCgMaterials/Metal053C_1K-PNG.png?raw=true" width=256px><br>
             Metal (53)
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/PavingStones142_1K-PNG.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/ambientCgMaterials/PavingStones142_1K-PNG.png?raw=true" width=256px><br>
             Paving Stones (142)
           </td>
           <td>
-            <img src="https://kwokcb.github.io/materialxMaterials/src/materialxMaterials/data/ambientCgMaterials/WoodFloor038_1K-PNG.png" width=256px><br>
+            <img src="https://github.com/kwokcb/materialxMaterials/blob/main/data/ambientCgMaterials/WoodFloor038_1K-PNG.png?raw=true" width=256px><br>
             Wood Floor (38)
           </td>
         </tr>

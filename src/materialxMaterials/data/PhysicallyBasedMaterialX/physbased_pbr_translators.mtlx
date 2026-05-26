@@ -125,7 +125,7 @@
       <input name="in" type="float" interfacename="thinFilmIor" />
     </dot>
   </nodegraph>
-  <nodedef name="ND_physbased_pbr_surface_to_open_pbr_surface" node="physbased_pbr_surface_to_open_pbr_surface" nodegroup="translation" doc="Translator from 'physbased_pbr_surface' to 'open_pbr_surface'" source_version="1.0" source="physbased_pbr_surface" target_version="1.1" target="open_pbr_surface">
+  <nodedef name="ND_physbased_pbr_surface_to_open_pbr_surface" node="physbased_pbr_surface_to_open_pbr_surface" nodegroup="translation" doc="Translator from 'physbased_pbr_surface' to 'open_pbr_surface'" source_version="1.0" source="physbased_pbr_surface" target_version="1.1.1" target="open_pbr_surface">
     <!--Inputs (inputs from source 'physbased_pbr_surface')-->
     <input name="name" type="string" value="Aluminum" />
     <input name="color" type="color3" value="1,1,1" />
@@ -195,7 +195,7 @@
     <output name="geometry_coat_tangent_out" type="vector3" />
   </nodedef>
   <!--NodeGraph implementation for translator 'physbased_pbr_surface_to_open_pbr_surface'-->
-  <nodegraph name="NG_physbased_pbr_surface_to_open_pbr_surface" nodedef="ND_physbased_pbr_surface_to_open_pbr_surface" doc="NodeGraph implementation of translator from 'physbased_pbr_surface' to 'open_pbr_surface'" source_version="1.0" source="physbased_pbr_surface" target_version="1.1" target="open_pbr_surface">
+  <nodegraph name="NG_physbased_pbr_surface_to_open_pbr_surface" nodedef="ND_physbased_pbr_surface_to_open_pbr_surface" doc="NodeGraph implementation of translator from 'physbased_pbr_surface' to 'open_pbr_surface'" source_version="1.0" source="physbased_pbr_surface" target_version="1.1.1" target="open_pbr_surface">
     <output name="base_weight_out" type="float" />
     <output name="base_color_out" type="color3" nodename="base_color" />
     <output name="base_diffuse_roughness_out" type="float" />

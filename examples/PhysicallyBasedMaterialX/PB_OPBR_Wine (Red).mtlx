@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: open_pbr_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Wine__Red__OPBR_SHD_PBM -->
+  <open_pbr_surface name="Wine__Red__OPBR_SHD_PBM" type="surfaceshader" uiname="Wine (Red)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-red.avif">
+    <input name="base_color" type="color3" value="0.31, 0.081, 0.053" colorspace="lin_rec709" />
+    <input name="base_metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_ior" type="float" value="1.3325" />
+    <input name="transmission_weight" type="float" value="1" />
+    <input name="transmission_dispersion_abbe_number" type="float" value="55.78" />
+    <input name="transmission_color" type="color3" value="0.31,0.081,0.053" colorspace="lin_rec709" />
+  </open_pbr_surface>
+  <!-- Generated material: Wine__Red__OPBR_MAT_PBM -->
+  <surfacematerial name="Wine__Red__OPBR_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Wine__Red__OPBR_SHD_PBM" />
+  </surfacematerial>
+</materialx>

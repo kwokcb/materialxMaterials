@@ -6,8 +6,8 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Marble_GLTF_SHD_PBM -->
-  <gltf_pbr name="Marble_GLTF_SHD_PBM" type="surfaceshader" uiname="Marble" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/marble.jpeg">
-    <input name="base_color" type="color3" value="0.83,0.791,0.753" />
+  <gltf_pbr name="Marble_GLTF_SHD_PBM" type="surfaceshader" uiname="Marble" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/marble.avif">
+    <input name="base_color" type="color3" value="0.83, 0.791, 0.753" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0" />
     <input name="ior" type="float" value="1.5" />

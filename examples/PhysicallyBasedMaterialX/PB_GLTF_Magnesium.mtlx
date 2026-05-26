@@ -6,12 +6,11 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Magnesium_GLTF_SHD_PBM -->
-  <gltf_pbr name="Magnesium_GLTF_SHD_PBM" type="surfaceshader" uiname="Magnesium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/magnesium.jpeg">
-    <input name="base_color" type="color3" value="0.956,0.953,0.95" />
+  <gltf_pbr name="Magnesium_GLTF_SHD_PBM" type="surfaceshader" uiname="Magnesium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/magnesium.avif">
+    <input name="base_color" type="color3" value="0.956, 0.953, 0.95" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.998,0.996,0.983" />
+    <input name="specular_color" type="color3" value="0.954, 0.964, 0.977" colorspace="lin_rec709" doc="Format: F82" />
     <input name="roughness" type="float" value="0" />
-    <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
   <!-- Generated material: Magnesium_GLTF_MAT_PBM -->
   <surfacematerial name="Magnesium_GLTF_MAT_PBM" type="material">
