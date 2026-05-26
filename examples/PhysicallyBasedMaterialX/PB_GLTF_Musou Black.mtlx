@@ -6,8 +6,8 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Musou_Black_GLTF_SHD_PBM -->
-  <gltf_pbr name="Musou_Black_GLTF_SHD_PBM" type="surfaceshader" uiname="Musou Black" uifolder="Manmade" doc="Musou Black is one of the darkest paints available. Darker materials can be achieved by using technology such as carbon nanotubes, like the MIT Black material.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/musou-black.jpeg">
-    <input name="base_color" type="color3" value="0.006,0.006,0.006" />
+  <gltf_pbr name="Musou_Black_GLTF_SHD_PBM" type="surfaceshader" uiname="Musou Black" uifolder="Manmade" doc="Musou Black is one of the darkest paints available. Darker materials can be achieved by using carbon nanotube technology, such as the “MIT Black” material.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/musou-black.avif">
+    <input name="base_color" type="color3" value="0.006, 0.006, 0.006" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.9" />
     <input name="ior" type="float" value="1.5" />

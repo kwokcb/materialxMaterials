@@ -6,12 +6,11 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Silver_GLTF_SHD_PBM -->
-  <gltf_pbr name="Silver_GLTF_SHD_PBM" type="surfaceshader" uiname="Silver" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silver.jpeg">
-    <input name="base_color" type="color3" value="0.991,0.985,0.974" />
+  <gltf_pbr name="Silver_GLTF_SHD_PBM" type="surfaceshader" uiname="Silver" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/silver.avif">
+    <input name="base_color" type="color3" value="0.991, 0.985, 0.974" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="1" />
-    <input name="specular_color" type="color3" value="1.0,1.0,0.991" />
+    <input name="specular_color" type="color3" value="0.994, 0.995, 0.998" colorspace="lin_rec709" doc="Format: F82" />
     <input name="roughness" type="float" value="0" />
-    <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
   <!-- Generated material: Silver_GLTF_MAT_PBM -->
   <surfacematerial name="Silver_GLTF_MAT_PBM" type="material">

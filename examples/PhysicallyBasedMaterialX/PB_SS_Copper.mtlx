@@ -6,12 +6,11 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Copper_SS_SHD_PBM -->
-  <standard_surface name="Copper_SS_SHD_PBM" type="surfaceshader" uiname="Copper" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/copper.jpeg">
-    <input name="base_color" type="color3" value="0.932,0.623,0.522" />
+  <standard_surface name="Copper_SS_SHD_PBM" type="surfaceshader" uiname="Copper" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/copper.avif">
+    <input name="base_color" type="color3" value="0.932, 0.623, 0.522" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.999,0.9,0.744" />
+    <input name="specular_color" type="color3" value="0.999, 0.9, 0.744" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_IOR" type="float" value="1.5" />
   </standard_surface>
   <!-- Generated material: Copper_SS_MAT_PBM -->
   <surfacematerial name="Copper_SS_MAT_PBM" type="material">

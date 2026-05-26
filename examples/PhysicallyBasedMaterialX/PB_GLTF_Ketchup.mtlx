@@ -6,8 +6,8 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Ketchup_GLTF_SHD_PBM -->
-  <gltf_pbr name="Ketchup_GLTF_SHD_PBM" type="surfaceshader" uiname="Ketchup" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ketchup.jpeg">
-    <input name="base_color" type="color3" value="0.164,0.006,0.002" />
+  <gltf_pbr name="Ketchup_GLTF_SHD_PBM" type="surfaceshader" uiname="Ketchup" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/ketchup.avif">
+    <input name="base_color" type="color3" value="0.164, 0.006, 0.002" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="0" />
     <input name="roughness" type="float" value="0.1" />
     <input name="ior" type="float" value="1.3" />

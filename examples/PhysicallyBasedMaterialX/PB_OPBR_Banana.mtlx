@@ -6,8 +6,8 @@
   <!--  Target Shading Model: open_pbr_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Banana_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Banana_OPBR_SHD_PBM" type="surfaceshader" uiname="Banana" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/banana.jpeg">
-    <input name="base_color" type="color3" value="0.634,0.532,0.111" />
+  <open_pbr_surface name="Banana_OPBR_SHD_PBM" type="surfaceshader" uiname="Banana" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/banana.avif">
+    <input name="base_color" type="color3" value="0.634, 0.532, 0.111" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_ior" type="float" value="1.5" />

@@ -6,14 +6,14 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Diamond_SS_SHD_PBM -->
-  <standard_surface name="Diamond_SS_SHD_PBM" type="surfaceshader" uiname="Diamond" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/diamond.jpeg">
-    <input name="base_color" type="color3" value="1,1,1" />
+  <standard_surface name="Diamond_SS_SHD_PBM" type="surfaceshader" uiname="Diamond" uifolder="Crystal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/diamond.avif">
+    <input name="base_color" type="color3" value="1, 1, 1" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0" />
     <input name="specular_IOR" type="float" value="2.4168" />
     <input name="transmission" type="float" value="1" />
     <input name="transmission_dispersion" type="float" value="55.3" />
-    <input name="transmission_color" type="color3" value="1,1,1" />
+    <input name="transmission_color" type="color3" value="1,1,1" colorspace="lin_rec709" />
   </standard_surface>
   <!-- Generated material: Diamond_SS_MAT_PBM -->
   <surfacematerial name="Diamond_SS_MAT_PBM" type="material">

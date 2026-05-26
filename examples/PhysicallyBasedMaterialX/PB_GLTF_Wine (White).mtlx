@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: gltf_pbr -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Wine__White__GLTF_SHD_PBM -->
+  <gltf_pbr name="Wine__White__GLTF_SHD_PBM" type="surfaceshader" uiname="Wine (White)" uifolder="Liquid" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/wine-white.avif">
+    <input name="base_color" type="color3" value="0.896, 0.885, 0.783" colorspace="lin_rec709" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.3325" />
+    <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="0.896,0.885,0.783" colorspace="lin_rec709" />
+  </gltf_pbr>
+  <!-- Generated material: Wine__White__GLTF_MAT_PBM -->
+  <surfacematerial name="Wine__White__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Wine__White__GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>

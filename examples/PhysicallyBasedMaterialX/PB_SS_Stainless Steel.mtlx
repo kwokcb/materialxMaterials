@@ -6,12 +6,11 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Stainless_Steel_SS_SHD_PBM -->
-  <standard_surface name="Stainless_Steel_SS_SHD_PBM" type="surfaceshader" uiname="Stainless Steel" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/stainless-steel.jpeg">
-    <input name="base_color" type="color3" value="0.669,0.639,0.598" />
+  <standard_surface name="Stainless_Steel_SS_SHD_PBM" type="surfaceshader" uiname="Stainless Steel" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/stainless-steel.avif">
+    <input name="base_color" type="color3" value="0.669, 0.639, 0.598" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.804,0.791,0.714" />
+    <input name="specular_color" type="color3" value="0.804, 0.791, 0.714" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_IOR" type="float" value="1.5" />
   </standard_surface>
   <!-- Generated material: Stainless_Steel_SS_MAT_PBM -->
   <surfacematerial name="Stainless_Steel_SS_MAT_PBM" type="material">

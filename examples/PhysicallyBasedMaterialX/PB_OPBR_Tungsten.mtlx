@@ -6,12 +6,11 @@
   <!--  Target Shading Model: open_pbr_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Tungsten_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Tungsten_OPBR_SHD_PBM" type="surfaceshader" uiname="Tungsten" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tungsten.jpeg">
-    <input name="base_color" type="color3" value="0.537,0.536,0.519" />
+  <open_pbr_surface name="Tungsten_OPBR_SHD_PBM" type="surfaceshader" uiname="Tungsten" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/tungsten.avif">
+    <input name="base_color" type="color3" value="0.537, 0.536, 0.519" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.45,0.409,0.193" />
+    <input name="specular_color" type="color3" value="0.695, 0.704, 0.714" colorspace="lin_rec709" doc="Format: F82" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_ior" type="float" value="1.5" />
   </open_pbr_surface>
   <!-- Generated material: Tungsten_OPBR_MAT_PBM -->
   <surfacematerial name="Tungsten_OPBR_MAT_PBM" type="material">

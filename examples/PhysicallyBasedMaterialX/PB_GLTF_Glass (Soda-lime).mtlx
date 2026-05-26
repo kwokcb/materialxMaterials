@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: gltf_pbr -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Glass__Soda_lime__GLTF_SHD_PBM -->
+  <gltf_pbr name="Glass__Soda_lime__GLTF_SHD_PBM" type="surfaceshader" uiname="Glass (Soda-lime)" uifolder="Crystal" doc="Soda-lime glass is the most prevelant type of glass made, and accounts for about 90% of manufactured glass. It's used for windowpanes and glass containers (bottles and jars) for beverages, food, and some commodity items.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/glass-soda-lime.avif">
+    <input name="base_color" type="color3" value="0.984, 0.995, 0.995" colorspace="lin_rec709" />
+    <input name="metallic" type="float" value="0" />
+    <input name="roughness" type="float" value="0" />
+    <input name="ior" type="float" value="1.52" />
+    <input name="transmission" type="float" value="1" />
+    <input name="attenuation_color" type="color3" value="0.984,0.995,0.995" colorspace="lin_rec709" />
+  </gltf_pbr>
+  <!-- Generated material: Glass__Soda_lime__GLTF_MAT_PBM -->
+  <surfacematerial name="Glass__Soda_lime__GLTF_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Glass__Soda_lime__GLTF_SHD_PBM" />
+  </surfacematerial>
+</materialx>

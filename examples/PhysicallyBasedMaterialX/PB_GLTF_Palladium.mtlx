@@ -6,12 +6,11 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Palladium_GLTF_SHD_PBM -->
-  <gltf_pbr name="Palladium_GLTF_SHD_PBM" type="surfaceshader" uiname="Palladium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/palladium.jpeg">
-    <input name="base_color" type="color3" value="0.734,0.7036,0.662" />
+  <gltf_pbr name="Palladium_GLTF_SHD_PBM" type="surfaceshader" uiname="Palladium" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/palladium.avif">
+    <input name="base_color" type="color3" value="0.734, 0.7036, 0.662" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.874,0.854,0.779" />
+    <input name="specular_color" type="color3" value="0.811, 0.836, 0.872" colorspace="lin_rec709" doc="Format: F82" />
     <input name="roughness" type="float" value="0" />
-    <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
   <!-- Generated material: Palladium_GLTF_MAT_PBM -->
   <surfacematerial name="Palladium_GLTF_MAT_PBM" type="material">

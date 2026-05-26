@@ -6,12 +6,11 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Zinc_GLTF_SHD_PBM -->
-  <gltf_pbr name="Zinc_GLTF_SHD_PBM" type="surfaceshader" uiname="Zinc" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/zinc.jpeg">
-    <input name="base_color" type="color3" value="0.808,0.844,0.865" />
+  <gltf_pbr name="Zinc_GLTF_SHD_PBM" type="surfaceshader" uiname="Zinc" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/zinc.avif">
+    <input name="base_color" type="color3" value="0.808, 0.844, 0.865" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.854,0.922,0.923" />
+    <input name="specular_color" type="color3" value="0.762, 0.833, 0.896" colorspace="lin_rec709" doc="Format: F82" />
     <input name="roughness" type="float" value="0" />
-    <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
   <!-- Generated material: Zinc_GLTF_MAT_PBM -->
   <surfacematerial name="Zinc_GLTF_MAT_PBM" type="material">

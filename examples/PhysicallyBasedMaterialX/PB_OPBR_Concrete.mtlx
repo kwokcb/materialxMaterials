@@ -6,8 +6,8 @@
   <!--  Target Shading Model: open_pbr_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Concrete_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Concrete_OPBR_SHD_PBM" type="surfaceshader" uiname="Concrete" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/concrete.jpeg">
-    <input name="base_color" type="color3" value="0.51,0.51,0.51" />
+  <open_pbr_surface name="Concrete_OPBR_SHD_PBM" type="surfaceshader" uiname="Concrete" uifolder="Manmade" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/concrete.avif">
+    <input name="base_color" type="color3" value="0.51, 0.51, 0.51" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.5" />
     <input name="specular_ior" type="float" value="1.5" />

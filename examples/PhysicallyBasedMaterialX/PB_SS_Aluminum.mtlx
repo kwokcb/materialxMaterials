@@ -6,12 +6,11 @@
   <!--  Target Shading Model: standard_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Aluminum_SS_SHD_PBM -->
-  <standard_surface name="Aluminum_SS_SHD_PBM" type="surfaceshader" uiname="Aluminum" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg">
-    <input name="base_color" type="color3" value="0.916,0.923,0.924" />
+  <standard_surface name="Aluminum_SS_SHD_PBM" type="surfaceshader" uiname="Aluminum" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/aluminum.avif">
+    <input name="base_color" type="color3" value="0.916, 0.923, 0.924" colorspace="lin_rec709" />
     <input name="metalness" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.989,0.989,0.972" />
+    <input name="specular_color" type="color3" value="0.989, 0.989, 0.972" colorspace="lin_rec709" doc="Format: Gulbrandsen" />
     <input name="specular_roughness" type="float" value="0" />
-    <input name="specular_IOR" type="float" value="1.5" />
   </standard_surface>
   <!-- Generated material: Aluminum_SS_MAT_PBM -->
   <surfacematerial name="Aluminum_SS_MAT_PBM" type="material">

@@ -14927,6 +14927,86 @@
         },
         "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_03.png?width=256&height=256"
     },
+    "marble_cliff_04_1k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/1k/marble_cliff_04/marble_cliff_04_1k.blend",
+        "texture_files": {
+            "textures/marble_cliff_04_diff_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_cliff_04/marble_cliff_04_diff_1k.jpg",
+            "textures/marble_cliff_04_disp_1k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/marble_cliff_04/marble_cliff_04_disp_1k.png",
+            "textures/marble_cliff_04_nor_gl_1k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/1k/marble_cliff_04/marble_cliff_04_nor_gl_1k.exr",
+            "textures/marble_cliff_04_rough_1k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/1k/marble_cliff_04/marble_cliff_04_rough_1k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_04.png?width=256&height=256"
+    },
+    "marble_cliff_04_2k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/2k/marble_cliff_04/marble_cliff_04_2k.blend",
+        "texture_files": {
+            "textures/marble_cliff_04_diff_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/marble_cliff_04/marble_cliff_04_diff_2k.jpg",
+            "textures/marble_cliff_04_disp_2k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/marble_cliff_04/marble_cliff_04_disp_2k.png",
+            "textures/marble_cliff_04_nor_gl_2k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/2k/marble_cliff_04/marble_cliff_04_nor_gl_2k.exr",
+            "textures/marble_cliff_04_rough_2k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/2k/marble_cliff_04/marble_cliff_04_rough_2k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_04.png?width=256&height=256"
+    },
+    "marble_cliff_04_4k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/4k/marble_cliff_04/marble_cliff_04_4k.blend",
+        "texture_files": {
+            "textures/marble_cliff_04_diff_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/marble_cliff_04/marble_cliff_04_diff_4k.jpg",
+            "textures/marble_cliff_04_disp_4k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/marble_cliff_04/marble_cliff_04_disp_4k.png",
+            "textures/marble_cliff_04_nor_gl_4k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/4k/marble_cliff_04/marble_cliff_04_nor_gl_4k.exr",
+            "textures/marble_cliff_04_rough_4k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/4k/marble_cliff_04/marble_cliff_04_rough_4k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_04.png?width=256&height=256"
+    },
+    "marble_cliff_04_8k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/8k/marble_cliff_04/marble_cliff_04_8k.blend",
+        "texture_files": {
+            "textures/marble_cliff_04_diff_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/marble_cliff_04/marble_cliff_04_diff_8k.jpg",
+            "textures/marble_cliff_04_disp_8k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/8k/marble_cliff_04/marble_cliff_04_disp_8k.png",
+            "textures/marble_cliff_04_nor_gl_8k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/8k/marble_cliff_04/marble_cliff_04_nor_gl_8k.exr",
+            "textures/marble_cliff_04_rough_8k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/8k/marble_cliff_04/marble_cliff_04_rough_8k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_04.png?width=256&height=256"
+    },
+    "marble_cliff_05_1k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/1k/marble_cliff_05/marble_cliff_05_1k.blend",
+        "texture_files": {
+            "textures/marble_cliff_05_diff_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_cliff_05/marble_cliff_05_diff_1k.jpg",
+            "textures/marble_cliff_05_disp_1k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/marble_cliff_05/marble_cliff_05_disp_1k.png",
+            "textures/marble_cliff_05_nor_gl_1k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/1k/marble_cliff_05/marble_cliff_05_nor_gl_1k.exr",
+            "textures/marble_cliff_05_rough_1k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/1k/marble_cliff_05/marble_cliff_05_rough_1k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_05.png?width=256&height=256"
+    },
+    "marble_cliff_05_2k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/2k/marble_cliff_05/marble_cliff_05_2k.blend",
+        "texture_files": {
+            "textures/marble_cliff_05_diff_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/marble_cliff_05/marble_cliff_05_diff_2k.jpg",
+            "textures/marble_cliff_05_disp_2k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/marble_cliff_05/marble_cliff_05_disp_2k.png",
+            "textures/marble_cliff_05_nor_gl_2k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/2k/marble_cliff_05/marble_cliff_05_nor_gl_2k.exr",
+            "textures/marble_cliff_05_rough_2k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/2k/marble_cliff_05/marble_cliff_05_rough_2k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_05.png?width=256&height=256"
+    },
+    "marble_cliff_05_4k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/4k/marble_cliff_05/marble_cliff_05_4k.blend",
+        "texture_files": {
+            "textures/marble_cliff_05_diff_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/marble_cliff_05/marble_cliff_05_diff_4k.jpg",
+            "textures/marble_cliff_05_disp_4k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/marble_cliff_05/marble_cliff_05_disp_4k.png",
+            "textures/marble_cliff_05_nor_gl_4k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/4k/marble_cliff_05/marble_cliff_05_nor_gl_4k.exr",
+            "textures/marble_cliff_05_rough_4k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/4k/marble_cliff_05/marble_cliff_05_rough_4k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_05.png?width=256&height=256"
+    },
+    "marble_cliff_05_8k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/8k/marble_cliff_05/marble_cliff_05_8k.blend",
+        "texture_files": {
+            "textures/marble_cliff_05_diff_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/marble_cliff_05/marble_cliff_05_diff_8k.jpg",
+            "textures/marble_cliff_05_disp_8k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/8k/marble_cliff_05/marble_cliff_05_disp_8k.png",
+            "textures/marble_cliff_05_nor_gl_8k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/8k/marble_cliff_05/marble_cliff_05_nor_gl_8k.exr",
+            "textures/marble_cliff_05_rough_8k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/8k/marble_cliff_05/marble_cliff_05_rough_8k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/marble_cliff_05.png?width=256&height=256"
+    },
     "marble_mosaic_tiles_1k": {
         "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/1k/marble_mosaic_tiles/marble_mosaic_tiles_1k.blend",
         "texture_files": {
@@ -29998,6 +30078,46 @@
             "textures/wooden_gate_rough_8k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/8k/wooden_gate/wooden_gate_rough_8k.exr"
         },
         "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wooden_gate.png?width=256&height=256"
+    },
+    "wooden_panels_1k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/1k/wooden_panels/wooden_panels_1k.blend",
+        "texture_files": {
+            "textures/wooden_panels_diff_1k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wooden_panels/wooden_panels_diff_1k.jpg",
+            "textures/wooden_panels_disp_1k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/wooden_panels/wooden_panels_disp_1k.png",
+            "textures/wooden_panels_nor_gl_1k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/1k/wooden_panels/wooden_panels_nor_gl_1k.exr",
+            "textures/wooden_panels_rough_1k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/1k/wooden_panels/wooden_panels_rough_1k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wooden_panels.png?width=256&height=256"
+    },
+    "wooden_panels_2k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/2k/wooden_panels/wooden_panels_2k.blend",
+        "texture_files": {
+            "textures/wooden_panels_diff_2k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/wooden_panels/wooden_panels_diff_2k.jpg",
+            "textures/wooden_panels_disp_2k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/wooden_panels/wooden_panels_disp_2k.png",
+            "textures/wooden_panels_nor_gl_2k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/2k/wooden_panels/wooden_panels_nor_gl_2k.exr",
+            "textures/wooden_panels_rough_2k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/2k/wooden_panels/wooden_panels_rough_2k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wooden_panels.png?width=256&height=256"
+    },
+    "wooden_panels_4k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/4k/wooden_panels/wooden_panels_4k.blend",
+        "texture_files": {
+            "textures/wooden_panels_diff_4k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/wooden_panels/wooden_panels_diff_4k.jpg",
+            "textures/wooden_panels_disp_4k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/4k/wooden_panels/wooden_panels_disp_4k.png",
+            "textures/wooden_panels_nor_gl_4k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/4k/wooden_panels/wooden_panels_nor_gl_4k.exr",
+            "textures/wooden_panels_rough_4k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/4k/wooden_panels/wooden_panels_rough_4k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wooden_panels.png?width=256&height=256"
+    },
+    "wooden_panels_8k": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/8k/wooden_panels/wooden_panels_8k.blend",
+        "texture_files": {
+            "textures/wooden_panels_diff_8k.jpg": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/8k/wooden_panels/wooden_panels_diff_8k.jpg",
+            "textures/wooden_panels_disp_8k.png": "https://dl.polyhaven.org/file/ph-assets/Textures/png/8k/wooden_panels/wooden_panels_disp_8k.png",
+            "textures/wooden_panels_nor_gl_8k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/8k/wooden_panels/wooden_panels_nor_gl_8k.exr",
+            "textures/wooden_panels_rough_8k.exr": "https://dl.polyhaven.org/file/ph-assets/Textures/exr/8k/wooden_panels/wooden_panels_rough_8k.exr"
+        },
+        "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/wooden_panels.png?width=256&height=256"
     },
     "wooden_planks_1k": {
         "url": "https://dl.polyhaven.org/file/ph-assets/Textures/blend/1k/wooden_planks/wooden_planks_1k.blend",

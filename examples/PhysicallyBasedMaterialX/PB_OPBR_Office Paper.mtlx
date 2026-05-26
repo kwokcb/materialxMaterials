@@ -6,8 +6,8 @@
   <!--  Target Shading Model: open_pbr_surface -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Office_Paper_OPBR_SHD_PBM -->
-  <open_pbr_surface name="Office_Paper_OPBR_SHD_PBM" type="surfaceshader" uiname="Office Paper" uifolder="Manmade" doc="Office paper contains optical brightening additives that absorb light in the ultraviolet and violet region (usually 340-370 nm), and re-emit light in the blue region (typically 420-470 nm) by fluorescence.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/office-paper.jpeg">
-    <input name="base_color" type="color3" value="0.794,0.834,0.884" />
+  <open_pbr_surface name="Office_Paper_OPBR_SHD_PBM" type="surfaceshader" uiname="Office Paper" uifolder="Manmade" doc="Office paper contains optical brightening additives that absorb light in the ultraviolet and violet region (usually 340-370 nm), and re-emit light in the blue region (typically 420-470 nm) by fluorescence.. Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/office-paper.avif">
+    <input name="base_color" type="color3" value="0.794, 0.834, 0.884" colorspace="lin_rec709" />
     <input name="base_metalness" type="float" value="0" />
     <input name="specular_roughness" type="float" value="0.8" />
     <input name="specular_ior" type="float" value="1.5" />

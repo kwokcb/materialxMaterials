@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <!--Physically Based Materials from https://api.physicallybased.info -->
+  <!--  Content Author: Anton Palmqvist, https://antonpalmqvist.com/ -->
+  <!--  Content processsed via REST API and mapped to MaterialX V1.39.5 -->
+  <!--  Target Shading Model: standard_surface -->
+  <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
+  <!-- Generated shader: Amber_SS_SHD_PBM -->
+  <standard_surface name="Amber_SS_SHD_PBM" type="surfaceshader" uiname="Amber" uifolder="Organic" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/amber.avif">
+    <input name="base_color" type="color3" value="0.83, 0.288, 0.036" colorspace="lin_rec709" />
+    <input name="metalness" type="float" value="0" />
+    <input name="specular_roughness" type="float" value="0" />
+    <input name="specular_IOR" type="float" value="1.5" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="0.83,0.288,0.036" colorspace="lin_rec709" />
+  </standard_surface>
+  <!-- Generated material: Amber_SS_MAT_PBM -->
+  <surfacematerial name="Amber_SS_MAT_PBM" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Amber_SS_SHD_PBM" />
+  </surfacematerial>
+</materialx>

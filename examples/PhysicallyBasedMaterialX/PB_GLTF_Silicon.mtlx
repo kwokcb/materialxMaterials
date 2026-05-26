@@ -6,12 +6,11 @@
   <!--  Target Shading Model: gltf_pbr -->
   <!--  Utility Author: Bernard Kwok. kwokcb@gmail.com -->
   <!-- Generated shader: Silicon_GLTF_SHD_PBM -->
-  <gltf_pbr name="Silicon_GLTF_SHD_PBM" type="surfaceshader" uiname="Silicon" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silicon.jpeg">
-    <input name="base_color" type="color3" value="0.345,0.369,0.426" />
+  <gltf_pbr name="Silicon_GLTF_SHD_PBM" type="surfaceshader" uiname="Silicon" uifolder="Metal" doc="Reference: https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/300/silicon.avif">
+    <input name="base_color" type="color3" value="0.345, 0.369, 0.426" colorspace="lin_rec709" />
     <input name="metallic" type="float" value="1" />
-    <input name="specular_color" type="color3" value="0.081,0,0.004" />
+    <input name="specular_color" type="color3" value="0.72, 0.701, 0.663" colorspace="lin_rec709" doc="Format: F82" />
     <input name="roughness" type="float" value="0" />
-    <input name="ior" type="float" value="1.5" />
   </gltf_pbr>
   <!-- Generated material: Silicon_GLTF_MAT_PBM -->
   <surfacematerial name="Silicon_GLTF_MAT_PBM" type="material">
