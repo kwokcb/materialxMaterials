@@ -11,7 +11,7 @@
 
 This site hosts a set of libraries and utilities to query remote databases for materials which can either be mapped to MaterialX materials or are natively stored in that format.
 
-**Last Updated**: January, 2026 (1.39.5 in progress)
+**Last Updated**: May 26, 2026 (Using 1.39.5 PyPi release)
 
 
 **Supported Libraries**
