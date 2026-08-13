@@ -1,3 +1,3 @@
-materialx>=1.39.4
+materialx>=1.39.5
 requests
 pillow
