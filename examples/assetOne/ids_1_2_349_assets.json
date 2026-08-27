@@ -1,0 +1,77 @@
+[
+    {
+        "id": 2,
+        "creatorGivenId": null,
+        "title": "Day Sky HDRI 062 A",
+        "url": "https://ambientcg.com/a/DaySkyHDRI062A",
+        "date": "2026-01-22T11:00:00+01:00",
+        "type": "hdri",
+        "creator": "ambientcg",
+        "tags": [
+            "062",
+            "62",
+            "a",
+            "afternoon",
+            "ambientcg",
+            "bright",
+            "calm",
+            "clear",
+            "cloudy",
+            "day",
+            "farmland",
+            "grassy",
+            "hdri",
+            "horizon",
+            "natural",
+            "partly",
+            "serene",
+            "sky",
+            "spring",
+            "sunny"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/2.png"
+    },
+    {
+        "id": 1,
+        "creatorGivenId": null,
+        "title": "Ground 103",
+        "url": "https://ambientcg.com/a/Ground103",
+        "date": "2026-01-12T17:00:00+01:00",
+        "type": "pbr-material",
+        "creator": "ambientcg",
+        "tags": [
+            "103",
+            "ambientcg",
+            "brown",
+            "dirt",
+            "earth",
+            "ground",
+            "natural",
+            "old",
+            "outdoor",
+            "rough",
+            "soil",
+            "uneven"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/1.png"
+    },
+    {
+        "id": 349,
+        "creatorGivenId": null,
+        "title": "Slip Match Oak Wood Veneer Texture",
+        "url": "https://www.poliigon.com/texture/slip-match-oak-wood-veneer-texture/7760",
+        "date": "2026-01-24T19:27:16+01:00",
+        "type": "pbr-material",
+        "creator": "poliigon",
+        "tags": [
+            "match",
+            "oak",
+            "poliigon",
+            "slip",
+            "texture",
+            "veneer",
+            "wood"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/349.png"
+    }
+]

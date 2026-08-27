@@ -1,0 +1,121 @@
+[
+    {
+        "id": 1,
+        "slug": "ambientcg",
+        "name": "ambientCG",
+        "licenseUrl": "https://docs.ambientcg.com/license/",
+        "description": "2000+ Public Domain materials, HDRIs and models for Physically Based Rendering."
+    },
+    {
+        "id": 2,
+        "slug": "polyhaven",
+        "name": "Poly Haven",
+        "licenseUrl": "https://polyhaven.com/license",
+        "description": "The Public 3D Asset Library - A combination of the websites \"HDRI Haven\", \"Texture Haven\" and \"3D Model Haven.\""
+    },
+    {
+        "id": 3,
+        "slug": "sharetextures",
+        "name": "Share Textures",
+        "licenseUrl": "https://www.sharetextures.com/p/license",
+        "description": "ShareTextures.com is creating and sharing PBR textures since 2018."
+    },
+    {
+        "id": 4,
+        "slug": "3d-textures",
+        "name": "3D Textures",
+        "licenseUrl": "https://3dtextures.me/about/",
+        "description": "Free seamless PBR textures and unique creations in Substance Designer."
+    },
+    {
+        "id": 5,
+        "slug": "cgbookcase",
+        "name": "CG Bookcase",
+        "licenseUrl": "https://www.cgbookcase.com/textures#:~:text=The%20textures%20are%20published%20under%20the%20CC0%201.0%20license%2C%20which%20means%20means%20you%20can%20use%20them%20for%20free%20without%20giving%20credit.",
+        "description": "Free PBR textures that come with all the map types needed to create photorealistic materials."
+    },
+    {
+        "id": 6,
+        "slug": "texturecan",
+        "name": "Texture Can",
+        "licenseUrl": "https://www.texturecan.com/terms/",
+        "description": "Offers free CG textures, free graphics and free patterns for 3D artists."
+    },
+    {
+        "id": 20,
+        "slug": "pbr-px",
+        "name": "PBRPX",
+        "licenseUrl": "https://pbrpx.com/privacy-policy/",
+        "description": "We are a small team from China, passionate about CG production. Through PBRPX, we provide artists with completely free, unrestricted digital assets, allowing them to unleash their creativity."
+    },
+    {
+        "id": 10,
+        "slug": "gpuopen-matlib",
+        "name": "AMD GPUOpen MaterialX Library",
+        "licenseUrl": null,
+        "description": "A collection of high-quality materials and related textures that is available completely for free, hosted by AMD GPUOpen. (Duplicates of materials from Polyhaven are excluded.)"
+    },
+    {
+        "id": 7,
+        "slug": "noemotionhdrs",
+        "name": "NoEmotion HDRs",
+        "licenseUrl": "https://noemotionhdrs.net/#:~:text=NoEmotionHDRs%20by%20Peter%20Sanitra%20is%20licensed%20under%20a%20Creative%20Commons%20Attribution%2DNoDerivatives%204.0%20International%20License.%20Based%20on%20a%20work%20at%20http%3A//noemotionhdrs.net.%20Permissions%20beyond%20the%20scope%20of%20this%20license%20may%20be%20available%20at%20http%3A//noemotionhdrs.net",
+        "description": "An older website with an impressive collection of free HDRIs."
+    },
+    {
+        "id": 11,
+        "slug": "rawcatalog",
+        "name": "Raw Catalog",
+        "licenseUrl": "https://rawcatalog.com/terms/",
+        "description": "A unique library that includes many ready-to-use resources for creating amazing projects in the field of video games, films, animation and visualization."
+    },
+    {
+        "id": 14,
+        "slug": "poliigon",
+        "name": "Poliigon (Free Section)",
+        "licenseUrl": "https://help.poliigon.com/en/articles/8749749-asset-use-licensing",
+        "description": "Textures, models and HDRIs for photorealistic 3D rendering. Make better renders, faster. Currently, only the \"Free\" section is indexed."
+    },
+    {
+        "id": 15,
+        "slug": "textures-com",
+        "name": "Textures.com (Free Section)",
+        "licenseUrl": "https://www.textures.com/faq-license",
+        "description": "Take your CG art to the next level with our highest quality content! Currently, only the \"Free\" section is indexed."
+    },
+    {
+        "id": 16,
+        "slug": "cgmood",
+        "name": "CGMood (Free Section)",
+        "licenseUrl": "https://cgmood.com/faq",
+        "description": "CGMood is a fresh, fair 3D marketplace. We are a team of architects and designers with many years of experience in the 3D visualization field. Currently, only the \"Free\" section is indexed."
+    },
+    {
+        "id": 18,
+        "slug": "three-d-scans",
+        "name": "Three D Scans",
+        "licenseUrl": "https://threedscans.com/info/",
+        "description": "A collection of high-quality statues/sculptures scanned in various european museums."
+    },
+    {
+        "id": 19,
+        "slug": "location-textures",
+        "name": "Location Textures",
+        "licenseUrl": "https://locationtextures.com/privacy-policy/",
+        "description": "Locationtextures.com is an online platform providing high quality royalty-free photo reference packs for games and film industry. We offer free packs and every pack comes with free samples."
+    },
+    {
+        "id": 21,
+        "slug": "twinbru",
+        "name": "Twinbru",
+        "licenseUrl": "https://textures.twinbru.com/en/products?page=1&page_size=50#:~:text=The%20right%20to%20download%20pictures%20provides%20you%20a%20non%2Dtransferable%2C%20non%2Dexclusive%2C%20always%20terminable%20limited%20right%20to%20use%20this%20image%20in%20order%20to%20promote%20the%20sale%20of%20the%20fabrics%20shown%20in%20the%20pictures.",
+        "description": "Browse our library of more than 13 000 digital fabric twins to download 3D fabric textures or order physical fabric samples."
+    },
+    {
+        "id": 22,
+        "slug": "lightbeans",
+        "name": "Lightbeans",
+        "licenseUrl": "https://lightbeans.com/en/pages/texture-terms",
+        "description": "We Connect Manufacturers with Architects and Designers - Thousands of digitized products for your projects."
+    }
+]
