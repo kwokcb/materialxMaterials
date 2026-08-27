@@ -23,13 +23,14 @@ class AmbientCGLoader:
     @brief Class to load materials from the AmbientCG site.
     The class can convert the materials to MaterialX format for given target shading models.
     '''
-    def __init__(self, mx_module, mx_stdlib : Optional[mx.Document] = None):
+    def __init__(self, mx_module, mx_stdlib : Optional[mx.Document] = None, api_version : str = 'v3'):
         '''
         @brief Constructor for the AmbientCGLoader class. 
         Will initialize shader mappings and load the MaterialX standard library
         if it is not passed in as an argument.
         @param mx_module The MaterialX module. Required.
-        @param mx_stdlib The MaterialX standard library. Optional.        
+        @param mx_stdlib The MaterialX standard library. Optional.
+        @param api_version The ambientCG API version to use. Must be 'v2' or 'v3'. Default is 'v3'.
         '''
         
         ### logger is the logging object for the class
@@ -61,6 +62,8 @@ class AmbientCGLoader:
         self.stdlib = mx_stdlib
         ### Flag to indicate OpenPBR shader support
         self.support_openpbr = False
+        ### AmbientCG API version to use ('v2' or 'v3'). V2 is deprecated upstream.
+        self.api_version = api_version if api_version in ('v2', 'v3') else 'v3'
 
         if not mx_module:
             self.logger.critical(f'> {self._getMethodName()}: MaterialX module not specified.')
@@ -89,14 +92,27 @@ class AmbientCGLoader:
             self.logger.setLevel(lg.DEBUG)
         else:
             self.logger.setLevel(lg.INFO)
-    
-    def getMaterialNames(self, key='assetId') -> list:
+
+    def setApiVersion(self, api_version : str = 'v3'):
+        '''
+        @brief Set the ambientCG API version to use.
+        @param api_version The API version to use. Must be 'v2' or 'v3'.
+        '''
+        if api_version not in ('v2', 'v3'):
+            self.logger.warning(f'> {self._getMethodName()}: Invalid API version: {api_version}. Using v3.')
+            api_version = 'v3'
+        self.api_version = api_version
+        self.logger.info(f'Using ambientCG API version: {api_version}')
+
+    def getMaterialNames(self, key=None) -> list:
         ''' 
         Get the list of material names.     
-        @param key The key to use for the material name. Default is 'assetId' based
-        on the version 2 ambientCG API.
+        @param key The key to use for the material name. When None the default is used:
+        'assetId' for the version 2 API, 'id' for the version 3 API.
         @return The list of material names
         '''
+        if key is None:
+            key = 'id' if self.api_version == 'v3' else 'assetId'
         self.materialNames.clear()
         unique_names = set()
         if self.materials:
@@ -193,11 +209,20 @@ class AmbientCGLoader:
         downloadAttribute = ''
         items = self.findMaterial(assetId)
         target = self.buildDownLoadAttribute(imageFormat, imageResolution)
-        for item in items:
-            downloadAttribute = item[downloadAttributeKey]
-            if  downloadAttribute == target:
-                url = item[downloadLinkKey]
-                self.logger.info(f'Found Asset: {assetId}. Download Attribute: {downloadAttribute} -> {url}')
+        if self.api_version == 'v3':
+            # In v3 the download variants are nested under the asset's "downloads" array
+            for item in items:
+                for download in item.get('downloads', []):
+                    downloadAttribute = download.get('attributes')
+                    if  downloadAttribute == target:
+                        url = download.get('url')
+                        self.logger.info(f'Found Asset: {assetId}. Download Attribute: {downloadAttribute} -> {url}')
+        else:
+            for item in items:
+                downloadAttribute = item[downloadAttributeKey]
+                if  downloadAttribute == target:
+                    url = item[downloadLinkKey]
+                    self.logger.info(f'Found Asset: {assetId}. Download Attribute: {downloadAttribute} -> {url}')
 
         if len(url) == 0:
             self.logger.error(f'No download link found for asset: {assetId}, attribute: {target}')
@@ -228,13 +253,16 @@ class AmbientCGLoader:
 
         return self.downloadMaterialFileName       
 
-    def findMaterial(self, assetId, key='assetId'):
+    def findMaterial(self, assetId, key=None):
         '''
         @brief Get the list of materials matching a material identifier
         @param assetId Material string identifier
-        @param key The key to lookup asset identifiers. Default is 'assetId' based on the version 2 ambientCG API.
+        @param key The key to lookup asset identifiers. When None the default is used:
+        'assetId' for the version 2 API, 'id' for the version 3 API.
         @return List of materials, or None if not found
         '''
+        if key is None:
+            key = 'id' if self.api_version == 'v3' else 'assetId'
         if self.materials:
             materialList = [item for item in self.materials if item.get(key) == assetId]
             return materialList
@@ -253,10 +281,17 @@ class AmbientCGLoader:
 
     def downloadMaterialsList(self):
         '''
-        @brief Download the list of materials from the ambientCG site: "ttps://ambientCG.com/api/v2/downloads_csv"
-        Takes the origina CSV file and remaps this into JSON for runtime.
+        @brief Download the list of materials from the ambientCG site.
+        For the version 2 API this uses the "downloads_csv" endpoint:
+        "https://ambientCG.com/api/v2/downloads_csv". Takes the original CSV file
+        and remaps this into JSON for runtime.
+        For the version 3 API this uses the "assets" endpoint:
+        "https://ambientCG.com/api/v3/assets".
         @return Materials list
         '''
+        if self.api_version == 'v3':
+            return self._downloadMaterialsListV3()
+
         # URL of the CSV file
         url = "https://ambientCG.com/api/v2/downloads_csv"
         headers = {
@@ -294,6 +329,71 @@ class AmbientCGLoader:
 
         return self.materials
 
+    def _fetchAssetsV3(self, limit=500, maxAssets=None):
+        '''
+        @brief Fetch the full list of assets using the version 3 "assets" endpoint,
+        following pagination until all assets are retrieved (each page is capped at
+        `limit` results, up to a maximum of 500).
+        @param limit The number of assets to request per page. Maximum is 500.
+        @param maxAssets Optional cap on the total number of assets to return.
+        @return A tuple of (assets, status_code) where assets is the accumulated list
+        of asset records and status_code is the HTTP status of the last request.
+        '''
+        url = "https://ambientCG.com/api/v3/assets"
+        headers = {
+            'Accept': 'application/json'
+        }
+        assets = []
+        offset = 0
+        pageLimit = min(limit, 500)
+        totalResults = None
+
+        while True:
+            parameters = {
+                'type': 'material',        # TODO: Allow user filtering options
+                'sort': 'alphabet',
+                'include': 'downloads,title,type',
+                'limit': pageLimit,
+                'offset': offset,
+            }
+            self.logger.info(f'Downloading materials list... offset={offset}, limit={pageLimit}')
+            response = requests.get(url, headers=headers, params=parameters)
+            if response.status_code != HTTPStatus.OK:
+                self.logger.warning(f"Failed to fetch the materials list. HTTP status code: {response.status_code}")
+                return assets, response.status_code
+
+            data = response.json()
+            pageAssets = data.get('assets', [])
+            assets.extend(pageAssets)
+            totalResults = data.get('totalResults')
+            offset += len(pageAssets)
+
+            if maxAssets is not None and len(assets) >= maxAssets:
+                assets = assets[:maxAssets]
+                break
+            if len(pageAssets) == 0:
+                break
+            if totalResults is not None and offset >= totalResults:
+                break
+
+        return assets, HTTPStatus.OK
+
+    def _downloadMaterialsListV3(self, maxAssets=None):
+        '''
+        @brief Download the list of materials using the version 3 "assets" endpoint.
+        The response is a JSON object with an "assets" array. Each asset has an "id"
+        and a "downloads" array of entries with keys: 'attributes', 'extension', 'url', 'size'.
+        @param maxAssets Optional cap on the total number of assets to fetch.
+        @return Materials list
+        '''
+        assets, status = self._fetchAssetsV3(maxAssets=maxAssets)
+        if status == HTTPStatus.OK:
+            self.materials = assets
+            self.logger.info(f"Downloaded materials list: {len(self.materials)} assets")
+        else:
+            self.materials = None
+        return self.materials
+
     def getDataBase(self):
         '''
         @brief Get asset database
@@ -311,28 +411,36 @@ class AmbientCGLoader:
     def downloadAssetDatabase(self) -> dict:
         ''' 
         @brief Download the asset database for materials from the ambientCG site.
+        Uses the "full_json" endpoint for the version 2 API and the paginated "assets"
+        endpoint for the version 3 API.
         @return None
         '''
         self.database.clear()
         self.assets = None
 
-        url = 'https://ambientcg.com/api/v2/full_json'
-        headers = {
-            'Accept': 'application/json'
-        }
-        parameters = {
-            'method': 'PBRPhotogrammetry', # TODO: Allow user filtering options
-            'type': 'Material',
-            'sort': 'Alphabet',
-        }
-
-        response = requests.get(url, headers=headers, params=parameters)
-
-        if response.status_code == HTTPStatus.OK:
-            self.database = response.json()
-            self.assets = self.database['foundAssets']                
+        if self.api_version == 'v3':
+            assets, status = self._fetchAssetsV3()
+            if status == HTTPStatus.OK:
+                self.assets = assets
+                self.database = {'totalResults': len(assets), 'assets': assets}
+            else:
+                self.logger.error(f'> Status: {status}')
         else:
-            self.logger.error(f'> Status: {response.status_code}, {response.text}')
+            headers = {
+                'Accept': 'application/json'
+            }
+            url = 'https://ambientcg.com/api/v2/full_json'
+            parameters = {
+                'method': 'PBRPhotogrammetry', # TODO: Allow user filtering options
+                'type': 'Material',
+                'sort': 'Alphabet',
+            }
+            response = requests.get(url, headers=headers, params=parameters)
+            if response.status_code == HTTPStatus.OK:
+                self.database = response.json()
+                self.assets = self.database['foundAssets']
+            else:
+                self.logger.error(f'> Status: {response.status_code}, {response.text}')
             
     def writeDatabaseToFile(self, filename):
         '''
