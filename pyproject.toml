@@ -33,6 +33,10 @@ where = ["src"]
 [tool.setuptools.package-data]
 "materialxMaterials.data" = ["**/*"]
 
+# The optional src_test modules (assetOne / assetOneCmd) are excluded from the
+# default build. To include them, run build.sh with --src-test, which copies
+# them into the package before installing.
+
 [project.urls]
 "Homepage" = "https://kwokcb.github.io/materialxMaterials/"
 "Issues" = "https://github.com/kwokcb/materialxMaterials/issues"

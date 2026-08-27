@@ -1,30 +1,23 @@
+#!/bin/bash
+# Build and install materialxMaterials, then refresh packaged material data.
+# Usage:
+#   bash build.sh             # default: package only the src tree
+#   bash build.sh --src-test  # also copy the optional src_test modules (assetOne) into the package
+
+# Optionally include the src_test modules in the build.
+INCLUDE_SRC_TEST=0
+if [ "$1" = "--src-test" ] || [ "$1" = "-s" ]; then
+    INCLUDE_SRC_TEST=1
+fi
+
+if [ "$INCLUDE_SRC_TEST" = "1" ]; then
+    echo "Copying src_test modules (assetOne) into the package..."
+    bash "$(dirname "$0")/copy_src_test.sh" copy
+else
+    echo "Removing any src_test modules (assetOne) from the package..."
+    bash "$(dirname "$0")/copy_src_test.sh" remove
+fi
+
 echo "Start Package Install..."
-pip install .
+pip install . -q
 echo "Finished Package Install"
-
-echo "Start Updating Package Data..."
-
-echo Download material information from GPUOpen
-echo -------------------------------------------------
-python -m materialxMaterials gpuopen --output src/materialxMaterials/data/GPUOpenMaterialX/ --materialNames 1 --saveMaterials 1
-echo -------------------------------------------------
-
-echo Download material information from PolyHaven
-echo -------------------------------------------------
-python -m materialxMaterials polyhaven -fe --data_folder src/materialxMaterials/data/PolyHavenMaterialX
-echo -------------------------------------------------
-
-echo Download material information from PhysicallyBased
-echo -------------------------------------------------
-python -m materialxMaterials physbased -nd 1 -wr 1 -o src/materialxMaterials/data/PhysicallyBasedMaterialX/
-echo -------------------------------------------------
-
-echo Download material information from AmbientCG
-echo -------------------------------------------------
-python -m materialxMaterials acg --saveMaterials True --output src/materialxMaterials/data/ambientCgMaterials/ -dd 1
-echo -------------------------------------------------
-
-echo "Finished Updating Package Data"
-
-
-
