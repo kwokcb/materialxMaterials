@@ -1,0 +1,223 @@
+[
+    {
+        "id": 4,
+        "creatorGivenId": null,
+        "title": "Wood 094",
+        "url": "https://ambientcg.com/a/Wood094",
+        "date": "2025-07-12T15:00:00+02:00",
+        "type": "pbr-material",
+        "creator": "ambientcg",
+        "tags": [
+            "094",
+            "94",
+            "ambientcg",
+            "brown",
+            "smooth",
+            "wood",
+            "wooden"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/4.png"
+    },
+    {
+        "id": 349,
+        "creatorGivenId": null,
+        "title": "Slip Match Oak Wood Veneer Texture",
+        "url": "https://www.poliigon.com/texture/slip-match-oak-wood-veneer-texture/7760",
+        "date": "2026-01-24T19:27:16+01:00",
+        "type": "pbr-material",
+        "creator": "poliigon",
+        "tags": [
+            "match",
+            "oak",
+            "poliigon",
+            "slip",
+            "texture",
+            "veneer",
+            "wood"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/349.png"
+    },
+    {
+        "id": 30990,
+        "creatorGivenId": null,
+        "title": "Killarney M197544 Fitzgerald\ufe31Herringbone Wood Floor Texture from Real Wood Floors ",
+        "url": "https://lightbeans.com/en/texture/real-wood-floors/killarney-m197544-fitzgerald-herringbone",
+        "date": "2026-05-20T04:27:37+02:00",
+        "type": "pbr-material",
+        "creator": "lightbeans",
+        "tags": [
+            "fitzgeraldherringbone",
+            "floor",
+            "floors",
+            "from",
+            "killarney",
+            "lightbeans",
+            "m197544",
+            "real",
+            "texture",
+            "wood"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/30990.png"
+    },
+    {
+        "id": 30253,
+        "creatorGivenId": null,
+        "title": "Wood 095",
+        "url": "https://ambientcg.com/a/Wood095",
+        "date": "2026-03-08T14:00:14+01:00",
+        "type": "pbr-material",
+        "creator": "ambientcg",
+        "tags": [
+            "095",
+            "95",
+            "ambientcg",
+            "beige",
+            "clean",
+            "indoor",
+            "light",
+            "minimalist",
+            "modern",
+            "natural",
+            "polished",
+            "rustic",
+            "smooth",
+            "subtle",
+            "uniform",
+            "wood"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/30253.png"
+    },
+    {
+        "id": 31788,
+        "creatorGivenId": null,
+        "title": "Wood Tiles 005",
+        "url": "https://3dtextures.me/2026/08/24/wood-tiles-005/",
+        "date": "2026-08-24T15:45:09+02:00",
+        "type": "pbr-material",
+        "creator": "3d-textures",
+        "tags": [
+            "005",
+            "3dtextures",
+            "cc0",
+            "free",
+            "geometric",
+            "house",
+            "pattern",
+            "pbr",
+            "procedural",
+            "seamless",
+            "texture",
+            "tiles",
+            "wall",
+            "wood"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/31788.png"
+    },
+    {
+        "id": 4969,
+        "creatorGivenId": null,
+        "title": "Shadow Wood (pbr, 4k, Board)",
+        "url": "https://cgmood.com/material/shadow-wood-pbr-4k-board",
+        "date": "2026-01-25T14:27:41+01:00",
+        "type": "pbr-material",
+        "creator": "cgmood",
+        "tags": [
+            "4k",
+            "board",
+            "cgmood",
+            "pbr",
+            "shadow",
+            "wood"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/4969.png"
+    },
+    {
+        "id": 31741,
+        "creatorGivenId": null,
+        "title": "Oak Wood Planks",
+        "url": "https://polyhaven.com/a/oak_wood_planks",
+        "date": "2026-08-11T15:06:09+02:00",
+        "type": "pbr-material",
+        "creator": "polyhaven",
+        "tags": [
+            "coated",
+            "floor",
+            "flooring",
+            "oak",
+            "plank",
+            "planks",
+            "polyhaven",
+            "timber",
+            "varnished",
+            "wood",
+            "wooden"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/31741.png"
+    },
+    {
+        "id": 3356,
+        "creatorGivenId": null,
+        "title": "Material Wood Floor 001",
+        "url": "https://cgmood.com/material/material-wood-floor-001",
+        "date": "2026-01-25T14:02:50+01:00",
+        "type": "pbr-material",
+        "creator": "cgmood",
+        "tags": [
+            "001",
+            "cgmood",
+            "floor",
+            "material",
+            "wood"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/3356.png"
+    },
+    {
+        "id": 31733,
+        "creatorGivenId": null,
+        "title": "Japanese Cedar Planks",
+        "url": "https://polyhaven.com/a/japanese_cedar_planks",
+        "date": "2026-08-11T15:06:08+02:00",
+        "type": "pbr-material",
+        "creator": "polyhaven",
+        "tags": [
+            "cedar",
+            "grain",
+            "hardwood",
+            "japanese",
+            "japanses",
+            "natural",
+            "paneling",
+            "plank",
+            "planks",
+            "polyhaven",
+            "roughhewn",
+            "sawn",
+            "timber",
+            "vertical",
+            "wood",
+            "wooden"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/31733.png"
+    },
+    {
+        "id": 29440,
+        "creatorGivenId": null,
+        "title": "Polymer Design 737 Siena Wood Texture from Sublime ",
+        "url": "https://lightbeans.com/en/texture/sublime/737-softtouchsiennawood-supermatte2sides",
+        "date": "2026-02-03T16:27:54+01:00",
+        "type": "pbr-material",
+        "creator": "lightbeans",
+        "tags": [
+            "737",
+            "design",
+            "from",
+            "lightbeans",
+            "polymer",
+            "siena",
+            "sublime",
+            "texture",
+            "wood"
+        ],
+        "thumbnail": "https://3dassets.one/thumbnail/256-PNG/29440.png"
+    }
+]

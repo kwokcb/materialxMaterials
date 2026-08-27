@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "slug": "other",
+        "name": "Other"
+    },
+    {
+        "id": 1,
+        "slug": "pbr-material",
+        "name": "PBR material"
+    },
+    {
+        "id": 2,
+        "slug": "3d-model",
+        "name": "3D model"
+    },
+    {
+        "id": 3,
+        "slug": "sbsar",
+        "name": "Substance material"
+    },
+    {
+        "id": 4,
+        "slug": "hdri",
+        "name": "HDRI"
+    }
+]
