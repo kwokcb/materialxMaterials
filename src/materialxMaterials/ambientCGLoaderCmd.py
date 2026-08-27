@@ -49,12 +49,16 @@ def ambientCgLoaderCmd():
     parser.add_argument('-sd', '--saveDatabase', type=str, default='ambientCG_database.json', 
                         help='Save information database')
 
+    # AmbientCG API version
+    parser.add_argument('-av', '--apiVersion', type=str, default='v3',
+                        help='ambientCG API version to use. Valid values are v2 or v3. Default is v3.')
+
     # Output options
     parser.add_argument('--output', type=str, default='', 
                         help='Output folder for data files. Default location is the current execution folder.')
     opts = parser.parse_args()
 
-    loader = acg.AmbientCGLoader(mx, None)
+    loader = acg.AmbientCGLoader(mx, None, api_version=opts.apiVersion)
     
     # Set output folder. Default is current folder
     outputFolder = '.'
